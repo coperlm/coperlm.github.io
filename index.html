@@ -69,6 +69,249 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-iscc2024-钢铁侠" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/24/iscc2024-%E9%92%A2%E9%93%81%E4%BE%A0/" class="article-date">
+  <time class="dt-published" datetime="2024-05-24T11:23:54.000Z" itemprop="datePublished">2024-05-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/24/iscc2024-%E9%92%A2%E9%93%81%E4%BE%A0/">iscc2024 钢铁侠</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>题目给了一张图片和一个文档</p>
+<p><img src="/..%5Cimages%5Cironman.bmp" alt="ironman"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">N = 14333611673783142269533986072221892120042043537656734360856590164188122242725003914350459078347531255332508629469837960098772139271345723909824739672964835254762978904635416440402619070985645389389404927628520300563003721921925991789638218429597072053352316704656855913499811263742752562137683270151792361591681078161140269916896950693743947015425843446590958629225545563635366985228666863861856912727775048741305004192164068930881720463095045582233773945480224557678337152700769274051268380831948998464841302024749660091030851843867128275500525355379659601067910067304244120384025022313676471378733553918638120029697</span><br><span class="line">e = 52595</span><br><span class="line">a=1</span><br><span class="line">[message]iscc</span><br><span class="line">[message]good</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/24/iscc2024-%E9%92%A2%E9%93%81%E4%BE%A0/" data-id="clwkln5pv000cwgws6fq209tk" data-title="iscc2024 钢铁侠" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lattice/" rel="tag">Lattice</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-鹤城杯-2021-BabyRSA" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/24/%E9%B9%A4%E5%9F%8E%E6%9D%AF-2021-BabyRSA/" class="article-date">
+  <time class="dt-published" datetime="2024-05-24T01:56:17.000Z" itemprop="datePublished">2024-05-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/24/%E9%B9%A4%E5%9F%8E%E6%9D%AF-2021-BabyRSA/">[鹤城杯 2021]BabyRSA</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>题目：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import getPrime, bytes_to_long</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">p = getPrime(1024)</span><br><span class="line">q = getPrime(1024)</span><br><span class="line">n = p * q</span><br><span class="line">e = 65537</span><br><span class="line">hint1 = p &gt;&gt; 724</span><br><span class="line">hint2 = q % (2 ** 265)</span><br><span class="line">ct = pow(bytes_to_long(flag), e, n)</span><br><span class="line">print(hint1)</span><br><span class="line">print(hint2)</span><br><span class="line">print(n)</span><br><span class="line">print(ct)</span><br></pre></td></tr></table></figure>
+
+<p>先通过 $p_{low}&#x3D;n*q_{low}\ (mod\ 2^{256})$ 求得p的前</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/24/%E9%B9%A4%E5%9F%8E%E6%9D%AF-2021-BabyRSA/" data-id="clwkln5pr0004wgwsb2np5dj4" data-title="[鹤城杯 2021]BabyRSA" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/coppersmith/" rel="tag">coppersmith</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Lattice-from-deep-to-shallow(unfixed)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/24/Lattice-from-deep-to-shallow(unfixed)/" class="article-date">
+  <time class="dt-published" datetime="2024-05-24T00:30:52.000Z" itemprop="datePublished">2024-05-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/24/Lattice-from-deep-to-shallow(unfixed)/">Lattice from deep to shallow</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Initially, lets just look at a question.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#[鹤城杯 2021]BabyRSA </span><br><span class="line">from Crypto.Util.number import getPrime, bytes_to_long</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">p = getPrime(1024)</span><br><span class="line">q = getPrime(1024)</span><br><span class="line">n = p * q</span><br><span class="line">e = 65537</span><br><span class="line">hint1 = p &gt;&gt; 724</span><br><span class="line">hint2 = q % (2 ** 265)</span><br><span class="line">ct = pow(bytes_to_long(flag), e, n)</span><br><span class="line">print(hint1)</span><br><span class="line">print(hint2)</span><br><span class="line">print(n)</span><br><span class="line">print(ct)</span><br></pre></td></tr></table></figure>
+
+<p>In this question, we know high bite of p and low bite of q, and asked to find all the bite of p and q</p>
+<p>In the first step, we can access low bite of p by low bite of q, because <code>p*q=n</code></p>
+<p>we get $p_{low}&#x3D;n*q_{low}\ (mod\ 2^{256})$</p>
+<p>This question has convert to how to get p(1024bit) by  high bite of p(1024-724&#x3D;300) and low bite of p(256bit), totally 556 bites</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/24/Lattice-from-deep-to-shallow(unfixed)/" data-id="clwkln5pm0000wgws9bbse5eo" data-title="Lattice from deep to shallow" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frame-code/" rel="tag">frame code</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-RSA-partical-attack(unfixed)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/23/RSA-partical-attack(unfixed)/" class="article-date">
+  <time class="dt-published" datetime="2024-05-23T12:40:45.000Z" itemprop="datePublished">2024-05-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/23/RSA-partical-attack(unfixed)/">RSA partical attack</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#已知p的高位</p>
+<p>知道p的高位为p的位数的约1&#x2F;2时即可<br>已知e,n爆破 1024的P，至少需要知道前576位二进制，即前144位16进制</p>
+<p>已知前144位，则</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">n=</span><br><span class="line">p4=            #已知P的高位</span><br><span class="line">e=</span><br><span class="line">pbits=          #P原本的位数</span><br><span class="line"></span><br><span class="line">kbits=pbits - p4.nbits()</span><br><span class="line">print p4.nbits()</span><br><span class="line">p4 = p4 &lt;&lt; kbits</span><br><span class="line">PR.&lt;x&gt; = PolynomialRing(Zmod(n))</span><br><span class="line">f = x + p4</span><br><span class="line">roots = f.small_roots(X=2^kbits,beta=0.4)</span><br><span class="line"># 经过以上一些函数处理后，n和p已经被转化为10进制</span><br><span class="line">if roots:</span><br><span class="line">    p= p4 + int(roots([0]))</span><br><span class="line">    print (&quot;n&quot;,n)</span><br><span class="line">    print (&quot;p&quot;,p)</span><br><span class="line">    print (&quot;q&quot;,n/p)</span><br></pre></td></tr></table></figure>
+
+<p>只知道前142位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">n =</span><br><span class="line">p4 = #已知P的高位,最后面8位二进制，也就是两位十六进制要参与爆破，所以要用00补充</span><br><span class="line">e =</span><br><span class="line">pbits = #P原本的位数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for i in range(0,256):# 要爆破的8位二进制数，为2**8==256，表示0~255</span><br><span class="line">    p4 =</span><br><span class="line">    p4 = p4 + int(hex(i),16)</span><br><span class="line">	kbits=pbits - p4.nbits()</span><br><span class="line">	p4 = p4 &lt;&lt; kbits</span><br><span class="line">	PR.&lt;x&gt; = PolynomialRing(Zmod(n))</span><br><span class="line">	f = x + p4</span><br><span class="line">	roots = f.small_roots(X=2^kbits,beta=0.4)</span><br><span class="line">	# 经过以上一些函数处理后，n和p已经被转化为10进制</span><br><span class="line">if roots:</span><br><span class="line">    p= p4 + int(roots([0]))</span><br><span class="line">    print (&quot;n&quot;,n)</span><br><span class="line">    print (&quot;p&quot;,p)</span><br><span class="line">    print (&quot;q&quot;,n/p)</span><br></pre></td></tr></table></figure>
+
+<p>#已知m高位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def phase2(high_m, n, c):</span><br><span class="line">    R.&lt;x&gt; = PolynomialRing(Zmod(n), implementation=&#x27;NTL&#x27;)</span><br><span class="line">    m = high_m + x</span><br><span class="line">    M = m((m^3 - c).small_roots()[0])</span><br><span class="line">    print(hex(int(M))[2:])</span><br><span class="line"></span><br><span class="line">n = </span><br><span class="line">c = </span><br><span class="line">high_m = </span><br><span class="line"></span><br><span class="line">phase2(high_m, n, c)</span><br></pre></td></tr></table></figure>
+
+<p>#已知d的低位</p>
+<p>如果知道d的低位，低位约为n的位数的1&#x2F;4就可以恢复d。已知私钥的512位的低位 Partial Key Exposure Attack(部分私钥暴露攻击)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">def partial_p(p0, kbits, n): </span><br><span class="line">    PR.&lt;x&gt; = PolynomialRing(Zmod(n)) </span><br><span class="line">    nbits = n.nbits() </span><br><span class="line">    f = 2^kbits*x + p0 </span><br><span class="line">    f = f.monic() </span><br><span class="line">    roots = f.small_roots(X=2^(nbits//2-kbits), beta=0.3)  # find root &lt; 2^(nbits//2-kbits) with factor &gt;= n^0.3</span><br><span class="line">    if roots:</span><br><span class="line">         x0 = roots[0]</span><br><span class="line">         p = gcd(2^kbits*x0 + p0, n)</span><br><span class="line">         return ZZ(p)</span><br><span class="line"> </span><br><span class="line">def find_p(d0, kbits, e, n): </span><br><span class="line">    X = var(&#x27;X&#x27;) </span><br><span class="line">    for k in range(1, e+1): </span><br><span class="line">        results = solve_mod([e*d0*X - k*X*(n-X+1) + k*n == X], 2^kbits) </span><br><span class="line">        for x in results: </span><br><span class="line">            p0 = ZZ(x[0]) </span><br><span class="line">            p = partial_p(p0, kbits, n) </span><br><span class="line">            if p: </span><br><span class="line">                return p </span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line"> </span><br><span class="line">    n = </span><br><span class="line">    e = </span><br><span class="line">    d = </span><br><span class="line">    </span><br><span class="line">    beta = 0.5</span><br><span class="line">    epsilon = beta^2/7</span><br><span class="line">     </span><br><span class="line">    nbits = n.nbits() </span><br><span class="line">    #print(&quot;nbits:%d:&quot;%(nbits))</span><br><span class="line">    #kbits = floor(nbits*(beta^2+epsilon)) </span><br><span class="line">    kbits = nbits - d.nbits()-1 </span><br><span class="line">    #print(&quot;kbits:%d&quot;%(kbits))</span><br><span class="line">    d0 = d &amp; (2^kbits-1)</span><br><span class="line">    #print(&quot;lower %d bits (of %d bits) is given&quot; % (kbits, nbits))</span><br><span class="line">    p = find_p(d0, kbits, e, n)</span><br><span class="line">    print(&quot;found p: %d&quot; % p)</span><br><span class="line">    q = n//p</span><br><span class="line">    print(d)</span><br><span class="line">    print(inverse_mod(e, (p-1)*(q-1)))</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/23/RSA-partical-attack(unfixed)/" data-id="clwkln5pq0003wgwsajx1f1tu" data-title="RSA partical attack" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RSA/" rel="tag">RSA</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-install-crypto-in-sage-of-wsl" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/23/install-crypto-in-sage-of-wsl/" class="article-date">
+  <time class="dt-published" datetime="2024-05-23T08:59:37.000Z" itemprop="datePublished">2024-05-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/23/install-crypto-in-sage-of-wsl/">install crypto in sage of wsl</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>When I input <code>sudo -pip install pycryptodome</code></p>
+<p>It output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper# python3 -m pip install --user pipx</span><br><span class="line">error: externally-managed-environment</span><br><span class="line"></span><br><span class="line">× This environment is externally managed</span><br><span class="line">╰─&gt; To install Python packages system-wide, try apt install</span><br><span class="line">    python3-xyz, where xyz is the package you are trying to</span><br><span class="line">    install.</span><br><span class="line">    </span><br><span class="line">    If you wish to install a non-Debian-packaged Python package,</span><br><span class="line">    create a virtual environment using python3 -m venv path/to/venv.</span><br><span class="line">    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make</span><br><span class="line">    sure you have python3-full installed.</span><br><span class="line">    </span><br><span class="line">    If you wish to install a non-Debian packaged Python application,</span><br><span class="line">    it may be easiest to use pipx install xyz, which will manage a</span><br><span class="line">    virtual environment for you. Make sure you have pipx installed.</span><br><span class="line"></span><br><span class="line">    See /usr/share/doc/python3.11/README.venv for more information.</span><br><span class="line"></span><br><span class="line">note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.</span><br><span class="line">hint: See PEP 668 for the detailed specification.</span><br><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper#</span><br></pre></td></tr></table></figure>
+
+<p>Just translate it</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper/Desktop# sage --pip install pycrypto</span><br><span class="line">error: externally-managed-environment</span><br><span class="line"></span><br><span class="line">× 该环境由外部管理</span><br><span class="line">╰─&gt; 要在全系统安装 Python 软件包，请尝试使用 apt install</span><br><span class="line">    python3-xyz，其中 xyz 是要安装的软件包。</span><br><span class="line">    安装。</span><br><span class="line"></span><br><span class="line">    如果您想安装非 Debian 打包的 Python 软件包、</span><br><span class="line">    使用 python3 -m venv path/to/venv 创建一个虚拟环境。</span><br><span class="line">    然后使用 path/to/venv/bin/python 和 path/to/venv/bin/pip。确保</span><br><span class="line">    确保安装了 python3-full。</span><br><span class="line"></span><br><span class="line">    如果您想安装非 Debian 打包的 Python 应用程序、</span><br><span class="line">    最简单的方法是使用 pipx install xyz，它会为您管理一个</span><br><span class="line">    虚拟环境。请确保已安装 pipx。</span><br><span class="line"></span><br><span class="line">    更多信息请参见 /usr/share/doc/python3.11/README.venv。</span><br><span class="line"></span><br><span class="line">注意：如果您认为这是一个错误，请联系您的 Python 安装或操作系统发行提供商。您可以通过 --break-system-packages 来覆盖此选项，但可能会破坏您的 Python 安装或操作系统。</span><br><span class="line">提示：详细规范请参见 PEP 668。</span><br></pre></td></tr></table></figure>
+
+<p>I choose ignore it and input <code> sage --pip install pycryptodome --break-system-packages</code></p>
+<p>In this way, we succeed.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper/Desktop# sage --pip install pycryptodome --break-system-packages</span><br><span class="line">Collecting pycryptodome</span><br><span class="line">  Downloading pycryptodome-3.20.0-cp35-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 93.7 kB/s eta 0:00:00</span><br><span class="line">Installing collected packages: pycryptodome</span><br><span class="line">Successfully installed pycryptodome-3.20.0</span><br><span class="line">WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span><br><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper/Desktop# </span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/23/install-crypto-in-sage-of-wsl/" data-id="clwkln5pt0006wgws3n0k8bcu" data-title="install crypto in sage of wsl" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/error-marking/" rel="tag">error_marking</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hexo-usage" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/05/23/hexo-usage/" class="article-date">
@@ -167,7 +410,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/init/" rel="tag">init</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lattice/" rel="tag">Lattice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RSA/" rel="tag">RSA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coppersmith/" rel="tag">coppersmith</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/error-marking/" rel="tag">error_marking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frame-code/" rel="tag">frame code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/init/" rel="tag">init</a></li></ul>
     </div>
   </div>
 
@@ -177,7 +420,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/init/" style="font-size: 10px;">init</a>
+      <a href="/tags/Lattice/" style="font-size: 10px;">Lattice</a> <a href="/tags/RSA/" style="font-size: 10px;">RSA</a> <a href="/tags/coppersmith/" style="font-size: 10px;">coppersmith</a> <a href="/tags/error-marking/" style="font-size: 10px;">error_marking</a> <a href="/tags/frame-code/" style="font-size: 10px;">frame code</a> <a href="/tags/init/" style="font-size: 20px;">init</a>
     </div>
   </div>
 
@@ -199,11 +442,23 @@
       <ul>
         
           <li>
-            <a href="/2024/05/23/hexo-usage/">hexo usage</a>
+            <a href="/2024/05/24/iscc2024-%E9%92%A2%E9%93%81%E4%BE%A0/">iscc2024 钢铁侠</a>
           </li>
         
           <li>
-            <a href="/2024/05/23/hello-hexo/">hello hexo</a>
+            <a href="/2024/05/24/%E9%B9%A4%E5%9F%8E%E6%9D%AF-2021-BabyRSA/">[鹤城杯 2021]BabyRSA</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/24/Lattice-from-deep-to-shallow(unfixed)/">Lattice from deep to shallow</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/23/RSA-partical-attack(unfixed)/">RSA partical attack</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/23/install-crypto-in-sage-of-wsl/">install crypto in sage of wsl</a>
           </li>
         
       </ul>
