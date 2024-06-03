@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Lattice | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Initially, lets just look at a question. 123456789101112131415#[鹤城杯 2021]BabyRSA from Crypto.Util.number import getPrime, bytes_to_longfrom secret import flagp &#x3D; getPrime(1024)q &#x3D; getPrime(1024)n &#x3D; p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lattice">
+<meta property="og:url" content="http://example.com/2024/05/24/Lattice/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Initially, lets just look at a question. 123456789101112131415#[鹤城杯 2021]BabyRSA from Crypto.Util.number import getPrime, bytes_to_longfrom secret import flagp &#x3D; getPrime(1024)q &#x3D; getPrime(1024)n &#x3D; p">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-05-24T00:30:52.000Z">
+<meta property="article:modified_time" content="2024-06-03T01:50:16.433Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="frame code">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Lattice" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/24/Lattice/" class="article-date">
+  <time class="dt-published" datetime="2024-05-24T00:30:52.000Z" itemprop="datePublished">2024-05-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Lattice
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Initially, lets just look at a question.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#[鹤城杯 2021]BabyRSA </span><br><span class="line">from Crypto.Util.number import getPrime, bytes_to_long</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">p = getPrime(1024)</span><br><span class="line">q = getPrime(1024)</span><br><span class="line">n = p * q</span><br><span class="line">e = 65537</span><br><span class="line">hint1 = p &gt;&gt; 724</span><br><span class="line">hint2 = q % (2 ** 265)</span><br><span class="line">ct = pow(bytes_to_long(flag), e, n)</span><br><span class="line">print(hint1)</span><br><span class="line">print(hint2)</span><br><span class="line">print(n)</span><br><span class="line">print(ct)</span><br></pre></td></tr></table></figure>
+
+<p>In this question, we know high bite of p and low bite of q, and asked to find all the bite of p and q</p>
+<p>In the first step, we can access low bite of p by low bite of q, because <code>p*q=n</code></p>
+<p>we get $p_{low}&#x3D;n*q_{low}\ (mod\ 2^{256})$</p>
+<p>This question has convert to how to get p(1024bit) by  high bite of p(1024-724&#x3D;300) and low bite of p(256bit), totally 556 bites</p>
+<hr>
+<p>官方文档：<code>https://doc.sagemath.org/html/en/reference/polynomial_rings/sage/rings/polynomial/polynomial_modn_dense_ntl.html</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = 10001</span><br><span class="line">PR.&lt;x&gt; = PolynomialRing(Zmod(n))#生成一个模n意义下的环</span><br><span class="line">f = x^3 + 10*x^2 + 5000*x - 222 #多项式表达式</span><br><span class="line">f.small_roots() 				#返回多项式的解</span><br></pre></td></tr></table></figure>
+
+<p>返回值为<code>[4]</code>，将<code>x=4</code>带回原式计算得<code>20002</code>，mod n确实等于0</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#[SWPUCTF 2021 新生赛]crypto3</span><br><span class="line">from gmpy2 import *</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line"></span><br><span class="line">flag  = &#x27;******************&#x27;</span><br><span class="line">p = getPrime(512)</span><br><span class="line">q = getPrime(512)</span><br><span class="line">m1 = bytes_to_long(bytes(flag.encode()))</span><br><span class="line">n = p*q</span><br><span class="line"></span><br><span class="line">flag1 = pow(m1,p,n)</span><br><span class="line">flag2 = pow(m1,q,n)</span><br><span class="line">print(&#x27;flag1= &#x27;+str(flag1))</span><br><span class="line">print(&#x27;flag2= &#x27;+str(flag2))</span><br><span class="line">print(&#x27;n= &#x27;+str(n))</span><br><span class="line">#flag1= </span><br><span class="line">#flag2= </span><br><span class="line">#n= </span><br></pre></td></tr></table></figure>
+
+<p>顿悟猜到flag位数是191位，我们知道m的p和q次方分别是c1和c2，使用共膜攻击即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#sage</span><br><span class="line">flag1= </span><br><span class="line">flag2= </span><br><span class="line">n= </span><br><span class="line">PR.&lt;m&gt; = PolynomialRing(Zmod(n))</span><br><span class="line">f = m^2-(flag1+flag2)*m+c1*c2</span><br><span class="line">flag = f.small_roots(X=2^200)</span><br><span class="line">print( flag[0] )</span><br></pre></td></tr></table></figure>
+
+<p>如果没有格，解方程得到的m的两个解分别是c1和c2，</p>
+<p>补充：通过实测得到，如果X&#x3D;的值过大也无法得到结果（400可以，500就不行了）</p>
+<p>参考链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://www.cnblogs.com/mumuhhh/articles/17315349.html</span><br><span class="line">https://doc.sagemath.org/html/en/reference/polynomial_rings/sage/rings/polynomial/polynomial_modn_dense_ntl.html</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/24/Lattice/" data-id="clwyej0680000fsws9ppn1351" data-title="Lattice" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frame-code/" rel="tag">frame code</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/05/24/%E9%B9%A4%E5%9F%8E%E6%9D%AF-2021-BabyRSA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          [鹤城杯 2021]BabyRSA
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/05/23/RSA-partical-attack(unfixed)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">RSA partical attack</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lattice/" rel="tag">Lattice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RSA/" rel="tag">RSA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coppersmith/" rel="tag">coppersmith</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/error-marking/" rel="tag">error_marking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frame-code/" rel="tag">frame code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/init/" rel="tag">init</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Lattice/" style="font-size: 10px;">Lattice</a> <a href="/tags/RSA/" style="font-size: 10px;">RSA</a> <a href="/tags/coppersmith/" style="font-size: 10px;">coppersmith</a> <a href="/tags/error-marking/" style="font-size: 10px;">error_marking</a> <a href="/tags/frame-code/" style="font-size: 10px;">frame code</a> <a href="/tags/init/" style="font-size: 20px;">init</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/06/03/%E6%95%B0%E8%AE%BA%E5%B0%8F%E8%8A%9D%E5%A3%AB/">数论小芝士</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/02/%E5%88%B6%E5%AF%BC%E9%95%96/">制导镖</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/24/iscc2024-%E9%92%A2%E9%93%81%E4%BE%A0/">iscc2024 钢铁侠</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/24/%E9%B9%A4%E5%9F%8E%E6%9D%AF-2021-BabyRSA/">[鹤城杯 2021]BabyRSA</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/24/Lattice/">Lattice</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -4,19 +4,18 @@
   <meta charset="utf-8">
   
   
-  <title>Lattice from deep to shallow | Hexo</title>
+  <title>数论小芝士 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Initially, lets just look at a question. 123456789101112131415#[鹤城杯 2021]BabyRSA from Crypto.Util.number import getPrime, bytes_to_longfrom secret import flagp &#x3D; getPrime(1024)q &#x3D; getPrime(1024)n &#x3D; p">
+  <meta name="description" content="欧拉定理：https:&#x2F;&#x2F;oi-wiki.org&#x2F;math&#x2F;number-theory&#x2F;fermat&#x2F; 123456789101112131415#[LitCTF 2023]Eulerfrom Crypto.Util.number import *from secret import flagm &#x3D; bytes_to_long(flag)p &#x3D; getPrime(512)q &#x3D; getPrime(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lattice from deep to shallow">
-<meta property="og:url" content="http://example.com/2024/05/24/Lattice-from-deep-to-shallow(unfixed)/index.html">
+<meta property="og:title" content="数论小芝士">
+<meta property="og:url" content="http://example.com/2024/06/03/%E6%95%B0%E8%AE%BA%E5%B0%8F%E8%8A%9D%E5%A3%AB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Initially, lets just look at a question. 123456789101112131415#[鹤城杯 2021]BabyRSA from Crypto.Util.number import getPrime, bytes_to_longfrom secret import flagp &#x3D; getPrime(1024)q &#x3D; getPrime(1024)n &#x3D; p">
+<meta property="og:description" content="欧拉定理：https:&#x2F;&#x2F;oi-wiki.org&#x2F;math&#x2F;number-theory&#x2F;fermat&#x2F; 123456789101112131415#[LitCTF 2023]Eulerfrom Crypto.Util.number import *from secret import flagm &#x3D; bytes_to_long(flag)p &#x3D; getPrime(512)q &#x3D; getPrime(">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-24T00:30:52.000Z">
-<meta property="article:modified_time" content="2024-05-24T00:45:43.711Z">
+<meta property="article:published_time" content="2024-06-03T03:08:53.000Z">
+<meta property="article:modified_time" content="2024-06-03T03:12:56.340Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="frame code">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -72,10 +71,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-Lattice-from-deep-to-shallow(unfixed)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-数论小芝士" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/05/24/Lattice-from-deep-to-shallow(unfixed)/" class="article-date">
-  <time class="dt-published" datetime="2024-05-24T00:30:52.000Z" itemprop="datePublished">2024-05-24</time>
+    <a href="/2024/06/03/%E6%95%B0%E8%AE%BA%E5%B0%8F%E8%8A%9D%E5%A3%AB/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T03:08:53.000Z" itemprop="datePublished">2024-06-03</time>
 </a>
     
   </div>
@@ -86,7 +85,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Lattice from deep to shallow
+      数论小芝士
     </h1>
   
 
@@ -94,42 +93,33 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Initially, lets just look at a question.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#[鹤城杯 2021]BabyRSA </span><br><span class="line">from Crypto.Util.number import getPrime, bytes_to_long</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">p = getPrime(1024)</span><br><span class="line">q = getPrime(1024)</span><br><span class="line">n = p * q</span><br><span class="line">e = 65537</span><br><span class="line">hint1 = p &gt;&gt; 724</span><br><span class="line">hint2 = q % (2 ** 265)</span><br><span class="line">ct = pow(bytes_to_long(flag), e, n)</span><br><span class="line">print(hint1)</span><br><span class="line">print(hint2)</span><br><span class="line">print(n)</span><br><span class="line">print(ct)</span><br></pre></td></tr></table></figure>
+        <p><strong>欧拉定理</strong>：<a target="_blank" rel="noopener" href="https://oi-wiki.org/math/number-theory/fermat/">https://oi-wiki.org/math/number-theory/fermat/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#[LitCTF 2023]Euler</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">m = bytes_to_long(flag)</span><br><span class="line">p = getPrime(512)</span><br><span class="line">q = getPrime(512)</span><br><span class="line">n = p*q</span><br><span class="line">c = pow(m,n-p-q+3,n)</span><br><span class="line">print(f&#x27;n = &#123;n&#125;&#x27;)</span><br><span class="line">print(f&#x27;c = &#123;c&#125;&#x27;)</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">n = </span><br><span class="line">c = </span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
 
-<p>In this question, we know high bite of p and low bite of q, and asked to find all the bite of p and q</p>
-<p>In the first step, we can access low bite of p by low bite of q, because <code>p*q=n</code></p>
-<p>we get $p_{low}&#x3D;n*q_{low}\ (mod\ 2^{256})$</p>
-<p>This question has convert to how to get p(1024bit) by  high bite of p(1024-724&#x3D;300) and low bite of p(256bit), totally 556 bites</p>
+<p>$phi &#x3D; n-p-q+1$，故 $c&#x3D;m^{phi+2} mod \ n$ ，由欧拉定理可得 $c^{phi}\equiv 1 \ mod n $</p>
+<p>则  $c\equiv m^{2} mod \ n $</p>
+<p>直接开根即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import gmpy2</span><br><span class="line">from Crypto.Util.number import long_to_bytes</span><br><span class="line">c = </span><br><span class="line">print( long_to_bytes(gmpy2.iroot(c,2)[0]) )</span><br></pre></td></tr></table></figure>
+
+<hr>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/05/24/Lattice-from-deep-to-shallow(unfixed)/" data-id="clwkln5pm0000wgws9bbse5eo" data-title="Lattice from deep to shallow" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/%E6%95%B0%E8%AE%BA%E5%B0%8F%E8%8A%9D%E5%A3%AB/" data-id="clwyej06d0003fswsf4i5fr7r" data-title="数论小芝士" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frame-code/" rel="tag">frame code</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2024/05/24/%E9%B9%A4%E5%9F%8E%E6%9D%AF-2021-BabyRSA/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          [鹤城杯 2021]BabyRSA
-        
-      </div>
-    </a>
   
-  
-    <a href="/2024/05/23/RSA-partical-attack(unfixed)/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/06/02/%E5%88%B6%E5%AF%BC%E9%95%96/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">RSA partical attack</div>
+      <div class="article-nav-title">制导镖</div>
     </a>
   
 </nav>
@@ -168,7 +158,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li></ul>
     </div>
   </div>
 
@@ -181,6 +171,14 @@
       <ul>
         
           <li>
+            <a href="/2024/06/03/%E6%95%B0%E8%AE%BA%E5%B0%8F%E8%8A%9D%E5%A3%AB/">数论小芝士</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/02/%E5%88%B6%E5%AF%BC%E9%95%96/">制导镖</a>
+          </li>
+        
+          <li>
             <a href="/2024/05/24/iscc2024-%E9%92%A2%E9%93%81%E4%BE%A0/">iscc2024 钢铁侠</a>
           </li>
         
@@ -189,15 +187,7 @@
           </li>
         
           <li>
-            <a href="/2024/05/24/Lattice-from-deep-to-shallow(unfixed)/">Lattice from deep to shallow</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/23/RSA-partical-attack(unfixed)/">RSA partical attack</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/23/install-crypto-in-sage-of-wsl/">install crypto in sage of wsl</a>
+            <a href="/2024/05/24/Lattice/">Lattice</a>
           </li>
         
       </ul>
