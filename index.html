@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -138,6 +138,76 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/04/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是一个荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 这是一个荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/08/04/test/" class="post-title-link" itemprop="url">test</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-08-04 12:29:44 / Modified: 12:29:59" itemprop="dateCreated datePublished" datetime="2024-08-04T12:29:44+08:00">2024-08-04</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><span class="math inline">\(a_i\)</span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -191,11 +261,17 @@
     
     <div class="post-body" itemprop="articleBody">
           <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">from gmpy2 import *</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line"></span><br><span class="line">flag  = &#x27;******************&#x27;</span><br><span class="line">p = getPrime(512)</span><br><span class="line">q = getPrime(512)</span><br><span class="line">m1 = bytes_to_long(bytes(flag.encode()))</span><br><span class="line">n = p*q</span><br><span class="line"></span><br><span class="line">flag1 = pow(m1,p,n)</span><br><span class="line">flag2 = pow(m1,q,n)</span><br><span class="line">print(&#x27;flag1= &#x27;+str(flag1))</span><br><span class="line">print(&#x27;flag2= &#x27;+str(flag2))</span><br><span class="line">print(&#x27;n= &#x27;+str(n))</span><br><span class="line"></span><br><span class="line">#flag1= 17893542812755845772427795161304049467610774531005620109503081344099161906017295486868699578946474114607624347167976713200068059018517606363517478396368430072890681401898145302336139240273132723451063402106360810413024642916851746118524166947301681245568333254648265529408446609050354235727237078987509705857</span><br><span class="line">#flag2= 95580409405085606847879727622943874726633827220524165744517624606566789614499137069562997931972825651309707390763700301965277040876322904891716953565845966918293178547100704981251056401939781365264616997055296773593435626490578886752446381493929807909671245959154990639046333135728431707979143972145708806954</span><br><span class="line">#n= 140457323583824160338989317689698102738341061967768153879646505422358544720607476140977064053629005764551339082120337223672330979298373653766782620973454095507484118565884885623328751648660379894592063436924903894986994746394508539721459355200184089470977772075720319482839923856979166319700474349042326898971</span><br></pre></td></tr></table></figure>
-
-<p>遇到这样一道题，<code>p,q=e1,e2</code><br>$$<br>\begin{cases}<br>    m^p &#x3D; h_1\ mod\ n \<br>    m^q &#x3D; h_2\ mod n<br>\end{cases}<br>$$<br>我们考虑构建一个基于 $m^p$ 和 $m^q$ 关系的多项式，但是这样做比较复杂，</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/MikeCoke/article/details/108954072">https://blog.csdn.net/MikeCoke/article/details/108954072</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mumuhhh/articles/17315349.html">https://www.cnblogs.com/mumuhhh/articles/17315349.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42880719/article/details/120581904">https://blog.csdn.net/qq_42880719/article/details/120581904</a></p>
+<p>遇到这样一道题，<code>p,q=e1,e2</code> <span class="math display">\[
+\begin{cases}
+    m^p = h_1\ mod\ n \\
+    m^q = h_2\ mod n
+\end{cases}
+\]</span> 我们考虑构建一个基于 <span class="math inline">\(m^p\)</span>
+和 <span class="math inline">\(m^q\)</span>
+关系的多项式，但是这样做比较复杂，</p>
+<p>https://blog.csdn.net/MikeCoke/article/details/108954072</p>
+<p>https://www.cnblogs.com/mumuhhh/articles/17315349.html</p>
+<p>https://blog.csdn.net/qq_42880719/article/details/120581904</p>
 
       
     </div>
@@ -271,28 +347,32 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><strong>欧拉定理</strong>：<a target="_blank" rel="noopener" href="https://oi-wiki.org/math/number-theory/fermat/">https://oi-wiki.org/math/number-theory/fermat/</a></p>
+          <p><strong>欧拉定理</strong>：https://oi-wiki.org/math/number-theory/fermat/</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#[LitCTF 2023]Euler</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">m = bytes_to_long(flag)</span><br><span class="line">p = getPrime(512)</span><br><span class="line">q = getPrime(512)</span><br><span class="line">n = p*q</span><br><span class="line">c = pow(m,n-p-q+3,n)</span><br><span class="line">print(f&#x27;n = &#123;n&#125;&#x27;)</span><br><span class="line">print(f&#x27;c = &#123;c&#125;&#x27;)</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">n = </span><br><span class="line">c = </span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
-
-<p>$phi &#x3D; n-p-q+1$，故 $c&#x3D;m^{phi+2} mod \ n$ ，由欧拉定理可得 $c^{phi}\equiv 1 \ mod n $</p>
-<p>则  $c\equiv m^{2} mod \ n $</p>
+<p><span class="math inline">\(phi = n-p-q+1\)</span>，故 <span class="math inline">\(c=m^{phi+2} mod \ n\)</span> ，由欧拉定理可得
+$c^{phi}  mod n $</p>
+<p>则 $cm^{2} mod  n $</p>
 <p>直接开根即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import gmpy2</span><br><span class="line">from Crypto.Util.number import long_to_bytes</span><br><span class="line">c = </span><br><span class="line">print( long_to_bytes(gmpy2.iroot(c,2)[0]) )</span><br></pre></td></tr></table></figure>
-
 <hr>
-<p>威尔逊定理：$(p-1)!\equiv -1\ mod\ p$</p>
+<p>威尔逊定理：<span class="math inline">\((p-1)!\equiv -1\ mod\
+p\)</span></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#[长安杯 2021]checkin</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line">from secret import flag</span><br><span class="line">p = getPrime(1024)</span><br><span class="line">q = getPrime(16)</span><br><span class="line">n = p*q</span><br><span class="line">m = bytes_to_long(flag)</span><br><span class="line">for i in range(1,p-q):</span><br><span class="line">    m = m*i%n</span><br><span class="line">e = 1049</span><br><span class="line">print(pow(2,e,n))</span><br><span class="line">print(pow(m,e,n))</span><br><span class="line">#4513855932190587780512692251070948513905472536079140708186519998265613363916408288602023081671609336332823271976169443708346965729874135535872958782973382975364993581165018591335971709648749814573285241290480406050308656233944927823668976933579733318618949138978777831374262042028072274386196484449175052332019377</span><br><span class="line">#3303523331971096467930886326777599963627226774247658707743111351666869650815726173155008595010291772118253071226982001526457616278548388482820628617705073304972902604395335278436888382882457685710065067829657299760804647364231959804889954665450340608878490911738748836150745677968305248021749608323124958372559270</span><br></pre></td></tr></table></figure>
-
 <p>第一步爆破n：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hint1 = </span><br><span class="line">hint2 = </span><br><span class="line">e = 1049</span><br><span class="line">for k in range( 1 , 1000000 ):</span><br><span class="line">    if ( 2**e - hint1 ) % k == 0:</span><br><span class="line">        n = ( 2**e - hint1 ) // k</span><br><span class="line">        print( k , n.bit_length() , n  )</span><br></pre></td></tr></table></figure>
-
-<p>得到 $n$，直接分解得到 $p$ 和 $q$</p>
+<p>得到 <span class="math inline">\(n\)</span>，直接分解得到 <span class="math inline">\(p\)</span> 和 <span class="math inline">\(q\)</span></p>
 <p>第二步：</p>
-<p>已知 $M\equiv m*(p-q-1)\ mod\ n$</p>
-<p>因为 $p\mid n$，所以 $M\equiv m*(p-q-1)\ mod\ p$（放缩）</p>
-<p>得到方程<br>$$<br>\begin{cases}<br>    (p-1)! \equiv -1\ mod\ p\<br>    M\equiv m*(p-q-1)\ mod\ p<br>\end{cases}<br>$$<br>$\therefore m\equiv \dfrac{M*(p-1)!}{(-1)*(p-q-1)!}$</p>
+<p>已知 <span class="math inline">\(M\equiv m*(p-q-1)\ mod\
+n\)</span></p>
+<p>因为 <span class="math inline">\(p\mid n\)</span>，所以 <span class="math inline">\(M\equiv m*(p-q-1)\ mod\ p\)</span>（放缩）</p>
+<p>得到方程 <span class="math display">\[
+\begin{cases}
+    (p-1)! \equiv -1\ mod\ p\\
+    M\equiv m*(p-q-1)\ mod\ p
+\end{cases}
+\]</span> <span class="math inline">\(\therefore m\equiv
+\dfrac{M*(p-1)!}{(-1)*(p-q-1)!}\)</span></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import gmpy2</span><br><span class="line">from Crypto.Util.number import long_to_bytes</span><br><span class="line"></span><br><span class="line">hint2 = 33035...</span><br><span class="line">e = 1049</span><br><span class="line">n = 58237...</span><br><span class="line"></span><br><span class="line">p = 17022...</span><br><span class="line">q = 34211</span><br><span class="line"></span><br><span class="line">phi = (p-1)*(q-1)</span><br><span class="line">assert p*q == n</span><br><span class="line">d = gmpy2.invert( e , phi )</span><br><span class="line">m = pow( hint2 , d , n )</span><br><span class="line">print( m )</span><br><span class="line">m = -1*m</span><br><span class="line">for i in range( p-q , p ):</span><br><span class="line">    m = m * i % p</span><br><span class="line">print( long_to_bytes(m) )</span><br></pre></td></tr></table></figure>
-
 <hr>
 
       
@@ -383,7 +463,7 @@
 <p>大致成本：</p>
 <p>镖身：耗材的价格</p>
 <p>陀螺仪MPU6050：7r</p>
-<p>舵机最普通的*2：5*2&#x3D;10r</p>
+<p>舵机最普通的*2：5*2=10r</p>
 <p>摄像头ov7670：7r</p>
 <p>开发板c6t6：5r</p>
 <p>总成本：50-</p>
@@ -468,20 +548,18 @@
     <div class="post-body" itemprop="articleBody">
           <p>题目给了一张图片和一个文档</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">N = 14333611673783142269533986072221892120042043537656734360856590164188122242725003914350459078347531255332508629469837960098772139271345723909824739672964835254762978904635416440402619070985645389389404927628520300563003721921925991789638218429597072053352316704656855913499811263742752562137683270151792361591681078161140269916896950693743947015425843446590958629225545563635366985228666863861856912727775048741305004192164068930881720463095045582233773945480224557678337152700769274051268380831948998464841302024749660091030851843867128275500525355379659601067910067304244120384025022313676471378733553918638120029697</span><br><span class="line">e = 52595</span><br><span class="line">a=1</span><br><span class="line">[message]iscc</span><br><span class="line">[message]good</span><br></pre></td></tr></table></figure>
-
 <hr>
 <p>图片可以使用 silent eye 工具获取到密文</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C1: 4251903765968182205638908124165687238668595287571695511358978749873732873567860053619635513706860629805773126702224204954306825755589324527464790716772532623787179556779775087369588999862023585439168942061748409955378083217107531514314050827416670183525480868721628196105159997017084027522785400780651513529661262069204074033252051284855308622003846532448135219496999884685163059589703767874228257837954982643722710776540927585288400564462843552764511294609144617545553527647537299951955033541729951576068083284279065679857225030596781834329220650727813085463111501010998877779379864147619708358818420859785907336293</span><br><span class="line">C2: 8652219787553412127601941528212017576098133196802085027604475060672278379988273545329405203612107212771733843136763932156007146129306573507760169626091904302095339258863341911835040303242423006614835350839679118200861479940083644832881720989339738452547780463280352261286061553665126797236780242329554823680909487948300712962538437221930008085724150453712710185732400735474076046701955231528898382329666595016341771130260269344935757268710436239067282393248741660212602429247531170428187411577043376629797117349461201639740465095162144118572609292823960045382400389323999257936694442545038913004649289710891071782719</span><br></pre></td></tr></table></figure>
-
 <p>之后，我们可以通过顿悟编写脚本得到flag</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">import sys</span><br><span class="line"></span><br><span class="line">n = 14333611673783142269533986072221892120042043537656734360856590164188122242725003914350459078347531255332508629469837960098772139271345723909824739672964835254762978904635416440402619070985645389389404927628520300563003721921925991789638218429597072053352316704656855913499811263742752562137683270151792361591681078161140269916896950693743947015425843446590958629225545563635366985228666863861856912727775048741305004192164068930881720463095045582233773945480224557678337152700769274051268380831948998464841302024749660091030851843867128275500525355379659601067910067304244120384025022313676471378733553918638120029697</span><br><span class="line">e = 52595</span><br><span class="line">c1 = 4251903765968182205638908124165687238668595287571695511358978749873732873567860053619635513706860629805773126702224204954306825755589324527464790716772532623787179556779775087369588999862023585439168942061748409955378083217107531514314050827416670183525480868721628196105159997017084027522785400780651513529661262069204074033252051284855308622003846532448135219496999884685163059589703767874228257837954982643722710776540927585288400564462843552764511294609144617545553527647537299951955033541729951576068083284279065679857225030596781834329220650727813085463111501010998877779379864147619708358818420859785907336293</span><br><span class="line">c2 = 8652219787553412127601941528212017576098133196802085027604475060672278379988273545329405203612107212771733843136763932156007146129306573507760169626091904302095339258863341911835040303242423006614835350839679118200861479940083644832881720989339738452547780463280352261286061553665126797236780242329554823680909487948300712962538437221930008085724150453712710185732400735474076046701955231528898382329666595016341771130260269344935757268710436239067282393248741660212602429247531170428187411577043376629797117349461201639740465095162144118572609292823960045382400389323999257936694442545038913004649289710891071782719</span><br><span class="line">m1 = bytes_to_long(&quot;iscc&quot;.encode())</span><br><span class="line">m2 = bytes_to_long(&quot;good&quot;.encode())</span><br><span class="line">P.&lt;x&gt; = PolynomialRing(Zmod(n))</span><br><span class="line"></span><br><span class="line">def HGCD(a, b):</span><br><span class="line">    if 2 * b.degree() &lt;= a.degree() or a.degree() == 1:</span><br><span class="line">        return 1, 0, 0, 1</span><br><span class="line">    m = a.degree() // 2</span><br><span class="line">    a_top, a_bot = a.quo_rem(x^m)</span><br><span class="line">    b_top, b_bot = b.quo_rem(x^m)</span><br><span class="line">    R00, R01, R10, R11 = HGCD(a_top, b_top)</span><br><span class="line">    c = R00 * a + R01 * b</span><br><span class="line">    d = R10 * a + R11 * b</span><br><span class="line">    q, e = c.quo_rem(d)</span><br><span class="line">    d_top, d_bot = d.quo_rem(x^(m // 2))</span><br><span class="line">    e_top, e_bot = e.quo_rem(x^(m // 2))</span><br><span class="line">    S00, S01, S10, S11 = HGCD(d_top, e_top)</span><br><span class="line">    RET00 = S01 * R00 + (S00 - q * S01) * R10</span><br><span class="line">    RET01 = S01 * R01 + (S00 - q * S01) * R11</span><br><span class="line">    RET10 = S11 * R00 + (S10 - q * S11) * R10</span><br><span class="line">    RET11 = S11 * R01 + (S10 - q * S11) * R11</span><br><span class="line">    return RET00, RET01, RET10, RET11</span><br><span class="line">    </span><br><span class="line">def GCD(a, b):</span><br><span class="line">    print(a.degree(), b.degree())</span><br><span class="line">    q, r = a.quo_rem(b)</span><br><span class="line">    if r == 0:</span><br><span class="line">        return b</span><br><span class="line">    R00, R01, R10, R11 = HGCD(a, b)</span><br><span class="line">    c = R00 * a + R01 * b</span><br><span class="line">    d = R10 * a + R11 * b</span><br><span class="line">    if d == 0:</span><br><span class="line">        return c.monic()</span><br><span class="line">    q, r = c.quo_rem(d)</span><br><span class="line">    if r == 0:</span><br><span class="line">        return d</span><br><span class="line">    return GCD(d, r)</span><br><span class="line"></span><br><span class="line">sys.setrecursionlimit(500000)</span><br><span class="line">f = (x + m1)^e - c1</span><br><span class="line">g = (x + m2)^e - c2</span><br><span class="line">res = GCD(f, g)</span><br><span class="line">print(long_to_bytes(int(-res.monic().coefficients()[0])))</span><br></pre></td></tr></table></figure>
-
 <p>reference：</p>
-<p>[网上脚本1][<a target="_blank" rel="noopener" href="https://github.com/rkm0959/rkm0959_implements/blob/main/Half_GCD/code.sage]">https://github.com/rkm0959/rkm0959_implements/blob/main/Half_GCD/code.sage]</a></p>
-<p>[网上脚本2][<a target="_blank" rel="noopener" href="https://github.com/ValarDragon/CTF-Crypto/blob/master/RSA/FranklinReiter.sage]">https://github.com/ValarDragon/CTF-Crypto/blob/master/RSA/FranklinReiter.sage]</a></p>
-<p>[P19.sage Franklin-Reiter攻击脚本][<a target="_blank" rel="noopener" href="https://note.shenghuo2.top/01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P19.Franklin-Reiter%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC/]">https://note.shenghuo2.top/01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P19.Franklin-Reiter%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC/]</a></p>
-<p>[Franklin-Reiter相关消息攻击][<a target="_blank" rel="noopener" href="https://blog.csdn.net/XiongSiqi_blog/article/details/130978226]">https://blog.csdn.net/XiongSiqi_blog/article/details/130978226]</a></p>
-<p>[相关信息攻击-Franklin-Reiter][<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_74345946/article/details/132888197]">https://blog.csdn.net/m0_74345946/article/details/132888197]</a></p>
+<p>[网上脚本1][https://github.com/rkm0959/rkm0959_implements/blob/main/Half_GCD/code.sage]</p>
+<p>[网上脚本2][https://github.com/ValarDragon/CTF-Crypto/blob/master/RSA/FranklinReiter.sage]</p>
+<p>[P19.sage
+Franklin-Reiter攻击脚本][https://note.shenghuo2.top/01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P19.Franklin-Reiter%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC/]</p>
+<p>[Franklin-Reiter相关消息攻击][https://blog.csdn.net/XiongSiqi_blog/article/details/130978226]</p>
+<p>[相关信息攻击-Franklin-Reiter][https://blog.csdn.net/m0_74345946/article/details/132888197]</p>
 
       
     </div>
@@ -553,8 +631,8 @@
     <div class="post-body" itemprop="articleBody">
           <p>题目：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import getPrime, bytes_to_long</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">p = getPrime(1024)</span><br><span class="line">q = getPrime(1024)</span><br><span class="line">n = p * q</span><br><span class="line">e = 65537</span><br><span class="line">hint1 = p &gt;&gt; 724</span><br><span class="line">hint2 = q % (2 ** 265)</span><br><span class="line">ct = pow(bytes_to_long(flag), e, n)</span><br><span class="line">print(hint1)</span><br><span class="line">print(hint2)</span><br><span class="line">print(n)</span><br><span class="line">print(ct)</span><br></pre></td></tr></table></figure>
-
-<p>先通过 $p_{low}&#x3D;n*q_{low}\ (mod\ 2^{256})$ 求得p的前</p>
+<p>先通过 <span class="math inline">\(p_{low}=n*q_{low}\ (mod\
+2^{256})\)</span> 求得p的前</p>
 
       
     </div>
@@ -632,26 +710,26 @@
     <div class="post-body" itemprop="articleBody">
           <p>Initially, lets just look at a question.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#[鹤城杯 2021]BabyRSA </span><br><span class="line">from Crypto.Util.number import getPrime, bytes_to_long</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">p = getPrime(1024)</span><br><span class="line">q = getPrime(1024)</span><br><span class="line">n = p * q</span><br><span class="line">e = 65537</span><br><span class="line">hint1 = p &gt;&gt; 724</span><br><span class="line">hint2 = q % (2 ** 265)</span><br><span class="line">ct = pow(bytes_to_long(flag), e, n)</span><br><span class="line">print(hint1)</span><br><span class="line">print(hint2)</span><br><span class="line">print(n)</span><br><span class="line">print(ct)</span><br></pre></td></tr></table></figure>
-
-<p>In this question, we know high bite of p and low bite of q, and asked to find all the bite of p and q</p>
-<p>In the first step, we can access low bite of p by low bite of q, because <code>p*q=n</code></p>
-<p>we get $p_{low}&#x3D;n*q_{low}\ (mod\ 2^{256})$</p>
-<p>This question has convert to how to get p(1024bit) by  high bite of p(1024-724&#x3D;300) and low bite of p(256bit), totally 556 bites</p>
+<p>In this question, we know high bite of p and low bite of q, and asked
+to find all the bite of p and q</p>
+<p>In the first step, we can access low bite of p by low bite of q,
+because <code>p*q=n</code></p>
+<p>we get <span class="math inline">\(p_{low}=n*q_{low}\ (mod\
+2^{256})\)</span></p>
+<p>This question has convert to how to get p(1024bit) by high bite of
+p(1024-724=300) and low bite of p(256bit), totally 556 bites</p>
 <hr>
 <p>官方文档：<code>https://doc.sagemath.org/html/en/reference/polynomial_rings/sage/rings/polynomial/polynomial_modn_dense_ntl.html</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = 10001</span><br><span class="line">PR.&lt;x&gt; = PolynomialRing(Zmod(n))#生成一个模n意义下的环</span><br><span class="line">f = x^3 + 10*x^2 + 5000*x - 222 #多项式表达式</span><br><span class="line">f.small_roots() 				#返回多项式的解</span><br></pre></td></tr></table></figure>
-
-<p>返回值为<code>[4]</code>，将<code>x=4</code>带回原式计算得<code>20002</code>，mod n确实等于0</p>
+<p>返回值为<code>[4]</code>，将<code>x=4</code>带回原式计算得<code>20002</code>，mod
+n确实等于0</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#[SWPUCTF 2021 新生赛]crypto3</span><br><span class="line">from gmpy2 import *</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line"></span><br><span class="line">flag  = &#x27;******************&#x27;</span><br><span class="line">p = getPrime(512)</span><br><span class="line">q = getPrime(512)</span><br><span class="line">m1 = bytes_to_long(bytes(flag.encode()))</span><br><span class="line">n = p*q</span><br><span class="line"></span><br><span class="line">flag1 = pow(m1,p,n)</span><br><span class="line">flag2 = pow(m1,q,n)</span><br><span class="line">print(&#x27;flag1= &#x27;+str(flag1))</span><br><span class="line">print(&#x27;flag2= &#x27;+str(flag2))</span><br><span class="line">print(&#x27;n= &#x27;+str(n))</span><br><span class="line">#flag1= </span><br><span class="line">#flag2= </span><br><span class="line">#n= </span><br></pre></td></tr></table></figure>
-
 <p>顿悟猜到flag位数是191位，我们知道m的p和q次方分别是c1和c2，使用共膜攻击即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#sage</span><br><span class="line">flag1= </span><br><span class="line">flag2= </span><br><span class="line">n= </span><br><span class="line">PR.&lt;m&gt; = PolynomialRing(Zmod(n))</span><br><span class="line">f = m^2-(flag1+flag2)*m+c1*c2</span><br><span class="line">flag = f.small_roots(X=2^200)</span><br><span class="line">print( flag[0] )</span><br></pre></td></tr></table></figure>
-
 <p>如果没有格，解方程得到的m的两个解分别是c1和c2，</p>
-<p>补充：通过实测得到，如果X&#x3D;的值过大也无法得到结果（400可以，500就不行了）</p>
+<p>补充：通过实测得到，如果X=的值过大也无法得到结果（400可以，500就不行了）</p>
 <p>参考链接：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://www.cnblogs.com/mumuhhh/articles/17315349.html</span><br><span class="line">https://doc.sagemath.org/html/en/reference/polynomial_rings/sage/rings/polynomial/polynomial_modn_dense_ntl.html</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -722,22 +800,18 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>#已知p的高位</p>
-<p>知道p的高位为p的位数的约1&#x2F;2时即可<br>已知e,n爆破 1024的P，至少需要知道前576位二进制，即前144位16进制</p>
+<p>知道p的高位为p的位数的约1/2时即可 已知e,n爆破
+1024的P，至少需要知道前576位二进制，即前144位16进制</p>
 <p>已知前144位，则</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">n=</span><br><span class="line">p4=            #已知P的高位</span><br><span class="line">e=</span><br><span class="line">pbits=          #P原本的位数</span><br><span class="line"></span><br><span class="line">kbits=pbits - p4.nbits()</span><br><span class="line">print p4.nbits()</span><br><span class="line">p4 = p4 &lt;&lt; kbits</span><br><span class="line">PR.&lt;x&gt; = PolynomialRing(Zmod(n))</span><br><span class="line">f = x + p4</span><br><span class="line">roots = f.small_roots(X=2^kbits,beta=0.4)</span><br><span class="line"># 经过以上一些函数处理后，n和p已经被转化为10进制</span><br><span class="line">if roots:</span><br><span class="line">    p= p4 + int(roots([0]))</span><br><span class="line">    print (&quot;n&quot;,n)</span><br><span class="line">    print (&quot;p&quot;,p)</span><br><span class="line">    print (&quot;q&quot;,n/p)</span><br></pre></td></tr></table></figure>
-
 <p>只知道前142位</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">n =</span><br><span class="line">p4 = #已知P的高位,最后面8位二进制，也就是两位十六进制要参与爆破，所以要用00补充</span><br><span class="line">e =</span><br><span class="line">pbits = #P原本的位数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for i in range(0,256):# 要爆破的8位二进制数，为2**8==256，表示0~255</span><br><span class="line">    p4 =</span><br><span class="line">    p4 = p4 + int(hex(i),16)</span><br><span class="line">	kbits=pbits - p4.nbits()</span><br><span class="line">	p4 = p4 &lt;&lt; kbits</span><br><span class="line">	PR.&lt;x&gt; = PolynomialRing(Zmod(n))</span><br><span class="line">	f = x + p4</span><br><span class="line">	roots = f.small_roots(X=2^kbits,beta=0.4)</span><br><span class="line">	# 经过以上一些函数处理后，n和p已经被转化为10进制</span><br><span class="line">if roots:</span><br><span class="line">    p= p4 + int(roots([0]))</span><br><span class="line">    print (&quot;n&quot;,n)</span><br><span class="line">    print (&quot;p&quot;,p)</span><br><span class="line">    print (&quot;q&quot;,n/p)</span><br></pre></td></tr></table></figure>
-
 <p>#已知m高位</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def phase2(high_m, n, c):</span><br><span class="line">    R.&lt;x&gt; = PolynomialRing(Zmod(n), implementation=&#x27;NTL&#x27;)</span><br><span class="line">    m = high_m + x</span><br><span class="line">    M = m((m^3 - c).small_roots()[0])</span><br><span class="line">    print(hex(int(M))[2:])</span><br><span class="line"></span><br><span class="line">n = </span><br><span class="line">c = </span><br><span class="line">high_m = </span><br><span class="line"></span><br><span class="line">phase2(high_m, n, c)</span><br></pre></td></tr></table></figure>
-
 <p>#已知d的低位</p>
-<p>如果知道d的低位，低位约为n的位数的1&#x2F;4就可以恢复d。已知私钥的512位的低位 Partial Key Exposure Attack(部分私钥暴露攻击)</p>
+<p>如果知道d的低位，低位约为n的位数的1/4就可以恢复d。已知私钥的512位的低位
+Partial Key Exposure Attack(部分私钥暴露攻击)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">def partial_p(p0, kbits, n): </span><br><span class="line">    PR.&lt;x&gt; = PolynomialRing(Zmod(n)) </span><br><span class="line">    nbits = n.nbits() </span><br><span class="line">    f = 2^kbits*x + p0 </span><br><span class="line">    f = f.monic() </span><br><span class="line">    roots = f.small_roots(X=2^(nbits//2-kbits), beta=0.3)  # find root &lt; 2^(nbits//2-kbits) with factor &gt;= n^0.3</span><br><span class="line">    if roots:</span><br><span class="line">         x0 = roots[0]</span><br><span class="line">         p = gcd(2^kbits*x0 + p0, n)</span><br><span class="line">         return ZZ(p)</span><br><span class="line"> </span><br><span class="line">def find_p(d0, kbits, e, n): </span><br><span class="line">    X = var(&#x27;X&#x27;) </span><br><span class="line">    for k in range(1, e+1): </span><br><span class="line">        results = solve_mod([e*d0*X - k*X*(n-X+1) + k*n == X], 2^kbits) </span><br><span class="line">        for x in results: </span><br><span class="line">            p0 = ZZ(x[0]) </span><br><span class="line">            p = partial_p(p0, kbits, n) </span><br><span class="line">            if p: </span><br><span class="line">                return p </span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line"> </span><br><span class="line">    n = </span><br><span class="line">    e = </span><br><span class="line">    d = </span><br><span class="line">    </span><br><span class="line">    beta = 0.5</span><br><span class="line">    epsilon = beta^2/7</span><br><span class="line">     </span><br><span class="line">    nbits = n.nbits() </span><br><span class="line">    #print(&quot;nbits:%d:&quot;%(nbits))</span><br><span class="line">    #kbits = floor(nbits*(beta^2+epsilon)) </span><br><span class="line">    kbits = nbits - d.nbits()-1 </span><br><span class="line">    #print(&quot;kbits:%d&quot;%(kbits))</span><br><span class="line">    d0 = d &amp; (2^kbits-1)</span><br><span class="line">    #print(&quot;lower %d bits (of %d bits) is given&quot; % (kbits, nbits))</span><br><span class="line">    p = find_p(d0, kbits, e, n)</span><br><span class="line">    print(&quot;found p: %d&quot; % p)</span><br><span class="line">    q = n//p</span><br><span class="line">    print(d)</span><br><span class="line">    print(inverse_mod(e, (p-1)*(q-1)))</span><br></pre></td></tr></table></figure>
-
-
-
 
       
     </div>
@@ -810,14 +884,12 @@
           <p>When I input <code>sudo -pip install pycryptodome</code></p>
 <p>It output</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper# python3 -m pip install --user pipx</span><br><span class="line">error: externally-managed-environment</span><br><span class="line"></span><br><span class="line">× This environment is externally managed</span><br><span class="line">╰─&gt; To install Python packages system-wide, try apt install</span><br><span class="line">    python3-xyz, where xyz is the package you are trying to</span><br><span class="line">    install.</span><br><span class="line">    </span><br><span class="line">    If you wish to install a non-Debian-packaged Python package,</span><br><span class="line">    create a virtual environment using python3 -m venv path/to/venv.</span><br><span class="line">    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make</span><br><span class="line">    sure you have python3-full installed.</span><br><span class="line">    </span><br><span class="line">    If you wish to install a non-Debian packaged Python application,</span><br><span class="line">    it may be easiest to use pipx install xyz, which will manage a</span><br><span class="line">    virtual environment for you. Make sure you have pipx installed.</span><br><span class="line"></span><br><span class="line">    See /usr/share/doc/python3.11/README.venv for more information.</span><br><span class="line"></span><br><span class="line">note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.</span><br><span class="line">hint: See PEP 668 for the detailed specification.</span><br><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper#</span><br></pre></td></tr></table></figure>
-
 <p>Just translate it</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper/Desktop# sage --pip install pycrypto</span><br><span class="line">error: externally-managed-environment</span><br><span class="line"></span><br><span class="line">× 该环境由外部管理</span><br><span class="line">╰─&gt; 要在全系统安装 Python 软件包，请尝试使用 apt install</span><br><span class="line">    python3-xyz，其中 xyz 是要安装的软件包。</span><br><span class="line">    安装。</span><br><span class="line"></span><br><span class="line">    如果您想安装非 Debian 打包的 Python 软件包、</span><br><span class="line">    使用 python3 -m venv path/to/venv 创建一个虚拟环境。</span><br><span class="line">    然后使用 path/to/venv/bin/python 和 path/to/venv/bin/pip。确保</span><br><span class="line">    确保安装了 python3-full。</span><br><span class="line"></span><br><span class="line">    如果您想安装非 Debian 打包的 Python 应用程序、</span><br><span class="line">    最简单的方法是使用 pipx install xyz，它会为您管理一个</span><br><span class="line">    虚拟环境。请确保已安装 pipx。</span><br><span class="line"></span><br><span class="line">    更多信息请参见 /usr/share/doc/python3.11/README.venv。</span><br><span class="line"></span><br><span class="line">注意：如果您认为这是一个错误，请联系您的 Python 安装或操作系统发行提供商。您可以通过 --break-system-packages 来覆盖此选项，但可能会破坏您的 Python 安装或操作系统。</span><br><span class="line">提示：详细规范请参见 PEP 668。</span><br></pre></td></tr></table></figure>
-
-<p>I choose ignore it and input <code> sage --pip install pycryptodome --break-system-packages</code></p>
+<p>I choose ignore it and input
+<code>sage --pip install pycryptodome --break-system-packages</code></p>
 <p>In this way, we succeed.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper/Desktop# sage --pip install pycryptodome --break-system-packages</span><br><span class="line">Collecting pycryptodome</span><br><span class="line">  Downloading pycryptodome-3.20.0-cp35-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 93.7 kB/s eta 0:00:00</span><br><span class="line">Installing collected packages: pycryptodome</span><br><span class="line">Successfully installed pycryptodome-3.20.0</span><br><span class="line">WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span><br><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper/Desktop# </span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -887,10 +959,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><code>hexo s</code>  #启动并预览</p>
-<p><code>hexo c</code>  #清除缓存文件 db.json 和已生成的静态文件 public </p>
-<p><code>hexo g</code>  #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) </p>
-<p><code>hexo d</code>  #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</p>
+          <p><code>hexo s</code> #启动并预览</p>
+<p><code>hexo c</code> #清除缓存文件 db.json 和已生成的静态文件
+public</p>
+<p><code>hexo g</code> #生成网站静态文件到默认设置的 public 文件夹(hexo
+generate 的缩写)</p>
+<p><code>hexo d</code> #自动生成网站静态文件，并部署到设定的仓库(hexo
+deploy 的缩写)</p>
 
       
     </div>
@@ -909,76 +984,9 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/05/23/hello-hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="这是一个荔枝橙味糕守的菜菜的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 这是一个荔枝橙味糕守的菜菜的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/23/hello-hexo/" class="post-title-link" itemprop="url">hello hexo</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-05-23 14:56:55 / Modified: 15:06:48" itemprop="dateCreated datePublished" datetime="2024-05-23T14:56:55+08:00">2024-05-23</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>This passage is used to check weather it is ok running.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
 </div>
   </main>
