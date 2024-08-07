@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -138,6 +138,79 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/05/24/%E9%B9%A4%E5%9F%8E%E6%9D%AF-2021-BabyRSA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是一只荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 这是一只荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/24/%E9%B9%A4%E5%9F%8E%E6%9D%AF-2021-BabyRSA/" class="post-title-link" itemprop="url">[鹤城杯 2021]BabyRSA</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-05-24 09:56:17 / Modified: 12:19:26" itemprop="dateCreated datePublished" datetime="2024-05-24T09:56:17+08:00">2024-05-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>题目：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import getPrime, bytes_to_long</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">p = getPrime(1024)</span><br><span class="line">q = getPrime(1024)</span><br><span class="line">n = p * q</span><br><span class="line">e = 65537</span><br><span class="line">hint1 = p &gt;&gt; 724</span><br><span class="line">hint2 = q % (2 ** 265)</span><br><span class="line">ct = pow(bytes_to_long(flag), e, n)</span><br><span class="line">print(hint1)</span><br><span class="line">print(hint2)</span><br><span class="line">print(n)</span><br><span class="line">print(ct)</span><br></pre></td></tr></table></figure>
+<p>先通过 <span class="math inline">\(p_{low}=n*q_{low}\ (mod\
+2^{256})\)</span> 求得p的前</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
