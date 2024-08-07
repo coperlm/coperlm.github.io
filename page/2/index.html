@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -138,6 +138,103 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/05/24/Lattice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是一只荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 这是一只荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/24/Lattice/" class="post-title-link" itemprop="url">Lattice</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-05-24 08:30:52" itemprop="dateCreated datePublished" datetime="2024-05-24T08:30:52+08:00">2024-05-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-06-03 09:50:16" itemprop="dateModified" datetime="2024-06-03T09:50:16+08:00">2024-06-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Initially, lets just look at a question.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#[鹤城杯 2021]BabyRSA </span><br><span class="line">from Crypto.Util.number import getPrime, bytes_to_long</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">p = getPrime(1024)</span><br><span class="line">q = getPrime(1024)</span><br><span class="line">n = p * q</span><br><span class="line">e = 65537</span><br><span class="line">hint1 = p &gt;&gt; 724</span><br><span class="line">hint2 = q % (2 ** 265)</span><br><span class="line">ct = pow(bytes_to_long(flag), e, n)</span><br><span class="line">print(hint1)</span><br><span class="line">print(hint2)</span><br><span class="line">print(n)</span><br><span class="line">print(ct)</span><br></pre></td></tr></table></figure>
+<p>In this question, we know high bite of p and low bite of q, and asked
+to find all the bite of p and q</p>
+<p>In the first step, we can access low bite of p by low bite of q,
+because <code>p*q=n</code></p>
+<p>we get <span class="math inline">\(p_{low}=n*q_{low}\ (mod\
+2^{256})\)</span></p>
+<p>This question has convert to how to get p(1024bit) by high bite of
+p(1024-724=300) and low bite of p(256bit), totally 556 bites</p>
+<hr>
+<p>官方文档：<code>https://doc.sagemath.org/html/en/reference/polynomial_rings/sage/rings/polynomial/polynomial_modn_dense_ntl.html</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = 10001</span><br><span class="line">PR.&lt;x&gt; = PolynomialRing(Zmod(n))#生成一个模n意义下的环</span><br><span class="line">f = x^3 + 10*x^2 + 5000*x - 222 #多项式表达式</span><br><span class="line">f.small_roots() 				#返回多项式的解</span><br></pre></td></tr></table></figure>
+<p>返回值为<code>[4]</code>，将<code>x=4</code>带回原式计算得<code>20002</code>，mod
+n确实等于0</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#[SWPUCTF 2021 新生赛]crypto3</span><br><span class="line">from gmpy2 import *</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line"></span><br><span class="line">flag  = &#x27;******************&#x27;</span><br><span class="line">p = getPrime(512)</span><br><span class="line">q = getPrime(512)</span><br><span class="line">m1 = bytes_to_long(bytes(flag.encode()))</span><br><span class="line">n = p*q</span><br><span class="line"></span><br><span class="line">flag1 = pow(m1,p,n)</span><br><span class="line">flag2 = pow(m1,q,n)</span><br><span class="line">print(&#x27;flag1= &#x27;+str(flag1))</span><br><span class="line">print(&#x27;flag2= &#x27;+str(flag2))</span><br><span class="line">print(&#x27;n= &#x27;+str(n))</span><br><span class="line">#flag1= </span><br><span class="line">#flag2= </span><br><span class="line">#n= </span><br></pre></td></tr></table></figure>
+<p>顿悟猜到flag位数是191位，我们知道m的p和q次方分别是c1和c2，使用共膜攻击即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#sage</span><br><span class="line">flag1= </span><br><span class="line">flag2= </span><br><span class="line">n= </span><br><span class="line">PR.&lt;m&gt; = PolynomialRing(Zmod(n))</span><br><span class="line">f = m^2-(flag1+flag2)*m+c1*c2</span><br><span class="line">flag = f.small_roots(X=2^200)</span><br><span class="line">print( flag[0] )</span><br></pre></td></tr></table></figure>
+<p>如果没有格，解方程得到的m的两个解分别是c1和c2，</p>
+<p>补充：通过实测得到，如果X=的值过大也无法得到结果（400可以，500就不行了）</p>
+<p>参考链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://www.cnblogs.com/mumuhhh/articles/17315349.html</span><br><span class="line">https://doc.sagemath.org/html/en/reference/polynomial_rings/sage/rings/polynomial/polynomial_modn_dense_ntl.html</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
