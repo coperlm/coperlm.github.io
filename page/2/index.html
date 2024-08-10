@@ -228,7 +228,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -250,6 +250,109 @@ mjx-container[display="true"] + br {
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/06/02/%E5%88%B6%E5%AF%BC%E9%95%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是一只荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 这是一只荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/06/02/%E5%88%B6%E5%AF%BC%E9%95%96/" class="post-title-link" itemprop="url">制导镖</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-06-02 15:21:53" itemprop="dateCreated datePublished" datetime="2024-06-02T15:21:53+08:00">2024-06-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-06-03 20:05:35" itemprop="dateModified" datetime="2024-06-03T20:05:35+08:00">2024-06-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>发射点到对方前哨站的距离：16m；发射点到对方基地的距离：25m</p>
+<hr>
+<p>三个阶段：</p>
+<p>第一阶段，可以辅助制导，通过少量气瓶等方案实现，在镖架的机械误差较大，散布直径在500mm-1000mm的镖可以制导击中前哨站概率超过20%，散布直径在200mm-500mm的镖可以制导击中前哨站概率超过40%，散布直径200mm以下的听天由命不过也基本上大概率能中</p>
+<p>第二阶段，可以辅助制导，通过舵机等方案实现（和南航较像），对镖架要求进一步降低，可以击中前哨站概率超过60%</p>
+<p>第三阶段，可以制导，通过较大推力实现稳定弹道方案，只要不摔坏就一定能打中</p>
+<hr>
+<p>第一阶段：</p>
+<p>构想：主体沿用旧版传统飞镖，尾部新增安装一个<code>气球</code>，使用3d打印件控制气球大小的上限，主体部分嵌入飞镖内部，通过一个360°舵机控制其出风方向，通过陀螺仪传感器数值进行定点放气</p>
+<p>或者考虑使用舵机等电机进行动量和姿态的改变</p>
+<p>upd：为了保持镖身左右稳定，可以考虑使用两个舵机进行对称控制</p>
+<p>大致成本：</p>
+<p>镖身：耗材的价格</p>
+<p>陀螺仪MPU6050：7r</p>
+<p>舵机最普通的*2：5*2=10r</p>
+<p>摄像头ov7670：7r</p>
+<p>开发板c6t6：5r</p>
+<p>总成本：50-</p>
+<hr>
+<p>第二阶段（南航制导镖）</p>
+<p>大致成本：</p>
+<p>STM32F401CCU6 14.5r</p>
+<p>MPU6050 6.58r</p>
+<p>蓝剑高刷新率微型舵机 39r</p>
+<p>stm32H750视觉处理 40r</p>
+<p>ov7725摄像头 25r</p>
+<p>第三阶段：</p>
+<p>在保证推重比小于1的前提下，飞行至最高点时开启制导模式，使用FPGA和大于0.5g的推力和pid等控制方式</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
