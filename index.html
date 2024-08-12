@@ -228,7 +228,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -250,6 +250,178 @@ mjx-container[display="true"] + br {
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/13/BUUCTF-RE-wp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是一只荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 这是一只荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/08/13/BUUCTF-RE-wp/" class="post-title-link" itemprop="url">BUUCTF RE wp</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-08-13 00:48:42 / Modified: 01:22:12" itemprop="dateCreated datePublished" datetime="2024-08-13T00:48:42+08:00">2024-08-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="easyre">easyre</h2>
+<p>F5一下出</p>
+<p><img src="/2024/08/13/BUUCTF-RE-wp/image-20240813004958292.png"></p>
+<p>直接打开的话，结束之后自动闪退，所以要用cmd</p>
+<p><img src="/2024/08/13/BUUCTF-RE-wp/image-20240813005154655.png"></p>
+<p>flag:<code>flag{this_Is_a_EaSyRe}</code></p>
+<h2 id="reverse1">reverse1</h2>
+<p>shift+F12，然后Ctrl+F搜索关键词<code>flag</code></p>
+<p><img src="/2024/08/13/BUUCTF-RE-wp/image-20240813010913141.png"></p>
+<p>双击进入，ctrl+x查看交叉引用</p>
+<p><img src="/2024/08/13/BUUCTF-RE-wp/image-20240813010954836.png"></p>
+<p>然后点击F5查看源码</p>
+<p><img src="/2024/08/13/BUUCTF-RE-wp/image-20240813011117186.png"></p>
+<p>得到这一段内容，选中数字单击 <code>r</code>
+可以转化为ascll码对应的字母</p>
+<p>可以知道，for循环把str2的 <code>o</code> 替换为 <code>0</code></p>
+<p><img src="/2024/08/13/BUUCTF-RE-wp/image-20240813011246912.png"></p>
+<p>双击 str2 进入，可以看到str2的数值</p>
+<p><img src="/2024/08/13/BUUCTF-RE-wp/image-20240813011339666.png"></p>
+<p>那么flag就是替换之后的</p>
+<p>flag:<code>flag{hell0_w0rld}</code></p>
+<h2 id="reverse2">reverse2</h2>
+<p>IDA打开，一键F5</p>
+<p><img src="/2024/08/13/BUUCTF-RE-wp/image-20240813012032896.png"></p>
+<p>发现是把i和r替换为1</p>
+<p><img src="/2024/08/13/BUUCTF-RE-wp/image-20240813012108890.png"></p>
+<p>双击flag查看内容</p>
+<figure>
+<img src="/2024/08/13/BUUCTF-RE-wp/Users\coper\Desktop\myblog\source_posts\BUUCTF-RE-wp\image-20240813012146130.png" alt="image-20240813012146130">
+<figcaption aria-hidden="true">image-20240813012146130</figcaption>
+</figure>
+<p>发现有一段是<code>hacking_for_fun}</code>，替换即可得到flag</p>
+<p>flag:<code>flag{hack1ng_fo1_fun}</code></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/13/BUUCTF-basic-wp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是一只荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 这是一只荔枝橙味糕守的菜菜的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/08/13/BUUCTF-basic-wp/" class="post-title-link" itemprop="url">BUUCTF basic wp</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-08-13 00:29:47 / Modified: 00:48:11" itemprop="dateCreated datePublished" datetime="2024-08-13T00:29:47+08:00">2024-08-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -608,7 +780,7 @@ Operations to Maximize Score</a></p>
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/10/MoeCTF2024%E7%AC%AC%E4%B8%80%E5%91%A8Crypto%20wp/">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/10/MoeCTF2024%E7%AC%AC%E4%B8%80%E5%91%A8%20wp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -626,7 +798,7 @@ Operations to Maximize Score</a></p>
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/08/10/MoeCTF2024%E7%AC%AC%E4%B8%80%E5%91%A8Crypto%20wp/" class="post-title-link" itemprop="url">MoeCTF2024第一周Crypto wp</a>
+          <a href="/2024/08/10/MoeCTF2024%E7%AC%AC%E4%B8%80%E5%91%A8%20wp/" class="post-title-link" itemprop="url">MoeCTF2024第一周wp</a>
         </h2>
 
         <div class="post-meta-container">
@@ -636,9 +808,15 @@ Operations to Maximize Score</a></p>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-08-10 12:00:00 / Modified: 17:06:04" itemprop="dateCreated datePublished" datetime="2024-08-10T12:00:00+08:00">2024-08-10</time>
+      <time title="Created: 2024-08-10 12:00:00" itemprop="dateCreated datePublished" datetime="2024-08-10T12:00:00+08:00">2024-08-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-08-13 01:37:53" itemprop="dateModified" datetime="2024-08-13T01:37:53+08:00">2024-08-13</time>
     </span>
 
   
@@ -654,7 +832,7 @@ Operations to Maximize Score</a></p>
           Here's something encrypted, password is required to continue reading.
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2024/08/10/MoeCTF2024%E7%AC%AC%E4%B8%80%E5%91%A8Crypto%20wp/#more" rel="contents">
+              <a class="btn" href="/2024/08/10/MoeCTF2024%E7%AC%AC%E4%B8%80%E5%91%A8%20wp/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1134,192 +1312,8 @@ $ans=(C_x<sup>i+C_y</sup>{k-i}) $，即从 <span class="math inline">\(x\)</span
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/05/Codeforces-Round-963-Div-2-%E9%A2%98%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="这是一只荔枝橙味糕守的菜菜的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 这是一只荔枝橙味糕守的菜菜的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/08/05/Codeforces-Round-963-Div-2-%E9%A2%98%E8%A7%A3/" class="post-title-link" itemprop="url">Codeforces Round 963 (Div. 2)题解</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-08-05 08:36:07" itemprop="dateCreated datePublished" datetime="2024-08-05T08:36:07+08:00">2024-08-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-08-11 11:03:15" itemprop="dateModified" datetime="2024-08-11T11:03:15+08:00">2024-08-11</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1993">题目链接</a></p>
-<p>本场比赛应该算是今年我打的第一场算法竞赛，也是NOIP2021结束之后难得发挥出来的比赛。ABC都是比较简单的题，D是<code>二分+dp</code>，比较难想</p>
-<p>E最终还是不会，疑似是一个高级dp</p>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1993/problem/A">A.Question
-Marks</a></p>
-<p>观察样例就能打出来</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">signed main()&#123;</span><br><span class="line">    int t;cin &gt;&gt; t;</span><br><span class="line">    while( t -- )&#123;</span><br><span class="line">        string s;int n;cin &gt;&gt; n;cin &gt;&gt; s;</span><br><span class="line">        int a , b , c , d , e;a = b = c = d = e = 0;</span><br><span class="line">        for(int i = 0;i &lt; s.length();i ++)&#123;</span><br><span class="line">            if( s[i] == &#x27;A&#x27; ) a ++;</span><br><span class="line">            if( s[i] == &#x27;B&#x27; ) b ++;</span><br><span class="line">            if( s[i] == &#x27;C&#x27; ) c ++;</span><br><span class="line">            if( s[i] == &#x27;D&#x27; ) d ++;</span><br><span class="line">            if( s[i] == &#x27;?&#x27; ) e ++;</span><br><span class="line">        &#125;</span><br><span class="line">        a = max( a-n , 0 );</span><br><span class="line">        b = max( b-n , 0 );</span><br><span class="line">        c = max( c-n , 0 );</span><br><span class="line">        d = max( d-n , 0 );</span><br><span class="line">        //cout &lt;&lt; &quot;a: &quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; n*4-a-b-c-d-e &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1993/problem/B">B.Parity and
-Sum</a></p>
-<p>策略是取出最大的奇数，和所有的偶数从小到大进行比较，如果比当前偶数大，那么将最大的奇数+=当前偶数，否则ans需要+1（仅加一次，此时表示当前最大的奇数不如这个偶数大，只需要进行一次最大奇数加上最大偶数的操作（即ans+=1）即可获得可以使任意偶数变为奇数的大数，如果最大的奇数从小到大累加偶数都能比下一个偶数更大则不需要进行这一步操作）</p>
-<p>全奇全偶需要特判</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define int long long</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int t , n , a[200010];</span><br><span class="line"></span><br><span class="line">signed main()&#123;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    while( t -- )&#123;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        int ans = 0;</span><br><span class="line">        int lag_d = 0;</span><br><span class="line">        for(int i = 1;i &lt;= n;i ++)&#123;</span><br><span class="line">            cin &gt;&gt; a[i];</span><br><span class="line">            if( a[i] % 2 == 0 ) ans ++;</span><br><span class="line">            else lag_d = max( a[i] , lag_d );</span><br><span class="line">        &#125;</span><br><span class="line">        sort( a + 1 , a + n + 1 );</span><br><span class="line">        if( ans == n ) ans = 0;</span><br><span class="line">        if( ans )&#123;</span><br><span class="line">            for(int i = 1;i &lt;= n;i ++)&#123;</span><br><span class="line">                if( a[i] % 2 == 0 )&#123;</span><br><span class="line">                    if( a[i] &gt; lag_d )&#123;</span><br><span class="line">                        ans ++;</span><br><span class="line">                        //cout &lt;&lt; &quot;error: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; a[i] &lt;&lt; &quot; &quot; &lt;&lt; lag_d &lt;&lt; endl;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                    else&#123;</span><br><span class="line">                        lag_d += a[i];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1993/problem/C">C.Light
-Switches</a></p>
-<p>首先可以确定，最终答案在[最大值,最大值+k]区间，如果这个区间没有答案，那么输出-1</p>
-<p>k过大，直接扫肯定会超时；所以根据每个<span class="math inline">\(a_i\)</span>计算它相应的区间（宽度为k，但是左右区间不同），然后将<span class="math inline">\(l\)</span>取<span class="math inline">\(max\)</span>，将<span class="math inline">\(r\)</span>取<span class="math inline">\(min\)</span>，如果<span class="math inline">\(l&lt;r\)</span>那么答案就是<span class="math inline">\(l\)</span>，否则没有答案</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define int long long</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int t , n , k , a[200010];</span><br><span class="line"></span><br><span class="line">signed main()&#123;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    while( t -- )&#123;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">        int maxn = 0;</span><br><span class="line">        for(int i = 1;i &lt;= n;i ++)&#123;</span><br><span class="line">            cin &gt;&gt; a[i];</span><br><span class="line">            maxn = max( maxn , a[i] );</span><br><span class="line">        &#125;</span><br><span class="line">        int l , r;l = maxn , r = maxn + k;</span><br><span class="line">        for(int i = 1;i &lt;= n;i ++)&#123;</span><br><span class="line">            int rat = (maxn - a[i]) / k;</span><br><span class="line">            if( rat % 2 ) rat ++;</span><br><span class="line">            l = max( a[i] + rat * k , l );</span><br><span class="line">            r = min( a[i] + rat * k + k , r );</span><br><span class="line">        &#125;</span><br><span class="line">        //cout &lt;&lt; &quot;demo: &quot;&lt;&lt; l &lt;&lt; &quot; &quot; &lt;&lt; r &lt;&lt; endl;</span><br><span class="line">        if( l &gt;= r ) cout &lt;&lt; -1 &lt;&lt; endl;</span><br><span class="line">        else cout &lt;&lt; l &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>以下题目结为赛后补题：</p>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1993/problem/D">D.Med-imize</a></p>
-<p>利用二分中位数，我们可以用 <span class="math inline">\(log(max(a_i))\)</span>
-的代价使中位数由未知变为已知</p>
-<p>观察得到一个结论——最终序列的 <span class="math inline">\(id\)</span>
-总是在 <span class="math inline">\(mod\ k\)</span> 下能填满 <span class="math inline">\([0,n\%k]\)</span>，以此可以选择出最优化的一组解（正好填满
-<span class="math inline">\([0,n\%k]\)</span>
-），即尽量多选大于中位数的选项，如果总共选到大于中位数的数字多余小于的，那么可以判断这组中位数是可以用的</p>
-<p>最终输出最大的中位数即可</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#define int long long</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 5e5;</span><br><span class="line"></span><br><span class="line">int t , n , k , a[N+10];</span><br><span class="line">int dp[N+10] , b[N+10];</span><br><span class="line"></span><br><span class="line">bool checker( int mid )&#123;</span><br><span class="line">    for(int i = 0;i &lt; n;i ++)&#123;</span><br><span class="line">        if( a[i] &gt;= mid )&#123;</span><br><span class="line">            b[i] = 1;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            b[i] = -1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    dp[0] = b[0];</span><br><span class="line">    for(int i = 1;i &lt; n;i ++)&#123;</span><br><span class="line">        if( i % k == 0 )&#123;#这一组的开头，如果前面的或者当前位置下有1就可以是1</span><br><span class="line">            dp[i] = max( dp[i-k] , b[i] );</span><br><span class="line">        &#125;else&#123;#直接选当前的，i不是第一个循环的话，则可以继承上一个循环的（反正是选最大值）</span><br><span class="line">            dp[i] = dp[i-1] + b[i];</span><br><span class="line">            if( i &gt; k )&#123;</span><br><span class="line">                dp[i] = max( dp[i] , dp[i-k] );</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return dp[n-1] &gt; 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">signed main()&#123;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    while( t -- )&#123;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">        for(int i = 0;i &lt; n;i ++)&#123;</span><br><span class="line">            cin &gt;&gt; a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        int l = 1 , r = 1e9;</span><br><span class="line">        while( l &lt;= r )&#123;</span><br><span class="line">            int mid = (l+r)&gt;&gt;1;</span><br><span class="line">            if( checker(mid) )&#123;</span><br><span class="line">                l = mid+1;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                r = mid-1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; r &lt;&lt; endl;</span><br><span class="line">    &#125;   </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/04/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="这是一只荔枝橙味糕守的菜菜的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 这是一只荔枝橙味糕守的菜菜的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/08/04/test/" class="post-title-link" itemprop="url">test</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-08-04 12:29:44" itemprop="dateCreated datePublished" datetime="2024-08-04T12:29:44+08:00">2024-08-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-08-05 08:39:40" itemprop="dateModified" datetime="2024-08-05T08:39:40+08:00">2024-08-05</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>此文章用于latex的测试</p>
-<p><span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="1.937ex" height="1.355ex" role="img" focusable="false" viewbox="0 -441 856 598.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g><g data-mml-node="mi" transform="translate(562,-150) scale(0.707)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g></g></g></g></svg></mjx-container></span></p>
-<p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.016ex;" xmlns="http://www.w3.org/2000/svg" width="13.48ex" height="5.432ex" role="img" focusable="false" viewbox="0 -1509.9 5958 2400.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"/></g><g data-mml-node="mo" transform="translate(550,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(939,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/></g><g data-mml-node="mo" transform="translate(1511,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g><g data-mml-node="mo" transform="translate(2177.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mfrac" transform="translate(3233.6,0)"><g data-mml-node="msup" transform="translate(857.9,676)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/></g><g data-mml-node="mn" transform="translate(605,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/></g><g data-mml-node="mo" transform="translate(794.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(1794.4,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g></g><rect width="2484.4" height="60" x="120" y="220"/></g></g></g></svg></mjx-container></span></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
