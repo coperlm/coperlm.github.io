@@ -23,7 +23,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="[SWPUCTF 2021 新生赛]crypto3 wp">
 <meta property="og:url" content="https://coperlm.github.io/2024/06/20/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-crypto3-wp/index.html">
-<meta property="og:site_name" content="title不知道写点什么好反正这个人的博客涵盖了ctf acm可能还有一点点空气动力学和硬件内容还有其他的然后点击左下角按钮打开目录">
+<meta property="og:site_name" content="素衣莫起风尘叹，犹及清明可到家">
 <meta property="og:description" content="123456789101112131415161718from gmpy2 import *from Crypto.Util.number import *flag  &#x3D; &#x27;******************&#x27;p &#x3D; getPrime(512)q &#x3D; getPrime(512)m1 &#x3D; bytes_to_long(bytes(flag.encode()))n &#x3D; p*qfla">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-20T06:27:37.000Z">
@@ -39,7 +39,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/06/20/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-crypto3-wp/","path":"2024/06/20/SWPUCTF-2021-新生赛-crypto3-wp/","title":"[SWPUCTF 2021 新生赛]crypto3 wp"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[SWPUCTF 2021 新生赛]crypto3 wp | title不知道写点什么好反正这个人的博客涵盖了ctf acm可能还有一点点空气动力学和硬件内容还有其他的然后点击左下角按钮打开目录</title>
+<title>[SWPUCTF 2021 新生赛]crypto3 wp | 素衣莫起风尘叹，犹及清明可到家</title>
   
 
 
@@ -73,7 +73,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">title不知道写点什么好反正这个人的博客涵盖了ctf acm可能还有一点点空气动力学和硬件内容还有其他的然后点击左下角按钮打开目录</p>
+      <p class="site-title">素衣莫起风尘叹，犹及清明可到家</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -120,7 +120,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -160,12 +160,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="title不知道写点什么好反正这个人的博客涵盖了ctf acm可能还有一点点空气动力学和硬件内容还有其他的然后点击左下角按钮打开目录">
+      <meta itemprop="name" content="素衣莫起风尘叹，犹及清明可到家">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[SWPUCTF 2021 新生赛]crypto3 wp | title不知道写点什么好反正这个人的博客涵盖了ctf acm可能还有一点点空气动力学和硬件内容还有其他的然后点击左下角按钮打开目录">
+      <meta itemprop="name" content="[SWPUCTF 2021 新生赛]crypto3 wp | 素衣莫起风尘叹，犹及清明可到家">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -195,15 +195,17 @@
     
     
     <div class="post-body" itemprop="articleBody"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">from gmpy2 import *</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line"></span><br><span class="line">flag  = &#x27;******************&#x27;</span><br><span class="line">p = getPrime(512)</span><br><span class="line">q = getPrime(512)</span><br><span class="line">m1 = bytes_to_long(bytes(flag.encode()))</span><br><span class="line">n = p*q</span><br><span class="line"></span><br><span class="line">flag1 = pow(m1,p,n)</span><br><span class="line">flag2 = pow(m1,q,n)</span><br><span class="line">print(&#x27;flag1= &#x27;+str(flag1))</span><br><span class="line">print(&#x27;flag2= &#x27;+str(flag2))</span><br><span class="line">print(&#x27;n= &#x27;+str(n))</span><br><span class="line"></span><br><span class="line">#flag1= 17893542812755845772427795161304049467610774531005620109503081344099161906017295486868699578946474114607624347167976713200068059018517606363517478396368430072890681401898145302336139240273132723451063402106360810413024642916851746118524166947301681245568333254648265529408446609050354235727237078987509705857</span><br><span class="line">#flag2= 95580409405085606847879727622943874726633827220524165744517624606566789614499137069562997931972825651309707390763700301965277040876322904891716953565845966918293178547100704981251056401939781365264616997055296773593435626490578886752446381493929807909671245959154990639046333135728431707979143972145708806954</span><br><span class="line">#n= 140457323583824160338989317689698102738341061967768153879646505422358544720607476140977064053629005764551339082120337223672330979298373653766782620973454095507484118565884885623328751648660379894592063436924903894986994746394508539721459355200184089470977772075720319482839923856979166319700474349042326898971</span><br></pre></td></tr></table></figure>
-<p>遇到这样一道题，<code>p,q=e1,e2</code></p>
-<script type="math/tex; mode=display">
+<p>遇到这样一道题，<code>p,q=e1,e2</code> <span class="math display">\[
 \begin{cases}
     m^p = h_1\ mod\ n \\
     m^q = h_2\ mod n
-\end{cases}</script><p>我们考虑构建一个基于 $m^p$ 和 $m^q$ 关系的多项式，但是这样做比较复杂，</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/MikeCoke/article/details/108954072">https://blog.csdn.net/MikeCoke/article/details/108954072</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mumuhhh/articles/17315349.html">https://www.cnblogs.com/mumuhhh/articles/17315349.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42880719/article/details/120581904">https://blog.csdn.net/qq_42880719/article/details/120581904</a></p>
+\end{cases}
+\]</span> 我们考虑构建一个基于 <span class="math inline">\(m^p\)</span>
+和 <span class="math inline">\(m^q\)</span>
+关系的多项式，但是这样做比较复杂，</p>
+<p>https://blog.csdn.net/MikeCoke/article/details/108954072</p>
+<p>https://www.cnblogs.com/mumuhhh/articles/17315349.html</p>
+<p>https://blog.csdn.net/qq_42880719/article/details/120581904</p>
 
     </div>
 

