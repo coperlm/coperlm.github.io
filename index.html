@@ -228,7 +228,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1122,89 +1122,6 @@ potential），标量，用于描述无旋流动（即涡度为零的流动）�
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/10/MoeCTF2024%E7%AC%AC%E4%B8%80%E5%91%A8-wp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="素衣莫起风尘叹，犹及清明可到家">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 素衣莫起风尘叹，犹及清明可到家">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/08/10/MoeCTF2024%E7%AC%AC%E4%B8%80%E5%91%A8-wp/" class="post-title-link" itemprop="url">MoeCTF2024第一周 wp</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-08-10 12:00:00" itemprop="dateCreated datePublished" datetime="2024-08-10T12:00:00+08:00">2024-08-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-08-20 22:47:58" itemprop="dateModified" datetime="2024-08-20T22:47:58+08:00">2024-08-20</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          Here's something encrypted, password is required to continue reading.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/08/10/MoeCTF2024%E7%AC%AC%E4%B8%80%E5%91%A8-wp/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/07/Codeforces-Round-964-Div-4-%E9%A2%98%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1306,6 +1223,84 @@ $ans=(C_x<sup>i+C_y</sup>{k-i}) $，即从 <span class="math inline">\(x\)</span
 (hard version)</a></p>
 <p>三分法，写法有很多，七次询问可以确定一个数即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#define int long long</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 2e5 , p = 1e9+7;</span><br><span class="line">int T , t;</span><br><span class="line"></span><br><span class="line">int ef( int l , int r )&#123;</span><br><span class="line">    if( l == r ) return l;</span><br><span class="line">    int mid_l = l+(r-l)/3 , mid_r = l+(r-l)/3*2;</span><br><span class="line">    cout &lt;&lt; &quot;? &quot; &lt;&lt; mid_l &lt;&lt; &quot; &quot; &lt;&lt; mid_r &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; flush;</span><br><span class="line">    int t;</span><br><span class="line">    cin &gt;&gt; t;/*</span><br><span class="line">    int lll = mid_l + ( mid_l&gt;=700?1:0);</span><br><span class="line">    int rrr = mid_r + ( mid_r&gt;=700?1:0);</span><br><span class="line">    t = lll*rrr;*/</span><br><span class="line">    if( t == (mid_l+1)*(mid_r+1) ) return ef( l , mid_l );</span><br><span class="line">    else if( t == (mid_l)*(mid_r+1) ) return ef( mid_l+1 , mid_r );</span><br><span class="line">    else return ef( mid_r+1 , r );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">signed main()&#123;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    while( T -- )&#123;</span><br><span class="line">        int ans = ef( 2 , 999 );</span><br><span class="line">        cout &lt;&lt; &quot;! &quot; &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; flush;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/07/%E8%AE%B0%E5%BD%95hexo-next%E5%9B%BE%E5%BA%8A%E6%97%A0%E6%B3%95%E6%AD%A3%E5%BC%8F%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="素衣莫起风尘叹，犹及清明可到家">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 素衣莫起风尘叹，犹及清明可到家">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/08/07/%E8%AE%B0%E5%BD%95hexo-next%E5%9B%BE%E5%BA%8A%E6%97%A0%E6%B3%95%E6%AD%A3%E5%BC%8F%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">记录hexo+next图床无法正式显示的解决方案</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-08-07 10:26:15 / Modified: 10:40:35" itemprop="dateCreated datePublished" datetime="2024-08-07T10:26:15+08:00">2024-08-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在网上搜遍了教程依旧不行</p>
+<p>先说结论——<code>hexo clean</code>一下就好了</p>
+<p>我现在是博客可以插入图片的人了哈哈哈</p>
+<figure>
+<img src="/2024/08/07/%E8%AE%B0%E5%BD%95hexo-next%E5%9B%BE%E5%BA%8A%E6%97%A0%E6%B3%95%E6%AD%A3%E5%BC%8F%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/摸鱼.gif" alt="摸鱼">
+<figcaption aria-hidden="true">摸鱼</figcaption>
+</figure>
+<hr>
+<p>UPD.时好时坏的，有的文档里可以用相对路径，有的文档里只能用图片名称；我也不知道怎么肥四，归结为玄学问题就好了，反正能跑就行（</p>
 
       
     </div>
