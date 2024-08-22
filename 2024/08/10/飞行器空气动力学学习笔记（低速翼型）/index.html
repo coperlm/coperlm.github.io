@@ -17,13 +17,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="机翼定义：平行于机翼的对称面截得的机翼截面称为翼剖面，通常称为翼型 飞机设计中，在确定了平面形状、机翼形状后，首先要做的工作就是翼型设计。 翼型的气动特性，直接影响到机翼及整个飞行器的气动特性 翼型设计：确定机翼的几何形状  圆头尖尾 用于低速、亚音速和跨音速飞行的飞机机翼，以及低超音速飞行的超音过飞机机翼 尖头尖尾 用于较高超音速飞行的超音速飞机机翼和导弹的弹翼 翼型的几何参">
 <meta property="og:type" content="article">
 <meta property="og:title" content="飞行器空气动力学学习笔记（低速翼型）">
 <meta property="og:url" content="https://coperlm.github.io/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/index.html">
-<meta property="og:site_name" content="素衣莫起风尘叹，犹及清明可到家">
+<meta property="og:site_name" content="素衣莫起风尘叹&lt;br&gt;犹及清明可到家">
 <meta property="og:description" content="机翼定义：平行于机翼的对称面截得的机翼截面称为翼剖面，通常称为翼型 飞机设计中，在确定了平面形状、机翼形状后，首先要做的工作就是翼型设计。 翼型的气动特性，直接影响到机翼及整个飞行器的气动特性 翼型设计：确定机翼的几何形状  圆头尖尾 用于低速、亚音速和跨音速飞行的飞机机翼，以及低超音速飞行的超音过飞机机翼 尖头尖尾 用于较高超音速飞行的超音速飞机机翼和导弹的弹翼 翼型的几何参">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/image-20240810173617803.png">
@@ -78,7 +78,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/","path":"2024/08/10/飞行器空气动力学学习笔记（低速翼型）/","title":"飞行器空气动力学学习笔记（低速翼型）"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>飞行器空气动力学学习笔记（低速翼型） | 素衣莫起风尘叹，犹及清明可到家</title>
+<title>飞行器空气动力学学习笔记（低速翼型） | 素衣莫起风尘叹<br>犹及清明可到家</title>
   
 
 
@@ -227,13 +227,14 @@ mjx-container[display="true"] + br {
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">素衣莫起风尘叹，犹及清明可到家</p>
+      <p class="site-title">素衣莫起风尘叹<br>犹及清明可到家</p>
       <i class="logo-line"></i>
     </a>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -241,12 +242,38 @@ mjx-container[display="true"] + br {
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-contact"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>contact</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-contact"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>Contact</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </header>
         
@@ -279,13 +306,19 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
+          <a href="/tags/">
         <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -319,12 +352,12 @@ mjx-container[display="true"] + br {
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="素衣莫起风尘叹，犹及清明可到家">
+      <meta itemprop="name" content="素衣莫起风尘叹<br>犹及清明可到家">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="飞行器空气动力学学习笔记（低速翼型） | 素衣莫起风尘叹，犹及清明可到家">
+      <meta itemprop="name" content="飞行器空气动力学学习笔记（低速翼型） | 素衣莫起风尘叹<br>犹及清明可到家">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -529,8 +562,10 @@ potential），标量，用于描述无旋流动（即涡度为零的流动）�
     </span>
     <span class="author" itemprop="copyrightHolder">coperlm</span>
   </div>
+<!--
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
+-->
 
     </div>
   </footer>
@@ -556,7 +591,9 @@ potential），标量，用于描述无旋流动（即涡度为零的流动）�
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
 
 
 
