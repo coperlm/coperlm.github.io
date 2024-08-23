@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="gcd(裴蜀定理) 晨跑 https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14503 CRT简化版 只需要用辗转相除法即可 1234567891011121314151617LL gcd( LL a , LL b ){    if( b &#x3D;&#x3D; 0 ){        return a;    }    else{        return gcd( b , a%">
+    <meta name="description" content="gcd(裴蜀定理) 晨跑https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14503 CRT简化版 只需要用辗转相除法即可 1234567891011121314151617LL gcd( LL a , LL b ){    if( b &#x3D;&#x3D; 0 ){        return a;    }    else{        return gcd( b , a%b">
 <meta property="og:type" content="article">
 <meta property="og:title" content="牛客ACM数学题题解">
 <meta property="og:url" content="https://coperlm.github.io/2024/08/22/%E7%89%9B%E5%AE%A2ACM%E6%95%B0%E5%AD%A6%E9%A2%98%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="gcd(裴蜀定理) 晨跑 https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14503 CRT简化版 只需要用辗转相除法即可 1234567891011121314151617LL gcd( LL a , LL b ){    if( b &#x3D;&#x3D; 0 ){        return a;    }    else{        return gcd( b , a%">
+<meta property="og:description" content="gcd(裴蜀定理) 晨跑https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14503 CRT简化版 只需要用辗转相除法即可 1234567891011121314151617LL gcd( LL a , LL b ){    if( b &#x3D;&#x3D; 0 ){        return a;    }    else{        return gcd( b , a%b">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-08-22T05:16:00.000Z">
-<meta property="article:modified_time" content="2024-08-23T02:13:06.015Z">
+<meta property="article:modified_time" content="2024-08-23T02:15:47.461Z">
 <meta property="article:author" content="coperlm">
 <meta property="article:tag" content="算法竞赛">
 <meta name="twitter:card" content="summary">
@@ -255,8 +255,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gcd%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">gcd(裴蜀定理)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%A8%E8%B7%91-httpsac.nowcoder.comacmproblem14503"><span class="nav-number">1.0.1.</span> <span class="nav-text">晨跑
-https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14503</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gcd%E6%9D%A5%E4%BA%86httpsac.nowcoder.comacmproblem15425"><span class="nav-number">1.0.2.</span> <span class="nav-text">gcd来了https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;15425</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E5%B7%A6%E5%8F%B3%E6%89%8Bhttpsac.nowcoder.comacmproblem15490"><span class="nav-number">1.0.3.</span> <span class="nav-text">欧几里得的左右手https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;15490</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E8%A7%92%E4%B8%89%E6%A3%B1%E9%94%A5httpsac.nowcoder.comacmproblem15705"><span class="nav-number">1.0.4.</span> <span class="nav-text">直角三棱锥https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;15705</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gcd%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">gcd(裴蜀定理)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%A8%E8%B7%91httpsac.nowcoder.comacmproblem14503"><span class="nav-number">1.0.1.</span> <span class="nav-text">晨跑https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14503</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gcd%E6%9D%A5%E4%BA%86httpsac.nowcoder.comacmproblem15425"><span class="nav-number">1.0.2.</span> <span class="nav-text">gcd来了https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;15425</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E5%B7%A6%E5%8F%B3%E6%89%8Bhttpsac.nowcoder.comacmproblem15490"><span class="nav-number">1.0.3.</span> <span class="nav-text">欧几里得的左右手https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;15490</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E8%A7%92%E4%B8%89%E6%A3%B1%E9%94%A5httpsac.nowcoder.comacmproblem15705"><span class="nav-number">1.0.4.</span> <span class="nav-text">直角三棱锥https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;15705</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -269,7 +268,7 @@ https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14503</span></a></l
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -346,7 +345,7 @@ https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14503</span></a></l
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-08-23 10:13:06" itemprop="dateModified" datetime="2024-08-23T10:13:06+08:00">2024-08-23</time>
+      <time title="Modified: 2024-08-23 10:15:47" itemprop="dateModified" datetime="2024-08-23T10:15:47+08:00">2024-08-23</time>
     </span>
 
   
@@ -359,8 +358,7 @@ https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14503</span></a></l
     
     
     <div class="post-body" itemprop="articleBody"><h1 id="gcd裴蜀定理">gcd(裴蜀定理)</h1>
-<h3 id="晨跑-httpsac.nowcoder.comacmproblem14503">晨跑
-https://ac.nowcoder.com/acm/problem/14503</h3>
+<h3 id="晨跑httpsac.nowcoder.comacmproblem14503">晨跑https://ac.nowcoder.com/acm/problem/14503</h3>
 <p>CRT简化版</p>
 <p>只需要用辗转相除法即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">LL gcd( LL a , LL b ){</span><br><span class="line">    if( b == 0 ){</span><br><span class="line">        return a;</span><br><span class="line">    }</span><br><span class="line">    else{</span><br><span class="line">        return gcd( b , a%b );</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">LL lcm( LL a , LL b ){</span><br><span class="line">    return a * b / gcd(a,b);</span><br><span class="line">}</span><br><span class="line">void solve(){</span><br><span class="line">    LL a , b , c;</span><br><span class="line">    scanf("%lld %lld %lld",&amp;a,&amp;b,&amp;c);</span><br><span class="line">    printf("%lld\n",lcm(a,lcm(b,c)));</span><br><span class="line">    return ;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
@@ -397,6 +395,9 @@ https://ac.nowcoder.com/acm/problem/14503</h3>
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/08/23/2024%E9%9D%92%E5%B7%A5%E4%BC%9A-%E5%8D%97%E8%88%AA%E9%A3%9E%E9%95%96%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93/" rel="next" title="2024青工会 南航飞镖内容总结">
+                  2024青工会 南航飞镖内容总结 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
