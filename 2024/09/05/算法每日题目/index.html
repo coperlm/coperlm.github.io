@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="动态规划 被3整除的子序列 这里的子串，指的是非连续的字符串 直接往后迭代就可以了 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;#define int long longusing namespace std;const int p &#x3D; 1e9+7;st">
+    <meta name="description" content="动态规划被3整除的子序列 这里的子串，指的是非连续的字符串 直接往后迭代就可以了 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;#define int long longusing namespace std;const int p &#x3D; 1e9+7;string">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法每日题目">
 <meta property="og:url" content="https://coperlm.github.io/2024/09/05/%E7%AE%97%E6%B3%95%E6%AF%8F%E6%97%A5%E9%A2%98%E7%9B%AE/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="动态规划 被3整除的子序列 这里的子串，指的是非连续的字符串 直接往后迭代就可以了 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;#define int long longusing namespace std;const int p &#x3D; 1e9+7;st">
+<meta property="og:description" content="动态规划被3整除的子序列 这里的子串，指的是非连续的字符串 直接往后迭代就可以了 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;#define int long longusing namespace std;const int p &#x3D; 1e9+7;string">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-05T11:44:13.000Z">
 <meta property="article:modified_time" content="2024-09-11T01:27:20.125Z">
@@ -269,7 +269,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -358,8 +358,7 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="动态规划">动态规划</h3>
-<p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/21302">被3整除的子序列</a></p>
+    <div class="post-body" itemprop="articleBody"><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/21302">被3整除的子序列</a></p>
 <p>这里的子串，指的是非连续的字符串</p>
 <p>直接往后迭代就可以了</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#define int long long</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int p = 1e9+7;</span><br><span class="line">string s;</span><br><span class="line">int num[5];</span><br><span class="line">int t[5];</span><br><span class="line"></span><br><span class="line">signed main(){</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    int len = s.length();</span><br><span class="line">    for(auto i:s){</span><br><span class="line">        int ii = signed(i)%3;</span><br><span class="line">        if( ii == 0 ){</span><br><span class="line">            t[0] = num[0];</span><br><span class="line">            t[1] = num[1];</span><br><span class="line">            t[2] = num[2];</span><br><span class="line">        }</span><br><span class="line">        if( ii == 1 ){</span><br><span class="line">            t[0] = num[2];</span><br><span class="line">            t[1] = num[0];</span><br><span class="line">            t[2] = num[1];</span><br><span class="line">        }</span><br><span class="line">        if( ii == 2 ){</span><br><span class="line">            t[0] = num[1];</span><br><span class="line">            t[1] = num[2];</span><br><span class="line">            t[2] = num[0];</span><br><span class="line">        }</span><br><span class="line">        t[ii] ++;</span><br><span class="line">        num[0] += t[0];</span><br><span class="line">        num[1] += t[1];</span><br><span class="line">        num[2] += t[2];</span><br><span class="line">        num[0] %= p;</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; num[0] &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
