@@ -19,30 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="今天看自己的博客，发现有的图片显示正常，有些不正常  有的内容多一层路径，有的图片就正常显示 经过多次对比发现是把\打成&#x2F; 二者在typora中是都可以显示的，但是在生成博客时，如果没有使用反斜就会出错">
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录一次关于hexo+next图片显示部分出错的debug过程">
-<meta property="og:url" content="https://coperlm.github.io/2024/08/20/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Ehexo-next%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%83%A8%E5%88%86%E5%87%BA%E9%94%99%E7%9A%84debug%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:title" content="2024.9.11组会">
+<meta property="og:url" content="https://coperlm.github.io/2024/09/11/2024.9.11%E7%BB%84%E4%BC%9A/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="今天看自己的博客，发现有的图片显示正常，有些不正常  有的内容多一层路径，有的图片就正常显示 经过多次对比发现是把\打成&#x2F; 二者在typora中是都可以显示的，但是在生成博客时，如果没有使用反斜就会出错">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://coperlm.github.io/2024/08/20/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Ehexo-next%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%83%A8%E5%88%86%E5%87%BA%E9%94%99%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240820224255118.png">
-<meta property="article:published_time" content="2024-08-20T14:42:19.000Z">
-<meta property="article:modified_time" content="2024-08-22T14:18:08.515Z">
+<meta property="article:published_time" content="2024-09-11T08:10:35.000Z">
+<meta property="article:modified_time" content="2024-09-11T08:29:43.665Z">
 <meta property="article:author" content="coperlm">
 <meta property="article:tag" content="misc">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://coperlm.github.io/2024/08/20/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Ehexo-next%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%83%A8%E5%88%86%E5%87%BA%E9%94%99%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240820224255118.png">
 
 
-<link rel="canonical" href="https://coperlm.github.io/2024/08/20/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Ehexo-next%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%83%A8%E5%88%86%E5%87%BA%E9%94%99%E7%9A%84debug%E8%BF%87%E7%A8%8B/">
+<link rel="canonical" href="https://coperlm.github.io/2024/09/11/2024.9.11%E7%BB%84%E4%BC%9A/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/08/20/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Ehexo-next%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%83%A8%E5%88%86%E5%87%BA%E9%94%99%E7%9A%84debug%E8%BF%87%E7%A8%8B/","path":"2024/08/20/记录一次关于hexo-next图片显示部分出错的debug过程/","title":"记录一次关于hexo+next图片显示部分出错的debug过程"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/09/11/2024.9.11%E7%BB%84%E4%BC%9A/","path":"2024/09/11/2024.9.11组会/","title":"2024.9.11组会"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>记录一次关于hexo+next图片显示部分出错的debug过程 | coperlm's Blog</title>
+<title>2024.9.11组会 | coperlm's Blog</title>
   
 
 
@@ -310,7 +308,7 @@ mjx-container[display="true"] + br {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/20/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Ehexo-next%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%83%A8%E5%88%86%E5%87%BA%E9%94%99%E7%9A%84debug%E8%BF%87%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/09/11/2024.9.11%E7%BB%84%E4%BC%9A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -323,12 +321,12 @@ mjx-container[display="true"] + br {
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="记录一次关于hexo+next图片显示部分出错的debug过程 | coperlm's Blog">
+      <meta itemprop="name" content="2024.9.11组会 | coperlm's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          记录一次关于hexo+next图片显示部分出错的debug过程
+          2024.9.11组会
         </h1>
 
         <div class="post-meta-container">
@@ -338,15 +336,9 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2024-08-20 22:42:19" itemprop="dateCreated datePublished" datetime="2024-08-20T22:42:19+08:00">2024-08-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-08-22 22:18:08" itemprop="dateModified" datetime="2024-08-22T22:18:08+08:00">2024-08-22</time>
+      <time title="Created: 2024-09-11 16:10:35 / Modified: 16:29:43" itemprop="dateCreated datePublished" datetime="2024-09-11T16:10:35+08:00">2024-09-11</time>
     </span>
 
   
@@ -358,12 +350,18 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>今天看自己的博客，发现有的图片显示正常，有些不正常</p>
-<p><img src="/2024/08/20/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Ehexo-next%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%83%A8%E5%88%86%E5%87%BA%E9%94%99%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240820224255118.png"></p>
-<p>有的内容多一层路径，有的图片就正常显示</p>
-<p>经过多次对比发现是把<code>\</code>打成<code>/</code></p>
-<p>二者在typora中是都可以显示的，但是在生成博客时，如果没有使用反斜就会出错</p>
-
+    <div class="post-body" itemprop="articleBody"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="7c9194fb20896dec535a1b6f398b0eb5890ae364dcb8d37cf65eee2bb34b69c2">7b22b1899bb4d215751e07a80f0d88de1d455c4a0a66e4872c28fa7a70f7854724ba78ad7061cd650a49a80b1902b85b1d095724ece60e364f196f67776d5da818399579380304763e93fbb34946803e2c0455c74bca11d5159f1210dd93dc3422c012b9d374aeee062d48f13659ee4f8cd8de751ae7031404174c067cdf0255a1bdd4e09a623c3253800f4b40ac1b8ba624581fa9bcb564ddcf5f23c66ea98cda92124c7e68037d5697621f4852cbf27f16bf7dc503b00c32ca6bef8a51614d1babe2c62390d11faed362f0eb7a6ba6008471d5fba3ccfd6ee2059585ace084de3624baf9ff2a00ff63f0271e902f065cae36138991de32f5510515a63706906aa0152149cb3de53e3eed0e0d63a0dda5c8c022267a70726c2ab761ec325eb5b8a4ad8780fb678b1c8837274ecc8258f4082fd75b9b4613a4dfe5e480d255e1a7d3b1a49982e8064bd30d72a9291a5a611cc57b2268f79743c46c048cb2f5462a06541bc037d706a49a433a6bb35ed01f4869b4231b22c9b74f281b9a2d7c00aaefae1cac6ae89a6391b7172e1def551334ea04a0d14fe7f2557e01e4e24cebf66ab28be6257990c8f1cb9ff6f40a5cd985b9ecd5aa047bd8d3c87811097820142b5845ffe96c7fc6d6c29b123a9fcc3ef31960fdcd7940b66e1dfceb817b33f856badfcaa2575d698765671a30081807b44a96024947f41ddcdbd4e35afee3b6a1fbfa7c9b9e1d7f0462dd05efb03c75a23426a9c8cc07c11484f4950ef2f06a39e7e84f772a66e866698b42973f8e74dcac74ad1a24dbc9093db39d76669a5a185b565fb740c7577ef73ec7143c2efe9a6fa6aa83c5d73eb071a506e0634d88e013cf173457ed44ea433a0a9fd16bc9c98dc99a499e89e7d2d3dde8d47ea8</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
 
     
@@ -379,14 +377,11 @@ mjx-container[display="true"] + br {
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/08/16/BUUCTF-Web-wp/" rel="prev" title="BUUCTF Web wp">
-                  <i class="fa fa-angle-left"></i> BUUCTF Web wp
+                <a href="/2024/09/11/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/" rel="prev" title="论文精读">
+                  <i class="fa fa-angle-left"></i> 论文精读
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/08/21/MoeCTF2024wp/" rel="next" title="MoeCTF2024wp">
-                  MoeCTF2024wp <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
