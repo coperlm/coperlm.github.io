@@ -19,29 +19,35 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="2024.9.6下午，我开始干啃《Chameleon Hashing and Signature》这篇文章；十分钟之后，感觉头顶冒烟了~ 如果单单阅读 Abstract 和 Introduction 部分，虽然可以快速领会文章的大意，但是其内容对读者的提升同样巨大 故总结了几篇高推荐文章，作为今后论文阅读的指导  论文获取：  询问导师和同门 Google Scholar运用合">
+    <meta name="description" content="之前尝试连接内网，实现任意两点的数据传输和互联网的访问，采取了网线和蓝牙的方式，最终以失败告终 前置知识 win+R ，输入 ncpa.cpl 打开 网络连接 今天新买的wifi接收&#x2F;发射模块到货了，插上试了一下 刚插上会多一个这个图标  打开热点会多一个这个图标   image-20240913194857209  使用第二台设备直接连接，会出现 正在搜索ip 等字样 百">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何阅读paper">
-<meta property="og:url" content="https://coperlm.github.io/2024/09/11/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BBpaper/index.html">
+<meta property="og:title" content="使用wifi发射模块串通网络的debug过程">
+<meta property="og:url" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="2024.9.6下午，我开始干啃《Chameleon Hashing and Signature》这篇文章；十分钟之后，感觉头顶冒烟了~ 如果单单阅读 Abstract 和 Introduction 部分，虽然可以快速领会文章的大意，但是其内容对读者的提升同样巨大 故总结了几篇高推荐文章，作为今后论文阅读的指导  论文获取：  询问导师和同门 Google Scholar运用合">
+<meta property="og:description" content="之前尝试连接内网，实现任意两点的数据传输和互联网的访问，采取了网线和蓝牙的方式，最终以失败告终 前置知识 win+R ，输入 ncpa.cpl 打开 网络连接 今天新买的wifi接收&#x2F;发射模块到货了，插上试了一下 刚插上会多一个这个图标  打开热点会多一个这个图标   image-20240913194857209  使用第二台设备直接连接，会出现 正在搜索ip 等字样 百">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-09-11T01:11:00.000Z">
-<meta property="article:modified_time" content="2024-09-11T01:28:26.871Z">
+<meta property="og:image" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194954282.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194857209.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913200303258.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913201038762.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913201351937.png">
+<meta property="article:published_time" content="2024-09-13T11:45:33.000Z">
+<meta property="article:modified_time" content="2024-09-13T12:18:26.386Z">
 <meta property="article:author" content="coperlm">
 <meta property="article:tag" content="UnFixed">
-<meta property="article:tag" content="Crypto">
+<meta property="article:tag" content="misc">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194954282.png">
 
 
-<link rel="canonical" href="https://coperlm.github.io/2024/09/11/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BBpaper/">
+<link rel="canonical" href="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/09/11/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BBpaper/","path":"2024/09/11/如何阅读paper/","title":"如何阅读paper"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/","path":"2024/09/13/使用wifi发射模块串通网络的debug过程/","title":"使用wifi发射模块串通网络的debug过程"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>如何阅读paper | coperlm's Blog</title>
+<title>使用wifi发射模块串通网络的debug过程 | coperlm's Blog</title>
   
 
 
@@ -309,7 +315,7 @@ mjx-container[display="true"] + br {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/09/11/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BBpaper/">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -322,12 +328,12 @@ mjx-container[display="true"] + br {
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="如何阅读paper | coperlm's Blog">
+      <meta itemprop="name" content="使用wifi发射模块串通网络的debug过程 | coperlm's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          如何阅读paper
+          使用wifi发射模块串通网络的debug过程
         </h1>
 
         <div class="post-meta-container">
@@ -339,7 +345,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-09-11 09:11:00 / Modified: 09:28:26" itemprop="dateCreated datePublished" datetime="2024-09-11T09:11:00+08:00">2024-09-11</time>
+      <time title="Created: 2024-09-13 19:45:33 / Modified: 20:18:26" itemprop="dateCreated datePublished" datetime="2024-09-13T19:45:33+08:00">2024-09-13</time>
     </span>
 
   
@@ -351,103 +357,33 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>2024.9.6下午，我开始干啃《Chameleon Hashing and
-Signature》这篇文章；十分钟之后，感觉头顶冒烟了~</p>
-<p>如果单单阅读 Abstract 和 Introduction
-部分，虽然可以快速领会文章的大意，但是其内容对读者的提升同样巨大</p>
-<p>故总结了几篇高推荐文章，作为今后论文阅读的指导</p>
-<hr>
-<p>论文获取：</p>
-<ul>
-<li>询问导师和同门</li>
-<li>Google
-Scholar运用合适的关键词收集30篇左右论文（高引用量论文优先收集）</li>
-<li>高引论文的参考文献</li>
-</ul>
-<p>论文如何阅读：</p>
-<p>一篇期刊论文，主要分成三个部分。</p>
-<ol type="1">
-<li>Abstract：</li>
-</ol>
-<p>这篇论文的：主要贡献、方法特色与主要内容。</p>
-<p>只看 Abstract 和 Introduction
-判断篇论文的重点和你的研究有没有直接关联，从而决定要不要把它给读完</p>
-<ol start="2" type="1">
-<li>Introduction：</li>
-</ol>
-<p>功能：介绍问题的背景和起源，交代前人在这个题目上已经有过的主要贡献，说清楚前人留下来的问题，以及在这个背景下这篇论文想解决的问题和它的意义。</p>
-<p>对初学的学生而言，从这里可以了解以前研究的概况。先把跟你题目可能相关的论文收集个
-30～40篇，每篇都只读Abstract 和 Introduction，而不要读 Main
-Body（本文），只在必要时稍微参考一下后面的 Illustrative examples和
-Conclusions，直到你能回答下面这四个问题：</p>
-<ul>
-<li>（2A）在这领域内最常被引述的方法有哪些？</li>
-<li>（2B）这些方法可以分成哪些主要派别？</li>
-<li>（2C）每个派别的主要特色（含优点和缺点）是什么？</li>
-<li>（2D）这个领域内大家认为重要的关键问题有哪些？有哪些特性是大家重视的优点？有哪些特性是大家在意的缺点？这些优点与缺点通常在哪些应用场合时会比较被重视？在哪些应用场合时比较不会被重视？</li>
-</ul>
-<p>问题是，你怎么去找到这最初的30～40篇论文？有一种期刊论文叫做review
-paper，专门在一个题目下面整理出所有相关的论文，并且做简单的回顾。你可以在搜寻
-Compendex 时在 keywords
-中加一个review而筛选出这类论文。然后从相关的数篇review paper
-开始，从中根据 title 与 Abstract
-找出你认为跟你研究题目较相关的30～40篇论文。</p>
-<p>通常只要你反复读过该领域内30～40篇论文的Abstract 和
-Introduction，你就应该可以从Introduction的评论中回答（2A）和（2B）这两个问题。尤其要记得，当你阅读的目的是要回答（2A）和（2B）这两个问题时，你一定要先挑那些
-Introduction写得比较有观念的论文念（很多论文的Introduction
-写得像流水帐，没有观念，这种论文刚开始时不要去读它）。假如你读过30～40篇论文的
-Abstract 和 Introduction之后，还是回答不了（2C），先做下述的工作。</p>
-<p>你先根据（2A）的答案，把这领域内最常被引述的论文找齐，再把他们根据（2B）的答案分成派别，每个派别按日期先后次序排好。然后，你每次只重新读一派的
-Abstract 和
-Introduction（必要时简略参考内文，但目的只是读懂Introduction内与这派有关的陈述，而不需要真的看懂所有内文），照日期先后读
-，读的时候只企图回答一个问题：这一派的创意与主要诉求是什么？这样，你逐派逐派地把每一派的Abstract
-和 Introduction 给读完，总结出这一派主要的诉求
-、方法特色和优点（每一篇论文都会说出自己的优点，仔细读就不会漏掉）。</p>
-<p>其次，你再把这些论文拿出来，但是只读Introduction，认真回答下述问题：每篇论文对其它派别有什么批评？然后你把读到的重点逐一记录到各派别的“缺点”栏内。</p>
-<p>通过以上程序，你就应该可以掌握到（2A）、（2B）和（2C）三个问题的答案。这时你对该领域内主要方法、文献之间的关系算是相当熟稔了，但是你还是只仔细读完Abstract
-和 Introduction而已，内文则只是笼统读过。</p>
-<p>这时候，你已经掌握到这领域主要的论文，你可以用这些论文测试看看你用来搜寻这领域论文的
-keywords 到底恰不恰当，并且用修正过的 keywords
-再搜寻一次论文，把这领域的主要文献补齐，也把原来30～40篇论文中后来发现关系较远的论文给筛选掉，只保留大概20篇左右确定跟你关系较近的文献。如果有把握，可以甚至删除一两个你不想用的派别（要有充分的理由），只保留两、三个派别（也要有充分的理由）继续做完以下工作。</p>
-<p>然后你应该利用（2C）的答案，再进一步回答一个问题（2D）：</p>
-<ul>
-<li><strong>这个领域内大家认为重要的关键问题有哪些？</strong></li>
-<li><strong>有哪些特性是大家重视的优点？</strong></li>
-<li><strong>有哪些特性是大家在意的缺点？</strong></li>
-<li><strong>这些优点与缺点通常在哪些应用场合时会比较被重视？</strong></li>
-<li><strong>在哪些应用场合时比较不会被重视？</strong></li>
-</ul>
-<p>然后，你就可以整理出这个领域（研究题目）主要的应用场合，以及这些应用场合上该注意的事项。</p>
-<p>最后，在你真正开始念论文的 main body
-之前，你应该要先根据（2A）和（2C）的答案，把各派别内的论文整理在同一个档案夹里，并照时间先后次序排好。然后依照这些派别与你的研究方向的关系远近，一个派别一个派别地逐一把各派一次念完一派的
-main bodies。</p>
-<ol start="3" type="1">
-<li>Main body（含simulation and/or experimental examples）：</li>
-</ol>
-<p>在你第一次有系统地念某派别的论文 main bodies 时，你只需要念懂：</p>
-<ul>
-<li>（3A）这篇论文的主要假设是什么（在什么条件下它是有效的），并且评估一下这些假设在现实条件下有多容易（或多难）成立。愈难成立的假设，愈不好用，参考价值也愈低。</li>
-<li>（3B）在这些假设下，这篇论文主要有什么好处。</li>
-<li>（3C）这些好处主要表现在哪些公式的哪些项目的简化上。至于整篇论文详细的推导过程，你不需要懂。除了三、五个关键的公式（最后在应用上要使用的公式，你可以从这里评估出这个方法使用上的方便程度或计算效率，以及在非理想情境下这些公式使用起来的可靠度或稳定性）之外，其它公式都不懂也没关系，公式之间的恒等式推导过程可以完全略过去。假如你要看公式，重点是看公式推导过程中引入的假设条件，而不是恒等式的转换。</li>
-<li>（3D）这一派主要的缺点有哪些。</li>
-</ul>
-<p>但是，在你开始根据前述问题念论文之前，你应该先把这派别所有的论文都拿出来，逐篇粗略地浏览过去（不要勉强自己每篇或每行都弄到懂，而是轻松地读，能懂就懂，不懂就不懂），从中挑出容易念懂的
-papers，以及经常被引述的论文。然后把这些论文按照时间先后次序依序念下去。记得：你念的时候只要回答（3A）、（
-3B）、（3C）三个问题就好，不要念太细。</p>
-<p>这样念完以后，你应该把这一派的主要发展过程，主要假设、主要理论依据、以及主要的成果做一个完整的整理。其次，你还要在根据（2D）的答案以及这一派的主要假设，进一步回答下一个问题：（3D）这一派主要的缺点有哪些。最后，根据（
-3A）、（3B）、（3C）、（3D）的答案综合整理出：这一派最适合什么时候使用，最不适合什么场合使用。　　</p>
-<p>当你是生手的时候，你要评估一个方法的优缺点时，往往必须要参考它Examples。但是，要记得：老练的论文写作高手会故意只
-present 成功的案例而遮掩失败的案例。所以，simulation examples and/or
-experiments
-很棒不一定表示这方法真的很好。你必须要回到这个方法的基本假设上去，以及他在应用时所使用的主要公式（resultant
-equations）去，凭自己的思考能力，
-并且参考（2C）和（2D）的答案，自己问问看：当某某假设在某些实用场合上无法成立时，这个方法会不会出什么状况？猜一猜，预测一下这个方法应该会在哪些条件下（应用场合）表现优异，又会在哪些条件下（应用场合）出状况？根据这个猜测再检验一次simulation
-examples and/or experiments，看它的长处与短处是不是确实在这些examples
-中充分被检验，且充分表现出来。</p>
-<p>那么，你什么时候才需要弄懂一篇论文所有的恒等式推导过程，或者把整篇论文细细读完？<strong>NEVER！</strong>你只需要把确定会用到的部分给完全搞懂就好，不确定会不会用到的部分，只需要了解它主要的点子就够了。</p>
-<hr>
-<p>Reference:</p>
-<p><a target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/2019-02-22-5">一文教你如何快速高效阅读Paper（硕士生版）</a></p>
+    <div class="post-body" itemprop="articleBody"><p>之前尝试连接内网，实现任意两点的数据传输和互联网的访问，采取了网线和蓝牙的方式，最终以失败告终</p>
+<p>前置知识 <code>win+R</code> ，输入 <code>ncpa.cpl</code> 打开
+<code>网络连接</code></p>
+<p>今天新买的wifi接收/发射模块到货了，插上试了一下</p>
+<p>刚插上会多一个这个图标</p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194954282.png"></p>
+<p>打开热点会多一个这个图标</p>
+<figure>
+<img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194857209.png" alt="image-20240913194857209">
+<figcaption aria-hidden="true">image-20240913194857209</figcaption>
+</figure>
+<p>使用第二台设备直接连接，会出现 <code>正在搜索ip</code> 等字样</p>
+<p>百度一下，发现需要打开共享</p>
+<p>右键需要共享的网络点击属性</p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913200303258.png"></p>
+<p>点击允许共享，<code>家庭网络连接</code>填写 <strong>发送</strong>
+热点信号的网络（模块）</p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913201038762.png"></p>
+<p><strong>如果没有这个选项</strong>，需要用其他奇技淫巧来解决（别问我怎么知道的）</p>
+<p>咱买的wifi模块，不是也能发射也能接收嘛</p>
+<p>你先别用有线网（以太网）线连接电脑，先开一下手机热点，连上电脑</p>
+<p>然后（我这台电脑）在 <code>WLAN</code> 里就出现了
+<code>本地连接* 11</code> 的选项</p>
+<p>不要断，立即切换到以太网，然后就成功了</p>
+<p>这个是最终的效果</p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913201351937.png"></p>
+<p>重新启动了电脑，可以正常连接（学计算机的不会真的有人关电脑吧（bushi））</p>
 
     </div>
 
@@ -458,21 +394,18 @@ examples and/or experiments，看它的长处与短处是不是确实在这些ex
     <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/UnFixed/" rel="tag"><i class="fa fa-tag"></i>UnFixed</a>
-              <a href="/tags/Crypto/" rel="tag"><i class="fa fa-tag"></i>Crypto</a>
+              <a href="/tags/misc/" rel="tag"><i class="fa fa-tag"></i>misc</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/" rel="prev" title="荔枝橙味拱腰觅马糕守">
-                  <i class="fa fa-angle-left"></i> 荔枝橙味拱腰觅马糕守
+                <a href="/2024/09/11/2024.9.11%E7%BB%84%E4%BC%9A/" rel="prev" title="2024.9.11组会">
+                  <i class="fa fa-angle-left"></i> 2024.9.11组会
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/09/11/%E8%8D%94%E6%9E%9D%E9%98%85%E8%AF%BB%E5%BE%88%E5%A4%9A%E5%8F%98%E8%89%B2%E9%BE%99%E5%93%88%E5%B8%8C/" rel="next" title="荔枝阅读很多变色龙哈希">
-                  荔枝阅读很多变色龙哈希 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>

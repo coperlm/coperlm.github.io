@@ -268,7 +268,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -299,6 +299,102 @@ mjx-container[display="true"] + br {
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/" class="post-title-link" itemprop="url">使用wifi发射模块串通网络的debug过程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-09-13 19:45:33 / Modified: 20:18:26" itemprop="dateCreated datePublished" datetime="2024-09-13T19:45:33+08:00">2024-09-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>之前尝试连接内网，实现任意两点的数据传输和互联网的访问，采取了网线和蓝牙的方式，最终以失败告终</p>
+<p>前置知识 <code>win+R</code> ，输入 <code>ncpa.cpl</code> 打开
+<code>网络连接</code></p>
+<p>今天新买的wifi接收/发射模块到货了，插上试了一下</p>
+<p>刚插上会多一个这个图标</p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194954282.png"></p>
+<p>打开热点会多一个这个图标</p>
+<figure>
+<img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194857209.png" alt="image-20240913194857209">
+<figcaption aria-hidden="true">image-20240913194857209</figcaption>
+</figure>
+<p>使用第二台设备直接连接，会出现 <code>正在搜索ip</code> 等字样</p>
+<p>百度一下，发现需要打开共享</p>
+<p>右键需要共享的网络点击属性</p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913200303258.png"></p>
+<p>点击允许共享，<code>家庭网络连接</code>填写 <strong>发送</strong>
+热点信号的网络（模块）</p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913201038762.png"></p>
+<p><strong>如果没有这个选项</strong>，需要用其他奇技淫巧来解决（别问我怎么知道的）</p>
+<p>咱买的wifi模块，不是也能发射也能接收嘛</p>
+<p>你先别用有线网（以太网）线连接电脑，先开一下手机热点，连上电脑</p>
+<p>然后（我这台电脑）在 <code>WLAN</code> 里就出现了
+<code>本地连接* 11</code> 的选项</p>
+<p>不要断，立即切换到以太网，然后就成功了</p>
+<p>这个是最终的效果</p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913201351937.png"></p>
+<p>重新启动了电脑，可以正常连接（学计算机的不会真的有人关电脑吧（bushi））</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -413,9 +509,15 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-09-11 11:28:19 / Modified: 16:44:08" itemprop="dateCreated datePublished" datetime="2024-09-11T11:28:19+08:00">2024-09-11</time>
+      <time title="Created: 2024-09-11 11:28:19" itemprop="dateCreated datePublished" datetime="2024-09-11T11:28:19+08:00">2024-09-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-09-12 21:10:43" itemprop="dateModified" datetime="2024-09-12T21:10:43+08:00">2024-09-12</time>
     </span>
 
   
@@ -1282,7 +1384,7 @@ examples and/or experiments，看它的长处与短处是不是确实在这些ex
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-09-11 09:10:00 / Modified: 20:08:07" itemprop="dateCreated datePublished" datetime="2024-09-11T09:10:00+08:00">2024-09-11</time>
+      <time title="Created: 2024-09-11 09:10:00 / Modified: 21:11:33" itemprop="dateCreated datePublished" datetime="2024-09-11T09:10:00+08:00">2024-09-11</time>
     </span>
 
   
@@ -1814,6 +1916,7 @@ Hash 的这一特性允许某些场景下的灵活性，同时仍保持数据的
 </ul></li>
 </ul>
 <h3 id="数学基础">数学基础</h3>
+<p>$</p>
 <h3 id="简单问题和困难问题">简单问题和困难问题</h3>
 <h3 id="算法">算法</h3>
 <h3 id="安全模型">安全模型</h3>
@@ -2165,198 +2268,6 @@ Discrete Logarithms.</li>
 <li>对自己的研究有启发（如图片好看可以借鉴，行文逻辑可以借鉴为模板，研究思路需要再琢磨下）</li>
 </ul></li>
 <li>回过头思考和复盘
-<ul>
-<li>这篇文章最大的亮点是什么</li>
-<li>为什么他们可以发刊</li>
-<li>对于我的研究课题/科研思路有何借鉴</li>
-<li>挑挑毛病</li>
-</ul></li>
-</ul></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/09/07/Chameleon%20Hashing%20and%20Signatures%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/09/07/Chameleon%20Hashing%20and%20Signatures%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Chameleon Hashing and Signatures阅读笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-09-07 21:43:00" itemprop="dateCreated datePublished" datetime="2024-09-07T21:43:00+08:00">2024-09-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-09-11 09:13:41" itemprop="dateModified" datetime="2024-09-11T09:13:41+08:00">2024-09-11</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="文献简介">文献简介</h3>
-<p>标题：Chameleon Hash and Signatures</p>
-<p>作者：Hugo Krawczyk , Tal Rabin</p>
-<p>期刊：无</p>
-<p>年份：1998</p>
-<p>重要程度：4</p>
-<h3 id="摘要">摘要</h3>
-<ul>
-<li>引入变色龙签名，提供不可抵赖签名（和常规数字签名一样）</li>
-<li>不允许接收方在未经允许的情况下向第三方披露明文（和不可抵赖签名相关，但是算法简单和高效实现）</li>
-<li>本质上不交互，不涉及零知识证明的设计和复杂性（传统不可抵赖签名基于零知识证明）。哈希函数的产生通过标准的<code>hash then sign</code></li>
-<li>此哈希函数 对签名者是抗碰撞的，但是对于接收者是碰撞可控的</li>
-<li>构造变色龙哈希函数，可以基于很多标准密码学假设（数学困难问题）</li>
-</ul>
-<h3 id="引言">引言</h3>
-<h5 id="背景介绍">背景介绍</h5>
-<ul>
-<li></li>
-</ul>
-<h5 id="研究的目的和意义课题开展的原因">研究的目的和意义（课题开展的原因）</h5>
-<ul>
-<li></li>
-</ul>
-<h5 id="重要结果结论">重要结果/结论</h5>
-<ul>
-<li></li>
-</ul>
-<h3 id="研究内容">研究内容</h3>
-<h5 id="作者新发现">作者新发现</h5>
-<ul>
-<li></li>
-</ul>
-<h5 id="作者研究对象">作者研究对象</h5>
-<ul>
-<li></li>
-</ul>
-<h3 id="研究意义">研究意义</h3>
-<h5 id="理论价值">理论价值</h5>
-<ul>
-<li></li>
-</ul>
-<h5 id="应用价值">应用价值</h5>
-<ul>
-<li></li>
-</ul>
-<h5 id="能解决的难题">能解决的难题</h5>
-<ul>
-<li></li>
-</ul>
-<h3 id="研究方法">研究方法</h3>
-<h5 id="作者使用的方法">作者使用的方法</h5>
-<ul>
-<li></li>
-</ul>
-<h5 id="有没有更好的方法">有没有更好的方法</h5>
-<ul>
-<li></li>
-</ul>
-<h5 id="哪些是我还需要学习的">哪些是我还需要学习的</h5>
-<ul>
-<li></li>
-</ul>
-<h3 id="思考">思考</h3>
-<h5 id="对我的课题有什么启发">对我的课题有什么启发</h5>
-<ul>
-<li></li>
-</ul>
-<h5 id="作者是怎样做到比前人好的">作者是怎样做到比前人好的</h5>
-<ul>
-<li></li>
-</ul>
-<h5 id="能否想到其他方法能达到和作者一样或更好的的效果">能否想到其他方法能达到和作者一样或更好的的效果</h5>
-<ul>
-<li></li>
-</ul>
-<h3 id="总结思维导图">总结（思维导图）</h3>
-<p>文章关键词/年份/期刊</p>
-<ul>
-<li>标题Title
-<ul>
-<li>网络连接</li>
-</ul></li>
-<li>背景Background
-<ul>
-<li>What's known</li>
-<li>What's news
-<ul>
-<li>虽然之前研究证明了......，但是......还没被研究过/存在争议</li>
-</ul></li>
-<li>What's are the implication</li>
-</ul></li>
-<li>实验方法Methods</li>
-<li>实验结果Results
-<ul>
-<li>逻辑重点：这一部分为了验证什么假设——研究结果</li>
-<li></li>
-</ul></li>
-<li>启示Inspirations
-<ul>
-<li><p>边读 边思考 边补充</p>
-<ul>
-<li><p>“不允许接收方在未经允许的情况下向第三方披露明文”，其中disclose指的是“披露并证明”</p>
-<p>接收方即便知道消息和相应的哈希值，他们依然无法向第三方证明或验证消息，因为他们没有生成碰撞的能力。这意味着接收方无法凭借手中的消息和哈希值向第三方揭露原始消息的真伪。</p>
-<p>更进一步，如果接收方试图向第三方泄露消息和哈希值，生成者可以在拥有私钥的情况下创建一个新的碰撞消息，使得第三方无法确定哪个消息是真实的。因此，即使接收方试图透露明文，也会被生成者的碰撞消息所混淆，从而使明文的真实性存疑。</p></li>
-<li><p>读的时候不懂的需要请教他人先记下来</p></li>
-<li><p>对自己的论文选题头脑风暴</p></li>
-<li><p>对自己的研究有启发（如图片好看可以借鉴，行文逻辑可以借鉴为模板，研究思路需要再琢磨下）</p></li>
-</ul></li>
-<li><p>回过头思考和复盘</p>
 <ul>
 <li>这篇文章最大的亮点是什么</li>
 <li>为什么他们可以发刊</li>
