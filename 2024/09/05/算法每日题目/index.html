@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="被3整除的子序列 tag: 动态规划 这里的子串，指的是非连续的字符串 直接往后迭代就可以了 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;#define int long longusing namespace std;const int p &#x3D; 1e9+7;s">
+    <meta name="description" content="被3整除的子序列 tag: 动态规划 这里的子串，指的是非连续的字符串 直接往后迭代就可以了 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;#define int long longusing namespace std;const int p &#x3D; 1e9">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法每日题目">
 <meta property="og:url" content="https://coperlm.github.io/2024/09/05/%E7%AE%97%E6%B3%95%E6%AF%8F%E6%97%A5%E9%A2%98%E7%9B%AE/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="被3整除的子序列 tag: 动态规划 这里的子串，指的是非连续的字符串 直接往后迭代就可以了 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;#define int long longusing namespace std;const int p &#x3D; 1e9+7;s">
+<meta property="og:description" content="被3整除的子序列 tag: 动态规划 这里的子串，指的是非连续的字符串 直接往后迭代就可以了 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;#define int long longusing namespace std;const int p &#x3D; 1e9">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-05T11:44:13.000Z">
 <meta property="article:modified_time" content="2024-09-13T14:23:14.855Z">
@@ -365,9 +365,12 @@ mjx-container[display="true"] + br {
 <hr>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/SP10620">KNJIGE</a></p>
 <p>tag: 贪心</p>
-<p>考虑序列 <code>3 2 1</code>，先把 <code>2</code> 移到顶部，然后把 <code>1</code> 移到顶部</p>
-<p>然后将问题变复杂，考虑序列 <code>4 2 3 1</code>，需要将 <code>2 3 1</code> 按照一定的顺序移动到顶部</p>
-<p>再复杂化问题，考虑序列 <code>5 6 2 3 4 1</code>，这个问题的答案是 <code>4</code></p>
+<p>考虑序列 <code>3 2 1</code>，先把 <code>2</code> 移到顶部，然后把
+<code>1</code> 移到顶部</p>
+<p>然后将问题变复杂，考虑序列 <code>4 2 3 1</code>，需要将
+<code>2 3 1</code> 按照一定的顺序移动到顶部</p>
+<p>再复杂化问题，考虑序列 <code>5 6 2 3 4 1</code>，这个问题的答案是
+<code>4</code></p>
 <p>容易观察出结论，从第一位开始，记单调递增的数列；如果不递增，则后方的序列<strong>按照一定的顺序依次</strong>前移，具体怎么前移不用管，只需知道每本书都只需要被抽出一次就可以了，这时<code>break</code></p>
 <p>代码如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int n;</span><br><span class="line">vector&lt;int&gt; a;</span><br><span class="line"></span><br><span class="line">signed main(){</span><br><span class="line">    ios::sync_with_stdio(false);</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    a.push_back(0);</span><br><span class="line">    for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">        int t;cin &gt;&gt; t;</span><br><span class="line">        a.push_back(t);</span><br><span class="line">    }</span><br><span class="line">    int ans = 0;</span><br><span class="line">    for(int i = 2;i &lt;= n;i ++){</span><br><span class="line">        if( a[i-1] == a[i]-1 ) ans ++;</span><br><span class="line">        else break;</span><br><span class="line">    }</span><br><span class="line">    if( ans ) ans ++;</span><br><span class="line">    cout &lt;&lt; n-ans &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
