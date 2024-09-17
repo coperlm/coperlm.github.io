@@ -268,7 +268,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -299,6 +299,97 @@ mjx-container[display="true"] + br {
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">数位板+onenote铅笔橡皮快速切换的实现方式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-08-06 20:49:04" itemprop="dateCreated datePublished" datetime="2024-08-06T20:49:04+08:00">2024-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-08-22 19:12:16" itemprop="dateModified" datetime="2024-08-22T19:12:16+08:00">2024-08-22</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>配置：高漫1060pro + windows11 + onenote(office最新版)</p>
+<p>众所周知onenote最新版取消了<code>笔收藏夹</code>这一选项，导致选择画笔很不方便，一般情况下无法使画笔和橡皮快速切换，在一番探索下得到了以下方案</p>
+<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/聊天记录.jpg"></p>
+<p>笔者之前使用c++做过控制键鼠点击等程序，但是黑窗口弹出需要一定时间很不方便，在和朋友交流下得到了知道了有一个叫<code>AutoHotkey</code>的编程语言，专门用来进行这样的操作</p>
+<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片1.png"></p>
+<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片2.png"></p>
+<p>由上图可以知道切换画笔的操作是<code>Alt+D+G+键盘右键*多次+键盘左键（切回黑色画笔）+Enter</code></p>
+<p>这样就可以编写<code>ahk</code>脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Send &#123;Alt Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Alt Up&#125;</span><br><span class="line">Send &#123;D Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;D Up&#125;</span><br><span class="line">Send &#123;G Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;G Up&#125;</span><br><span class="line">Send &#123;Right Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Right Up&#125;</span><br><span class="line">Send &#123;Right Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Right Up&#125;</span><br><span class="line">Send &#123;Right Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Right Up&#125;</span><br><span class="line">Send &#123;Left Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Left Up&#125;</span><br><span class="line">Send &#123;Enter Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Enter Up&#125;</span><br><span class="line"></span><br><span class="line">;Click, 440, 180 ;也可以直接让鼠标点击固定坐标</span><br><span class="line"></span><br><span class="line">return</span><br></pre></td></tr></table></figure>
+<p>具体延迟和操作可以自行更改</p>
+<p>然后放入路径（前提是数位板支持）就可以了</p>
+<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片3.png"></p>
+<p>UPD.后来我发现切换功能里的这个可以一键切换···</p>
+<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片4.png"></p>
+<p>不过无论如何是可以用了</p>
+<p>不支持运行程序和切换功能的数位板，估计不能一键切换了</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1199,90 +1290,8 @@ Partial Key Exposure Attack(部分私钥暴露攻击)</p>
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/05/23/hexo-usage/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/23/hexo-usage/" class="post-title-link" itemprop="url">hexo usage</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-05-23 15:16:28" itemprop="dateCreated datePublished" datetime="2024-05-23T15:16:28+08:00">2024-05-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-08-22 19:06:49" itemprop="dateModified" datetime="2024-08-22T19:06:49+08:00">2024-08-22</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><code>hexo s</code> #启动并预览</p>
-<p><code>hexo c</code> #清除缓存文件 db.json 和已生成的静态文件
-public</p>
-<p><code>hexo g</code> #生成网站静态文件到默认设置的 public 文件夹(hexo
-generate 的缩写)</p>
-<p><code>hexo d</code> #自动生成网站静态文件，并部署到设定的仓库(hexo
-deploy 的缩写)</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
