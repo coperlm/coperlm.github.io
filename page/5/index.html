@@ -156,7 +156,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -187,6 +187,94 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/05/23/RSA-partical-attack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/23/RSA-partical-attack/" class="post-title-link" itemprop="url">RSA partical attack</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-05-23 20:40:45" itemprop="dateCreated datePublished" datetime="2024-05-23T20:40:45+08:00">2024-05-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-09-13 21:15:33" itemprop="dateModified" datetime="2024-09-13T21:15:33+08:00">2024-09-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>#已知p的高位</p>
+<p>知道p的高位为p的位数的约1/2时即可 已知e,n爆破
+1024的P，至少需要知道前576位二进制，即前144位16进制</p>
+<p>已知前144位，则</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">n=</span><br><span class="line">p4=            #已知P的高位</span><br><span class="line">e=</span><br><span class="line">pbits=          #P原本的位数</span><br><span class="line"></span><br><span class="line">kbits=pbits - p4.nbits()</span><br><span class="line">print p4.nbits()</span><br><span class="line">p4 = p4 &lt;&lt; kbits</span><br><span class="line">PR.&lt;x&gt; = PolynomialRing(Zmod(n))</span><br><span class="line">f = x + p4</span><br><span class="line">roots = f.small_roots(X=2^kbits,beta=0.4)</span><br><span class="line"># 经过以上一些函数处理后，n和p已经被转化为10进制</span><br><span class="line">if roots:</span><br><span class="line">    p= p4 + int(roots([0]))</span><br><span class="line">    print (&quot;n&quot;,n)</span><br><span class="line">    print (&quot;p&quot;,p)</span><br><span class="line">    print (&quot;q&quot;,n/p)</span><br></pre></td></tr></table></figure>
+<p>只知道前142位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">n =</span><br><span class="line">p4 = #已知P的高位,最后面8位二进制，也就是两位十六进制要参与爆破，所以要用00补充</span><br><span class="line">e =</span><br><span class="line">pbits = #P原本的位数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for i in range(0,256):# 要爆破的8位二进制数，为2**8==256，表示0~255</span><br><span class="line">    p4 =</span><br><span class="line">    p4 = p4 + int(hex(i),16)</span><br><span class="line">	kbits=pbits - p4.nbits()</span><br><span class="line">	p4 = p4 &lt;&lt; kbits</span><br><span class="line">	PR.&lt;x&gt; = PolynomialRing(Zmod(n))</span><br><span class="line">	f = x + p4</span><br><span class="line">	roots = f.small_roots(X=2^kbits,beta=0.4)</span><br><span class="line">	# 经过以上一些函数处理后，n和p已经被转化为10进制</span><br><span class="line">if roots:</span><br><span class="line">    p= p4 + int(roots([0]))</span><br><span class="line">    print (&quot;n&quot;,n)</span><br><span class="line">    print (&quot;p&quot;,p)</span><br><span class="line">    print (&quot;q&quot;,n/p)</span><br></pre></td></tr></table></figure>
+<p>#已知m高位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def phase2(high_m, n, c):</span><br><span class="line">    R.&lt;x&gt; = PolynomialRing(Zmod(n), implementation=&#x27;NTL&#x27;)</span><br><span class="line">    m = high_m + x</span><br><span class="line">    M = m((m^3 - c).small_roots()[0])</span><br><span class="line">    print(hex(int(M))[2:])</span><br><span class="line"></span><br><span class="line">n = </span><br><span class="line">c = </span><br><span class="line">high_m = </span><br><span class="line"></span><br><span class="line">phase2(high_m, n, c)</span><br></pre></td></tr></table></figure>
+<p>#已知d的低位</p>
+<p>如果知道d的低位，低位约为n的位数的1/4就可以恢复d。已知私钥的512位的低位
+Partial Key Exposure Attack(部分私钥暴露攻击)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">def partial_p(p0, kbits, n): </span><br><span class="line">    PR.&lt;x&gt; = PolynomialRing(Zmod(n)) </span><br><span class="line">    nbits = n.nbits() </span><br><span class="line">    f = 2^kbits*x + p0 </span><br><span class="line">    f = f.monic() </span><br><span class="line">    roots = f.small_roots(X=2^(nbits//2-kbits), beta=0.3)  # find root &lt; 2^(nbits//2-kbits) with factor &gt;= n^0.3</span><br><span class="line">    if roots:</span><br><span class="line">         x0 = roots[0]</span><br><span class="line">         p = gcd(2^kbits*x0 + p0, n)</span><br><span class="line">         return ZZ(p)</span><br><span class="line"> </span><br><span class="line">def find_p(d0, kbits, e, n): </span><br><span class="line">    X = var(&#x27;X&#x27;) </span><br><span class="line">    for k in range(1, e+1): </span><br><span class="line">        results = solve_mod([e*d0*X - k*X*(n-X+1) + k*n == X], 2^kbits) </span><br><span class="line">        for x in results: </span><br><span class="line">            p0 = ZZ(x[0]) </span><br><span class="line">            p = partial_p(p0, kbits, n) </span><br><span class="line">            if p: </span><br><span class="line">                return p </span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line"> </span><br><span class="line">    n = </span><br><span class="line">    e = </span><br><span class="line">    d = </span><br><span class="line">    </span><br><span class="line">    beta = 0.5</span><br><span class="line">    epsilon = beta^2/7</span><br><span class="line">     </span><br><span class="line">    nbits = n.nbits() </span><br><span class="line">    #print(&quot;nbits:%d:&quot;%(nbits))</span><br><span class="line">    #kbits = floor(nbits*(beta^2+epsilon)) </span><br><span class="line">    kbits = nbits - d.nbits()-1 </span><br><span class="line">    #print(&quot;kbits:%d&quot;%(kbits))</span><br><span class="line">    d0 = d &amp; (2^kbits-1)</span><br><span class="line">    #print(&quot;lower %d bits (of %d bits) is given&quot; % (kbits, nbits))</span><br><span class="line">    p = find_p(d0, kbits, e, n)</span><br><span class="line">    print(&quot;found p: %d&quot; % p)</span><br><span class="line">    q = n//p</span><br><span class="line">    print(d)</span><br><span class="line">    print(inverse_mod(e, (p-1)*(q-1)))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
