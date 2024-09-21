@@ -19,19 +19,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获  Introduction  归纳总结了构造可证明安全的公钥密码方案所需掌握的知识要点  基本概念 数学基础">
+    <meta name="description" content="本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获">
 <meta property="og:type" content="article">
 <meta property="og:title" content="荔枝橙味拱腰觅马糕守">
 <meta property="og:url" content="https://coperlm.github.io/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获  Introduction  归纳总结了构造可证明安全的公钥密码方案所需掌握的知识要点  基本概念 数学基础">
+<meta property="og:description" content="本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E6%96%B9%E6%A1%88%E6%9E%84%E9%80%A0%E5%8F%8A%E5%AE%89%E5%85%A8%E8%AF%81%E6%98%8E%E7%9A%84%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E5%92%8C%E6%96%B9%E6%B3%95%E8%AE%BA.png">
 <meta property="article:published_time" content="2024-09-11T01:10:00.000Z">
-<meta property="article:modified_time" content="2024-09-19T11:46:50.114Z">
+<meta property="article:modified_time" content="2024-09-21T13:31:50.139Z">
 <meta property="article:author" content="coperlm">
-<meta property="article:tag" content="unfixed">
 <meta property="article:tag" content="Crypto">
+<meta property="article:tag" content="unfixed">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://coperlm.github.io/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E6%96%B9%E6%A1%88%E6%9E%84%E9%80%A0%E5%8F%8A%E5%AE%89%E5%85%A8%E8%AF%81%E6%98%8E%E7%9A%84%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E5%92%8C%E6%96%B9%E6%B3%95%E8%AE%BA.png">
 
@@ -271,13 +271,13 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -348,7 +348,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-09-19 19:46:50" itemprop="dateModified" datetime="2024-09-19T19:46:50+08:00">2024-09-19</time>
+      <time title="Modified: 2024-09-21 21:31:50" itemprop="dateModified" datetime="2024-09-21T21:31:50+08:00">2024-09-21</time>
     </span>
 
   
@@ -361,13 +361,14 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody"><p>本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获</p>
+<span id="more"></span>
 <p><img src="/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/公钥密码方案构造及安全证明的知识要点和方法论.png"></p>
 <h3 id="introduction">Introduction</h3>
 <ul>
 <li><p>归纳总结了构造可证明安全的公钥密码方案所需掌握的知识要点</p>
 <ul>
 <li><p>基本概念</p></li>
-<li><p>数学基础 <span id="more"></span></p></li>
+<li><p>数学基础</p></li>
 <li><p>简单问题和困难问题</p></li>
 <li><p>算法</p></li>
 <li><p>安全规约证明</p></li>
@@ -899,8 +900,8 @@ Discrete Logarithms.</li>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/unfixed/" rel="tag"><i class="fa fa-tag"></i>unfixed</a>
               <a href="/tags/Crypto/" rel="tag"><i class="fa fa-tag"></i>Crypto</a>
+              <a href="/tags/unfixed/" rel="tag"><i class="fa fa-tag"></i>unfixed</a>
           </div>
 
         
