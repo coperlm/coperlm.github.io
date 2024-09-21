@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="之前尝试连接内网，实现任意两点的数据传输和互联网的访问，采取了网线和蓝牙的方式，最终以失败告终。今天新买的wifi接收&#x2F;发射模块到货了，插上试了一下">
 <meta property="og:type" content="article">
@@ -25,7 +25,7 @@
 <meta property="og:url" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
 <meta property="og:description" content="之前尝试连接内网，实现任意两点的数据传输和互联网的访问，采取了网线和蓝牙的方式，最终以失败告终。今天新买的wifi接收&#x2F;发射模块到货了，插上试了一下">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194954282.png">
 <meta property="og:image" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194857209.png">
 <meta property="og:image" content="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913200303258.png">
@@ -43,7 +43,7 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/","path":"2024/09/13/使用wifi发射模块串通网络的debug过程/","title":"使用wifi发射模块串通网络的debug过程"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/","path":"2024/09/13/使用wifi发射模块串通网络的debug过程/","title":"使用wifi发射模块串通网络的debug过程"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>使用wifi发射模块串通网络的debug过程 | coperlm's Blog</title>
@@ -184,7 +184,7 @@ mjx-container[display="true"] + br {
     <div class="column">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -201,7 +201,7 @@ mjx-container[display="true"] + br {
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
@@ -210,9 +210,9 @@ mjx-container[display="true"] + br {
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-contact"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>Contact</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-contact"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>Contact</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
       </li>
   </ul>
@@ -228,7 +228,7 @@ mjx-container[display="true"] + br {
         </span>
         <div class="search-input-container">
           <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
+                placeholder="Searching..." spellcheck="false"
                 type="search" class="search-input">
         </div>
         <span class="popup-btn-close" role="button">
@@ -251,10 +251,10 @@ mjx-container[display="true"] + br {
     <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
-          文章目录
+          Table of Contents
         </li>
         <li class="sidebar-nav-overview">
-          站点概览
+          Overview
         </li>
       </ul>
 
@@ -273,14 +273,14 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">44</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">标签</span></a>
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -313,7 +313,7 @@ mjx-container[display="true"] + br {
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -341,16 +341,16 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">发表于</span>
+      <span class="post-meta-item-text">Posted on</span>
 
-      <time title="创建时间：2024-09-13 19:45:33" itemprop="dateCreated datePublished" datetime="2024-09-13T19:45:33+08:00">2024-09-13</time>
+      <time title="Created: 2024-09-13 19:45:33" itemprop="dateCreated datePublished" datetime="2024-09-13T19:45:33+08:00">2024-09-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-19 18:29:45" itemprop="dateModified" datetime="2024-09-19T18:29:45+08:00">2024-09-19</time>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-09-19 18:29:45" itemprop="dateModified" datetime="2024-09-19T18:29:45+08:00">2024-09-19</time>
     </span>
 
   
@@ -436,7 +436,7 @@ mjx-container[display="true"] + br {
     <span class="author" itemprop="copyrightHolder">coperlm</span>
   </div>
 <!--
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 -->
 
@@ -450,7 +450,7 @@ mjx-container[display="true"] + br {
     <span class="toggle-line"></span>
   </div>
   <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
+  <div class="back-to-top" role="button" aria-label="Back to top">
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
