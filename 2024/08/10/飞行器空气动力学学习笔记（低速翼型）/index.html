@@ -19,12 +19,10 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="机翼定义：平行于机翼的对称面截得的机翼截面称为翼剖面，通常称为翼型 飞机设计中，在确定了平面形状、机翼形状后，首先要做的工作就是翼型设计。 翼型的气动特性，直接影响到机翼及整个飞行器的气动特性 翼型设计：确定机翼的几何形状  圆头尖尾 用于低速、亚音速和跨音速飞行的飞机机翼，以及低超音速飞行的超音过飞机机翼 尖头尖尾 用于较高超音速飞行的超音速飞机机翼和导弹的弹翼 翼型的几何参">
-<meta property="og:type" content="article">
+    <meta property="og:type" content="article">
 <meta property="og:title" content="飞行器空气动力学学习笔记（低速翼型）">
 <meta property="og:url" content="https://coperlm.github.io/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="机翼定义：平行于机翼的对称面截得的机翼截面称为翼剖面，通常称为翼型 飞机设计中，在确定了平面形状、机翼形状后，首先要做的工作就是翼型设计。 翼型的气动特性，直接影响到机翼及整个飞行器的气动特性 翼型设计：确定机翼的几何形状  圆头尖尾 用于低速、亚音速和跨音速飞行的飞机机翼，以及低超音速飞行的超音过飞机机翼 尖头尖尾 用于较高超音速飞行的超音速飞机机翼和导弹的弹翼 翼型的几何参">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/image-20240810173617803.png">
 <meta property="og:image" content="https://coperlm.github.io/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/image-20240810174026702.png">
@@ -59,7 +57,7 @@
 <meta property="og:image" content="https://coperlm.github.io/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/image-20240815060405921.png">
 <meta property="og:image" content="https://coperlm.github.io/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/image-20240815060630754.png">
 <meta property="article:published_time" content="2024-08-10T10:48:14.000Z">
-<meta property="article:modified_time" content="2024-09-13T13:17:37.311Z">
+<meta property="article:modified_time" content="2024-09-21T13:25:43.404Z">
 <meta property="article:author" content="coperlm">
 <meta property="article:tag" content="unfixed">
 <meta property="article:tag" content="RoboMaster">
@@ -379,7 +377,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-09-13 21:17:37" itemprop="dateModified" datetime="2024-09-13T21:17:37+08:00">2024-09-13</time>
+      <time title="Modified: 2024-09-21 21:25:43" itemprop="dateModified" datetime="2024-09-21T21:25:43+08:00">2024-09-21</time>
     </span>
 
   
@@ -392,6 +390,7 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody"><p><img src="/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/image-20240810173617803.png"></p>
+<span id="more"></span>
 <p>机翼定义：平行于机翼的对称面截得的机翼截面称为翼剖面，通常称为翼型</p>
 <p>飞机设计中，在确定了平面形状、机翼形状后，首先要做的工作就是翼型设计。
 翼型的气动特性，直接影响到机翼及整个飞行器的气动特性</p>
