@@ -19,18 +19,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="前置知识 ElGamal离散对数密码体制  公钥密钥生成  Alice首先构造一条椭圆曲线 ，在曲线上选择一点  作为生成元， 为  的阶（且  必须为质数)。此时构成了一个循环群 。 Alice选择一个私钥 ，生成公钥  Alice将公钥组  发送给Bob  加密过程  Bob收到信息后，将明文编码为 ， 为曲线上一点，并选择一个随机数 （， 为  的阶） Bob计算">
+    <meta name="description" content="此文章用于记录笔者对于SM2椭圆曲线加密算法的学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SM2椭圆曲线加密算法学习笔记">
 <meta property="og:url" content="https://coperlm.github.io/2024/09/25/SM2%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="前置知识 ElGamal离散对数密码体制  公钥密钥生成  Alice首先构造一条椭圆曲线 ，在曲线上选择一点  作为生成元， 为  的阶（且  必须为质数)。此时构成了一个循环群 。 Alice选择一个私钥 ，生成公钥  Alice将公钥组  发送给Bob  加密过程  Bob收到信息后，将明文编码为 ， 为曲线上一点，并选择一个随机数 （， 为  的阶） Bob计算">
+<meta property="og:description" content="此文章用于记录笔者对于SM2椭圆曲线加密算法的学习">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-25T06:47:09.000Z">
-<meta property="article:modified_time" content="2024-09-25T06:58:14.253Z">
+<meta property="article:modified_time" content="2024-09-26T04:51:04.386Z">
 <meta property="article:author" content="coperlm">
-<meta property="article:tag" content="Crypto">
 <meta property="article:tag" content="unfixed">
+<meta property="article:tag" content="Crypto">
 <meta name="twitter:card" content="summary">
 
 
@@ -338,9 +338,15 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-09-25 14:47:09 / Modified: 14:58:14" itemprop="dateCreated datePublished" datetime="2024-09-25T14:47:09+08:00">2024-09-25</time>
+      <time title="Created: 2024-09-25 14:47:09" itemprop="dateCreated datePublished" datetime="2024-09-25T14:47:09+08:00">2024-09-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-09-26 12:51:04" itemprop="dateModified" datetime="2024-09-26T12:51:04+08:00">2024-09-26</time>
     </span>
 
   
@@ -352,7 +358,9 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="前置知识">前置知识</h2>
+    <div class="post-body" itemprop="articleBody"><p>此文章用于记录笔者对于SM2椭圆曲线加密算法的学习</p>
+<span id="more"></span>
+<h2 id="前置知识">前置知识</h2>
 <h3 id="elgamal离散对数密码体制">ElGamal离散对数密码体制</h3>
 <ol type="1">
 <li><h4 id="公钥密钥生成">公钥密钥生成</h4>
@@ -442,8 +450,8 @@ KDF为密钥派生函数</p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Crypto/" rel="tag"><i class="fa fa-tag"></i>Crypto</a>
               <a href="/tags/unfixed/" rel="tag"><i class="fa fa-tag"></i>unfixed</a>
+              <a href="/tags/Crypto/" rel="tag"><i class="fa fa-tag"></i>Crypto</a>
           </div>
 
         
