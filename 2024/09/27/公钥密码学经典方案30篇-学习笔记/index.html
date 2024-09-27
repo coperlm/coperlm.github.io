@@ -19,30 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="今天遇到了以下问题  解决方案：引号输入改为英文（字体太小了没看到（悲">
+    <meta name="description" content="本文是 荔枝橙味拱腰觅马糕守 一文的后继，主要内容是对于 方案构造学习 一章中的 尝试发现方案构造错误 一节下的 30个经典方案的学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo新建博客但是要求输入第二行">
-<meta property="og:url" content="https://coperlm.github.io/2024/09/21/hexo%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E8%BE%93%E5%85%A5%E7%AC%AC%E4%BA%8C%E8%A1%8C/index.html">
+<meta property="og:title" content="公钥密码学经典方案30篇 学习笔记">
+<meta property="og:url" content="https://coperlm.github.io/2024/09/27/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E5%AD%A6%E7%BB%8F%E5%85%B8%E6%96%B9%E6%A1%8830%E7%AF%87-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="今天遇到了以下问题  解决方案：引号输入改为英文（字体太小了没看到（悲">
+<meta property="og:description" content="本文是 荔枝橙味拱腰觅马糕守 一文的后继，主要内容是对于 方案构造学习 一章中的 尝试发现方案构造错误 一节下的 30个经典方案的学习笔记">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://coperlm.github.io/2024/09/21/hexo%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E8%BE%93%E5%85%A5%E7%AC%AC%E4%BA%8C%E8%A1%8C/image-20240921214332499.png">
-<meta property="article:published_time" content="2024-09-21T13:43:18.000Z">
-<meta property="article:modified_time" content="2024-09-21T13:44:58.971Z">
+<meta property="article:published_time" content="2024-09-27T02:43:01.000Z">
+<meta property="article:modified_time" content="2024-09-27T02:45:52.920Z">
 <meta property="article:author" content="coperlm">
-<meta property="article:tag" content="misc">
+<meta property="article:tag" content="Crypto">
+<meta property="article:tag" content="unfixed">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://coperlm.github.io/2024/09/21/hexo%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E8%BE%93%E5%85%A5%E7%AC%AC%E4%BA%8C%E8%A1%8C/image-20240921214332499.png">
 
 
-<link rel="canonical" href="https://coperlm.github.io/2024/09/21/hexo%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E8%BE%93%E5%85%A5%E7%AC%AC%E4%BA%8C%E8%A1%8C/">
+<link rel="canonical" href="https://coperlm.github.io/2024/09/27/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E5%AD%A6%E7%BB%8F%E5%85%B8%E6%96%B9%E6%A1%8830%E7%AF%87-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/09/21/hexo%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E8%BE%93%E5%85%A5%E7%AC%AC%E4%BA%8C%E8%A1%8C/","path":"2024/09/21/hexo新建博客但是要求输入第二行/","title":"hexo新建博客但是要求输入第二行"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/09/27/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E5%AD%A6%E7%BB%8F%E5%85%B8%E6%96%B9%E6%A1%8830%E7%AF%87-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","path":"2024/09/27/公钥密码学经典方案30篇-学习笔记/","title":"公钥密码学经典方案30篇 学习笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>hexo新建博客但是要求输入第二行 | coperlm's Blog</title>
+<title>公钥密码学经典方案30篇 学习笔记 | coperlm's Blog</title>
   
 
 
@@ -310,7 +309,7 @@ mjx-container[display="true"] + br {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/09/21/hexo%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E8%BE%93%E5%85%A5%E7%AC%AC%E4%BA%8C%E8%A1%8C/">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/09/27/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E5%AD%A6%E7%BB%8F%E5%85%B8%E6%96%B9%E6%A1%8830%E7%AF%87-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -323,12 +322,12 @@ mjx-container[display="true"] + br {
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="hexo新建博客但是要求输入第二行 | coperlm's Blog">
+      <meta itemprop="name" content="公钥密码学经典方案30篇 学习笔记 | coperlm's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hexo新建博客但是要求输入第二行
+          公钥密码学经典方案30篇 学习笔记
         </h1>
 
         <div class="post-meta-container">
@@ -340,7 +339,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-09-21 21:43:18 / Modified: 21:44:58" itemprop="dateCreated datePublished" datetime="2024-09-21T21:43:18+08:00">2024-09-21</time>
+      <time title="Created: 2024-09-27 10:43:01 / Modified: 10:45:52" itemprop="dateCreated datePublished" datetime="2024-09-27T10:43:01+08:00">2024-09-27</time>
     </span>
 
   
@@ -352,9 +351,10 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>今天遇到了以下问题</p>
-<p><img src="/2024/09/21/hexo%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E8%BE%93%E5%85%A5%E7%AC%AC%E4%BA%8C%E8%A1%8C/image-20240921214332499.png"></p>
-<p>解决方案：引号输入改为英文（字体太小了没看到（悲</p>
+    <div class="post-body" itemprop="articleBody"><p>本文是 <a href="https://coperlm.github.io/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/">荔枝橙味拱腰觅马糕守</a>
+一文的后继，主要内容是对于 <code>方案构造学习</code> 一章中的
+<code>尝试发现方案构造错误</code> 一节下的
+30个<code>经典方案</code>的学习笔记</p>
 
     </div>
 
@@ -364,21 +364,19 @@ mjx-container[display="true"] + br {
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/misc/" rel="tag"><i class="fa fa-tag"></i>misc</a>
+              <a href="/tags/Crypto/" rel="tag"><i class="fa fa-tag"></i>Crypto</a>
+              <a href="/tags/unfixed/" rel="tag"><i class="fa fa-tag"></i>unfixed</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/09/21/%E6%92%AC%E5%BC%80%E5%90%8E%E9%87%8F%E5%AD%90%E7%9A%84%E5%A4%A7%E9%97%A8/" rel="prev" title="撬开后量子的大门">
-                  <i class="fa fa-angle-left"></i> 撬开后量子的大门
+                <a href="/2024/09/25/SM2%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="SM2椭圆曲线加密算法学习笔记">
+                  <i class="fa fa-angle-left"></i> SM2椭圆曲线加密算法学习笔记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/09/23/%E5%85%B3%E4%BA%8E%E7%BB%B4%E7%BA%B3%E6%94%BB%E5%87%BB%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" rel="next" title="关于维纳攻击的学习总结">
-                  关于维纳攻击的学习总结 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
