@@ -19,29 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="coperlm&#39;s Blog">
-<meta property="og:url" content="https://coperlm.github.io/index.html">
+    <meta name="description" content="CRYPTO1 123456789101112131415161718192021222324from Crypto.Util.number import *from secret import flagp &#x3D; getPrime(512)q &#x3D; getPrime(512)n &#x3D; p * qd &#x3D; getPrime(299)e &#x3D; inverse(d,(p-1)*(q-1))m &#x3D; bytes_t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网鼎杯2024crypto题解">
+<meta property="og:url" content="https://coperlm.github.io/2024/10/29/%E7%BD%91%E9%BC%8E%E6%9D%AF2024crypto%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="CRYPTO1 123456789101112131415161718192021222324from Crypto.Util.number import *from secret import flagp &#x3D; getPrime(512)q &#x3D; getPrime(512)n &#x3D; p * qd &#x3D; getPrime(299)e &#x3D; inverse(d,(p-1)*(q-1))m &#x3D; bytes_t">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-10-29T12:51:12.000Z">
+<meta property="article:modified_time" content="2024-10-29T13:24:04.367Z">
 <meta property="article:author" content="coperlm">
-<meta property="article:tag" content="CTF">
-<meta property="article:tag" content="密码学">
-<meta property="article:tag" content="crypto">
-<meta property="article:tag" content="算法竞赛">
-<meta property="article:tag" content="RoboMaster">
-<meta property="article:tag" content="空气动力学">
+<meta property="article:tag" content="unfixed">
+<meta property="article:tag" content="cryptoCTF">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://coperlm.github.io/">
+<link rel="canonical" href="https://coperlm.github.io/2024/10/29/%E7%BD%91%E9%BC%8E%E6%9D%AF2024crypto%E9%A2%98%E8%A7%A3/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/10/29/%E7%BD%91%E9%BC%8E%E6%9D%AF2024crypto%E9%A2%98%E8%A7%A3/","path":"2024/10/29/网鼎杯2024crypto题解/","title":"网鼎杯2024crypto题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>coperlm's Blog</title>
+<title>网鼎杯2024crypto题解 | coperlm's Blog</title>
   
 
 
@@ -190,7 +190,7 @@ mjx-container[display="true"] + br {
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">coperlm's Blog</h1>
+      <p class="site-title">coperlm's Blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -243,7 +243,7 @@ mjx-container[display="true"] + br {
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -256,6 +256,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#crypto1"><span class="nav-number">1.</span> <span class="nav-text">CRYPTO1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#crypto2"><span class="nav-number">2.</span> <span class="nav-text">CRYPTO2</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -298,16 +299,17 @@ mjx-container[display="true"] + br {
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/10/29/%E7%BD%91%E9%BC%8E%E6%9D%AF2024crypto%E9%A2%98%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -321,13 +323,13 @@ mjx-container[display="true"] + br {
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
+      <meta itemprop="name" content="网鼎杯2024crypto题解 | coperlm's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/29/%E7%BD%91%E9%BC%8E%E6%9D%AF2024crypto%E9%A2%98%E8%A7%A3/" class="post-title-link" itemprop="url">网鼎杯2024crypto题解</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          网鼎杯2024crypto题解
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -350,8 +352,7 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="crypto1">CRYPTO1</h2>
+    <div class="post-body" itemprop="articleBody"><h2 id="crypto1">CRYPTO1</h2>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">from secret import flag</span><br><span class="line"></span><br><span class="line">p = getPrime(512)</span><br><span class="line">q = getPrime(512)</span><br><span class="line">n = p * q</span><br><span class="line">d = getPrime(299)</span><br><span class="line">e = inverse(d,(p-1)*(q-1))</span><br><span class="line">m = bytes_to_long(flag)</span><br><span class="line">c = pow(m,e,n)</span><br><span class="line">hint1 = p &gt;&gt; (512-70)</span><br><span class="line">hint2 = q &gt;&gt; (512-70)</span><br><span class="line"></span><br><span class="line">print(f"n = {n}")</span><br><span class="line">print(f"e = {e}")</span><br><span class="line">print(f"c = {c}")</span><br><span class="line">print(f"hint1 = {hint1}")</span><br><span class="line">print(f"hint2 = {hint2}")</span><br><span class="line"></span><br><span class="line">n = 114118679597315994458138232536029700477506764789782067073905766324635160145597602207164997807103187990046901850125798774503781767630201814025142189432534890147340404293319424524872695905368897290630698362559606549134377263394129199145835483978820237203114250882524438599220793209608842281879976692805855046971</span><br><span class="line">e = 60930873636939710528141652371287627298970658591028170597199994159301433213017349592910581153194811053524011559886529831760967700162629319952838130973563991607758850226327915934518549584588693854388996425152821459866209334446088324204759334980239670811977086959854952233887459542997456604453766160444477603017</span><br><span class="line">c = 11058775585296329544235824126670578486484201903851563493984057289075513008773878014007377223222464555346135675900619903617528838701118612201290486747980233570288315027654510774940371032813981282018787668864123759554297515664915358447425647424759926416629451915378248520432568536260902676664298855076689608823</span><br><span class="line">hint1 = 884675140903190287932</span><br><span class="line">hint2 = 1000130673738973880482</span><br></pre></td></tr></table></figure>
 <hr>
 <p>和领航杯2023密码学题目bd为重题</p>
@@ -379,7 +380,6 @@ mjx-container[display="true"] + br {
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print("WDFLAG{2BF35AA97FC3CE15602D02B5FA50E287}".lower())</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#output</span><br><span class="line">wdflag{2bf35aa97fc3ce15602d02b5fa50e287}</span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
@@ -387,338 +387,22 @@ mjx-container[display="true"] + br {
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+          <div class="post-tags">
+              <a href="/tags/unfixed/" rel="tag"><i class="fa fa-tag"></i>unfixed</a>
+              <a href="/tags/cryptoCTF/" rel="tag"><i class="fa fa-tag"></i>cryptoCTF</a>
+          </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/10/28/ECC-study/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/28/ECC-study/" class="post-title-link" itemprop="url">ECC_study</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-10-28 16:28:48" itemprop="dateCreated datePublished" datetime="2024-10-28T16:28:48+08:00">2024-10-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-29 19:59:50" itemprop="dateModified" datetime="2024-10-29T19:59:50+08:00">2024-10-29</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>用于汇总椭圆曲线加密算法的相关题目</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/28/ECC-study/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/10/28/%E5%AD%A6%E4%B9%A0%E4%B8%BB%E5%AE%9A%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/28/%E5%AD%A6%E4%B9%A0%E4%B8%BB%E5%AE%9A%E7%90%86/" class="post-title-link" itemprop="url">学习主定理</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-10-28 09:22:30 / Modified: 16:26:53" itemprop="dateCreated datePublished" datetime="2024-10-28T09:22:30+08:00">2024-10-28</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>之前很早就听机房的学长说主定理了，是用于算法竞赛中分析时间复杂度的，但是一直没有学习过</p>
-<p>今天做DS，又遇到了，题目如下</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/28/%E5%AD%A6%E4%B9%A0%E4%B8%BB%E5%AE%9A%E7%90%86/#more" rel="contents">
-                Read more &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/10/28/ECC-study/" rel="prev" title="ECC_study">
+                  <i class="fa fa-angle-left"></i> ECC_study
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/10/20/2024-10-20NISA%E7%99%BE%E5%9B%A2%E9%A2%98%E7%9B%AE%E9%A2%98%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/20/2024-10-20NISA%E7%99%BE%E5%9B%A2%E9%A2%98%E7%9B%AE%E9%A2%98%E8%A7%A3/" class="post-title-link" itemprop="url">2024.10.20NISA百团题目题解</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-10-20 20:09:03 / Modified: 21:29:15" itemprop="dateCreated datePublished" datetime="2024-10-20T20:09:03+08:00">2024-10-20</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="第一题">第一题</h2>
-<p>题目描述：说反话</p>
-<p>题解：</p>
-<p>翻转字符串即可（大雾），时间复杂度是严格线性（大大雾）</p>
-<h2 id="第二题">第二题</h2>
-<p>题目描述：挑战者选择16/17/18张卡片和先/后手，每方每次可以掀开1/2/3张卡片；挑战者的目标是让敌手掀开最后一张卡牌</p>
-<p>题解：</p>
-<p>如果敌手掀开最后一张牌（即达成挑战目标），则必然最终只剩一张牌（如果剩余的牌数多于1张，则敌手可以掀开一张，这时挑战者并不会达到目标）</p>
-<p>为了使敌手掀开最后一张牌，则只需保留一张牌，即<strong>保证挑战者掀开牌之后，剩余的牌数为4k+1</strong>即可，其中k为非负整数</p>
-<p>在以上情况下，每一轮（指双方操作）后掀开四张卡牌即可保证挑战者一定获胜</p>
-<p><strong>看不懂？直接运行以下代码体验一下吧</strong></p>
-<p>直接使用devcpp运行以下代码即可，记得拓展名是cpp哦</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n;</span><br><span class="line"></span><br><span class="line">bool check( int x ){</span><br><span class="line">    if( x == 1 || x == 2 || x == 3 ) return 1;</span><br><span class="line">    cout &lt;&lt; "请输入1/2/3哦，不要输入别的数字喵" &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br><span class="line">signed main()</span><br><span class="line">{</span><br><span class="line">    INIT:;</span><br><span class="line">    cout &lt;&lt; "请输入总牌数：(n=16/17/18)";</span><br><span class="line">    RST:;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    if( n != 16 &amp;&amp; n != 17 &amp;&amp; n != 18 ){</span><br><span class="line">        cout &lt;&lt; "输入的数据不合法，请重新输入" &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; "-----------" &lt;&lt; endl;</span><br><span class="line">        goto INIT;</span><br><span class="line">    }</span><br><span class="line">    if( n == 17 ){</span><br><span class="line">        cout &lt;&lt; "你长得好看，让你先手" &lt;&lt; endl;</span><br><span class="line">        N17:;</span><br><span class="line">        int sum = 17 , a;</span><br><span class="line">        while( sum!=1 ){</span><br><span class="line">            cout &lt;&lt; "-----------" &lt;&lt; endl;</span><br><span class="line">            cout &lt;&lt; "请输入你掀开的数量：";</span><br><span class="line">            cin &gt;&gt; a;</span><br><span class="line">            if( !check(a) ) continue;</span><br><span class="line">            cout &lt;&lt; "好的，这次我掀开的数量是：" &lt;&lt; 4-a &lt;&lt; endl;</span><br><span class="line">            sum -= 4;</span><br><span class="line">            cout &lt;&lt; "现在剩下未掀开牌的数量是：" &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    else if( n == 16 ){</span><br><span class="line">        cout &lt;&lt; "我长得漂亮，让我先手" &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; "我掀开的数量是：" &lt;&lt; 3 &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; "现在剩下未掀开牌的数量是：" &lt;&lt; 13 &lt;&lt; endl;</span><br><span class="line">        int sum = 13 , a;</span><br><span class="line">        while( sum!=1 ){</span><br><span class="line">            cout &lt;&lt; "-----------" &lt;&lt; endl;</span><br><span class="line">            cout &lt;&lt; "请输入你掀开的数量：";</span><br><span class="line">            cin &gt;&gt; a;</span><br><span class="line">            if( !check(a) ) continue;</span><br><span class="line">            cout &lt;&lt; "好的，我掀开的数量是：" &lt;&lt; 4-a &lt;&lt; endl;</span><br><span class="line">            sum -= 4;</span><br><span class="line">            cout &lt;&lt; "现在剩下未掀开牌的数量是：" &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    else{</span><br><span class="line">        cout &lt;&lt; "我长得漂亮，让我先手" &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; "我掀开的数量是：" &lt;&lt; 1 &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; "现在剩下未掀开牌的数量是：" &lt;&lt; 17 &lt;&lt; endl;</span><br><span class="line">        goto N17;</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; "现在只剩下一张牌了，到你掀了，你失败了（嘻嘻）" &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; "再来一把？这次n是多少你说了算，但是先后手···嘿嘿······" &lt;&lt; endl;</span><br><span class="line">    goto RST;</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>结论：</p>
-<p>17张时候，挑战者后手；16或18张时，挑战者先手</p>
-<p>具体策略如上，此题解仅讨论必胜情况</p>
-<h2 id="第三题">第三题</h2>
-<p>问题描述：数桥问题</p>
-<p>题解：</p>
-<p>其实这个时间复杂度，（在保证有解的情况下）枚举一下大概率也能出来了，除非因为没有橡皮导致图越画越乱最终看不清楚（</p>
-<p>使用贪心思想时间复杂度为<code>O(N*M)</code>，其中<code>N</code>是点的数量，<code>M</code>是每个点尝试的边的数量</p>
-<p>ai给出的贪心代码，仅供参考</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">// 定义点结构</span><br><span class="line">struct Point {</span><br><span class="line">    int x, y; // 点的坐标</span><br><span class="line">    int degree; // 点的边权（需要连接的边数）</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line">// 定义一个方向数组，表示右、下</span><br><span class="line">int dx[] = {1, 0}; // 横向和竖向（x+1, y）表示右边，(x, y+1)表示下方</span><br><span class="line">int dy[] = {0, 1};</span><br><span class="line"></span><br><span class="line">// 检查是否可以在(x1, y1)和(x2, y2)之间连接边</span><br><span class="line">bool canConnect(int x1, int y1, int x2, int y2, vector&lt;vector&lt;int&gt;&gt;&amp; grid) {</span><br><span class="line">    // 确保(x2, y2)在图的范围内，且没有交叉边</span><br><span class="line">    if (x2 &lt; 0 || y2 &lt; 0 || x2 &gt;= grid.size() || y2 &gt;= grid[0].size()) return false;</span><br><span class="line">    if (grid[x1][y1] || grid[x2][y2]) return false;</span><br><span class="line">    return true;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">// 主函数：连接点的边，确保边不交叉</span><br><span class="line">void connectPoints(vector&lt;Point&gt;&amp; points, int n, int m) {</span><br><span class="line">    // 创建一个网格表示是否有边（或点）</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; grid(n, vector&lt;int&gt;(m, 0));</span><br><span class="line"></span><br><span class="line">    // 遍历所有点</span><br><span class="line">    for (auto&amp; p : points) {</span><br><span class="line">        int x = p.x, y = p.y, degree = p.degree;</span><br><span class="line">        grid[x][y] = 1; // 将该点标记为存在</span><br><span class="line">        </span><br><span class="line">        // 尝试为该点连接degree条边</span><br><span class="line">        for (int i = 0; i &lt; degree; ++i) {</span><br><span class="line">            for (int d = 0; d &lt; 2; ++d) { // 遍历两个方向（右和下）</span><br><span class="line">                int nx = x + dx[d];</span><br><span class="line">                int ny = y + dy[d];</span><br><span class="line">                if (canConnect(x, y, nx, ny, grid)) {</span><br><span class="line">                    grid[nx][ny] = 1; // 连接边并标记</span><br><span class="line">                    break; // 连接成功，退出当前方向的尝试</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">int main() {</span><br><span class="line">    int n = 5, m = 5; // 网格大小</span><br><span class="line">    vector&lt;Point&gt; points = {</span><br><span class="line">        {0, 0, 2}, // (x, y, 边权)</span><br><span class="line">        {2, 1, 1},</span><br><span class="line">        {3, 4, 3},</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    connectPoints(points, n, m);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/10/18/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AB%9E%E8%B5%9B%E4%BD%9C%E5%93%81%E5%88%B6%E4%BD%9C%E6%9C%89%E6%84%9F24-10-17/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/18/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AB%9E%E8%B5%9B%E4%BD%9C%E5%93%81%E5%88%B6%E4%BD%9C%E6%9C%89%E6%84%9F24-10-17/" class="post-title-link" itemprop="url">密码学竞赛作品制作有感24.10.17</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-10-18 11:00:12 / Modified: 12:21:10" itemprop="dateCreated datePublished" datetime="2024-10-18T11:00:12+08:00">2024-10-18</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          Here's something encrypted, password is required to continue reading.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/18/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AB%9E%E8%B5%9B%E4%BD%9C%E5%93%81%E5%88%B6%E4%BD%9C%E6%9C%89%E6%84%9F24-10-17/#more" rel="contents">
-                Read more &raquo;
-              </a>
+            <div class="post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          </div>
     </footer>
   </article>
 </div>
@@ -726,418 +410,7 @@ mjx-container[display="true"] + br {
 
 
 
-    
 
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/10/17/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3ecc%E7%B3%95%E5%AE%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/17/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3ecc%E7%B3%95%E5%AE%88/" class="post-title-link" itemprop="url">荔枝橙味ecc糕守</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-10-17 12:20:15 / Modified: 12:42:09" itemprop="dateCreated datePublished" datetime="2024-10-17T12:20:15+08:00">2024-10-17</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>今天刷buu，遇到了 [watevrCTF 2019]ECC-RSA
-一题，需要ecc相关知识，故前来学习一下</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/17/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3ecc%E7%B3%95%E5%AE%88/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/10/17/daily-plans/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/17/daily-plans/" class="post-title-link" itemprop="url">daily plans</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-10-17 08:35:40" itemprop="dateCreated datePublished" datetime="2024-10-17T08:35:40+08:00">2024-10-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-21 19:32:24" itemprop="dateModified" datetime="2024-10-21T19:32:24+08:00">2024-10-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          Here's something encrypted, password is required to continue reading.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/17/daily-plans/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/10/13/%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8B%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/13/%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8B%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E/" class="post-title-link" itemprop="url">浅学习一下零知识证明</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-10-13 17:57:20" itemprop="dateCreated datePublished" datetime="2024-10-13T17:57:20+08:00">2024-10-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-14 17:46:50" itemprop="dateModified" datetime="2024-10-14T17:46:50+08:00">2024-10-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>之前一直听说零知识证明，但是一直没有学习过相关内容</p>
-<p>今天在阅读陈教授的《Identity-based chameleon hashing and signatures
-without key exposure》一文中遇到了，故学习记录一下</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/13/%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8B%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/10/10/%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%8601/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/10/%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%8601/" class="post-title-link" itemprop="url">安全规约前置知识</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-10-10 12:00:00" itemprop="dateCreated datePublished" datetime="2024-10-10T12:00:00+08:00">2024-10-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-29 20:04:24" itemprop="dateModified" datetime="2024-10-29T20:04:24+08:00">2024-10-29</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇博客用于介绍《安全规约导论》一书的前置知识</p>
-<p>内容包括 概念定义和模型、群基础知识、双线性对</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/10/%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%8601/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/10/10/%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%9F%BA%E7%A1%8002/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="coperlm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | coperlm's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/10/%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%9F%BA%E7%A1%8002/" class="post-title-link" itemprop="url">安全规约基础</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-10-10 12:00:00 / Modified: 20:15:38" itemprop="dateCreated datePublished" datetime="2024-10-10T12:00:00+08:00">2024-10-10</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a href="../../../../../2024/10/10/安全规约前置知识">上一篇文章（安全规约前置知识）</a>
-中，我们学习了《安全规约导论》一书的前三章</p>
-<p>在本篇文章，就开始着手学习看起来最重要的第四章——安全规约基础 了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/10/%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%9F%BA%E7%A1%8002/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
 </div>
   </main>
