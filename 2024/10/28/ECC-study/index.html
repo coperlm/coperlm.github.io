@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="[watevrCTF 2019]ECC-RSA 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748from fastecdsa.curve import P521 as Curvefrom fastecdsa.point import Pointfrom Crypto.Ut">
+    <meta name="description" content="用于汇总椭圆曲线加密算法的相关题目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECC_study">
 <meta property="og:url" content="https://coperlm.github.io/2024/10/28/ECC-study/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="[watevrCTF 2019]ECC-RSA 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748from fastecdsa.curve import P521 as Curvefrom fastecdsa.point import Pointfrom Crypto.Ut">
+<meta property="og:description" content="用于汇总椭圆曲线加密算法的相关题目">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-10-28T08:28:48.000Z">
-<meta property="article:modified_time" content="2024-10-28T08:30:00.736Z">
+<meta property="article:modified_time" content="2024-10-29T11:59:50.303Z">
 <meta property="article:author" content="coperlm">
 <meta property="article:tag" content="cryptoCTF">
 <meta property="article:tag" content="常驻">
@@ -338,9 +338,15 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-10-28 16:28:48 / Modified: 16:30:00" itemprop="dateCreated datePublished" datetime="2024-10-28T16:28:48+08:00">2024-10-28</time>
+      <time title="Created: 2024-10-28 16:28:48" itemprop="dateCreated datePublished" datetime="2024-10-28T16:28:48+08:00">2024-10-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-10-29 19:59:50" itemprop="dateModified" datetime="2024-10-29T19:59:50+08:00">2024-10-29</time>
     </span>
 
   
@@ -352,7 +358,9 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="watevrctf-2019ecc-rsa">[watevrCTF 2019]ECC-RSA</h3>
+    <div class="post-body" itemprop="articleBody"><p>用于汇总椭圆曲线加密算法的相关题目</p>
+<span id="more"></span>
+<h3 id="watevrctf-2019ecc-rsa">[watevrCTF 2019]ECC-RSA</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">from fastecdsa.curve import P521 as Curve</span><br><span class="line">from fastecdsa.point import Point</span><br><span class="line">from Crypto.Util.number import bytes_to_long, isPrime</span><br><span class="line">from os import urandom</span><br><span class="line">from random import getrandbits</span><br><span class="line"></span><br><span class="line">def gen_rsa_primes(G):</span><br><span class="line">	urand = bytes_to_long(urandom(521//8))</span><br><span class="line">	while True:</span><br><span class="line">		s = getrandbits(521) ^ urand</span><br><span class="line"></span><br><span class="line">		Q = s*G</span><br><span class="line">		if isPrime(Q.x) and isPrime(Q.y):</span><br><span class="line">			print("ECC Private key:", hex(s))</span><br><span class="line">			print("RSA primes:", hex(Q.x), hex(Q.y))</span><br><span class="line">			print("Modulo:", hex(Q.x * Q.y))</span><br><span class="line">			return (Q.x, Q.y)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">flag = int.from_bytes(input(), byteorder="big")</span><br><span class="line"></span><br><span class="line">ecc_p = Curve.p</span><br><span class="line">a = Curve.a</span><br><span class="line">b = Curve.b</span><br><span class="line"></span><br><span class="line">Gx = Curve.gx</span><br><span class="line">Gy = Curve.gy</span><br><span class="line">G = Point(Gx, Gy, curve=Curve)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">e = 0x10001</span><br><span class="line">p, q = gen_rsa_primes(G)</span><br><span class="line">n = p*q</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">file_out = open("downloads/ecc-rsa.txt", "w")</span><br><span class="line"></span><br><span class="line">file_out.write("ECC Curve Prime: " + hex(ecc_p) + "\n")</span><br><span class="line">file_out.write("Curve a: " + hex(a) + "\n")</span><br><span class="line">file_out.write("Curve b: " + hex(b) + "\n")</span><br><span class="line">file_out.write("Gx: " + hex(Gx) + "\n")</span><br><span class="line">file_out.write("Gy: " + hex(Gy) + "\n")</span><br><span class="line"></span><br><span class="line">file_out.write("e: " + hex(e) + "\n")</span><br><span class="line">file_out.write("p * q: " + hex(n) + "\n")</span><br><span class="line"></span><br><span class="line">c = pow(flag, e, n)</span><br><span class="line">file_out.write("ciphertext: " + hex(c) + "\n")</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ECC Curve Prime: 0x1ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</span><br><span class="line">Curve a: -0x3</span><br><span class="line">Curve b: 0x51953eb9618e1c9a1f929a21a0b68540eea2da725b99b315f3b8b489918ef109e156193951ec7e937b1652c0bd3bb1bf073573df883d2c34f1ef451fd46b503f00</span><br><span class="line">Gx: 0xc6858e06b70404e9cd9e3ecb662395b4429c648139053fb521f828af606b4d3dbaa14b5e77efe75928fe1dc127a2ffa8de3348b3c1856a429bf97e7e31c2e5bd66</span><br><span class="line">Gy: 0x11839296a789a3bc0045c8a5fb42c7d1bd998f54449579b446817afbd17273e662c97ee72995ef42640c550b9013fad0761353c7086a272c24088be94769fd16650</span><br><span class="line">e: 0x10001</span><br><span class="line">p * q: 0x118aaa1add80bdd0a1788b375e6b04426c50bb3f9cae0b173b382e3723fc858ce7932fb499cd92f5f675d4a2b05d2c575fc685f6cf08a490d6c6a8a6741e8be4572adfcba233da791ccc0aee033677b72788d57004a776909f6d699a0164af514728431b5aed704b289719f09d591f5c1f9d2ed36a58448a9d57567bd232702e9b28f</span><br><span class="line">ciphertext: 0x3862c872480bdd067c0c68cfee4527a063166620c97cca4c99baff6eb0cf5d42421b8f8d8300df5f8c7663adb5d21b47c8cb4ca5aab892006d7d44a1c5b5f5242d88c6e325064adf9b969c7dfc52a034495fe67b5424e1678ca4332d59225855b7a9cb42db2b1db95a90ab6834395397e305078c5baff78c4b7252d7966365afed9e</span><br></pre></td></tr></table></figure>
 <hr>
