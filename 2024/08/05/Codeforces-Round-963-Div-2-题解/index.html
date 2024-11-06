@@ -27,9 +27,8 @@
 <meta property="og:description" content="题目链接 本场比赛应该算是今年我打的第一场算法竞赛，也是NOIP2021结束之后难得发挥出来的比赛。ABC都是比较简单的题，D是二分+dp，比较难想 E最终还是不会，疑似是一个高级dp">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-08-05T00:36:07.000Z">
-<meta property="article:modified_time" content="2024-09-21T13:27:02.988Z">
+<meta property="article:modified_time" content="2024-11-06T02:55:00.035Z">
 <meta property="article:author" content="coperlm">
-<meta property="article:tag" content="unfixed">
 <meta property="article:tag" content="算法竞赛">
 <meta name="twitter:card" content="summary">
 
@@ -156,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">71</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -233,7 +232,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-09-21 21:27:02" itemprop="dateModified" datetime="2024-09-21T21:27:02+08:00">2024-09-21</time>
+      <time title="Modified: 2024-11-06 10:55:00" itemprop="dateModified" datetime="2024-11-06T10:55:00+08:00">2024-11-06</time>
     </span>
 
   
@@ -276,7 +275,6 @@ Switches</a></p>
 ），即尽量多选大于中位数的选项，如果总共选到大于中位数的数字多余小于的，那么可以判断这组中位数是可以用的</p>
 <p>最终输出最大的中位数即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#define int long long</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 5e5;</span><br><span class="line"></span><br><span class="line">int t , n , k , a[N+10];</span><br><span class="line">int dp[N+10] , b[N+10];</span><br><span class="line"></span><br><span class="line">bool checker( int mid )&#123;</span><br><span class="line">    for(int i = 0;i &lt; n;i ++)&#123;</span><br><span class="line">        if( a[i] &gt;= mid )&#123;</span><br><span class="line">            b[i] = 1;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            b[i] = -1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    dp[0] = b[0];</span><br><span class="line">    for(int i = 1;i &lt; n;i ++)&#123;</span><br><span class="line">        if( i % k == 0 )&#123;#这一组的开头，如果前面的或者当前位置下有1就可以是1</span><br><span class="line">            dp[i] = max( dp[i-k] , b[i] );</span><br><span class="line">        &#125;else&#123;#直接选当前的，i不是第一个循环的话，则可以继承上一个循环的（反正是选最大值）</span><br><span class="line">            dp[i] = dp[i-1] + b[i];</span><br><span class="line">            if( i &gt; k )&#123;</span><br><span class="line">                dp[i] = max( dp[i] , dp[i-k] );</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return dp[n-1] &gt; 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">signed main()&#123;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    while( t -- )&#123;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">        for(int i = 0;i &lt; n;i ++)&#123;</span><br><span class="line">            cin &gt;&gt; a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        int l = 1 , r = 1e9;</span><br><span class="line">        while( l &lt;= r )&#123;</span><br><span class="line">            int mid = (l+r)&gt;&gt;1;</span><br><span class="line">            if( checker(mid) )&#123;</span><br><span class="line">                l = mid+1;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                r = mid-1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; r &lt;&lt; endl;</span><br><span class="line">    &#125;   </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
 
     </div>
 
@@ -286,7 +284,6 @@ Switches</a></p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/unfixed/" rel="tag"><i class="fa fa-tag"></i>unfixed</a>
               <a href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" rel="tag"><i class="fa fa-tag"></i>算法竞赛</a>
           </div>
 
