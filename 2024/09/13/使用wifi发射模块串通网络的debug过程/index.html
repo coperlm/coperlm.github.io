@@ -273,7 +273,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -364,27 +364,24 @@ mjx-container[display="true"] + br {
     
     <div class="post-body" itemprop="articleBody"><p>之前尝试连接内网，实现任意两点的数据传输和互联网的访问，采取了网线和蓝牙的方式，最终以失败告终。今天新买的wifi接收/发射模块到货了，插上试了一下</p>
 <span id="more"></span>
-<p>前置知识 <code>win+R</code> ，输入 <code>ncpa.cpl</code> 打开
-<code>网络连接</code></p>
+<p>前置知识 <code>win+R</code> ，输入 <code>ncpa.cpl</code> 打开 <code>网络连接</code></p>
 <p>刚插上会多一个这个图标</p>
-<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194954282.png"></p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194954282.png" alt></p>
 <p>打开热点会多一个这个图标</p>
-<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194857209.png"></p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913194857209.png" alt></p>
 <p>使用第二台设备直接连接，会出现 <code>正在搜索ip</code> 等字样</p>
 <p>百度一下，发现需要打开共享</p>
 <p>右键需要共享的网络点击属性</p>
-<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913200303258.png"></p>
-<p>点击允许共享，<code>家庭网络连接</code>填写 <strong>发送</strong>
-热点信号的网络（模块）</p>
-<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913201038762.png"></p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913200303258.png" alt></p>
+<p>点击允许共享，<code>家庭网络连接</code>填写 <strong>发送</strong> 热点信号的网络（模块）</p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913201038762.png" alt></p>
 <p><strong>如果没有这个选项</strong>，需要用其他奇技淫巧来解决（别问我怎么知道的）</p>
 <p>咱买的wifi模块，不是也能发射也能接收嘛</p>
 <p>你先别用有线网（以太网）线连接电脑，先开一下手机热点，连上电脑</p>
-<p>然后（我这台电脑）在 <code>WLAN</code> 里就出现了
-<code>本地连接* 11</code> 的选项</p>
+<p>然后（我这台电脑）在 <code>WLAN</code> 里就出现了 <code>本地连接* 11</code> 的选项</p>
 <p>不要断，立即切换到以太网，然后就成功了</p>
 <p>这个是最终的效果</p>
-<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913201351937.png"></p>
+<p><img src="/2024/09/13/%E4%BD%BF%E7%94%A8wifi%E5%8F%91%E5%B0%84%E6%A8%A1%E5%9D%97%E4%B8%B2%E9%80%9A%E7%BD%91%E7%BB%9C%E7%9A%84debug%E8%BF%87%E7%A8%8B/image-20240913201351937.png" alt></p>
 <p>重新启动了电脑，依旧可以正常连接（学计算机的不会真的有人关电脑吧（bushi））</p>
 
     </div>
