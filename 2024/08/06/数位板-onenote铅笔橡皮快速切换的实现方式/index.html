@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="配置：高漫1060pro + windows11 + onenote(office最新版) 众所周知onenote最新版取消了笔收藏夹这一选项，导致选择画笔很不方便，一般情况下无法使画笔和橡皮快速切换，在一番探索下得到了以下方案">
+    <meta name="description" content="配置：高漫1060pro + windows11 + onenote(office最新版) 众所周知onenote最新版取消了笔收藏夹这一选项，导致选择画笔很不方便，一般情况下无法使画笔和橡皮快速切换，在一番探索下得到了以下方案">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数位板+onenote铅笔橡皮快速切换的实现方式">
 <meta property="og:url" content="https://coperlm.github.io/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="配置：高漫1060pro + windows11 + onenote(office最新版) 众所周知onenote最新版取消了笔收藏夹这一选项，导致选择画笔很不方便，一般情况下无法使画笔和橡皮快速切换，在一番探索下得到了以下方案">
+<meta property="og:description" content="配置：高漫1060pro + windows11 + onenote(office最新版) 众所周知onenote最新版取消了笔收藏夹这一选项，导致选择画笔很不方便，一般情况下无法使画笔和橡皮快速切换，在一番探索下得到了以下方案">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95.jpg">
 <meta property="og:image" content="https://coperlm.github.io/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%871.png">
@@ -86,6 +86,7 @@
       <p class="site-title">coperlm's Blog</p>
       <i class="logo-line"></i>
     </a>
+      <p class="site-subtitle" itemprop="description">古之立大事者 不惟有超世之才 亦必有坚忍不拔之志</p>
   </div>
 
   <div class="site-nav-right">
@@ -98,7 +99,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-contact"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>Contact</a></li><li class="menu-item menu-item-常驻更新博客目录"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>常驻更新博客目录</a></li><li class="menu-item menu-item-友链"><a href="/youlian/" rel="section"><i class="fa fa-user fa-fw"></i>友链</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-联系方式"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>联系方式</a></li><li class="menu-item menu-item-常驻目录"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>常驻目录</a></li><li class="menu-item menu-item-友链"><a href="/youlian/" rel="section"><i class="fa fa-user fa-fw"></i>友链</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -253,18 +254,18 @@
     <div class="post-body" itemprop="articleBody"><p>配置：高漫1060pro + windows11 + onenote(office最新版)</p>
 <p>众所周知onenote最新版取消了<code>笔收藏夹</code>这一选项，导致选择画笔很不方便，一般情况下无法使画笔和橡皮快速切换，在一番探索下得到了以下方案</p>
 <span id="more"></span>
-<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/聊天记录.jpg"></p>
+<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/聊天记录.jpg" alt></p>
 <p>笔者之前使用c++做过控制键鼠点击等程序，但是黑窗口弹出需要一定时间很不方便，在和朋友交流下得到了知道了有一个叫<code>AutoHotkey</code>的编程语言，专门用来进行这样的操作</p>
-<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片1.png"></p>
-<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片2.png"></p>
+<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片1.png" alt></p>
+<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片2.png" alt></p>
 <p>由上图可以知道切换画笔的操作是<code>Alt+D+G+键盘右键*多次+键盘左键（切回黑色画笔）+Enter</code></p>
 <p>这样就可以编写<code>ahk</code>脚本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Send &#123;Alt Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Alt Up&#125;</span><br><span class="line">Send &#123;D Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;D Up&#125;</span><br><span class="line">Send &#123;G Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;G Up&#125;</span><br><span class="line">Send &#123;Right Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Right Up&#125;</span><br><span class="line">Send &#123;Right Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Right Up&#125;</span><br><span class="line">Send &#123;Right Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Right Up&#125;</span><br><span class="line">Send &#123;Left Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Left Up&#125;</span><br><span class="line">Send &#123;Enter Down&#125;</span><br><span class="line">Sleep 50</span><br><span class="line">Send &#123;Enter Up&#125;</span><br><span class="line"></span><br><span class="line">;Click, 440, 180 ;也可以直接让鼠标点击固定坐标</span><br><span class="line"></span><br><span class="line">return</span><br></pre></td></tr></table></figure>
 <p>具体延迟和操作可以自行更改</p>
 <p>然后放入路径（前提是数位板支持）就可以了</p>
-<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片3.png"></p>
+<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片3.png" alt></p>
 <p>UPD.后来我发现切换功能里的这个可以一键切换···</p>
-<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片4.png"></p>
+<p><img src="/2024/08/06/%E6%95%B0%E4%BD%8D%E6%9D%BF-onenote%E9%93%85%E7%AC%94%E6%A9%A1%E7%9A%AE%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/插入图片4.png" alt></p>
 <p>不过无论如何是可以用了</p>
 <p>不支持运行程序和切换功能的数位板，估计不能一键切换了</p>
 
