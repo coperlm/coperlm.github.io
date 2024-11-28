@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Chameleon Hashing and Signatures 作者：Hugo Krawczyk, Tal Rabin 时间：1997  Based on Claw-free Trapdoor Permutations General Construction 计算过程   实验代码 12345678910111213141516171819202122232425262">
+    <meta name="description" content="用于记录变色龙哈希的学习历程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="变色龙哈希学习笔记">
 <meta property="og:url" content="https://coperlm.github.io/2024/11/24/%E5%8F%98%E8%89%B2%E9%BE%99%E5%93%88%E5%B8%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="Chameleon Hashing and Signatures 作者：Hugo Krawczyk, Tal Rabin 时间：1997  Based on Claw-free Trapdoor Permutations General Construction 计算过程   实验代码 12345678910111213141516171819202122232425262">
+<meta property="og:description" content="用于记录变色龙哈希的学习历程">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2024/11/24/%E5%8F%98%E8%89%B2%E9%BE%99%E5%93%88%E5%B8%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20241124144432630.png">
 <meta property="og:image" content="https://coperlm.github.io/2024/11/24/%E5%8F%98%E8%89%B2%E9%BE%99%E5%93%88%E5%B8%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20241124144500854.png">
@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://coperlm.github.io/2024/11/24/%E5%8F%98%E8%89%B2%E9%BE%99%E5%93%88%E5%B8%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20241124162905738.png">
 <meta property="og:image" content="https://coperlm.github.io/2024/11/24/%E5%8F%98%E8%89%B2%E9%BE%99%E5%93%88%E5%B8%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20241125121442330.png">
 <meta property="article:published_time" content="2024-11-24T06:38:29.000Z">
-<meta property="article:modified_time" content="2024-11-26T06:33:41.383Z">
+<meta property="article:modified_time" content="2024-11-28T06:29:32.837Z">
 <meta property="article:author" content="coperlm">
 <meta property="article:tag" content="unfixed">
 <meta property="article:tag" content="Crypto">
@@ -371,7 +371,7 @@ without Key Exposure</span></a><ol class="nav-child"><li class="nav-item nav-lev
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-11-26 14:33:41" itemprop="dateModified" datetime="2024-11-26T14:33:41+08:00">2024-11-26</time>
+      <time title="Modified: 2024-11-28 14:29:32" itemprop="dateModified" datetime="2024-11-28T14:29:32+08:00">2024-11-28</time>
     </span>
 
   
@@ -383,7 +383,9 @@ without Key Exposure</span></a><ol class="nav-child"><li class="nav-item nav-lev
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="chameleon-hashing-and-signatures">Chameleon Hashing and
+    <div class="post-body" itemprop="articleBody"><p>用于记录变色龙哈希的学习历程</p>
+<span id="more"></span>
+<h2 id="chameleon-hashing-and-signatures">Chameleon Hashing and
 Signatures</h2>
 <p>作者：Hugo Krawczyk, Tal Rabin</p>
 <p>时间：1997</p>
