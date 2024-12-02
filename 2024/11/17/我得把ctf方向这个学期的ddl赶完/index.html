@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本篇文章记录一下做的buu上面的题（荔枝超过巨魔 实际上主要缘由是这个学期的ddl要完不成了，赶一赶赶一赶~">
+    <meta name="description" content="本篇文章记录一下做的buu上面的题（荔枝超过巨魔 实际上主要缘由是这个学期的ddl要完不成了，赶一赶赶一赶~">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我得把ctf方向这个学期的ddl赶完">
 <meta property="og:url" content="https://coperlm.github.io/2024/11/17/%E6%88%91%E5%BE%97%E6%8A%8Actf%E6%96%B9%E5%90%91%E8%BF%99%E4%B8%AA%E5%AD%A6%E6%9C%9F%E7%9A%84ddl%E8%B5%B6%E5%AE%8C/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="本篇文章记录一下做的buu上面的题（荔枝超过巨魔 实际上主要缘由是这个学期的ddl要完不成了，赶一赶赶一赶~">
+<meta property="og:description" content="本篇文章记录一下做的buu上面的题（荔枝超过巨魔 实际上主要缘由是这个学期的ddl要完不成了，赶一赶赶一赶~">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2024/11/17/%E6%88%91%E5%BE%97%E6%8A%8Actf%E6%96%B9%E5%90%91%E8%BF%99%E4%B8%AA%E5%AD%A6%E6%9C%9F%E7%9A%84ddl%E8%B5%B6%E5%AE%8C/image-20241117115224404.png">
 <meta property="article:published_time" content="2024-11-17T03:24:51.000Z">
@@ -259,7 +259,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic"><span class="nav-number">1.</span> <span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BUU-SQL-COURSE-1"><span class="nav-number">1.1.</span> <span class="nav-text">BUU SQL COURSE 1</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic"><span class="nav-number">1.</span> <span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#buu-sql-course-1"><span class="nav-number">1.1.</span> <span class="nav-text">BUU SQL COURSE 1</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -358,9 +358,11 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody"><p>本篇文章记录一下做的buu上面的题（荔枝超过巨魔</p>
 <p>实际上主要缘由是这个学期的ddl要完不成了，赶一赶赶一赶~</p>
 <span id="more"></span>
-<h1 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h1><h2 id="BUU-SQL-COURSE-1"><a href="#BUU-SQL-COURSE-1" class="headerlink" title="BUU SQL COURSE 1"></a>BUU SQL COURSE 1</h2><p>考点：sql注入</p>
+<h1 id="basic">Basic</h1>
+<h2 id="buu-sql-course-1">BUU SQL COURSE 1</h2>
+<p>考点：sql注入</p>
 <p>随便点一个新闻，看网络流量</p>
-<p><img src="/2024/11/17/%E6%88%91%E5%BE%97%E6%8A%8Actf%E6%96%B9%E5%90%91%E8%BF%99%E4%B8%AA%E5%AD%A6%E6%9C%9F%E7%9A%84ddl%E8%B5%B6%E5%AE%8C/image-20241117115224404.png" alt></p>
+<p><img src="/2024/11/17/%E6%88%91%E5%BE%97%E6%8A%8Actf%E6%96%B9%E5%90%91%E8%BF%99%E4%B8%AA%E5%AD%A6%E6%9C%9F%E7%9A%84ddl%E8%B5%B6%E5%AE%8C/image-20241117115224404.png"></p>
 <p>这里有一个php请求，试图构造sql注入</p>
 <p>把尾部改成<code>?id=1%20and%201=1</code>，正常回显；把尾部改成<code>?id=1%20and%201=0</code>，就不回显了</p>
 <p>说明存在sql漏洞</p>

@@ -19,18 +19,22 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+    <meta name="description" content="本篇文章用于记录飞镖组开发日志，便于后人学习 因为也不是什么很珍贵的东西，所以没有上锁，希望其他队伍看到后能指点一二 电控代码开源 此前的进度2024.11.24 版本：0.4   硬件选型 12345678主控：STM32f103c6t6陀螺仪：mpu6500通信：蓝牙串口模块舵机：3.7g舵机*2电池：格氏2s 450mAh 75C涵道：群汐30MM涵道 QF1611-1400">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RoboMaster福建师范大学2025赛季 飞镖组开发日志">
 <meta property="og:url" content="https://coperlm.github.io/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:description" content="本篇文章用于记录飞镖组开发日志，便于后人学习 因为也不是什么很珍贵的东西，所以没有上锁，希望其他队伍看到后能指点一二 电控代码开源 此前的进度2024.11.24 版本：0.4   硬件选型 12345678主控：STM32f103c6t6陀螺仪：mpu6500通信：蓝牙串口模块舵机：3.7g舵机*2电池：格氏2s 450mAh 75C涵道：群汐30MM涵道 QF1611-1400">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://coperlm.github.io/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/%E9%A3%9E%E9%95%96%E7%94%B5%E6%8E%A7%E8%BF%9B%E5%BA%A6.png">
+<meta property="og:image" content="https://coperlm.github.io/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/4ce449b5537292c77ccf71d186d179f.jpg">
+<meta property="og:image" content="https://coperlm.github.io/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/demo2.jpg">
 <meta property="article:published_time" content="2024-11-24T11:28:16.000Z">
-<meta property="article:modified_time" content="2024-11-30T10:47:50.927Z">
+<meta property="article:modified_time" content="2024-12-02T11:40:19.186Z">
 <meta property="article:author" content="coperlm">
 <meta property="article:tag" content="RoboMaster">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/%E9%A3%9E%E9%95%96%E7%94%B5%E6%8E%A7%E8%BF%9B%E5%BA%A6.png">
 
 
 <link rel="canonical" href="https://coperlm.github.io/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">
@@ -243,7 +247,7 @@ mjx-container[display="true"] + br {
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -256,6 +260,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A4%E5%89%8D%E7%9A%84%E8%BF%9B%E5%BA%A62024.11.24"><span class="nav-number">1.</span> <span class="nav-text">此前的进度2024.11.24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.11.28"><span class="nav-number">2.</span> <span class="nav-text">UPD2024.11.28</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.11.30"><span class="nav-number">3.</span> <span class="nav-text">UPD2024.11.30</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -345,7 +350,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-11-30 18:47:50" itemprop="dateModified" datetime="2024-11-30T18:47:50+08:00">2024-11-30</time>
+      <time title="Modified: 2024-12-02 19:40:19" itemprop="dateModified" datetime="2024-12-02T19:40:19+08:00">2024-12-02</time>
     </span>
 
   
@@ -357,18 +362,62 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="7316a2f4cd460205258cb0191828c3ce680d1ecf9de68f9378f1eb0a36290a46">1d621d107eecb08cb114bf54a2314bea18d911457be2a1ef090c5e0b6c61b811482999ed4fe3d1af489ae573b3ae6fe15a2b5a99848b79040470122e05aa0648e462cfe82f767333bf209cd28a95e509eaf09570a95884a115465741078dde355b8d2ab599d93f5ebb63ddafa53d6144b16789f7fc3ea4cdcbaa03464646a2f29ae44d7f48f81f9268371fd3872c978499d019a2cdf7a498d0ab535462f6271fffa404d904114fced45c3811d11d2b9438d9601a540f4fdeaea535948375acb5f6ff0ea30556edea018a965b4703edda61c2e46ea563c771847550428dbfcdb5455be78e7ff103caee412a328e6f49c3939d0c030e95ebf48a410486a1cbdab103d7037d9ecf86ff1e5688c616f597f7e161fb78f8aed45161091ad7a24c69e4f144778a81022d9982691b34daece1823159a573ab5f81da2fc603913f0cf88f2f287c9513ab6eedbef82174336a789019c067a7b29b16f630ac65c9d14fb17f741f5bf44537385749e6e9d26a4b1157418ba16ecdf8499927cd1750d8c911703ba9f257d615cfe9e1637758cd71637f617b075213cc202c511964f61e10b767052629a4c0564aac7010a4c3084e40460501e9d16f4c839a5ca8f61644a5f6a4636a2572916180e8d3570ec32cef50c892307f20dffb4581585bbf914228c50452ceb030871eb4f1c194bb8a12de333d1a89e0e7d1f799bcca687f39f0d0c89a89aed0e288b680a573b01037e0e5eb7771efb1d730ee70600806b8de71730664f7877434f3c281f11be9a64b6a0b8c0d40a4ae24e5509b5170cce6dd8112d221ae05c103212e10bb5317df40b486f4033b0c5767afc1e920ae33e6744855e71a4393387f5d4b676c04bc22052c8984fc35ba32cd0084dd20c0277a4f0a0ef6a527f58b15f0542a3282ea602987a3e4aaf519918a6d3e2db5d3dafcbca9746b1b7478bfd0564458587a671a50f895da25483c996fcafa58424cb266f62123623af6804685c609dd6385c0a853f15d413251feff8cdb57235b85081b35d841aa72c97c1e22241c70609509824ed2460e1ff5bbd8cb412c679d1321dc509859b7cb5c3a3b4de77873a52f1b862ed697b4fc1af53cfa56f6cde72251901809bc467a95ab5089fbdd483272dbd0f4a8a36e8e150e1bda86f75d2b5809c8ef9ad152002f33de91781b28f568e3bd7edca9ba1b0082ca06e27b8424db122d36329ab7f0e67b2fea90b46b41887dc083bfd2e251d5910dfa469233b45608f8298ddb29bb41e542364cbd097f300911bb0ac2bc9c86474d83eb1806eaac7b39120c0d1e11c7977fde193f9df54dff4dd0a5fb36edeaf15d19ef20109466be937dd3ab025a71ae27e7a99dd6d78f334ec3672e046f8b3fb94b961db87b41d1c49c8abb95c98ad40d586c2379289339783b5f8944be6246a13c2b7e7aafa12777d80a82cadbbe0fc878d3d52d31021934e415a834b45f5170fa5f344a921e3a2e17ec4d28187f0d2be789d149c416601f4014c7e856b7f225abbb8d86ec0435d24c93149d1eaaa04445950ce331839cc632ed2e1b3dc46a94c56dcff585814f2a8f215de56bec79fd5044b5ab148ec25612b055e3b2179ec438a720c7d0eae1db468dba6fe656969b444ff3ae610cad9a54ca14991abb25e05a0a274377da39093e9f2da44ccd037ba34bdd60c674b3533ce2878f8d716851dece123fce4260d72e179395c0aa79fb022396532b9478f66a4359de58786a9c70f626f9a61cee5ac57f88607a05abace5361eb91456406480031b3278080ebda5f8d01b584d7e5c964a57e41b0decb2a3880fa56073d739fe998ebf6ac437093655932489c2d17274249eaafdeb87a84e281b04e1353c6b7d18208b532bf11c6c4e2b12def186e2f3da56fbbe166de350ab7342297c7cac7cd6e69f06416d2c97a062ba6e60108ba106402fffa04226166b0bccf4409ca6fe8fd1078dc88f333db9a5c2d06128af4c3941d9b25ca21c37a82d127c55a3aff0b58cc21dc72b6d35e149928896148eeb13f4dcc96379bc5d3a7efd082bc11772109e1e79138bc59e0e642612382ee99900c45c12175688d31b486eb0b98d8c16cad74f2ee477abd43bdb0d7bf79b1174f7a533bfe9b7897069573d5a7bd219e0fe75b9092724524c28e5b162a3eb6ef79e8ebe67e983a5cca480aa1a18ab2dcaad0ec8576db8f8744c5ed17c0ff8c181eff4b910aa6971675c814bd1db0f1ecb33c62d977e663e1f19f8b0ef3d2d6abad2889a43bcfdbf13e778e98aa5d281be99b05a0bcca4fce8f1b28803249f63f4a506b1063966cbdeaa9cd542b0b1dc3ca605e5ebd0996e515eea6df717f511269c85aa7e4bd00553fba2f30e3f94ce70b26af6b378b87990ac6f942a9f80058aaf097497d031d722281205ca7fc11f196153ccde1b5c76730cbc270e6d025c7a9156e74b46f8c58ab01b4cf47a9c481c108ed5d19c80998ed3b2ed569dc58ed854496259c0946e1d5f3e9a8f7cd863d465f1d4ca567204ad9470f919b7447c9c1f3daee871e9ea7146a3eda92eb6538e1c95767b7a57f8f73eabc3006ad5d843b08db72ef04b8633d4464f5114e2e1d88a851a692ceb9b29b5a0af6ddc1db9ffc198ca77cb547818fccb656ceb15ba02b838ce0e96831c7bc94aa1862962ad5756e871c7ba83b93ac1c796bafa133df66ba6b6852ecfc25f9b9a80cc753399f0da7eaa0ca3abbedcecf0909bf340a5ee8687499b8a3ee61334e9feae7428b30636bfd72415bcb6f69a5d869165a54a7b32d3cfc1795c67d925ae7acee0d4db9908637980bf409fa23d06daae96813dbf2fe8dd4281542c9691df7f1ab66d946914b8b681eb3dbfde5ee490741bb9bf02c2a883e6195503ecebd47176688a9c9c1cb548c433d342684e9629ba943d8d6671a3e5ff182c5cc0be424ea766f1459f4b1f2a3f9d4a3d3fc3e3cf6d2d2876a0e2fc13ef2895e3d5d3be5ab3af82885da87f0600dd72366e1fb3b6196184cf7870626f51765103b5c010a040ee505a74147dfac3e74ab43df8c8be45ab6be5e92bc091c7b07fbe1babaa4835f42dcc2c4831eae1734ee36168f981a548637ab7457b79b8f9767204b6410ea1c5337304eda817fe0e949eba83c28cb97993fb541edd3d7698c558b3d9183ac0954efafb9fcaea0dc0c21ea8e46323a0893b967fda8ba5c823fe00396e07608d459e57a4b2565c6d22a24cef812bc0c97853cd18f6136b6e50ff8f8d590d6bd53a80519bc4bde5305588184b523a98f2226f175cfd9426a26938335bb08c9dfe2ef21986dc4d4c1c7ba48fbe04ce8e8c651206c1fe06323db7519392e66c868f2f89df58f2cb083646ee902a7f5b124ce90c3aacb946e5a1fbbbd6e3c0b0bd674f303781ec8e50bdef340c5ebee4835eea8ca4a24f14f26529d26a674dfd4b965a2a21aff756f4535ea55d2897215369d5386f12061cf42336c79c929fc3c472d813dad4f092b77d1d838ba75fad34d9767718ac63db15516cdc716409a53a4e75a46d26a3c637ab848ab7e14890138224b791db0d94e1ca643dfe652b68752074e9880b1cae8e820193bb8a25a4f684865f14697ed9715f587eaaaa7df37c7077484427474737de57da81ace6478e359cdb67c5216bb7811265155b3bae8febc0c8e415ccffcbacd4abbc390636062e4f966341c47a06f9cdd060ca46c752776f03a79362fac5299161554236fe43e26e25dd6eb4886087ed605f5a95720fe9a9403bc0f57e64c4e51b6667d53f0c9669d720584649b6005723a679110830a1cac7da1ac1c6d7a28de6e8046c9e9a0c7115863df867593b97d08e82b95ef602fe478d2eb42730fdf3f0409fc5740f3dbeb834a55f17aede5ba1ca05b22f28798787fa4755dba8e1e4181c524db281acffeec6e395036f6b244de385f6bd33ea1c9c3aae76c270a706520b9fda8dd2ab3787c7f2129ad408900facecabeb7ac25e47f8e7c1c22ff28cc2bad55d56a9adecdca624a53f79f75537e480a0536351415f91971291deaea804881e4041903e5ca48a9346e0b6de9a950527a9b0cd89b912a2fcdf42fc8057129c69d54470bf3e200e1ee60d70c0676729ac19eb40d9318747c22ee5709380e4ea177c9b84f826dce450beeeda6bd501c71cc47d9cde79444ccf8e4f96d4cf8f65de10ef1d52de3220daa91b6c2bd5fc92d2e36fdca3f001c47536fca69efc8ab0dae82cfecbd7c4a2c8c214a683ce3532aa9906696ea00b1254618f0d264ac85fd56998ada186997650f68c42185d677664bb2f0cb079d1f5fee1917adfcf3b2721235155e0972dcf0d14b83bc8392004b7628075235e92ac680fc9e5685df937b8a2d9a9792b54ff45d7c387617577a63524e040de162afb5eb730c1bb71fe38597094ca670a514e8247068b6d6b96a1da97019c4fd20ff75b37e1c1521c7b9de06660a01e583e9502f90fb818df6391521b08af07439b652a82dc367bc5a67e4c55809f2e180b972a849e9c30692bd8e27e3b038201e35fb34f264020aa4bdd696bc9630e0698fe9cba544c88393e5292875fef3ad0e8026f2929c5cff94eba2fdcd8143f5d823a72e20075d6d9876b48a481c3980b46635739bb7b66088679036f62f2672cae792ac1aee1353f53037a1ab96f7615915978fc09de79ab46b03ba406863a35c4cfa4a2661d4572a5db545558e0d389bc73d33746ff7fbfa86bb2ebb061fd629c1974449d4aca3c5bf1c00aa7f2490e02572fb0ddfeba7e7b6db4ff6b3be196953780fe3f97fcbda874a968549025c23fed72516ae9bb165388ece55ba3d6f8080198a059f3fd4bd613474b6117c7224af164b6cd8463fe5086f6a9b5775967dbab3ec95b8b8c54f578e36cee57e4c06ae28de25aedaf50c381fd9cd6dd46694233d95c39fc3559a43b147a3bcfb665fc042755dfb00061c858bf1056bbc197b29b2c16e29e7299337e48ce3dbdaf34d80b2c45e5a7ee124cd0abde6f18f93e17c45494bf8637f61ce9fc384f033d2460df0f8566994e5c127ada38ca58f0264128b359c9ac50d11b314bcfc73e69ba150f01d38e2938d396250c3e3969fb8f0994d0cb952e2bc4f62e9e4876ecbc63065d611d92cea30da21c55d6744863e91de2df669ddeb76154fa1e75d24978d7c967a89e72a10385c5df77fe5a7dc6e55539f3af965e20a7947415378e76260866881948b903b1352901704d91c984e8cc8a66d7f9a9a9f684e21b4f26791f6ec954c38c4a51567afd959e4252ea639fe065817d07e1a86b495c292d319b75ad0ef570e9e97a830d7d536169a6817f733269f1586eb7c6073a5906c18974deaa11bcf5ffa28fd1</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    <div class="post-body" itemprop="articleBody"><p>本篇文章用于记录飞镖组开发日志，便于后人学习</p>
+<p>因为也不是什么很珍贵的东西，所以没有上锁，希望其他队伍看到后能指点一二</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/coperlm/FJNU_RM2025Tracking_Dart">电控代码开源</a></p>
+<h2 id="此前的进度2024.11.24">此前的进度2024.11.24</h2>
+<p>版本：0.4</p>
+<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/飞镖电控进度.png"></p>
+<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/4ce449b5537292c77ccf71d186d179f.jpg"></p>
+<p>硬件选型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">主控：STM32f103c6t6</span><br><span class="line">陀螺仪：mpu6500</span><br><span class="line">通信：蓝牙串口模块</span><br><span class="line">舵机：3.7g舵机*2</span><br><span class="line">电池：格氏2s 450mAh 75C</span><br><span class="line">涵道：群汐30MM涵道 QF1611-14000KV</span><br><span class="line">电调：好盈天行者电调 20A V2 支持反转</span><br><span class="line">视觉：暂无</span><br></pre></td></tr></table></figure>
+<p>对于陀螺仪部分</p>
+<ul>
+<li>使用mpu6500读取三个方向的速度和加速度</li>
+<li>自写函数进行dmp解算获得pitch yaw roll，但是yaw会有累计偏转</li>
+<li>解决yaw偏转（待解决）</li>
+</ul>
+<p>对于通信部分</p>
+<ul>
+<li>使用蓝牙模块进行串口通信</li>
+<li>只有发送</li>
+</ul>
+<p>对于舵机</p>
+<ul>
+<li>转幅对应的pwm波为50-250（具体见配置和代码）</li>
+</ul>
+<p>对于电池</p>
+<ul>
+<li>小心使用！小心使用！小心使用！！！</li>
+</ul>
+<p>对于涵道</p>
+<ul>
+<li>三根线分别接电调的三个香蕉头</li>
+</ul>
+<p>对于电调</p>
+<ul>
+<li>xt30头接2s供电</li>
+<li>杜邦头红线接单片机5V，黑线接地，白线为pwm波，范围为500-1000（具体见配置）</li>
+</ul>
+<p>对于视觉</p>
+<ul>
+<li>暂无</li>
+</ul>
+<p><a href="https://coperlm.github.io/2024/11/08/hal%E5%BA%93c6t6-Freerots/">FREEROTS</a></p>
+<hr>
+<h2 id="upd2024.11.28">UPD2024.11.28</h2>
+<p>版本：0.5</p>
+<p>陀螺仪问题已解决，直接用ai写的dmp解算并且甚至没有很大的零漂！（大雾）</p>
+<p>至少确实能用了，而且一点点的零漂不会太影响镖体（但愿）</p>
+<p>下一阶段开始把涵道驱动模块移植到这块焊的乱七八糟的板子上（大雾</p>
+<p>但是移植过程中又不转了，这段时间二分查找一下bug，然后周六上午和视觉联调</p>
+<h2 id="upd2024.11.30">UPD2024.11.30</h2>
+<p>版本：0.6</p>
+<p>已成功和视觉组联调，使用星瞳openMV接收数据成功，存在少量丢包</p>
+<p>此版本可以通过视觉参数来返回给舵机（模式3）</p>
+<p>舵机模块今天断线了，测试版demo很容易断线，需要谨慎使用，开始找人画板（</p>
+<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/demo2.jpg"></p>
+
     </div>
 
     
