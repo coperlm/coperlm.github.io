@@ -507,7 +507,6 @@ mjx-container[display="true"] + br {
     
     <div class="post-body" itemprop="articleBody">
           
-
       
     </div>
 
@@ -569,7 +568,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-02 19:40:19" itemprop="dateModified" datetime="2024-12-02T19:40:19+08:00">2024-12-02</time>
+      <time title="Modified: 2024-12-05 19:30:58" itemprop="dateModified" datetime="2024-12-05T19:30:58+08:00">2024-12-05</time>
     </span>
 
   
@@ -585,59 +584,14 @@ mjx-container[display="true"] + br {
           <p>本篇文章用于记录飞镖组开发日志，便于后人学习</p>
 <p>因为也不是什么很珍贵的东西，所以没有上锁，希望其他队伍看到后能指点一二</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/coperlm/FJNU_RM2025Tracking_Dart">电控代码开源</a></p>
-<h2 id="此前的进度2024.11.24">此前的进度2024.11.24</h2>
-<p>版本：0.4</p>
-<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/飞镖电控进度.png"></p>
-<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/4ce449b5537292c77ccf71d186d179f.jpg"></p>
-<p>硬件选型</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">主控：STM32f103c6t6</span><br><span class="line">陀螺仪：mpu6500</span><br><span class="line">通信：蓝牙串口模块</span><br><span class="line">舵机：3.7g舵机*2</span><br><span class="line">电池：格氏2s 450mAh 75C</span><br><span class="line">涵道：群汐30MM涵道 QF1611-14000KV</span><br><span class="line">电调：好盈天行者电调 20A V2 支持反转</span><br><span class="line">视觉：暂无</span><br></pre></td></tr></table></figure>
-<p>对于陀螺仪部分</p>
-<ul>
-<li>使用mpu6500读取三个方向的速度和加速度</li>
-<li>自写函数进行dmp解算获得pitch yaw roll，但是yaw会有累计偏转</li>
-<li>解决yaw偏转（待解决）</li>
-</ul>
-<p>对于通信部分</p>
-<ul>
-<li>使用蓝牙模块进行串口通信</li>
-<li>只有发送</li>
-</ul>
-<p>对于舵机</p>
-<ul>
-<li>转幅对应的pwm波为50-250（具体见配置和代码）</li>
-</ul>
-<p>对于电池</p>
-<ul>
-<li>小心使用！小心使用！小心使用！！！</li>
-</ul>
-<p>对于涵道</p>
-<ul>
-<li>三根线分别接电调的三个香蕉头</li>
-</ul>
-<p>对于电调</p>
-<ul>
-<li>xt30头接2s供电</li>
-<li>杜邦头红线接单片机5V，黑线接地，白线为pwm波，范围为500-1000（具体见配置）</li>
-</ul>
-<p>对于视觉</p>
-<ul>
-<li>暂无</li>
-</ul>
-<p><a href="https://coperlm.github.io/2024/11/08/hal%E5%BA%93c6t6-Freerots/">FREEROTS</a></p>
-<hr>
-<h2 id="upd2024.11.28">UPD2024.11.28</h2>
-<p>版本：0.5</p>
-<p>陀螺仪问题已解决，直接用ai写的dmp解算并且甚至没有很大的零漂！（大雾）</p>
-<p>至少确实能用了，而且一点点的零漂不会太影响镖体（但愿）</p>
-<p>下一阶段开始把涵道驱动模块移植到这块焊的乱七八糟的板子上（大雾</p>
-<p>但是移植过程中又不转了，这段时间二分查找一下bug，然后周六上午和视觉联调</p>
-<h2 id="upd2024.11.30">UPD2024.11.30</h2>
-<p>版本：0.6</p>
-<p>已成功和视觉组联调，使用星瞳openMV接收数据成功，存在少量丢包</p>
-<p>此版本可以通过视觉参数来返回给舵机（模式3）</p>
-<p>舵机模块今天断线了，测试版demo很容易断线，需要谨慎使用，开始找人画板（</p>
-<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/demo2.jpg"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -795,11 +749,9 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/2037">Codeforces Round 988
-(Div. 3)</a>因为当天有点头疼，飞速过了ABC，D卡住了，就去睡觉了</p>
+          <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/2037">Codeforces Round 988 (Div. 3)</a>因为当天有点头疼，飞速过了ABC，D卡住了，就去睡觉了</p>
 <p>后来发现做法南辕北辙了</p>
-<p>题目链接：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/2037/problem/D">D.
-Sharky Surfing</a></p>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/2037/problem/D">D. Sharky Surfing</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/11/21/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%932024-11-17%E5%81%9A%E6%B3%95%E5%8D%97%E8%BE%95%E5%8C%97%E8%BE%99%E7%9A%84%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95%E9%A2%98/#more" rel="contents">
