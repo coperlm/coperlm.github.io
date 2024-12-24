@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://coperlm.github.io/2024/11/12/%E7%AC%AC%E4%B9%9D%E5%B1%8A%E5%85%A8%E5%9B%BD%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E7%AB%9E%E8%B5%9B%E5%8F%82%E8%B5%9B%E6%B8%B8%E8%AE%B0/1.jpg">
 <meta property="og:image" content="https://coperlm.github.io/2024/11/12/%E7%AC%AC%E4%B9%9D%E5%B1%8A%E5%85%A8%E5%9B%BD%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E7%AB%9E%E8%B5%9B%E5%8F%82%E8%B5%9B%E6%B8%B8%E8%AE%B0/2.gif">
 <meta property="article:published_time" content="2024-11-12T11:21:16.000Z">
-<meta property="article:modified_time" content="2024-11-12T11:40:03.077Z">
+<meta property="article:modified_time" content="2024-12-24T07:09:52.615Z">
 <meta property="article:author" content="coperlm">
 <meta property="article:tag" content="游记">
 <meta name="twitter:card" content="summary">
@@ -271,7 +271,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">85</span>
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -340,9 +340,15 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-11-12 19:21:16 / Modified: 19:40:03" itemprop="dateCreated datePublished" datetime="2024-11-12T19:21:16+08:00">2024-11-12</time>
+      <time title="Created: 2024-11-12 19:21:16" itemprop="dateCreated datePublished" datetime="2024-11-12T19:21:16+08:00">2024-11-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-12-24 15:09:52" itemprop="dateModified" datetime="2024-12-24T15:09:52+08:00">2024-12-24</time>
     </span>
 
   
@@ -393,6 +399,19 @@ mjx-container[display="true"] + br {
 <p>二八定律：百分之70的学期过去了，只完成了30%的task</p>
 <p>无论如何，加油加油</p>
 <p><img src="/2024/11/12/%E7%AC%AC%E4%B9%9D%E5%B1%8A%E5%85%A8%E5%9B%BD%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E7%AB%9E%E8%B5%9B%E5%8F%82%E8%B5%9B%E6%B8%B8%E8%AE%B0/2.gif"></p>
+<hr>
+<p><strong>密码学竞赛作品制作有感24-10-17</strong></p>
+<p>最近和两个师兄在准备密码学竞赛，我们的作品是online-offline
+数字签名，用sm2和sm3去实现</p>
+<p>最一开始我重构了一下变色龙哈希文件的内容，去掉了没有用的代码，顺便改了一下库函数（因为有一个库，pip无法直接安装）</p>
+<p>之后文档大致完成之后，因为是在线离线签名，可以应用在轻量级设备上，所以我想移植到单片机上，但是stm32仅支持c/cpp，然后买了个pico，但是开发经验太少导致不会玩，于是转回stm32，最终耗时二十小时左右，最终被玄学问题卡住了</p>
+<p>之后计划使用centos-mini运行代码测试效率，开始搭建环境······</p>
+<p>然后看了一下师兄画的图，和导师交流了一下，得知以上我做的对比赛而言并不是很重要，重要的是在图表中展示出效率之高</p>
+<p>然后微调了一下代码···</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">改之前:</span><br><span class="line">验证结果为:1</span><br><span class="line">总时间为:1.7519575000042096</span><br><span class="line">在线时间:1.1509204999892972</span><br><span class="line">改之后:</span><br><span class="line">验证结果为:1</span><br><span class="line">总时间为:1.7590351999970153</span><br><span class="line">在线时间:0.5761120000388473</span><br></pre></td></tr></table></figure>
+<p>效率飙升！</p>
+<p>画出来的图表也十分可观</p>
+<p>后来总结了一下，写文章重要的是怎么让专家看着觉得做出东西了，尤其是画图，一定要展现出轻量级（具体值少于1s就可以了），所以数据选择很重要；还有就是注意细节，每个点都要多校验一遍</p>
 
     </div>
 
