@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="数据结构没有很多题目，所以只能通过知识点为索引进行复习 知识点来源是学长给的文档和期中考试题目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构不是有手就行（陈述句">
+<meta property="og:url" content="https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="数据结构没有很多题目，所以只能通过知识点为索引进行复习 知识点来源是学长给的文档和期中考试题目">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106142613576.png">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106150044907.png">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106154901650.png">
+<meta property="article:published_time" content="2025-01-06T12:14:32.000Z">
+<meta property="article:modified_time" content="2025-01-06T12:18:23.803Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="cs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106142613576.png">
+
+
+<link rel="canonical" href="https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/","path":"2025/01/06/数据结构不是有手就行（陈述句/","title":"数据结构不是有手就行（陈述句"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数据结构不是有手就行（陈述句 | coperlm's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">coperlm's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">古之立大事者 不惟有超世之才<br>亦必有坚忍不拔之志</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-联系方式"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>联系方式</a></li><li class="menu-item menu-item-常驻目录"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>常驻目录</a></li><li class="menu-item menu-item-友链"><a href="/youlian/" rel="section"><i class="fa fa-user fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text">树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E5%85%88%E5%BA%8F%E5%BA%8F%E5%88%97%E5%92%8C%E4%B8%AD%E5%BA%8F%E5%BA%8F%E5%88%97%E6%B1%82%E6%A0%91"><span class="nav-number">1.1.</span> <span class="nav-text">已知先序序列和中序序列求树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E4%B8%AD%E5%BA%8F%E5%BA%8F%E5%88%97%E5%92%8C%E5%90%8E%E5%BA%8F%E5%BA%8F%E5%88%97%E6%B1%82%E6%A0%91"><span class="nav-number">1.2.</span> <span class="nav-text">已知中序序列和后序序列求树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.3.</span> <span class="nav-text">后序线索二叉树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%92%8C%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">哈夫曼树和哈夫曼编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A0"><span class="nav-number">2.1.</span> <span class="nav-text">树的构造</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="nav-number">2.2.</span> <span class="nav-text">哈夫曼编码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%9B%B8%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">图相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-number">4.</span> <span class="nav-text">最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prim%E7%AE%97%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">Prim算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kruskal%E7%AE%97%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">Kruskal算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91"><span class="nav-number">5.</span> <span class="nav-text">二叉排序树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-number">6.</span> <span class="nav-text">排序</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">coperlm</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/coperlm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;coperlm" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:coperlm@outlook.com" title="E-Mail → mailto:coperlm@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数据结构不是有手就行（陈述句 | coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据结构不是有手就行（陈述句
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-01-06 20:14:32 / Modified: 20:18:23" itemprop="dateCreated datePublished" datetime="2025-01-06T20:14:32+08:00">2025-01-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>数据结构没有很多题目，所以只能通过知识点为索引进行复习</p>
+<p>知识点来源是学长给的文档和期中考试题目</p>
+<span id="more"></span>
+<hr>
+<h3 id="树的遍历">树的遍历</h3>
+<p>前序遍历 根-&gt;左子树-&gt;右子树 中序遍历 左子树-&gt;根-&gt;右子树
+后序遍历 左子树-&gt;右子树-&gt;根</p>
+<p>差异：访问到根节点的条件</p>
+<h4 id="已知先序序列和中序序列求树">已知先序序列和中序序列求树</h4>
+<p><img src="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106142613576.png"></p>
+<p>解题步骤：</p>
+<ol type="1">
+<li>从前序遍历的第一个节点找到根节点</li>
+<li>在中序遍历中找到这个根节点，根节点左侧的部分是左子树，右侧的部分是右子树</li>
+<li>根据分割出的左右子树，在前序遍历中找到相应的部分（保持顺序），递归重复前两个步骤直到完成树的构造</li>
+</ol>
+<h4 id="已知中序序列和后序序列求树">已知中序序列和后序序列求树</h4>
+<p>解题步骤：</p>
+<ol type="1">
+<li>从后序遍历的最后一个节点找到根节点</li>
+<li>在中序遍历中找到这个根节点，根节点左侧是左子树，右侧部分是右子树</li>
+<li>根据分割出的左右子树，在后序遍历中找到相应的部分（保持顺序），递归重复前两个步骤直到完成树的构造</li>
+</ol>
+<h4 id="后序线索二叉树">后序线索二叉树</h4>
+<p>后序线索二叉树是一种特殊的二叉树，它在普通二叉树的基-础上，通过为二叉树的结点增加“线索指针”来优化树的遍历效率
+这种线索指针的引入，使得二叉树的后序遍历可以在不使用递归或栈的情况下完成</p>
+<p>简单的来说，线索化就是把X序序列转成双向链表的形式（如果已有一条边，则无需返程）</p>
+<p><img src="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106150044907.png"></p>
+<h3 id="哈夫曼树和哈夫曼编码">哈夫曼树和哈夫曼编码</h3>
+<p>哈夫曼树是一种带权路径长度最短的二叉树，构造基于贪心算法</p>
+<p>其中，权值为节点的频率（或权重），路径长度为根节点到某个节点的路径中边的数量，带权路径长度为路径长度乘以节点的权值</p>
+<p>哈夫曼树的目标是让带权路径长度（WPL）的总和最小</p>
+<p>特定：没有任何一个权值小的节点比权值大的节点更靠近根的位置</p>
+<h4 id="树的构造">树的构造</h4>
+<ol type="1">
+<li>初始化：将每个权值看作一个独立的节点，每个节点都是一棵单结点树</li>
+<li>选择最小的两个权值：从当且森林中找到两个权值最小的树作为左右子树构造一个新树，新树的根节点权值为这两棵树权值之和，删除旧树</li>
+<li>重复步骤，直到森林中只剩下一棵树</li>
+</ol>
+<h4 id="哈夫曼编码">哈夫曼编码</h4>
+<p>是一种可变长度的编码方案，基于哈夫曼树生成</p>
+<ol type="1">
+<li>无前缀性：没有一个编码是另一个编码的前缀，确保了解码的唯一性</li>
+<li>长度与频率相关：频率高的字符使用较短的编码，频率低的字符使用较长的编码</li>
+<li>权重分配：从根节点开始，左子树路径赋值为0，右子树路径赋值为1；到达叶子结点时，记录从根到该节点的编码</li>
+</ol>
+<p>例题：某通讯系统只使用8种字符a、b、c、d、e、f、g、h，其使用频率分别为0.05,
+0.29, 0.07, 0.08, 0.14, 0.23, 0.03,
+0.11，利用赫夫曼树设计一种前缀编码</p>
+<p><img src="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106154901650.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a: 0110</span><br><span class="line">b: 10</span><br><span class="line">c: 1110</span><br><span class="line">d: 1111</span><br><span class="line">e: 110</span><br><span class="line">f: 00</span><br><span class="line">g: 0111</span><br><span class="line">h: 010</span><br></pre></td></tr></table></figure>
+<p>保证所有节点都是叶节点即可避免前缀冲突性（每个字符路径唯一，而且没有叶节点在另一个叶节点路径上）</p>
+<h3 id="图相关">图相关</h3>
+<p>邻接矩阵：就是个二维数据</p>
+<p>邻接表：就是个链表</p>
+<p>极大联通子图（强联通分量）：该子图是G连通子图，将G的任何不在该子图中的顶点加入，子图不再连通；用于缩点</p>
+<p>极小联通子图：该子图是G
+的连通子图，在该子图中删除任何一条边，子图不再连通；用于生成树</p>
+<h3 id="最小生成树">最小生成树</h3>
+<h4 id="prim算法">Prim算法</h4>
+<p>选择已知树上的最小边并加入</p>
+<ol type="1">
+<li>从任意一个顶点开始，将它加入生成树</li>
+<li>每次选择一条权值最小、且值连接生成树中顶点与生成树外顶点的边</li>
+<li>重复步骤2，直到生成树包含图中的所有顶点</li>
+</ol>
+<h4 id="kruskal算法">Kruskal算法</h4>
+<p>选择最小边并判断是否成环</p>
+<ol type="1">
+<li>将所有的边按边权从小到大排序</li>
+<li>从权值最小的开始，逐条简称该边是否成环（并查集）
+<ul>
+<li>如果不成环，则加入生成树</li>
+<li>如果形成环，则跳过这条边</li>
+</ul></li>
+<li>重复步骤2，直到生成树包含n-1条边</li>
+</ol>
+<h3 id="二叉排序树">二叉排序树</h3>
+<p>见二叉平衡树一章</p>
+<h3 id="排序">排序</h3>
+<p>这么难我都看不懂</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cs/" rel="tag"><i class="fa fa-tag"></i>cs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/" rel="prev" title="红黑树学习">
+                  <i class="fa fa-angle-left"></i> 红黑树学习
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">coperlm</span>
+  </div>
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+-->
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"per_page":false,"cdn":null,"tags":"none","config":{"tex":{"inlineMath":[["$","$"]],"displayMath":[["$$","$$"]]}},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
