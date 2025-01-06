@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="When I input sudo -pip install pycryptodome">
+<meta property="og:type" content="article">
+<meta property="og:title" content="install crypto in sage of wsl">
+<meta property="og:url" content="https://coperlm.github.io/2024/05/23/install-crypto-in-sage-of-wsl/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="When I input sudo -pip install pycryptodome">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-05-23T08:59:37.000Z">
+<meta property="article:modified_time" content="2024-09-21T13:29:06.925Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="cryptoCTF">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://coperlm.github.io/2024/05/23/install-crypto-in-sage-of-wsl/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2024/05/23/install-crypto-in-sage-of-wsl/","path":"2024/05/23/install-crypto-in-sage-of-wsl/","title":"install crypto in sage of wsl"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>install crypto in sage of wsl | coperlm's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">coperlm's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">古之立大事者 不惟有超世之才<br>亦必有坚忍不拔之志</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-联系方式"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>联系方式</a></li><li class="menu-item menu-item-常驻目录"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>常驻目录</a></li><li class="menu-item menu-item-友链"><a href="/youlian/" rel="section"><i class="fa fa-user fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">coperlm</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/coperlm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;coperlm" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:coperlm@outlook.com" title="E-Mail → mailto:coperlm@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2024/05/23/install-crypto-in-sage-of-wsl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="install crypto in sage of wsl | coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          install crypto in sage of wsl
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-05-23 16:59:37" itemprop="dateCreated datePublished" datetime="2024-05-23T16:59:37+08:00">2024-05-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-09-21 21:29:06" itemprop="dateModified" datetime="2024-09-21T21:29:06+08:00">2024-09-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>When I input <code>sudo -pip install pycryptodome</code></p>
+<span id="more"></span>
+<p>It output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper# python3 -m pip install --user pipx</span><br><span class="line">error: externally-managed-environment</span><br><span class="line"></span><br><span class="line">× This environment is externally managed</span><br><span class="line">╰─&gt; To install Python packages system-wide, try apt install</span><br><span class="line">    python3-xyz, where xyz is the package you are trying to</span><br><span class="line">    install.</span><br><span class="line">    </span><br><span class="line">    If you wish to install a non-Debian-packaged Python package,</span><br><span class="line">    create a virtual environment using python3 -m venv path/to/venv.</span><br><span class="line">    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make</span><br><span class="line">    sure you have python3-full installed.</span><br><span class="line">    </span><br><span class="line">    If you wish to install a non-Debian packaged Python application,</span><br><span class="line">    it may be easiest to use pipx install xyz, which will manage a</span><br><span class="line">    virtual environment for you. Make sure you have pipx installed.</span><br><span class="line"></span><br><span class="line">    See /usr/share/doc/python3.11/README.venv for more information.</span><br><span class="line"></span><br><span class="line">note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.</span><br><span class="line">hint: See PEP 668 for the detailed specification.</span><br><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper#</span><br></pre></td></tr></table></figure>
+<p>Just translate it</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper/Desktop# sage --pip install pycrypto</span><br><span class="line">error: externally-managed-environment</span><br><span class="line"></span><br><span class="line">× 该环境由外部管理</span><br><span class="line">╰─&gt; 要在全系统安装 Python 软件包，请尝试使用 apt install</span><br><span class="line">    python3-xyz，其中 xyz 是要安装的软件包。</span><br><span class="line">    安装。</span><br><span class="line"></span><br><span class="line">    如果您想安装非 Debian 打包的 Python 软件包、</span><br><span class="line">    使用 python3 -m venv path/to/venv 创建一个虚拟环境。</span><br><span class="line">    然后使用 path/to/venv/bin/python 和 path/to/venv/bin/pip。确保</span><br><span class="line">    确保安装了 python3-full。</span><br><span class="line"></span><br><span class="line">    如果您想安装非 Debian 打包的 Python 应用程序、</span><br><span class="line">    最简单的方法是使用 pipx install xyz，它会为您管理一个</span><br><span class="line">    虚拟环境。请确保已安装 pipx。</span><br><span class="line"></span><br><span class="line">    更多信息请参见 /usr/share/doc/python3.11/README.venv。</span><br><span class="line"></span><br><span class="line">注意：如果您认为这是一个错误，请联系您的 Python 安装或操作系统发行提供商。您可以通过 --break-system-packages 来覆盖此选项，但可能会破坏您的 Python 安装或操作系统。</span><br><span class="line">提示：详细规范请参见 PEP 668。</span><br></pre></td></tr></table></figure>
+<p>I choose ignore it and input
+<code>sage --pip install pycryptodome --break-system-packages</code></p>
+<p>In this way, we succeed.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper/Desktop# sage --pip install pycryptodome --break-system-packages</span><br><span class="line">Collecting pycryptodome</span><br><span class="line">  Downloading pycryptodome-3.20.0-cp35-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 93.7 kB/s eta 0:00:00</span><br><span class="line">Installing collected packages: pycryptodome</span><br><span class="line">Successfully installed pycryptodome-3.20.0</span><br><span class="line">WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span><br><span class="line">root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper/Desktop# </span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cryptoCTF/" rel="tag"><i class="fa fa-tag"></i>cryptoCTF</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/05/23/hexo-usage/" rel="prev" title="hexo usage">
+                  <i class="fa fa-angle-left"></i> hexo usage
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/06/02/%E5%88%B6%E5%AF%BC%E9%95%96/" rel="next" title="制导镖">
+                  制导镖 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">coperlm</span>
+  </div>
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+-->
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"per_page":false,"cdn":null,"tags":"none","config":{"tex":{"inlineMath":[["$","$"]],"displayMath":[["$$","$$"]]}},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
