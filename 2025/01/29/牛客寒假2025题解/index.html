@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文用于记录牛客寒假赛的六场比赛的赛时解题和赛后补题 笔者水平：CF绿上蓝下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛客寒假2025题解">
+<meta property="og:url" content="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="本文用于记录牛客寒假赛的六场比赛的赛时解题和赛后补题 笔者水平：CF绿上蓝下">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250122111748922.png">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250122114911663.png">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250122115049179.png">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250123095350739.png">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250128160459794.png">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250128160849232.png">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/2ZJTTZLS5UCBN$E%5DBZQD%5BJH_tmb.jpg">
+<meta property="og:image" content="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250129202306326.png">
+<meta property="article:published_time" content="2025-01-29T12:26:33.000Z">
+<meta property="article:modified_time" content="2025-01-29T12:28:58.278Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="unfixed">
+<meta property="article:tag" content="None">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250122111748922.png">
+
+
+<link rel="canonical" href="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/","path":"2025/01/29/牛客寒假2025题解/","title":"牛客寒假2025题解"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>牛客寒假2025题解 | coperlm's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">coperlm's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">古之立大事者 不惟有超世之才<br>亦必有坚忍不拔之志</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-联系方式"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>联系方式</a></li><li class="menu-item menu-item-常驻目录"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>常驻目录</a></li><li class="menu-item menu-item-友链"><a href="/youlian/" rel="section"><i class="fa fa-user fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%9C%BA"><span class="nav-number">1.</span> <span class="nav-text">第一场</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#m%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">M题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#j%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">J题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">C题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#e%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">E题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#h%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">H题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%9C%BA"><span class="nav-number"></span> <span class="nav-text">第二场</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#k%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">K题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#h%E9%A2%98-1"><span class="nav-number">2.</span> <span class="nav-text">H题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">D题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c%E9%A2%98-1"><span class="nav-number">4.</span> <span class="nav-text">C题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#e%E9%A2%98-1"><span class="nav-number">5.</span> <span class="nav-text">E题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E5%9C%BA"><span class="nav-number"></span> <span class="nav-text">第三场</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">coperlm</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/coperlm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;coperlm" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:coperlm@outlook.com" title="E-Mail → mailto:coperlm@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="牛客寒假2025题解 | coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          牛客寒假2025题解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-01-29 20:26:33 / Modified: 20:28:58" itemprop="dateCreated datePublished" datetime="2025-01-29T20:26:33+08:00">2025-01-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>本文用于记录牛客寒假赛的六场比赛的赛时解题和赛后补题</p>
+<p>笔者水平：CF绿上蓝下</p>
+<span id="more"></span>
+<hr>
+<h3 id="第一场">第一场</h3>
+<p><img src="/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250122111748922.png"></p>
+<p>打红温了，头一次连打五个小时~</p>
+<p>题本身不难，就是实现上遇到比较多的障碍</p>
+<p>A题签到题，如果没有<code>1</code>就输出<code>1e9+7</code>即可</p>
+<p>D题也是直接模拟即可</p>
+<p>G题排序后计算<code>a[i]-i</code>，就是每个点需要操作的次数了</p>
+<p>B题一开始以为是有向图浪费了很多时间，树存在简单路径的充要条件是它是链</p>
+<h4 id="m题">M题</h4>
+<p>也属于思路很简单但是<strong>写起来比较困难</strong>的题</p>
+<p>就拓扑排序一下，然后逐步拓展，取最优解即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define int long long</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 1e5;</span><br><span class="line">int n , a[N+10];</span><br><span class="line">struct NUMBER{</span><br><span class="line">    int num;</span><br><span class="line">    int id;</span><br><span class="line">}b[N+10];</span><br><span class="line"></span><br><span class="line">bool cmp( NUMBER x , NUMBER y ){</span><br><span class="line">    return x.num &lt; y.num;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">signed main(){</span><br><span class="line">    int n;cin &gt;&gt; n;</span><br><span class="line">    int maxn , minn;maxn = 0 , minn = 2147483647;</span><br><span class="line">    int minp = 0;</span><br><span class="line">    int ans = 2147483647;</span><br><span class="line">    for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">        b[i].id = i , b[i].num = a[i];</span><br><span class="line">        if( maxn &lt; a[i] ) maxn = a[i];</span><br><span class="line">        if( minn &gt; a[i] ) minn = a[i] , minp = i;</span><br><span class="line">    }</span><br><span class="line">    if( n == 1 ){</span><br><span class="line">        cout &lt;&lt; "0\n";</span><br><span class="line">        return 0;</span><br><span class="line">    }</span><br><span class="line">    int l , r;l = r = minp;</span><br><span class="line">    sort( b + 1 , b + n + 1 , cmp );</span><br><span class="line">    b[n+1].id = n+1 , b[n+1].num = 2147483647;</span><br><span class="line">    int down_minn = minn * 2;</span><br><span class="line">    if( maxn &lt; b[1].num * 2 ) maxn = b[1].num * 2;</span><br><span class="line">    minn = b[2].num , minp = b[2].id;</span><br><span class="line">    if( minn &gt; down_minn ) minn = down_minn;</span><br><span class="line">    ans = min( maxn - minn , ans );</span><br><span class="line">    for(int p = 2;p &lt;= n;p ++){</span><br><span class="line">        if( b[p].id &gt; r ){</span><br><span class="line">            while( b[p].id &gt; r ){</span><br><span class="line">                r ++;</span><br><span class="line">                if( maxn &lt; a[r] * 2 ) maxn = a[r] * 2;</span><br><span class="line">            }</span><br><span class="line">            minn = b[p+1].num , minp = b[p+1].id;</span><br><span class="line">            while( minp &lt;= r &amp;&amp; minp &gt;= l ){</span><br><span class="line">                p ++;</span><br><span class="line">                minn = b[p+1].num , minp = b[p+1].id;</span><br><span class="line">            }</span><br><span class="line">            if( minn &gt; down_minn ) minn = down_minn;</span><br><span class="line">            ans = min( maxn - minn , ans );</span><br><span class="line">        } </span><br><span class="line">        if( b[p].id &lt; l ){</span><br><span class="line">            while( b[p].id &lt; l ){</span><br><span class="line">                l --;</span><br><span class="line">                if( maxn &lt; a[l] * 2 ) maxn = a[l] * 2;</span><br><span class="line">            }</span><br><span class="line">            minn = b[p+1].num , minp = b[p+1].id;</span><br><span class="line">            while( minp &lt;= r &amp;&amp; minp &gt;= l ){</span><br><span class="line">                p ++;</span><br><span class="line">                minn = b[p+1].num , minp = b[p+1].id;</span><br><span class="line">            }</span><br><span class="line">            if( minn &gt; down_minn ) minn = down_minn;</span><br><span class="line">            ans = min( maxn - minn , ans );</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="j题">J题</h4>
+<p>赛时还以为是什么糕级数论，结果降低时间复杂度<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="6.301ex" height="2.769ex" role="img" focusable="false" viewbox="0 -974.1 2785.1 1224.1"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mfrac" transform="translate(633,363) scale(0.707)"><g data-mml-node="mn" transform="translate(220,394) scale(0.707)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"/></g><g data-mml-node="mn" transform="translate(220,-345) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g><rect width="553.6" height="60" x="120" y="220"/></g></g><g data-mml-node="mo" transform="translate(2396.1,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></span>就能过</p>
+<p>通过打表可知，符合条件只有两种情况，再判一下就可以了</p>
+<p>要先<code>continue</code>掉奇数，不然亲测会T掉</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#define int long long</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 2e5;</span><br><span class="line">int n , ans , a[N+10];</span><br><span class="line">map &lt; int , int &gt; m;</span><br><span class="line"></span><br><span class="line">int gcd_( int x , int y ){</span><br><span class="line">    if( y == 0 ) return x;</span><br><span class="line">    return gcd_( y , x % y );</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">signed main(){</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    for(int i = 1;i &lt;= n;i ++) cin &gt;&gt; a[i];</span><br><span class="line">    for(int i = 1;i &lt;= n;i ++) m[a[i]] ++;</span><br><span class="line">    for(int i = 1;i &lt;= N;i ++){</span><br><span class="line">        if( i % 2 ) continue;</span><br><span class="line">        for(int j = 1;j &lt;= sqrt(i);j ++){</span><br><span class="line">            if( i + j &lt;= N ){</span><br><span class="line">                if((i ^ (i+j)) == j)</span><br><span class="line">                    if( gcd_( i , i+j ) == j )</span><br><span class="line">                        ans += m[i]*m[i+j];</span><br><span class="line">                if( (i ^ (i+i/j)) == i/j &amp;&amp; j*j!=i)</span><br><span class="line">                    if( gcd_( i , i+i/j ) == i/j )</span><br><span class="line">                        ans += m[i]*m[i+i/j];</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="c题">C题</h3>
+<p>看起来不难，以为半个小时就能写完</p>
+<p>结果调了好久···</p>
+<p>大致思路就是朴素开扫</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#define int long long</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 1e2;</span><br><span class="line">int n , t , a[N+10][N+10];</span><br><span class="line">int ans_list[1000000][5];</span><br><span class="line">string s;</span><br><span class="line"></span><br><span class="line">signed main(){int t;cin &gt;&gt; t;</span><br><span class="line">    while( t -- ){</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">            cin &gt;&gt; s;</span><br><span class="line">            for(int j = 0;j &lt; n;j ++){</span><br><span class="line">                if( s[j] == '1' ) a[i][j+1] = 1;</span><br><span class="line">                else a[i][j+1] = 0;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        int cnt = 0;</span><br><span class="line">        for(int i = 1;i &lt;= n/2;i ++){</span><br><span class="line">            for(int j = 1;j &lt;= n/2;j ++){</span><br><span class="line">                if( a[i][j] == 0 ){</span><br><span class="line">                    for(int ii = 1;ii &lt;= n;ii ++){</span><br><span class="line">                        int jj , jjl;if( ii &lt; i ) jjl = n/2+1;</span><br><span class="line">                        else if( ii == i ) jjl = j;</span><br><span class="line">                        else jjl = 1;</span><br><span class="line">                        for(jj = n;jj &gt;= jjl;jj --){</span><br><span class="line">                            if( a[ii][jj] == 1 ){</span><br><span class="line">                                // cout &lt;&lt; "SWAPP: " &lt;&lt; ii &lt;&lt; " " &lt;&lt; jj &lt;&lt; endl;</span><br><span class="line">                                while( !(i==ii&amp;&amp;j==jj) ){</span><br><span class="line">                                    if( ii &gt; i &amp;&amp; a[ii-1][jj] == 0 ){</span><br><span class="line">                                        cnt ++;</span><br><span class="line">                                        swap( a[ii][jj] , a[ii-1][jj] );</span><br><span class="line">                                        ans_list[cnt][1] = ii;</span><br><span class="line">                                        ans_list[cnt][2] = jj;</span><br><span class="line">                                        ans_list[cnt][3] = ii-1;</span><br><span class="line">                                        ans_list[cnt][4] = jj;</span><br><span class="line">                                        ii --;</span><br><span class="line">                                    }else if( ii &lt; i &amp;&amp; a[ii+1][jj] == 0 ){</span><br><span class="line">                                        cnt ++;</span><br><span class="line">                                        swap( a[ii][jj] , a[ii+1][jj] );</span><br><span class="line">                                        ans_list[cnt][1] = ii;</span><br><span class="line">                                        ans_list[cnt][2] = jj;</span><br><span class="line">                                        ans_list[cnt][3] = ii+1;</span><br><span class="line">                                        ans_list[cnt][4] = jj;</span><br><span class="line">                                        ii ++;</span><br><span class="line">                                    }else if( jj &gt; j &amp;&amp; a[ii][jj-1] == 0 ){</span><br><span class="line">                                        cnt ++;</span><br><span class="line">                                        swap( a[ii][jj] , a[ii][jj-1] );</span><br><span class="line">                                        ans_list[cnt][1] = ii;</span><br><span class="line">                                        ans_list[cnt][2] = jj;</span><br><span class="line">                                        ans_list[cnt][3] = ii;</span><br><span class="line">                                        ans_list[cnt][4] = jj-1;</span><br><span class="line">                                        jj --;</span><br><span class="line">                                    }else if( jj &lt; j &amp;&amp; a[ii][jj+1] == 0 ){</span><br><span class="line">                                        cnt ++;</span><br><span class="line">                                        swap( a[ii][jj] , a[ii][jj+1] );</span><br><span class="line">                                        ans_list[cnt][1] = ii;</span><br><span class="line">                                        ans_list[cnt][2] = jj;</span><br><span class="line">                                        ans_list[cnt][3] = ii;</span><br><span class="line">                                        ans_list[cnt][4] = jj+1;</span><br><span class="line">                                        jj ++;</span><br><span class="line">                                    }else goto RECHOOSE;</span><br><span class="line">                                }goto FIXED;</span><br><span class="line">                            }RECHOOSE:;</span><br><span class="line">                        }</span><br><span class="line">                    }</span><br><span class="line">                }FIXED:;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        // for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">        //     for(int j = 1;j &lt;= n;j ++){</span><br><span class="line">        //         cout &lt;&lt; a[i][j] &lt;&lt; " ";</span><br><span class="line">        //     }cout &lt;&lt; endl;</span><br><span class="line">        // }</span><br><span class="line">        cout &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line">        for(int i = 1;i &lt;= cnt;i ++){</span><br><span class="line">            for(int j = 1;j &lt;= 4;j ++){</span><br><span class="line">                cout &lt;&lt; ans_list[i][j] &lt;&lt; " ";</span><br><span class="line">            }cout &lt;&lt; endl;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>结果WA了个测试点~</p>
+<p><img src="/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250122114911663.png"></p>
+<p>看了题解，感觉思路真妙哇~</p>
+<p><img src="/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250122115049179.png"></p>
+<p>按照题解敲了一下，发现实现起来的复杂程度和我的代码差不多···</p>
+<p>最终千辛万苦，debug一整个下午，找到问题了</p>
+<p><code>ii</code>和<code>jj</code>这个两个指针复用导致的，每次用完之后复位一下就好了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#define int long long</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 1e2;</span><br><span class="line">int n , t , a[N+10][N+10];</span><br><span class="line">int ans_list[1000000][5];</span><br><span class="line">string s;</span><br><span class="line"></span><br><span class="line">signed main(){int t;cin &gt;&gt; t;</span><br><span class="line">    while( t -- ){</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">            cin &gt;&gt; s;</span><br><span class="line">            for(int j = 0;j &lt; n;j ++){</span><br><span class="line">                if( s[j] == '1' ) a[i][j+1] = 1;</span><br><span class="line">                else a[i][j+1] = 0;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        int cnt = 0;</span><br><span class="line">        for(int i = 1;i &lt;= n/2;i ++){</span><br><span class="line">            for(int j = 1;j &lt;= n/2;j ++){</span><br><span class="line">                if( a[i][j] == 0 ){</span><br><span class="line">                    for(int ii = 1;ii &lt;= n;ii ++){</span><br><span class="line">                        int jj;if( ii &lt; i ) jj = n/2+1;</span><br><span class="line">                        else if( ii == i ){ jj = j+1;}//cout &lt;&lt; "???????????" &lt;&lt; endl;}</span><br><span class="line">                        else jj = 1;</span><br><span class="line">                        int oii , ojj;oii = ii;</span><br><span class="line">                        // cout &lt;&lt; "disp?: "&lt;&lt; i &lt;&lt; " " &lt;&lt; j &lt;&lt; " " &lt;&lt; ii &lt;&lt; " " &lt;&lt; jj &lt;&lt; endl;</span><br><span class="line">                        while(jj &lt;= n){</span><br><span class="line">                            ojj = jj;</span><br><span class="line">                            // cout &lt;&lt; "ij: "&lt;&lt; i &lt;&lt; " " &lt;&lt; j &lt;&lt; " " &lt;&lt; ii &lt;&lt; " " &lt;&lt; jj &lt;&lt; endl;</span><br><span class="line">                            if( a[ii][jj] == 1 ){</span><br><span class="line">                                // cout &lt;&lt; "SWAPP: " &lt;&lt; ii &lt;&lt; " " &lt;&lt; jj &lt;&lt; endl;</span><br><span class="line">                                while( !(i==ii&amp;&amp;j==jj) ){</span><br><span class="line">                                    // cout &lt;&lt; "PASSED: " &lt;&lt; ii &lt;&lt; " " &lt;&lt; jj &lt;&lt; endl;</span><br><span class="line">                                    if( ii &gt; i &amp;&amp; a[ii-1][jj] == 0 ){</span><br><span class="line">                                        cnt ++;</span><br><span class="line">                                        swap( a[ii][jj] , a[ii-1][jj] );</span><br><span class="line">                                        ans_list[cnt][1] = ii;</span><br><span class="line">                                        ans_list[cnt][2] = jj;</span><br><span class="line">                                        ans_list[cnt][3] = ii-1;</span><br><span class="line">                                        ans_list[cnt][4] = jj;</span><br><span class="line">                                        ii --;</span><br><span class="line">                                    }else if( ii &lt; i &amp;&amp; a[ii+1][jj] == 0 ){</span><br><span class="line">                                        cnt ++;</span><br><span class="line">                                        swap( a[ii][jj] , a[ii+1][jj] );</span><br><span class="line">                                        ans_list[cnt][1] = ii;</span><br><span class="line">                                        ans_list[cnt][2] = jj;</span><br><span class="line">                                        ans_list[cnt][3] = ii+1;</span><br><span class="line">                                        ans_list[cnt][4] = jj;</span><br><span class="line">                                        ii ++;</span><br><span class="line">                                    }else if( jj &gt; j &amp;&amp; a[ii][jj-1] == 0 ){</span><br><span class="line">                                        cnt ++;</span><br><span class="line">                                        swap( a[ii][jj] , a[ii][jj-1] );</span><br><span class="line">                                        ans_list[cnt][1] = ii;</span><br><span class="line">                                        ans_list[cnt][2] = jj;</span><br><span class="line">                                        ans_list[cnt][3] = ii;</span><br><span class="line">                                        ans_list[cnt][4] = jj-1;</span><br><span class="line">                                        jj --;</span><br><span class="line">                                    }else if( jj &lt; j &amp;&amp; a[ii][jj+1] == 0 ){</span><br><span class="line">                                        cnt ++;</span><br><span class="line">                                        swap( a[ii][jj] , a[ii][jj+1] );</span><br><span class="line">                                        ans_list[cnt][1] = ii;</span><br><span class="line">                                        ans_list[cnt][2] = jj;</span><br><span class="line">                                        ans_list[cnt][3] = ii;</span><br><span class="line">                                        ans_list[cnt][4] = jj+1;</span><br><span class="line">                                        jj ++;</span><br><span class="line">                                    }else goto RECHOOSE;</span><br><span class="line">                                }goto FIXED;</span><br><span class="line">                            }RECHOOSE:;</span><br><span class="line">                            ii = oii , jj = ojj;</span><br><span class="line">                            jj ++;</span><br><span class="line">                        }</span><br><span class="line">                    }</span><br><span class="line">                    // cout &lt;&lt; "unp: " &lt;&lt; i &lt;&lt; " " &lt;&lt; j &lt;&lt; endl;</span><br><span class="line">                    // for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">                    //     for(int j = 1;j &lt;= n;j ++){</span><br><span class="line">                    //         cout &lt;&lt; (a[i][j]==1?"1":"0") &lt;&lt; " ";</span><br><span class="line">                    //     }cout &lt;&lt; endl;</span><br><span class="line">                    // }</span><br><span class="line">                }FIXED:;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        // for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">        //     for(int j = 1;j &lt;= n;j ++){</span><br><span class="line">        //         cout &lt;&lt; (a[i][j]==1?"1":"0") &lt;&lt; " ";</span><br><span class="line">        //     }cout &lt;&lt; endl;</span><br><span class="line">        // }</span><br><span class="line">        cout &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line">        for(int i = 1;i &lt;= cnt;i ++){</span><br><span class="line">            for(int j = 1;j &lt;= 4;j ++){</span><br><span class="line">                cout &lt;&lt; ans_list[i][j] &lt;&lt; " ";</span><br><span class="line">            }cout &lt;&lt; endl;</span><br><span class="line">            </span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="e题">E题</h3>
+<p>概率论没学好（悲</p>
+<p><img src="/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250123095350739.png"></p>
+<p>知道了这一点，将会是签到题的难度（悲</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define int long long</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 1e5;</span><br><span class="line">int n , t , a[N+10];</span><br><span class="line"></span><br><span class="line">signed main(){int t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    while( t -- ){</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        int ans = 0;</span><br><span class="line">        for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">            cin &gt;&gt; a[i];</span><br><span class="line">        }</span><br><span class="line">        sort( a + 1 , a + n + 1 );</span><br><span class="line">        int goal , goal1;</span><br><span class="line">        goal1 = a[(n/2+1)/2];</span><br><span class="line">        goal  = a[n/2+(n/2+1)/2];</span><br><span class="line">        for(int i = 1;i &lt;= n/2;i ++){</span><br><span class="line">            ans += abs( a[i] - goal1 );</span><br><span class="line">        }</span><br><span class="line">        for(int i = n/2+1;i &lt;= n;i ++){</span><br><span class="line">            ans += abs( a[i] - goal );</span><br><span class="line">        }</span><br><span class="line">        if( goal1 == goal ){</span><br><span class="line">            int add , add_temp;add_temp = 0;</span><br><span class="line">            for(int i = 1;i &lt;= n/2;i ++){</span><br><span class="line">                if( a[i] == goal1 ) add_temp ++;</span><br><span class="line">                else add_temp --;</span><br><span class="line">            }add = add_temp;</span><br><span class="line">            add_temp = 0;</span><br><span class="line">            for(int i = n/2+1;i &lt;= n;i ++){</span><br><span class="line">                if( a[i] == goal ) add_temp ++;</span><br><span class="line">                else add_temp --;</span><br><span class="line">            }add = min(add_temp,add);</span><br><span class="line">            ans += add;</span><br><span class="line">        }</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    }</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="h题">H题</h3>
+<p>思维题</p>
+<p>考虑贪心，为了最大化排的开，我们需要<strong>按左节点排序，当<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="5.212ex" height="1.927ex" role="img" focusable="false" viewbox="0 -694 2303.5 851.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(622.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="msub" transform="translate(1678.6,0)"><g data-mml-node="mi"><path data-c="1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"/></g><g data-mml-node="mi" transform="translate(331,-150) scale(0.707)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g></g></g></g></svg></mjx-container></span>时加入备选，备选里面按右节点排序</strong></p>
+<p>如果不够了，就说明不存在</p>
+<p>记得判非空</p>
+<p>顺便学习了一下如何结构体根堆</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#define int long long </span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const int N = 1e5;</span><br><span class="line">int n;</span><br><span class="line">struct NODE{</span><br><span class="line">    int l , r;</span><br><span class="line">    int id;</span><br><span class="line">}a[N+10];</span><br><span class="line">bool cmp( NODE x , NODE y ){</span><br><span class="line">    return x.l &lt; y.l;</span><br><span class="line">}</span><br><span class="line">struct Comp{</span><br><span class="line">    bool operator()(const NODE&amp; x , const NODE&amp; y){</span><br><span class="line">        // if( x.r == y.r )</span><br><span class="line">        return x.r &gt; y.r;</span><br><span class="line">    }</span><br><span class="line">};</span><br><span class="line">priority_queue &lt; NODE , vector &lt; NODE &gt; , Comp &gt; pq;</span><br><span class="line">int ans[N+10];</span><br><span class="line"></span><br><span class="line">signed main(){</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">        cin &gt;&gt; a[i].l &gt;&gt; a[i].r;a[i].id = i;</span><br><span class="line">    }sort( a + 1 , a + n + 1 , cmp );</span><br><span class="line">    int top = 1 , topi = 1;</span><br><span class="line">    while( top &lt;= n ){</span><br><span class="line">        while( a[topi].l == top ) pq.push( {a[topi].l,a[topi].r,a[topi].id} ) , topi ++;</span><br><span class="line">        if( pq.empty() ){</span><br><span class="line">            cout &lt;&lt; -1 &lt;&lt; endl;</span><br><span class="line">            return 0;</span><br><span class="line">        }</span><br><span class="line">        if( pq.top().r &gt;= top ){</span><br><span class="line">            ans[pq.top().id] = top;</span><br><span class="line">            pq.pop();top ++;</span><br><span class="line">        }else{</span><br><span class="line">            cout &lt;&lt; -1 &lt;&lt; endl;</span><br><span class="line">            return 0;</span><br><span class="line">        }</span><br><span class="line">    }for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">        cout &lt;&lt; ans[i] &lt;&lt; " ";</span><br><span class="line">    }cout &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>就此，100人以上的题目都补完了</p>
+<p><img src="/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250128160459794.png"></p>
+<h2 id="第二场">第二场</h2>
+<p><img src="/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250128160849232.png"></p>
+<p>这场被打爆了，D结论题没做出来（根本想不到）</p>
+<p>不过好在H题一个钝角三角形就秒了，没掉太大分</p>
+<p>A题签到</p>
+<p>B题直接排序然后输出<code>a[n/2+1]-1</code>即可</p>
+<p>F题打表找到规律<code>r-l+1</code></p>
+<p>G题直接模拟</p>
+<p>J题也是大模拟（但是没有想象中的毒瘤）</p>
+<h3 id="k题">K题</h3>
+<p>直接搜索即可，但是需要一些优化技巧不然会T掉~</p>
+<p>就涂色就可以了，代码还是听清楚的</p>
+<p>感觉难在优化（挂五发的悲哀）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#define int long long</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 5e2;</span><br><span class="line">int n , m;</span><br><span class="line">int a[N+10][N+10];</span><br><span class="line">int blue[N+10][N+10];</span><br><span class="line">int rem[N+10][N+10];</span><br><span class="line">string s;</span><br><span class="line">int ans , ans_now;</span><br><span class="line">int most_low;</span><br><span class="line"></span><br><span class="line">void dfs( int i , int j ){</span><br><span class="line">    most_low = max( most_low , i + 1 );</span><br><span class="line">    if( i+1&lt;=n &amp;&amp; a[i+1][j] == 1 &amp;&amp; blue[i+1][j] == 0 ) blue[i+1][j] = 1 , dfs(i+1,j);</span><br><span class="line">    else if( i+1&lt;=n &amp;&amp; blue[i+1][j] == 0 ) blue[i+1][j] = 2 , ans_now ++;</span><br><span class="line">    if( i-1&gt;=1 &amp;&amp; a[i-1][j] == 1 &amp;&amp; blue[i-1][j] == 0 ) blue[i-1][j] = 1 , dfs(i-1,j);</span><br><span class="line">    else if( i-1&gt;=1 &amp;&amp; blue[i-1][j] == 0 ) blue[i-1][j] = 2 , ans_now ++;</span><br><span class="line">    if( j+1&lt;=m &amp;&amp; a[i][j+1] == 1 &amp;&amp; blue[i][j+1] == 0 ) blue[i][j+1] = 1 , dfs(i,j+1);</span><br><span class="line">    else if( j+1&lt;=m &amp;&amp; blue[i][j+1] == 0 ) blue[i][j+1] = 2 , ans_now ++;</span><br><span class="line">    if( j-1&gt;=1 &amp;&amp; a[i][j-1] == 1 &amp;&amp; blue[i][j-1] == 0 ) blue[i][j-1] = 1 , dfs(i,j-1);</span><br><span class="line">    else if( j-1&gt;=1 &amp;&amp; blue[i][j-1] == 0 ) blue[i][j-1] = 2 , ans_now ++;</span><br><span class="line">    return ;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">signed main(){</span><br><span class="line">    // freopen("in.txt", "r", stdin);</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">        cin &gt;&gt; s;</span><br><span class="line">        for(int j = 0;j &lt; m;j ++){</span><br><span class="line">            a[i][j+1] = s[j] - '0';</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    ans = 2147483647;</span><br><span class="line">    int ii , jj;ii = 1;</span><br><span class="line">    while( 1 ){</span><br><span class="line">        ans_now = 0;</span><br><span class="line">        most_low = 1;</span><br><span class="line">        for(;ii &lt;= n;ii ++){</span><br><span class="line">            for(jj = 1;jj &lt;= m;jj ++){</span><br><span class="line">                if( a[ii][jj] ){</span><br><span class="line">                    blue[ii][jj] = 1;</span><br><span class="line">                    dfs( ii , jj );</span><br><span class="line">                    goto OUT;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        break;</span><br><span class="line">        OUT:;</span><br><span class="line">        ans = min( ans , ans_now );</span><br><span class="line">        for(int i = ii;i &lt;= most_low;i ++){</span><br><span class="line">            for(int j = 1;j &lt;= m;j ++){</span><br><span class="line">                if( blue[i][j] ){//1和2都涂为灰色</span><br><span class="line">                    blue[i][j] = 0;</span><br><span class="line">                    a[i][j] = 0;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="h题-1">H题</h3>
+<p>没想到这题这么简单，答案是钝角（即答</p>
+<p>直接试图构造最钝角的钝角三角形即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int a , b , c , d;</span><br><span class="line"></span><br><span class="line">signed main(){</span><br><span class="line">    int t;cin &gt;&gt; t;while( t -- ){</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;</span><br><span class="line">        if( b - a &gt; d - c ){</span><br><span class="line">            cout &lt;&lt; b &lt;&lt; " " &lt;&lt; d &lt;&lt; endl;</span><br><span class="line">            cout &lt;&lt; b-1 &lt;&lt; " " &lt;&lt; d &lt;&lt; endl;</span><br><span class="line">            cout &lt;&lt; a &lt;&lt; " " &lt;&lt; d-1 &lt;&lt; endl;</span><br><span class="line">            </span><br><span class="line">        }else{</span><br><span class="line">            cout &lt;&lt; a &lt;&lt; " " &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">            cout &lt;&lt; a &lt;&lt; " " &lt;&lt; c+1 &lt;&lt; endl;</span><br><span class="line">            cout &lt;&lt; a+1 &lt;&lt; " " &lt;&lt; d &lt;&lt; endl;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="d题">D题</h3>
+<p>大结论题，完全没想到的一款</p>
+<p>结论：连续子串和不连续子串，最长情况下，只有最后一个（或者第一个）字母不同</p>
+<p>学长给的证明，感觉很清晰易懂</p>
+<p><img src="/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/2ZJTTZLS5UCBN$E%5DBZQD%5BJH_tmb.jpg"></p>
+<p>赛后多了新数据，特判一下1的时候输出0就可以了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#define int long long</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 2e5;</span><br><span class="line">int n;</span><br><span class="line">string s;</span><br><span class="line">int a[N+10] , lst[30];</span><br><span class="line">map &lt; int , int &gt; mp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">signed main(){</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; s;</span><br><span class="line">    for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">        a[i] = s[i-1] - 'a' + 1;</span><br><span class="line">    }</span><br><span class="line">    int maxn = 0;</span><br><span class="line">    for(int i = 1;i &lt;= n;i ++){</span><br><span class="line">        if( mp[a[i]] ) maxn = max( maxn , lst[a[i]] );</span><br><span class="line">        mp[a[i]] ++ , lst[a[i]] = i;</span><br><span class="line">    }</span><br><span class="line">    for(int i = 1;i &lt;= 26;i ++) mp[i] = 0;</span><br><span class="line">    for(int i = n;i &gt;= 1;i --){</span><br><span class="line">        if( mp[a[i]] ) maxn = max( maxn , n - lst[a[i]] + 1 );</span><br><span class="line">        mp[a[i]] ++ , lst[a[i]] = i;</span><br><span class="line">    }</span><br><span class="line">    if( maxn == 1 ) maxn = 0;</span><br><span class="line">    cout &lt;&lt; maxn &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="c题-1">C题</h3>
+<p>构造题，需要建立在D的结论之上</p>
+<p>不妨先只考虑一个方向（从前往后）</p>
+<p>构造一个串，答案为<strong>最后一个倒数第二个字母</strong>（最大的）</p>
+<p>就，前面半截是<code>abcde...</code>，只要末尾最后俩是对<code>a</code>，就是<code>m=n-1</code></p>
+<p>例如，<code>n=11,m=10</code>，则构造的序列为<code>abcdefghiaa</code>，这时符合条件（只考虑从前往后扫）</p>
+<p>那，还要从后往前扫怎么办~</p>
+<p>对称一下不就好了，即<code>abcdefghiaihgfedcba</code>，这时<code>m=10</code>（虽然<code>n</code>变了）</p>
+<p><code>n=2m+1</code>的时候可以这样子构造，，，那其他情况呢？<code>n&gt;2*m</code>的时候，往中间填充任意字符就可以了（需要是两侧出现过的哦）</p>
+<p>如果<code>n&lt;=2*m</code>，也就是<strong>回文区间大于前缀/后缀</strong>，可以发现我们可以从前缀结束之后直接继续数，例如</p>
+<p><code>abcde fgh edcba</code>这样子，反正这样就可以达到延长子串的作用（不信你试试，答案刚好是前两段的内容（第一种情况下答案只包含第一段+1））</p>
+<p>最后别忘了特判<code>n==m</code>和字母不够（<code>n-m&gt;26</code>）的情况</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 2e5;</span><br><span class="line">int n , m;</span><br><span class="line"></span><br><span class="line">signed main(){</span><br><span class="line">    int t;cin &gt;&gt; t;while( t -- ){</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">        if( n == m || n - m &gt; 26 ){</span><br><span class="line">            cout &lt;&lt; "NO" &lt;&lt; endl;</span><br><span class="line">            continue;</span><br><span class="line">        }</span><br><span class="line">        cout &lt;&lt; "YES" &lt;&lt; endl;</span><br><span class="line">        if( n &gt; m * 2 ){</span><br><span class="line">            for(int i = 1;i &lt;= m;i ++){</span><br><span class="line">                cout &lt;&lt; (char)(i+'a'-1);</span><br><span class="line">            }</span><br><span class="line">            for(int i = m+1;i &lt;= n-m;i ++){</span><br><span class="line">                cout &lt;&lt; (char)(i+'a'-1);</span><br><span class="line">            }</span><br><span class="line">            for(int i = m;i &gt;= 1;i --){</span><br><span class="line">                cout &lt;&lt; (char)(i+'a'-1);</span><br><span class="line">            }</span><br><span class="line">            cout &lt;&lt; endl;</span><br><span class="line">        }else{</span><br><span class="line">            for(int i = 1;i &lt;= n-m;i ++){</span><br><span class="line">                cout &lt;&lt; (char)(i+'a'-1);</span><br><span class="line">            }</span><br><span class="line">            for(int i = 1;i &lt;= 2*m-n;i ++){</span><br><span class="line">                cout &lt;&lt; (char)(1+'a'-1);</span><br><span class="line">            }</span><br><span class="line">            for(int i = n-m;i &gt;= 1;i --){</span><br><span class="line">                cout &lt;&lt; (char)(i+'a'-1);</span><br><span class="line">            }</span><br><span class="line">            cout &lt;&lt; endl;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="e题-1">E题</h3>
+<p>哦原来是RMQ算法哇怪不得我不会做原来是因为我不会</p>
+<p>先记下来，明儿个学了再补~</p>
+<h2 id="第三场">第三场</h2>
+<p><img src="/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/image-20250129202306326.png"></p>
+<p>这场发挥比较好，骑马进前10%了（也有可能是题目难度梯度大，恰巧E调出来了）</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/unfixed/" rel="tag"><i class="fa fa-tag"></i>unfixed</a>
+              <a href="/tags/None/" rel="tag"><i class="fa fa-tag"></i>None</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/01/19/CF%E8%A1%A5%E9%A2%98%E5%B0%8F%E5%90%88%E9%9B%86/" rel="prev" title="CF补题小合集">
+                  <i class="fa fa-angle-left"></i> CF补题小合集
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">coperlm</span>
+  </div>
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+-->
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"per_page":false,"cdn":null,"tags":"none","config":{"tex":{"inlineMath":[["$","$"]],"displayMath":[["$$","$$"]]}},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
