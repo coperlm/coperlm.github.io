@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="数据结构没有很多题目，所以只能通过知识点为索引进行复习 知识点来源是学长给的文档和期中考试题目">
+    <meta name="description" content="数据结构没有很多题目，所以只能通过知识点为索引进行复习 知识点来源是学长给的文档和期中考试题目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构不是有手就行（陈述句">
 <meta property="og:url" content="https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="数据结构没有很多题目，所以只能通过知识点为索引进行复习 知识点来源是学长给的文档和期中考试题目">
+<meta property="og:description" content="数据结构没有很多题目，所以只能通过知识点为索引进行复习 知识点来源是学长给的文档和期中考试题目">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106142613576.png">
 <meta property="og:image" content="https://coperlm.github.io/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106150044907.png">
@@ -260,7 +260,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text">树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E5%85%88%E5%BA%8F%E5%BA%8F%E5%88%97%E5%92%8C%E4%B8%AD%E5%BA%8F%E5%BA%8F%E5%88%97%E6%B1%82%E6%A0%91"><span class="nav-number">1.1.</span> <span class="nav-text">已知先序序列和中序序列求树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E4%B8%AD%E5%BA%8F%E5%BA%8F%E5%88%97%E5%92%8C%E5%90%8E%E5%BA%8F%E5%BA%8F%E5%88%97%E6%B1%82%E6%A0%91"><span class="nav-number">1.2.</span> <span class="nav-text">已知中序序列和后序序列求树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.3.</span> <span class="nav-text">后序线索二叉树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%92%8C%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">哈夫曼树和哈夫曼编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A0"><span class="nav-number">2.1.</span> <span class="nav-text">树的构造</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="nav-number">2.2.</span> <span class="nav-text">哈夫曼编码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%9B%B8%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">图相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-number">4.</span> <span class="nav-text">最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prim%E7%AE%97%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">Prim算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kruskal%E7%AE%97%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">Kruskal算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91"><span class="nav-number">5.</span> <span class="nav-text">二叉排序树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-number">6.</span> <span class="nav-text">排序</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text">树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E5%85%88%E5%BA%8F%E5%BA%8F%E5%88%97%E5%92%8C%E4%B8%AD%E5%BA%8F%E5%BA%8F%E5%88%97%E6%B1%82%E6%A0%91"><span class="nav-number">1.1.</span> <span class="nav-text">已知先序序列和中序序列求树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E4%B8%AD%E5%BA%8F%E5%BA%8F%E5%88%97%E5%92%8C%E5%90%8E%E5%BA%8F%E5%BA%8F%E5%88%97%E6%B1%82%E6%A0%91"><span class="nav-number">1.2.</span> <span class="nav-text">已知中序序列和后序序列求树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.3.</span> <span class="nav-text">后序线索二叉树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%92%8C%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">哈夫曼树和哈夫曼编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A0"><span class="nav-number">2.1.</span> <span class="nav-text">树的构造</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="nav-number">2.2.</span> <span class="nav-text">哈夫曼编码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%9B%B8%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">图相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-number">4.</span> <span class="nav-text">最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Prim%E7%AE%97%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">Prim算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Kruskal%E7%AE%97%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">Kruskal算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91"><span class="nav-number">5.</span> <span class="nav-text">二叉排序树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-number">6.</span> <span class="nav-text">排序</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -273,7 +273,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">86</span>
+          <span class="site-state-item-count">87</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -366,84 +366,66 @@ mjx-container[display="true"] + br {
 <p>知识点来源是学长给的文档和期中考试题目</p>
 <span id="more"></span>
 <hr>
-<h3 id="树的遍历">树的遍历</h3>
-<p>前序遍历 根-&gt;左子树-&gt;右子树 中序遍历 左子树-&gt;根-&gt;右子树
-后序遍历 左子树-&gt;右子树-&gt;根</p>
+<h3 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h3><p>前序遍历 根-&gt;左子树-&gt;右子树<br>中序遍历 左子树-&gt;根-&gt;右子树<br>后序遍历 左子树-&gt;右子树-&gt;根</p>
 <p>差异：访问到根节点的条件</p>
-<h4 id="已知先序序列和中序序列求树">已知先序序列和中序序列求树</h4>
-<p><img src="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106142613576.png"></p>
+<h4 id="已知先序序列和中序序列求树"><a href="#已知先序序列和中序序列求树" class="headerlink" title="已知先序序列和中序序列求树"></a>已知先序序列和中序序列求树</h4><p><img src="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106142613576.png" alt></p>
 <p>解题步骤：</p>
-<ol type="1">
+<ol>
 <li>从前序遍历的第一个节点找到根节点</li>
 <li>在中序遍历中找到这个根节点，根节点左侧的部分是左子树，右侧的部分是右子树</li>
 <li>根据分割出的左右子树，在前序遍历中找到相应的部分（保持顺序），递归重复前两个步骤直到完成树的构造</li>
 </ol>
-<h4 id="已知中序序列和后序序列求树">已知中序序列和后序序列求树</h4>
-<p>解题步骤：</p>
-<ol type="1">
+<h4 id="已知中序序列和后序序列求树"><a href="#已知中序序列和后序序列求树" class="headerlink" title="已知中序序列和后序序列求树"></a>已知中序序列和后序序列求树</h4><p>解题步骤：</p>
+<ol>
 <li>从后序遍历的最后一个节点找到根节点</li>
 <li>在中序遍历中找到这个根节点，根节点左侧是左子树，右侧部分是右子树</li>
 <li>根据分割出的左右子树，在后序遍历中找到相应的部分（保持顺序），递归重复前两个步骤直到完成树的构造</li>
 </ol>
-<h4 id="后序线索二叉树">后序线索二叉树</h4>
-<p>后序线索二叉树是一种特殊的二叉树，它在普通二叉树的基-础上，通过为二叉树的结点增加“线索指针”来优化树的遍历效率
-这种线索指针的引入，使得二叉树的后序遍历可以在不使用递归或栈的情况下完成</p>
+<h4 id="后序线索二叉树"><a href="#后序线索二叉树" class="headerlink" title="后序线索二叉树"></a>后序线索二叉树</h4><p>后序线索二叉树是一种特殊的二叉树，它在普通二叉树的基-础上，通过为二叉树的结点增加“线索指针”来优化树的遍历效率<br>这种线索指针的引入，使得二叉树的后序遍历可以在不使用递归或栈的情况下完成</p>
 <p>简单的来说，线索化就是把X序序列转成双向链表的形式（如果已有一条边，则无需返程）</p>
-<p><img src="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106150044907.png"></p>
-<h3 id="哈夫曼树和哈夫曼编码">哈夫曼树和哈夫曼编码</h3>
-<p>哈夫曼树是一种带权路径长度最短的二叉树，构造基于贪心算法</p>
+<p><img src="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106150044907.png" alt></p>
+<h3 id="哈夫曼树和哈夫曼编码"><a href="#哈夫曼树和哈夫曼编码" class="headerlink" title="哈夫曼树和哈夫曼编码"></a>哈夫曼树和哈夫曼编码</h3><p>哈夫曼树是一种带权路径长度最短的二叉树，构造基于贪心算法</p>
 <p>其中，权值为节点的频率（或权重），路径长度为根节点到某个节点的路径中边的数量，带权路径长度为路径长度乘以节点的权值</p>
 <p>哈夫曼树的目标是让带权路径长度（WPL）的总和最小</p>
 <p>特定：没有任何一个权值小的节点比权值大的节点更靠近根的位置</p>
-<h4 id="树的构造">树的构造</h4>
-<ol type="1">
+<h4 id="树的构造"><a href="#树的构造" class="headerlink" title="树的构造"></a>树的构造</h4><ol>
 <li>初始化：将每个权值看作一个独立的节点，每个节点都是一棵单结点树</li>
 <li>选择最小的两个权值：从当且森林中找到两个权值最小的树作为左右子树构造一个新树，新树的根节点权值为这两棵树权值之和，删除旧树</li>
 <li>重复步骤，直到森林中只剩下一棵树</li>
 </ol>
-<h4 id="哈夫曼编码">哈夫曼编码</h4>
-<p>是一种可变长度的编码方案，基于哈夫曼树生成</p>
-<ol type="1">
+<h4 id="哈夫曼编码"><a href="#哈夫曼编码" class="headerlink" title="哈夫曼编码"></a>哈夫曼编码</h4><p>是一种可变长度的编码方案，基于哈夫曼树生成</p>
+<ol>
 <li>无前缀性：没有一个编码是另一个编码的前缀，确保了解码的唯一性</li>
 <li>长度与频率相关：频率高的字符使用较短的编码，频率低的字符使用较长的编码</li>
 <li>权重分配：从根节点开始，左子树路径赋值为0，右子树路径赋值为1；到达叶子结点时，记录从根到该节点的编码</li>
 </ol>
-<p>例题：某通讯系统只使用8种字符a、b、c、d、e、f、g、h，其使用频率分别为0.05,
-0.29, 0.07, 0.08, 0.14, 0.23, 0.03,
-0.11，利用赫夫曼树设计一种前缀编码</p>
-<p><img src="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106154901650.png"></p>
+<p>例题：某通讯系统只使用8种字符a、b、c、d、e、f、g、h，其使用频率分别为0.05, 0.29, 0.07, 0.08, 0.14, 0.23, 0.03, 0.11，利用赫夫曼树设计一种前缀编码</p>
+<p><img src="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/image-20250106154901650.png" alt></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a: 0110</span><br><span class="line">b: 10</span><br><span class="line">c: 1110</span><br><span class="line">d: 1111</span><br><span class="line">e: 110</span><br><span class="line">f: 00</span><br><span class="line">g: 0111</span><br><span class="line">h: 010</span><br></pre></td></tr></table></figure>
 <p>保证所有节点都是叶节点即可避免前缀冲突性（每个字符路径唯一，而且没有叶节点在另一个叶节点路径上）</p>
-<h3 id="图相关">图相关</h3>
-<p>邻接矩阵：就是个二维数据</p>
+<h3 id="图相关"><a href="#图相关" class="headerlink" title="图相关"></a>图相关</h3><p>邻接矩阵：就是个二维数据</p>
 <p>邻接表：就是个链表</p>
 <p>极大联通子图（强联通分量）：该子图是G连通子图，将G的任何不在该子图中的顶点加入，子图不再连通；用于缩点</p>
-<p>极小联通子图：该子图是G
-的连通子图，在该子图中删除任何一条边，子图不再连通；用于生成树</p>
+<p>极小联通子图：该子图是G 的连通子图，在该子图中删除任何一条边，子图不再连通；用于生成树</p>
 <p>强连通图：任意两个点之间有双向可抵达的通路</p>
-<h3 id="最小生成树">最小生成树</h3>
-<h4 id="prim算法">Prim算法</h4>
-<p>选择已知树上的最小边并加入</p>
-<ol type="1">
+<h3 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h3><h4 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h4><p>选择已知树上的最小边并加入</p>
+<ol>
 <li>从任意一个顶点开始，将它加入生成树</li>
 <li>每次选择一条权值最小、且值连接生成树中顶点与生成树外顶点的边</li>
 <li>重复步骤2，直到生成树包含图中的所有顶点</li>
 </ol>
-<h4 id="kruskal算法">Kruskal算法</h4>
-<p>选择最小边并判断是否成环</p>
-<ol type="1">
+<h4 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h4><p>选择最小边并判断是否成环</p>
+<ol>
 <li>将所有的边按边权从小到大排序</li>
-<li>从权值最小的开始，逐条简称该边是否成环（并查集）
-<ul>
+<li>从权值最小的开始，逐条简称该边是否成环（并查集）<ul>
 <li>如果不成环，则加入生成树</li>
 <li>如果形成环，则跳过这条边</li>
-</ul></li>
+</ul>
+</li>
 <li>重复步骤2，直到生成树包含n-1条边</li>
 </ol>
-<h3 id="二叉排序树">二叉排序树</h3>
-<p>见<a href="https://coperlm.github.io/2025/01/06/红黑树学习/">二叉平衡树</a>一章</p>
-<h3 id="排序">排序</h3>
-<p>这么难我都看不懂</p>
+<h3 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h3><p>见<a href="https://coperlm.github.io/2025/01/06/红黑树学习/">二叉平衡树</a>一章</p>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>这么难我都看不懂</p>
 
     </div>
 
