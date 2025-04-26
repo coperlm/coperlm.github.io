@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2025/04/26/%E9%85%8D%E7%BD%AE%E4%B8%80%E9%94%AE%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD%E5%B9%B6%E4%B8%8A%E4%BC%A0/image-20250426175758939.png">
 <meta property="article:published_time" content="2025-04-26T09:53:08.000Z">
-<meta property="article:modified_time" content="2025-04-26T10:02:31.298Z">
+<meta property="article:modified_time" content="2025-04-26T10:03:33.419Z">
 <meta property="article:author" content="coperlm">
 <meta property="article:tag" content="misc">
 <meta property="article:tag" content="unfixed">
@@ -342,7 +342,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-04-26 17:53:08 / Modified: 18:02:31" itemprop="dateCreated datePublished" datetime="2025-04-26T17:53:08+08:00">2025-04-26</time>
+      <time title="Created: 2025-04-26 17:53:08 / Modified: 18:03:33" itemprop="dateCreated datePublished" datetime="2025-04-26T17:53:08+08:00">2025-04-26</time>
     </span>
 
   
@@ -365,7 +365,7 @@ mjx-container[display="true"] + br {
 <p>然后进行测试，发现<code>hexo g</code>出现报错，经查验是因为<code>themes</code>里面也有一个<code>.git</code>文件；这个文件对咱们用途不大（应该说是基本用不到），所以可以直接删掉</p>
 <p>然后测试一下<code>git</code>和<code>hexo</code>，不出意外可以正常运行了</p>
 <p>下面写一个一键运行脚本，拓展名是<code>.sh</code>，具体代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">git add .</span><br><span class="line">git commit -m "Update blog content"</span><br><span class="line">git push</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line"></span><br><span class="line">if [ $? -eq 0 ]; then</span><br><span class="line">  echo "Blog deployed successfully!"</span><br><span class="line">else</span><br><span class="line">  echo "Hexo deploy failed!"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">git add .</span><br><span class="line">git commit -m "Update blog content"</span><br><span class="line">git push</span><br><span class="line">hexo generate #最后generate可以节约流量</span><br><span class="line">hexo deploy</span><br><span class="line"></span><br><span class="line">if [ $? -eq 0 ]; then</span><br><span class="line">  echo "Blog deployed successfully!"</span><br><span class="line">else</span><br><span class="line">  echo "Hexo deploy failed!"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 <p>每次想生成博客的时候，打开bash然后输入
 <code>./文件名.sh</code>就可以一键运行了</p>
 <p>可以起一个可以用Tab键一键补齐的文件名</p>
