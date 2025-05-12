@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本篇文章用于记录飞镖组开发日志，便于后人学习 因为也不是什么很珍贵的东西，所以没有上锁，希望其他队伍看到后能指点一二 电控代码开源">
+    <meta name="description" content="本篇文章用于记录飞镖组开发日志，便于后人学习 因为也不是什么很珍贵的东西，所以没有上锁，希望其他队伍看到后能指点一二 电控代码开源">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RoboMaster福建师范大学2025赛季 飞镖组开发日志">
 <meta property="og:url" content="https://coperlm.github.io/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="本篇文章用于记录飞镖组开发日志，便于后人学习 因为也不是什么很珍贵的东西，所以没有上锁，希望其他队伍看到后能指点一二 电控代码开源">
+<meta property="og:description" content="本篇文章用于记录飞镖组开发日志，便于后人学习 因为也不是什么很珍贵的东西，所以没有上锁，希望其他队伍看到后能指点一二 电控代码开源">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/%E9%A3%9E%E9%95%96%E7%94%B5%E6%8E%A7%E8%BF%9B%E5%BA%A6.png">
 <meta property="og:image" content="https://coperlm.github.io/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/4ce449b5537292c77ccf71d186d179f.jpg">
@@ -262,7 +262,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A4%E5%89%8D%E7%9A%84%E8%BF%9B%E5%BA%A62024.11.24"><span class="nav-number">1.</span> <span class="nav-text">此前的进度2024.11.24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.11.28"><span class="nav-number">2.</span> <span class="nav-text">UPD2024.11.28</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.11.30"><span class="nav-number">3.</span> <span class="nav-text">UPD2024.11.30</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.12.05"><span class="nav-number">4.</span> <span class="nav-text">UPD2024.12.05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.12.10"><span class="nav-number">5.</span> <span class="nav-text">UPD2024.12.10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.12.15"><span class="nav-number">6.</span> <span class="nav-text">UPD2024.12.15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.12.19"><span class="nav-number">7.</span> <span class="nav-text">UPD2024.12.19</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.12.25"><span class="nav-number">8.</span> <span class="nav-text">UPD2024.12.25</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.12.26"><span class="nav-number">9.</span> <span class="nav-text">UPD2024.12.26</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2024.12.30"><span class="nav-number">10.</span> <span class="nav-text">UPD2024.12.30</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2025.01.03"><span class="nav-number">11.</span> <span class="nav-text">UPD2025.01.03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd2025.02.18"><span class="nav-number">12.</span> <span class="nav-text">UPD2025.02.18</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A4%E5%89%8D%E7%9A%84%E8%BF%9B%E5%BA%A62024-11-24"><span class="nav-number">1.</span> <span class="nav-text">此前的进度2024.11.24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2024-11-28"><span class="nav-number">2.</span> <span class="nav-text">UPD2024.11.28</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2024-11-30"><span class="nav-number">3.</span> <span class="nav-text">UPD2024.11.30</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2024-12-05"><span class="nav-number">4.</span> <span class="nav-text">UPD2024.12.05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2024-12-10"><span class="nav-number">5.</span> <span class="nav-text">UPD2024.12.10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2024-12-15"><span class="nav-number">6.</span> <span class="nav-text">UPD2024.12.15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2024-12-19"><span class="nav-number">7.</span> <span class="nav-text">UPD2024.12.19</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2024-12-25"><span class="nav-number">8.</span> <span class="nav-text">UPD2024.12.25</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2024-12-26"><span class="nav-number">9.</span> <span class="nav-text">UPD2024.12.26</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2024-12-30"><span class="nav-number">10.</span> <span class="nav-text">UPD2024.12.30</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2025-01-03"><span class="nav-number">11.</span> <span class="nav-text">UPD2025.01.03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPD2025-02-18"><span class="nav-number">12.</span> <span class="nav-text">UPD2025.02.18</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -275,7 +275,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">89</span>
+          <span class="site-state-item-count">90</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -368,10 +368,9 @@ mjx-container[display="true"] + br {
 <p>因为也不是什么很珍贵的东西，所以没有上锁，希望其他队伍看到后能指点一二</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/coperlm/FJNU_RM2025Tracking_Dart">电控代码开源</a></p>
 <span id="more"></span>
-<h2 id="此前的进度2024.11.24">此前的进度2024.11.24</h2>
-<p>版本：0.4</p>
-<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/飞镖电控进度.png"></p>
-<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/4ce449b5537292c77ccf71d186d179f.jpg"></p>
+<h2 id="此前的进度2024-11-24"><a href="#此前的进度2024-11-24" class="headerlink" title="此前的进度2024.11.24"></a>此前的进度2024.11.24</h2><p>版本：0.4</p>
+<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/飞镖电控进度.png" alt></p>
+<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/4ce449b5537292c77ccf71d186d179f.jpg" alt></p>
 <p>硬件选型</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">主控：STM32f103c6t6</span><br><span class="line">陀螺仪：mpu6500</span><br><span class="line">通信：蓝牙串口模块</span><br><span class="line">舵机：3.7g舵机*2</span><br><span class="line">电池：格氏2s 450mAh 75C</span><br><span class="line">涵道：群汐30MM涵道 QF1611-14000KV</span><br><span class="line">电调：好盈天行者电调 20A V2 支持反转</span><br><span class="line">视觉：暂无</span><br></pre></td></tr></table></figure>
 <p>对于陀螺仪部分</p>
@@ -408,71 +407,60 @@ mjx-container[display="true"] + br {
 </ul>
 <p><a href="https://coperlm.github.io/2024/11/08/hal%E5%BA%93c6t6-Freerots/">FREEROTS</a></p>
 <hr>
-<h2 id="upd2024.11.28">UPD2024.11.28</h2>
-<p>版本：0.5</p>
+<h2 id="UPD2024-11-28"><a href="#UPD2024-11-28" class="headerlink" title="UPD2024.11.28"></a>UPD2024.11.28</h2><p>版本：0.5</p>
 <p>陀螺仪问题已解决，直接用ai写的dmp解算并且甚至没有很大的零漂！（大雾）</p>
 <p>至少确实能用了，而且一点点的零漂不会太影响镖体（但愿）</p>
 <p>下一阶段开始把涵道驱动模块移植到这块焊的乱七八糟的板子上（大雾</p>
 <p>但是移植过程中又不转了，这段时间二分查找一下bug，然后周六上午和视觉联调</p>
-<h2 id="upd2024.11.30">UPD2024.11.30</h2>
-<p>版本：0.6</p>
+<h2 id="UPD2024-11-30"><a href="#UPD2024-11-30" class="headerlink" title="UPD2024.11.30"></a>UPD2024.11.30</h2><p>版本：0.6</p>
 <p>已成功和视觉组联调，使用星瞳openMV接收数据成功，存在少量丢包</p>
 <p>此版本可以通过视觉参数来返回给舵机（模式3）</p>
 <p>舵机模块今天断线了，测试版demo很容易断线，需要谨慎使用，开始找人画板（</p>
-<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/demo2.jpg"></p>
-<h2 id="upd2024.12.05">UPD2024.12.05</h2>
-<p>版本：0.7</p>
+<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/demo2.jpg" alt></p>
+<h2 id="UPD2024-12-05"><a href="#UPD2024-12-05" class="headerlink" title="UPD2024.12.05"></a>UPD2024.12.05</h2><p>版本：0.7</p>
 <p>新增pid控制舵面</p>
 <p>改为线性控制，应该更平滑一点</p>
 <p>周末测一下</p>
-<h2 id="upd2024.12.10">UPD2024.12.10</h2>
-<p>发现舵面不需要pid（大雾），抖来抖去是因为视觉传过来的数据有丢，计划写个校验</p>
+<h2 id="UPD2024-12-10"><a href="#UPD2024-12-10" class="headerlink" title="UPD2024.12.10"></a>UPD2024.12.10</h2><p>发现舵面不需要pid（大雾），抖来抖去是因为视觉传过来的数据有丢，计划写个校验</p>
 <p>今天先把环境配好（雾）</p>
-<h2 id="upd2024.12.15">UPD2024.12.15</h2>
-<p>版本：0.8</p>
+<h2 id="UPD2024-12-15"><a href="#UPD2024-12-15" class="headerlink" title="UPD2024.12.15"></a>UPD2024.12.15</h2><p>版本：0.8</p>
 <p>问了一下视觉组的学长，学习了一下其他兵种的先进经验</p>
 <p>加了个头和尾，然后直接读很多数据（视觉发送比电控接收快很多）</p>
 <p>直接从字符串里取数据即可</p>
 <p>通信问题基本解决</p>
 <p>之后需要干的，就是依次修改接收窗口，优化数据正确率，然后就是想想飞控该怎么写了</p>
-<h2 id="upd2024.12.19">UPD2024.12.19</h2>
-<p>数据通信延迟太高（错误的数据太多了）</p>
+<h2 id="UPD2024-12-19"><a href="#UPD2024-12-19" class="headerlink" title="UPD2024.12.19"></a>UPD2024.12.19</h2><p>数据通信延迟太高（错误的数据太多了）</p>
 <p>今天想了个办法，直接发hex，这样可以减少30%的通信数据，延迟大大减小</p>
 <p>但是几秒钟可能就会有一个数据出错</p>
 <p>下一阶段计划改为一位起始位，一位终止位和一位校验位</p>
 <p>如果直接用可见ascll，还可以再减少一位（大雾</p>
-<h2 id="upd2024.12.25">UPD2024.12.25</h2>
-<p>南航开源了机械图纸，该跳出来看了</p>
+<h2 id="UPD2024-12-25"><a href="#UPD2024-12-25" class="headerlink" title="UPD2024.12.25"></a>UPD2024.12.25</h2><p>南航开源了机械图纸，该跳出来看了</p>
 <p>控制算法没有开源，不过据说比较简单，然后重新翻<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ox4y1W783?t=642.9">青工会</a>，找到了这个控制算法</p>
-<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/image-20241225180451009.png"></p>
-<h2 id="upd2024.12.26">UPD2024.12.26</h2>
-<p>这两天研究了一下控制算法，然后自己重画了一遍这张图</p>
-<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/飞控.jpg"></p>
+<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/image-20241225180451009.png" alt></p>
+<h2 id="UPD2024-12-26"><a href="#UPD2024-12-26" class="headerlink" title="UPD2024.12.26"></a>UPD2024.12.26</h2><p>这两天研究了一下控制算法，然后自己重画了一遍这张图</p>
+<p><img src="/2024/11/24/RoboMaster%E7%A6%8F%E5%BB%BA%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A62025%E8%B5%9B%E5%AD%A3-%E9%A3%9E%E9%95%96%E7%BB%84%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/飞控.jpg" alt></p>
 <p>学习了一下，大概思路和简单过程代码有了</p>
 <p>不过自己写的dmp解算不包含角速度，这两天需要加上这个</p>
 <p>预计元旦之前吧</p>
-<h2 id="upd2024.12.30">UPD2024.12.30</h2>
-<p>这几天在预习期末考试就没有推进度</p>
+<h2 id="UPD2024-12-30"><a href="#UPD2024-12-30" class="headerlink" title="UPD2024.12.30"></a>UPD2024.12.30</h2><p>这几天在预习期末考试就没有推进度</p>
 <p>然后为了应对中期，设置了个临时task</p>
 <p>待解决问题</p>
 <ul>
-<li>涵道
-<ul>
+<li>涵道<ul>
 <li>驱动不稳定</li>
 <li>无法移植</li>
 <li>不知道本质波形函数</li>
-</ul></li>
-<li>视觉
-<ul>
-<li>传输有误 -&gt; 压画质</li>
-</ul></li>
 </ul>
-<h2 id="upd2025.01.03">UPD2025.01.03</h2>
-<p>这几天大概每天投入一个小时左右，都有进度，但是没写~</p>
+</li>
+<li>视觉<ul>
+<li>传输有误 -&gt; 压画质</li>
+</ul>
+</li>
+</ul>
+<h2 id="UPD2025-01-03"><a href="#UPD2025-01-03" class="headerlink" title="UPD2025.01.03"></a>UPD2025.01.03</h2><p>这几天大概每天投入一个小时左右，都有进度，但是没写~</p>
 <p>今天比较飞跃性的是，把视觉出错的问题解决了</p>
 <p>然后涵道也会驱动了，只不过不知道为什么用Freerots驱动不了</p>
-<h2 id="upd2025.02.18">UPD2025.02.18</h2>
-<p>假期进度搁置了</p>
+<h2 id="UPD2025-02-18"><a href="#UPD2025-02-18" class="headerlink" title="UPD2025.02.18"></a>UPD2025.02.18</h2><p>假期进度搁置了</p>
 <p>今天把飞控算法基本完成了，今天晚上去拿摄像头，明天测试</p>
 
     </div>
