@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文对第九届网络空间安全国际研讨会的分享知识进行小结 相关链接：会前准备 会后游记 拍照备份">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS2025摘要小结">
+<meta property="og:url" content="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="本文对第九届网络空间安全国际研讨会的分享知识进行小结 相关链接：会前准备 会后游记 拍照备份">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/311e2e26b315700abdbba615868bf1e.jpg">
+<meta property="og:image" content="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519084908967.png">
+<meta property="og:image" content="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519090300209.png">
+<meta property="og:image" content="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519090846765.png">
+<meta property="article:published_time" content="2025-05-19T00:24:14.000Z">
+<meta property="article:modified_time" content="2025-05-19T01:33:45.523Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="Crypto">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/311e2e26b315700abdbba615868bf1e.jpg">
+
+
+<link rel="canonical" href="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/","path":"2025/05/19/CS2025摘要小结/","title":"CS2025摘要小结"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CS2025摘要小结 | coperlm's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">coperlm's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">古之立大事者 不惟有超世之才<br>亦必有坚忍不拔之志</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-联系方式"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>联系方式</a></li><li class="menu-item menu-item-常驻目录"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>常驻目录</a></li><li class="menu-item menu-item-友链"><a href="/youlian/" rel="section"><i class="fa fa-user fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">会议议程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E7%AC%94%E8%80%85%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-number">2.</span> <span class="nav-text">主要笔者学习内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E7%AF%A1%E6%94%B9%E5%AE%9A%E4%BD%8D%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%8A%97"><span class="nav-number">2.1.</span> <span class="nav-text">图像篡改定位模型对抗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%81%E5%8A%BF%E6%84%9F%E7%9F%A5"><span class="nav-number">2.2.</span> <span class="nav-text">态势感知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E4%BA%91%E5%AD%98%E5%82%A8"><span class="nav-number">2.3.</span> <span class="nav-text">安全云存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E8%B6%8A%E7%8B%B1"><span class="nav-number">2.4.</span> <span class="nav-text">大语言模型越狱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%A3%E4%BB%A4%E8%AE%A4%E8%AF%81%E5%AF%86%E9%92%A5%E5%8D%8F%E5%95%86"><span class="nav-number">2.5.</span> <span class="nav-text">口令认证密钥协商</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">coperlm</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/coperlm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;coperlm" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:coperlm@outlook.com" title="E-Mail → mailto:coperlm@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CS2025摘要小结 | coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS2025摘要小结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-05-19 08:24:14 / Modified: 09:33:45" itemprop="dateCreated datePublished" datetime="2025-05-19T08:24:14+08:00">2025-05-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>本文对第九届网络空间安全国际研讨会的分享知识进行小结</p>
+<p>相关链接：<a href="https://coperlm.github.io/2025/05/12/第九届网络空间安全国际研讨会-会前准备/">会前准备</a>
+<a href="https://coperlm.github.io/2025/05/17/CS2025参会游记/">会后游记</a>
+<a target="_blank" rel="noopener" href="https://github.com/coperlm/CS2025">拍照备份</a></p>
+<span id="more"></span>
+<hr>
+<h2 id="会议议程">会议议程</h2>
+<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/311e2e26b315700abdbba615868bf1e.jpg"></p>
+<h2 id="主要笔者学习内容">主要笔者学习内容</h2>
+<h3 id="图像篡改定位模型对抗">图像篡改定位模型对抗</h3>
+<p>Motivation：AI兴起，虚假图像合成的成本大幅降低。本报告旨在检测篡改部位</p>
+<p>Solution：使用深度网络，训练模型。有效检测篡改</p>
+<p>新的攻击方案：给照片加噪音，人眼看不出区别，但使用原有检测方案
+难以检测篡改</p>
+<p>总结：安全领域，对抗是永恒的；AI的产生增加了对抗，也增加了弱点；在研究中，应当攻击方白盒，防守方黑盒</p>
+<h3 id="态势感知">态势感知</h3>
+<p>Motivation：国内网民众多，且信息多模态难以处理。传统处理算法的时间复杂度为指数级（响应速度为分钟级）</p>
+<p>Solution：利用关联信息进行优化（例如分块，关注敏感话题等），时间复杂度变为多项式级别（响应速度达到秒级）</p>
+<p>应用：检测并控制舆情，护网等</p>
+<p>备注：该报告的PPT做得十分优异，有待借鉴学习</p>
+<h3 id="安全云存储">安全云存储</h3>
+<p>Motivation：云数据库存在被服务提供商或攻击者窥探的可能性，查询语句和数据关系可能泄露敏感信息</p>
+<p>Solution：</p>
+<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519084908967.png"></p>
+<p>面临挑战：数据关系隐私保护（如 JOIN
+隐私）；功能性与隐私性的平衡难题；泄露抵抗机制优化（如访问模式隐藏）；差分隐私与SQL的融合应用；模糊搜索技术集成与拓展</p>
+<p>备注：该老师用的是纯英文演讲，所以只能录屏后在学习，故而理解可能有不准确的地方</p>
+<h3 id="大语言模型越狱">大语言模型越狱</h3>
+<p>Motivation：攻击者如何让AI回答例如如何毁灭人类，或者制造凝固汽油弹之类的问题；开发者如何让AI避免回答这些问题</p>
+<p>三个发现：增加奇奇怪怪的后缀可能绕过；简单越狱方法叠加使用增加成功概率；就算没有敏感问题也有可能被拒绝回答</p>
+<p>一些哲学思考：威胁AI会鲨掉他，或者给AI小费，可以增大越狱可能性。AI越来越像人了</p>
+<h3 id="口令认证密钥协商">口令认证密钥协商</h3>
+<p>Motivation：传统使用PKI和证书进行认证，使用口令（便于记忆，无需存储）则不需要</p>
+<p>一个令我拍手叫好的构造：使用一步对称加密，有效防止中间人攻击</p>
+<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519090300209.png"></p>
+<p>Contribution：构造了一个高效的后量子aPAKE协议（基于KEM）；基于同源构造了Strong
+aPAKE且UC安全（也是抗量子）；使用串并行构造了HPAKE</p>
+<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519090846765.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Crypto/" rel="tag"><i class="fa fa-tag"></i>Crypto</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/17/CS2025%E5%8F%82%E4%BC%9A%E6%B8%B8%E8%AE%B0/" rel="prev" title="CS2025参会游记">
+                  <i class="fa fa-angle-left"></i> CS2025参会游记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">coperlm</span>
+  </div>
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+-->
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"per_page":false,"cdn":null,"tags":"none","config":{"tex":{"inlineMath":[["$","$"]],"displayMath":[["$$","$$"]]}},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
