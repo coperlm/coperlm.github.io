@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文重学《现代密码学（第四版）》（杨波编著，清华大学出版社），旨在巩固基础，同时为后人带来便利 目前进度：还没开始">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重学现代密码学v4">
+<meta property="og:url" content="https://coperlm.github.io/2025/05/25/%E9%87%8D%E5%AD%A6%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6v4/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="本文重学《现代密码学（第四版）》（杨波编著，清华大学出版社），旨在巩固基础，同时为后人带来便利 目前进度：还没开始">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-05-25T08:39:02.000Z">
+<meta property="article:modified_time" content="2025-05-25T08:40:49.544Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="Crypto">
+<meta property="article:tag" content="unfixed">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://coperlm.github.io/2025/05/25/%E9%87%8D%E5%AD%A6%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6v4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://coperlm.github.io/2025/05/25/%E9%87%8D%E5%AD%A6%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6v4/","path":"2025/05/25/重学现代密码学v4/","title":"重学现代密码学v4"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>重学现代密码学v4 | coperlm's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">coperlm's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">古之立大事者 不惟有超世之才<br>亦必有坚忍不拔之志</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-联系方式"><a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>联系方式</a></li><li class="menu-item menu-item-常驻目录"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>常驻目录</a></li><li class="menu-item menu-item-友链"><a href="/youlian/" rel="section"><i class="fa fa-user fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%AB%A0-%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">第1章 引言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E9%9D%A2%E4%B8%B4%E7%9A%84%E5%A8%81%E8%83%81"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 信息安全面临的威胁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E5%A8%81%E8%83%81"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1 安全威胁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A5%E4%BE%B5%E8%80%85%E5%92%8C%E7%97%85%E6%AF%92"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2 入侵者和病毒</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E4%B8%9A%E5%8A%A1"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.1.3 安全业务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 信息安全模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 密码学基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%9D%E5%AF%86%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 保密通信系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%E5%88%86%E7%B1%BB"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2 密码体制分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3.3 密码攻击概述</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E7%A7%8D%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81..."><span class="nav-number">1.4.</span> <span class="nav-text">1.4 几种古典密码...</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AF%86%E7%A0%81"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.4.1 单表代换密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2%E5%AF%86%E7%A0%81"><span class="nav-number">1.4.2.</span> <span class="nav-text">1.4.2 多表代换密码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC2%E7%AB%A0-%E6%B5%81%E5%AF%86%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">第2章 流密码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E5%AF%86%E7%A0%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 流密码的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%B5%81%E5%AF%86%E7%A0%81"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 同步流密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.1.2 有限状态自动机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%86%E9%92%A5%E6%B5%81%E4%BA%A7%E7%94%9F%E5%99%A8"><span class="nav-number">2.1.3.</span> <span class="nav-text">2.1.3 密钥流产生器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%8D%E9%A6%88%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 线性反馈移位寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E4%B8%80%E5%85%83%E5%A4%9A%E9%A1%B9%E5%BC%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.3.</span> <span class="nav-text">2.3
+线性移位寄存器的一元多项式表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#m%E5%BA%8F%E5%88%97%E7%9A%84%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A7"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 m序列的伪随机性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#m%E5%BA%8F%E5%88%97%E5%AF%86%E7%A0%81%E7%9A%84%E7%A0%B4%E8%AF%91"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 m序列密码的破译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%BA%8F%E5%88%97"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 非线性序列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#geffe%E5%BA%8F%E5%88%97%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">2.6.1.</span> <span class="nav-text">2.6.1 Geffe序列生成器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jk%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="nav-number">2.6.2.</span> <span class="nav-text">2.6.2 JK触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pless-%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">2.6.3.</span> <span class="nav-text">2.6.3 Pless 生成器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%92%9F%E6%8E%A7%E5%BA%8F%E5%88%97%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">2.6.4.</span> <span class="nav-text">2.6.4 钟控序列生成器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">第3章 分组密码体制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81%E6%A6%82%E8%BF%B0"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 分组密码概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E6%8D%A2"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1 代换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E6%95%A3%E5%92%8C%E6%B7%B7%E6%B7%86"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2 扩散和混淆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#feistel-%E5%AF%86%E7%A0%81%E7%BB%93%E6%9E%84"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.1.3 Feistel 密码结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86..."><span class="nav-number">3.2.</span> <span class="nav-text">3.2 数据加密标准...</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#des-%E6%8F%8F%E8%BF%B0"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1 DES 描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E9%87%8D-des"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 二重 DES</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E5%AF%86%E9%92%A5%E7%9A%84%E4%B8%89%E9%87%8Ddes"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.2.3 两个密钥的三重DES</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E5%AF%86%E9%92%A5%E7%9A%84%E4%B8%89%E9%87%8D-des"><span class="nav-number">3.2.4.</span> <span class="nav-text">3.2.4 3个密钥的三重 DES</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E5%88%86%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 差分密码分析与线性密码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%AE%E5%88%86%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">3.3.1.</span> <span class="nav-text">3.3.1 差分密码分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">3.3.2.</span> <span class="nav-text">3.3.2 线性密码分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 分组密码的运行模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E7%A0%81%E6%9C%AC%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.4.1.</span> <span class="nav-text">3.4.1 电码本模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E5%88%86%E7%BB%84%E9%93%BE%E6%8E%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.4.2.</span> <span class="nav-text">3.4.2 密码分组链接模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E5%8F%8D%E9%A6%88%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.4.3.</span> <span class="nav-text">3.4.3 密码反馈模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E5%8F%8D%E9%A6%88%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.4.4.</span> <span class="nav-text">3.4.4 输出反馈模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#idea"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 IDEA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86"><span class="nav-number">3.5.1.</span> <span class="nav-text">3.5.1 设计原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86%E8%BF%87%E7%A8%8B"><span class="nav-number">3.5.2.</span> <span class="nav-text">3.5.2 加密过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aes-%E7%AE%97%E6%B3%95-rijndael"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 AES 算法 Rijndael</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rijndael-%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3"><span class="nav-number">3.6.1.</span> <span class="nav-text">3.6.1 Rijndael
+的数学基础和设计思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%AF%B4%E6%98%8E"><span class="nav-number">3.6.2.</span> <span class="nav-text">3.6.2 算法说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E5%95%86%E7%94%A8%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95-sm4"><span class="nav-number">3.7.</span> <span class="nav-text">3.7 中国商用密码算法 SM4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%96%E5%86%B2%E4%B9%8B%E5%AF%86%E7%A0%81..."><span class="nav-number">3.8.</span> <span class="nav-text">3.8 祖冲之密码...</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%B8%AD%E7%9A%84%E7%AC%A6%E5%8F%B7%E5%8F%8A%E5%90%AB%E4%B9%89"><span class="nav-number">3.8.1.</span> <span class="nav-text">3.8.1 算法中的符号及含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A5%96%E5%86%B2%E4%B9%8B%E5%AF%86%E7%A0%81%E7%9A%84%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%84"><span class="nav-number">3.8.2.</span> <span class="nav-text">3.8.2 祖冲之密码的算法结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A5%96%E5%86%B2%E4%B9%8B%E5%AF%86%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C"><span class="nav-number">3.8.3.</span> <span class="nav-text">3.8.3 祖冲之密码的运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%A5%96%E5%86%B2%E4%B9%8B%E5%AF%86%E7%A0%81%E7%9A%84%E6%9C%BA%E5%AF%86%E6%80%A7%E7%AE%97%E6%B3%95-128-eea3"><span class="nav-number">3.8.4.</span> <span class="nav-text">3.8.4
+基于祖冲之密码的机密性算法 128-EEA3</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E7%AB%A0-%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">第4章 公钥密码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 密码学中一些常用的数学知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BE%A4%E7%8E%AF%E5%9F%9F"><span class="nav-number">4.1.1.</span> <span class="nav-text">4.1.1 群、环、域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B4%A0%E6%95%B0%E5%92%8C%E4%BA%92%E7%B4%A0%E6%95%B0"><span class="nav-number">4.1.2.</span> <span class="nav-text">4.1.2 素数和互素数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E8%BF%90%E7%AE%97"><span class="nav-number">4.1.3.</span> <span class="nav-text">4.1.3 模运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E6%8C%87%E6%95%B0%E8%BF%90%E7%AE%97"><span class="nav-number">4.1.4.</span> <span class="nav-text">4.1.4 模指数运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B4%B9%E5%B0%94%E9%A9%AC%E5%AE%9A%E7%90%86%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%E5%8D%A1%E7%B1%B3%E6%AD%87%E5%B0%94%E5%AE%9A%E7%90%86"><span class="nav-number">4.1.5.</span> <span class="nav-text">4.1.5
+费尔马定理、欧拉定理、卡米歇尔定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B4%A0%E6%80%A7%E6%A3%80%E9%AA%8C"><span class="nav-number">4.1.6.</span> <span class="nav-text">4.1.6 素性检验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="nav-number">4.1.7.</span> <span class="nav-text">4.1.7 欧几里得算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="nav-number">4.1.8.</span> <span class="nav-text">4.1.8 中国剩余定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0"><span class="nav-number">4.1.9.</span> <span class="nav-text">4.1.9 离散对数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B3%E6%96%B9%E5%89%A9%E4%BD%99"><span class="nav-number">4.1.10.</span> <span class="nav-text">4.1.10 平方剩余</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BE%A4"><span class="nav-number">4.1.11.</span> <span class="nav-text">4.1.11 循环群</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BE%A4%E7%9A%84%E9%80%89%E5%8F%96"><span class="nav-number">4.1.12.</span> <span class="nav-text">4.1.12 循环群的选取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E7%BA%BF%E6%80%A7%E6%98%A0%E5%B0%84"><span class="nav-number">4.1.13.</span> <span class="nav-text">4.1.13 双线性映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A7"><span class="nav-number">4.1.14.</span> <span class="nav-text">4.1.14 计算复杂性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 公钥密码体制的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">4.2.1.</span> <span class="nav-text">4.2.1 公钥密码体制的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95%E5%BA%94%E6%BB%A1%E8%B6%B3%E7%9A%84%E8%A6%81%E6%B1%82"><span class="nav-number">4.2.2.</span> <span class="nav-text">4.2.2 公钥密码算法应满足的要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%E7%9A%84%E6%94%BB%E5%87%BB"><span class="nav-number">4.2.3.</span> <span class="nav-text">4.2.3 对公钥密码体制的攻击</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rsa%E7%AE%97%E6%B3%95"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 RSA算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0"><span class="nav-number">4.3.1.</span> <span class="nav-text">4.3.1 算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rsa%E7%AE%97%E6%B3%95%E4%B8%AD%E7%9A%84%E8%AE%A1%E7%AE%97%E9%97%AE%E9%A2%98"><span class="nav-number">4.3.2.</span> <span class="nav-text">4.3.2 RSA算法中的计算问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E7%A7%8D%E6%94%B9%E8%BF%9B%E7%9A%84rsa%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-number">4.3.3.</span> <span class="nav-text">4.3.3 一种改进的RSA实现方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rsa%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">4.3.4.</span> <span class="nav-text">4.3.4 RSA的安全性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9rsa%E7%9A%84%E6%94%BB%E5%87%BB"><span class="nav-number">4.3.5.</span> <span class="nav-text">4.3.5 对RSA的攻击</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E5%8C%85%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 背包密码体制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabin-%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 Rabin 密码体制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ntru%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F"><span class="nav-number">4.6.</span> <span class="nav-text">4.6 NTRU公钥密码系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6"><span class="nav-number">4.7.</span> <span class="nav-text">4.7 椭圆曲线密码体制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF"><span class="nav-number">4.7.1.</span> <span class="nav-text">4.7.1 椭圆曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E9%99%90%E5%9F%9F%E4%B8%8A%E7%9A%84%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF"><span class="nav-number">4.7.2.</span> <span class="nav-text">4.7.2 有限域上的椭圆曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E4%B8%8A%E7%9A%84%E7%82%B9%E6%95%B0"><span class="nav-number">4.7.3.</span> <span class="nav-text">4.7.3 椭圆曲线上的点数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%8E%E6%96%87%E6%B6%88%E6%81%AF%E5%88%B0%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E4%B8%8A%E7%9A%84%E5%B5%8C%E5%85%A5"><span class="nav-number">4.7.4.</span> <span class="nav-text">4.7.4
+明文消息到椭圆曲线上的嵌入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E4%B8%8A%E7%9A%84%E5%AF%86%E7%A0%81"><span class="nav-number">4.7.5.</span> <span class="nav-text">4.7.5 椭圆曲线上的密码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sm2%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="nav-number">4.8.</span> <span class="nav-text">4.8
+SM2椭圆曲线公钥密码加密算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E7%AB%A0-%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D%E4%B8%8E%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">第5章 密钥分配与密钥管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E9%92%A5%E5%8A%A0%E5%AF%86%E4%BD%93%E5%88%B6%E7%9A%84%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 单钥加密体制的密钥分配</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="nav-number">5.1.1.</span> <span class="nav-text">5.1.1 密钥分配的基本方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B"><span class="nav-number">5.1.2.</span> <span class="nav-text">5.1.2 一个实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%86%E9%92%A5%E7%9A%84%E5%88%86%E5%B1%82%E6%8E%A7%E5%88%B6"><span class="nav-number">5.1.3.</span> <span class="nav-text">5.1.3 密钥的分层控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D%E5%AF%86%E9%92%A5%E7%9A%84%E6%9C%89%E6%95%88%E6%9C%9F"><span class="nav-number">5.1.4.</span> <span class="nav-text">5.1.4 会话密钥的有效期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E4%B8%AD%E5%BF%83%E7%9A%84%E5%AF%86%E9%92%A5%E6%8E%A7%E5%88%B6"><span class="nav-number">5.1.5.</span> <span class="nav-text">5.1.5 无中心的密钥控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%86%E9%92%A5%E7%9A%84%E6%8E%A7%E5%88%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">5.1.6.</span> <span class="nav-text">5.1.6 密钥的控制使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E4%BD%93%E5%88%B6%E7%9A%84%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 公钥加密体制的密钥管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E7%9A%84%E5%88%86%E9%85%8D"><span class="nav-number">5.2.1.</span> <span class="nav-text">5.2.1 公钥的分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E5%88%86%E9%85%8D%E5%8D%95%E9%92%A5%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%E7%9A%84%E5%AF%86%E9%92%A5"><span class="nav-number">5.2.2.</span> <span class="nav-text">5.2.2
+用公钥加密分配单钥密码体制的密钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#diffie-hellman-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2"><span class="nav-number">5.2.3.</span> <span class="nav-text">5.2.3 Diffie-Hellman 密钥交换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E4%BA%A7%E7%94%9F"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 随机数的产生</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">5.3.1.</span> <span class="nav-text">5.3.1 随机数的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%BA%90"><span class="nav-number">5.3.2.</span> <span class="nav-text">5.3.2 随机数源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0%E4%BA%A7%E7%94%9F%E5%99%A8"><span class="nav-number">5.3.3.</span> <span class="nav-text">5.3.3 伪随机数产生器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0%E4%BA%A7%E7%94%9F%E5%99%A8"><span class="nav-number">5.3.4.</span> <span class="nav-text">5.3.4
+基于密码算法的随机数产生器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%AF%94%E7%89%B9%E4%BA%A7%E7%94%9F%E5%99%A8"><span class="nav-number">5.3.5.</span> <span class="nav-text">5.3.5 随机比特产生器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%98%E5%AF%86%E5%88%86%E5%89%B2"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 秘密分割</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%98%E5%AF%86%E5%88%86%E5%89%B2%E9%97%A8%E9%99%90%E6%96%B9%E6%A1%88"><span class="nav-number">5.4.1.</span> <span class="nav-text">5.4.1 秘密分割门限方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shamir-%E9%97%A8%E9%99%90%E6%96%B9%E6%A1%88"><span class="nav-number">5.4.2.</span> <span class="nav-text">5.4.2 Shamir 门限方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86%E7%9A%84%E9%97%A8%E9%99%90%E6%96%B9%E6%A1%88"><span class="nav-number">5.4.3.</span> <span class="nav-text">5.4.3
+基于中国剩余定理的门限方案</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E7%AB%A0-%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E5%92%8C%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text">第6章 消息认证和哈希函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E7%A0%81"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 消息认证码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E7%A0%81%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">6.1.1.</span> <span class="nav-text">6.1.1
+消息认证码的定义及使用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A7%E7%94%9Fmac%E7%9A%84%E5%87%BD%E6%95%B0%E5%BA%94%E6%BB%A1%E8%B6%B3%E7%9A%84%E8%A6%81%E6%B1%82"><span class="nav-number">6.1.2.</span> <span class="nav-text">6.1.2 产生MAC的函数应满足的要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%AE%A4%E8%AF%81%E7%AE%97%E6%B3%95"><span class="nav-number">6.1.3.</span> <span class="nav-text">6.1.3 数据认证算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%A5%96%E5%86%B2%E4%B9%8B%E5%AF%86%E7%A0%81%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7%E7%AE%97%E6%B3%95128-%CE%B5%CE%B9%CE%B13"><span class="nav-number">6.1.4.</span> <span class="nav-text">6.1.4
+基于祖冲之密码的完整性算法128-ΕΙΑ3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 哈希函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">6.2.1.</span> <span class="nav-text">6.2.1 哈希函数的定义及使用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E5%BA%94%E6%BB%A1%E8%B6%B3%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="nav-number">6.2.2.</span> <span class="nav-text">6.2.2 哈希函数应满足的条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB"><span class="nav-number">6.2.3.</span> <span class="nav-text">6.2.3 生日攻击</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%9E%8B%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%80%E8%88%AC%E7%BB%93%E6%9E%84"><span class="nav-number">6.2.4.</span> <span class="nav-text">6.2.4 迭代型哈希函数的一般结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#md5%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 MD5哈希算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">6.3.1.</span> <span class="nav-text">6.3.1 算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#md5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%87%BD%E6%95%B0"><span class="nav-number">6.3.2.</span> <span class="nav-text">6.3.2 MD5的压缩函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#md5%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">6.3.3.</span> <span class="nav-text">6.3.3 MD5的安全性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="nav-number">6.4.</span> <span class="nav-text">6.4 安全哈希算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">6.4.1.</span> <span class="nav-text">6.4.1 算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sha%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%87%BD%E6%95%B0"><span class="nav-number">6.4.2.</span> <span class="nav-text">6.4.2 SHA的压缩函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sha%E4%B8%8Emd5%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">6.4.3.</span> <span class="nav-text">6.4.3 SHA与MD5的比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9sha%E7%9A%84%E6%94%BB%E5%87%BB%E7%8E%B0%E7%8A%B6"><span class="nav-number">6.4.4.</span> <span class="nav-text">6.4.4 对SHA的攻击现状</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hmac"><span class="nav-number">6.5.</span> <span class="nav-text">6.5 HMAC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hmac%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">6.5.1.</span> <span class="nav-text">6.5.1 HMAC的设计目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0-3"><span class="nav-number">6.5.2.</span> <span class="nav-text">6.5.2 算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hmac%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">6.5.3.</span> <span class="nav-text">6.5.3 HMAC的安全性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sm3%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="nav-number">6.6.</span> <span class="nav-text">6.6 SM3哈希算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sm3-%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%E7%9A%84%E6%8F%8F%E8%BF%B0"><span class="nav-number">6.6.1.</span> <span class="nav-text">6.6.1 SM3 哈希算法的描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sm3-%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">6.6.2.</span> <span class="nav-text">6.6.2 SM3 哈希算法的安全性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC7%E7%AB%A0-%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">7.</span> <span class="nav-text">第7章 数字签名和认证协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 数字签名的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%BA%94%E6%BB%A1%E8%B6%B3%E7%9A%84%E8%A6%81%E6%B1%82"><span class="nav-number">7.1.1.</span> <span class="nav-text">7.1.1 数字签名应满足的要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%9A%84%E4%BA%A7%E7%94%9F%E6%96%B9%E5%BC%8F"><span class="nav-number">7.1.2.</span> <span class="nav-text">7.1.2 数字签名的产生方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%9A%84%E6%89%A7%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="nav-number">7.1.3.</span> <span class="nav-text">7.1.3 数字签名的执行方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E6%A0%87%E5%87%86"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 数字签名标准</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dss%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E5%BC%8F"><span class="nav-number">7.2.1.</span> <span class="nav-text">7.2.1 DSS的基本方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%AE%97%E6%B3%95-dsa"><span class="nav-number">7.2.2.</span> <span class="nav-text">7.2.2 数字签名算法 DSA</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 其他签名方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E4%BD%93%E5%88%B6"><span class="nav-number">7.3.1.</span> <span class="nav-text">7.3.1
+基于离散对数问题的数字签名体制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%A4%A7%E6%95%B0%E5%88%86%E8%A7%A3%E9%97%AE%E9%A2%98%E7%9A%84%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E4%BD%93%E5%88%B6"><span class="nav-number">7.3.2.</span> <span class="nav-text">7.3.2
+基于大数分解问题的数字签名体制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%BA%AB%E4%BB%BD%E7%9A%84%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E4%BD%93%E5%88%B6"><span class="nav-number">7.3.3.</span> <span class="nav-text">7.3.3 基于身份的数字签名体制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sm2%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%AD%BE%E5%90%8D%E7%AE%97%E6%B3%95"><span class="nav-number">7.4.</span> <span class="nav-text">7.4
+SM2椭圆曲线公钥密码签名算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">7.5.</span> <span class="nav-text">7.5 认证协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B8%E4%BA%92%E8%AE%A4%E8%AF%81"><span class="nav-number">7.5.1.</span> <span class="nav-text">7.5.1 相互认证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E5%90%91%E8%AE%A4%E8%AF%81"><span class="nav-number">7.5.2.</span> <span class="nav-text">7.5.2 单向认证</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC8%E7%AB%A0-%E5%AF%86%E7%A0%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">8.</span> <span class="nav-text">第8章 密码协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%8D%8F%E8%AE%AE"><span class="nav-number">8.1.</span> <span class="nav-text">8.1 一些基本协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%99%BA%E5%8A%9B%E6%89%91%E5%85%8B"><span class="nav-number">8.1.1.</span> <span class="nav-text">8.1.1 智力扑克</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%B7%E7%A1%AC%E5%B8%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">8.1.2.</span> <span class="nav-text">8.1.2 掷硬币协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%89%BF%E8%AF%BA%E5%8D%8F%E8%AE%AE"><span class="nav-number">8.1.3.</span> <span class="nav-text">8.1.3 数字承诺协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E7%BB%8F%E6%84%8F%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE"><span class="nav-number">8.1.4.</span> <span class="nav-text">8.1.4 不经意传输协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E"><span class="nav-number">8.2.</span> <span class="nav-text">8.2 零知识证明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8F%E8%AF%81%E6%98%8E%E7%B3%BB%E7%BB%9F"><span class="nav-number">8.2.1.</span> <span class="nav-text">8.2.1 交互式证明系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8F%E8%AF%81%E6%98%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">8.2.2.</span> <span class="nav-text">8.2.2 交互式证明系统的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8F%E8%AF%81%E6%98%8E%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%9B%B6%E7%9F%A5%E8%AF%86%E6%80%A7"><span class="nav-number">8.2.3.</span> <span class="nav-text">8.2.3 交互式证明系统的零知识性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E4%BA%A4%E4%BA%92%E5%BC%8F%E8%AF%81%E6%98%8E%E7%B3%BB%E7%BB%9F"><span class="nav-number">8.2.4.</span> <span class="nav-text">8.2.4 非交互式证明系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%82%E5%BA%94%E6%80%A7%E5%AE%89%E5%85%A8%E7%9A%84%E9%9D%9E%E4%BA%A4%E4%BA%92%E5%BC%8F%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E"><span class="nav-number">8.2.5.</span> <span class="nav-text">8.2.5
+适应性安全的非交互式零知识证明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%BB%84%E5%90%88"><span class="nav-number">8.2.6.</span> <span class="nav-text">8.2.6 零知识证明协议的组合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E4%B8%89%E8%89%B2%E9%97%AE%E9%A2%98%E7%9A%84%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E"><span class="nav-number">8.2.7.</span> <span class="nav-text">8.2.7 图的三色问题的零知识证明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E"><span class="nav-number">8.2.8.</span> <span class="nav-text">8.2.8 知识证明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8C%96%E7%9A%84fiat-shamir%E8%BA%AB%E4%BB%BD%E8%AF%86%E5%88%AB%E6%96%B9%E6%A1%88"><span class="nav-number">8.2.9.</span> <span class="nav-text">8.2.9
+简化的Fiat-Shamir身份识别方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fiat-shamir-%E8%BA%AB%E4%BB%BD%E8%AF%86%E5%88%AB%E6%96%B9%E6%A1%88"><span class="nav-number">8.2.10.</span> <span class="nav-text">8.2.10 Fiat-Shamir 身份识别方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E5%A4%9A%E6%96%B9%E8%AE%A1%E7%AE%97%E5%8D%8F%E8%AE%AE"><span class="nav-number">8.3.</span> <span class="nav-text">8.3 安全多方计算协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E5%A4%9A%E6%96%B9%E8%AE%A1%E7%AE%97%E9%97%AE%E9%A2%98"><span class="nav-number">8.3.1.</span> <span class="nav-text">8.3.1 安全多方计算问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%8A%E8%AF%9A%E5%AE%9E%E6%95%8C%E6%89%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">8.3.2.</span> <span class="nav-text">8.3.2 半诚实敌手模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%81%B6%E6%84%8F%E6%95%8C%E6%89%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">8.3.3.</span> <span class="nav-text">8.3.3 恶意敌手模型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC9%E7%AB%A0-%E5%8F%AF%E8%AF%81%E6%98%8E%E5%AE%89%E5%85%A8"><span class="nav-number">9.</span> <span class="nav-text">第9章 可证明安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8%E7%9A%84%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">9.1.</span> <span class="nav-text">9.1
+语义安全的公钥密码体制的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%98%8E%E6%96%87%E6%94%BB%E5%87%BB%E4%B8%8B%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8C%BA%E5%88%86%E6%80%A7"><span class="nav-number">9.1.1.</span> <span class="nav-text">9.1.1
+选择明文攻击下的不可区分性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E6%96%B9%E6%A1%88%E5%9C%A8%E9%80%89%E6%8B%A9%E5%AF%86%E6%96%87%E6%94%BB%E5%87%BB%E4%B8%8B%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8C%BA%E5%88%86%E6%80%A7"><span class="nav-number">9.1.2.</span> <span class="nav-text">9.1.2
+公钥加密方案在选择密文攻击下的不可区分性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E6%96%B9%E6%A1%88%E5%9C%A8%E9%80%82%E5%BA%94%E6%80%A7%E9%80%89%E6%8B%A9%E5%AF%86%E6%96%87%E6%94%BB%E5%87%BB%E4%B8%8B%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8C%BA%E5%88%86%E6%80%A7"><span class="nav-number">9.1.3.</span> <span class="nav-text">9.1.3
+公钥加密方案在适应性选择密文攻击下的不可区分性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%92%E7%BA%A6"><span class="nav-number">9.1.4.</span> <span class="nav-text">9.1.4 归约</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8%E7%9A%84rsa%E5%8A%A0%E5%AF%86%E6%96%B9%E6%A1%88"><span class="nav-number">9.2.</span> <span class="nav-text">9.2 语义安全的RSA加密方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rsa%E9%97%AE%E9%A2%98%E5%92%8Crsa%E5%81%87%E8%AE%BE"><span class="nav-number">9.2.1.</span> <span class="nav-text">9.2.1 RSA问题和RSA假设</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%98%8E%E6%96%87%E5%AE%89%E5%85%A8%E7%9A%84rsa-%E5%8A%A0%E5%AF%86"><span class="nav-number">9.2.2.</span> <span class="nav-text">9.2.2 选择明文安全的RSA 加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%AF%86%E6%96%87%E5%AE%89%E5%85%A8%E7%9A%84rsa-%E5%8A%A0%E5%AF%86"><span class="nav-number">9.2.3.</span> <span class="nav-text">9.2.3 选择密文安全的RSA 加密</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#paillier-%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F"><span class="nav-number">9.3.</span> <span class="nav-text">9.3 Paillier 公钥密码系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E6%95%B0%E5%B9%82%E5%89%A9%E4%BD%99%E7%B1%BB%E7%9A%84%E5%88%A4%E5%AE%9A"><span class="nav-number">9.3.1.</span> <span class="nav-text">9.3.1 合数幂剩余类的判定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E6%95%B0%E5%B9%82%E5%89%A9%E4%BD%99%E7%B1%BB%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">9.3.2.</span> <span class="nav-text">9.3.2 合数幂剩余类的计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%90%88%E6%95%B0%E5%B9%82%E5%89%A9%E4%BD%99%E7%B1%BB%E9%97%AE%E9%A2%98%E7%9A%84%E6%A6%82%E7%8E%87%E5%8A%A0%E5%AF%86%E6%96%B9%E6%A1%88"><span class="nav-number">9.3.3.</span> <span class="nav-text">9.3.3
+基于合数幂剩余类问题的概率加密方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%90%88%E6%95%B0%E5%B9%82%E5%89%A9%E4%BD%99%E7%B1%BB%E9%97%AE%E9%A2%98%E7%9A%84%E5%8D%95%E5%90%91%E9%99%B7%E9%97%A8%E7%BD%AE%E6%8D%A2"><span class="nav-number">9.3.4.</span> <span class="nav-text">9.3.4
+基于合数幂剩余类问题的单向陷门置换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#paillier-%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">9.3.5.</span> <span class="nav-text">9.3.5 Paillier 密码系统的性质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cramer-shoup-%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F"><span class="nav-number">9.4.</span> <span class="nav-text">9.4 Cramer-Shoup 密码系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cramer-shoup-%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9C%BA%E5%88%B6"><span class="nav-number">9.4.1.</span> <span class="nav-text">9.4.1 Cramer-Shoup
+密码系统的基本机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cramer-shoup-%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E8%AF%81%E6%98%8E"><span class="nav-number">9.4.2.</span> <span class="nav-text">9.4.2 Cramer-Shoup
+密码系统的安全性证明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rsa-fdh-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="nav-number">9.5.</span> <span class="nav-text">9.5 RSA-FDH 签名方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rsa%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="nav-number">9.5.1.</span> <span class="nav-text">9.5.1 RSA签名方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rsa-fdh%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88%E7%9A%84%E6%8F%8F%E8%BF%B0"><span class="nav-number">9.5.2.</span> <span class="nav-text">9.5.2 RSA-FDH签名方案的描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rsa-fdh%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="nav-number">9.5.3.</span> <span class="nav-text">9.5.3 RSA-FDH签名方案的改进</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bls-%E7%9F%AD%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="nav-number">9.6.</span> <span class="nav-text">9.6 BLS 短签名方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bls%E7%9F%AD%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88%E6%89%80%E5%9F%BA%E4%BA%8E%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E5%81%87%E8%AE%BE"><span class="nav-number">9.6.1.</span> <span class="nav-text">9.6.1
+BLS短签名方案所基于的安全性假设</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bls-%E7%9F%AD%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88%E6%8F%8F%E8%BF%B0"><span class="nav-number">9.6.2.</span> <span class="nav-text">9.6.2 BLS 短签名方案描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bls-%E7%9F%AD%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88%E7%9A%84%E6%94%B9%E8%BF%9B%E4%B8%80"><span class="nav-number">9.6.3.</span> <span class="nav-text">9.6.3 BLS 短签名方案的改进一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bls%E7%9F%AD%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88%E7%9A%84%E6%94%B9%E8%BF%9B%E4%BA%8C"><span class="nav-number">9.6.4.</span> <span class="nav-text">9.6.4 BLS短签名方案的改进二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%BA%AB%E4%BB%BD%E7%9A%84%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6"><span class="nav-number">9.7.</span> <span class="nav-text">9.7 基于身份的密码体制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%BA%AB%E4%BB%BD%E7%9A%84%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%E5%AE%9A%E4%B9%89%E5%92%8C%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B"><span class="nav-number">9.7.1.</span> <span class="nav-text">9.7.1
+基于身份的密码体制定义和安全模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E8%B0%95%E8%A8%80%E6%9C%BA%E6%A8%A1%E5%9E%8B%E4%B8%8B%E7%9A%84%E5%9F%BA%E4%BA%8E%E8%BA%AB%E4%BB%BD%E7%9A%84%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6"><span class="nav-number">9.7.2.</span> <span class="nav-text">9.7.2
+随机谕言机模型下的基于身份的密码体制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%8F%89%E5%BC%95%E7%90%86"><span class="nav-number">9.8.</span> <span class="nav-text">9.8 分叉引理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC10%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%AE%A4%E8%AF%81"><span class="nav-number">10.</span> <span class="nav-text">第10章 网络加密与认证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%8A%A0%E5%AF%86"><span class="nav-number">10.1.</span> <span class="nav-text">10.1 网络通信加密</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%80%E6%94%BE%E7%B3%BB%E7%BB%9F%E4%BA%92%E8%BF%9E%E5%92%8Ctcpip%E5%88%86%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="nav-number">10.1.1.</span> <span class="nav-text">10.1.1
+开放系统互连和TCP&#x2F;IP分层模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F"><span class="nav-number">10.1.2.</span> <span class="nav-text">10.1.2 网络加密方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kerberos-%E8%AE%A4%E8%AF%81%E7%B3%BB%E7%BB%9F"><span class="nav-number">10.2.</span> <span class="nav-text">10.2 Kerberos 认证系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#kerberos-v4"><span class="nav-number">10.2.1.</span> <span class="nav-text">10.2.1 Kerberos V4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kerberos-%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%A4%9A%E5%8C%BA%E5%9F%9F%E7%9A%84kerberos"><span class="nav-number">10.2.2.</span> <span class="nav-text">10.2.2 Kerberos
+区域与多区域的Kerberos</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x.509%E8%AE%A4%E8%AF%81%E4%B8%9A%E5%8A%A1"><span class="nav-number">10.3.</span> <span class="nav-text">10.3 X.509认证业务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%81%E4%B9%A6"><span class="nav-number">10.3.1.</span> <span class="nav-text">10.3.1 证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B"><span class="nav-number">10.3.2.</span> <span class="nav-text">10.3.2 认证过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pgp"><span class="nav-number">10.4.</span> <span class="nav-text">10.4 PGP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="nav-number">10.4.1.</span> <span class="nav-text">10.4.1 运行方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%86%E9%92%A5%E5%92%8C%E5%AF%86%E9%92%A5%E7%8E%AF"><span class="nav-number">10.4.2.</span> <span class="nav-text">10.4.2 密钥和密钥环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E7%AE%A1%E7%90%86"><span class="nav-number">10.4.3.</span> <span class="nav-text">10.4.3 公钥管理</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">coperlm</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/coperlm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;coperlm" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:coperlm@outlook.com" title="E-Mail → mailto:coperlm@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://coperlm.github.io/2025/05/25/%E9%87%8D%E5%AD%A6%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6v4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="coperlm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="重学现代密码学v4 | coperlm's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          重学现代密码学v4
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-05-25 16:39:02 / Modified: 16:40:49" itemprop="dateCreated datePublished" datetime="2025-05-25T16:39:02+08:00">2025-05-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>本文重学《现代密码学（第四版）》（杨波编著，清华大学出版社），旨在巩固基础，同时为后人带来便利</p>
+<p>目前进度：还没开始</p>
+<span id="more"></span>
+<hr>
+<h2 id="第1章-引言">第1章 引言</h2>
+<h3 id="信息安全面临的威胁">1.1 信息安全面临的威胁</h3>
+<h4 id="安全威胁">1.1.1 安全威胁</h4>
+<h4 id="入侵者和病毒">1.1.2 入侵者和病毒</h4>
+<h4 id="安全业务">1.1.3 安全业务</h4>
+<h3 id="信息安全模型">1.2 信息安全模型</h3>
+<h3 id="密码学基本概念">1.3 密码学基本概念</h3>
+<h4 id="保密通信系统">1.3.1 保密通信系统</h4>
+<h4 id="密码体制分类">1.3.2 密码体制分类</h4>
+<h4 id="密码攻击概述">1.3.3 密码攻击概述</h4>
+<h3 id="几种古典密码...">1.4 几种古典密码...</h3>
+<h4 id="单表代换密码">1.4.1 单表代换密码</h4>
+<h4 id="多表代换密码">1.4.2 多表代换密码</h4>
+<p>习题</p>
+<h2 id="第2章-流密码">第2章 流密码</h2>
+<h3 id="流密码的基本概念">2.1 流密码的基本概念</h3>
+<h4 id="同步流密码">2.1.1 同步流密码</h4>
+<h4 id="有限状态自动机">2.1.2 有限状态自动机</h4>
+<h4 id="密钥流产生器">2.1.3 密钥流产生器</h4>
+<h3 id="线性反馈移位寄存器">2.2 线性反馈移位寄存器</h3>
+<h3 id="线性移位寄存器的一元多项式表示">2.3
+线性移位寄存器的一元多项式表示</h3>
+<h3 id="m序列的伪随机性">2.4 m序列的伪随机性</h3>
+<h3 id="m序列密码的破译">2.5 m序列密码的破译</h3>
+<h3 id="非线性序列">2.6 非线性序列</h3>
+<h4 id="geffe序列生成器">2.6.1 Geffe序列生成器</h4>
+<h4 id="jk触发器">2.6.2 JK触发器</h4>
+<h4 id="pless-生成器">2.6.3 Pless 生成器</h4>
+<h4 id="钟控序列生成器">2.6.4 钟控序列生成器</h4>
+<p>习题</p>
+<h2 id="第3章-分组密码体制">第3章 分组密码体制</h2>
+<h3 id="分组密码概述">3.1 分组密码概述</h3>
+<h4 id="代换">3.1.1 代换</h4>
+<h4 id="扩散和混淆">3.1.2 扩散和混淆</h4>
+<h4 id="feistel-密码结构">3.1.3 Feistel 密码结构</h4>
+<h3 id="数据加密标准...">3.2 数据加密标准...</h3>
+<h4 id="des-描述">3.2.1 DES 描述</h4>
+<h4 id="二重-des">3.2.2 二重 DES</h4>
+<h4 id="两个密钥的三重des">3.2.3 两个密钥的三重DES</h4>
+<h4 id="个密钥的三重-des">3.2.4 3个密钥的三重 DES</h4>
+<h3 id="差分密码分析与线性密码分析">3.3 差分密码分析与线性密码分析</h3>
+<h4 id="差分密码分析">3.3.1 差分密码分析</h4>
+<h4 id="线性密码分析">3.3.2 线性密码分析</h4>
+<h3 id="分组密码的运行模式">3.4 分组密码的运行模式</h3>
+<h4 id="电码本模式">3.4.1 电码本模式</h4>
+<h4 id="密码分组链接模式">3.4.2 密码分组链接模式</h4>
+<h4 id="密码反馈模式">3.4.3 密码反馈模式</h4>
+<h4 id="输出反馈模式">3.4.4 输出反馈模式</h4>
+<h3 id="idea">3.5 IDEA</h3>
+<h4 id="设计原理">3.5.1 设计原理</h4>
+<h4 id="加密过程">3.5.2 加密过程</h4>
+<h3 id="aes-算法-rijndael">3.6 AES 算法 Rijndael</h3>
+<h4 id="rijndael-的数学基础和设计思想">3.6.1 Rijndael
+的数学基础和设计思想</h4>
+<h4 id="算法说明">3.6.2 算法说明</h4>
+<h3 id="中国商用密码算法-sm4">3.7 中国商用密码算法 SM4</h3>
+<h3 id="祖冲之密码...">3.8 祖冲之密码...</h3>
+<h4 id="算法中的符号及含义">3.8.1 算法中的符号及含义</h4>
+<h4 id="祖冲之密码的算法结构">3.8.2 祖冲之密码的算法结构</h4>
+<h4 id="祖冲之密码的运行">3.8.3 祖冲之密码的运行</h4>
+<h4 id="基于祖冲之密码的机密性算法-128-eea3">3.8.4
+基于祖冲之密码的机密性算法 128-EEA3</h4>
+<h2 id="第4章-公钥密码">第4章 公钥密码</h2>
+<h3 id="密码学中一些常用的数学知识">4.1 密码学中一些常用的数学知识</h3>
+<h4 id="群环域">4.1.1 群、环、域</h4>
+<h4 id="素数和互素数">4.1.2 素数和互素数</h4>
+<h4 id="模运算">4.1.3 模运算</h4>
+<h4 id="模指数运算">4.1.4 模指数运算</h4>
+<h4 id="费尔马定理欧拉定理卡米歇尔定理">4.1.5
+费尔马定理、欧拉定理、卡米歇尔定理</h4>
+<h4 id="素性检验">4.1.6 素性检验</h4>
+<h4 id="欧几里得算法">4.1.7 欧几里得算法</h4>
+<h4 id="中国剩余定理">4.1.8 中国剩余定理</h4>
+<h4 id="离散对数">4.1.9 离散对数</h4>
+<h4 id="平方剩余">4.1.10 平方剩余</h4>
+<h4 id="循环群">4.1.11 循环群</h4>
+<h4 id="循环群的选取">4.1.12 循环群的选取</h4>
+<h4 id="双线性映射">4.1.13 双线性映射</h4>
+<h4 id="计算复杂性">4.1.14 计算复杂性</h4>
+<h3 id="公钥密码体制的基本概念">4.2 公钥密码体制的基本概念</h3>
+<h4 id="公钥密码体制的原理">4.2.1 公钥密码体制的原理</h4>
+<h4 id="公钥密码算法应满足的要求">4.2.2 公钥密码算法应满足的要求</h4>
+<h4 id="对公钥密码体制的攻击">4.2.3 对公钥密码体制的攻击</h4>
+<h3 id="rsa算法">4.3 RSA算法</h3>
+<h4 id="算法描述">4.3.1 算法描述</h4>
+<h4 id="rsa算法中的计算问题">4.3.2 RSA算法中的计算问题</h4>
+<h4 id="一种改进的rsa实现方法">4.3.3 一种改进的RSA实现方法</h4>
+<h4 id="rsa的安全性">4.3.4 RSA的安全性</h4>
+<h4 id="对rsa的攻击">4.3.5 对RSA的攻击</h4>
+<h3 id="背包密码体制">4.4 背包密码体制</h3>
+<h3 id="rabin-密码体制">4.5 Rabin 密码体制</h3>
+<h3 id="ntru公钥密码系统">4.6 NTRU公钥密码系统</h3>
+<h3 id="椭圆曲线密码体制">4.7 椭圆曲线密码体制</h3>
+<h4 id="椭圆曲线">4.7.1 椭圆曲线</h4>
+<h4 id="有限域上的椭圆曲线">4.7.2 有限域上的椭圆曲线</h4>
+<h4 id="椭圆曲线上的点数">4.7.3 椭圆曲线上的点数</h4>
+<h4 id="明文消息到椭圆曲线上的嵌入">4.7.4
+明文消息到椭圆曲线上的嵌入</h4>
+<h4 id="椭圆曲线上的密码">4.7.5 椭圆曲线上的密码</h4>
+<h3 id="sm2椭圆曲线公钥密码加密算法">4.8
+SM2椭圆曲线公钥密码加密算法</h3>
+<h2 id="第5章-密钥分配与密钥管理">第5章 密钥分配与密钥管理</h2>
+<h3 id="单钥加密体制的密钥分配">5.1 单钥加密体制的密钥分配</h3>
+<h4 id="密钥分配的基本方法">5.1.1 密钥分配的基本方法</h4>
+<h4 id="一个实例">5.1.2 一个实例</h4>
+<h4 id="密钥的分层控制">5.1.3 密钥的分层控制</h4>
+<h4 id="会话密钥的有效期">5.1.4 会话密钥的有效期</h4>
+<h4 id="无中心的密钥控制">5.1.5 无中心的密钥控制</h4>
+<h4 id="密钥的控制使用">5.1.6 密钥的控制使用</h4>
+<h3 id="公钥加密体制的密钥管理">5.2 公钥加密体制的密钥管理</h3>
+<h4 id="公钥的分配">5.2.1 公钥的分配</h4>
+<h4 id="用公钥加密分配单钥密码体制的密钥">5.2.2
+用公钥加密分配单钥密码体制的密钥</h4>
+<h4 id="diffie-hellman-密钥交换">5.2.3 Diffie-Hellman 密钥交换</h4>
+<h3 id="随机数的产生">5.3 随机数的产生</h3>
+<h4 id="随机数的使用">5.3.1 随机数的使用</h4>
+<h4 id="随机数源">5.3.2 随机数源</h4>
+<h4 id="伪随机数产生器">5.3.3 伪随机数产生器</h4>
+<h4 id="基于密码算法的随机数产生器">5.3.4
+基于密码算法的随机数产生器</h4>
+<h4 id="随机比特产生器">5.3.5 随机比特产生器</h4>
+<h3 id="秘密分割">5.4 秘密分割</h3>
+<h4 id="秘密分割门限方案">5.4.1 秘密分割门限方案</h4>
+<h4 id="shamir-门限方案">5.4.2 Shamir 门限方案</h4>
+<h4 id="基于中国剩余定理的门限方案">5.4.3
+基于中国剩余定理的门限方案</h4>
+<h2 id="第6章-消息认证和哈希函数">第6章 消息认证和哈希函数</h2>
+<h3 id="消息认证码">6.1 消息认证码</h3>
+<h4 id="消息认证码的定义及使用方式">6.1.1
+消息认证码的定义及使用方式</h4>
+<h4 id="产生mac的函数应满足的要求">6.1.2 产生MAC的函数应满足的要求</h4>
+<h4 id="数据认证算法">6.1.3 数据认证算法</h4>
+<h4 id="基于祖冲之密码的完整性算法128-εια3">6.1.4
+基于祖冲之密码的完整性算法128-ΕΙΑ3</h4>
+<h3 id="哈希函数">6.2 哈希函数</h3>
+<h4 id="哈希函数的定义及使用方式">6.2.1 哈希函数的定义及使用方式</h4>
+<h4 id="哈希函数应满足的条件">6.2.2 哈希函数应满足的条件</h4>
+<h4 id="生日攻击">6.2.3 生日攻击</h4>
+<h4 id="迭代型哈希函数的一般结构">6.2.4 迭代型哈希函数的一般结构</h4>
+<h3 id="md5哈希算法">6.3 MD5哈希算法</h3>
+<h4 id="算法描述-1">6.3.1 算法描述</h4>
+<h4 id="md5的压缩函数">6.3.2 MD5的压缩函数</h4>
+<h4 id="md5的安全性">6.3.3 MD5的安全性</h4>
+<h3 id="安全哈希算法">6.4 安全哈希算法</h3>
+<h4 id="算法描述-2">6.4.1 算法描述</h4>
+<h4 id="sha的压缩函数">6.4.2 SHA的压缩函数</h4>
+<h4 id="sha与md5的比较">6.4.3 SHA与MD5的比较</h4>
+<h4 id="对sha的攻击现状">6.4.4 对SHA的攻击现状</h4>
+<h3 id="hmac">6.5 HMAC</h3>
+<h4 id="hmac的设计目标">6.5.1 HMAC的设计目标</h4>
+<h4 id="算法描述-3">6.5.2 算法描述</h4>
+<h4 id="hmac的安全性">6.5.3 HMAC的安全性</h4>
+<h3 id="sm3哈希算法">6.6 SM3哈希算法</h3>
+<h4 id="sm3-哈希算法的描述">6.6.1 SM3 哈希算法的描述</h4>
+<h4 id="sm3-哈希算法的安全性">6.6.2 SM3 哈希算法的安全性</h4>
+<p>习题</p>
+<h2 id="第7章-数字签名和认证协议">第7章 数字签名和认证协议</h2>
+<h3 id="数字签名的基本概念">7.1 数字签名的基本概念</h3>
+<h4 id="数字签名应满足的要求">7.1.1 数字签名应满足的要求</h4>
+<h4 id="数字签名的产生方式">7.1.2 数字签名的产生方式</h4>
+<h4 id="数字签名的执行方式">7.1.3 数字签名的执行方式</h4>
+<h3 id="数字签名标准">7.2 数字签名标准</h3>
+<h4 id="dss的基本方式">7.2.1 DSS的基本方式</h4>
+<h4 id="数字签名算法-dsa">7.2.2 数字签名算法 DSA</h4>
+<h3 id="其他签名方案">7.3 其他签名方案</h3>
+<h4 id="基于离散对数问题的数字签名体制">7.3.1
+基于离散对数问题的数字签名体制</h4>
+<h4 id="基于大数分解问题的数字签名体制">7.3.2
+基于大数分解问题的数字签名体制</h4>
+<h4 id="基于身份的数字签名体制">7.3.3 基于身份的数字签名体制</h4>
+<h3 id="sm2椭圆曲线公钥密码签名算法">7.4
+SM2椭圆曲线公钥密码签名算法</h3>
+<h3 id="认证协议">7.5 认证协议</h3>
+<h4 id="相互认证">7.5.1 相互认证</h4>
+<h4 id="单向认证">7.5.2 单向认证</h4>
+<h2 id="第8章-密码协议">第8章 密码协议</h2>
+<h3 id="一些基本协议">8.1 一些基本协议</h3>
+<h4 id="智力扑克">8.1.1 智力扑克</h4>
+<h4 id="掷硬币协议">8.1.2 掷硬币协议</h4>
+<h4 id="数字承诺协议">8.1.3 数字承诺协议</h4>
+<h4 id="不经意传输协议">8.1.4 不经意传输协议</h4>
+<h3 id="零知识证明">8.2 零知识证明</h3>
+<h4 id="交互式证明系统">8.2.1 交互式证明系统</h4>
+<h4 id="交互式证明系统的定义">8.2.2 交互式证明系统的定义</h4>
+<h4 id="交互式证明系统的零知识性">8.2.3 交互式证明系统的零知识性</h4>
+<h4 id="非交互式证明系统">8.2.4 非交互式证明系统</h4>
+<h4 id="适应性安全的非交互式零知识证明">8.2.5
+适应性安全的非交互式零知识证明</h4>
+<h4 id="零知识证明协议的组合">8.2.6 零知识证明协议的组合</h4>
+<h4 id="图的三色问题的零知识证明">8.2.7 图的三色问题的零知识证明</h4>
+<h4 id="知识证明">8.2.8 知识证明</h4>
+<h4 id="简化的fiat-shamir身份识别方案">8.2.9
+简化的Fiat-Shamir身份识别方案</h4>
+<h4 id="fiat-shamir-身份识别方案">8.2.10 Fiat-Shamir 身份识别方案</h4>
+<h3 id="安全多方计算协议">8.3 安全多方计算协议</h3>
+<h4 id="安全多方计算问题">8.3.1 安全多方计算问题</h4>
+<h4 id="半诚实敌手模型">8.3.2 半诚实敌手模型</h4>
+<h4 id="恶意敌手模型">8.3.3 恶意敌手模型</h4>
+<p>习题</p>
+<h2 id="第9章-可证明安全">第9章 可证明安全</h2>
+<h3 id="语义安全的公钥密码体制的定义">9.1
+语义安全的公钥密码体制的定义</h3>
+<h4 id="选择明文攻击下的不可区分性">9.1.1
+选择明文攻击下的不可区分性</h4>
+<h4 id="公钥加密方案在选择密文攻击下的不可区分性">9.1.2
+公钥加密方案在选择密文攻击下的不可区分性</h4>
+<h4 id="公钥加密方案在适应性选择密文攻击下的不可区分性">9.1.3
+公钥加密方案在适应性选择密文攻击下的不可区分性</h4>
+<h4 id="归约">9.1.4 归约</h4>
+<h3 id="语义安全的rsa加密方案">9.2 语义安全的RSA加密方案</h3>
+<h4 id="rsa问题和rsa假设">9.2.1 RSA问题和RSA假设</h4>
+<h4 id="选择明文安全的rsa-加密">9.2.2 选择明文安全的RSA 加密</h4>
+<h4 id="选择密文安全的rsa-加密">9.2.3 选择密文安全的RSA 加密</h4>
+<h3 id="paillier-公钥密码系统">9.3 Paillier 公钥密码系统</h3>
+<h4 id="合数幂剩余类的判定">9.3.1 合数幂剩余类的判定</h4>
+<h4 id="合数幂剩余类的计算">9.3.2 合数幂剩余类的计算</h4>
+<h4 id="基于合数幂剩余类问题的概率加密方案">9.3.3
+基于合数幂剩余类问题的概率加密方案</h4>
+<h4 id="基于合数幂剩余类问题的单向陷门置换">9.3.4
+基于合数幂剩余类问题的单向陷门置换</h4>
+<h4 id="paillier-密码系统的性质">9.3.5 Paillier 密码系统的性质</h4>
+<h3 id="cramer-shoup-密码系统">9.4 Cramer-Shoup 密码系统</h3>
+<h4 id="cramer-shoup-密码系统的基本机制">9.4.1 Cramer-Shoup
+密码系统的基本机制</h4>
+<h4 id="cramer-shoup-密码系统的安全性证明">9.4.2 Cramer-Shoup
+密码系统的安全性证明</h4>
+<h3 id="rsa-fdh-签名方案">9.5 RSA-FDH 签名方案</h3>
+<h4 id="rsa签名方案">9.5.1 RSA签名方案</h4>
+<h4 id="rsa-fdh签名方案的描述">9.5.2 RSA-FDH签名方案的描述</h4>
+<h4 id="rsa-fdh签名方案的改进">9.5.3 RSA-FDH签名方案的改进</h4>
+<h3 id="bls-短签名方案">9.6 BLS 短签名方案</h3>
+<h4 id="bls短签名方案所基于的安全性假设">9.6.1
+BLS短签名方案所基于的安全性假设</h4>
+<h4 id="bls-短签名方案描述">9.6.2 BLS 短签名方案描述</h4>
+<h4 id="bls-短签名方案的改进一">9.6.3 BLS 短签名方案的改进一</h4>
+<h4 id="bls短签名方案的改进二">9.6.4 BLS短签名方案的改进二</h4>
+<h3 id="基于身份的密码体制">9.7 基于身份的密码体制</h3>
+<h4 id="基于身份的密码体制定义和安全模型">9.7.1
+基于身份的密码体制定义和安全模型</h4>
+<h4 id="随机谕言机模型下的基于身份的密码体制">9.7.2
+随机谕言机模型下的基于身份的密码体制</h4>
+<h3 id="分叉引理">9.8 分叉引理</h3>
+<p>习题</p>
+<h2 id="第10章-网络加密与认证">第10章 网络加密与认证</h2>
+<h3 id="网络通信加密">10.1 网络通信加密</h3>
+<h4 id="开放系统互连和tcpip分层模型">10.1.1
+开放系统互连和TCP/IP分层模型</h4>
+<h4 id="网络加密方式">10.1.2 网络加密方式</h4>
+<h3 id="kerberos-认证系统">10.2 Kerberos 认证系统</h3>
+<h4 id="kerberos-v4">10.2.1 Kerberos V4</h4>
+<h4 id="kerberos-区域与多区域的kerberos">10.2.2 Kerberos
+区域与多区域的Kerberos</h4>
+<h3 id="x.509认证业务">10.3 X.509认证业务</h3>
+<h4 id="证书">10.3.1 证书</h4>
+<h4 id="认证过程">10.3.2 认证过程</h4>
+<h3 id="pgp">10.4 PGP</h3>
+<h4 id="运行方式">10.4.1 运行方式</h4>
+<h4 id="密钥和密钥环">10.4.2 密钥和密钥环</h4>
+<h4 id="公钥管理">10.4.3 公钥管理</h4>
+<p>习题</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Crypto/" rel="tag"><i class="fa fa-tag"></i>Crypto</a>
+              <a href="/tags/unfixed/" rel="tag"><i class="fa fa-tag"></i>unfixed</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/23/%E8%AE%B0%E5%BD%95-%E4%B8%80%E5%AE%9A%E8%A6%81%E6%89%93%E5%A5%BD%E5%9F%BA%E7%A1%80/" rel="prev" title="记录_一定要打好基础">
+                  <i class="fa fa-angle-left"></i> 记录_一定要打好基础
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">coperlm</span>
+  </div>
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+-->
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"per_page":false,"cdn":null,"tags":"none","config":{"tex":{"inlineMath":[["$","$"]],"displayMath":[["$$","$$"]]}},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
