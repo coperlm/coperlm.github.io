@@ -268,7 +268,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">二叉查找树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">平衡二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-number">3.</span> <span class="nav-text">红黑树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#references"><span class="nav-number">4.</span> <span class="nav-text">References</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">二叉查找树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">平衡二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-number">3.</span> <span class="nav-text">红黑树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-number">4.</span> <span class="nav-text">References</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -281,7 +281,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">102</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -373,39 +373,38 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody"><p>BST 二叉查找树 -&gt; AVL 平衡二叉树 -&gt; RBT 红黑树</p>
 <span id="more"></span>
 <hr>
-<h3 id="二叉查找树">二叉查找树</h3>
-<ol type="1">
+<h3 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h3><ol>
 <li>左子树上所有结点的值均小于或等于它的根结点的值</li>
 <li>右子树上所有结点的值均大于或等于它的根结点的值</li>
 <li>左、右子树也分别为二叉排序树</li>
 </ol>
 <p>理想情况下是这样子</p>
-<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/8555d3dc4ccc9c65bd59977ff14397ee.png"></p>
+<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/8555d3dc4ccc9c65bd59977ff14397ee.png" alt></p>
 <p>存在的问题：如果BST树的节点正好从大到小的插入，此时树的结构也类似于链表结构，这时候的查询或写入耗时与链表相同，最坏时间复杂为线性</p>
 <p>这时候就有了平衡二叉树AVL（发明者名字简写）</p>
 <p>AVL也属于二叉搜索树的一种，与其不同的是AVL通过机制保证其自身的平衡</p>
-<h3 id="平衡二叉树">平衡二叉树</h3>
-<ol type="1">
+<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><ol>
 <li>AVL树是最先发明的自平衡二叉查找树</li>
 <li>在AVL树中任何节点的两个子树的高度最大差别为1，所以它也被称为高度平衡树</li>
 <li>增加和删除可能需要通过一次或多次树旋转来重新平衡这个树</li>
 </ol>
 <p>平衡二叉树的特性</p>
-<ol type="1">
-<li><p>对于任何一颗子树的root根结点而言，它的左子树任何节点的key一定比root小，而右子树任何节点的key
-一定比root大</p></li>
-<li><p>对于AVL树而言，其中任何子树仍然是AVL树</p></li>
-<li><p>每个节点的左右子节点的高度之差的绝对值最多为1</p></li>
+<ol>
+<li><p>对于任何一颗子树的root根结点而言，它的左子树任何节点的key一定比root小，而右子树任何节点的key 一定比root大</p>
+</li>
+<li><p>对于AVL树而言，其中任何子树仍然是AVL树</p>
+</li>
+<li>每个节点的左右子节点的高度之差的绝对值最多为1</li>
 </ol>
 <p>也就是说，AVL树=BST树+自平衡功能</p>
 <p>具体怎么旋转？</p>
 <p>记住这四张图就好</p>
-<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/82f3502b5be24051bd7688b1e0f36135.png"></p>
-<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/dea622e0576539552458e3afcffb1f59.png"></p>
-<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/a50f45a2c27e4f330603481789d5234c.png"></p>
-<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/24326f9fded29e6f566738f86525d468.png"></p>
+<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/82f3502b5be24051bd7688b1e0f36135.png" alt></p>
+<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/dea622e0576539552458e3afcffb1f59.png" alt></p>
+<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/a50f45a2c27e4f330603481789d5234c.png" alt></p>
+<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/24326f9fded29e6f566738f86525d468.png" alt></p>
 <p>那如何删除呢？</p>
-<ol type="1">
+<ol>
 <li>叶子节点直接删除，判断平衡进行调整直到根节点</li>
 <li>只有左（或右）子树，节点删除，以左（或右）子树替代，判断平衡进行调整直到根节点</li>
 <li>删除的节点既有左子树又有右子树，找到其前驱节点（左子树中最大值的节点）或者后驱节点（右子树中最小值的节点）将其替换，判断平衡进行调整直到根节点</li>
@@ -415,52 +414,47 @@ mjx-container[display="true"] + br {
 <p>所以在插入的时候很容易出现不平衡的情况，一旦这样，就需要进行旋转以求达到平衡</p>
 <p>正是由于这种严格的平衡条件，导致AVL需要花大量时间在调整上，故AVL树一般使用场景在于查询场景（而不是增加删除频繁的场景）</p>
 <p>红黑树：牺牲了部分平衡性，以换取插入/删除操作时较少的旋转操作，整体来说性能要优于AVL树</p>
-<h3 id="红黑树">红黑树</h3>
-<ol type="1">
+<h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><ol>
 <li>节点非黑即红（颜色属性）</li>
 <li>根节点一定是黑色（根属性）</li>
 <li>叶子节点（NIL）一定是黑色（叶子属性）</li>
 <li>每个红色节点的两个子节点都为黑色（红色属性）</li>
 <li>从任一节点到其每个叶子的所有路径，都包含相同数目的黑色节点（平衡属性）</li>
 </ol>
-<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/20200901114718174.png"></p>
+<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/20200901114718174.png" alt></p>
 <p>RBT使用空间去换时间，在AVL的节点上，增加了<strong>颜色属性</strong>的数据，换取后面平衡操作的次数减少</p>
-<p>红黑树并不是一棵平衡二叉树（见图），但是基于<code>性质5</code>，从任一节点到每个叶子的所有路径都包含相同数目的黑色节点，故
-以黑色节点的高度作为约束，RBT的左子树和右子树的层数是相同的</p>
+<p>红黑树并不是一棵平衡二叉树（见图），但是基于<code>性质5</code>，从任一节点到每个叶子的所有路径都包含相同数目的黑色节点，故 以黑色节点的高度作为约束，RBT的左子树和右子树的层数是相同的</p>
 <p>红黑树的平衡称为<strong>黑色完美平衡</strong></p>
 <p>恢复平衡的三个操作：变色，左旋，右旋</p>
 <p>如何维护红黑树：</p>
 <ul>
-<li><p>初始状态只有一个黑色节点（同时是根节点和叶子节点）</p></li>
+<li><p>初始状态只有一个黑色节点（同时是根节点和叶子节点）</p>
+</li>
 <li><p>插入新节点：</p>
 <p>因为父节点为黑色的概率较大，默认插入新节点为红色可以避免颜色冲突</p>
-<ol type="1">
-<li><p>插入节点的Key已经存在：更新当前节点的值为插入节点的值，颜色不变<img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/20210412094118977.png"></p></li>
+<ol>
+<li><p>插入节点的Key已经存在：更新当前节点的值为插入节点的值，颜色不变<img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/20210412094118977.png" alt></p>
+</li>
 <li><p>插入节点的父节点为黑色：由于节点默认红色，所以可以直接插入而无需做自平衡</p>
-<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/20210412094724987.png"></p></li>
+<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/20210412094724987.png" alt></p>
+</li>
 <li><p>插入节点的父节点为红色</p>
 <p>分为两种情况：叔叔节点是红色还是黑色</p>
 <p>如果叔叔节点是红色，则如图变换，再以点P为基点进行自平衡</p>
-<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/2021041210371914.png"></p>
+<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/2021041210371914.png" alt></p>
 <p>如果叔叔节点是黑色，如图变换即可</p>
-<figure>
-<img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/watermark,type_ZmFuZ3poZW5naGVpdG" alt="在这里插入图片描述">
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<figure>
-<img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/20210412153954767.png" alt="在这里插入图片描述">
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<p>反方向同理</p></li>
-</ol></li>
+<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/watermark,type_ZmFuZ3poZW5naGVpdG" alt="在这里插入图片描述"></p>
+<p><img src="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/20210412153954767.png" alt="在这里插入图片描述"></p>
+<p>反方向同理</p>
+</li>
+</ol>
+</li>
 </ul>
 <p>实验代码</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 颜色枚举，0 表示黑色，1 表示红色</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">Color</span> { BLACK, RED };</span><br><span class="line"></span><br><span class="line"><span class="comment">// 节点结构体</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span> {</span><br><span class="line">    <span class="type">int</span> data;          <span class="comment">// 节点值</span></span><br><span class="line">    Color color;       <span class="comment">// 节点颜色</span></span><br><span class="line">    Node* left;        <span class="comment">// 左子节点</span></span><br><span class="line">    Node* right;       <span class="comment">// 右子节点</span></span><br><span class="line">    Node* parent;      <span class="comment">// 父节点</span></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="comment">// 全局变量定义</span></span><br><span class="line">Node* root = <span class="literal">nullptr</span>;  <span class="comment">// 红黑树根节点</span></span><br><span class="line">Node* NIL = <span class="literal">nullptr</span>;   <span class="comment">// 哨兵节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化哨兵节点</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">initializeNILNode</span><span class="params">()</span> </span>{</span><br><span class="line">    NIL = <span class="keyword">new</span> Node;</span><br><span class="line">    NIL-&gt;color = BLACK;</span><br><span class="line">    NIL-&gt;left = NIL-&gt;right = NIL-&gt;parent = <span class="literal">nullptr</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个新节点</span></span><br><span class="line"><span class="function">Node* <span class="title">createNode</span><span class="params">(<span class="type">int</span> data)</span> </span>{</span><br><span class="line">    Node* newNode = <span class="keyword">new</span> Node;</span><br><span class="line">    newNode-&gt;data = data;</span><br><span class="line">    newNode-&gt;color = RED; <span class="comment">// 新插入节点默认为红色</span></span><br><span class="line">    newNode-&gt;left = newNode-&gt;right = newNode-&gt;parent = NIL;</span><br><span class="line">    <span class="keyword">return</span> newNode;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 左旋操作</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">leftRotate</span><span class="params">(Node*&amp; root, Node* x)</span> </span>{</span><br><span class="line">    Node* y = x-&gt;right;       <span class="comment">// 设置 y 为 x 的右子节点</span></span><br><span class="line">    x-&gt;right = y-&gt;left;       <span class="comment">// 将 y 的左子树移为 x 的右子树</span></span><br><span class="line">    <span class="keyword">if</span> (y-&gt;left != NIL) {</span><br><span class="line">        y-&gt;left-&gt;parent = x;  <span class="comment">// 更新父指针</span></span><br><span class="line">    }</span><br><span class="line">    y-&gt;parent = x-&gt;parent;    <span class="comment">// 将 y 的父节点指向 x 的父节点</span></span><br><span class="line">    <span class="keyword">if</span> (x-&gt;parent == NIL) {</span><br><span class="line">        root = y;             <span class="comment">// 如果 x 是根节点，更新根节点</span></span><br><span class="line">    } <span class="keyword">else</span> <span class="keyword">if</span> (x == x-&gt;parent-&gt;left) {</span><br><span class="line">        x-&gt;parent-&gt;left = y;  <span class="comment">// x 是左子节点</span></span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        x-&gt;parent-&gt;right = y; <span class="comment">// x 是右子节点</span></span><br><span class="line">    }</span><br><span class="line">    y-&gt;left = x;              <span class="comment">// 将 x 设置为 y 的左子节点</span></span><br><span class="line">    x-&gt;parent = y;            <span class="comment">// 更新 x 的父指针</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 右旋操作</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rightRotate</span><span class="params">(Node*&amp; root, Node* y)</span> </span>{</span><br><span class="line">    Node* x = y-&gt;left;        <span class="comment">// 设置 x 为 y 的左子节点</span></span><br><span class="line">    y-&gt;left = x-&gt;right;       <span class="comment">// 将 x 的右子树移为 y 的左子树</span></span><br><span class="line">    <span class="keyword">if</span> (x-&gt;right != NIL) {</span><br><span class="line">        x-&gt;right-&gt;parent = y; <span class="comment">// 更新父指针</span></span><br><span class="line">    }</span><br><span class="line">    x-&gt;parent = y-&gt;parent;    <span class="comment">// 将 x 的父节点指向 y 的父节点</span></span><br><span class="line">    <span class="keyword">if</span> (y-&gt;parent == NIL) {</span><br><span class="line">        root = x;             <span class="comment">// 如果 y 是根节点，更新根节点</span></span><br><span class="line">    } <span class="keyword">else</span> <span class="keyword">if</span> (y == y-&gt;parent-&gt;left) {</span><br><span class="line">        y-&gt;parent-&gt;left = x;  <span class="comment">// y 是左子节点</span></span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        y-&gt;parent-&gt;right = x; <span class="comment">// y 是右子节点</span></span><br><span class="line">    }</span><br><span class="line">    x-&gt;right = y;             <span class="comment">// 将 y 设置为 x 的右子节点</span></span><br><span class="line">    y-&gt;parent = x;            <span class="comment">// 更新 y 的父指针</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修复插入导致的红黑树性质破坏</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fixInsert</span><span class="params">(Node*&amp; root, Node* z)</span> </span>{</span><br><span class="line">    <span class="keyword">while</span> (z-&gt;parent-&gt;color == RED) { <span class="comment">// 父节点是红色时可能违反性质</span></span><br><span class="line">        <span class="keyword">if</span> (z-&gt;parent == z-&gt;parent-&gt;parent-&gt;left) { <span class="comment">// 父节点是祖父节点的左子节点</span></span><br><span class="line">            Node* y = z-&gt;parent-&gt;parent-&gt;right; <span class="comment">// 叔叔节点</span></span><br><span class="line">            <span class="keyword">if</span> (y-&gt;color == RED) { <span class="comment">// 叔叔节点是红色</span></span><br><span class="line">                z-&gt;parent-&gt;color = BLACK;     <span class="comment">// 父节点变黑</span></span><br><span class="line">                y-&gt;color = BLACK;            <span class="comment">// 叔叔节点变黑</span></span><br><span class="line">                z-&gt;parent-&gt;parent-&gt;color = RED; <span class="comment">// 祖父节点变红</span></span><br><span class="line">                z = z-&gt;parent-&gt;parent;       <span class="comment">// 将 z 移动到祖父节点继续调整</span></span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                <span class="keyword">if</span> (z == z-&gt;parent-&gt;right) { <span class="comment">// z 是父节点的右子节点</span></span><br><span class="line">                    z = z-&gt;parent;</span><br><span class="line">                    <span class="built_in">leftRotate</span>(root, z);    <span class="comment">// 左旋转父节点</span></span><br><span class="line">                }</span><br><span class="line">                z-&gt;parent-&gt;color = BLACK;    <span class="comment">// 父节点变黑</span></span><br><span class="line">                z-&gt;parent-&gt;parent-&gt;color = RED; <span class="comment">// 祖父节点变红</span></span><br><span class="line">                <span class="built_in">rightRotate</span>(root, z-&gt;parent-&gt;parent); <span class="comment">// 右旋祖父节点</span></span><br><span class="line">            }</span><br><span class="line">        } <span class="keyword">else</span> { <span class="comment">// 父节点是祖父节点的右子节点，逻辑对称</span></span><br><span class="line">            Node* y = z-&gt;parent-&gt;parent-&gt;left; <span class="comment">// 叔叔节点</span></span><br><span class="line">            <span class="keyword">if</span> (y-&gt;color == RED) {</span><br><span class="line">                z-&gt;parent-&gt;color = BLACK;</span><br><span class="line">                y-&gt;color = BLACK;</span><br><span class="line">                z-&gt;parent-&gt;parent-&gt;color = RED;</span><br><span class="line">                z = z-&gt;parent-&gt;parent;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                <span class="keyword">if</span> (z == z-&gt;parent-&gt;left) {</span><br><span class="line">                    z = z-&gt;parent;</span><br><span class="line">                    <span class="built_in">rightRotate</span>(root, z);</span><br><span class="line">                }</span><br><span class="line">                z-&gt;parent-&gt;color = BLACK;</span><br><span class="line">                z-&gt;parent-&gt;parent-&gt;color = RED;</span><br><span class="line">                <span class="built_in">leftRotate</span>(root, z-&gt;parent-&gt;parent);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    root-&gt;color = BLACK; <span class="comment">// 根节点始终是黑色</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入一个新节点到红黑树</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> data)</span> </span>{</span><br><span class="line">    Node* z = <span class="built_in">createNode</span>(data);</span><br><span class="line">    Node* y = NIL;       <span class="comment">// 用于记录 z 的父节点</span></span><br><span class="line">    Node* x = root;      <span class="comment">// 从根节点开始搜索插入位置</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (x != NIL) {   <span class="comment">// 找到插入位置</span></span><br><span class="line">        y = x;</span><br><span class="line">        <span class="keyword">if</span> (z-&gt;data &lt; x-&gt;data) {</span><br><span class="line">            x = x-&gt;left;</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            x = x-&gt;right;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    z-&gt;parent = y;       <span class="comment">// 设置 z 的父节点</span></span><br><span class="line">    <span class="keyword">if</span> (y == NIL) {      <span class="comment">// 树为空，z 为根节点</span></span><br><span class="line">        root = z;</span><br><span class="line">    } <span class="keyword">else</span> <span class="keyword">if</span> (z-&gt;data &lt; y-&gt;data) {</span><br><span class="line">        y-&gt;left = z;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        y-&gt;right = z;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="built_in">fixInsert</span>(root, z);  <span class="comment">// 修复红黑树性质</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 中序遍历</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">inorder</span><span class="params">(Node* root)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span> (root != NIL) {</span><br><span class="line">        <span class="built_in">inorder</span>(root-&gt;left);</span><br><span class="line">        cout &lt;&lt; root-&gt;data &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="built_in">inorder</span>(root-&gt;right);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="built_in">initializeNILNode</span>(); <span class="comment">// 初始化哨兵节点</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 插入节点</span></span><br><span class="line">    <span class="built_in">insert</span>(<span class="number">10</span>);</span><br><span class="line">    <span class="built_in">insert</span>(<span class="number">20</span>);</span><br><span class="line">    <span class="built_in">insert</span>(<span class="number">15</span>);</span><br><span class="line">    <span class="built_in">insert</span>(<span class="number">25</span>);</span><br><span class="line">    <span class="built_in">insert</span>(<span class="number">30</span>);</span><br><span class="line">    <span class="built_in">insert</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 中序遍历输出</span></span><br><span class="line">    cout &lt;&lt; <span class="string">"Inorder traversal: "</span>;</span><br><span class="line">    <span class="built_in">inorder</span>(root);</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="references">References</h3>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/crazymakercircle/p/16320430.html">红黑树（图解+秒懂+史上最全）</a></p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1739709">【动态图文详解，史上最易懂的红黑树讲解】手写红黑树（Red
-Black Tree）</a></p>
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/crazymakercircle/p/16320430.html">红黑树（图解+秒懂+史上最全）</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1739709">【动态图文详解，史上最易懂的红黑树讲解】手写红黑树（Red Black Tree）</a></p>
 
     </div>
 

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coperlm.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文对第九届网络空间安全国际研讨会的分享知识进行小结 相关链接：会前准备 会后游记 拍照备份">
+    <meta name="description" content="本文对第九届网络空间安全国际研讨会的分享知识进行小结 相关链接：会前准备 会后游记 拍照备份">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CS2025摘要小结">
 <meta property="og:url" content="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/index.html">
 <meta property="og:site_name" content="coperlm&#39;s Blog">
-<meta property="og:description" content="本文对第九届网络空间安全国际研讨会的分享知识进行小结 相关链接：会前准备 会后游记 拍照备份">
+<meta property="og:description" content="本文对第九届网络空间安全国际研讨会的分享知识进行小结 相关链接：会前准备 会后游记 拍照备份">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/311e2e26b315700abdbba615868bf1e.jpg">
 <meta property="og:image" content="https://coperlm.github.io/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519084908967.png">
@@ -274,7 +274,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">102</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -358,43 +358,31 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody"><p>本文对第九届网络空间安全国际研讨会的分享知识进行小结</p>
-<p>相关链接：<a href="https://coperlm.github.io/2025/05/12/第九届网络空间安全国际研讨会-会前准备/">会前准备</a>
-<a href="https://coperlm.github.io/2025/05/17/CS2025参会游记/">会后游记</a>
-<a target="_blank" rel="noopener" href="https://github.com/coperlm/CS2025">拍照备份</a></p>
+<p>相关链接：<a href="https://coperlm.github.io/2025/05/12/第九届网络空间安全国际研讨会-会前准备/">会前准备</a> <a href="https://coperlm.github.io/2025/05/17/CS2025参会游记/">会后游记</a> <a target="_blank" rel="noopener" href="https://github.com/coperlm/CS2025">拍照备份</a></p>
 <span id="more"></span>
 <hr>
-<h2 id="会议议程">会议议程</h2>
-<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/311e2e26b315700abdbba615868bf1e.jpg"></p>
-<h2 id="主要笔者学习内容">主要笔者学习内容</h2>
-<h3 id="图像篡改定位模型对抗">图像篡改定位模型对抗</h3>
-<p>Motivation：AI兴起，虚假图像合成的成本大幅降低。本报告旨在检测篡改部位</p>
+<h2 id="会议议程"><a href="#会议议程" class="headerlink" title="会议议程"></a>会议议程</h2><p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/311e2e26b315700abdbba615868bf1e.jpg" alt></p>
+<h2 id="主要笔者学习内容"><a href="#主要笔者学习内容" class="headerlink" title="主要笔者学习内容"></a>主要笔者学习内容</h2><h3 id="图像篡改定位模型对抗"><a href="#图像篡改定位模型对抗" class="headerlink" title="图像篡改定位模型对抗"></a>图像篡改定位模型对抗</h3><p>Motivation：AI兴起，虚假图像合成的成本大幅降低。本报告旨在检测篡改部位</p>
 <p>Solution：使用深度网络，训练模型。有效检测篡改</p>
-<p>新的攻击方案：给照片加噪音，人眼看不出区别，但使用原有检测方案
-难以检测篡改</p>
+<p>新的攻击方案：给照片加噪音，人眼看不出区别，但使用原有检测方案 难以检测篡改</p>
 <p>总结：安全领域，对抗是永恒的；AI的产生增加了对抗，也增加了弱点；在研究中，应当攻击方白盒，防守方黑盒</p>
-<h3 id="态势感知">态势感知</h3>
-<p>Motivation：国内网民众多，且信息多模态难以处理。传统处理算法的时间复杂度为指数级（响应速度为分钟级）</p>
+<h3 id="态势感知"><a href="#态势感知" class="headerlink" title="态势感知"></a>态势感知</h3><p>Motivation：国内网民众多，且信息多模态难以处理。传统处理算法的时间复杂度为指数级（响应速度为分钟级）</p>
 <p>Solution：利用关联信息进行优化（例如分块，关注敏感话题等），时间复杂度变为多项式级别（响应速度达到秒级）</p>
 <p>应用：检测并控制舆情，护网等</p>
 <p>备注：该报告的PPT做得十分优异，有待借鉴学习</p>
-<h3 id="安全云存储">安全云存储</h3>
-<p>Motivation：云数据库存在被服务提供商或攻击者窥探的可能性，查询语句和数据关系可能泄露敏感信息</p>
+<h3 id="安全云存储"><a href="#安全云存储" class="headerlink" title="安全云存储"></a>安全云存储</h3><p>Motivation：云数据库存在被服务提供商或攻击者窥探的可能性，查询语句和数据关系可能泄露敏感信息</p>
 <p>Solution：</p>
-<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519084908967.png"></p>
-<p>面临挑战：数据关系隐私保护（如 JOIN
-隐私）；功能性与隐私性的平衡难题；泄露抵抗机制优化（如访问模式隐藏）；差分隐私与SQL的融合应用；模糊搜索技术集成与拓展</p>
+<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519084908967.png" alt></p>
+<p>面临挑战：数据关系隐私保护（如 JOIN 隐私）；功能性与隐私性的平衡难题；泄露抵抗机制优化（如访问模式隐藏）；差分隐私与SQL的融合应用；模糊搜索技术集成与拓展</p>
 <p>备注：该老师用的是纯英文演讲，所以只能录屏后在学习，故而理解可能有不准确的地方</p>
-<h3 id="大语言模型越狱">大语言模型越狱</h3>
-<p>Motivation：攻击者如何让AI回答例如如何毁灭人类，或者制造凝固汽油弹之类的问题；开发者如何让AI避免回答这些问题</p>
+<h3 id="大语言模型越狱"><a href="#大语言模型越狱" class="headerlink" title="大语言模型越狱"></a>大语言模型越狱</h3><p>Motivation：攻击者如何让AI回答例如如何毁灭人类，或者制造凝固汽油弹之类的问题；开发者如何让AI避免回答这些问题</p>
 <p>三个发现：增加奇奇怪怪的后缀可能绕过；简单越狱方法叠加使用增加成功概率；就算没有敏感问题也有可能被拒绝回答</p>
 <p>一些哲学思考：威胁AI会鲨掉他，或者给AI小费，可以增大越狱可能性。AI越来越像人了</p>
-<h3 id="口令认证密钥协商">口令认证密钥协商</h3>
-<p>Motivation：传统使用PKI和证书进行认证，使用口令（便于记忆，无需存储）则不需要</p>
+<h3 id="口令认证密钥协商"><a href="#口令认证密钥协商" class="headerlink" title="口令认证密钥协商"></a>口令认证密钥协商</h3><p>Motivation：传统使用PKI和证书进行认证，使用口令（便于记忆，无需存储）则不需要</p>
 <p>一个令我拍手叫好的构造：使用一步对称加密，有效防止中间人攻击</p>
-<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519090300209.png"></p>
-<p>Contribution：构造了一个高效的后量子aPAKE协议（基于KEM）；基于同源构造了Strong
-aPAKE且UC安全（也是抗量子）；使用串并行构造了HPAKE</p>
-<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519090846765.png"></p>
+<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519090300209.png" alt></p>
+<p>Contribution：构造了一个高效的后量子aPAKE协议（基于KEM）；基于同源构造了Strong aPAKE且UC安全（也是抗量子）；使用串并行构造了HPAKE</p>
+<p><img src="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/image-20250519090846765.png" alt></p>
 
     </div>
 

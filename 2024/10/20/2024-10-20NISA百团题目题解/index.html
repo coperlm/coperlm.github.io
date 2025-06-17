@@ -269,7 +269,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">102</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -360,12 +360,10 @@ mjx-container[display="true"] + br {
     
     <div class="post-body" itemprop="articleBody"><p>三道挺有意思的小题目，记录一下</p>
 <span id="more"></span>
-<h2 id="第一题">第一题</h2>
-<p>题目描述：说反话</p>
+<h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><p>题目描述：说反话</p>
 <p>题解：</p>
 <p>翻转字符串即可（大雾），时间复杂度是严格线性（大大雾）</p>
-<h2 id="第二题">第二题</h2>
-<p>题目描述：挑战者选择16/17/18张卡片和先/后手，每方每次可以掀开1/2/3张卡片；挑战者的目标是让敌手掀开最后一张卡牌</p>
+<h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><p>题目描述：挑战者选择16/17/18张卡片和先/后手，每方每次可以掀开1/2/3张卡片；挑战者的目标是让敌手掀开最后一张卡牌</p>
 <p>题解：</p>
 <p>如果敌手掀开最后一张牌（即达成挑战目标），则必然最终只剩一张牌（如果剩余的牌数多于1张，则敌手可以掀开一张，这时挑战者并不会达到目标）</p>
 <p>为了使敌手掀开最后一张牌，则只需保留一张牌，即<strong>保证挑战者掀开牌之后，剩余的牌数为4k+1</strong>即可，其中k为非负整数</p>
@@ -376,8 +374,7 @@ mjx-container[display="true"] + br {
 <p>结论：</p>
 <p>17张时候，挑战者后手；16或18张时，挑战者先手</p>
 <p>具体策略如上，此题解仅讨论必胜情况</p>
-<h2 id="第三题">第三题</h2>
-<p>问题描述：数桥问题</p>
+<h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><p>问题描述：数桥问题</p>
 <p>题解：</p>
 <p>其实这个时间复杂度，（在保证有解的情况下）枚举一下大概率也能出来了，除非因为没有橡皮导致图越画越乱最终看不清楚（</p>
 <p>使用贪心思想时间复杂度为<code>O(N*M)</code>，其中<code>N</code>是点的数量，<code>M</code>是每个点尝试的边的数量</p>
