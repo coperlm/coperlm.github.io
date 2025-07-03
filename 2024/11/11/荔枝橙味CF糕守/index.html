@@ -1,0 +1,361 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>荔枝橙味CF糕守 | coperlm's Blog</title><meta name="author" content="coperlm"><meta name="copyright" content="coperlm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本文汇总了CF如何上分的两篇博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="荔枝橙味CF糕守">
+<meta property="og:url" content="https://coperlm.github.io/2024/11/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3CF%E7%B3%95%E5%AE%88/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="本文汇总了CF如何上分的两篇博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://coperlm.github.io/img/butterfly-icon.png">
+<meta property="article:published_time" content="2024-11-11T05:56:28.000Z">
+<meta property="article:modified_time" content="2024-11-28T06:06:09.627Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="算法竞赛">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "荔枝橙味CF糕守",
+  "url": "https://coperlm.github.io/2024/11/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3CF%E7%B3%95%E5%AE%88/",
+  "image": "https://coperlm.github.io/img/butterfly-icon.png",
+  "datePublished": "2024-11-11T05:56:28.000Z",
+  "dateModified": "2024-11-28T06:06:09.627Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "coperlm",
+      "url": "https://coperlm.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://coperlm.github.io/2024/11/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3CF%E7%B3%95%E5%AE%88/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '荔枝橙味CF糕守',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">104</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">coperlm's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">荔枝橙味CF糕守</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">荔枝橙味CF糕守</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-11T05:56:28.000Z" title="发表于 2024-11-11 13:56:28">2024-11-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-28T06:06:09.627Z" title="更新于 2024-11-28 14:06:09">2024-11-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>本文汇总了CF如何上分的两篇博客</p>
+<span id="more"></span>
+
+<h1 id="来源于2426"><a href="#来源于2426" class="headerlink" title="来源于2426"></a>来源于2426</h1><h2 id="rating-1000-1400"><a href="#rating-1000-1400" class="headerlink" title="rating 1000-1400"></a>rating 1000-1400</h2><p>到达青名（1400）需要做到三点。</p>
+<ul>
+<li>能够快速写出模拟题（5到10分钟内）</li>
+<li>能够快速写出暴力（5到10分钟内）</li>
+<li>能够在脑子里或草稿纸上把问题分情况讨论（例如，N&#x3D;2、N&#x3D;3、N&gt;&#x3D;4）</li>
+</ul>
+<p>举个例子，在Codeforces Round #556中，如果你可以做到以上三点，就可以很惊喜地在Div2中达到200名，这是一个很夸张的例子。但在Codeforces Round #554 (Div. 2)中，你只能达到3400名，rating1250及以下的参赛者可以上分。</p>
+<p>平均来说，如果你可以做到以上三点，rating就可以达到1400。</p>
+<p><strong>[[如何训练]]</strong></p>
+<p>首先，建议打ABC；尽管CF上有很多好题，但如果你想更容易地练习编程，最好去刷AtCoder。</p>
+<p>特别地，推荐做ABC中的B题和C题。做B题可以学到如何更快地写模拟和暴力，做C题可以学到如何想题、如何用草稿纸更快地想出解决方案。如果你切了所有的B题和C题，就会学到很多，变得更强。</p>
+<p>可以借助<a target="_blank" rel="noopener" href="https://kenkoooo.com/atcoder#/table//">AtCoder problems</a>的帮助刷AtCoder，你能从这个网站知道自己做了哪些题。</p>
+<p>当你刷AtCoder时，有几点很重要：</p>
+<ul>
+<li>当你想不出解决方案时，应该在思考B题15分钟、思考C题30分钟后再看题解。可悲的是，最近几场ABC没有英文题解，但你可以读标程（题解中很可能包含标程的链接）。</li>
+<li>即使你AC了某道题，在习惯快速写代码前，还是可以通过阅读大佬的源代码学到一些东西。所以建议看一些简单的源代码。</li>
+<li>特别是当你做C题时，推荐你用草稿纸辅助思考。不用纸的话，用白板打草稿也可以。</li>
+</ul>
+<h2 id="rating-1400-1900"><a href="#rating-1400-1900" class="headerlink" title="rating 1400~1900"></a>rating 1400~1900</h2><p>CF上人数最多的rating区间是[1400, 1500]。他们都很想上分，但从1500开始上分比较困难，很多人放弃了。但也有很多人坚持训练，成功上分。</p>
+<p>要达到1900，需要下面的技巧：</p>
+<ul>
+<li><p>掌握并能够使用以下主要算法：</p>
+<ul>
+<li>暴力</li>
+<li>动态规划</li>
+<li>深度优先搜索</li>
+<li>广度优先搜索</li>
+<li>迪杰斯特拉</li>
+<li>树状数组</li>
+<li>排列数、组合数</li>
+<li>乘法逆元</li>
+<li>位掩码</li>
+<li>二分查找</li>
+</ul>
+<p>注意：一般而言在rating 1800前，线段树不是必须的。上紫以后才需要学的线段树。</p>
+</li>
+<li><p>提高手速（例如，R1100的题目5分钟写好，R1400的题目10分钟写好）。手速在CF很重要，因为一般来说，如果题目难度范围很大，手速会在很大程度上影响rating。</p>
+</li>
+</ul>
+<p><strong>[[如何训练]]</strong></p>
+<p>如果你不擅长快速写代码、快速调试，就应该刷AtCoder。事实上，从统计学上讲，很多日本选手手速很快，但不擅长解决难题，觉得是AtCoder的锅。</p>
+<p>推荐做ABC的C题和D题。平均来说，如果能在10分钟内解决C题，在20分钟内解决D题，你就是手速场中的Div1</p>
+<p>如果你不擅长解难度高于R1400的题，就应该学一些上面提到的算法，做做CF上的板题。举个例子，如果你觉得自己不擅长DP，就刷CF上R1200到R1400的DP标签的题。让人惊讶的是，只有约50道难度小于等于R1400的DP标签的题。</p>
+<p>有趣的是，板题都集中在只有Div2的那些比赛中。如果你不擅长只有Div2的比赛，那么很可能是你不擅长使用典型算法，尤其是上面提到的10种算法。</p>
+<p>如果你能做板题，但不擅长做难度高于R1500的题，就要开始在TopCoder刷题。这类练习对擅长只有Div2的比赛但不擅长Div1+Div2一体的、分开的比赛的人十分有效。</p>
+<p>有时候，尤其是在Div1+Div2的比赛中，一些题目需要数学概念或者思考。因为TopCoder上有很多题用到这些（另外还有简便的实现！），所以你应该刷TopCoder。</p>
+<p>推荐刷最近100场SRM的Div1简单。但有些题真的太难了（甚至粉名都切不掉），所以刷之前，你应该看一下题目的通过率。你可以利用<a target="_blank" rel="noopener" href="https://competitiveprogramming.info/%E6%9D%A5%E8%8E%B7%E5%8F%96%E4%B8%80%E4%BA%9B%E4%BF%A1%E6%81%AF%E3%80%82">https://competitiveprogramming.info/来获取一些信息。</a></p>
+<p>不幸的是，不知道有没有像AtCoder Problems那样，能够看自己在TopCoder SRM中做过哪些题的网站。所以，如果你想记录自己刷过那些题，应该做一个电子表格或者表格，例如：<a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1mSy9PM4Km8EVv8Lp4nhitorOe2HbAS1e/view?usp=sharing">https://drive.google.com/file/d/1mSy9PM4Km8EVv8Lp4nhitorOe2HbAS1e/view?usp=sharing</a></p>
+<p>当还是个蓝名时，数学思维也很糟糕。在切了50题Div1简单以后，在TopCoder成了蓝名，在CF成了紫名</p>
+<p>如果你擅长切题，但在比赛中发挥不好，就应该多打虚拟赛。你知道CF的虚拟赛系统吗？你可以虚拟参赛！</p>
+<h2 id="rating-1900-2200"><a href="#rating-1900-2200" class="headerlink" title="rating 1900~2200"></a>rating 1900~2200</h2><p>如果你想达到2200，首先，你应该是Div1，并且参加Div1的比赛。这意味着你应该刷很多难题（R1900或更高）</p>
+<p>即使你手速快或者十分擅长切板题，打Div1比赛也是很难的。可悲的是，有很多选手在蓝名和紫名之间摇摆</p>
+<p>要达到2200，需要以下技巧：</p>
+<ul>
+<li>知道并且会用上面提到的10种算法，还要加个线段树（包括懒标记）</li>
+<li>非常快的手速：R1100 5分钟，R1500 10分钟，R1800 15分钟，R2000 40分钟</li>
+<li>相当好的数学思维和思考问题的能力</li>
+<li>强大的思维，可以支持超过1小时的思考，即使在Div1比赛中途落后了也不放弃</li>
+</ul>
+<p><strong>[[如何训练]]</strong></p>
+<p>这只是的训练方式：在rating2000时打了很多虚拟比赛。在这里，虚拟比赛并不意味着“虚拟参与”，而是选择4到5道难度在自己rating附近的题目（举个例子，目前rating是2000，那么选择CF中R2000的题目），并且在2小时内切掉</p>
+<p>你可以利用<a target="_blank" rel="noopener" href="https://vjudge.net/%E3%80%82%E5%9C%A8%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%8C%E4%BD%A0%E5%8F%AF%E4%BB%A5%E4%BB%8E%E5%BE%88%E5%A4%9AOJ%E4%B8%8A%EF%BC%88AtCoder%E3%80%81CF%E3%80%81Hackerrank%E3%80%81Codechef%E3%80%81POJ%E2%80%A6%E2%80%A6%EF%BC%89%E6%8B%89%E9%A2%98%E7%BB%84%E4%B8%80%E5%9C%BA%E8%99%9A%E6%8B%9F%E8%B5%9B">https://vjudge.net/。在这个网站，你可以从很多OJ上（AtCoder、CF、Hackerrank、Codechef、POJ……）拉题组一场虚拟赛</a></p>
+<p>如果你在虚拟赛中不能切掉这些题，而且没有想出解决方案，就应该去谷歌查题解（举个例子，如果你想找Codeforces Round #556 (Div. 1)的题解，就去谷歌搜“Codeforces Round #556 editorial”）</p>
+<p>在CF上分还有一件重要的事。为了更快的手速，你应该准备一些板子。例如，认为线段树板子、懒标记线段树板子、CRT的板子、FFT的板子、计算几何板子等等都是很有效的</p>
+<h3 id="rating-2200-2400"><a href="#rating-2200-2400" class="headerlink" title="rating 2200~2400"></a>rating 2200~2400</h3><p>这是本博客关于训练技巧的最后一部分。事实上，卡在橙名很久了，就连在虚拟赛中平均表现也是橙名。这是因为之前的训练方法在橙名遇到了障碍</p>
+<p>Rating 2200到2400事实上非常难——如果你平均表现2200，如果你练习赛打得更多，上粉（到2400）看上去也没那么难。但是平均表现2400比你想象的要难得多。如果你的rating正好是2400，那么在Div1的比赛上，你一般要打进前20%（例如，如果有525人参加，那么你应该最差在105名）才能上分</p>
+<p>要达到2400，需要以下技巧：</p>
+<ul>
+<li>Rating达到2200</li>
+<li>在Div1比赛中切掉AC少于100人的难题</li>
+</ul>
+<p>如果你想切难题和用ad-hoc临时方法的题，根据TozanSoutherPacks在上一篇博客下的评论（<a target="_blank" rel="noopener" href="http://codeforces.com/blog/entry/53341#comment-373965%EF%BC%89%EF%BC%8C%E2%80%9C%E8%A6%81%E8%BE%BE%E5%88%B02600%E5%88%86%E4%B9%83%E8%87%B3%E6%9B%B4%E9%AB%98%EF%BC%8C%E4%BD%A0%E5%BA%94%E8%AF%A5%E5%88%87Boss%E9%A2%98%EF%BC%8C%E6%89%80%E6%9C%89%E8%BF%99%E4%BA%9B%E9%83%BD%E6%98%AF%E4%B8%B4%E6%97%B6%E9%97%AE%E9%A2%98%E6%88%96%E8%80%85%E6%AD%A5%E9%AA%A4%E5%BE%88%E5%A4%9A%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82%E2%80%9D%E8%A7%89%E5%BE%97%E9%82%A3%E6%98%AF%E5%AF%B9%E7%9A%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%AF%B9%E6%9D%A5%E8%AF%B4%EF%BC%8C%E8%A7%89%E5%BE%97%E5%8D%B3%E4%BD%BF%E4%BD%A0%E5%8F%AA%E6%83%B3%E8%BE%BE%E5%88%B02400%E5%88%86%EF%BC%8C%E5%88%87%E6%AD%A5%E9%AA%A4%E5%BE%88%E5%A4%9A%E7%9A%84%E4%B8%B4%E6%97%B6%E9%97%AE%E9%A2%98%E4%B9%9F%E6%98%AF%E6%9C%89%E5%BF%85%E8%A6%81%E7%9A%84%E3%80%82">http://codeforces.com/blog/entry/53341?#comment-373965），“要达到2600分乃至更高，你应该切Boss题，所有这些都是临时问题或者步骤很多的问题。”觉得那是对的，但是对来说，觉得即使你只想达到2400分，切步骤很多的临时问题也是有必要的。</a></p>
+<p><strong>[[如何训练]]</strong></p>
+<p>达到2400分最安全的方法是“切4000道题”。就在TopCoder、AtCoder、CF等OJ上切了超过4000题</p>
+<p>事实上，有一个传说（或者说是事实）是，最NB的选手tourist在他这辈子切了一万多题</p>
+<p>但是可能很多人觉得自己没时间。所以会给你一些更高效的途径</p>
+<p>首先，AtCoder上有很多教育题。推荐你做<strong>ARC尤其是ARC058到ARC090</strong>的E题和F题（尤其是AtCoder中700到900点的题目）。尽管以前的ARC在“思维”和“模板”之间是平衡的，但可悲的是，认为AGC和最近的ARC实际上太偏向思维了，所以如果你的目标是在CF上分，不推荐它们（尽管如果你想达到2600乃至更高，还是要刷AGC）</p>
+<p>对来说，实际上，刷了ARC以后，在CF虚拟赛的平均表现从2100提高到了2300（I could not reach 2400 because start was early）</p>
+<p>如果你切不动题，推荐你放弃思考并且看题解的时间如下：</p>
+<table>
+<thead>
+<tr>
+<th>AtCoder点值</th>
+<th>CF难度</th>
+<th>思考时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>600</td>
+<td>R2000</td>
+<td>40分钟</td>
+</tr>
+<tr>
+<td>700</td>
+<td>R2200</td>
+<td>50分钟</td>
+</tr>
+<tr>
+<td>800</td>
+<td>R2400</td>
+<td>60分钟</td>
+</tr>
+<tr>
+<td>900</td>
+<td>R2600</td>
+<td>70分钟</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>R2800</td>
+<td>80分钟</td>
+</tr>
+</tbody></table>
+<p>如果你切了AtCoder上的教育题，你编程比赛的技能将会有所提高。但还有另一个问题，没有付诸实践，你没办法上分</p>
+<p>所以，你应该至少在CF上打50场虚拟赛（尤其是Div1）。在虚拟赛中，你可以学到，紫名、橙名应该如何打比赛（比如比赛策略），以及如何在CF比赛中利用在AtCoder学到的技巧。<strong>强烈推荐在虚拟赛后看看所有题的题解，除了太难的题</strong>（比如在比赛中AC人数少于30的题）。还建议，在打完比赛看完题解后在笔记本上写一些对于比赛策略、教训和可以改进的地方的反思</p>
+<p>此外，建议你每周一次，花点时间思考一些难题（比如CF上R2800的题）。如果你想了很久也想不出来，建议你去读题解，因为那样你可以学到很多。解决难题可能会给你一场上分100+的机会，也会给你更快解决简单题的机会</p>
+<p>最后，猜这个方法对于超过30%的人奏效，因为用这个方法在CF上粉，square1001用这个方法在TopCoder上红。希望的方法可以产生新的粉名</p>
+<h2 id="训练心理"><a href="#训练心理" class="headerlink" title="训练心理"></a>训练心理</h2><p>心理问题是选手中最常见的问题之一。即使对，直到最近两个月前，出于对一场掉分100+的恐惧，超过9个月没打过CF上rated的比赛。另外，还有几场比赛甚至都做不到看下一个题，因为做不出来更简单的题，心态崩了</p>
+<p>最近发现一种锻炼心态的办法</p>
+<ul>
+<li>制定一个比赛前的常规程序。这能让们在比赛期间集中注意力<ul>
+<li>事实上，就而言，的常规程序是在比赛快开始时看着倒计时减少到0。黑红大佬yutaka1999实际上在IOI开始前就在修禅</li>
+</ul>
+</li>
+<li>如果你比赛中没发挥好（比如20分钟内切不掉B题），不去看榜也是个好主意</li>
+<li>还有一件重要的事：“比赛过程中不要管rating”<ul>
+<li>觉得，即使这场要掉分，下一场上分的可能性也提高了。这就是为什么在比赛过程中不管rating</li>
+</ul>
+</li>
+<li>不要过于在意之前犯过的错误。错误也是一次好的学习机会，每个人都会犯错。即使是tourist也曾经在AtCoder World Tour Finals上翻车<ul>
+<li>觉得吧，“rating”和“你犯过多少错、做过多少<strong>反思</strong>”之间存在关联</li>
+</ul>
+</li>
+</ul>
+<p>以上这些方法不仅在正式比赛中适用，还在虚拟赛中适用。注意：比赛中不要有太大的压力，开心就好</p>
+<p><img src="/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3CF%E7%B3%95%E5%AE%88%5Cimage-20241111140735122.png"></p>
+<h1 id="来源于2909"><a href="#来源于2909" class="headerlink" title="来源于2909"></a>来源于2909</h1><p>上级篇是针对想成为AtCoder黄名（2000+，对应CF2200+），以及橙名（2400，对应CF2522+）阶段的选手的进步指南</p>
+<p><img src="/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3CF%E7%B3%95%E5%AE%88%5Cimage-20241111142431742.png"></p>
+<p>右边的评价来自于AtCoder的老版chokudai的<a target="_blank" rel="noopener" href="https://chokudai.hatenablog.com/entry/2019/02/11/155904">博客</a></p>
+<p><img src="/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3CF%E7%B3%95%E5%AE%88%5Cpsc3.png"></p>
+<h2 id="成为黄名选手的6个要求"><a href="#成为黄名选手的6个要求" class="headerlink" title="成为黄名选手的6个要求"></a>成为黄名选手的6个要求</h2><p>为了在AtCoder里成为黄名，你需要达到2000分（CF2200分）</p>
+<ol>
+<li>在AtCoder Beginner Contest里稳定切掉5题</li>
+<li>在AtCoder Beginner Conetst里半数情况切掉6题</li>
+<li>简单的问题（500分内）尽快解决</li>
+<li>根据相关数据，A题1分内，B题2分内，C题5分内，D题10分内，E题20分内比较合理</li>
+<li>理论上你最好在40分钟内切掉5题</li>
+<li>AGC之类对数学要求比较高的比赛里，最好能切掉2题</li>
+</ol>
+<p>这是在竞赛里黄名选手的平均表现。为了保持这个表现，你需要做到以下6点。当然水色选手要做到的4点你也要做到（中级篇内容）</p>
+<p><strong>条件1</strong><br>挑战程序设计竞赛（AKA蚁书）上面记载的大部分算法和数据结构都要理解。具体来说，需要了解以下23个算法和5个数据结构</p>
+<p>中级篇2-1节里的12个算法和3个数据结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">枚举	二分搜索	深度优先搜索	广度优先搜索</span><br><span class="line">动态规划	Dijkstra	Floyd	Kruskal</span><br><span class="line">线性筛	快速幂	逆元	前缀和·差分</span><br><span class="line">图论	树	并查集	</span><br></pre></td></tr></table></figure>
+
+<p>中级篇没有提到但是挑战里写过的11个算法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">离散化	分治	矩阵乘	</span><br><span class="line">博弈论(原文是Grundy数)	字符串哈希 分块	</span><br><span class="line">最小割	二分图判定 二分图匹配	</span><br></pre></td></tr></table></figure>
+
+
+<p>中级篇没有提到但是挑战里写过的2个数据结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">树状数组 线段树与懒标记</span><br></pre></td></tr></table></figure>
+
+<p><strong>条件2</strong></p>
+<p>条件1介绍的算法和数据结构，在各种比赛里学会使用，同时将本文介绍的算法和数据结构熟练掌握，变成自己的东西</p>
+<p><strong>条件3</strong><br>有一定的数学能力</p>
+<p>在AtCoder里，不仅仅考验你能否灵活使用各种算法的能力，也频繁出现了大量的数学问题（和中级篇2-3里95-100的问题一样），问题也越来越难和多样。因此，为了成为黄名选手，要多多做一些数学题</p>
+<p><strong>条件4</strong></p>
+<p>25行左右的程序，基本Bug Free写出来</p>
+<p>60行左右的程序，基本很快地写出来，出了BUG也能在10分钟内解决</p>
+<p>实际上，60行左右的程序，能够30分钟内写完并且de完bug，是大概率能AK掉ABC的</p>
+<p><strong>条件5</strong></p>
+<p>打字速度要快！经验来讲，1分钟要350个字符才够用</p>
+<p>实际上，一些高排名选手里也有打字很慢的人（200个字符左右），但是想在ABC里拿到好成绩，打字速度实在太重要了</p>
+<p>比如说AtCoder 148里，30分钟AK和40分钟AK，差距250以上的表现分</p>
+<p><strong>条件6</strong></p>
+<p>一般来说，AtCoder的过去的题目要做1000题以上</p>
+<p><strong>补充</strong></p>
+<p>以上的6个条件满足了的话，ABC的E问题基本难不倒你。F问题的话，如果是超过250人做出来的场次，你应该也能做出来才对</p>
+<p>顺便一提，最近15场ABC（141~155），F问题做出来的超过250人的场次有7场。因此AK掉ABC的概率应该是3-5成</p>
+<p>满足了6个条件，再练练数学能力，AGC的问题解决出来的概率应该会慢慢增加</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>掌握11个全新的算法</li>
+<li>学会2个新的数据结构</li>
+<li>去解决TopCoder SRM的问题，锻炼数学能力</li>
+<li>去解决JOI（日本信奥）的题目，锻炼能力</li>
+<li>解决以前Contest的题目</li>
+<li>多多VP找感觉</li>
+<li>练打字速度</li>
+</ol>
+<hr>
+<p>references:</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wawcac-blog/articles/12245307.html#3-1-%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7-rating-10001400">https://www.cnblogs.com/wawcac-blog/articles/12245307.html#3-1-%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7-rating-10001400</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/blog/content/15042/">https://www.acwing.com/blog/content/15042/</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7186915748395270201">https://juejin.cn/post/7186915748395270201</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/yx1u034q">https://www.luogu.com.cn/article/yx1u034q</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_45699242/article/details/123741377">https://blog.csdn.net/m0_45699242/article/details/123741377</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/azl397985856/cf">https://github.com/azl397985856/cf</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://coperlm.github.io">coperlm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://coperlm.github.io/2024/11/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3CF%E7%B3%95%E5%AE%88/">https://coperlm.github.io/2024/11/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3CF%E7%B3%95%E5%AE%88/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://coperlm.github.io" target="_blank">coperlm's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/">算法竞赛</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/11/08/hal%E5%BA%93c6t6-Freerots/" title="hal库c6t6 Freerots"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">hal库c6t6 Freerots</div></div><div class="info-2"><div class="info-item-1">写篇博客，不为别的，就怕以后忘了咋整了 Freerots这玩意忒好用了   如何开FreerotsSYS这边选个时钟  然后如图一路选下来，别忘了添加任务  其他的常规配置，然后生成代码就可以了 打开freertos.c文件，正常加入点灯代码就可以了  以上内容的参考： https://www.cnblogs.com/Meiyangyang945/p/15106513.html  报错1 买不起好芯片，内存不够 改一下代码里的内容 将#define configTOTAL_HEAP_SIZE                    ((size_t)10240) 修改为#define configTOTAL_HEAP_SIZE                   ...</div></div></div></a><a class="pagination-related" href="/2024/11/11/LIS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="LIS学习笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">LIS学习笔记</div></div><div class="info-2"><div class="info-item-1">前情提要：蓝桥杯校赛压轴题，是道朴素最长上升子序列板子题；没做出来，故学习记录一下    题目链接设原数列为 1,2,4,1,3,4，$f(x)$ 表示以第 $i$ 个数为结尾的最长上升子序列的长度    n 1 2 3 4 5 6    $a_i$ 1 2 4 1 3 4   $f(n)$ 1 2 3 1 3 4   代码实现 读入数据 大循环开始，从 $1$ 到 $n$，计算 $f_i$，记得初始值是 $1$ 小循环，从 $1$ 到 $i−1$，如果 $a_j$ 小于 $a_i$ 的话，说明这个数可以和 $f_i$ 组成上升子序列，则 $f_i$ 取 $max⁡(f_i,f_j+1)$ 寻找最大值  具体代码1234567891011121314151617181920#include&lt;iostream&gt;using namespace std;const int N = 5e3;int a[N+10];int f[N+10];signed main()&#123;    int n;cin &gt;&gt; n;    for(int i = 1;i &lt;=...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/01/19/CF%E8%A1%A5%E9%A2%98%E5%B0%8F%E5%90%88%E9%9B%86/" title="CF补题小合集"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-19</div><div class="info-item-2">CF补题小合集</div></div><div class="info-2"><div class="info-item-1">由于后续CF比赛基本只参加VP，故特此记录一下    2025.01.17Codeforces Round 996 (Div. 2) 这把打爽了，表现分差点上紫，D题最后一分钟调出来过样例...</div></div></div></a><a class="pagination-related" href="/2024/08/05/Codeforces-Round-963-Div-2-%E9%A2%98%E8%A7%A3/" title="Codeforces Round 963 (Div. 2)题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-05</div><div class="info-item-2">Codeforces Round 963 (Div. 2)题解</div></div><div class="info-2"><div class="info-item-1">题目链接 本场比赛应该算是今年我打的第一场算法竞赛，也是NOIP2021结束之后难得发挥出来的比赛。ABC都是比较简单的题，D是二分+dp，比较难想 E最终还是不会，疑似是一个高级dp   A.Question Marks 观察样例就能打出来 12345678910111213141516171819202122232425#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;        string s;int n;cin &gt;&gt; n;cin &gt;&gt; s;        int a , b , c , d , e;a = b = c = d = e = 0;        for(int i = 0;i &lt; s.length();i ++)&#123;            if( s[i] == &#x27;A&#x27; ) a...</div></div></div></a><a class="pagination-related" href="/2024/08/07/Codeforces-Round-964-Div-4-%E9%A2%98%E8%A7%A3/" title="Codeforces Round 964 (Div.4)题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-07</div><div class="info-item-2">Codeforces Round 964 (Div.4)题解</div></div><div class="info-2"><div class="info-item-1">题目链接  差一道题就ak了，打代码的速度还是慢了点   F时间不够了，于是随便糊了个时间复杂度不对的算法，结果算法对了，少了个预处理然后就TLE了，赛时没有发现 A.A+B Again? 1234567891011#include&lt;iostream&gt;using namespace std;int t , n;signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        cout &lt;&lt; (n/10)+(n%10) &lt;&lt; endl;    &#125;    return 0;&#125;   B.Card Game 直接穷举所有可能性即可 思路不是很难，就看如何实现了 123456789101112131415161718192021222324252627282930#include&lt;iostream&gt;#define int long longusing namespace std;int t ,...</div></div></div></a><a class="pagination-related" href="/2024/08/11/Codeforces-Round-965-Div-2-%E9%A2%98%E8%A7%A3/" title="Codeforces Round 965 (Div. 2) 题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-11</div><div class="info-item-2">Codeforces Round 965 (Div. 2) 题解</div></div><div class="info-2"><div class="info-item-1">题目链接 逆天抽象局，ab都是构造题，    A. Find K Distinct Points with Fixed Center 12345678910111213141516171819202122232425#include&lt;iostream&gt;#define int long longusing namespace std;int t , x , y , k;signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; x &gt;&gt; y &gt;&gt; k;        if( k % 2 )&#123;            cout &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; y &lt;&lt; endl;            for(int i = 1;i &lt;= (k-1)/2;i ++)&#123;                cout &lt;&lt; x-i &lt;&lt;...</div></div></div></a><a class="pagination-related" href="/2024/11/11/LIS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="LIS学习笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-11</div><div class="info-item-2">LIS学习笔记</div></div><div class="info-2"><div class="info-item-1">前情提要：蓝桥杯校赛压轴题，是道朴素最长上升子序列板子题；没做出来，故学习记录一下    题目链接设原数列为 1,2,4,1,3,4，$f(x)$ 表示以第 $i$ 个数为结尾的最长上升子序列的长度    n 1 2 3 4 5 6    $a_i$ 1 2 4 1 3 4   $f(n)$ 1 2 3 1 3 4   代码实现 读入数据 大循环开始，从 $1$ 到 $n$，计算 $f_i$，记得初始值是 $1$ 小循环，从 $1$ 到 $i−1$，如果 $a_j$ 小于 $a_i$ 的话，说明这个数可以和 $f_i$ 组成上升子序列，则 $f_i$ 取 $max⁡(f_i,f_j+1)$ 寻找最大值  具体代码1234567891011121314151617181920#include&lt;iostream&gt;using namespace std;const int N = 5e3;int a[N+10];int f[N+10];signed main()&#123;    int n;cin &gt;&gt; n;    for(int i = 1;i &lt;=...</div></div></div></a><a class="pagination-related" href="/2024/12/02/FJNU2024%E4%BD%8E%E7%A8%8B%E8%B5%9B%E9%A2%98%E8%A7%A3/" title="FJNU2024低程赛题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-02</div><div class="info-item-2">FJNU2024低程赛题解</div></div><div class="info-2"><div class="info-item-1">比赛链接 题目按总过题数量降序排列   A.123456789#include&lt;iostream&gt;using namespace std;signed main()&#123;    int a , b;cin &gt;&gt; a &gt;&gt; b;    int c = a - b;if( c &lt; 0 ) c = -c;    cout &lt;&lt; c &lt;&lt; endl;    return 0;&#125;  H.12345678910#include&lt;iostream&gt;using namespace std;signed main()&#123;    int a , b , c;cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;    if( a == b &amp;&amp; b == c ) cout &lt;&lt; 1 &lt;&lt; endl;    else if( a == b || b == c || a == c ) cout &lt;&lt; 2 &lt;&lt;...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">coperlm</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">104</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90%E4%BA%8E2426"><span class="toc-number">1.</span> <span class="toc-text">来源于2426</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#rating-1000-1400"><span class="toc-number">1.1.</span> <span class="toc-text">rating 1000-1400</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rating-1400-1900"><span class="toc-number">1.2.</span> <span class="toc-text">rating 1400~1900</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rating-1900-2200"><span class="toc-number">1.3.</span> <span class="toc-text">rating 1900~2200</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rating-2200-2400"><span class="toc-number">1.3.1.</span> <span class="toc-text">rating 2200~2400</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E5%BF%83%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">训练心理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90%E4%BA%8E2909"><span class="toc-number">2.</span> <span class="toc-text">来源于2909</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E4%B8%BA%E9%BB%84%E5%90%8D%E9%80%89%E6%89%8B%E7%9A%846%E4%B8%AA%E8%A6%81%E6%B1%82"><span class="toc-number">2.1.</span> <span class="toc-text">成为黄名选手的6个要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.2.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/02/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8FTEE%E7%9A%84%E4%B8%80%E7%82%B9%E5%A4%B4%E8%84%91%E9%A3%8E%E6%9A%B4/" title="关于分布式TEE的一点头脑风暴">关于分布式TEE的一点头脑风暴</a><time datetime="2025-07-02T02:43:59.000Z" title="发表于 2025-07-02 10:43:59">2025-07-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/22/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="高数下学习笔记">高数下学习笔记</a><time datetime="2025-06-22T03:32:43.000Z" title="发表于 2025-06-22 11:32:43">2025-06-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E6%95%B0%E6%8D%AE%E5%BA%932025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="数据库2025期末考试重点">数据库2025期末考试重点</a><time datetime="2025-06-17T06:52:32.000Z" title="发表于 2025-06-17 14:52:32">2025-06-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="操作系统2025期末考试重点">操作系统2025期末考试重点</a><time datetime="2025-06-17T06:18:36.000Z" title="发表于 2025-06-17 14:18:36">2025-06-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A62025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="现代密码学2025期末考试重点">现代密码学2025期末考试重点</a><time datetime="2025-06-17T05:58:13.000Z" title="发表于 2025-06-17 13:58:13">2025-06-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By coperlm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

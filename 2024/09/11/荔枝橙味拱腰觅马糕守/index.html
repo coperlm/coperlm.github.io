@@ -1,0 +1,800 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>荔枝橙味拱腰觅马糕守 | coperlm's Blog</title><meta name="author" content="coperlm"><meta name="copyright" content="coperlm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获">
+<meta property="og:type" content="article">
+<meta property="og:title" content="荔枝橙味拱腰觅马糕守">
+<meta property="og:url" content="https://coperlm.github.io/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://coperlm.github.io/img/butterfly-icon.png">
+<meta property="article:published_time" content="2024-09-11T01:10:00.000Z">
+<meta property="article:modified_time" content="2024-09-27T02:56:50.682Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="常驻">
+<meta property="article:tag" content="Crypto">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "荔枝橙味拱腰觅马糕守",
+  "url": "https://coperlm.github.io/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/",
+  "image": "https://coperlm.github.io/img/butterfly-icon.png",
+  "datePublished": "2024-09-11T01:10:00.000Z",
+  "dateModified": "2024-09-27T02:56:50.682Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "coperlm",
+      "url": "https://coperlm.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://coperlm.github.io/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '荔枝橙味拱腰觅马糕守',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">104</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">coperlm's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">荔枝橙味拱腰觅马糕守</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">荔枝橙味拱腰觅马糕守</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-11T01:10:00.000Z" title="发表于 2024-09-11 09:10:00">2024-09-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-27T02:56:50.682Z" title="更新于 2024-09-27 10:56:50">2024-09-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获</p>
+<span id="more"></span>
+
+<p><img src="/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88%5C%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E6%96%B9%E6%A1%88%E6%9E%84%E9%80%A0%E5%8F%8A%E5%AE%89%E5%85%A8%E8%AF%81%E6%98%8E%E7%9A%84%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E5%92%8C%E6%96%B9%E6%B3%95%E8%AE%BA.png"></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li><p>归纳总结了构造可证明安全的公钥密码方案所需掌握的知识要点</p>
+<ul>
+<li><p>基本概念</p>
+</li>
+<li><p>数学基础</p>
+</li>
+<li><p>简单问题和困难问题</p>
+</li>
+<li><p>算法</p>
+</li>
+<li><p>安全规约证明</p>
+</li>
+<li><p>-&gt; 学习方案构造以及安全证明不可或缺的基础部分 需要最先掌握</p>
+</li>
+</ul>
+</li>
+<li><p>学习构造可证明安全的公钥密码方案的方法</p>
+<ul>
+<li><p>方案构造学习（如何学习方案构造）</p>
+<ul>
+<li><p>算法定义和安全模型定义</p>
+</li>
+<li><p>经典方案推荐</p>
+</li>
+<li><p>尝试发现方案构造错误</p>
+</li>
+<li><p>-&gt; 使读者具备构造方案的基本能力</p>
+</li>
+<li><p>-&gt; 方案的构造与方案的安全证明相互影响，在缺乏安全证明的学习下，读者尚无能力构造可证明安全的方案</p>
+</li>
+</ul>
+</li>
+<li><p>安全证明学习（如何学习安全证明，规约相关）</p>
+<ul>
+<li><p>概念学习</p>
+</li>
+<li><p>证明训练</p>
+</li>
+<li><p>经典方案推荐</p>
+</li>
+<li><p>尝试发现证明错误</p>
+</li>
+</ul>
+</li>
+<li><p>构造可证明安全密码方案（对构造可证明安全密码的方案方法的建议）</p>
+<ul>
+<li><p>文献阅读</p>
+</li>
+<li><p>尝试方案构造和安全证明</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>30个经典方案及其证明用于该阶段的练习</p>
+</li>
+</ul>
+<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><p>两本书籍《Modern Cryptography: Theory and Practice》，《INTRODUCTION TO  MODERN CRYPTOGRAPHY》</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li><p>复杂性理论</p>
+<ul>
+<li><p>时间复杂度</p>
+<ul>
+<li>L-notation(Landau Notation)：也成为渐进符号，主要用于描述算法的时间和空间复杂度的增长趋势；包括 $O()\ \Omega()\ \Theta()$，分别表示算法在 最坏、最好和平均情况下的时间或空间复杂度；$\Omega()$ 表示算法的 下界，$\Theta()$ 表示算法的 精确界。</li>
+<li>Probabilistic Polynomial Time (PPT)：指可以在多项式时间内通过概率算法解决的问题。概率算法在某些情况下可能会给出错误的答案，但运行时间是多项式级别的。如：蒙特卡洛算法。</li>
+<li>Sub-exponential Time：亚指数时间，指的是算法的运行时间比指数增长慢但比多项式时间快，通常表示为 $2^{o(n)}$，是介于多项式时间和指数时间之间的复杂度。如：$n^{log\ n}$是亚指数时间，但 $2^n$ 是指数时间。</li>
+<li>Exponential Time：指数时间，指算法的运行时间随着输入规模 $n$ 的增加呈指数增长，常用形式如 $O(2^n)$ 或 $O(c^n)$ （其中$ c&gt;1$）。这类算法运行时间增长非常快。如：旅行商问题 $O(n!)$。</li>
+</ul>
+</li>
+<li><p>计算复杂性</p>
+<ul>
+<li><p>P (Polynomial Time)：多项式时间类。所有能够在多项式时间内解决的问题的集合。如：快速排序和归并排序。</p>
+</li>
+<li><p>NP (Nondeterministic Polynomial Time)：非确定性多项式时间类。可以容易验证解是否正确，但难以找解。如：子集和问题，如果给定一个可能的解，可以快速验证它是否正确，但找到该解的过程可能非常耗时。如：起点到终点是否有至少一条小于100个单位长度的路线。（所有P类问题都是NP问题）</p>
+</li>
+<li><p>NPC (NP-Complete)：NP 完全问题。这是一类最难的 NP 问题，所有 NP 问题都可以通过多项式时间归约到这类问题。如：旅行商问题（判定版本）、3-SAT 问题</p>
+</li>
+<li><p>NP-Hard ：NP难问题至少和NP问题一样难，可能更难；NP难问题不一定是NP问题，也就是说，它们的解不一定能够在多项式时间内验证。如：旅行商问题、停止问题（Halting Problem）（给定一个程序和输入，判断程序在这个输入上是否会停止）</p>
+</li>
+</ul>
+</li>
+<li><p>计算模型相关术语</p>
+<ul>
+<li>Computation Model (计算模型)：这是定义如何进行计算的理论框架，用于定义什么可以被计算和如何计算。如“”模型包括图灵机、随机存取机（RAM）和有限状态自动机等。</li>
+<li>Turing Machine (图灵机)：由计算理论之父艾伦·图灵提出的抽象计算模型。由一个无限长的纸带（表示内存）和一个读写头组成。图灵机的每一步计算由状态和符号决定，能够通过改变符号和移动读写头来执行计算。图灵机是复杂性理论中用于定义可计算性和时间复杂度的基础模型。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>攻击</p>
+<ul>
+<li><p>Birthday Attack（生日攻击）</p>
+<ul>
+<li>攻击对象：哈希函数</li>
+<li>攻击目标：找到两个不同的输入具有相同的哈希值（哈希碰撞）。</li>
+<li>例子：对 MD5 哈希函数进行生日攻击，攻击者可能找到两个不同的消息产生相同的哈希值，从而进行数字签名伪造或文件篡改。</li>
+</ul>
+</li>
+<li><p>Man-in-the-middle Attack (中间人攻击)</p>
+<ul>
+<li>攻击对象：通信协议（特别是缺乏认证的加密协议）</li>
+<li>攻击目标：拦截并篡改双方之间的通信，而通信双方并不察觉。</li>
+<li>例子：攻击者在 Alice 和 Bob 之间建立两个独立的加密会话，拦截并解密他们发送的消息，然后篡改内容再发送给对方。</li>
+</ul>
+</li>
+<li><p>Brute-force Attack (暴力破解攻击)</p>
+<ul>
+<li>攻击对象：密码或加密密钥</li>
+<li>攻击目标：通过穷举所有可能的组合找到密码或密钥。</li>
+<li>例子：对使用短位数密码（如 4 位数字 PIN）的系统，攻击者可以尝试所有 10000 种可能的组合，直到找到正确的密码。</li>
+</ul>
+</li>
+<li><p>Eavesdropping Attack (窃听攻击)</p>
+<ul>
+<li>攻击对象：未加密或不安全的通信</li>
+<li>攻击目标：窃听通信内容，获得敏感信息。</li>
+<li>例子：攻击者在未加密的 Wi-Fi 网络上捕获用户发送的明文密码或信用卡号。</li>
+</ul>
+</li>
+<li><p>Meet-in-the-middle Attack</p>
+<ul>
+<li>攻击对象：双重加密系统（如 2DES）</li>
+<li>攻击目标：通过分别攻击加密的前半部分和后半部分，减少破解加密所需的时间。</li>
+<li>例子：攻击 2DES，攻击者使用一个中间状态同时攻击加密的前半部分（第一轮加密）和后半部分（第二轮加密），从而减少暴力破解的时间复杂度。</li>
+</ul>
+</li>
+<li><p>Collusion Attack (共谋攻击)</p>
+<ul>
+<li>攻击对象：多方协议或共享资源的系统</li>
+<li>攻击目标：多个恶意方合作以欺骗系统或窃取信息。</li>
+<li>例子：在分布式投票系统中，多方共谋可以合谋修改投票结果或操纵选举。</li>
+</ul>
+</li>
+<li><p>Side-channel Attack (旁道攻击)</p>
+<ul>
+<li>攻击对象：硬件实现的加密算法</li>
+<li>攻击目标：通过观察硬件泄露的信息（如电磁辐射、功耗、运行时间）来推测密钥或加密数据。</li>
+<li>例子：攻击者通过测量加密设备的功耗，推测出设备运行不同指令时的耗电差异，从而推测出加密密钥。</li>
+</ul>
+</li>
+<li><p>Statistical Attack (统计攻击)</p>
+<ul>
+<li>攻击对象：加密算法或协议</li>
+<li>攻击目标：通过分析加密文本或通信中不同部分的统计特性来破译密文或找到加密弱点。</li>
+<li>例子：攻击者通过分析加密文本中字符的频率，破译简单替换密码，因为某些字母（如英文中的 “e”）出现频率较高。</li>
+</ul>
+</li>
+<li><p>Replay Attack (重放攻击)</p>
+</li>
+<li><p>攻击对象：认证协议或通信协议</p>
+</li>
+<li><p>攻击目标：通过截获和重放有效的数据包来伪装合法用户。</p>
+</li>
+<li><p>例子：攻击者截获并重放用户登录系统时发送的认证请求，从而在不知晓密码的情况下再次登录。</p>
+</li>
+<li><p>Rainbow Attack (彩虹表攻击)</p>
+<ul>
+<li>攻击对象：加密的密码或哈希值</li>
+<li>攻击目标：通过使用预先计算的哈希表（彩虹表）来反向查找密码。</li>
+<li>例子：攻击者使用彩虹表匹配存储的 MD5 哈希值，找到对应的明文密码，从而绕过系统的哈希加密机制。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>基本工具</p>
+<ul>
+<li><p>单向函数 (One-way Function)</p>
+</li>
+<li><p>输入：任意大小的输入值（通常是整数或比特串）。</p>
+</li>
+<li><p>输出：固定长度或与输入长度相关的输出值。</p>
+</li>
+<li><p>输入输出关系：单向函数易于从输入计算输出，但从输出反推出输入非常困难（计算上不可行）。</p>
+</li>
+<li><p>应用场景：单向函数是许多密码学协议（如哈希函数、数字签名、密码算法）的基础。常见应用包括：</p>
+<ul>
+<li>密码散列<ul>
+<li>认证机制中的口令验证</li>
+</ul>
+</li>
+<li>零知识证明中的承诺方案</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>陷门单向函数 (Trapdoor One-way Function)</p>
+<ul>
+<li><p>输入：任意大小的输入值和一个“陷门”信息（通常是密钥）。</p>
+</li>
+<li><p>输出： 固定长度或与输入相关的输出值。</p>
+</li>
+<li><p>输入输出关系：在没有陷门信息的情况下，从输出推回输入非常困难；而有陷门信息时，可以有效地反推出输入。</p>
+</li>
+<li><p>应用场景：陷门单向函数广泛应用于公钥加密和数字签名。例如：</p>
+<ul>
+<li>RSA加密：只有拥有私钥的用户能够轻松解密用公钥加密的消息。</li>
+</ul>
+</li>
+<li><p>数字签名：签名者使用私钥进行签名，验证者使用公钥验证签名。</p>
+</li>
+</ul>
+</li>
+<li><p>伪随机函数 (Pseudo-random Function, PRF)</p>
+<ul>
+<li>输入：一个密钥和一个输入值（通常是比特串）。<ul>
+<li>输出：一个伪随机的输出值，类似于随机数生成器的输出。</li>
+</ul>
+</li>
+<li>输入输出关系：PRF 生成的输出看起来像随机的，但它是确定的，即对于同一个密钥和输入，输出总是相同的。只有拥有密钥的用户能够区分伪随机输出和真实随机输出。<ul>
+<li>应用场景：PRF 被广泛用于对称密钥加密、消息验证码 (MAC)、伪随机数生成、以及密钥派生函数 (KDF) 中。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>哈希函数 (Hash Function)</p>
+<ul>
+<li><p>输入：任意长度的输入数据。</p>
+<ul>
+<li><p>输出： 固定长度的哈希值。</p>
+</li>
+<li><p>输入输出关系：哈希函数将任意长度的输入映射到固定长度的输出。理想的哈希函数具有抗碰撞性，即找到两个不同输入映射到同一输出的概率应该非常低。</p>
+</li>
+<li><p>应用场景：</p>
+<ul>
+<li>数据完整性：用于校验数据是否被篡改（如SHA-256用于数字签名）。</li>
+</ul>
+</li>
+<li><p>密码存储：存储用户密码的哈希值，而不是明文密码。</p>
+<ul>
+<li>区块链：用来确保区块内容的不可篡改性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>硬核谓词 (Hard-core Predicates)</p>
+</li>
+<li><p>输入：单向函数的输入值和输出值。</p>
+<ul>
+<li>输出： 比特值（0或1）。</li>
+</ul>
+</li>
+<li><p>输入输出关系：对于给定的单向函数 $f$ 和输入 $x$，计算 $f(x)$ 很容易，但对于某些特殊比特（称为硬核谓词），即使知道$f(x)$，要猜出该比特的值也非常困难。</p>
+<ul>
+<li>应用场景：硬核谓词用于设计更加安全的加密协议，如流密码生成器中的位选择机制。常见的硬核谓词包括 Blum-Micali 伪随机生成器中的二次剩余判定。</li>
+</ul>
+</li>
+<li><p>熵函数 (Entropy Function)</p>
+<ul>
+<li>输入：概率分布或随机变量。</li>
+</ul>
+</li>
+<li><p>输出：熵值（衡量随机变量的不确定性或信息量，通常以比特为单位）。</p>
+</li>
+<li><p>输入输出关系：熵函数给出输入随机变量的不确定性度量，熵越大，信息越难预测；熵越小，信息越确定。</p>
+<ul>
+<li><p>应用场景：</p>
+<ul>
+<li>密码安全性评估：用于评估随机数生成器的质量。</li>
+</ul>
+</li>
+<li><p>信息论：熵函数用于分析通信系统中传递信息的有效性。</p>
+<ul>
+<li>数据压缩：根据数据的熵来决定最佳的压缩算法，如Huffman编码。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>认证</p>
+</li>
+<li><p>加密</p>
+</li>
+<li><p>模型</p>
+<ul>
+<li><p>Random Oracle Model（随机预言机模型）</p>
+<ul>
+<li>概念：将哈希函数视为一个理想化的随机预言机，即每次查询哈希函数时都会返回一个随机值，不考虑实际哈希函数的实现细节。</li>
+<li>应用场景：这个模型通常用于证明密码方案的安全性，尤其是在设计签名算法、加密方案或零知识证明时，随机预言机模型简化了安全分析。例如，很多实际使用的加密方案，如RSA-OAEP和HMAC，在这个模型下被证明是安全的。</li>
+<li>优点：可以简化安全性证明并提供很强的安全性保证。</li>
+<li>局限性：实际中的哈希函数并不是理想的随机预言机，因此在现实中可能存在攻击漏洞。</li>
+</ul>
+</li>
+<li><p>Standard Model（标准模型）</p>
+<ul>
+<li>概念：不依赖随机预言机等理想化的假设，而是依赖于基于已知的数学问题（如离散对数、因数分解等）的假设进行安全性证明。</li>
+<li>应用场景：标准模型下的安全性证明更接近现实，通常用于密码学协议的严格安全性分析。例如，基于困难数学问题（如RSA、Diffie-Hellman）的加密和签名方案，通常在标准模型下证明其安全性。</li>
+<li>优点：提供更为现实的安全性保证，避免使用理想化的假设。</li>
+<li>局限性：安全性证明往往更复杂，并且可能导致效率低下的方案。</li>
+</ul>
+</li>
+<li><p>Common Reference String Model（公共参考字符串模型）</p>
+<ul>
+<li>概念：在这种模型中，所有参与方在协议开始之前都会共享一个公共的随机字符串，该字符串由一个可信方生成。</li>
+<li>应用场景：该模型经常用于零知识证明系统和多方安全计算（MPC）中。公共参考字符串用于保证协议的正确性和安全性。例如，Groth-Sahai证明系统就依赖于这个模型。</li>
+<li>优点：简化了复杂密码协议的设计，并提供强大的安全性。</li>
+<li>局限性：公共参考字符串需要由一个可信第三方生成，如果其生成过程不安全，整个系统的安全性将受到威胁。</li>
+</ul>
+</li>
+<li><p>Security Model（安全模型）</p>
+<ul>
+<li>概念：安全模型是用来定义密码协议在特定攻击场景下的安全性。常见的安全模型包括选择密文攻击（CCA）安全模型、选择明文攻击（CPA）安全模型、完全前向安全模型等。</li>
+<li>应用场景：不同的安全模型适用于不同类型的密码协议。例如，针对加密协议的选择密文攻击（CCA）安全模型广泛应用于分析公共密钥加密方案的安全性，如RSA、ElGamal等。选择明文攻击（CPA）模型则用于较弱的攻击假设下的分析。</li>
+<li>优点：通过不同的攻击模型，研究者可以更精细地评估协议在不同攻击情境下的安全性。</li>
+<li>局限性：模型之间的安全性可能不一致，需要针对特定的威胁模型进行全面分析。</li>
+</ul>
+</li>
+<li><p>Generic Group Model（通用群模型）</p>
+<ul>
+<li>概念：假设在这个模型中，攻击者不能直接操作群元素，只能通过一个黑盒进行群运算。这种模型假设攻击者无法利用群的具体结构信息，而只能使用通用的群操作。</li>
+<li>应用场景：通用群模型通常用于证明基于群的密码协议（如椭圆曲线密码学、Diffie-Hellman等）的安全性。这个模型对分析与离散对数问题相关的加密方案（如Diffie-Hellman协议）特别有用。</li>
+<li>优点：简化了分析过程，并能提供对基于群的方案的广泛适用性。</li>
+<li>局限性：在现实中，攻击者可能能够利用群结构的具体性质，从而使得通用群模型中的安全性证明无法完全反映实际的安全性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>第三方实体</p>
+<ul>
+<li><p>Key Distribution Center (KDC) — 密钥分发中心</p>
+<ul>
+<li>功能：KDC 负责在网络中的各方之间分发对称密钥。它生成并安全地传输会话密钥，确保各方能够使用对称加密进行安全通信。KDC 通常是可信的中心实体，负责管理密钥的分发和更新。</li>
+<li>应用场景：主要用于对称密钥加密系统中，尤其是在需要多个用户之间进行安全通信的环境下，如：<ul>
+<li>Kerberos 协议：KDC 在 Kerberos 协议中生成会话密钥并分发给通信双方，以便实现身份验证和加密通信。</li>
+<li>企业内部网络安全：KDC 用于集中管理员工设备之间的加密通信。</li>
+</ul>
+</li>
+<li>优势：减少了各方之间建立安全通信时需要直接共享密钥的风险。</li>
+<li>局限性：KDC 成为单点故障，如果被破坏或泄露，整个网络的安全将受到威胁。</li>
+</ul>
+</li>
+<li><p>Key Generation Center (KGC) — 密钥生成中心</p>
+<ul>
+<li>功能：KGC 是负责生成公钥和私钥对的中心实体，通常用于基于身份的加密（Identity-Based Encryption, IBE）系统中。KGC 基于用户的身份信息（如电子邮件地址）生成私钥，并分发给用户。</li>
+<li>应用场景：主要用于基于身份的加密系统，特别是在分布式和多用户环境中，如：<ul>
+<li>电子邮件加密：用户通过其电子邮件地址作为公钥进行加密，KGC 提供私钥解密信息。</li>
+<li>无需证书的加密系统：KGC 的存在消除了使用传统公钥基础设施（PKI）系统中对证书的需求。</li>
+</ul>
+</li>
+<li>优势：无需管理公钥证书，简化了加密系统的管理。</li>
+<li>局限性：KGC 必须完全可信，因为它能生成所有用户的私钥，可能导致潜在的隐私和安全问题。</li>
+</ul>
+</li>
+<li><p>Private-Key Generator (PKG) — 私钥生成器</p>
+<ul>
+<li>功能：PKG 是类似于 KGC 的实体，负责生成用户的私钥。它主要用于基于身份的加密系统中，用户的私钥是由 PKG 根据用户的身份信息生成的。PKG 通常也会生成公钥，但这些公钥是基于用户的身份生成的，而不需要显式地存储或分发。</li>
+<li>应用场景：用于身份加密系统和签名方案，如：<ul>
+<li>Shamir 的身份加密系统：PKG 为用户生成私钥，用户身份作为公钥。</li>
+<li>Pairing-based Cryptography：在基于双线性对的密码学系统中，PKG 负责生成和管理密钥。</li>
+</ul>
+</li>
+<li>优势：消除传统 PKI 系统对证书管理的需求，简化了密钥管理过程。</li>
+<li>局限性：与 KGC 相同，PKG 必须是完全可信的，否则会导致整个系统的安全性崩溃。</li>
+</ul>
+</li>
+<li><p>Certificate Authority (CA) — 证书颁发机构</p>
+<ul>
+<li>功能：CA 是公钥基础设施（PKI）中的核心实体，负责验证用户的身份并颁发数字证书。数字证书包含用户的公钥及其身份信息，并由 CA 签名，以证明该公钥确实属于该用户。CA 还负责吊销证书、更新证书和维护证书的有效性。</li>
+<li>应用场景：CA 广泛应用于互联网安全、身份验证和加密通信场景中，如：<ul>
+<li>HTTPS&#x2F;TLS 协议：CA 颁发 SSL&#x2F;TLS 证书，确保用户访问的网站是可信的。</li>
+<li>电子邮件加密（如 S&#x2F;MIME）：CA 颁发数字证书用于电子邮件加密和签名，确保通信的真实性和机密性。</li>
+</ul>
+</li>
+<li>优势：通过数字证书验证公钥的真实性，确保用户之间可以安全通信。</li>
+<li>局限性：如果 CA 被攻击或误发不安全的证书，整个系统的信任链条会被打破。此外，CA 通常是高度集中化的，这可能导致管理和成本问题。</li>
+</ul>
+</li>
+<li><p>Trust Third Party (TTP) — 可信第三方</p>
+<ul>
+<li>功能：TTP 是一种在通信双方之间建立信任的第三方实体，通常负责验证双方身份并促进安全通信。TTP 可以用于密钥分发、身份验证、数字签名认证等场景。</li>
+<li>应用场景：TTP 常用于分布式系统、电子商务、合同签署等场景中，如：<ul>
+<li>电子合同签名：TTP 验证各方签署的数字签名，并确保合同的真实性和有效性。</li>
+<li>在线身份验证：TTP 在用户和服务器之间充当中介，帮助进行身份验证。</li>
+</ul>
+</li>
+<li>优势：通过引入一个可信的第三方，简化了安全通信的流程，减少了直接信任的需求。</li>
+<li>局限性：TTP 是一个集中化的实体，如果它被破坏或失去信任，整个系统的安全性都会受到影响。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>协议</p>
+<ul>
+<li><p>Key Exchange Protocol — 密钥交换协议</p>
+<ul>
+<li>应用场景：当 Alice 和 Bob 需要安全通信时，他们需要协商出一个共享密钥，其他第三方无法得知此密钥。典型的例子包括 Diffie-Hellman 密钥交换和 ECDH（椭圆曲线 Diffie-Hellman）。</li>
+<li>解决的问题：<ul>
+<li>安全共享密钥：协议确保参与方协商出一个共享密钥，用于后续加密通信。</li>
+<li>防止中间人攻击：通过认证机制（如公钥基础设施）防止恶意第三方伪装成通信参与者。</li>
+</ul>
+</li>
+<li>示例：Alice 和 Bob 在一个不安全的网络上协商生成共同的密钥，双方使用密钥进行后续加密通信，避免第三方窃听。</li>
+</ul>
+</li>
+<li><p>Fair Exchange Protocol — 公平交换协议</p>
+<ul>
+<li>应用场景：公平交换用于确保两方在协议中公平交换某种数字资产或信息，比如数字签名、加密货币、合同等。典型的应用场景包括电子商务中的支付协议和数字签名的公平交换。</li>
+<li>解决的问题：<ul>
+<li>确保交易公平：如果 Alice 提供了她的签名或信息，Bob 也必须在相同条件下提供他的。</li>
+<li>防止单方违约：保证交易的一方无法单方面获得他人的资产或信息而不履行自己的部分。</li>
+</ul>
+</li>
+<li>示例：在数字合同签署中，Alice 和 Bob 可以使用公平交换协议确保签署过程公平，即 Alice 和 Bob 都签署合同或都不能签署。</li>
+</ul>
+</li>
+<li><p>Secret Sharing Protocol — 秘密共享协议</p>
+<ul>
+<li>应用场景：当一个秘密需要在多个参与方之间分配并保密时使用，通常应用于分布式系统、银行加密、文件恢复等场景。Shamir’s Secret Sharing 是其中的经典协议。</li>
+<li>解决的问题：<ul>
+<li>安全存储秘密：允许将秘密分成多个部分，每个参与者只拥有一部分，只有足够多的参与者联合才能恢复秘密。</li>
+<li>容错性：即使部分参与者失去密钥，秘密仍然可以恢复。</li>
+</ul>
+</li>
+<li>示例：一个公司董事会需要投票决策，他们可以使用秘密共享协议将密钥分发给多名董事，只有达成多数票数后才能解密决策结果。</li>
+</ul>
+</li>
+<li><p>Oblivious Transfer Protocol — 遗忘传输协议</p>
+<ul>
+<li>应用场景：当一方希望从另一方获取部分信息，但不希望让另一方知道他选择了哪部分信息时使用。常见于隐私保护机制、密码学应用和安全多方计算中。</li>
+<li>解决的问题：<ul>
+<li>隐私保护：在 Alice 从 Bob 获取信息的过程中，Bob 无法知道 Alice 选择了哪些信息。</li>
+<li>防止过多泄露：确保 Alice 只获取了她请求的部分信息，而不是 Bob 所有的信息。</li>
+</ul>
+</li>
+<li>示例：Alice 想从 Bob 那里选择一本书的某一页内容，但 Bob 不知道 Alice 想要哪一页，Alice 也不会看到除她选择之外的其他页。</li>
+</ul>
+</li>
+<li><p>Commitment Protocol — 承诺协议</p>
+<ul>
+<li>应用场景：承诺协议用于在信息未公开之前确保其不可更改，常用于加密签名、选举系统、博弈论等场景。</li>
+<li>解决的问题：<ul>
+<li>防篡改：承诺的值在揭示之前不能更改。</li>
+<li>保密性：承诺值在揭示之前是保密的，不被他人知道。</li>
+</ul>
+</li>
+<li>示例：在电子投票系统中，Alice 对她的投票进行承诺，在投票结束后再揭示，这样她无法在投票期间更改票选。</li>
+</ul>
+</li>
+<li><p>Multi-party Computation (MPC) — 多方计算协议</p>
+<ul>
+<li>应用场景：MPC 允许多个参与方在不暴露其输入的情况下，联合计算某一函数的结果。常见应用包括隐私保护数据分析、分布式系统和财务分析。</li>
+<li>解决的问题：<ul>
+<li>隐私计算：参与者可以合作完成计算而不暴露各自的输入数据。</li>
+<li>公平性：即使有恶意参与者，也能保证计算结果正确。</li>
+</ul>
+</li>
+<li>示例：多家银行可以在不分享客户数据的情况下，通过 MPC 计算某个统计数据，例如总交易额。</li>
+</ul>
+</li>
+<li><p>Zero-Knowledge Proof (ZKP) — 零知识证明</p>
+<ul>
+<li>应用场景：ZKP 允许一方（证明者）向另一方（验证者）证明她知道某个秘密信息，但不会泄露该信息本身。ZKP 常用于身份验证、加密货币、区块链技术中。</li>
+<li>解决的问题：<ul>
+<li>安全验证：证明者可以证明她知道某个秘密或满足某个条件，而无需泄露秘密。</li>
+<li>隐私保护：在身份验证或认证过程中，敏感信息不会泄露。</li>
+</ul>
+</li>
+<li>示例：Alice 可以通过 ZKP 向 Bob 证明她知道一个密码，而无需告诉 Bob 这个密码是什么。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>技术方法</p>
+<ul>
+<li><p>Accumulator</p>
+<ul>
+<li>基本原理：Accumulator 是一种将多个元素“累积”成一个单一值的数据结构，并允许验证某个元素是否包含在该累积值中的过程。Accumulator 的一个重要特性是它可以在不存储所有元素的情况下进行验证。</li>
+<li>应用场景：<ul>
+<li>数字签名和零知识证明：Accumulator 常用于密码学协议中，如零知识证明和数字签名中，用于高效的集合成员身份验证。</li>
+<li>区块链：Accumulator 可以用于验证某个交易或数据是否存在于一个更大的数据集（如区块链中的交易集）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Bloom Filter</p>
+<ul>
+<li>基本原理：Bloom Filter 是一种空间高效的数据结构，用于测试一个元素是否在一个集合中。它允许有一定的错误率（假阳性），但不会出现假阴性。这意味着某个元素可能被错误地判断为在集合中，但如果 Bloom Filter 判断某个元素不在集合中，那么该判断一定是正确的。</li>
+<li>应用场景：<ul>
+<li>数据库查询：在大规模数据查询系统中用于加速查询过程，快速判断某个元素是否在数据库中。</li>
+<li>网络缓存：在内容分发网络（CDN）中，Bloom Filter 用于高效判断是否需要缓存某些内容。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Hash Chain</p>
+<ul>
+<li>基本原理：Hash Chain 是通过反复对一个初始值进行哈希运算生成的一系列哈希值链。每个链中的值通过对前一个值进行哈希运算获得。其性质是前面的哈希值很容易计算，但无法从后面的哈希值推断前面的哈希值。</li>
+<li>应用场景：<ul>
+<li>一次性密码：在身份验证系统中使用 Hash Chain 生成一次性密码（OTP），每个密码只能使用一次，增强安全性。</li>
+<li>区块链：Hash Chain 用于区块链中数据的不可篡改性，通过链式的哈希保证数据的完整性和安全性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Hash Tree (Merkle Tree, Binary Hash Tree)</p>
+<ul>
+<li>基本原理：Hash Tree（哈希树）是一种树形结构，其中每个叶节点是数据的哈希值，非叶节点是其子节点的哈希值。Merkle Tree 是一种常见的哈希树，用于验证大规模数据集的完整性。通过树的结构，可以快速验证某个特定数据是否在大集合中。</li>
+<li>应用场景：<ul>
+<li>区块链：Merkle Tree 被广泛应用于区块链中，用于验证块中交易的完整性，允许节点高效验证交易是否包含在区块中。</li>
+<li>文件系统：用于大文件或分布式文件系统中，通过 Hash Tree 验证文件的完整性，确保数据没有被篡改。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Chameleon Hash Function</p>
+<ul>
+<li>基本原理：Chameleon Hash 是一种特殊的哈希函数，它具有碰撞可控的特性。即在给定某个初始值的情况下，攻击者可以找到另一个值使得两者哈希结果相同。Chameleon Hash 的这一特性允许某些场景下的灵活性，同时仍保持数据的不可篡改性。</li>
+<li>应用场景：<ul>
+<li>可撤回的数字签名：在某些数字签名应用中，可以使用 Chameleon Hash 允许签名者撤回签名或改变内容，但这种修改是可控且可验证的。</li>
+<li>区块链：Chameleon Hash 可以用于区块链的隐私保护或可修改的智能合约，允许在一定条件下对某些数据进行修改而不破坏系统的整体完整性。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="数学基础"><a href="#数学基础" class="headerlink" title="数学基础"></a>数学基础</h3><p>需要专门阅读书目去学习，此章节待更新</p>
+<h3 id="简单问题和困难问题"><a href="#简单问题和困难问题" class="headerlink" title="简单问题和困难问题"></a>简单问题和困难问题</h3><h4 id="简单问题"><a href="#简单问题" class="headerlink" title="简单问题"></a>简单问题</h4><p>能在多项式时间内解决的计算问题</p>
+<p>存在一个概率算法，将简单问题的一个例子作为算法的输入，改算法可以在多项式时间内以一个不可忽略的<a href="#%E4%BC%98%E5%8A%BF">优势</a>输出该例子的正确答案。例如：<span id="优势_back"></span></p>
+<ul>
+<li>给定 $(g,g^a)\in \mathbb{G}$，计算 $(g^s,g^{\frac{1}{a+s}})$，其中 $s\in\mathbb{Z}_p$ 任意值</li>
+</ul>
+<h4 id="困难问题"><a href="#困难问题" class="headerlink" title="困难问题"></a>困难问题</h4><p>不能在多项式时间内解决的计算问题</p>
+<p>不存在这样一个概率算法，将困难问题的一个例子作为输入，该算法可以在多项式时间内以一个不可忽略的优势输出正确的答案</p>
+<ul>
+<li>给定 $(g,g^a)\in \mathbb{G}$，计算 $(s,g^{\frac{1}{a+s}})$，其中 $s\in\mathbb{Z}_p$ 任意值</li>
+</ul>
+<h4 id="128个困难问题"><a href="#128个困难问题" class="headerlink" title="128个困难问题"></a>128个困难问题</h4><p>《Final Report on Main Computational Assumption in Cryptography》[9]</p>
+<p>内容</p>
+<h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势<span id="优势"></span></h4><p>用于评估攻击者相对于随机猜测或最坏情况下的表现有多大提升，描述攻击者的成功概率与基准成功概率之间的差异。</p>
+<p>定义：攻击者的优势通常被定义为攻击者成功概率与随机猜测或标准概率之间的差。</p>
+<p>$Advantage&#x3D;P_{attack\ success}−P_{baseline(random\ guess)}$</p>
+<p>例子：如果一个密码算法的密钥长度为 $128$ 位，攻击者随机猜中密钥的概率是 $\frac{1}{2^{128}}$。假设攻击者利用某种方法攻击，成功的概率为 $\frac{1}{2^{120}}$，那么攻击者的优势就是：</p>
+<p>$\text{Advantage} &#x3D; \frac{1}{2^{120}} - \frac{1}{2^{128}} \approx \frac{1}{2^{120}}$</p>
+<p><a href="#%E4%BC%98%E5%8A%BF_back">返回</a></p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>算法指用给定的输入以某种计算方式产生对应的输出</p>
+<p>算法包括具体的输入参数、输出参数和计算过程，而算法定义只描述了输入和输出的参数对象</p>
+<h4 id="数字签名的算法定义"><a href="#数字签名的算法定义" class="headerlink" title="数字签名的算法定义"></a>数字签名的算法定义</h4><p>$SysGen$，目的是生成系统公共参数，由权威机构运行；$KeyGen$，目的是生成公私钥对，由签名者运行；$Sign$，目的是对消息签名，由签名者运行；$Verify$，目的是验证签名，由验证者运行。</p>
+<ul>
+<li>$SysGen:(1^\lambda)\rightarrow SP$，其中，$\lambda$ 表示系统安全参数，$SP$ 表示系统公共参数</li>
+<li>$KeyGen:(SP)\rightarrow(pk,sk)$，其中，$pk$ 是签名者的公钥，$sk$是签名者的私钥</li>
+<li>$Sign:(SP,sk,M)\rightarrow\sigma_M$，其中，$M$ 是消息，$\sigma_M$ 是签名者对消息 $M$ 的签名</li>
+<li>$Verify:(SP,pk,M,\sigma_M)\rightarrow1&#x2F;0$，其中，$1$ 代表 $\sigma_M$ 是 $M$ 的合法签名，$0$ 表示签名错误</li>
+</ul>
+<h4 id="公钥加密的算法定义"><a href="#公钥加密的算法定义" class="headerlink" title="公钥加密的算法定义"></a>公钥加密的算法定义</h4><p>$SysGen$，目的是生成系统公共参数，由权威机构运行；$KeyGen$，目的是生成公私钥对，由解密者运行；$Encrypt$，目的是对消息加密，由加密者运行；$Decrypt$，目的是解密密文，由解密者运行。</p>
+<ul>
+<li>$SysGen:(1^\lambda)\rightarrow SP$，其中，$\lambda$ 表示系统安全参数，$SP$ 表示系统公共参数</li>
+<li>$KeyGen:(SP)\rightarrow(pk,sk)$，其中，$pk$ 是签名者的公钥，$sk$是签名者的私钥</li>
+<li>$Encrypt:(SP,sk,M)\rightarrow CT$，其中，$M$ 是消息，$CT$ 是加密者对 $M$ 加密后的密文</li>
+<li>$Decrypt:(SP,pk,M,CT)\rightarrow M&#x2F;\perp$，其中，$\perp$ 代表解密失败</li>
+</ul>
+<h3 id="安全模型"><a href="#安全模型" class="headerlink" title="安全模型"></a>安全模型</h3><p>安全模型里只涉及到算法的输入参数和输出参数</p>
+<p>一个密码概念可能有多个不同的安全需求, 而每一个安全需求对应一个安全模型</p>
+<ul>
+<li>初始化</li>
+<li>询问</li>
+<li>攻击</li>
+<li>优势</li>
+</ul>
+<p>常见安全模型中的组成部分</p>
+<ul>
+<li>数字签名</li>
+<li>公钥加密</li>
+</ul>
+<h3 id="安全规约证明"><a href="#安全规约证明" class="headerlink" title="安全规约证明"></a>安全规约证明</h3><ul>
+<li>模拟</li>
+<li>解决困难问题</li>
+<li>分析</li>
+</ul>
+<h2 id="方案构造学习"><a href="#方案构造学习" class="headerlink" title="方案构造学习"></a>方案构造学习</h2><h3 id="算法定义和安全模型定义"><a href="#算法定义和安全模型定义" class="headerlink" title="算法定义和安全模型定义"></a>算法定义和安全模型定义</h3><h4 id="密码概念"><a href="#密码概念" class="headerlink" title="密码概念"></a>密码概念</h4><h4 id="安全模型概念"><a href="#安全模型概念" class="headerlink" title="安全模型概念"></a>安全模型概念</h4><ol>
+<li>安全模型 (Security Model)</li>
+</ol>
+<p>安全模型是用于定义和分析密码系统安全性的框架。在安全模型中，我们规定了攻击者的能力、目标、以及系统的反应，以便评估系统在各种攻击情景下的表现。</p>
+<p> 形式化分析：安全模型通常基于数学模型，通过明确攻击者的能力（比如能够访问某些信息、对系统某部分做出操作等）来分析系统的安全性。<br> 目标：设计一个安全模型是为了证明加密方案在某些假设下是安全的（或不安全的）。</p>
+<p>常见的安全模型有 随机预言模型、标准模型 等。</p>
+<ol start="2">
+<li>挑战者 (Challenger)</li>
+</ol>
+<p>挑战者是在安全模型中负责与攻击者互动的一方，通常代表加密方案或协议的实例。在安全性分析过程中，挑战者模拟加密方案的行为，并根据攻击者的查询作出响应。</p>
+<p> 角色：挑战者充当系统的实现者，负责加密、解密、响应查询等。<br> 目的：攻击者通过与挑战者互动，试图破坏协议的安全性。</p>
+<ol start="3">
+<li>攻击者&#x2F;对手 (Adversary)</li>
+</ol>
+<p>攻击者（Adversary） 是安全模型中的对立方，其目标是试图破坏系统的安全性。攻击者拥有一定的能力，如访问密文、发送查询请求，甚至可能控制系统部分资源。</p>
+<p> 角色：攻击者通过利用安全模型中允许的能力和资源，试图破译密文、伪造签名或进行其他形式的攻击。<br> 目标：获取未经授权的信息，或使协议失效。</p>
+<ol start="4">
+<li>查询 (Query)</li>
+</ol>
+<p>查询是攻击者与挑战者互动的手段。攻击者向挑战者提出请求（查询），以尝试获取信息或影响加密方案的行为。</p>
+<p> 常见类型的查询：<br>   密文查询：攻击者请求挑战者提供某个消息的密文。<br>   解密查询：攻击者请求对某个密文进行解密。<br>   签名查询：攻击者请求某个消息的签名。</p>
+<ol start="5">
+<li>响应 (Response)</li>
+</ol>
+<p>响应是挑战者对攻击者查询的回复。根据攻击者的查询，挑战者会返回相应的结果，如密文、解密后的消息或签名。</p>
+<p> 目的是：使攻击者能够根据这些响应试图破坏系统的安全性。</p>
+<ol start="6">
+<li>获胜 (Win)</li>
+</ol>
+<p>获胜（Win）指的是攻击者在安全模型中成功破坏了系统的安全性。成功的标准由安全模型定义，比如攻击者能够区分密文、伪造签名等。</p>
+<p> 具体例子：<br>   在 不可区分加密 模型中，攻击者能够通过与挑战者交互，成功区分出不同的密文，表明系统不安全。<br>   在 不可伪造性 的签名方案中，攻击者能够伪造一个有效的签名。</p>
+<ol start="7">
+<li>自适应攻击 (Adaptive Attack)</li>
+</ol>
+<p>自适应攻击是一类攻击，其中攻击者根据之前与挑战者交互过程中获得的信息来调整其后续查询或攻击策略。换句话说，攻击者的行为可以随着与系统互动的结果动态变化。</p>
+<p> 自适应性增强了攻击的有效性，因为攻击者能够根据已有信息做出更有针对性的查询和攻击。<br> 例子：攻击者可以先进行一系列查询，从这些查询的响应中学习有用的信息，然后发起一个更具针对性的攻击。</p>
+<ol start="8">
+<li>平凡攻击 (Trivial Attack)</li>
+</ol>
+<p>平凡攻击是指那些无需任何复杂分析或特殊技巧就能够轻易破坏系统安全的攻击。通常是由于设计中的明显漏洞造成的，属于显而易见的攻击方式。</p>
+<p> 示例：假如加密方案没有密钥保护，攻击者直接读取密钥即可解密密文，这就属于平凡攻击。</p>
+<ol start="9">
+<li>优势 (Advantage)</li>
+</ol>
+<p>优势（Advantage）是量化攻击者成功率的一个指标。它衡量了攻击者比随机猜测更有多少机会成功攻击系统。</p>
+<p> 定义：在密码学中，攻击者的优势通常定义为攻击者成功破坏系统的概率与随机猜测成功概率的差值。<br> 形式化表示：如果攻击者能以 ( p ) 的概率破坏系统，而随机猜测的成功概率是 $\frac{1}{2}$，则攻击者的优势是  $\text{Adv}&#x3D;p-\frac{1}{2}$。</p>
+<ol start="10">
+<li>强安全模型 (Strong Security Model)</li>
+</ol>
+<p>强安全模型是在攻击者能力或资源非常强大的情况下定义的安全模型。加密方案在强安全模型下证明安全，意味着即使攻击者能力极大，方案依旧能够抵御攻击。</p>
+<p> 例子：在强安全模型中，攻击者可能有能力进行自适应查询或对抗密钥泄露等场景。</p>
+<ol start="11">
+<li>弱安全模型 (Weak Security Model)</li>
+</ol>
+<p>弱安全模型是一种对攻击者能力作出较多限制的安全模型。在这种模型下，攻击者的能力较弱，方案只在特定条件下能抵御攻击。</p>
+<p> 例子：攻击者只能进行固定的查询，不能根据结果调整策略。</p>
+<ol start="12">
+<li>标准安全模型 (Standard Security Model)</li>
+</ol>
+<p>标准安全模型是基于现实中的假设（如计算困难性）和不依赖额外理想假设的安全模型。与随机预言模型不同，标准安全模型只依赖广泛接受的数学假设。</p>
+<p> 现实性：标准安全模型更贴近实际应用环境，不依赖于不切实际的假设（如理想哈希函数）。</p>
+<h3 id="经典方案推荐-尝试发现方案构造错误"><a href="#经典方案推荐-尝试发现方案构造错误" class="headerlink" title="经典方案推荐&amp;尝试发现方案构造错误"></a>经典方案推荐&amp;尝试发现方案构造错误</h3><p>篇幅过多，详见文章 <a href="../../../../../2024/09/27/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E5%AD%A6%E7%BB%8F%E5%85%B8%E6%96%B9%E6%A1%8830%E7%AF%87-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">公钥密码学经典方案30篇 学习笔记</a></p>
+<h2 id="安全证明学习"><a href="#安全证明学习" class="headerlink" title="安全证明学习"></a>安全证明学习</h2><h3 id="归约相关概念学习"><a href="#归约相关概念学习" class="headerlink" title="归约相关概念学习"></a>归约相关概念学习</h3><h3 id="证明训练"><a href="#证明训练" class="headerlink" title="证明训练"></a>证明训练</h3><h2 id="文献阅读"><a href="#文献阅读" class="headerlink" title="文献阅读"></a>文献阅读</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://coperlm.github.io">coperlm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://coperlm.github.io/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/">https://coperlm.github.io/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://coperlm.github.io" target="_blank">coperlm's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B8%B8%E9%A9%BB/">常驻</a><a class="post-meta__tags" href="/tags/Crypto/">Crypto</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/09/09/%E6%8B%AC%E5%8F%B7%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/" title="括号书写规范"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">括号书写规范</div></div><div class="info-2"><div class="info-item-1">今天记笔记，遇到一段话，中英夹杂不知道应当如何使用括号 123- 新方案：提出基于变色龙哈希的支付协议——变色龙哈希时间锁定合约（Chameleon Hash Time-Lock Contract, CHTLC），解决支付路径泄露问题- 优势：使用多层变色龙哈希函数来确保没有用户可以修复支付路径（条件：至少有一个中间支付节点是诚实的）- 比较：对于相同的支付路径，与 Multi-hop Hash Time-Lock Contract(MHTLC)相比，CHTLC支付初始化速度快了五倍，通信所需带宽从17000KB降到7.7KB    询问gpt未果   两次询问，得到了不同的结果 后来，在国家教育部官网上找到了一种使用方法  非正式地说，主要内容是中文就用中文括号，主要内容是英文就用英文括号 更改后的文段如下 123- 新方案：提出基于变色龙哈希的支付协议——变色龙哈希时间锁定合约（Chameleon Hash Time-Lock Contract, CHTLC），解决支付路径泄露问题-...</div></div></div></a><a class="pagination-related" href="/2024/09/11/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BBpaper/" title="如何阅读paper"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">如何阅读paper</div></div><div class="info-2"><div class="info-item-1">2024.11.06二编 多读解决一切问题~  2024.9.6下午，我开始干啃《Chameleon Hashing and Signature》这篇文章；十分钟之后，感觉头顶冒烟了~ 如果单单阅读 Abstract 和 Introduction 部分，虽然可以快速领会文章的大意，但是其内容对读者的提升同样巨大 故总结了几篇高推荐文章，作为今后论文阅读的指导   论文获取：  询问导师和同门 Google Scholar运用合适的关键词收集30篇左右论文（高引用量论文优先收集） 高引论文的参考文献  论文如何阅读： 一篇期刊论文，主要分成三个部分。  Abstract：  这篇论文的：主要贡献、方法特色与主要内容。 只看 Abstract 和 Introduction...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/06/06/BUUCTF-crypto-wp/" title="BUUCTF crypto wp"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-06</div><div class="info-item-2">BUUCTF crypto wp</div></div><div class="info-2"><div class="info-item-1">[NewStarCTF 2023 公开赛道]Rabin’s RSA12345678910111213141516171819from Crypto.Util.number import *from secret import flagp = getPrime(64)q = getPrime(64)assert p % 4 == 3assert q % 4 == 3n = p * qe = 2m = bytes_to_long(flag)c = pow(m,e,n)print(&#x27;n =&#x27;, n)print(&#x27;c =&#x27;, c)# n = 201354090531918389422241515534761536573# c = 20442989381348880630046435751193745753   Rabin加密算法——一种基于摸平方和模平方根的非对称加密 特点：  同一密文，可能有两个以上对应的明文 破解该体制等价于对大整数的分解 满足 $p\equiv 3\mod4$ 且 $q\equiv 3\mod4$  Rabin密码体制选取...</div></div></div></a><a class="pagination-related" href="/2024/10/09/%E3%80%8A%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B000/" title="《安全规约导论》阅读笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-09</div><div class="info-item-2">《安全规约导论》阅读笔记</div></div><div class="info-2"><div class="info-item-1">此博客为常驻，用于汇总笔者阅读《安全规约导论》一书的学习笔记 这本书里的好东西很多，价值很高，值得充分学习 持续更新中    安全规约前置知识  安全规约基础  荔枝成为BLS短签名糕守  </div></div></div></a><a class="pagination-related" href="/2024/10/30/%E4%BC%9A%E8%AE%AE%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0%E5%90%88%E9%9B%86/" title="会议&#x2F;竞赛游记合集"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-30</div><div class="info-item-2">会议&#x2F;竞赛游记合集</div></div><div class="info-2"><div class="info-item-1">本篇文章用于汇总参加的会议&#x2F;组会的总结链接 部分内容已加锁   组会2024.10.30组会 2024.9.18组会 2024.9.11组会 2024.9.4组会 其他会议&#x2F;竞赛2024.9.20南洋理工密码学报告 观后总结 机器人联盟赛&#x2F;对抗赛游记回忆记录（2024） 厦大一日游（机器人大赛）（2023） </div></div></div></a><a class="pagination-related" href="/2025/04/10/Beaver%E4%B8%89%E5%85%83%E7%BB%84%E7%94%A8%E4%BA%8E%E4%B9%98%E6%B3%95%E5%85%B1%E4%BA%AB/" title="Beaver三元组用于乘法共享"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-10</div><div class="info-item-2">Beaver三元组用于乘法共享</div></div><div class="info-2"><div class="info-item-1">Beaver 三元组（Beaver triples）是安全多方计算（MPC）中一个超级聪明、实用的技巧，用来安全地做乘法 通俗类比：就好像你和朋友要乘两个私密数字，但你们提前准备了一个万能“乘法模板”，可以安全又正确地偷偷算出结果。    Motivation在安全多方计算里：  加法很容易做：每个人把自己数据碎片加一下就行。 但乘法就麻烦了，因为： 两个秘密数的乘积不能直接从碎片算 又不能暴露真实数值 所以需要巧妙地”绕过去“    Beaver 三元组应运而生  DefinationBeaver 三元组表示为：$$(a, b, c) \quad \text{where} \quad c &#x3D; a \cdot b$$  所有参与方各自拿到这些数的“碎片”，但不知道完整的值。 它跟我们真正要计算的 $x \cdot y$ 没有关系，只是一个通用的乘法工具。   Algorithm假设两位参与方想计算： $$x \cdot y$$ 但每人都只知道自己的秘密（$x$ 或 $y$），又不想泄露给别人。  步骤如下：  每人拿到 $x$ 和 $y$ 的秘密共享，还有一个...</div></div></div></a><a class="pagination-related" href="/2024/09/07/Chameleon%20Hashing%20and%20Signatures%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="Chameleon Hashing and Signatures阅读笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-07</div><div class="info-item-2">Chameleon Hashing and Signatures阅读笔记</div></div><div class="info-2"><div class="info-item-1">文献简介标题：Chameleon Hash and Signatures 作者：Hugo Krawczyk , Tal Rabin   期刊：无 年份：1998 重要程度：4 摘要 引入变色龙签名，提供不可抵赖签名（和常规数字签名一样） 不允许接收方在未经允许的情况下向第三方披露明文（和不可抵赖签名相关，但是算法简单和高效实现） 本质上不交互，不涉及零知识证明的设计和复杂性（传统不可抵赖签名基于零知识证明）。哈希函数的产生通过标准的hash then sign 此哈希函数 对签名者是抗碰撞的，但是对于接收者是碰撞可控的 构造变色龙哈希函数，可以基于很多标准密码学假设（数学困难问题）  引言背景介绍   研究的目的和意义（课题开展的原因）-  重要结果&#x2F;结论-  研究内容作者新发现-  作者研究对象-  研究意义理论价值-  应用价值-  能解决的难题-  研究方法作者使用的方法-  有没有更好的方法-  哪些是我还需要学习的-  思考对我的课题有什么启发-  作者是怎样做到比前人好的-  能否想到其他方法能达到和作者一样或更好的的效果-...</div></div></div></a><a class="pagination-related" href="/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/" title="CS2025摘要小结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-19</div><div class="info-item-2">CS2025摘要小结</div></div><div class="info-2"><div class="info-item-1">本文对第九届网络空间安全国际研讨会的分享知识进行小结 相关链接：会前准备 会后游记 拍照备份    会议议程 主要笔者学习内容图像篡改定位模型对抗Motivation：AI兴起，虚假图像合成的成本大幅降低。本报告旨在检测篡改部位 Solution：使用深度网络，训练模型。有效检测篡改 新的攻击方案：给照片加噪音，人眼看不出区别，但使用原有检测方案 难以检测篡改 总结：安全领域，对抗是永恒的；AI的产生增加了对抗，也增加了弱点；在研究中，应当攻击方白盒，防守方黑盒 态势感知Motivation：国内网民众多，且信息多模态难以处理。传统处理算法的时间复杂度为指数级（响应速度为分钟级） Solution：利用关联信息进行优化（例如分块，关注敏感话题等），时间复杂度变为多项式级别（响应速度达到秒级） 应用：检测并控制舆情，护网等 备注：该报告的PPT做得十分优异，有待借鉴学习 安全云存储Motivation：云数据库存在被服务提供商或攻击者窥探的可能性，查询语句和数据关系可能泄露敏感信息 Solution：  面临挑战：数据关系隐私保护（如 JOIN...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">coperlm</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">104</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">知识要点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">2.2.</span> <span class="toc-text">数学基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E9%97%AE%E9%A2%98%E5%92%8C%E5%9B%B0%E9%9A%BE%E9%97%AE%E9%A2%98"><span class="toc-number">2.3.</span> <span class="toc-text">简单问题和困难问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E9%97%AE%E9%A2%98"><span class="toc-number">2.3.1.</span> <span class="toc-text">简单问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%B0%E9%9A%BE%E9%97%AE%E9%A2%98"><span class="toc-number">2.3.2.</span> <span class="toc-text">困难问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#128%E4%B8%AA%E5%9B%B0%E9%9A%BE%E9%97%AE%E9%A2%98"><span class="toc-number">2.3.3.</span> <span class="toc-text">128个困难问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF"><span class="toc-number">2.3.4.</span> <span class="toc-text">优势</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">2.4.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%9A%84%E7%AE%97%E6%B3%95%E5%AE%9A%E4%B9%89"><span class="toc-number">2.4.1.</span> <span class="toc-text">数字签名的算法定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E7%9A%84%E7%AE%97%E6%B3%95%E5%AE%9A%E4%B9%89"><span class="toc-number">2.4.2.</span> <span class="toc-text">公钥加密的算法定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.5.</span> <span class="toc-text">安全模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E8%AF%81%E6%98%8E"><span class="toc-number">2.6.</span> <span class="toc-text">安全规约证明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E6%9E%84%E9%80%A0%E5%AD%A6%E4%B9%A0"><span class="toc-number">3.</span> <span class="toc-text">方案构造学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%AE%9A%E4%B9%89%E5%92%8C%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="toc-number">3.1.</span> <span class="toc-text">算法定义和安全模型定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.1.</span> <span class="toc-text">密码概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.2.</span> <span class="toc-text">安全模型概念</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E6%96%B9%E6%A1%88%E6%8E%A8%E8%8D%90-%E5%B0%9D%E8%AF%95%E5%8F%91%E7%8E%B0%E6%96%B9%E6%A1%88%E6%9E%84%E9%80%A0%E9%94%99%E8%AF%AF"><span class="toc-number">3.2.</span> <span class="toc-text">经典方案推荐&amp;尝试发现方案构造错误</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E8%AF%81%E6%98%8E%E5%AD%A6%E4%B9%A0"><span class="toc-number">4.</span> <span class="toc-text">安全证明学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E7%BA%A6%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5%E5%AD%A6%E4%B9%A0"><span class="toc-number">4.1.</span> <span class="toc-text">归约相关概念学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E8%AE%AD%E7%BB%83"><span class="toc-number">4.2.</span> <span class="toc-text">证明训练</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB"><span class="toc-number">5.</span> <span class="toc-text">文献阅读</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/02/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8FTEE%E7%9A%84%E4%B8%80%E7%82%B9%E5%A4%B4%E8%84%91%E9%A3%8E%E6%9A%B4/" title="关于分布式TEE的一点头脑风暴">关于分布式TEE的一点头脑风暴</a><time datetime="2025-07-02T02:43:59.000Z" title="发表于 2025-07-02 10:43:59">2025-07-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/22/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="高数下学习笔记">高数下学习笔记</a><time datetime="2025-06-22T03:32:43.000Z" title="发表于 2025-06-22 11:32:43">2025-06-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E6%95%B0%E6%8D%AE%E5%BA%932025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="数据库2025期末考试重点">数据库2025期末考试重点</a><time datetime="2025-06-17T06:52:32.000Z" title="发表于 2025-06-17 14:52:32">2025-06-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="操作系统2025期末考试重点">操作系统2025期末考试重点</a><time datetime="2025-06-17T06:18:36.000Z" title="发表于 2025-06-17 14:18:36">2025-06-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A62025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="现代密码学2025期末考试重点">现代密码学2025期末考试重点</a><time datetime="2025-06-17T05:58:13.000Z" title="发表于 2025-06-17 13:58:13">2025-06-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By coperlm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
