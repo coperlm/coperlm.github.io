@@ -166,14 +166,14 @@
 <h2 id="离散傅里叶变换DFT"><a href="#离散傅里叶变换DFT" class="headerlink" title="离散傅里叶变换DFT"></a>离散傅里叶变换DFT</h2><p>这是一个朴素算法，用于将一个多项式在$O(n^2)$时间由系数表示法转化为点值表示法</p>
 <p>原理：将一个用系数表示的多项式转化成它的点值表示的算法</p>
 <p>对于一个$n-1$次的$n$项多项式$f(x)$可以表示为$f(x)=\sum_{i=0}^{n-1}a_ix^i$</p>
-<p>系数表示法：$f(x)={a<em>0,a_1,…,a</em>{n-1}}$</p>
-<p>点值表示法：$f(x)={(x<em>0,f(x_0)),(x_1,f(x_1)),…,(x</em>{n-1},f(x_{n-1}))}$</p>
+<p>系数表示法：$f(x)={a_0,a_1,…,a_{n-1}}$</p>
+<p>点值表示法：$f(x)={(x_0,f(x_0)),(x_1,f(x_1)),…,(x_{n-1},f(x_{n-1}))}$</p>
 <script type="math/tex; mode=display">
 求值：系数\rightarrow点值\\
 差值：点值\rightarrow系数</script><p>计算两个多项式相乘 $h(x)=f(x)*g(x)$</p>
 <p>对于系数表示法，需要每一项和每一项的系数相乘，时间复杂度显然是$O(n^2)$</p>
 <p>对于点值表示法——</p>
-<p>$h(x)={(x<em>0,f(x_0)\cdot g(x_0)),(x_1,f(x_1)\cdot g(x_1)),…,(x</em>{n-1},f(x<em>{n-1})\cdot g(x</em>{n-1}))}$，时间复杂度是$O(n)$</p>
+<p>$h(x)={(x_0,f(x_0)\cdot g(x_0)),(x_1,f(x_1)\cdot g(x_1)),…,(x_{n-1},f(x_{n-1})\cdot g(x_{n-1}))}$，时间复杂度是$O(n)$</p>
 <p>已知 $n$ 个点值，可以唯一确定一个 $n-1$ 阶多项式</p>
 <h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>已知</p>
 <script type="math/tex; mode=display">
@@ -201,12 +201,12 @@ p_0  \\
 p_1  \\
 \vdots  \\
 p_{n-1} \\
-\end{bmatrix}</script><p>中间的那列就是一个范德蒙行列式了，秩为1，所以$p<em>0,…,p</em>{n-1}$有且仅有一个解，即多项式的系数确定</p>
+\end{bmatrix}</script><p>中间的那列就是一个范德蒙行列式了，秩为1，所以$p_0,…,p_{n-1}$有且仅有一个解，即多项式的系数确定</p>
 <p>证毕。</p>
 <h3 id="利用单位圆进行转化"><a href="#利用单位圆进行转化" class="headerlink" title="利用单位圆进行转化"></a>利用单位圆进行转化</h3><p>将$n$向上填充为2的整数次幂，然后将单位圆平均取$n$个点</p>
 <p><img src="image-20241007000846590.png" alt></p>
 <p>在单位元上，我们定义$x_k=w_n^k=(cos\frac{k}{n}2\pi,sin\frac{k}{n}2\pi)$</p>
-<p>对于点$x<em>k$​，$x_k=x</em>{k-i}*x_i(i\in[0,k])$​成立</p>
+<p>对于点$x_k$​，$x_k=x_{k-i}*x_i(i\in[0,k])$​成立</p>
 <p>此时，$x_1$即为该单位圆上的单位根（即该循环群中的单位元）</p>
 <h4 id="单位根的性质"><a href="#单位根的性质" class="headerlink" title="单位根的性质"></a>单位根的性质</h4><h5 id="很有用的"><a href="#很有用的" class="headerlink" title="很有用的"></a>很有用的</h5><p>性质一（相消引理）：$w_{2n}^{2k}=w_n^k$ 这两个说的本质上是一个点</p>
 <p>性质二（折半引理）：$w_n^{k+\frac{n}{2}}=-w_n^k$ 关于原点对称（向量等大反向）</p>
@@ -218,8 +218,8 @@ p_{n-1} \\
 </ol>
 <h4 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h4><p>把多项式$A(x)$的离散傅里叶变换结果作为另一个多项式$B(x)$的系数，去单位根的倒数即$w_n^0,w_n^{-1},…,w_n^{-(n-1)}$作为$x$代入$B(x)$，得到的每个数再除以$n$，得到的是$A(x)$的各项系数</p>
 <p>实现了傅里叶变换的逆变换——把点值表示转换成多项式系数表示</p>
-<h4 id="证明-1"><a href="#证明-1" class="headerlink" title="证明"></a>证明</h4><p>设$(y<em>0,y_1,y_2,…,y</em>{n−1})$为多项式$A(x)=a<em>0+a_1x+a_2x^2+…+a</em>{n−1}x^{n−1}$的离散傅里叶变换。</p>
-<p>现在我们再设一个多项式$B(x)=y<em>0+y_1x+y_2x^2+…+y</em>{n−1}x^{n−1}$，现在我们把上面的$n$个单位根的倒数，即$ω^0<em>n,ω^{−1}_n,ω^{−2}_n,…,ω^{−(n−1)}_n$作为$x$代入$B(x)$, 得到一个新的离散傅里叶变换$(z_0,z_1,z_2,…,z</em>{n−1})$。</p>
+<h4 id="证明-1"><a href="#证明-1" class="headerlink" title="证明"></a>证明</h4><p>设$(y_0,y_1,y_2,…,y_{n−1})$为多项式$A(x)=a_0+a_1x+a_2x^2+…+a_{n−1}x^{n−1}$的离散傅里叶变换。</p>
+<p>现在我们再设一个多项式$B(x)=y_0+y_1x+y_2x^2+…+y_{n−1}x^{n−1}$，现在我们把上面的$n$个单位根的倒数，即$ω^0_n,ω^{−1}_n,ω^{−2}_n,…,ω^{−(n−1)}_n$作为$x$代入$B(x)$, 得到一个新的离散傅里叶变换$(z_0,z_1,z_2,…,z_{n−1})$。</p>
 <script type="math/tex; mode=display">
 \begin{align}
 z_k&=\sum_{i=0}^{n-1}y_i(w_n^{-k})^i\\
@@ -239,10 +239,10 @@ z_k&=\sum_{i=0}^{n-1}y_i(w_n^{-k})^i\\
 <h2 id="快速傅里叶变化FFT"><a href="#快速傅里叶变化FFT" class="headerlink" title="快速傅里叶变化FFT"></a>快速傅里叶变化FFT</h2><p>用途：1.高精度乘法$O(n^2)\rightarrow O(nlogn)$ 2.分离正弦波</p>
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>FFT和DFT的不同之处在于，傅里叶的时代并没有计算机，所以没有优化时间复杂度的需求；因而虽然DFT的计算是基于单位圆的，但是（求值和差值的）时间复杂度仍旧是$O(n^2)$；而FFT则采用了<strong>分治</strong>的思想，将求值和差值的时间复杂度降为$O(nlogn)$</p>
 <p><img src="1928790-20220309154306366-190448235.png" alt></p>
-<h3 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h3><p>设 $A(x)=a<em>0+a_1x+a_2x^2+…+a</em>{n-1}x^{n-1}$，</p>
+<h3 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h3><p>设 $A(x)=a_0+a_1x+a_2x^2+…+a_{n-1}x^{n-1}$，</p>
 <p>按照下标奇偶性划分为两部分 </p>
-<p>$A(x)=(a<em>0+a_2x^2+…+a</em>{n-2}x^{n-2})+(a<em>1x+a_3x^3+…+a</em>{n-1}x^{n-1})$</p>
-<p>设 $A<em>1(x)=a_0+a_2x+…+a</em>{n-2}x^{\frac{n}{2}-1}\ A<em>2(x)=a_1x+a_3x+…+a</em>{n-1}x^{\frac{n}{2}-1}$（注意这里的次方数）</p>
+<p>$A(x)=(a_0+a_2x^2+…+a_{n-2}x^{n-2})+(a_1x+a_3x^3+…+a_{n-1}x^{n-1})$</p>
+<p>设 $A_1(x)=a_0+a_2x+…+a_{n-2}x^{\frac{n}{2}-1}\ A_2(x)=a_1x+a_3x+…+a_{n-1}x^{\frac{n}{2}-1}$（注意这里的次方数）</p>
 <p>则 $A(x)=A_1(x^2)+xA_2(x^2)$</p>
 <p>已知$x=w_n^k$，不妨设 $k&lt;\frac{n}{2}$，代入得到</p>
 <script type="math/tex; mode=display">
@@ -255,7 +255,7 @@ A(w_n^k)&= A_1(w_n^{2k})+w_n^kA_2(w_n^{2k}) \\
 A(w_n^{k+\frac{n}{2}})&=A_1(w_n^{2k+n})+w_n^{k+\frac{n}{2}}A_2(w_n^{2k+n})\\
 &=A_1(w_\frac{n}{2}^{k}\cdot w_n^n)+w_n^{k+\frac{n}{2}}A_2(w_\frac{n}{2}^{k}\cdot w_n^n)\\
 &=A_1(w_\frac{n}{2}^{k})-w_n^kA_2(w_\frac{n}{2}^{k})
-\end{align}</script><p>故只需要知道 $A<em>1(x)$ 和 $A_2(x)$ 分别在 $(w</em>\frac{n}{2}^0,w<em>\frac{n}{2}^1,…,w</em>\frac{n}{2}^{\frac{n}{2}-1})$ 的点值表示，就可以 $O(n)$ 计算 $A(x)$ 在 $(w_n^0,w_n^1,…,w_n^{n-1})$ 的点值表示</p>
+\end{align}</script><p>故只需要知道 $A_1(x)$ 和 $A_2(x)$ 分别在 $(w_\frac{n}{2}^0,w_\frac{n}{2}^1,…,w_\frac{n}{2}^{\frac{n}{2}-1})$ 的点值表示，就可以 $O(n)$ 计算 $A(x)$ 在 $(w_n^0,w_n^1,…,w_n^{n-1})$ 的点值表示</p>
 <p>依此，就可以<strong>递归</strong>实现</p>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#这里的代码是ai给的，感觉不太靠谱的亚子</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">def fft(a):</span><br><span class="line">    n = len(a)</span><br><span class="line">    if n &lt;= 1:</span><br><span class="line">        return a</span><br><span class="line">    even = fft(a[0::2])</span><br><span class="line">    odd = fft(a[1::2])</span><br><span class="line">    t = [np.exp(-2j * np.pi * k / n) * odd[k] for k in range(n // 2)]</span><br><span class="line">    return [even[k] + t[k] for k in range(n // 2)] + [even[k] - t[k] for k in range(n // 2)]</span><br><span class="line"></span><br><span class="line">def ifft(a):</span><br><span class="line">    n = len(a)</span><br><span class="line">    a_conj = [np.conjugate(x) for x in a]</span><br><span class="line">    y = fft(a_conj)</span><br><span class="line">    return [np.conjugate(x) / n for x in y]</span><br><span class="line"></span><br><span class="line">def polynomial_multiply(p, q):</span><br><span class="line">    n = len(p) + len(q) - 1</span><br><span class="line">    m = 1 &lt;&lt; (n - 1).bit_length()  # Next power of two</span><br><span class="line">    p += [0] * (m - len(p))</span><br><span class="line">    q += [0] * (m - len(q))</span><br><span class="line">    </span><br><span class="line">    fft_p = fft(p)</span><br><span class="line">    fft_q = fft(q)</span><br><span class="line">    fft_result = [fft_p[i] * fft_q[i] for i in range(m)]</span><br><span class="line">    result = ifft(fft_result)</span><br><span class="line">    </span><br><span class="line">    return [round(x.real) for x in result]</span><br><span class="line"></span><br><span class="line"># 示例</span><br><span class="line">p = [1, 2, 3]  # 1 + 2x + 3x^2</span><br><span class="line">q = [4, 5]     # 4 + 5x</span><br><span class="line">result = polynomial_multiply(p, q)</span><br><span class="line">print(result)  # 输出: [4, 13, 22, 15]</span><br></pre></td></tr></table></figure>
 <h3 id="后续还有优化版FFT，插个眼，以后更新"><a href="#后续还有优化版FFT，插个眼，以后更新" class="headerlink" title="后续还有优化版FFT，插个眼，以后更新"></a>后续还有优化版FFT，插个眼，以后更新</h3><h2 id="（快速）数论变换-F-NTT"><a href="#（快速）数论变换-F-NTT" class="headerlink" title="（快速）数论变换 (F)NTT"></a>（快速）数论变换 (F)NTT</h2><p>好的，假设我学会了fft，可以开始学ntt了（大雾</p>
@@ -299,9 +299,9 @@ A(w_n^{k+\frac{n}{2}})&=A_1(w_n^{2k+n})+w_n^{k+\frac{n}{2}}A_2(w_n^{2k+n})\\
 <script type="math/tex; mode=display">
 g^\frac{p-1}{n}\equiv w_n\mod p</script><p>就像998244353,469762049,1004535809，它们的原根都是3</p>
 <h2 id="任意模数NTT-MTT"><a href="#任意模数NTT-MTT" class="headerlink" title="任意模数NTT MTT"></a>任意模数NTT MTT</h2><p>如果模数不是以上几种，我们需要自己取模数</p>
-<p>取一些模数$p<em>1,p_2,…,p_k$使得答案多项式的系数在<strong>取模之前</strong>不会超过 $\prod</em>{i=1}^{k}p_i$</p>
+<p>取一些模数$p_1,p_2,…,p_k$使得答案多项式的系数在<strong>取模之前</strong>不会超过 $\prod_{i=1}^{k}p_i$</p>
 <p>一般而言取三个质数即可(998244353,469762049,1004535809)</p>
-<p>先计算答案对每个 $p<em>i$ 取模的结果，利用中国剩余定理就可以求得答案对 $\prod</em>{i=1}^{k}p_i$ 取模的结果，这个结果就是答案，最后将这个答案对题目中的模数取一次模即可</p>
+<p>先计算答案对每个 $p_i$ 取模的结果，利用中国剩余定理就可以求得答案对 $\prod_{i=1}^{k}p_i$ 取模的结果，这个结果就是答案，最后将这个答案对题目中的模数取一次模即可</p>
 <p>例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4245">洛谷 P4245</a></p>
 <p>一道MTT模板题</p>
 <p><img src="image-20241008113031280.png" alt></p>
