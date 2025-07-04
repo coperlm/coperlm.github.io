@@ -162,7 +162,7 @@
 }</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">104</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/youlian/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/niu.gif" alt="Logo"><span class="site-name">coperlm's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">计算机网络有手就行诶我手呢</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/youlian/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络有手就行诶我手呢</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-06T03:21:02.000Z" title="发表于 2025-01-06 11:21:02">2025-01-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-08T04:09:50.359Z" title="更新于 2025-01-08 12:09:50">2025-01-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>计算机网络刷题记录</p>
 <span id="more"></span>
 <hr>
-<p><img src="计算机网络有手就行诶我手呢\image-20250104213452667.png" alt=""></p>
+<p><img src="image-20250104213452667.png" alt></p>
 <p>考虑电路交换的三个阶段</p>
 <p>建立连接：$s$（题干给出）</p>
 <p>数据传输：$\frac{x}{b}$（报文长度除以数据率就是所有报文都传输过去所需要的时间）</p>
@@ -171,23 +171,23 @@
 <p>报文如果直接传输，需要的代价是 $\frac{x}{b}$</p>
 <p>但是第一个报文未接收完成，后面的节点都是不在工作的，所以这里的代价为空闲的链路数乘以分组除以数据率 $(k-1)\frac{p}b$</p>
 <p>加上个倾斜，也就是加上 $kd$</p>
-<p><img src="计算机网络有手就行诶我手呢\3f3ffb681c90ff1f63f56a4314e8beb.png" alt=""></p>
+<p><img src="3f3ffb681c90ff1f63f56a4314e8beb.png" alt></p>
 <p>要使分组交换比电路交换快，则：</p>
 <script type="math/tex; mode=display">
 s+\frac{x}b+kd>\frac{x}b+(k-1)\frac{p}b+kd</script><p>即 $s&gt;(k-1)\frac{p}b$</p>
-<p><img src="计算机网络有手就行诶我手呢\f0876362669ece5b4c0fb1ad5016f198.png" alt=""></p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250104220123260.png" alt=""></p>
+<p><img src="f0876362669ece5b4c0fb1ad5016f198.png" alt></p>
+<p><img src="image-20250104220123260.png" alt></p>
 <p>考虑原始的状态 $\frac{x}b+(k-1)\frac{p}b+kd$</p>
 <p>没有传播时延，再考虑分组控制信息固定长度，则 $\frac{x}p\cdot\frac{p+h}b+(k-1)\frac{p+h}b$</p>
 <p>整理得 $\frac{k-1}b p+\frac{xh}bp^{-1}+\frac{x+(k-1)h}b$</p>
 <p>函数值最大，则 $\frac{k-1}b p=\frac{xh}bp^{-1}$</p>
 <p>解得 $p=\sqrt{\frac{xh}{k-1}}$</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105120925533.png" alt=""></p>
+<p><img src="image-20250105120925533.png" alt></p>
 <p>发送时延=数据长度/数据发送速率</p>
 <p>传播时延=距离/物理传播速率</p>
 <p>(1) 发送时延=$\frac{10^7bit}{100<em>10^3b/s}=1</em>10^2s$ ，传播时延=$\frac{1000<em>10^3m}{2</em>10^8m/s}=5*10^{-3}s$</p>
 <p>(2) 发送时延=$\frac{10^3bit}{1<em>10^9b/s}=1</em>10^{-6}s$ ，传播时延=$\frac{1000<em>10^3m}{2</em>10^8m/s}=5*10^{-3}s$</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105121741500.png" alt=""></p>
+<p><img src="image-20250105121741500.png" alt></p>
 <p>正在传输的比特数=传播时延*数据率</p>
 <p>传播时延=媒体长度/传播速度</p>
 <p>(1) 传输时延=$\frac{1<em>10^{-1}m}{2</em>10^8m/s}=5*10^{-10}s$</p>
@@ -202,89 +202,89 @@ s+\frac{x}b+kd>\frac{x}b+(k-1)\frac{p}b+kd</script><p>即 $s&gt;(k-1)\frac{p}b$<
 <p>(4) 传输时延=$\frac{5000<em>10^3m}{2</em>10^8m/s}=2.5*10^{-2}s$</p>
 <p>$1Mb/s:\quad 2.5<em>10^{-2}s</em>1<em>10^6b/s=2.5</em>10^{4}bit$</p>
 <p>$1Gb/s:\quad 2.5<em>10^{-2}s</em>1<em>10^9b/s=2.5</em>10^{7}bit$</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105123613753.png" alt=""></p>
+<p><img src="image-20250105123613753.png" alt></p>
 <p>由题意 $2W=20000$</p>
 <p>码元变为16，则数据率$=2W\log_216=80000bit/s$</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105135446625.png" alt="">+</p>
+<p><img src="image-20250105135446625.png" alt>+</p>
 <p>最长工作距离$=\frac{20dB}{0.7dB/km}=\frac{200}7km$</p>
 <p>衰减$=\frac{20dB}{100km}=0.2dB/km$</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105135804557.png" alt=""></p>
+<p><img src="image-20250105135804557.png" alt></p>
 <p>$\frac{2<em>10^8}{1200</em>10^{-9}}=\frac53*10^{14}Hz$</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105140242576.png" alt=""></p>
+<p><img src="image-20250105140242576.png" alt></p>
 <p>这种题，直接逐项相加即可</p>
 <p>$S\cdot A=\frac18\sum_{i=1}^8S_iA_i=\frac{1-1+3+1-1+3+1+1}8=1$</p>
 <p>$S\cdot B=\frac18\sum_{i=1}^8S_iB_i=\frac{1-1-3-1-1-3+1-1}8=-1$</p>
 <p>$S\cdot C=\frac18\sum_{i=1}^8S_iC_i=\frac{1+1+3+1-1-3-1-1}8=0$</p>
 <p>$S\cdot D=\frac18\sum_{i=1}^8S_iD_i=\frac{1+1+3-1+1+3+1-1}8=1$</p>
 <p>故AD发送了数据1，B发送了数据0，C未发送数据</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105144336881.png" alt=""></p>
+<p><img src="image-20250105144336881.png" alt></p>
 <p>需要发送的数据 <code>1101011011</code>，补齐位数为 <code>11010110110000</code></p>
 <p>校验多项式 <code>10011</code></p>
 <p>做模2减法（逐位异或），得到余数 <code>0111</code></p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105151857166.png" alt=""></p>
+<p><img src="image-20250105151857166.png" alt></p>
 <p>需要发送的数据 <code>101110</code>，补齐位数为 <code>101110000</code></p>
 <p>校验多项式 <code>1001</code></p>
 <p>做模2减法（逐位异或），得到余数 <code>011</code></p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105152505594.png" alt=""></p>
+<p><img src="image-20250105152505594.png" alt></p>
 <p>PPP协议中 0x7D 是转义字符</p>
 <ul>
 <li>0x7D本身表示转义字符</li>
 <li>如果数据中有0x7E（帧的边界字符），则它也会被转义成0x7D 0x5E</li>
 <li>如果数据中有0x7D，则它会被转义成0x7D 0x5D</li>
 </ul>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105154132283.png" alt=""></p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105154523838.png" alt=""></p>
+<p><img src="image-20250105154132283.png" alt></p>
+<p><img src="image-20250105154523838.png" alt></p>
 <p>原文：0110111111111100</p>
 <p>填充后：011011111011111000</p>
 <p>填充后：0001110111110111110110</p>
 <p>原文：00011101111111111110</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105154935825.png" alt=""></p>
+<p><img src="image-20250105154935825.png" alt></p>
 <p>单程传播时延 $\tau=\frac{1<em>10^3m}{2</em>10^8m/s}=5*10^{-6}s$</p>
 <p>往返传播时延 $2\tau=10*10^{-6}s$</p>
 <p>$2\tau$ 即为争用期。<br>为了能够按照CSMA/CD 工作，最小帧的发送时间即为争用期$10\mu s$发送的数据量</p>
 <p>$1<em>10^9b/s</em>10<em>10^{-6}s=1</em>10^4b=1250B$</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105161041795.png" alt=""></p>
+<p><img src="image-20250105161041795.png" alt></p>
 <p>等待时间=$2\tau*r$</p>
 <p>10Mb/s的以太网争用期为$51.2\mu s$，则等待时间=5.12ms</p>
 <p>100Mb/s的以太网争用期为$5.12\mu s$，则等待时间=0.512ms</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105161400348.png" alt=""></p>
+<p><img src="image-20250105161400348.png" alt></p>
 <p>第三章还剩下一些，暂时丢掉了~</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105162027793.png" alt=""></p>
+<p><img src="image-20250105162027793.png" alt></p>
 <p>01000101 00000000<br>00000000 00011100<br>00000000 00000001<br>00000000 00000000<br>00000100 00010001<br>00000000 00000000<br>00001010 00001100<br>00001110 00000101<br>00001100 00000110<br>00000111 00001001<br>$\rightarrow$<br>01003532 00023414<br>01110100 01001110<br>$\rightarrow$取反码<br>10001011 10110001</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105164451421.png" alt=""></p>
+<p><img src="image-20250105164451421.png" alt></p>
 <p>45 00<br>00 1C<br>00 01<br>00 00<br>04 11<br>00 00<br>0A 0C<br>0E 05<br>0C 06<br>07 09<br>$\rightarrow$<br>74 4E</p>
 <p>十六进制太难算了</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105164949635.png" alt=""></p>
+<p><img src="image-20250105164949635.png" alt></p>
 <p>第二个局域网所能传送的最长数据帧中的数据部分只有1200bit，即每个IP数据片的数据部分不超过1200-160(bit)，由于片偏移是以8字节即64bit为单位，所以IP数据片的数据部分不超过1024bit</p>
 <p>故3200bit的报文要分4个数据片，所以第二个局域网向上传送的比特数等于(3200+4*160)=3840bit</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105165917792.png" alt=""></p>
+<p><img src="image-20250105165917792.png" alt></p>
 <p>128.96.39.10属于子网128.96.39.0~128.96.39.127，故下一跳接口为m0</p>
 <p>128.96.30.12属于子网128.96.39.0~128.96.39.127，故下一跳接口为R2</p>
 <p>128.96.40.151不在子网128.96.40.0~128.96.40.127，故使用默认路由R4</p>
 <p>192.4.153.17属于子网192.4.153.0~192.4.153.127，故下一跳接口为R3</p>
 <p>192.4.153.90不在子网192.4.153.0~192.4.153.63，故使用默认路由R4</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105195111766.png" alt=""></p>
+<p><img src="image-20250105195111766.png" alt></p>
 <p>IP数据包固定首部长度即为20字节，剩下总共3980字节</p>
 <p>分成最大数据长度为1500字节，去掉首部长度为1480字节</p>
 <p>3980/1480&gt;2，故划分为三个数据报片</p>
 <p>第一片：数据字段长度为1480，片偏移为0，MF为1</p>
 <p>第二片：数据字段长度为1480，片偏移为185，MF为1</p>
 <p>第三片：数据字段长度为1020，片偏移为370，MF为0</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105201350480.png" alt=""></p>
+<p><img src="image-20250105201350480.png" alt></p>
 <p>132:10000100<br>133:10000101<br>134:10000110<br>135:10000111</p>
 <p>故共同前缀为 10000100(132)，总共22位</p>
 <p>最大可能聚合为 <code>212.56.132.0/22</code></p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105201719096.png" alt=""></p>
+<p><img src="image-20250105201719096.png" alt></p>
 <p>后者包含于前者，因为前面的序列都相同</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105201851483.png" alt=""></p>
+<p><img src="image-20250105201851483.png" alt></p>
 <p>一眼是(1)哇</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105201924852.png" alt=""></p>
+<p><img src="image-20250105201924852.png" alt></p>
 <p>地址0/4与任意IPv4地址前四位为0000的地址都匹配</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105202103576.png" alt=""></p>
+<p><img src="image-20250105202103576.png" alt></p>
 <p>只有前11位相同（截止到第二位的16，即第12位）</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105202256152.png" alt=""></p>
+<p><img src="image-20250105202256152.png" alt></p>
 <p>2 4 11 30</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105202740623.png" alt=""></p>
+<p><img src="image-20250105202740623.png" alt></p>
 <p>20=8+8+4</p>
 <p>84写成二进制是01010100，取前四位为0101xxxx</p>
 <p>最小01010000，即为80；最大01011111，即为95</p>
@@ -292,63 +292,63 @@ s+\frac{x}b+kd>\frac{x}b+(k-1)\frac{p}b+kd</script><p>即 $s&gt;(k-1)\frac{p}b$<
 <p>地址掩码为 255.255.240.0</p>
 <p>地址块中共有地址 $2^{32-20}=2^{12}=4096$ 个</p>
 <p>相当于C类地址 $2^{12}/2^{8}=2^4=16$ 个</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105203750959.png" alt=""></p>
+<p><img src="image-20250105203750959.png" alt></p>
 <p>第一步：下一跳全部改为C，距离+1</p>
 <p>第二步：和原有的进行对比，选择相对较少的那个</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105203929060.png" alt=""></p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105204005784.png" alt=""></p>
+<p><img src="image-20250105203929060.png" alt></p>
+<p><img src="image-20250105204005784.png" alt></p>
 <p>29:00011101<br>32:00100000</p>
 <p>地址数为 256*4=1024</p>
 <p>虽然这两个地址是连续的地址块，但无法写成前缀的形式。</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105204300166.png" alt=""></p>
+<p><img src="image-20250105204300166.png" alt></p>
 <p>网络掩码：255.255.255.224</p>
 <p>网络前缀长度：27</p>
 <p>网络后缀长度：32-27=5</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105204814439.png" alt=""></p>
+<p><img src="image-20250105204814439.png" alt></p>
 <p>地址数：$2^5=32$ 个</p>
 <p>首地址：<code>167.199.170.64</code></p>
 <p>末地址：<code>167.199.170.95</code></p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105205006450.png" alt=""></p>
+<p><img src="image-20250105205006450.png" alt></p>
 <p>子网N1：14.24.74.0/25<br>子网N2：14.24.74.128/26<br>子网N3：14.24.74.196/28</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105205232516.png" alt=""></p>
+<p><img src="image-20250105205232516.png" alt></p>
 <p>都匹配，根据最长前缀匹配原则，选择路由3</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105205449048.png" alt=""></p>
+<p><img src="image-20250105205449048.png" alt></p>
 <p>11001000 00111000 10101000 00000000/21</p>
 <p>$\frac{2^{32-21}}{2^8}=2^3=8$</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105205738010.png" alt=""></p>
+<p><img src="image-20250105205738010.png" alt></p>
 <p>::F53:6382:AB00:67DB:BB27:7332<br>::4D:ABCD<br>::AF36:7328:0000:87AA:0398<br>2819:00AF::35:0CB2:B271</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105210126907.png" alt=""></p>
+<p><img src="image-20250105210126907.png" alt></p>
 <p>0000:0000:0000:0000:0000:0000:0000:0000<br>0000:00AA:0000:0000:0000:0000:0000:0000<br>0000:1234 :0000:0000:0000:0000:0000:0003<br>0123:0000:0000:0000:0000:0000:0001:0002</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105211333272.png" alt=""></p>
+<p><img src="image-20250105211333272.png" alt></p>
 <p>UDP的首部有8字节，故总共8200字节</p>
 <p>IP数据包的最大长度为1500字节，首部20字节，故应当分为六片</p>
 <p>前五段数据字段的长度为1480字节，第六片为800字节</p>
 <p>片偏移为0,185,370,555,740,925</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105211342900.png" alt=""></p>
+<p><img src="image-20250105211342900.png" alt></p>
 <p>UDP首部分别是 源端口 目的端口 长度 校验和</p>
 <p>因此源端口是 $6<em>256+3</em>16+2=1586$</p>
 <p>目的端口是 $4*16+5=69$</p>
 <p>用户数据总长度为 $16+12=28$</p>
 <p>目的端口号 69&lt;1023，是熟知端口，为服务器端使用的端口</p>
 <p>使用的服务程序是TFTP</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105212010982.png" alt=""></p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250105212031876.png" alt=""></p>
+<p><img src="image-20250105212010982.png" alt></p>
+<p><img src="image-20250105212031876.png" alt></p>
 <p>TCP报文段首部序号字段占4字节，共$2^{32}$个序号</p>
 <p>TCP是面向字节流的，每个序号对应一个数据字节，因此在序号不重复使用的条件下，一次性能发送$2^{32}$个字节，因此L的最大值为4GB</p>
 <p>10Mbit/s=1.25MB/s</p>
 <p>所需时间=$\frac{L+\lceil\frac{L}{1460}\rceil*66}{1.25MB/s}$</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250106074522959.png" alt=""></p>
+<p><img src="image-20250106074522959.png" alt></p>
 <p>(1) 第一个报文段是70-99的数据，携带总共30个字节的数据</p>
 <p>(2) 发回的确认号应当是100，代表100之前的序号皆被正确收到并且期待第100号</p>
 <p>(3) 80个字节</p>
 <p>(4) 70</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250106075110887.png" alt=""></p>
+<p><img src="image-20250106075110887.png" alt></p>
 <p>最大吞吐量=$\frac{65535B*8b/B}{20ms}=26.214Mb/s$</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250106075351878.png" alt=""></p>
+<p><img src="image-20250106075351878.png" alt></p>
 <p>发送65535字节所需要的时间$T=T_D+RTT=\frac{65536B<em>8b/B}{1</em>10^9bit/s}+10ms*2=20.52428ms$</p>
 <p>最大吞吐量$\frac{L}T=\frac{L}{\frac{L}C+RTT}=\frac{65536B*8b/B}{20.52428ms}=25.544Mb/s$</p>
 <p>信道利用率=吞吐量/信道带宽=传播时延/总时延=2.5544%</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250106080048008.png" alt=""></p>
+<p><img src="image-20250106080048008.png" alt></p>
 <ol>
 <li>初始化参数</li>
 </ol>
@@ -387,17 +387,17 @@ s+\frac{x}b+kd>\frac{x}b+(k-1)\frac{p}b+kd</script><p>即 $s&gt;(k-1)\frac{p}b$<
 <p>(2) RTTs=$\frac78$旧的RTT+$\frac18$新的RTT=1.625s</p>
 <p>​     RTTd=$\frac34$旧的RTTd+$\frac14$|RTTs-新的RTT样本|=0.78125s</p>
 <p>​     RTO= 4.75s</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250106081510926.png" alt=""></p>
+<p><img src="image-20250106081510926.png" alt></p>
 <p>RTT0=30ms</p>
 <p>RTT1=0.9RTT0+0.1RTT=29.6ms</p>
 <p>RTT2=0.9RTT1+0.1RTT=29.84ms</p>
 <p>RTT3=0.9RTT2+0.1RTT=29.256ms</p>
 <p>$\alpha$取值较小，RTTs受RTT样本值的影响较小</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250106081736760.png" alt=""></p>
+<p><img src="image-20250106081736760.png" alt></p>
 <p>ssthresh=上次拥塞值/2</p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250106082009764.png" alt=""></p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250106082026328.png" alt=""></p>
-<p><img src="计算机网络有手就行诶我手呢\image-20250106082246782.png" alt=""></p>
+<p><img src="image-20250106082009764.png" alt></p>
+<p><img src="image-20250106082026328.png" alt></p>
+<p><img src="image-20250106082246782.png" alt></p>
 <p>(2) 慢开始时间间隔：[1,6]和[23,26]</p>
 <p>(3) 拥塞避免时间间隔：[6,16]和[17,22]</p>
 <p>(4) 第16轮是收到了重复帧，第22抡是超时检测</p>
@@ -415,4 +415,4 @@ s+\frac{x}b+kd>\frac{x}b+(k-1)\frac{p}b+kd</script><p>即 $s&gt;(k-1)\frac{p}b$<
 <li>以太网的物理地址的长度为48位，IPv4地址的长度为32位</li>
 <li>IP首部定长部分为20字节</li>
 </ol>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://coperlm.github.io">coperlm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://coperlm.github.io/2025/01/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%E8%AF%B6%E6%88%91%E6%89%8B%E5%91%A2/">https://coperlm.github.io/2025/01/06/计算机网络有手就行诶我手呢/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://coperlm.github.io" target="_blank">coperlm's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/cs/">cs</a></div><div class="post-share"><div class="social-share" data-image="/img/nl.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/01/02/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%860%E8%BD%AE%E9%A2%84%E4%B9%A0/" title="大学物理0轮预习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">大学物理0轮预习</div></div><div class="info-2"><div class="info-item-1">我滴进度已经完蛋了  光学衍射通用公式$\delta=a\frac{x}f$  $光程差=缝宽*\tan\theta$ 暗纹 $\delta=\pm k\lambda$，明纹 $\delta=\pm (k+0.5)\lambda$ 中央明纹宽度$l=2f\frac\lambda a$ 光栅$\delta=(a+b)|\sin\theta-\sin\varphi|=k\lambda$ 缺级 $k=\frac{a+b}{a}k’$ 光栅常数 $a+b$ 距离中心距离 $x=f\cdot\tan\theta,(a+b)|\sin\theta-\sin\varphi|=k\lambda$ 双缝干涉$\delta=d\frac{x}D$  $光程差=缝距*\tan\theta$ 云母覆盖$\delta{覆盖后}-\delta{覆盖前}=(1-n)l$ 单缝干涉反射 单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}$ 反射 不单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}+\frac\lambda 2$ 折射...</div></div></div></a><a class="pagination-related" href="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/" title="红黑树学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">红黑树学习</div></div><div class="info-2"><div class="info-item-1">BST 二叉查找树 -&gt; AVL 平衡二叉树 -&gt; RBT 红黑树   二叉查找树 左子树上所有结点的值均小于或等于它的根结点的值 右子树上所有结点的值均大于或等于它的根结点的值 左、右子树也分别为二叉排序树  理想情况下是这样子  存在的问题：如果BST树的节点正好从大到小的插入，此时树的结构也类似于链表结构，这时候的查询或写入耗时与链表相同，最坏时间复杂为线性 这时候就有了平衡二叉树AVL（发明者名字简写） AVL也属于二叉搜索树的一种，与其不同的是AVL通过机制保证其自身的平衡 平衡二叉树 AVL树是最先发明的自平衡二叉查找树 在AVL树中任何节点的两个子树的高度最大差别为1，所以它也被称为高度平衡树 增加和删除可能需要通过一次或多次树旋转来重新平衡这个树  平衡二叉树的特性  对于任何一颗子树的root根结点而言，它的左子树任何节点的key一定比root小，而右子树任何节点的key...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/" title="数据结构不是有手就行（陈述句"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-06</div><div class="info-item-2">数据结构不是有手就行（陈述句</div></div><div class="info-2"><div class="info-item-1">数据结构没有很多题目，所以只能通过知识点为索引进行复习 知识点来源是学长给的文档和期中考试题目   树的遍历前序遍历 根-&gt;左子树-&gt;右子树中序遍历 左子树-&gt;根-&gt;右子树后序遍历...</div></div></div></a><a class="pagination-related" href="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/" title="红黑树学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-06</div><div class="info-item-2">红黑树学习</div></div><div class="info-2"><div class="info-item-1">BST 二叉查找树 -&gt; AVL 平衡二叉树 -&gt; RBT 红黑树   二叉查找树 左子树上所有结点的值均小于或等于它的根结点的值 右子树上所有结点的值均大于或等于它的根结点的值 左、右子树也分别为二叉排序树  理想情况下是这样子  存在的问题：如果BST树的节点正好从大到小的插入，此时树的结构也类似于链表结构，这时候的查询或写入耗时与链表相同，最坏时间复杂为线性 这时候就有了平衡二叉树AVL（发明者名字简写） AVL也属于二叉搜索树的一种，与其不同的是AVL通过机制保证其自身的平衡 平衡二叉树 AVL树是最先发明的自平衡二叉查找树 在AVL树中任何节点的两个子树的高度最大差别为1，所以它也被称为高度平衡树 增加和删除可能需要通过一次或多次树旋转来重新平衡这个树  平衡二叉树的特性  对于任何一颗子树的root根结点而言，它的左子树任何节点的key一定比root小，而右子树任何节点的key...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">coperlm</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">104</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/coperlm" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/coperlm@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">刚new的博客，还没完善好，图片什么的不能显示</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/02/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8FTEE%E7%9A%84%E4%B8%80%E7%82%B9%E5%A4%B4%E8%84%91%E9%A3%8E%E6%9A%B4/" title="关于分布式TEE的一点头脑风暴">关于分布式TEE的一点头脑风暴</a><time datetime="2025-07-02T02:43:59.000Z" title="发表于 2025-07-02 10:43:59">2025-07-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/22/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="高数下学习笔记">高数下学习笔记</a><time datetime="2025-06-22T03:32:43.000Z" title="发表于 2025-06-22 11:32:43">2025-06-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E6%95%B0%E6%8D%AE%E5%BA%932025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="数据库2025期末考试重点">数据库2025期末考试重点</a><time datetime="2025-06-17T06:52:32.000Z" title="发表于 2025-06-17 14:52:32">2025-06-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="操作系统2025期末考试重点">操作系统2025期末考试重点</a><time datetime="2025-06-17T06:18:36.000Z" title="发表于 2025-06-17 14:18:36">2025-06-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A62025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="现代密码学2025期末考试重点">现代密码学2025期末考试重点</a><time datetime="2025-06-17T05:58:13.000Z" title="发表于 2025-06-17 13:58:13">2025-06-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By coperlm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://coperlm.github.io">coperlm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://coperlm.github.io/2025/01/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%E8%AF%B6%E6%88%91%E6%89%8B%E5%91%A2/">https://coperlm.github.io/2025/01/06/计算机网络有手就行诶我手呢/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://coperlm.github.io" target="_blank">coperlm's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/cs/">cs</a></div><div class="post-share"><div class="social-share" data-image="/img/nl.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/01/02/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%860%E8%BD%AE%E9%A2%84%E4%B9%A0/" title="大学物理0轮预习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">大学物理0轮预习</div></div><div class="info-2"><div class="info-item-1">我滴进度已经完蛋了  光学衍射通用公式$\delta=a\frac{x}f$  $光程差=缝宽*\tan\theta$ 暗纹 $\delta=\pm k\lambda$，明纹 $\delta=\pm (k+0.5)\lambda$ 中央明纹宽度$l=2f\frac\lambda a$ 光栅$\delta=(a+b)|\sin\theta-\sin\varphi|=k\lambda$ 缺级 $k=\frac{a+b}{a}k’$ 光栅常数 $a+b$ 距离中心距离 $x=f\cdot\tan\theta,(a+b)|\sin\theta-\sin\varphi|=k\lambda$ 双缝干涉$\delta=d\frac{x}D$  $光程差=缝距*\tan\theta$ 云母覆盖$\delta{覆盖后}-\delta{覆盖前}=(1-n)l$ 单缝干涉反射 单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}$ 反射 不单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}+\frac\lambda 2$ 折射...</div></div></div></a><a class="pagination-related" href="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/" title="红黑树学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">红黑树学习</div></div><div class="info-2"><div class="info-item-1">BST 二叉查找树 -&gt; AVL 平衡二叉树 -&gt; RBT 红黑树   二叉查找树 左子树上所有结点的值均小于或等于它的根结点的值 右子树上所有结点的值均大于或等于它的根结点的值 左、右子树也分别为二叉排序树  理想情况下是这样子  存在的问题：如果BST树的节点正好从大到小的插入，此时树的结构也类似于链表结构，这时候的查询或写入耗时与链表相同，最坏时间复杂为线性 这时候就有了平衡二叉树AVL（发明者名字简写） AVL也属于二叉搜索树的一种，与其不同的是AVL通过机制保证其自身的平衡 平衡二叉树 AVL树是最先发明的自平衡二叉查找树 在AVL树中任何节点的两个子树的高度最大差别为1，所以它也被称为高度平衡树 增加和删除可能需要通过一次或多次树旋转来重新平衡这个树  平衡二叉树的特性  对于任何一颗子树的root根结点而言，它的左子树任何节点的key一定比root小，而右子树任何节点的key...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%AF%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%EF%BC%88%E9%99%88%E8%BF%B0%E5%8F%A5/" title="数据结构不是有手就行（陈述句"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-06</div><div class="info-item-2">数据结构不是有手就行（陈述句</div></div><div class="info-2"><div class="info-item-1">数据结构没有很多题目，所以只能通过知识点为索引进行复习 知识点来源是学长给的文档和期中考试题目   树的遍历前序遍历 根-&gt;左子树-&gt;右子树中序遍历 左子树-&gt;根-&gt;右子树后序遍历...</div></div></div></a><a class="pagination-related" href="/2025/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AD%A6%E4%B9%A0/" title="红黑树学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-06</div><div class="info-item-2">红黑树学习</div></div><div class="info-2"><div class="info-item-1">BST 二叉查找树 -&gt; AVL 平衡二叉树 -&gt; RBT 红黑树   二叉查找树 左子树上所有结点的值均小于或等于它的根结点的值 右子树上所有结点的值均大于或等于它的根结点的值 左、右子树也分别为二叉排序树  理想情况下是这样子  存在的问题：如果BST树的节点正好从大到小的插入，此时树的结构也类似于链表结构，这时候的查询或写入耗时与链表相同，最坏时间复杂为线性 这时候就有了平衡二叉树AVL（发明者名字简写） AVL也属于二叉搜索树的一种，与其不同的是AVL通过机制保证其自身的平衡 平衡二叉树 AVL树是最先发明的自平衡二叉查找树 在AVL树中任何节点的两个子树的高度最大差别为1，所以它也被称为高度平衡树 增加和删除可能需要通过一次或多次树旋转来重新平衡这个树  平衡二叉树的特性  对于任何一颗子树的root根结点而言，它的左子树任何节点的key一定比root小，而右子树任何节点的key...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">coperlm</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">104</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/coperlm"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/coperlm" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/coperlm@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">刚new的博客，还没完善好，图片什么的不能显示</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/02/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8FTEE%E7%9A%84%E4%B8%80%E7%82%B9%E5%A4%B4%E8%84%91%E9%A3%8E%E6%9A%B4/" title="关于分布式TEE的一点头脑风暴">关于分布式TEE的一点头脑风暴</a><time datetime="2025-07-02T02:43:59.000Z" title="发表于 2025-07-02 10:43:59">2025-07-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/22/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="高数下学习笔记">高数下学习笔记</a><time datetime="2025-06-22T03:32:43.000Z" title="发表于 2025-06-22 11:32:43">2025-06-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E6%95%B0%E6%8D%AE%E5%BA%932025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="数据库2025期末考试重点">数据库2025期末考试重点</a><time datetime="2025-06-17T06:52:32.000Z" title="发表于 2025-06-17 14:52:32">2025-06-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="操作系统2025期末考试重点">操作系统2025期末考试重点</a><time datetime="2025-06-17T06:18:36.000Z" title="发表于 2025-06-17 14:18:36">2025-06-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/17/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A62025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/" title="现代密码学2025期末考试重点">现代密码学2025期末考试重点</a><time datetime="2025-06-17T05:58:13.000Z" title="发表于 2025-06-17 13:58:13">2025-06-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By coperlm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
