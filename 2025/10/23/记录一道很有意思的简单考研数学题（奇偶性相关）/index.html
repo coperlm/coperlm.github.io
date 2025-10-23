@@ -1,0 +1,796 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>记录一道很有意思的简单考研数学题（奇偶性相关） | coperlm's Blog</title><meta name="author" content="coperlm"><meta name="copyright" content="coperlm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="题目描述：设 $f(x)&#x3D;\frac{1}{2^x+1},x\in \mathbb{R},$ 则$f^{(100)}(0)&#x3D;?$（即100阶导数） 学长听说我学完张宇第一章了，便给了我这道题检验学习成果 第一章全是极限相关的，但对于这道题，我翻来覆去也没看出哪里和极限相关的 于是乎只能硬导，企图寻找规律；奈何本人计算能力一般，算了三遍三阶导，每一遍都不一样 于是乎我去请教学长，得知和奇偶性相关，于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录一道很有意思的简单考研数学题（奇偶性相关）">
+<meta property="og:url" content="https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="题目描述：设 $f(x)&#x3D;\frac{1}{2^x+1},x\in \mathbb{R},$ 则$f^{(100)}(0)&#x3D;?$（即100阶导数） 学长听说我学完张宇第一章了，便给了我这道题检验学习成果 第一章全是极限相关的，但对于这道题，我翻来覆去也没看出哪里和极限相关的 于是乎只能硬导，企图寻找规律；奈何本人计算能力一般，算了三遍三阶导，每一遍都不一样 于是乎我去请教学长，得知和奇偶性相关，于">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://coperlm.github.io/img/(11).gif">
+<meta property="article:published_time" content="2025-10-23T11:45:55.000Z">
+<meta property="article:modified_time" content="2025-10-23T11:46:48.151Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="考研数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/img/(11).gif"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "记录一道很有意思的简单考研数学题（奇偶性相关）",
+  "url": "https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/",
+  "image": "https://coperlm.github.io/img/(11).gif",
+  "datePublished": "2025-10-23T11:45:55.000Z",
+  "dateModified": "2025-10-23T11:46:48.151Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "coperlm",
+      "url": "https://coperlm.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/good.gif"><link rel="canonical" href="https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: coperlm","link":"链接: ","source":"来源: coperlm's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'medium_zoom',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '记录一道很有意思的简单考研数学题（奇偶性相关）',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">124</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/link/"><div class="headline">友链</div><div class="length-num">19</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/niu.gif" alt="Logo"><span class="site-name">coperlm's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">记录一道很有意思的简单考研数学题（奇偶性相关）</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">记录一道很有意思的简单考研数学题（奇偶性相关）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-10-23T11:45:55.000Z" title="发表于 2025-10-23 19:45:55">2025-10-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-10-23T11:46:48.151Z" title="更新于 2025-10-23 19:46:48">2025-10-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/#post-comment"><span class="waline-comment-count" data-path="/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="container post-content" id="article-container"><p>题目描述：设 $f(x)=\frac{1}{2^x+1},x\in \mathbb{R},$ 则$f^{(100)}(0)=?$（即100阶导数）</p>
+<p>学长听说我学完张宇第一章了，便给了我这道题检验学习成果</p>
+<p>第一章全是极限相关的，但对于这道题，我翻来覆去也没看出哪里和极限相关的</p>
+<p>于是乎只能硬导，企图寻找规律；奈何本人计算能力一般，算了三遍三阶导，每一遍都不一样</p>
+<p>于是乎我去请教学长，得知和奇偶性相关，于是记录一下做法</p>
+<p>简单地：$f(x)=\frac{1}{a^x+1}-\frac12$ 是奇函数，故而求导后是偶函数并且 $-\frac12$ 没了，这</p>
+<p>第一步：化简函数</p>
+<p>写成以 $e$ 为底：$f(x) = \frac{1}{e^{x \ln 2} + 1}$</p>
+<p>第二步：中心对称性</p>
+<p>$f(-x) = \frac{1}{2^{-x} + 1} = \frac{1}{\frac{1}{2^x} + 1} = \frac{2^x}{1 + 2^x}$</p>
+<p>注意到：$f(x) + f(-x) = \frac{1}{1+2^x} + \frac{2^x}{1+2^x} = 1$</p>
+<p>因此：$f(-x) = 1 - f(x)$</p>
+<p>第三步：推导对称性条件对导数的影响</p>
+<p>两边对 (x) 求导：</p>
+<ul>
+<li>一阶导：$f’(-x) \cdot (-1) = -f’(x) \implies f’(-x) = f’(x)$<br>所以 (f’(x)) 是<strong>偶函数</strong>。</li>
+<li>二阶导：<br>对上式再求导：$f’’(-x) \cdot (-1) = f’’(x) \implies f’’(-x) = -f’’(x)$<br>所以 (f’’(x)) 是<strong>奇函数</strong>。</li>
+</ul>
+<p>由此可以推得一般规律：<br>$f^{(n)}(-x) = (-1)^{n+1} f^{(n)}(x)$</p>
+<p>第四步：代入 (x=0)</p>
+<p>令 (x=0)，得到：$f^{(n)}(0) = (-1)^{n+1} f^{(n)}(0)$</p>
+<p>若要使该等式成立：</p>
+<ul>
+<li>当 $(-1)^{n+1} = 1$，即 (n) 为<strong>奇数</strong>时，方程恒成立；</li>
+<li>当 $(-1)^{n+1} = -1$，即 (n) 为<strong>偶数</strong>时，必须 $f^{(n)}(0)=0$。</li>
+</ul>
+<p>第五步：结论</p>
+<p>因为 (100) 是偶数：</p>
+<script type="math/tex; mode=display">
+\boxed{f^{(100)}(0) = 0}</script><hr>
+<p>如果我想直接求导呢？好像确实可以，要用到双曲正切~</p>
+<p>下面的GPT给出的解法，我还没看懂：</p>
+<p>用一点恒等变换就能把“死算导数”变成有规律的公式，既能解释为什么偶数阶导数在 $0$ 为 $0$，也能写出任意奇阶导数的闭式表达（含伯努利数）。步骤和结论如下。</p>
+<p>先把 $2^x$ 写成指数形式并作代换：</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{1+2^x}=\frac{1}{1+e^{ax}},\qquad a=\ln 2.</script><p>利用双曲正切的恒等式</p>
+<script type="math/tex; mode=display">
+\frac{1}{1+e^{y}}=\frac{1-\tanh\frac{y}{2}}{2},</script><p>令 $y=ax$ 得</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{2}-\frac{1}{2}\tanh\!\left(\frac{a}{2}x\right).</script><p>记 $b=\frac{a}{2}=\frac{\ln 2}{2}$。于是</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{2}-\frac{1}{2}\tanh(bx).</script><p><strong>由此得到两个直接结论：</strong></p>
+<ol>
+<li><p>$\tanh(z)$ 是奇函数，故其泰勒展开只含奇次幂，说明所有偶阶导数在 $0$ 处为 $0$。因此对原函数：</p>
+<script type="math/tex; mode=display">
+f^{(2m)}(0)=0\quad(m\ge1).</script><p>这直接解释了为什么 $f^{(100)}(0)=0$。</p>
+</li>
+<li><p>对奇阶导数，利用链式法则</p>
+<script type="math/tex; mode=display">
+\frac{d^n}{dx^n}\tanh(bx)\bigg|_{x=0}=b^n\cdot \tanh^{(n)}(0),</script><p>以及 $f^{(n)}(0)=-\frac{1}{2}$ 倍该值，可得奇阶的通项公式。</p>
+</li>
+</ol>
+<hr>
+<h3 id="奇阶导数的闭式（含伯努利数）"><a href="#奇阶导数的闭式（含伯努利数）" class="headerlink" title="奇阶导数的闭式（含伯努利数）"></a>奇阶导数的闭式（含伯努利数）</h3><p>已知泰勒展开（关于 $x$）：</p>
+<script type="math/tex; mode=display">
+\tanh x=\sum_{k=1}^{\infty}\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}\,x^{2k-1},</script><p>其中 $B_{2k}$ 是伯努利数。由此得到对 $n=2k-1$（奇数）</p>
+<script type="math/tex; mode=display">
+\tanh^{(2k-1)}(0)= (2k-1)!\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}
+=\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k}.</script><p>因此对 $f$：</p>
+<script type="math/tex; mode=display">
+\boxed{f^{(2k-1)}(0)=-\frac{1}{2}\,b^{2k-1}\,\tanh^{(2k-1)}(0)
+=-\frac{1}{2}\,b^{2k-1}\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k},}</script><p>稍整理可写成</p>
+<script type="math/tex; mode=display">
+\boxed{f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\;b^{2k-1},}
+\quad\text{其中 }b=\frac{\ln2}{2}.</script><hr>
+<h3 id="验证前几项（直观感受规律）"><a href="#验证前几项（直观感受规律）" class="headerlink" title="验证前几项（直观感受规律）"></a>验证前几项（直观感受规律）</h3><p>从已知的 $\tanh$ 展开：<br>$\tanh x= x-\frac{x^3}{3}+\frac{2x^5}{15}-\frac{17x^7}{315}+\cdots$。</p>
+<ul>
+<li><p>$k=1$（一阶导）：$\tanh’(0)=1$，</p>
+<script type="math/tex; mode=display">
+f'(0)=-\tfrac{1}{2} b\cdot 1=-\frac{b}{2}=-\frac{\ln2}{4}.</script></li>
+<li><p>$k=2$（三阶导）：$\tanh^{(3)}(0)=-2$（因为系数 $-1/3$ 对应 $3!(-1/3)=-2$），</p>
+<script type="math/tex; mode=display">
+f^{(3)}(0)=-\tfrac{1}{2} b^{3}(-2)=b^{3}=\left(\frac{\ln 2}{2}\right)^3.</script></li>
+<li><p>$k=3$（五阶导）：系数 $2/15$ 对应 $\tanh^{(5)}(0)=16$，</p>
+<script type="math/tex; mode=display">
+f^{(5)}(0)=-\tfrac{1}{2} b^5\cdot 16=-8\,b^5.</script></li>
+</ul>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><p>偶数阶导数在 $0$ 都为 $0$（所以 $f^{(100)}(0)=0$）。</p>
+</li>
+<li><p>奇数阶导数有明确闭式，且可用伯努利数写出通项：</p>
+<script type="math/tex; mode=display">
+f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2k-1}.</script></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://coperlm.github.io">coperlm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/">https://coperlm.github.io/2025/10/23/记录一道很有意思的简单考研数学题（奇偶性相关）/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://coperlm.github.io" target="_blank">coperlm's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/">考研数学</a></div><div class="post-share"><div class="social-share" data-image="/img/(11).gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/10/22/blog-tech-overview/" title="博客技术与功能概览"><img class="cover" src="/img/(54).gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">博客技术与功能概览</div></div><div class="info-2"><div class="info-item-1">一、总体概览 平台与框架：Hexo 7.3.0 + Butterfly 主题（v5.3.5）。 站点定位：技术学习/竞赛记录（密码学/CTF/算法/课程笔记等）+ 生活随笔，中文为主。 展示风格：卡片式列表、顶部大图 Banner、封面图轮换、侧栏多卡片信息（作者、公告、最新评论、归档、标签云、站点信息）。 交互增强：本地搜索、目录（TOC）、相关文章、阅读模式、深色模式切换、PJAX 页面切换、Instant.page 预获取、图片灯箱（medium-zoom）。 评论与统计：Waline（含 PV/UV）+ Disqus 双系统（Waline 为主），文章卡片显示评论数；站点 PV/UV 未启用 Busuanzi（保留为可选）。 多媒体：底部固定 APlayer 播放器（inject 注入）+ 音乐页 aplayerlist 播放清单。 数学与代码：MathJax 渲染公式，highlight.js 高亮，行号与自动换行启用。  二、技术栈与版本 Hexo: 7.3.0（package.json hexo 字段与依赖） 主题：hexo-theme-butterfly...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Waline</span><span id="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">coperlm</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">124</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/link/"><div class="headline">友链</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/coperlm"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/coperlm" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:coperlm@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">251013日志:支持匿名评论;图片为随机小熊猫表情包;远古文章LaTeX玄学异常</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%87%E9%98%B6%E5%AF%BC%E6%95%B0%E7%9A%84%E9%97%AD%E5%BC%8F%EF%BC%88%E5%90%AB%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%95%B0%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">奇阶导数的闭式（含伯努利数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E5%89%8D%E5%87%A0%E9%A1%B9%EF%BC%88%E7%9B%B4%E8%A7%82%E6%84%9F%E5%8F%97%E8%A7%84%E5%BE%8B%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">验证前几项（直观感受规律）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/08/25/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84%E8%A1%A8%E6%83%85%E5%8C%85%E6%80%BB%E6%98%AF%E8%A2%AB%E6%9C%8B%E5%8F%8B%E7%9B%97%E8%B5%B0/" title="为什么我的表情包总是被朋友盗走"><img src="/img/(19).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为什么我的表情包总是被朋友盗走"/></a><div class="content"><a class="title" href="/2025/08/25/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84%E8%A1%A8%E6%83%85%E5%8C%85%E6%80%BB%E6%98%AF%E8%A2%AB%E6%9C%8B%E5%8F%8B%E7%9B%97%E8%B5%B0/" title="为什么我的表情包总是被朋友盗走">为什么我的表情包总是被朋友盗走</a><time datetime="2025-10-23T11:48:51.131Z" title="更新于 2025-10-23 19:48:51">2025-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/18/%E8%80%83%E7%A0%94%E6%94%BF%E6%B2%BB-%E9%A9%AC%E5%8E%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="马原学习笔记"><img src="/img/(2).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="马原学习笔记"/></a><div class="content"><a class="title" href="/2025/08/18/%E8%80%83%E7%A0%94%E6%94%BF%E6%B2%BB-%E9%A9%AC%E5%8E%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="马原学习笔记">马原学习笔记</a><time datetime="2025-10-23T11:48:38.154Z" title="更新于 2025-10-23 19:48:38">2025-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/02/%E8%80%83%E7%A0%94408-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="计算机组成原理学习笔记"><img src="/img/(57).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机组成原理学习笔记"/></a><div class="content"><a class="title" href="/2025/09/02/%E8%80%83%E7%A0%94408-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="计算机组成原理学习笔记">计算机组成原理学习笔记</a><time datetime="2025-10-23T11:48:06.350Z" title="更新于 2025-10-23 19:48:06">2025-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/" title="记录一道很有意思的简单考研数学题（奇偶性相关）"><img src="/img/(11).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记录一道很有意思的简单考研数学题（奇偶性相关）"/></a><div class="content"><a class="title" href="/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/" title="记录一道很有意思的简单考研数学题（奇偶性相关）">记录一道很有意思的简单考研数学题（奇偶性相关）</a><time datetime="2025-10-23T11:46:48.151Z" title="更新于 2025-10-23 19:46:48">2025-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/22/%E6%9C%AC%E7%AB%99%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/" title="初来本站的使用指南（置顶）"><img src="/img/(58).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初来本站的使用指南（置顶）"/></a><div class="content"><a class="title" href="/2025/10/22/%E6%9C%AC%E7%AB%99%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/" title="初来本站的使用指南（置顶）">初来本站的使用指南（置顶）</a><time datetime="2025-10-22T08:23:13.621Z" title="更新于 2025-10-22 16:23:13">2025-10-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By coperlm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://walinetest-coperlms-projects.vercel.app',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '记录一道很有意思的简单考研数学题（奇偶性相关）'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://coperlm.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=coperlm&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Waline' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script>window.newestComments = {
+  changeContent: content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<code>.*?<\/code>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g, "") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0, 150) + '...'
+    }
+    return content
+  },
+
+  generateHtml: (array, ele) => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class="aside-list-item">'
+
+        if (true && array[i].avatar) {
+          const imgAttr = 'src'
+          const lazyloadNative = ''
+          result += `<a href="${array[i].url}" class="thumbnail"><img ${imgAttr}="${array[i].avatar}" alt="${array[i].nick}" ${lazyloadNative}></a>`
+        }
+
+        result += `<div class="content">
+        <a class="comment" href="${array[i].url}" title="${array[i].content}">${array[i].content}</a>
+        <div class="name"><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '暂无评论'
+    }
+
+    ele.innerHTML = result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh(ele)
+  },
+
+  newestCommentInit: (name, getComment) => {
+    const $dom = document.querySelector('#card-newest-comments .aside-list')
+    if ($dom) {
+      const data = btf.saveToLocal.get(name)
+      if (data) {
+        newestComments.generateHtml(JSON.parse(data), $dom)
+      } else {
+        getComment($dom)
+      }
+    }
+  },
+
+  run: (name, getComment) => {
+    newestComments.newestCommentInit(name, getComment)
+    btf.addGlobalFn('pjaxComplete', () => newestComments.newestCommentInit(name, getComment), name)
+  }
+}</script><script>window.addEventListener('load', () => {
+  const keyName = 'waline-newest-comments'
+  const { changeContent, generateHtml, run } = window.newestComments
+
+  const getComment = async (ele) => {
+    try {
+      const res = await fetch('https://walinetest-coperlms-projects.vercel.app/api/comment?type=recent&count=6')
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      btf.saveToLocal.set(keyName, JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray, ele)
+    } catch (err) {
+      console.error(err)
+      ele.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  run(keyName, getComment)
+})</script><div id="aplayer-fixed" class="aplayer aplayer-fixed aplayer-narrow no-destroy" data-order="list" data-preload="auto" data-autoplay="true"></div><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+  const ap = new APlayer({
+    container: document.getElementById('aplayer-fixed'),
+    order: 'random',
+    loop: 'all',
+    fixed: true,
+    autoplay: true,
+    audio: [
+      {
+        name: '冬眠2023',
+        artist: '阿YueYue 刘兆宇',
+        url: '/music/index/冬眠2023.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '老男孩',
+        artist: '王小帅',
+        url: '/music/index/老男孩.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '一期一会',
+        artist: '周深',
+        url: '/music/index/secret_base_zs.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '一路生花',
+        artist: '温奕心',
+        url: '/music/index/一路生花.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '你',
+        artist: 'GALA乐队',
+        url: '/music/index/你.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '你曾是少年',
+        artist: 'S.H.E',
+        url: '/music/index/你曾是少年.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '冬眠',
+        artist: '司南',
+        url: '/music/index/冬眠.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '圣诞快乐，劳伦斯先生',
+        artist: '坂本龙一',
+        url: '/music/index/圣诞快乐.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '如果可以',
+        artist: '（钢琴曲）',
+        url: '/music/index/如果可以.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '秋殇别恋',
+        artist: 'unknown',
+        url: '/music/index/秋殇别恋.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '紫金花盛开',
+        artist: '李荣浩 梁咏琪',
+        url: '/music/index/紫金花盛开.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '跳楼机',
+        artist: '洛天依',
+        url: '/music/index/跳楼机.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '身骑白马',
+        artist: '兰音',
+        url: '/music/index/身骑白马.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '长安姑娘',
+        artist: '兰音',
+        url: '/music/index/长安姑娘.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '壁上观',
+        artist: '泠鸢',
+        url: '/music/index/壁上观.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '春庭雪',
+        artist: '等什么君',
+        url: '/music/index/春庭雪.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '最后一页',
+        artist: '（钢琴曲）',
+        url: '/music/index/最后一页.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: 'secret_base',
+        artist: '（钢琴曲）',
+        url: '/music/index/secret_base_p.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '起风了',
+        artist: '买辣椒也用券',
+        url: '/music/index/起风了.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '卡农',
+        artist: '（钢琴曲）-b站拜年祭2022',
+        url: '/music/index/卡农.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '悬溺',
+        artist: '（钢琴曲）',
+        url: '/music/index/悬溺.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '现在是陌生人',
+        artist: '（纯音乐）',
+        url: '/music/index/现在是陌生人.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '铃芽之旅',
+        artist: '（钢琴组曲）',
+        url: '/music/index/铃芽之旅.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '诀别书',
+        artist: '邓垚',
+        url: '/music/index/诀别书.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: 'The_truth_that_you_leave',
+        artist: '高至豪',
+        url: '/music/index/The_truth_that_you_leave.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '如愿',
+        artist: '王菲',
+        url: '/music/index/如愿.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '那些年',
+        artist: '（钢琴曲）',
+        url: '/music/index/那些年.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '星光下的梦想',
+        artist: '（钢琴曲）',
+        url: '/music/index/星光下的梦想.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '呓语',
+        artist: '洛天依',
+        url: '/music/index/呓语.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '月光',
+        artist: '胡彦斌',
+        url: '/music/index/月光.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '东京不太热',
+        artist: '洛天依',
+        url: '/music/index/东京不太热.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '月光变奏曲',
+        artist: '《秦时明月》',
+        url: '/music/index/月光变奏曲.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '此去半生',
+        artist: '北部玄驹AI',
+        url: '/music/index/此去半生.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '老男孩',
+        artist: '春日野穹AI',
+        url: '/music/index/老男孩AI.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '夏天的风',
+        artist: '洛天依 乐正绫',
+        url: '/music/index/夏天的风.mp3',
+        cover: '/img/music_default.gif'
+      }
+    ]
+  });
+</script>
+<script id="canvas_nest" defer="defer" color="255,127,0" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false 
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="来搜吧来搜吧~" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
