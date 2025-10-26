@@ -1,0 +1,16 @@
+/* Dynamic background only: controlled by `--global-bg` set by dynamic-theme.js */
+
+:root {
+  /* Fallback background (day) in case JS fails */
+  --global-bg: linear-gradient(180deg, #E8F6FF 0%, #F8FCFF 60%, #FFFFFF 100%);
+}
+
+body {
+  background: var(--global-bg) fixed center/cover no-repeat;
+  transition: background 1s ease-in-out, color 0.3s ease;
+}
+
+/* Keep selection neutral unless theme sets otherwise */
+*::selection {
+  background: rgba(0,0,0,0.12);
+}
