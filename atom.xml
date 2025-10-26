@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>coperlm&#39;s Blog</title>
+  <icon>https://coperlm.github.io/icon.png</icon>
+  
+  <link href="https://coperlm.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://coperlm.github.io/"/>
+  <updated>2025-10-26T06:46:48.438Z</updated>
+  <id>https://coperlm.github.io/</id>
+  
+  <author>
+    <name>coperlm</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>密码技术竞赛2025作品赛游记</title>
+    <link href="https://coperlm.github.io/2025/10/26/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E7%AB%9E%E8%B5%9B2025%E4%BD%9C%E5%93%81%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
+    <id>https://coperlm.github.io/2025/10/26/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E7%AB%9E%E8%B5%9B2025%E4%BD%9C%E5%93%81%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
+    <published>2025-10-26T06:30:50.000Z</published>
+    <updated>2025-10-26T06:46:48.438Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今年又报名了密码技术竞赛，不出意外应该是我本科期间的最后一场比赛了&lt;/p&gt;
+&lt;p&gt;我个人而言主要是motivation还是因为去年没晋级，今年弥补一下去年的遗憾&lt;/p&gt;
+&lt;p&gt;一开始有多个选题，感觉都不是很好做，最后选的是用师兄最近正在搞的TEE&lt;/p&gt;
+&lt;p&gt;然后商讨了一</summary>
+        
+      
+    
+    
+    
+    <category term="会议竞赛游记" scheme="https://coperlm.github.io/categories/%E4%BC%9A%E8%AE%AE%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
+    
+    
+    <category term="游记" scheme="https://coperlm.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录一道很有意思的简单考研数学题（奇偶性相关）</title>
+    <link href="https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/"/>
+    <id>https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/</id>
+    <published>2025-10-23T11:45:55.000Z</published>
+    <updated>2025-10-23T12:02:10.267Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;题目描述：设 $f(x)=&#92;frac{1}{2^x+1},x&#92;in &#92;mathbb{R},$</summary>
+        
+      
+    
+    
+    
+    <category term="考研" scheme="https://coperlm.github.io/categories/%E8%80%83%E7%A0%94/"/>
+    
+    
+    <category term="考研数学" scheme="https://coperlm.github.io/tags/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客技术与功能概览</title>
+    <link href="https://coperlm.github.io/2025/10/22/blog-tech-overview/"/>
+    <id>https://coperlm.github.io/2025/10/22/blog-tech-overview/</id>
+    <published>2025-10-22T08:15:21.000Z</published>
+    <updated>2025-10-23T12:47:27.964Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、总体概览&quot;&gt;&lt;a href=&quot;#一、总体概览&quot; class=&quot;headerlink&quot; title=&quot;一、总体概览&quot;&gt;&lt;/a&gt;一、总体概览&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;平台与框架：Hexo 7.3.0 + Butterfly</summary>
+        
+      
+    
+    
+    
+    <category term="技术学习笔记" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rime自定义输入输出配置</title>
+    <link href="https://coperlm.github.io/2025/10/22/rime%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE/"/>
+    <id>https://coperlm.github.io/2025/10/22/rime%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE/</id>
+    <published>2025-10-22T02:44:24.000Z</published>
+    <updated>2025-10-23T12:52:14.073Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;感觉好像被监视了~于是乎前段时间在windows下部署了小狼毫输入法&lt;/p&gt;
+&lt;p&gt;但是遇到了问题，如果我想给别人发一个对钩，搜狗输入法直接输入&lt;code&gt;dui&lt;/code&gt;就出来候选词了，但是rime不行&lt;/p&gt;
+&lt;p&gt;故而学习了一下自定义&lt;/p&gt;
+&lt;p&gt;我实用的是便携</summary>
+        
+      
+    
+    
+    
+    <category term="工具与技术使用" scheme="https://coperlm.github.io/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%BD%BF%E7%94%A8/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初来本站的使用指南（置顶）</title>
+    <link href="https://coperlm.github.io/2025/10/22/%E6%9C%AC%E7%AB%99%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/"/>
+    <id>https://coperlm.github.io/2025/10/22/%E6%9C%AC%E7%AB%99%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/</id>
+    <published>2025-10-22T02:00:00.000Z</published>
+    <updated>2025-10-23T12:34:02.566Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;建议收藏本页，第一次来就从这里开始～&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不需要会编程，也不需要懂“Hexo”“主题”这些词。把这里当成一本会自己长内容的电子小杂志就好：我会把学到的知识、做过的题、看过的书、生活里的灵感，都写成文章放到这里，</summary>
+        
+      
+    
+    
+    
+    <category term="技术学习笔记" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="随笔" scheme="https://coperlm.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网安前沿讲座学习笔记（密码学）</title>
+    <link href="https://coperlm.github.io/2025/10/18/%E7%BD%91%E5%AE%89%E5%89%8D%E6%B2%BF%E8%AE%B2%E5%BA%A7%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%AF%86%E7%A0%81%E5%AD%A6%EF%BC%89/"/>
+    <id>https://coperlm.github.io/2025/10/18/%E7%BD%91%E5%AE%89%E5%89%8D%E6%B2%BF%E8%AE%B2%E5%BA%A7%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%AF%86%E7%A0%81%E5%AD%A6%EF%BC%89/</id>
+    <published>2025-10-18T09:02:21.000Z</published>
+    <updated>2025-10-24T10:55:46.034Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="会议竞赛游记" scheme="https://coperlm.github.io/categories/%E4%BC%9A%E8%AE%AE%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
+    
+    
+    <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>区块链中的树</title>
+    <link href="https://coperlm.github.io/2025/10/10/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E6%A0%91/"/>
+    <id>https://coperlm.github.io/2025/10/10/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E6%A0%91/</id>
+    <published>2025-10-10T10:39:51.000Z</published>
+    <updated>2025-10-23T12:43:44.789Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Merkle-树&quot;&gt;&lt;a href=&quot;#Merkle-树&quot; class=&quot;headerlink&quot; title=&quot;Merkle 树&quot;&gt;&lt;/a&gt;Merkle</summary>
+        
+      
+    
+    
+    
+    <category term="技术学习笔记" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="BlockChain" scheme="https://coperlm.github.io/tags/BlockChain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小感悟：真功不唐捐了</title>
+    <link href="https://coperlm.github.io/2025/09/16/%E5%B0%8F%E6%84%9F%E6%82%9F%EF%BC%9A%E7%9C%9F%E5%8A%9F%E4%B8%8D%E5%94%90%E6%8D%90%E4%BA%86/"/>
+    <id>https://coperlm.github.io/2025/09/16/%E5%B0%8F%E6%84%9F%E6%82%9F%EF%BC%9A%E7%9C%9F%E5%8A%9F%E4%B8%8D%E5%94%90%E6%8D%90%E4%BA%86/</id>
+    <published>2025-09-16T02:40:57.000Z</published>
+    <updated>2025-10-23T12:46:15.696Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近这几天在实验室干活，感觉真功不唐捐了&lt;/p&gt;
+&lt;p&gt;大一大二的时候涉猎&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于加入社团的一些个人见解</title>
+    <link href="https://coperlm.github.io/2025/09/11/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%A4%BE%E5%9B%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E8%A7%81%E8%A7%A3/"/>
+    <id>https://coperlm.github.io/2025/09/11/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%A4%BE%E5%9B%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E8%A7%81%E8%A7%A3/</id>
+    <published>2025-09-11T05:11:24.000Z</published>
+    <updated>2025-10-23T12:39:04.897Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;省流：&lt;strong&gt;不盲从，有一条自己选择的道路，并不断探索，才是最重要的&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;最近大抵是社团宣讲，关于社团选择，很多新生有很多疑惑，这里我分享一些个人观点&lt;/p&gt;
+&lt;p&gt;先分享一些我的经历&lt;/p&gt;
+&lt;figure</summary>
+        
+      
+    
+    
+    
+    <category term="一点小思考" scheme="https://coperlm.github.io/categories/%E4%B8%80%E7%82%B9%E5%B0%8F%E6%80%9D%E8%80%83/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理学习笔记</title>
+    <link href="https://coperlm.github.io/2025/09/02/%E8%80%83%E7%A0%94408-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://coperlm.github.io/2025/09/02/%E8%80%83%E7%A0%94408-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2025-09-02T11:02:56.000Z</published>
+    <updated>2025-10-23T12:10:53.826Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;1.jpg&quot; alt=&quot;1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;2.jpg&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="考研" scheme="https://coperlm.github.io/categories/%E8%80%83%E7%A0%94/"/>
+    
+    
+    <category term="考研专业课" scheme="https://coperlm.github.io/tags/%E8%80%83%E7%A0%94%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为什么我的表情包总是被朋友盗走</title>
+    <link href="https://coperlm.github.io/2025/08/25/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84%E8%A1%A8%E6%83%85%E5%8C%85%E6%80%BB%E6%98%AF%E8%A2%AB%E6%9C%8B%E5%8F%8B%E7%9B%97%E8%B5%B0/"/>
+    <id>https://coperlm.github.io/2025/08/25/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84%E8%A1%A8%E6%83%85%E5%8C%85%E6%80%BB%E6%98%AF%E8%A2%AB%E6%9C%8B%E5%8F%8B%E7%9B%97%E8%B5%B0/</id>
+    <published>2025-08-25T12:20:51.000Z</published>
+    <updated>2025-10-23T12:45:21.848Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;题干描述&lt;/p&gt;
+&lt;p&gt;在日常生活中，许多人在网络聊天时会使用相同的表情包。例如，某同学经常喜欢使用的表情包，他的朋友也会保存并频繁使用同样的表情包。请运用马克思主义基本原理分析这一现象。&lt;/p&gt;
+&lt;p&gt;参考答案：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;社会存在与社会意识的关系&lt;br&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从《原神》到马原</title>
+    <link href="https://coperlm.github.io/2025/08/25/%E4%BB%8E%E3%80%8A%E5%8E%9F%E7%A5%9E%E3%80%8B%E5%88%B0%E9%A9%AC%E5%8E%9F/"/>
+    <id>https://coperlm.github.io/2025/08/25/%E4%BB%8E%E3%80%8A%E5%8E%9F%E7%A5%9E%E3%80%8B%E5%88%B0%E9%A9%AC%E5%8E%9F/</id>
+    <published>2025-08-25T12:01:18.000Z</published>
+    <updated>2025-10-23T12:34:46.973Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近我在提瓦特大陆摸鱼时，突然觉得“精通、双爆、充能”这些属性，竟然能和“考研、保研、四六级、科研”这些现实的事挂上钩。于是，就有了这篇半疯半正经的随笔。&lt;/p&gt;
+&lt;h3 id=&quot;1-矛盾的普遍性与特殊性：为什么行秋和胡桃不是一个玩法？&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>“我们输不起”：毛泽东否定“否定之否定”的实践论重释</title>
+    <link href="https://coperlm.github.io/2025/08/25/%E2%80%9C%E6%88%91%E4%BB%AC%E8%BE%93%E4%B8%8D%E8%B5%B7%E2%80%9D%EF%BC%9A%E6%AF%9B%E6%B3%BD%E4%B8%9C%E5%90%A6%E5%AE%9A%E2%80%9C%E5%90%A6%E5%AE%9A%E4%B9%8B%E5%90%A6%E5%AE%9A%E2%80%9D%E7%9A%84%E5%AE%9E%E8%B7%B5%E8%AE%BA%E9%87%8D%E9%87%8A/"/>
+    <id>https://coperlm.github.io/2025/08/25/%E2%80%9C%E6%88%91%E4%BB%AC%E8%BE%93%E4%B8%8D%E8%B5%B7%E2%80%9D%EF%BC%9A%E6%AF%9B%E6%B3%BD%E4%B8%9C%E5%90%A6%E5%AE%9A%E2%80%9C%E5%90%A6%E5%AE%9A%E4%B9%8B%E5%90%A6%E5%AE%9A%E2%80%9D%E7%9A%84%E5%AE%9E%E8%B7%B5%E8%AE%BA%E9%87%8D%E9%87%8A/</id>
+    <published>2025-08-25T02:46:08.000Z</published>
+    <updated>2025-10-23T12:32:03.413Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>马原学习笔记</title>
+    <link href="https://coperlm.github.io/2025/08/18/%E9%A9%AC%E5%8E%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://coperlm.github.io/2025/08/18/%E9%A9%AC%E5%8E%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2025-08-18T10:49:30.000Z</published>
+    <updated>2025-10-23T12:12:23.090Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;1导论.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;2哲学基本问题.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;3辩证唯物论.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;4辩证唯物法.jpg&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="考研" scheme="https://coperlm.github.io/categories/%E8%80%83%E7%A0%94/"/>
+    
+    
+    <category term="考研政治" scheme="https://coperlm.github.io/tags/%E8%80%83%E7%A0%94%E6%94%BF%E6%B2%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中秋夜赋</title>
+    <link href="https://coperlm.github.io/2025/08/13/%E4%B8%AD%E7%A7%8B%E5%A4%9C%E8%B5%8B/"/>
+    <id>https://coperlm.github.io/2025/08/13/%E4%B8%AD%E7%A7%8B%E5%A4%9C%E8%B5%8B/</id>
+    <published>2025-08-13T06:27:26.000Z</published>
+    <updated>2025-10-23T12:46:57.112Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;中秋夜赋&lt;/p&gt;
+&lt;p&gt;壬寅之秋，八月正望；明月危挂，辰辰相依。&lt;/p&gt;
+&lt;p&gt;夜里瞩之木叶，明然骇其远视；月上宫灯然然，钓台能望玉门。&lt;/p&gt;
+&lt;p&gt;古桥春水，梅兰竹菊谁家；匏樽相属，亲戚月下欣悦。&lt;/p&gt;
+&lt;p&gt;三日赋闲家中，三年苦于庠序。&lt;/p&gt;
+&lt;p&gt;苦中有乐，亦有</summary>
+        
+      
+    
+    
+    
+    <category term="一点小思考" scheme="https://coperlm.github.io/categories/%E4%B8%80%E7%82%B9%E5%B0%8F%E6%80%9D%E8%80%83/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zkSNARK基础课程学习</title>
+    <link href="https://coperlm.github.io/2025/08/13/zkSNARK%E5%9F%BA%E7%A1%80%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://coperlm.github.io/2025/08/13/zkSNARK%E5%9F%BA%E7%A1%80%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/</id>
+    <published>2025-08-13T05:45:46.000Z</published>
+    <updated>2025-10-23T12:53:23.814Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;课程链接：&lt;a href=&quot;https://rdi.berkeley.edu/zk-learning/&quot;&gt;https://rdi.berkeley.edu/zk-learning/&lt;/a&gt;&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="科研" scheme="https://coperlm.github.io/categories/%E7%A7%91%E7%A0%94/"/>
+    
+    
+    <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>知行合一</title>
+    <link href="https://coperlm.github.io/2025/08/07/%E7%9F%A5%E8%A1%8C%E5%90%88%E4%B8%80/"/>
+    <id>https://coperlm.github.io/2025/08/07/%E7%9F%A5%E8%A1%8C%E5%90%88%E4%B8%80/</id>
+    <published>2025-08-06T17:26:43.000Z</published>
+    <updated>2025-10-23T12:46:47.214Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我们经常听到一句话：&lt;strong&gt;“认识先于实践。”&lt;/strong&gt;&lt;br&gt;但现实却是：&lt;strong&gt;我早就认识到了，却迟迟没有实践。&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;人总是习惯于把问题于未来&lt;/li&gt;
+&lt;li&gt;启动门槛高，阻力大&lt;/li&gt;
+&lt;/ol&gt;
+&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录一下之后的小plan</title>
+    <link href="https://coperlm.github.io/2025/08/03/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E4%B9%8B%E5%90%8E%E7%9A%84%E5%B0%8Fplan/"/>
+    <id>https://coperlm.github.io/2025/08/03/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E4%B9%8B%E5%90%8E%E7%9A%84%E5%B0%8Fplan/</id>
+    <published>2025-08-02T16:15:34.000Z</published>
+    <updated>2025-10-23T12:41:35.046Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
+    
+    <category term="None" scheme="https://coperlm.github.io/tags/None/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最近思考了几个哲学问题</title>
+    <link href="https://coperlm.github.io/2025/08/02/%E6%9C%80%E8%BF%91%E6%80%9D%E8%80%83%E4%BA%86%E5%87%A0%E4%B8%AA%E5%93%B2%E5%AD%A6%E9%97%AE%E9%A2%98/"/>
+    <id>https://coperlm.github.io/2025/08/02/%E6%9C%80%E8%BF%91%E6%80%9D%E8%80%83%E4%BA%86%E5%87%A0%E4%B8%AA%E5%93%B2%E5%AD%A6%E9%97%AE%E9%A2%98/</id>
+    <published>2025-08-02T15:39:32.000Z</published>
+    <updated>2025-10-23T12:47:10.726Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;每一个深入思考的人，最终都站在一个十字路口：是继续质疑一切，直到虚无；还是接受不完美的答案，继续前行。——赫尔曼·黑塞&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;听了一节复旦的哲学课，有一个问题&lt;/p&gt;
+&lt;p&gt;就像基督教徒，或者新教教徒，他们都有自</summary>
+        
+      
+    
+    
+    
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论文泛读学习</title>
+    <link href="https://coperlm.github.io/2025/07/17/%E8%AE%BA%E6%96%87%E6%B3%9B%E8%AF%BB%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://coperlm.github.io/2025/07/17/%E8%AE%BA%E6%96%87%E6%B3%9B%E8%AF%BB%E5%AD%A6%E4%B9%A0/</id>
+    <published>2025-07-17T06:42:55.000Z</published>
+    <updated>2025-10-23T12:11:56.867Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;IMG_20250717_144153.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;IMG_20250717_144139.jpg&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="科研" scheme="https://coperlm.github.io/categories/%E7%A7%91%E7%A0%94/"/>
+    
+    
+    <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
+    
+  </entry>
+  
+</feed>
