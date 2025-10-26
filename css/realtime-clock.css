@@ -1,0 +1,201 @@
+/**
+ * 实时时钟样式
+ * 显示在页面右下角
+ */
+
+/* 为body添加背景过渡效果 */
+body {
+  transition: background 1.5s ease-in-out;
+}
+
+/* 调整rightside按钮组的位置，向上移动为时钟腾出空间 */
+#rightside {
+  bottom: 120px !important; /* 默认为40px，现在向上移动80px */
+}
+
+.realtime-clock {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 998; /* 比rightside(999)低一层 */
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] .realtime-clock {
+  background: rgba(30, 30, 30, 0.85);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 鼠标悬停效果 */
+.realtime-clock:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .realtime-clock:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* 时钟图标 */
+.realtime-clock .clock-icon {
+  font-size: 24px;
+  color: var(--theme-color, #49B1F5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.realtime-clock .clock-icon i {
+  animation: clockTick 1s ease-in-out infinite;
+}
+
+@keyframes clockTick {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+/* 时钟内容 */
+.realtime-clock .clock-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.2;
+}
+
+/* 日期显示 */
+.realtime-clock .clock-date {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--font-color, #363636);
+}
+
+[data-theme="dark"] .realtime-clock .clock-date {
+  color: var(--font-color, #e0e0e0);
+}
+
+/* 星期显示 */
+.realtime-clock .clock-weekday {
+  font-size: 12px;
+  color: var(--theme-color, #49B1F5);
+  font-weight: 500;
+}
+
+/* 时间显示 */
+.realtime-clock .clock-time {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  color: var(--font-color, #363636);
+  letter-spacing: 1px;
+}
+
+[data-theme="dark"] .realtime-clock .clock-time {
+  color: var(--font-color, #e0e0e0);
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  /* 移动端rightside按钮位置调整 */
+  #rightside {
+    bottom: 140px !important; /* 移动端需要更多空间 */
+  }
+
+  .realtime-clock {
+    bottom: 70px; /* 避免与移动端底部菜单重叠 */
+    right: 10px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .realtime-clock .clock-icon {
+    font-size: 20px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .realtime-clock .clock-date {
+    font-size: 12px;
+  }
+
+  .realtime-clock .clock-weekday {
+    font-size: 10px;
+  }
+
+  .realtime-clock .clock-time {
+    font-size: 14px;
+  }
+}
+
+/* 超小屏幕优化 */
+@media screen and (max-width: 480px) {
+  #rightside {
+    bottom: 130px !important;
+  }
+
+  .realtime-clock {
+    padding: 6px 10px;
+    bottom: 60px;
+    right: 8px;
+  }
+
+  .realtime-clock .clock-icon {
+    font-size: 18px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .realtime-clock .clock-date {
+    font-size: 11px;
+  }
+
+  .realtime-clock .clock-weekday {
+    font-size: 9px;
+  }
+
+  .realtime-clock .clock-time {
+    font-size: 13px;
+  }
+}
+
+/* 当rightside隐藏时，调整时钟位置 */
+body:not(.rightside-show) .realtime-clock {
+  animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 打印时隐藏 */
+@media print {
+  .realtime-clock {
+    display: none !important;
+  }
+}
