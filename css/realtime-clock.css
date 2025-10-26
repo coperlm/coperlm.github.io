@@ -8,9 +8,56 @@ body {
   transition: background 1.5s ease-in-out;
 }
 
+/* footer背景过渡效果 */
+#footer {
+  transition: background 1.5s ease-in-out !important;
+}
+
+/* 确保footer文字在各种背景下都清晰可见 */
+#footer-wrap {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  padding: 20px 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* footer文字和链接颜色过渡效果 */
+#footer #footer-wrap,
+#footer #footer-wrap a,
+#footer #footer-wrap .footer-separator,
+#footer #footer-wrap .footer-custom-text,
+#footer #footer-wrap .copyright {
+  transition: color 0.5s ease !important;
+  font-weight: 500;
+}
+
+#footer #footer-wrap a:hover {
+  text-decoration: underline;
+}
+
 /* 调整rightside按钮组的位置，向上移动为时钟腾出空间 */
 #rightside {
   bottom: 120px !important; /* 默认为40px，现在向上移动80px */
+}
+
+/* rightside按钮样式优化 */
+#rightside button,
+#rightside a {
+  transition: all 0.3s ease !important;
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+#rightside button:hover,
+#rightside a:hover {
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 确保按钮图标颜色继承 */
+#rightside button i,
+#rightside a i {
+  color: inherit !important;
 }
 
 .realtime-clock {
