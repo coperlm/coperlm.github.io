@@ -335,11 +335,11 @@ template {
 .custom-hr:before,
 .search-dialog hr:before {
   position: absolute;
-  top: -10px;
+  top: -20px;
   left: 5%;
   z-index: 1;
   color: var(--hr-before-color);
-  content: '\f0c4';
+  content: '\f005';
   font-size: 20px;
   line-height: 1;
   -webkit-transition: all 1s ease-in-out;
