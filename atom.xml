@@ -304,19 +304,19 @@
   
   <entry>
     <title>计算机组成原理学习笔记</title>
-    <link href="https://coperlm.github.io/2025/09/02/%E8%80%83%E7%A0%94408-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://coperlm.github.io/2025/09/02/%E8%80%83%E7%A0%94408-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://coperlm.github.io/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://coperlm.github.io/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2025-09-02T11:02:56.000Z</published>
-    <updated>2025-10-23T12:10:53.826Z</updated>
+    <updated>2025-10-27T09:23:34.191Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="1.jpg" alt="1"></p><p><img src="2.jpg" alt="2"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="1.jpg" alt></p><p><img src="2.jpg" alt></p>]]></content>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;1.jpg&quot; alt=&quot;1&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;1.jpg&quot; alt&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;2.jpg&quot;</summary>
         
       
