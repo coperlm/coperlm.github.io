@@ -47,3 +47,11 @@ div.post-copyright:before {
 hr:hover:before {
   transform: translateX(-50%) scale(1.0) !important;
 }
+
+/* 搜索页面的图标 - 缩小一半 */
+#local-search .custom-hr:before,
+#local-search hr:before {
+  width: 40px !important;
+  height: 40px !important;
+  top: -25px !important;
+}
