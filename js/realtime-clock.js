@@ -5,66 +5,11 @@
 (function() {
   'use strict';
 
-  // 配置API列表（按优先级顺序）
-  const TIME_APIS = [
-    {
-      name: 'suning',
-      url: 'https://f.m.suning.com/api/ct.do',
-      parseTime: (data) => data.currentTime
-    },
-    {
-      name: 'jd',
-      url: 'https://a.jd.com/ajax/queryServerData.html',
-      parseTime: (data) => data.serverTime
-    },
-    {
-      name: 'taobao',
-      url: 'https://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp',
-      parseTime: (data) => parseInt(data.data.t)
-    }
-  ];
-
-  // 时间偏移量（用于同步本地时间和服务器时间）
-  let timeOffset = 0;
-
   /**
-   * 从API获取服务器时间
-   */
-  async function fetchServerTime() {
-    for (const api of TIME_APIS) {
-      try {
-        const response = await fetch(api.url, {
-          method: 'GET',
-          mode: 'cors',
-          cache: 'no-cache'
-        });
-        
-        if (!response.ok) continue;
-        
-        const data = await response.json();
-        const serverTime = api.parseTime(data);
-        
-        if (serverTime && !isNaN(serverTime)) {
-          const localTime = Date.now();
-          timeOffset = serverTime - localTime;
-          console.log(`[实时时钟] 成功从 ${api.name} 同步时间，偏移量: ${timeOffset}ms`);
-          return true;
-        }
-      } catch (error) {
-        console.warn(`[实时时钟] ${api.name} API调用失败:`, error);
-        continue;
-      }
-    }
-    
-    console.warn('[实时时钟] 所有API均失败，使用本地时间');
-    return false;
-  }
-
-  /**
-   * 获取当前时间（服务器时间或本地时间）
+   * 获取当前时间（本地时间）
    */
   function getCurrentTime() {
-    return new Date(Date.now() + timeOffset);
+    return new Date();
   }
 
   /**
@@ -200,74 +145,80 @@
    * 更新rightside按钮颜色
    */
   function updateRightsideButtonColors() {
+    const rightside = document.getElementById('rightside');
+    if (!rightside) {
+      return false;
+    }
+    
     const now = getCurrentTime();
     const hour = now.getHours();
     const colors = chooseButtonColorByHour(hour);
     
-    const rightside = document.getElementById('rightside');
-    if (!rightside) return;
-    
     // 为所有rightside按钮应用颜色
     const buttons = rightside.querySelectorAll('button, a');
+    if (buttons.length === 0) {
+      return false;
+    }
+    
     buttons.forEach(btn => {
       btn.style.backgroundColor = colors.background;
       btn.style.color = colors.color;
       btn.style.transition = 'all 0.3s ease';
       
-      // 添加hover效果
-      btn.addEventListener('mouseenter', function() {
+      // 使用onmouseenter/onmouseleave避免重复添加监听器
+      btn.onmouseenter = function() {
         this.style.backgroundColor = colors.hover;
-      });
+      };
       
-      btn.addEventListener('mouseleave', function() {
+      btn.onmouseleave = function() {
         this.style.backgroundColor = colors.background;
-      });
+      };
     });
     
-    console.log(`[实时时钟] 更新按钮颜色为 ${hour}:00 时段`);
+    return true;
   }
 
   /**
    * 更新footer文字颜色
    */
   function updateFooterTextColor() {
+    const footer = document.getElementById('footer');
+    if (!footer) {
+      return false;
+    }
+    
+    const footerWrap = footer.querySelector('#footer-wrap');
+    if (!footerWrap) {
+      return false;
+    }
+    
     const now = getCurrentTime();
     const hour = now.getHours();
     const colors = chooseButtonColorByHour(hour);
     
-    const footer = document.getElementById('footer');
-    if (!footer) return;
+    // 设置统一的文字颜色（与按钮背景色相同，确保对比度）
+    footerWrap.style.setProperty('color', colors.background, 'important');
     
-    // 更新footer所有文字和链接的颜色
-    const footerWrap = footer.querySelector('#footer-wrap');
-    if (footerWrap) {
-      // 设置统一的文字颜色（与按钮背景色相同，确保对比度）
-      footerWrap.style.color = colors.background;
+    // 更新所有链接和文字元素
+    const allElements = footerWrap.querySelectorAll('a, .footer-separator, .footer-custom-text, .copyright, span, div');
+    
+    allElements.forEach(el => {
+      el.style.color = colors.background;
+      el.style.transition = 'all 0.3s ease';
       
-      // 更新所有链接颜色
-      const links = footerWrap.querySelectorAll('a');
-      links.forEach(link => {
-        link.style.color = colors.background;
-        link.style.transition = 'all 0.3s ease';
-        
-        // 添加hover效果
-        link.addEventListener('mouseenter', function() {
+      // 只为链接添加hover效果
+      if (el.tagName === 'A') {
+        el.onmouseenter = function() {
           this.style.color = colors.hover;
-        });
+        };
         
-        link.addEventListener('mouseleave', function() {
+        el.onmouseleave = function() {
           this.style.color = colors.background;
-        });
-      });
-      
-      // 更新其他文字元素
-      const textElements = footerWrap.querySelectorAll('.footer-separator, .footer-custom-text, .copyright');
-      textElements.forEach(el => {
-        el.style.color = colors.background;
-      });
-    }
+        };
+      }
+    });
     
-    console.log(`[实时时钟] 更新footer文字颜色为 ${hour}:00 时段`);
+    return true;
   }
 
   /**
@@ -276,6 +227,12 @@
   function updateBackground() {
     const now = getCurrentTime();
     const hour = now.getHours();
+    
+    // 如果小时没变，不重复更新
+    if (hour === updateBackground.lastHour) {
+      return;
+    }
+    
     const gradient = chooseGradientByHour(hour);
     
     // 更新body背景
@@ -289,12 +246,30 @@
       footer.style.backgroundAttachment = 'fixed';
     }
     
-    // 保存当前小时，避免重复更新
+    // 保存当前小时
     updateBackground.lastHour = hour;
     
-    console.log(`[实时时钟] 更新背景为 ${hour}:00 时段`);
+    console.log(`[实时时钟] 背景更新为 ${hour}:00 时段 (${getTimeDescription(hour)})`);
   }
   updateBackground.lastHour = -1;
+
+  /**
+   * 获取时段描述
+   */
+  function getTimeDescription(h) {
+    if (h >= 4 && h < 6) return '黎明';
+    if (h >= 6 && h < 8) return '日出';
+    if (h >= 8 && h < 10) return '清晨';
+    if (h >= 10 && h < 12) return '上午';
+    if (h >= 12 && h < 14) return '中午';
+    if (h >= 14 && h < 16) return '下午';
+    if (h >= 16 && h < 18) return '傍晚';
+    if (h >= 18 && h < 19) return '黄昏';
+    if (h >= 19 && h < 20) return '日落';
+    if (h >= 20 && h < 22) return '晚霞';
+    if (h >= 22 || h < 2) return '深夜';
+    return '凌晨';
+  }
 
   /**
    * 更新时钟显示
@@ -349,27 +324,77 @@
   /**
    * 初始化时钟
    */
-  async function initClock() {
+  function initClock() {
     // 创建时钟元素
     createClockElement();
-
-    // 首次显示本地时间
-    updateClock();
-
-    // 获取服务器时间并同步
-    await fetchServerTime();
 
     // 立即更新一次（包括背景和按钮颜色）
     updateClock();
     updateBackground();
-    updateRightsideButtonColors();
-    updateFooterTextColor();
+    
+    // 尝试更新按钮和footer颜色，如果失败则延迟重试
+    let retryCount = 0;
+    const maxRetries = 5;
+    
+    const tryUpdateColors = () => {
+      const rightsideSuccess = updateRightsideButtonColors();
+      const footerSuccess = updateFooterTextColor();
+      
+      if ((!rightsideSuccess || !footerSuccess) && retryCount < maxRetries) {
+        retryCount++;
+        console.log(`[实时时钟] 颜色更新重试 ${retryCount}/${maxRetries}`);
+        setTimeout(tryUpdateColors, 300); // 300ms后重试
+      } else if (rightsideSuccess && footerSuccess) {
+        console.log('[实时时钟] 所有颜色更新成功');
+      } else if (retryCount >= maxRetries) {
+        console.warn('[实时时钟] 达到最大重试次数，部分元素可能未更新');
+      }
+    };
+    
+    // 立即尝试
+    tryUpdateColors();
+    
+    // 300ms后再次尝试（确保页面完全加载）
+    setTimeout(tryUpdateColors, 300);
+    
+    // 1秒后最终尝试
+    setTimeout(tryUpdateColors, 1000);
 
-    // 每秒更新
+    // 监听DOM变化，当footer元素被添加时自动更新颜色
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.addedNodes.length) {
+          mutation.addedNodes.forEach(node => {
+            if (node.nodeType === 1) { // 元素节点
+              if (node.id === 'footer' || (node.querySelector && node.querySelector('#footer'))) {
+                console.log('[实时时钟] 检测到footer元素加载，更新颜色');
+                setTimeout(() => {
+                  updateFooterTextColor();
+                  updateBackground();
+                }, 100);
+              }
+              if (node.id === 'rightside' || (node.querySelector && node.querySelector('#rightside'))) {
+                console.log('[实时时钟] 检测到rightside元素加载，更新颜色');
+                setTimeout(() => {
+                  updateRightsideButtonColors();
+                }, 100);
+              }
+            }
+          });
+        }
+      }
+    });
+
+    // 开始监听body的子元素变化
+    if (document.body) {
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    }
+
+    // 每秒更新时钟
     setInterval(updateClock, 1000);
-
-    // 每30分钟重新同步一次服务器时间
-    setInterval(fetchServerTime, 30 * 60 * 1000);
   }
 
   // 页面加载完成后初始化

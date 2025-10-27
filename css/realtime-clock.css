@@ -21,18 +21,26 @@ body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-/* footer文字和链接颜色过渡效果 */
+/* footer文字和链接颜色过渡效果 - 提高优先级 */
 #footer #footer-wrap,
+#footer #footer-wrap *,
 #footer #footer-wrap a,
 #footer #footer-wrap .footer-separator,
 #footer #footer-wrap .footer-custom-text,
 #footer #footer-wrap .copyright {
   transition: color 0.5s ease !important;
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 #footer #footer-wrap a:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
+}
+
+/* 移除深色模式可能的颜色覆盖 */
+[data-theme="dark"] #footer #footer-wrap,
+[data-theme="dark"] #footer #footer-wrap *,
+[data-theme="dark"] #footer #footer-wrap a {
+  transition: color 0.5s ease !important;
 }
 
 /* 调整rightside按钮组的位置，向上移动为时钟腾出空间 */
