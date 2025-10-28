@@ -257,18 +257,36 @@
    * 获取时段描述
    */
   function getTimeDescription(h) {
-    if (h >= 4 && h < 6) return '黎明';
-    if (h >= 6 && h < 8) return '日出';
-    if (h >= 8 && h < 10) return '清晨';
-    if (h >= 10 && h < 12) return '上午';
-    if (h >= 12 && h < 14) return '中午';
-    if (h >= 14 && h < 16) return '下午';
-    if (h >= 16 && h < 18) return '傍晚';
-    if (h >= 18 && h < 19) return '黄昏';
-    if (h >= 19 && h < 20) return '日落';
-    if (h >= 20 && h < 22) return '晚霞';
-    if (h >= 22 || h < 2) return '深夜';
-    return '凌晨';
+    if (h >= 4 && h < 6) return '黎明·柔和渐染';
+    if (h >= 6 && h < 8) return '日出·温暖朝霞';
+    if (h >= 8 && h < 10) return '清晨·清新明亮';
+    if (h >= 10 && h < 12) return '上午·晴空万里';
+    if (h >= 12 && h < 14) return '中午·清爽正午';
+    if (h >= 14 && h < 16) return '下午·海岛风情';
+    if (h >= 16 && h < 18) return '傍晚·暖调黄昏';
+    if (h >= 18 && h < 19) return '黄昏·黄金时刻';
+    if (h >= 19 && h < 20) return '日落·梦幻紫霞';
+    if (h >= 20 && h < 22) return '晚霞·霓虹绚烂';
+    if (h >= 22 || h < 2) return '深夜·星空璀璨';
+    return '凌晨·宁静深邃';
+  }
+
+  /**
+   * 获取时段主题颜色（用于时钟主题名称显示）
+   */
+  function getThemeColor(h) {
+    if (h >= 4 && h < 6) return '#D4A574';    // 黎明：温暖的桃棕色
+    if (h >= 6 && h < 8) return '#FF8FA3';    // 日出：柔和的粉红
+    if (h >= 8 && h < 10) return '#7BC96F';   // 清晨：清新的绿色
+    if (h >= 10 && h < 12) return '#5A9FD4';  // 上午：明朗的天蓝
+    if (h >= 12 && h < 14) return '#4ECDC4';  // 中午：清爽的青绿
+    if (h >= 14 && h < 16) return '#26D0CE';  // 下午：明亮的碧蓝
+    if (h >= 16 && h < 18) return '#F5A623';  // 傍晚：温暖的琥珀
+    if (h >= 18 && h < 19) return '#F39C12';  // 黄昏：金色橙
+    if (h >= 19 && h < 20) return '#A569BD';  // 日落：梦幻紫
+    if (h >= 20 && h < 22) return '#C25283';  // 晚霞：玫瑰红
+    if (h >= 22 || h < 2) return '#6C5CE7';   // 深夜：星空紫
+    return '#5B6EAA';                          // 凌晨：深邃蓝紫
   }
 
   /**
@@ -280,13 +298,19 @@
 
     const now = getCurrentTime();
     const { date, weekday, time } = formatTime(now);
+    const currentHour = now.getHours();
+    const themeName = getTimeDescription(currentHour);
+    const themeColor = getThemeColor(currentHour);
 
     clockElement.querySelector('.clock-date').textContent = date;
     clockElement.querySelector('.clock-weekday').textContent = weekday;
     clockElement.querySelector('.clock-time').textContent = time;
+    
+    const themeElement = clockElement.querySelector('.clock-theme');
+    themeElement.textContent = themeName;
+    themeElement.style.color = themeColor;
 
     // 检查是否需要更新背景和按钮颜色（每小时更新一次）
-    const currentHour = now.getHours();
     if (currentHour !== updateBackground.lastHour) {
       updateBackground();
       updateRightsideButtonColors();
@@ -300,13 +324,16 @@
   function createClockElement() {
     const clockHTML = `
       <div id="realtime-clock" class="realtime-clock">
-        <div class="clock-icon">
-          <i class="fas fa-clock"></i>
+        <div class="clock-left">
+          <div class="clock-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="clock-weekday">---</div>
         </div>
         <div class="clock-content">
           <div class="clock-date">----------</div>
-          <div class="clock-weekday">---</div>
           <div class="clock-time">--:--:--</div>
+          <div class="clock-theme">---</div>
         </div>
       </div>
     `;

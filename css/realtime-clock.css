@@ -102,6 +102,14 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* 左侧部分：时钟图标和星期 */
+.realtime-clock .clock-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
 /* 时钟图标 */
 .realtime-clock .clock-icon {
   font-size: 24px;
@@ -129,7 +137,15 @@ body {
   }
 }
 
-/* 时钟内容 */
+/* 星期显示（移到图标下方） */
+.realtime-clock .clock-weekday {
+  font-size: 12px;
+  color: var(--theme-color, #49B1F5);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* 右侧内容 */
 .realtime-clock .clock-content {
   display: flex;
   flex-direction: column;
@@ -148,13 +164,6 @@ body {
   color: var(--font-color, #e0e0e0);
 }
 
-/* 星期显示 */
-.realtime-clock .clock-weekday {
-  font-size: 12px;
-  color: var(--theme-color, #49B1F5);
-  font-weight: 500;
-}
-
 /* 时间显示 */
 .realtime-clock .clock-time {
   font-size: 16px;
@@ -166,6 +175,21 @@ body {
 
 [data-theme="dark"] .realtime-clock .clock-time {
   color: var(--font-color, #e0e0e0);
+}
+
+/* 主题名称显示（艺术字体） */
+.realtime-clock .clock-theme {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'STKaiti', 'KaiTi', '楷体', 'SimKai', 'FangSong', '仿宋', cursive, serif;
+  font-style: normal;
+  transition: color 0.5s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  letter-spacing: 1px;
+}
+
+[data-theme="dark"] .realtime-clock .clock-theme {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* 移动端适配 */
@@ -193,11 +217,15 @@ body {
   }
 
   .realtime-clock .clock-weekday {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .realtime-clock .clock-time {
     font-size: 14px;
+  }
+
+  .realtime-clock .clock-theme {
+    font-size: 10px;
   }
 }
 
@@ -224,11 +252,15 @@ body {
   }
 
   .realtime-clock .clock-weekday {
-    font-size: 9px;
+    font-size: 8px;
   }
 
   .realtime-clock .clock-time {
     font-size: 13px;
+  }
+
+  .realtime-clock .clock-theme {
+    font-size: 9px;
   }
 }
 
