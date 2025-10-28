@@ -1,64 +1,44 @@
 /**
  * 实时时钟模块
  * 显示在页面右下角的实时时间
+ * 包含：时钟显示、背景渐变色管理、按钮和文字颜色管理
  */
 (function() {
   'use strict';
 
-  // ========================================
-  // 立即执行：设置初始背景（防止蓝色闪现）
-  // ========================================
-  (function setInitialBackground() {
-    try {
-      const hour = new Date().getHours();
-      let gradient;
-      
-      // 简化版的渐变选择（与chooseGradientByHour保持一致）
-      if (hour >= 4 && hour < 6) {
-        gradient = 'linear-gradient(180deg, #FFF5F0 0%, #FFE4D6 30%, #FFD6BA 60%, #FFB4A2 100%)';
-      } else if (hour >= 6 && hour < 8) {
-        gradient = 'linear-gradient(180deg, #FFEAA7 0%, #FFD79A 25%, #FFA99F 60%, #FF719A 100%)';
-      } else if (hour >= 8 && hour < 10) {
-        gradient = 'linear-gradient(180deg, #F8FFAE 0%, #D4FC79 25%, #96E6A1 60%, #A8E6CF 85%, #C2FFD8 100%)';
-      } else if (hour >= 10 && hour < 12) {
-        gradient = 'linear-gradient(180deg, #E0F7FA 0%, #A1C4FD 35%, #B8D5F0 65%, #C2E9FB 100%)';
-      } else if (hour >= 12 && hour < 14) {
-        gradient = 'linear-gradient(180deg, #A7FFE4 0%, #84FAB0 30%, #7FE5D4 65%, #8FD3F4 100%)';
-      } else if (hour >= 14 && hour < 16) {
-        gradient = 'linear-gradient(180deg, #55E6C1 0%, #43E97B 30%, #3FD5BA 65%, #38F9D7 100%)';
-      } else if (hour >= 16 && hour < 18) {
-        gradient = 'linear-gradient(180deg, #FFEAA7 0%, #FCE38A 30%, #FFBE76 65%, #F38181 100%)';
-      } else if (hour >= 18 && hour < 19) {
-        gradient = 'linear-gradient(180deg, #FDD835 0%, #FBD786 25%, #FFA87D 60%, #F7797D 100%)';
-      } else if (hour >= 19 && hour < 20) {
-        gradient = 'linear-gradient(180deg, #FFB088 0%, #FF9A9E 30%, #D988B9 65%, #8E54E9 100%)';
-      } else if (hour >= 20 && hour < 22) {
-        gradient = 'linear-gradient(180deg, #FFE5EC 0%, #FBD3E9 25%, #E5A3C7 60%, #BB377D 100%)';
-      } else if (hour >= 22 || hour < 2) {
-        gradient = 'linear-gradient(180deg, #7B68EE 0%, #667eea 30%, #6B5EA8 65%, #764ba2 100%)';
-      } else {
-        gradient = 'linear-gradient(180deg, #3B4371 0%, #4e54c8 30%, #7B7FDC 65%, #8f94fb 100%)';
-      }
-      
-      // 立即应用到body
-      if (document.body) {
-        document.body.style.setProperty('background', gradient, 'important');
-        document.body.style.setProperty('background-attachment', 'fixed', 'important');
-      } else {
-        // 如果body还未加载，等待DOM加载
-        document.addEventListener('DOMContentLoaded', function() {
-          if (document.body) {
-            document.body.style.setProperty('background', gradient, 'important');
-            document.body.style.setProperty('background-attachment', 'fixed', 'important');
-          }
-        });
-      }
-      
-      console.log(`[实时时钟] 初始背景已设置 (${hour}:00)`);
-    } catch (error) {
-      console.error('[实时时钟] 初始背景设置失败:', error);
-    }
-  })();
+  /**
+   * 根据小时获取所有颜色配置
+   * 返回 { gradient: string, footerColor: string }
+   */
+  function getColorsForHour(h) {
+    const configs = {
+      4: { gradient: 'linear-gradient(180deg, #FFF5F0 0%, #FFE4D6 30%, #FFD6BA 60%, #FFB4A2 100%)', footerColor: '#FFB4A2' },
+      6: { gradient: 'linear-gradient(180deg, #FFEAA7 0%, #FFD79A 25%, #FFA99F 60%, #FF719A 100%)', footerColor: '#FF719A' },
+      8: { gradient: 'linear-gradient(180deg, #F8FFAE 0%, #D4FC79 25%, #96E6A1 60%, #A8E6CF 85%, #C2FFD8 100%)', footerColor: '#C2FFD8' },
+      10: { gradient: 'linear-gradient(180deg, #E0F7FA 0%, #A1C4FD 35%, #B8D5F0 65%, #C2E9FB 100%)', footerColor: '#C2E9FB' },
+      12: { gradient: 'linear-gradient(180deg, #A7FFE4 0%, #84FAB0 30%, #7FE5D4 65%, #8FD3F4 100%)', footerColor: '#8FD3F4' },
+      14: { gradient: 'linear-gradient(180deg, #55E6C1 0%, #43E97B 30%, #3FD5BA 65%, #38F9D7 100%)', footerColor: '#38F9D7' },
+      16: { gradient: 'linear-gradient(180deg, #FFEAA7 0%, #FCE38A 30%, #FFBE76 65%, #F38181 100%)', footerColor: '#F38181' },
+      18: { gradient: 'linear-gradient(180deg, #FDD835 0%, #FBD786 25%, #FFA87D 60%, #F7797D 100%)', footerColor: '#F7797D' },
+      19: { gradient: 'linear-gradient(180deg, #FFB088 0%, #FF9A9E 30%, #D988B9 65%, #8E54E9 100%)', footerColor: '#8E54E9' },
+      20: { gradient: 'linear-gradient(180deg, #FFE5EC 0%, #FBD3E9 25%, #E5A3C7 60%, #BB377D 100%)', footerColor: '#BB377D' },
+      22: { gradient: 'linear-gradient(180deg, #7B68EE 0%, #667eea 30%, #6B5EA8 65%, #764ba2 100%)', footerColor: '#764ba2' },
+      2: { gradient: 'linear-gradient(180deg, #3B4371 0%, #4e54c8 30%, #7B7FDC 65%, #8f94fb 100%)', footerColor: '#8f94fb' }
+    };
+    
+    if (h >= 4 && h < 6) return configs[4];
+    if (h >= 6 && h < 8) return configs[6];
+    if (h >= 8 && h < 10) return configs[8];
+    if (h >= 10 && h < 12) return configs[10];
+    if (h >= 12 && h < 14) return configs[12];
+    if (h >= 14 && h < 16) return configs[14];
+    if (h >= 16 && h < 18) return configs[16];
+    if (h >= 18 && h < 19) return configs[18];
+    if (h >= 19 && h < 20) return configs[19];
+    if (h >= 20 && h < 22) return configs[20];
+    if (h >= 22 || h < 2) return configs[22];
+    return configs[2];
+  }
 
   /**
    * 获取当前时间（本地时间）
@@ -88,59 +68,10 @@
   }
 
   /**
-   * 根据小时选择背景渐变色
+   * 根据小时选择背景渐变色（已废弃，使用 getColorsForHour）
    */
   function chooseGradientByHour(h) {
-    // h is 0..23 (local hour)
-    // Return CSS gradient string
-    const g = (...colors) => `linear-gradient(180deg, ${colors.join(', ')})`;
-
-    if (h >= 4 && h < 6) {
-      // 04-06 黎明：柔和桃粉 - 从浅米到桃色到玫瑰粉
-      return g('#FFF5F0 0%', '#FFE4D6 30%', '#FFD6BA 60%', '#FFB4A2 100%');
-    }
-    if (h >= 6 && h < 8) {
-      // 06-08 日出：金粉暖调 - 从金黄到杏色到粉红
-      return g('#FFEAA7 0%', '#FFD79A 25%', '#FFA99F 60%', '#FF719A 100%');
-    }
-    if (h >= 8 && h < 10) {
-      // 08-10 清晨：薄荷天光 - 从柠檬黄到薄荷绿到天蓝
-      return g('#F8FFAE 0%', '#D4FC79 25%', '#96E6A1 60%', '#A8E6CF 85%', '#C2FFD8 100%');
-    }
-    if (h >= 10 && h < 12) {
-      // 10-12 蔚蓝天空 - 从淡蓝到天蓝到云白
-      return g('#E0F7FA 0%', '#A1C4FD 35%', '#B8D5F0 65%', '#C2E9FB 100%');
-    }
-    if (h >= 12 && h < 14) {
-      // 12-14 仲午：清爽青绿 - 从薄荷到青绿到湖蓝
-      return g('#A7FFE4 0%', '#84FAB0 30%', '#7FE5D4 65%', '#8FD3F4 100%');
-    }
-    if (h >= 14 && h < 16) {
-      // 14-16 海岛青蓝 - 从翠绿到青绿到碧蓝
-      return g('#55E6C1 0%', '#43E97B 30%', '#3FD5BA 65%', '#38F9D7 100%');
-    }
-    if (h >= 16 && h < 18) {
-      // 16-18 午后：琥珀暖金 - 从金黄到琥珀到珊瑚
-      return g('#FFEAA7 0%', '#FCE38A 30%', '#FFBE76 65%', '#F38181 100%');
-    }
-    if (h >= 18 && h < 19) {
-      // 18-19 黄金时刻：金→珊瑚 - 从金色到橙色到粉红
-      return g('#FDD835 0%', '#FBD786 25%', '#FFA87D 60%', '#F7797D 100%');
-    }
-    if (h >= 19 && h < 20) {
-      // 19-20 黄昏：橙粉→绯紫 - 从橙粉到玫瑰到紫罗兰
-      return g('#FFB088 0%', '#FF9A9E 30%', '#D988B9 65%', '#8E54E9 100%');
-    }
-    if (h >= 20 && h < 22) {
-      // 20-22 晚霞：霓虹粉紫 - 从淡粉到玫瑰到深紫
-      return g('#FFE5EC 0%', '#FBD3E9 25%', '#E5A3C7 60%', '#BB377D 100%');
-    }
-    if (h >= 22 || h < 2) {
-      // 22-02 深夜：蓝紫星空 - 从蓝紫到深紫到宝石紫
-      return g('#7B68EE 0%', '#667eea 30%', '#6B5EA8 65%', '#764ba2 100%');
-    }
-    // 02-04 凌晨：深紫夜空 - 从深蓝到紫罗兰到淡紫
-    return g('#3B4371 0%', '#4e54c8 30%', '#7B7FDC 65%', '#8f94fb 100%');
+    return getColorsForHour(h).gradient;
   }
 
   /**
@@ -280,37 +211,31 @@
    * 更新页面背景
    */
   function updateBackground() {
-    try {
-      const now = getCurrentTime();
-      const hour = now.getHours();
-      
-      // 如果小时没变，不重复更新
-      if (hour === updateBackground.lastHour) {
-        return;
-      }
-      
-      const gradient = chooseGradientByHour(hour);
-      
-      // 更新body背景 - 添加!important确保覆盖CSS默认值
-      if (document.body) {
-        document.body.style.setProperty('background', gradient, 'important');
-        document.body.style.setProperty('background-attachment', 'fixed', 'important');
-      }
-      
-      // 更新footer背景（与body保持一致）
-      const footer = document.getElementById('footer');
-      if (footer) {
-        footer.style.setProperty('background', gradient, 'important');
-        footer.style.setProperty('background-attachment', 'fixed', 'important');
-      }
-      
-      // 保存当前小时
-      updateBackground.lastHour = hour;
-      
-      console.log(`[实时时钟] 背景更新为 ${hour}:00 时段 (${getTimeDescription(hour)})`);
-    } catch (error) {
-      console.error('[实时时钟] 背景更新失败:', error);
+    const now = getCurrentTime();
+    const hour = now.getHours();
+    
+    // 如果小时没变，不重复更新
+    if (hour === updateBackground.lastHour) {
+      return;
     }
+    
+    const colors = getColorsForHour(hour);
+    
+    // 更新body背景（渐变色）
+    document.body.style.setProperty('background', colors.gradient, 'important');
+    document.body.style.setProperty('background-attachment', 'fixed', 'important');
+    
+    // 更新footer背景（纯色 - 渐变的最后一种颜色）
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.style.setProperty('background', colors.footerColor, 'important');
+      footer.style.removeProperty('background-attachment');
+    }
+    
+    // 保存当前小时
+    updateBackground.lastHour = hour;
+    
+    console.log(`[实时时钟] 背景更新为 ${hour}:00 时段 (${getTimeDescription(hour)})`);
   }
   updateBackground.lastHour = -1;
 
@@ -413,18 +338,12 @@
    * 初始化时钟
    */
   function initClock() {
-    // 立即更新背景（在创建时钟元素之前）
-    // 这样确保即使时钟创建失败，背景也会更新
-    updateBackground();
-    
     // 创建时钟元素
     createClockElement();
 
     // 立即更新一次（包括背景和按钮颜色）
     updateClock();
-    
-    // 再次确保背景已更新
-    setTimeout(() => updateBackground(), 0);
+    updateBackground();
     
     // 尝试更新按钮和footer颜色，如果失败则延迟重试
     let retryCount = 0;

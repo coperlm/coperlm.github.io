@@ -3,19 +3,13 @@
  * 显示在页面右下角
  */
 
-/* 为body添加背景过渡效果和默认渐变背景（JS加载前的回退方案） */
+/* 为body添加背景过渡效果 */
 body {
-  /* 默认使用一个优雅的渐变背景，避免显示纯蓝色 */
-  background: linear-gradient(180deg, #E0F7FA 0%, #A1C4FD 35%, #B8D5F0 65%, #C2E9FB 100%) !important;
-  background-attachment: fixed !important;
   transition: background 1.5s ease-in-out;
 }
 
-/* footer背景过渡效果和默认渐变背景 */
+/* footer背景过渡效果 */
 #footer {
-  /* 与body保持一致的默认渐变背景 */
-  background: linear-gradient(180deg, #E0F7FA 0%, #A1C4FD 35%, #B8D5F0 65%, #C2E9FB 100%) !important;
-  background-attachment: fixed !important;
   transition: background 1.5s ease-in-out !important;
 }
 
