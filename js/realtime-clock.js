@@ -5,6 +5,61 @@
 (function() {
   'use strict';
 
+  // ========================================
+  // 立即执行：设置初始背景（防止蓝色闪现）
+  // ========================================
+  (function setInitialBackground() {
+    try {
+      const hour = new Date().getHours();
+      let gradient;
+      
+      // 简化版的渐变选择（与chooseGradientByHour保持一致）
+      if (hour >= 4 && hour < 6) {
+        gradient = 'linear-gradient(180deg, #FFF5F0 0%, #FFE4D6 30%, #FFD6BA 60%, #FFB4A2 100%)';
+      } else if (hour >= 6 && hour < 8) {
+        gradient = 'linear-gradient(180deg, #FFEAA7 0%, #FFD79A 25%, #FFA99F 60%, #FF719A 100%)';
+      } else if (hour >= 8 && hour < 10) {
+        gradient = 'linear-gradient(180deg, #F8FFAE 0%, #D4FC79 25%, #96E6A1 60%, #A8E6CF 85%, #C2FFD8 100%)';
+      } else if (hour >= 10 && hour < 12) {
+        gradient = 'linear-gradient(180deg, #E0F7FA 0%, #A1C4FD 35%, #B8D5F0 65%, #C2E9FB 100%)';
+      } else if (hour >= 12 && hour < 14) {
+        gradient = 'linear-gradient(180deg, #A7FFE4 0%, #84FAB0 30%, #7FE5D4 65%, #8FD3F4 100%)';
+      } else if (hour >= 14 && hour < 16) {
+        gradient = 'linear-gradient(180deg, #55E6C1 0%, #43E97B 30%, #3FD5BA 65%, #38F9D7 100%)';
+      } else if (hour >= 16 && hour < 18) {
+        gradient = 'linear-gradient(180deg, #FFEAA7 0%, #FCE38A 30%, #FFBE76 65%, #F38181 100%)';
+      } else if (hour >= 18 && hour < 19) {
+        gradient = 'linear-gradient(180deg, #FDD835 0%, #FBD786 25%, #FFA87D 60%, #F7797D 100%)';
+      } else if (hour >= 19 && hour < 20) {
+        gradient = 'linear-gradient(180deg, #FFB088 0%, #FF9A9E 30%, #D988B9 65%, #8E54E9 100%)';
+      } else if (hour >= 20 && hour < 22) {
+        gradient = 'linear-gradient(180deg, #FFE5EC 0%, #FBD3E9 25%, #E5A3C7 60%, #BB377D 100%)';
+      } else if (hour >= 22 || hour < 2) {
+        gradient = 'linear-gradient(180deg, #7B68EE 0%, #667eea 30%, #6B5EA8 65%, #764ba2 100%)';
+      } else {
+        gradient = 'linear-gradient(180deg, #3B4371 0%, #4e54c8 30%, #7B7FDC 65%, #8f94fb 100%)';
+      }
+      
+      // 立即应用到body
+      if (document.body) {
+        document.body.style.setProperty('background', gradient, 'important');
+        document.body.style.setProperty('background-attachment', 'fixed', 'important');
+      } else {
+        // 如果body还未加载，等待DOM加载
+        document.addEventListener('DOMContentLoaded', function() {
+          if (document.body) {
+            document.body.style.setProperty('background', gradient, 'important');
+            document.body.style.setProperty('background-attachment', 'fixed', 'important');
+          }
+        });
+      }
+      
+      console.log(`[实时时钟] 初始背景已设置 (${hour}:00)`);
+    } catch (error) {
+      console.error('[实时时钟] 初始背景设置失败:', error);
+    }
+  })();
+
   /**
    * 获取当前时间（本地时间）
    */
@@ -225,31 +280,37 @@
    * 更新页面背景
    */
   function updateBackground() {
-    const now = getCurrentTime();
-    const hour = now.getHours();
-    
-    // 如果小时没变，不重复更新
-    if (hour === updateBackground.lastHour) {
-      return;
+    try {
+      const now = getCurrentTime();
+      const hour = now.getHours();
+      
+      // 如果小时没变，不重复更新
+      if (hour === updateBackground.lastHour) {
+        return;
+      }
+      
+      const gradient = chooseGradientByHour(hour);
+      
+      // 更新body背景 - 添加!important确保覆盖CSS默认值
+      if (document.body) {
+        document.body.style.setProperty('background', gradient, 'important');
+        document.body.style.setProperty('background-attachment', 'fixed', 'important');
+      }
+      
+      // 更新footer背景（与body保持一致）
+      const footer = document.getElementById('footer');
+      if (footer) {
+        footer.style.setProperty('background', gradient, 'important');
+        footer.style.setProperty('background-attachment', 'fixed', 'important');
+      }
+      
+      // 保存当前小时
+      updateBackground.lastHour = hour;
+      
+      console.log(`[实时时钟] 背景更新为 ${hour}:00 时段 (${getTimeDescription(hour)})`);
+    } catch (error) {
+      console.error('[实时时钟] 背景更新失败:', error);
     }
-    
-    const gradient = chooseGradientByHour(hour);
-    
-    // 更新body背景
-    document.body.style.background = gradient;
-    document.body.style.backgroundAttachment = 'fixed';
-    
-    // 更新footer背景（与body保持一致）
-    const footer = document.getElementById('footer');
-    if (footer) {
-      footer.style.background = gradient;
-      footer.style.backgroundAttachment = 'fixed';
-    }
-    
-    // 保存当前小时
-    updateBackground.lastHour = hour;
-    
-    console.log(`[实时时钟] 背景更新为 ${hour}:00 时段 (${getTimeDescription(hour)})`);
   }
   updateBackground.lastHour = -1;
 
@@ -352,12 +413,18 @@
    * 初始化时钟
    */
   function initClock() {
+    // 立即更新背景（在创建时钟元素之前）
+    // 这样确保即使时钟创建失败，背景也会更新
+    updateBackground();
+    
     // 创建时钟元素
     createClockElement();
 
     // 立即更新一次（包括背景和按钮颜色）
     updateClock();
-    updateBackground();
+    
+    // 再次确保背景已更新
+    setTimeout(() => updateBackground(), 0);
     
     // 尝试更新按钮和footer颜色，如果失败则延迟重试
     let retryCount = 0;
