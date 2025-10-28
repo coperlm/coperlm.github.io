@@ -206,7 +206,6 @@ template {
   -webkit-box-orient: vertical;
 }
 .fontawesomeIcon,
-#post .post-copyright:before,
 #post #post-outdate-notice:before,
 .note:not(.no-icon)::before {
   display: inline-block;
@@ -4096,12 +4095,16 @@ figure.highlight pre .javascript .function {
   border-radius: 6px;
 }
 #post .post-copyright:before {
+  content: '';
   position: absolute;
-  top: 2px;
-  right: 12px;
-  color: #49b1f5;
-  content: '\f1f9';
-  font-size: 1.3em;
+  top: -18px;
+  right: 2px;
+  width: 80px;
+  height: 80px;
+  background-image: url("/img/hr_icon.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 #post .post-copyright:hover {
   -webkit-box-shadow: 0 0 8px 0 rgba(232,237,250,0.6), 0 2px 4px 0 rgba(232,237,250,0.5);
