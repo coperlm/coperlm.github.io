@@ -12,18 +12,18 @@
    */
   function getColorsForHour(h) {
     const configs = {
-      4: { gradient: 'linear-gradient(180deg, #FFF5F0 0%, #FFE4D6 30%, #FFD6BA 60%, #FFB4A2 100%)', footerColor: '#FFB4A2' },
-      6: { gradient: 'linear-gradient(180deg, #FFEAA7 0%, #FFD79A 25%, #FFA99F 60%, #FF719A 100%)', footerColor: '#FF719A' },
-      8: { gradient: 'linear-gradient(180deg, #F8FFAE 0%, #D4FC79 25%, #96E6A1 60%, #A8E6CF 85%, #C2FFD8 100%)', footerColor: '#C2FFD8' },
-      10: { gradient: 'linear-gradient(180deg, #E0F7FA 0%, #A1C4FD 35%, #B8D5F0 65%, #C2E9FB 100%)', footerColor: '#C2E9FB' },
-      12: { gradient: 'linear-gradient(180deg, #A7FFE4 0%, #84FAB0 30%, #7FE5D4 65%, #8FD3F4 100%)', footerColor: '#8FD3F4' },
-      14: { gradient: 'linear-gradient(180deg, #55E6C1 0%, #43E97B 30%, #3FD5BA 65%, #38F9D7 100%)', footerColor: '#38F9D7' },
-      16: { gradient: 'linear-gradient(180deg, #FFEAA7 0%, #FCE38A 30%, #FFBE76 65%, #F38181 100%)', footerColor: '#F38181' },
-      18: { gradient: 'linear-gradient(180deg, #FDD835 0%, #FBD786 25%, #FFA87D 60%, #F7797D 100%)', footerColor: '#F7797D' },
-      19: { gradient: 'linear-gradient(180deg, #FFB088 0%, #FF9A9E 30%, #D988B9 65%, #8E54E9 100%)', footerColor: '#8E54E9' },
-      20: { gradient: 'linear-gradient(180deg, #FFE5EC 0%, #FBD3E9 25%, #E5A3C7 60%, #BB377D 100%)', footerColor: '#BB377D' },
-      22: { gradient: 'linear-gradient(180deg, #7B68EE 0%, #667eea 30%, #6B5EA8 65%, #764ba2 100%)', footerColor: '#764ba2' },
-      2: { gradient: 'linear-gradient(180deg, #3B4371 0%, #4e54c8 30%, #7B7FDC 65%, #8f94fb 100%)', footerColor: '#8f94fb' }
+      4: { gradient: 'linear-gradient(180deg, #FFF5F0 0%, #FFE4D6 30%, #FFD6BA 60%, #FFB4A2 100%)', footerColor: '#FFB4A2' },   // 黎明
+      6: { gradient: 'linear-gradient(180deg, #FFEAA7 0%, #FFD79A 25%, #FFA99F 60%, #FF719A 100%)', footerColor: '#FF719A' },   // 日出
+      8: { gradient: 'linear-gradient(180deg, #F8FFAE 0%, #D4FC79 25%, #96E6A1 60%, #A8E6CF 85%, #C2FFD8 100%)', footerColor: '#C2FFD8' },   // 清晨
+      10: { gradient: 'linear-gradient(180deg, #E0F7FA 0%, #A1C4FD 35%, #B8D5F0 65%, #C2E9FB 100%)', footerColor: '#C2E9FB' },  // 上午
+      12: { gradient: 'linear-gradient(180deg, #A7FFE4 0%, #84FAB0 30%, #7FE5D4 65%, #8FD3F4 100%)', footerColor: '#8FD3F4' },  // 中午
+      14: { gradient: 'linear-gradient(180deg, #55E6C1 0%, #43E97B 30%, #3FD5BA 65%, #38F9D7 100%)', footerColor: '#38F9D7' },  // 下午
+      16: { gradient: 'linear-gradient(180deg, #FFEAA7 0%, #FCE38A 30%, #FFBE76 65%, #F38181 100%)', footerColor: '#F38181' },  // 傍晚
+      18: { gradient: 'linear-gradient(180deg, #FDD835 0%, #FBD786 25%, #FFA87D 60%, #F7797D 100%)', footerColor: '#F7797D' },  // 黄昏
+      19: { gradient: 'linear-gradient(180deg, #FFB088 0%, #FF9A9E 30%, #D988B9 65%, #8E54E9 100%)', footerColor: '#8E54E9' },  // 日落
+      20: { gradient: 'linear-gradient(180deg, #FFE5EC 0%, #FBD3E9 25%, #E5A3C7 60%, #BB377D 100%)', footerColor: '#BB377D' },  // 晚霞
+      22: { gradient: 'linear-gradient(180deg, #7B68EE 0%, #667eea 30%, #6B5EA8 65%, #764ba2 100%)', footerColor: '#764ba2' },  // 深夜
+      2: { gradient: 'linear-gradient(180deg, #3B4371 0%, #4e54c8 30%, #7B7FDC 65%, #8f94fb 100%)', footerColor: '#8f94fb' }    // 凌晨
     };
     
     if (h >= 4 && h < 6) return configs[4];
@@ -92,27 +92,27 @@
       return { background: '#2D5016', color: '#FFF', hover: '#3D6B1F' };
     }
     if (h >= 10 && h < 12) {
-      // 蔚蓝天空：深蓝配浅蓝背景
+      // 上午：深蓝配浅蓝背景
       return { background: '#1E3A8A', color: '#FFF', hover: '#2563EB' };
     }
     if (h >= 12 && h < 14) {
-      // 仲午：深青配青绿背景
+      // 中午：深青配青绿背景
       return { background: '#065F46', color: '#FFF', hover: '#047857' };
     }
     if (h >= 14 && h < 16) {
-      // 海岛青蓝：深蓝绿配青蓝背景
+      // 下午：深蓝绿配青蓝背景
       return { background: '#0E7490', color: '#FFF', hover: '#0891B2' };
     }
     if (h >= 16 && h < 18) {
-      // 午后：深红配暖金背景
+      // 傍晚：深红配暖金背景
       return { background: '#B91C1C', color: '#FFF', hover: '#DC2626' };
     }
     if (h >= 18 && h < 19) {
-      // 黄金时刻：深橙配金色背景
+      // 黄昏：深橙配金色背景
       return { background: '#C2410C', color: '#FFF', hover: '#EA580C' };
     }
     if (h >= 19 && h < 20) {
-      // 黄昏：深紫配橙粉背景
+      // 日落：深紫配橙粉背景
       return { background: '#5B21B6', color: '#FFF', hover: '#6D28D9' };
     }
     if (h >= 20 && h < 22) {
