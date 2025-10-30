@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2025-10-27T05:48:43.192Z</updated>
+  <updated>2025-10-30T11:17:44.675Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>夏日口袋gal逆向</title>
+    <link href="https://coperlm.github.io/2025/10/30/%E5%A4%8F%E6%97%A5%E5%8F%A3%E8%A2%8Bgal%E9%80%86%E5%90%91/"/>
+    <id>https://coperlm.github.io/2025/10/30/%E5%A4%8F%E6%97%A5%E5%8F%A3%E8%A2%8Bgal%E9%80%86%E5%90%91/</id>
+    <published>2025-10-30T11:14:30.000Z</published>
+    <updated>2025-10-30T11:17:44.675Z</updated>
+    
+    <content type="html"><![CDATA[<p>[GalGame]summer pocket破解区域限制和光盘验证</p><p>我们如果直接打开游戏，发现打不开，显示有区域限制（必须是日本）</p><p><img src="image-20251029143315843.png" alt></p><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><ul><li>🧠</li><li>Cheat Engine</li><li>x32dbg</li><li>IDA</li></ul><h1 id="part1-区域限制"><a href="#part1-区域限制" class="headerlink" title="part1 区域限制"></a>part1 区域限制</h1><h2 id="1-CE"><a href="#1-CE" class="headerlink" title="1. CE"></a>1. CE</h2><p>用CE打开文件</p><p><img src="image-20251029144118607.png" alt></p><p>使用CE自带的搜索字符串的功能</p><p><img src="image-20251029144254323.png" alt></p><p>得到分析结果</p><p><img src="image-20251029144437055.png" alt></p><p>我们查找<code>This Game is Japan only</code></p><p><img src="image-20251029144521277.png" alt></p><p>得到对应的地址<code>0059CB69</code>，双击定位到相应的位置</p><p><img src="image-20251029144938952.png" alt></p><p>我们需要把 JNE（判断跳转）改成 JMP（无论如何全部都跳转 ）</p><p><img src="image-20251029145012851.png" alt></p><p>因为刚才查找到了三处，所以要一一更改，不再赘述</p><p><img src="image-20251029145105105.png" alt></p><p>改好之后，点击开始运行程序</p><p><img src="image-20251029145219981.png" alt></p><p>然后就可以进去了</p><p><img src="image-20251029145317501.png" alt></p><h2 id="2-x32DBG"><a href="#2-x32DBG" class="headerlink" title="2. x32DBG"></a>2. x32DBG</h2><p>但是这样的更改是一次性的，下面我们要用x32dbg来持久化更改</p><p><img src="image-20251029145528340.png" alt></p><p>开始运行，到弹出地区错误窗口的地方，搜索字符串</p><p><img src="image-20251029145801870.png" alt></p><p>搜索需要改的位置</p><p><img src="image-20251029145838045.png" alt></p><p>把对应的每个<code>jne</code>改为<code>jmp</code></p><p><img src="image-20251029145904321.png" alt></p><p><img src="image-20251029150028141.png" alt></p><p>然后导出</p><p><img src="image-20251029150558232.png" alt></p><p>可以发现地区验证被解除了</p><p><img src="image-20251029150533264.png" alt></p><h1 id="part2-光盘检测"><a href="#part2-光盘检测" class="headerlink" title="part2 光盘检测"></a>part2 光盘检测</h1><h2 id="1-x32Dbg"><a href="#1-x32Dbg" class="headerlink" title="1. x32Dbg"></a>1. x32Dbg</h2><p>再度打开已经解除了地区限制的exe</p><p><img src="image-20251029152223302.png" alt></p><p>检查光盘验证，一般是名为<code>GetLogicalDrives</code>和<code>GetDriveType</code>的API</p><p><img src="image-20251029152327648.png" alt></p><p><img src="image-20251029152415942.png" alt></p><p>找到了，双击点进去，到了这里</p><p><img src="image-20251029152503568.png" alt></p><p>是一个跳转，跳进去到了这里</p><p><img src="image-20251029152555894.png" alt></p><p>然后运行程序，这个断点被命中好多次，而且每命中一次，右边的参数就会改变，它从 A：\ 改变到 Z：\，最后游戏弹出了警告框</p><p><img src="image-20251029152946011.png" alt></p><p>因此我们可以作出合理推断，游戏对电脑上的每一个盘都进行了某种判断，如果没有发现符合要求的盘，则会报错</p><p>然后选择“执行到返回”，此时 EIP 会停在一个 return 上面，再按 F7 执行一条命令：</p><p><img src="image-20251029153024607.png" alt></p><p>这时 EIP 返回到了游戏主程序的领空，并且上面那一条 call edi 就是呼叫了 GetDriveType。</p><p>地址是<code>00583F4A</code></p><p><img src="image-20251029153249893.png" alt></p><h2 id="2-IDA"><a href="#2-IDA" class="headerlink" title="2. IDA"></a>2. IDA</h2><p>用IDA打开</p><p><img src="image-20251029153605011.png" alt></p><p>查看基地址，是<code>0x320000</code></p><p><img src="image-20251029154532560.png" alt></p><p>设置正确的基地址</p><p><img src="image-20251029153743746.png" alt></p><p>成功找到刚才说的代码</p><p><img src="image-20251029154635250.png" alt></p><p> 右键，点 Graph view，进入路线图模式。</p><p><img src="image-20251029154659740.png" alt></p><p><img src="image-20251029154717424.png" alt></p><p>可以看到，在进行 GetDriveType 之后，根据结果不同程序分为两条路，如果返回值不等于 5，则会走绿色那条路，如果等于 5，则会走红色那条路。（如果返回值是 5，那么表示这个盘是一个光盘）</p><p>在堆栈窗口右键，然后跟随 EBP（栈帧指针），可以看到目前堆栈的情况。</p><p><img src="image-20251029154902405.png" alt></p><p><img src="image-20251029155026550.png" alt></p><p>观察发现，一个叫做<code>0x540A64</code>的地方调用了这个光盘验证函数。<br> 在 IDA 打开这个地址。</p><p><img src="image-20251029155214651.png" alt></p><p>在光盘验证返回的地方下一个断点，然程序停在 dummy 判断的函数，然后观察堆栈。</p><p><img src="image-20251029155959502.png" alt></p><p>在IDA里搜索<code>0x540EFD</code>，打开</p><p><img src="image-20251029160052703.png" alt></p><p><img src="image-20251029160248534.png" alt></p><p>那我们直接给 bl 塞一个非零值就差不多完事了，<br>接下来要把 mov bl， al 改成 mov bl， 1 直接塞个 1 进去。</p><p><img src="image-20251029160627912.png" alt></p><p>然后patch保存</p><p>就可以了</p><p><img src="image-20251029173102894.png" alt></p><p><img src="image-20251029173133451.png" alt></p><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">参考：</span><br><span class="line">https://galgamer.moe/article/20004</span><br><span class="line">https://galgamer.moe/article/20013</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[GalGame]summer pocket破解区域限制和光盘验证&lt;/p&gt;
+&lt;p&gt;我们如果直接打开游戏，发现打不开，显示有区域限制（必须是日本）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;image-20251029143315843.png&quot; alt&gt;&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="逆向" scheme="https://coperlm.github.io/categories/%E9%80%86%E5%90%91/"/>
+    
+    
+    <category term="RE" scheme="https://coperlm.github.io/tags/RE/"/>
+    
+  </entry>
   
   <entry>
     <title>20251027博客更新说明-新颜色哎</title>
@@ -558,39 +588,6 @@
     <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
     
     <category term="None" scheme="https://coperlm.github.io/tags/None/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最近思考了几个哲学问题</title>
-    <link href="https://coperlm.github.io/2025/08/02/%E6%9C%80%E8%BF%91%E6%80%9D%E8%80%83%E4%BA%86%E5%87%A0%E4%B8%AA%E5%93%B2%E5%AD%A6%E9%97%AE%E9%A2%98/"/>
-    <id>https://coperlm.github.io/2025/08/02/%E6%9C%80%E8%BF%91%E6%80%9D%E8%80%83%E4%BA%86%E5%87%A0%E4%B8%AA%E5%93%B2%E5%AD%A6%E9%97%AE%E9%A2%98/</id>
-    <published>2025-08-02T15:39:32.000Z</published>
-    <updated>2025-10-23T12:47:10.726Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>每一个深入思考的人，最终都站在一个十字路口：是继续质疑一切，直到虚无；还是接受不完美的答案，继续前行。——赫尔曼·黑塞</p></blockquote><p>听了一节复旦的哲学课，有一个问题</p><p>就像基督教徒，或者新教教徒，他们都有自己信奉的东西，类似于“主”的东西——但是无宗教者没有，尤其是唯物主义者</p><p>无宗教者也有“精神寄托”，但是一般会寄托于实物，例如具体的人、理想、爱好或群体</p><p>但正是因为真实存在，也必然可能消逝或崩塌</p><p>而宗教信仰，如果信了，往往会提供更坚固的“精神支柱”</p><p>对于一个知识越多、思考越深、批判能力越强的人，反而越难“相信”，越难“依赖”，越难获得稳定而坚定的精神寄托</p><p>GPT给出了几个解</p><ol><li>承认“信”的部分超理性：“我知道这个东西我无法逻辑证明，但它对我有意义，我就允许自己相信。”，就像爱、忠诚、牺牲——这些你也无法彻底证明“合理”，但人依然需要它们活下去。</li><li>找“有限但可承受的寄托”：你可以不要求某个东西永恒不动摇，只要它在你人生当前阶段“足够牢固”就行。例如兴趣爱好，某一群人，还有理想抱负。它们也许不是终极真理，但能支撑你一段时光，这就够了。</li><li>把“怀疑”本身当成一种信仰：“我不再要求确定性，而是练习在不确定中生活。”。这类思维在存在主义、禅宗、后现代哲学中都很常见。不是非要找“信什么”，而是活在“我选择在不确定中依然行动、依然投入”的状态里。这也是一种信仰，虽然没有神、教义、永恒，但有人的勇气。</li></ol><p>他给的这仨回答，我一个都不满意~</p><div class="table-container"><table><thead><tr><th>主题</th><th>解释与内容</th><th>代表思想 / 例子</th></tr></thead><tbody><tr><td><strong>尼采式主动虚无主义</strong></td><td>在意识到旧价值体系死亡后，自主创造意义和价值，成为自己生命的太阳。</td><td>尼采</td></tr><tr><td><strong>武士道/斯多葛哲学的内心稳定</strong></td><td>练习不依赖外物的心态，接受无常，以尊严行动，内心自立自强。</td><td>武士道、斯多葛主义</td></tr><tr><td><strong>怀疑转化为执念行动</strong></td><td>明知一切可能崩塌，仍选择爱、理想、行动，将怀疑变为力量源泉。</td><td>“我愿承担代价去爱和行动”</td></tr></tbody></table></div><p>想起来罗曼罗兰的那句，“世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它”</p><hr><p>对于一个双非本科生而言，通过考研或保研进入清华大学读研究生，和重新参加高考考入清华大学读本科，哪一个更困难？</p><p>经过分析可以得出一个相对明确的判断：从实际操作的角度来看，双非学生通过考研进入清华研究生体系，比重考高考进入清华本科更现实、也更可行。</p><p>首先，高考的竞争是面向全国、按分数筛选，清华的本科录取线几乎在各省都是最顶尖的那一档（有时甚至要到省前几十名才能有机会），且重新准备高考意味着要放弃当前本科学业、面对漫长的高中知识复习过程，以及心理上的巨大压力。因此，对于一个已经读过本科的人而言，再回到高考这条路径难度极大。</p><p>相比之下，虽然清华的研究生招生同样竞争激烈，但考研准备更具针对性，可以结合已有的专业积累、科研经历、项目实践来增强竞争力。此外，研究生入学评估的维度更加多元，不再完全依赖一次性的大规模考试，而是更注重综合素质、专业背景和未来潜力，这给来自双非背景的学生提供了更多通道和可能性。</p><p>然而，在讨论这些现实路径的同时，我试图引出一个更具哲学意味的问题：</p><p>人总是会将事情规约到未来。</p><p>这句话意味着什么？我认为它揭示了一种深层的心理机制：我们倾向于将复杂的问题推到“将来”再处理，并且在推向未来的过程中，自动地对其难度做出了简化，甚至轻视。这种现象在清华路径的选择中也能看出端倪。</p><p>很少有人在读本科时会真的去重新准备高考，因为那是一个“现在”的问题，具体、沉重、需要立刻放下现有轨道才能启动。因此人们面对它时，会立即意识到其巨大的代价和挑战。</p><p>但与此相对，很多人会“理所当然”地告诉自己：“我以后考清华研究生”，并未感受到相应的沉重。这是因为，“考研”这个词在我们脑海中已经被高度抽象化和规约化为“未来某个时候做的某个动作”。而人在面对“未来的动作”时，常常陷入几种心理误差：</p><p>第一，时间折现（temporal discounting）。我们对未来的行动往往赋予更低的心理成本，容易相信“以后我有空再做”。未来的自己被认为更有能力、更有时间、更有精力，因此我们倾向于相信“我以后会搞定的”。</p><p>第二，意向性偏差（intention bias）。我们把“我有意图去做某事”当作“我很可能能做到”的理由。于是当我们说出“我要考清华研究生”这句话时，我们往往在心里已经为这件事贴上了“可实现”的标签，而非“值得反复审视和评估的长期目标”。</p><p>第三，叙事简化（narrative reduction）。人类天生热爱讲故事，我们用线性叙事理解自己的生活：“我双非出身，后来努力考上清华研究生”，这是一个令人动容的自我叙事模板。但叙事本身掩盖了实现这个目标所需要的密集准备、情绪波动、结构性不平等等现实条件。</p><p>因此，当我们说“将事情规约到未来”，实际上我们是在构建一个关于未来的<strong>希望投影</strong>，把问题推向一个看似遥远、却总能依赖的“理想化的未来自我”身上。而正因为未来自我是想象出来的工具性存在，所以我们倾向于高估它的能力、低估现实的阻力。</p><p>这种心理机制其实可以和哲学史上的多个概念结合：</p><p>一方面，它与萨特提出的“自我欺骗”（bad faith）相通：我们知道现在要做出艰难选择，但我们说服自己“以后再决定”，实际上是一种回避当下责任的方式。另一方面，它也与海德格尔的“时间性存在”理论契合——人并不是被动地处在时间中，而是通过对未来的意向性结构来组织自己的存在，但这种结构也可能成为虚假的遮蔽。</p><p>总结来说，我想表达的是：</p><blockquote><p>人总是将问题抽象到未来，并在抽象过程中错估其难度。<br>人在意向性时间结构中构建未来的可能性，并因此产生对难度的认知偏差。<br>人在叙事与希望中沉醉，而现实的路径依然艰难而具体。</p></blockquote><p>如果你读到这里，或许可以问自己一个问题：</p><p>我现在规约到了未来的事情，有哪些，是我正在无意识地轻视其难度的？</p><p>或许哲学并不提供答案，但哲学提醒我们：不要对未来产生轻率的幻想，不要误以为计划就是能力，不要将“说要做某事”错当成“可以做到某事”的证明。</p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;每一个深入思考的人，最终都站在一个十字路口：是继续质疑一切，直到虚无；还是接受不完美的答案，继续前行。——赫尔曼·黑塞&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;听了一节复旦的哲学课，有一个问题&lt;/p&gt;
-&lt;p&gt;就像基督教徒，或者新教教徒，他们都有自</summary>
-        
-      
-    
-    
-    
-    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
-    
-    
-    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
-    
-    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
     
   </entry>
   
