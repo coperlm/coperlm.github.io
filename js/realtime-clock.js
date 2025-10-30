@@ -310,6 +310,9 @@
   function createClockElement() {
     const clockHTML = `
       <div id="realtime-clock" class="realtime-clock">
+        <button class="clock-toggle-btn" title="收起/展开时钟">
+          <i class="fas fa-minus"></i>
+        </button>
         <div class="clock-left">
           <div class="clock-icon">
             <i class="fas fa-clock"></i>
@@ -332,6 +335,24 @@
       // 如果rightside不存在，插入到body末尾
       document.body.insertAdjacentHTML('beforeend', clockHTML);
     }
+
+    // 添加收起/展开功能
+    const clockElement = document.getElementById('realtime-clock');
+    const toggleBtn = clockElement.querySelector('.clock-toggle-btn');
+    const toggleIcon = toggleBtn.querySelector('i');
+
+    toggleBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      clockElement.classList.toggle('collapsed');
+      
+      if (clockElement.classList.contains('collapsed')) {
+        toggleIcon.className = 'fas fa-plus';
+        toggleBtn.title = '展开时钟';
+      } else {
+        toggleIcon.className = 'fas fa-minus';
+        toggleBtn.title = '收起时钟';
+      }
+    });
   }
 
   /**

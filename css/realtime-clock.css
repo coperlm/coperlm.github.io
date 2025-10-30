@@ -85,6 +85,50 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* 时钟收起状态 */
+.realtime-clock.collapsed .clock-content,
+.realtime-clock.collapsed .clock-left .clock-weekday {
+  display: none;
+}
+
+.realtime-clock.collapsed {
+  padding: 8px;
+  gap: 0;
+}
+
+/* 时钟收起/展开按钮 */
+.clock-toggle-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--theme-color, #49B1F5);
+  border: 2px solid #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.clock-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.clock-toggle-btn i {
+  font-size: 12px;
+  color: #fff;
+}
+
+[data-theme="dark"] .clock-toggle-btn {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
 /* 深色模式适配 */
 [data-theme="dark"] .realtime-clock {
   background: rgba(30, 30, 30, 0.85);
@@ -225,6 +269,17 @@ body {
   }
 
   .realtime-clock .clock-theme {
+    font-size: 10px;
+  }
+
+  .clock-toggle-btn {
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .clock-toggle-btn i {
     font-size: 10px;
   }
 }
