@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2025-11-02T07:15:24.018Z</updated>
+  <updated>2025-11-06T02:39:08.971Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://coperlm.github.io/2025/11/06/test/test/"/>
+    <id>https://coperlm.github.io/2025/11/06/test/test/</id>
+    <published>2025-11-06T07:06:34.000Z</published>
+    <updated>2025-11-06T02:39:08.971Z</updated>
+    
+    <content type="html"><![CDATA[<p>test</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;test&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="test" scheme="https://coperlm.github.io/categories/test/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
   
   <entry>
     <title>PyInstaller使用方法</title>
@@ -71,9 +99,9 @@
     <category term="会议竞赛游记" scheme="https://coperlm.github.io/categories/%E4%BC%9A%E8%AE%AE%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
     
     
-    <category term="游记" scheme="https://coperlm.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
-    
     <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
+    
+    <category term="游记" scheme="https://coperlm.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   
@@ -566,34 +594,6 @@
     
     
     <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>zkSNARK基础课程学习</title>
-    <link href="https://coperlm.github.io/2025/08/13/zkSNARK%E5%9F%BA%E7%A1%80%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://coperlm.github.io/2025/08/13/zkSNARK%E5%9F%BA%E7%A1%80%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/</id>
-    <published>2025-08-13T05:45:46.000Z</published>
-    <updated>2025-10-23T12:53:23.814Z</updated>
-    
-    <content type="html"><![CDATA[<p>课程链接：<a href="https://rdi.berkeley.edu/zk-learning/">https://rdi.berkeley.edu/zk-learning/</a></p><h2 id="2-Overview-of-Modern-SNARK-Constructions"><a href="#2-Overview-of-Modern-SNARK-Constructions" class="headerlink" title="2.Overview of Modern SNARK Constructions"></a>2.Overview of Modern SNARK Constructions</h2><p>简短：证明短&lt;1KB，验证快 &lt;10ms</p><p>区块链检验，一个监控很多个</p><p><img src="image-20250914180623323.png" alt></p><p>C2PA：相机里有无法提取的私钥用于签名，保证照片的正确性</p><p>构建</p><p>算数电路-&gt;有向无环图</p><p>|C|门的数量，C_SHA256≈20K</p><p><img src="image-20250914184413082.png" alt></p><p>NARK证明</p><p>SNARK简短</p><p>zkSNARK零知识</p><p>完备性：知道witness一定可以接受</p><p>知识可靠性：接受了，一定知道witness</p><p>len(pi)=O(log|C|),time(V)=O(|x|,log|C|)（预处理阶段提取处理电路大小）</p><p><img src="image-20250914185522285.png" alt></p><p>四种方案对比</p><p><img src="image-20250914191006303.png" alt></p><p>健全性的定义</p><p><img src="image-20250914191712415.png" alt></p><p> 四种承诺</p><p><img src="image-20250914212213736.png" alt></p><p>多项式承诺</p><p><img src="image-20250914212306139.png" alt></p><p>一些具体算法</p><p><img src="image-20250914212909388.png" alt></p><p>对多项式的承诺，一般认为是 对向量的承诺（时间取决于度数）</p><hr><p>证明两个多项式相同，随机选择相同的自变量，如果函数的输出结果相同，则两个多项式极高概率完全相同</p><p><img src="image-20250915103111442.png" alt></p><p>FS变换把交互式的改为非交互式的，但是并不是在每一个协议上都安全，又但是在zkSNARK上运行的刚刚好</p><p>变更为，将随机数改为公开参数的哈希值</p><p><img src="image-20250915103412027.png" alt></p><p><img src="image-20250915103426829-17579036674152.png" alt></p><p>（这个不是zkSNARK，但是是SNARK）</p><hr><p>IOP：将一个度数为d的多项式转化为普遍电路</p><p><img src="image-20250915103934932.png" alt></p><p><img src="image-20250915104125795.png" alt></p><p>IOP把问题转化为多轮交互，需要验证的是验证结果是否正确</p><p><img src="image-20250915104934649.png" alt></p><p>一个简单的例子</p><p>很像KGZ协议哇，对多项式进行承诺，但是关注点在于多项式是否包含</p><p><img src="image-20250915110654998.png" alt></p><p>最终一个小总结，不同的证明对应不同的协议，但是都叫IOP</p><p><img src="image-20250915111023317.png" alt></p><p>真正开发的时候不编写电路，而是选择特定的语言，编译成相应的电路，最终都放在SNARK里面</p><p><img src="image-20250915111215196.png" alt></p><h2 id="3-Programming-ZKPs"><a href="#3-Programming-ZKPs" class="headerlink" title="3.Programming ZKPs"></a>3.Programming ZKPs</h2><p>关注于如何编写ZKP代码</p><p><img src="image-20250915112425587.png" alt></p><p>R1CS（略</p><p>硬件和软件的区别</p><p><img src="image-20250915143039905.png" alt></p><p>&lt;— 赋值；===建立恒等关系；&lt;== both</p><p><img src="image-20250915143835150.png" alt></p><p><img src="image-20250915144024733.png" alt></p><h4 id="Circom语言"><a href="#Circom语言" class="headerlink" title="Circom语言"></a>Circom语言</h4><p>确保输入为非零</p><p><img src="image-20250915144401515.png" alt></p><p><img src="image-20250915144454122.png" alt="image-20250915144454122"></p><h4 id="Libraries"><a href="#Libraries" class="headerlink" title="Libraries"></a>Libraries</h4><p><img src="image-20250915151507199.png" alt></p><p>使用rust伪代码实现</p><p><img src="image-20250915151757813.png" alt></p><p>为了简化，使用运算重载</p><p><img src="image-20250915151945158.png" alt></p><p>高级调用</p><p><img src="image-20250915152008299.png" alt></p><h4 id="Artwork"><a href="#Artwork" class="headerlink" title="Artwork"></a>Artwork</h4><p>rust</p><h3 id="编译成R1CS"><a href="#编译成R1CS" class="headerlink" title="编译成R1CS"></a>编译成R1CS</h3><p><img src="image-20250915154334422.png" alt></p><h4 id="Zokrates"><a href="#Zokrates" class="headerlink" title="Zokrates"></a>Zokrates</h4><p>更高级的语言</p><p><img src="image-20250915154458824.png" alt></p><p>缺点：witness必须提供给主函数</p><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><img src="image-20250915154801102.png" alt></p><p><img src="image-20250915154828173.png" alt></p><p>circom过于底层，能力不多</p><p>artwork没有很多优化</p><p>zokrates易于学习但是控制权较低</p><p><img src="image-20250915155055743.png" alt></p><p>有各种各样的~</p><p><img src="image-20250915155144733.png" alt></p><p>在近几年涌现</p><p><img src="image-20250915155208485.png" alt></p><h2 id="4-Interactive-Proofs"><a href="#4-Interactive-Proofs" class="headerlink" title="4.Interactive Proofs"></a>4.Interactive Proofs</h2><p>交互式证明</p><p>完备性：诚实则可以接受</p><p>安全性：不诚实则被拒绝 </p><p>为什么要非交互：和区块链结合</p><p>FS变换：公共硬币协议</p><p>交互式不必知识健全</p><p><img src="image-20250915174737370.png" alt></p><p>三种多项式承诺</p><p><img src="image-20250915184544724.png" alt></p><p>默克尔树-&gt;证明叶子节点T-&gt;向量承诺方案</p><p><img src="image-20250915184951134.png" alt></p><p>多项式承诺可以考虑等价为默克尔承诺，但是效率太低了</p><p><img src="image-20250915185346129.png" alt></p><p>快速且高效的</p><p>FACT: Pr&lt;d/|F|</p><p>SZDL: 多变量多项式</p><p>多重线性拓展</p><p><img src="image-20250915191122423.png" alt></p><p>进行拓展</p><p>只有每一项都符合的项，有相应的数值</p><p><img src="image-20250915191856472.png" alt></p><p>如何高效计算多线性拓展算法，利用拉格朗日插值法</p><p> 想知道一个函数所有二进制输入上的值，只需要2^t时间内进行拉格朗日插值计算出点</p><p><img src="image-20250915202140924.png" alt></p><p>使用<strong>动态规划</strong>减少时间复杂度</p><p><img src="image-20250915202901128.png" alt></p><h3 id="sum-check协议"><a href="#sum-check协议" class="headerlink" title="sum check协议"></a>sum check协议</h3><p> 目标：计算这个数</p><p><img src="image-20250915203755022.png" alt></p><p>但是代价很大，如何高效的计算这个数</p><p>先检验几个点，就有极高的概率确定是正确的多项式</p><p><img src="image-20250915205638156.png" alt></p><p>朴素求和，时间复杂度2^e</p><p>优化，计算e次</p><p><img src="image-20250915210009666.png" alt></p><p>健全性</p><p><img src="image-20250915210722492.png" alt></p><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>线性时间验证</p><p>计算三角形的数量，最小情况下是矩阵乘法</p><p><img src="image-20250915211711132.png" alt></p><p>转化为log级别</p><p><img src="image-20250915212103485.png" alt></p><p>然后用sum-check协议，就可以快速验证</p><h3 id="电路可满足性，zkSNARK推导"><a href="#电路可满足性，zkSNARK推导" class="headerlink" title="电路可满足性，zkSNARK推导"></a>电路可满足性，zkSNARK推导</h3><p>转成对数形式</p><p><img src="image-20250916105208089.png" alt></p><h3 id="IOP"><a href="#IOP" class="headerlink" title="IOP"></a>IOP</h3>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;课程链接：&lt;a href=&quot;https://rdi.berkeley.edu/zk-learning/&quot;&gt;https://rdi.berkeley.edu/zk-learning/&lt;/a&gt;&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="科研" scheme="https://coperlm.github.io/categories/%E7%A7%91%E7%A0%94/"/>
-    
-    
-    <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
     
   </entry>
   
