@@ -6510,18 +6510,6 @@ f(x)=\left\{\begin{align}&\frac1{b-a},a]]></content>
       </tags>
   </entry>
   <entry>
-    <title>海丝论坛-会议记录</title>
-    <url>/2025/11/09/%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>会议竞赛游记</category>
-      </categories>
-      <tags>
-        <tag>游记</tag>
-        <tag>meeting</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>浅学习一下零知识证明</title>
     <url>/2024/10/13/%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8B%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E/</url>
     <content><![CDATA[之前一直听说零知识证明，但是一直没有学习过相关内容
@@ -6647,136 +6635,15 @@ reference：Identity-based chameleon hashing and signatures without key exposure
       </tags>
   </entry>
   <entry>
-    <title>牛客寒假2025题解</title>
-    <url>/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/</url>
-    <content><![CDATA[本文用于记录牛客寒假赛的六场比赛的赛时解题和赛后补题
-笔者水平：CF绿上蓝下 
-
-
-第一场
-打红温了，头一次连打五个小时~
-题本身不难，就是实现上遇到比较多的障碍
-A题签到题，如果没有1就输出1e9+7即可
-D题也是直接模拟即可
-G题排序后计算a[i]-i，就是每个点需要操作的次数了
-B题一开始以为是有向图浪费了很多时间，树存在简单路径的充要条件是它是链
-M题也属于思路很简单但是写起来比较困难的题
-就拓扑排序一下，然后逐步拓展，取最优解即可
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , a[N+10];struct NUMBER&#123;    int num;    int id;&#125;b[N+10];bool cmp( NUMBER x , NUMBER y )&#123;    return x.num &lt; y.num;&#125;signed main()&#123;    int n;cin &gt;&gt; n;    int maxn , minn;maxn = 0 , minn = 2147483647;    int minp = 0;    int ans = 2147483647;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i];        b[i].id = i , b[i].num = a[i];        if( maxn &lt; a[i] ) maxn = a[i];        if( minn &gt; a[i] ) minn = a[i] , minp = i;    &#125;    if( n == 1 )&#123;        cout &lt;&lt; &quot;0\n&quot;;        return 0;    &#125;    int l , r;l = r = minp;    sort( b + 1 , b + n + 1 , cmp );    b[n+1].id = n+1 , b[n+1].num = 2147483647;    int down_minn = minn * 2;    if( maxn &lt; b[1].num * 2 ) maxn = b[1].num * 2;    minn = b[2].num , minp = b[2].id;    if( minn &gt; down_minn ) minn = down_minn;    ans = min( maxn - minn , ans );    for(int p = 2;p &lt;= n;p ++)&#123;        if( b[p].id &gt; r )&#123;            while( b[p].id &gt; r )&#123;                r ++;                if( maxn &lt; a[r] * 2 ) maxn = a[r] * 2;            &#125;            minn = b[p+1].num , minp = b[p+1].id;            while( minp &lt;= r &amp;&amp; minp &gt;= l )&#123;                p ++;                minn = b[p+1].num , minp = b[p+1].id;            &#125;            if( minn &gt; down_minn ) minn = down_minn;            ans = min( maxn - minn , ans );        &#125;         if( b[p].id &lt; l )&#123;            while( b[p].id &lt; l )&#123;                l --;                if( maxn &lt; a[l] * 2 ) maxn = a[l] * 2;            &#125;            minn = b[p+1].num , minp = b[p+1].id;            while( minp &lt;= r &amp;&amp; minp &gt;= l )&#123;                p ++;                minn = b[p+1].num , minp = b[p+1].id;            &#125;            if( minn &gt; down_minn ) minn = down_minn;            ans = min( maxn - minn , ans );        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
-J题赛时还以为是什么糕级数论，结果降低时间复杂度$O(n^\frac32)$就能过
-通过打表可知，符合条件只有两种情况，再判一下就可以了
-要先continue掉奇数，不然亲测会T掉
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;map&gt;#include&lt;cmath&gt;#define int long longusing namespace std;const int N = 2e5;int n , ans , a[N+10];map &lt; int , int &gt; m;int gcd_( int x , int y )&#123;    if( y == 0 ) return x;    return gcd_( y , x % y );&#125;signed main()&#123;    cin &gt;&gt; n;    for(int i = 1;i &lt;= n;i ++) cin &gt;&gt; a[i];    for(int i = 1;i &lt;= n;i ++) m[a[i]] ++;    for(int i = 1;i &lt;= N;i ++)&#123;        if( i % 2 ) continue;        for(int j = 1;j &lt;= sqrt(i);j ++)&#123;            if( i + j &lt;= N )&#123;                if((i ^ (i+j)) == j)                    if( gcd_( i , i+j ) == j )                        ans += m[i]*m[i+j];                if( (i ^ (i+i/j)) == i/j &amp;&amp; j*j!=i)                    if( gcd_( i , i+i/j ) == i/j )                        ans += m[i]*m[i+i/j];            &#125;        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
-赛后补题C题看起来不难，以为半个小时就能写完
-结果调了好久···
-大致思路就是朴素开扫
-#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e2;int n , t , a[N+10][N+10];int ans_list[1000000][5];string s;signed main()&#123;int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; s;            for(int j = 0;j &lt; n;j ++)&#123;                if( s[j] == &#x27;1&#x27; ) a[i][j+1] = 1;                else a[i][j+1] = 0;            &#125;        &#125;        int cnt = 0;        for(int i = 1;i &lt;= n/2;i ++)&#123;            for(int j = 1;j &lt;= n/2;j ++)&#123;                if( a[i][j] == 0 )&#123;                    for(int ii = 1;ii &lt;= n;ii ++)&#123;                        int jj , jjl;if( ii &lt; i ) jjl = n/2+1;                        else if( ii == i ) jjl = j;                        else jjl = 1;                        for(jj = n;jj &gt;= jjl;jj --)&#123;                            if( a[ii][jj] == 1 )&#123;                                // cout &lt;&lt; &quot;SWAPP: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                while( !(i==ii&amp;&amp;j==jj) )&#123;                                    if( ii &gt; i &amp;&amp; a[ii-1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii-1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii-1;                                        ans_list[cnt][4] = jj;                                        ii --;                                    &#125;else if( ii &lt; i &amp;&amp; a[ii+1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii+1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii+1;                                        ans_list[cnt][4] = jj;                                        ii ++;                                    &#125;else if( jj &gt; j &amp;&amp; a[ii][jj-1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj-1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj-1;                                        jj --;                                    &#125;else if( jj &lt; j &amp;&amp; a[ii][jj+1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj+1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj+1;                                        jj ++;                                    &#125;else goto RECHOOSE;                                &#125;goto FIXED;                            &#125;RECHOOSE:;                        &#125;                    &#125;                &#125;FIXED:;            &#125;        &#125;        // for(int i = 1;i &lt;= n;i ++)&#123;        //     for(int j = 1;j &lt;= n;j ++)&#123;        //         cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;        //     &#125;cout &lt;&lt; endl;        // &#125;        cout &lt;&lt; cnt &lt;&lt; endl;        for(int i = 1;i &lt;= cnt;i ++)&#123;            for(int j = 1;j &lt;= 4;j ++)&#123;                cout &lt;&lt; ans_list[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
-结果WA了个测试点~
-
-看了题解，感觉思路真妙哇~
-
-按照题解敲了一下，发现实现起来的复杂程度和我的代码差不多···
-最终千辛万苦，debug一整个下午，找到问题了
-ii和jj这个两个指针复用导致的，每次用完之后复位一下就好了
-#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e2;int n , t , a[N+10][N+10];int ans_list[1000000][5];string s;signed main()&#123;int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; s;            for(int j = 0;j &lt; n;j ++)&#123;                if( s[j] == &#x27;1&#x27; ) a[i][j+1] = 1;                else a[i][j+1] = 0;            &#125;        &#125;        int cnt = 0;        for(int i = 1;i &lt;= n/2;i ++)&#123;            for(int j = 1;j &lt;= n/2;j ++)&#123;                if( a[i][j] == 0 )&#123;                    for(int ii = 1;ii &lt;= n;ii ++)&#123;                        int jj;if( ii &lt; i ) jj = n/2+1;                        else if( ii == i )&#123; jj = j+1;&#125;//cout &lt;&lt; &quot;???????????&quot; &lt;&lt; endl;&#125;                        else jj = 1;                        int oii , ojj;oii = ii;                        // cout &lt;&lt; &quot;disp?: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                        while(jj &lt;= n)&#123;                            ojj = jj;                            // cout &lt;&lt; &quot;ij: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                            if( a[ii][jj] == 1 )&#123;                                // cout &lt;&lt; &quot;SWAPP: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                while( !(i==ii&amp;&amp;j==jj) )&#123;                                    // cout &lt;&lt; &quot;PASSED: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                    if( ii &gt; i &amp;&amp; a[ii-1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii-1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii-1;                                        ans_list[cnt][4] = jj;                                        ii --;                                    &#125;else if( ii &lt; i &amp;&amp; a[ii+1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii+1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii+1;                                        ans_list[cnt][4] = jj;                                        ii ++;                                    &#125;else if( jj &gt; j &amp;&amp; a[ii][jj-1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj-1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj-1;                                        jj --;                                    &#125;else if( jj &lt; j &amp;&amp; a[ii][jj+1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj+1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj+1;                                        jj ++;                                    &#125;else goto RECHOOSE;                                &#125;goto FIXED;                            &#125;RECHOOSE:;                            ii = oii , jj = ojj;                            jj ++;                        &#125;                    &#125;                    // cout &lt;&lt; &quot;unp: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;                    // for(int i = 1;i &lt;= n;i ++)&#123;                    //     for(int j = 1;j &lt;= n;j ++)&#123;                    //         cout &lt;&lt; (a[i][j]==1?&quot;1&quot;:&quot;0&quot;) &lt;&lt; &quot; &quot;;                    //     &#125;cout &lt;&lt; endl;                    // &#125;                &#125;FIXED:;            &#125;        &#125;        // for(int i = 1;i &lt;= n;i ++)&#123;        //     for(int j = 1;j &lt;= n;j ++)&#123;        //         cout &lt;&lt; (a[i][j]==1?&quot;1&quot;:&quot;0&quot;) &lt;&lt; &quot; &quot;;        //     &#125;cout &lt;&lt; endl;        // &#125;        cout &lt;&lt; cnt &lt;&lt; endl;        for(int i = 1;i &lt;= cnt;i ++)&#123;            for(int j = 1;j &lt;= 4;j ++)&#123;                cout &lt;&lt; ans_list[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;                    &#125;    &#125;    return 0;&#125;
-E题概率论没学好（悲
-
-知道了这一点，将会是签到题的难度（悲
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , t , a[N+10];signed main()&#123;int t;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        int ans = 0;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i];        &#125;        sort( a + 1 , a + n + 1 );        int goal , goal1;        goal1 = a[(n/2+1)/2];        goal  = a[n/2+(n/2+1)/2];        for(int i = 1;i &lt;= n/2;i ++)&#123;            ans += abs( a[i] - goal1 );        &#125;        for(int i = n/2+1;i &lt;= n;i ++)&#123;            ans += abs( a[i] - goal );        &#125;        if( goal1 == goal )&#123;            int add , add_temp;add_temp = 0;            for(int i = 1;i &lt;= n/2;i ++)&#123;                if( a[i] == goal1 ) add_temp ++;                else add_temp --;            &#125;add = add_temp;            add_temp = 0;            for(int i = n/2+1;i &lt;= n;i ++)&#123;                if( a[i] == goal ) add_temp ++;                else add_temp --;            &#125;add = min(add_temp,add);            ans += add;        &#125;        cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
-H题思维题
-考虑贪心，为了最大化排的开，我们需要按左节点排序，当$i=l_i$时加入备选，备选里面按右节点排序
-如果不够了，就说明不存在
-记得判非空
-顺便学习了一下如何结构体根堆
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;queue&gt;#define int long long using namespace std;const int N = 1e5;int n;struct NODE&#123;    int l , r;    int id;&#125;a[N+10];bool cmp( NODE x , NODE y )&#123;    return x.l &lt; y.l;&#125;struct Comp&#123;    bool operator()(const NODE&amp; x , const NODE&amp; y)&#123;        // if( x.r == y.r )        return x.r &gt; y.r;    &#125;&#125;;priority_queue &lt; NODE , vector &lt; NODE &gt; , Comp &gt; pq;int ans[N+10];signed main()&#123;    cin &gt;&gt; n;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i].l &gt;&gt; a[i].r;a[i].id = i;    &#125;sort( a + 1 , a + n + 1 , cmp );    int top = 1 , topi = 1;    while( top &lt;= n )&#123;        while( a[topi].l == top ) pq.push( &#123;a[topi].l,a[topi].r,a[topi].id&#125; ) , topi ++;        if( pq.empty() )&#123;            cout &lt;&lt; -1 &lt;&lt; endl;            return 0;        &#125;        if( pq.top().r &gt;= top )&#123;            ans[pq.top().id] = top;            pq.pop();top ++;        &#125;else&#123;            cout &lt;&lt; -1 &lt;&lt; endl;            return 0;        &#125;    &#125;for(int i = 1;i &lt;= n;i ++)&#123;        cout &lt;&lt; ans[i] &lt;&lt; &quot; &quot;;    &#125;cout &lt;&lt; endl;    return 0;&#125;
-就此，100人以上的题目都补完了
-
-第二场
-这场被打爆了，D结论题没做出来（根本想不到）
-不过好在H题一个钝角三角形就秒了，没掉太大分
-A题签到
-B题直接排序然后输出a[n/2+1]-1即可
-F题打表找到规律r-l+1
-G题直接模拟
-J题也是大模拟（但是没有想象中的毒瘤）
-K题直接搜索即可，但是需要一些优化技巧不然会T掉~
-就涂色就可以了，代码还是听清楚的
-感觉难在优化（挂五发的悲哀）
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;string&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 5e2;int n , m;int a[N+10][N+10];int blue[N+10][N+10];int rem[N+10][N+10];string s;int ans , ans_now;int most_low;void dfs( int i , int j )&#123;    most_low = max( most_low , i + 1 );    if( i+1&lt;=n &amp;&amp; a[i+1][j] == 1 &amp;&amp; blue[i+1][j] == 0 ) blue[i+1][j] = 1 , dfs(i+1,j);    else if( i+1&lt;=n &amp;&amp; blue[i+1][j] == 0 ) blue[i+1][j] = 2 , ans_now ++;    if( i-1&gt;=1 &amp;&amp; a[i-1][j] == 1 &amp;&amp; blue[i-1][j] == 0 ) blue[i-1][j] = 1 , dfs(i-1,j);    else if( i-1&gt;=1 &amp;&amp; blue[i-1][j] == 0 ) blue[i-1][j] = 2 , ans_now ++;    if( j+1&lt;=m &amp;&amp; a[i][j+1] == 1 &amp;&amp; blue[i][j+1] == 0 ) blue[i][j+1] = 1 , dfs(i,j+1);    else if( j+1&lt;=m &amp;&amp; blue[i][j+1] == 0 ) blue[i][j+1] = 2 , ans_now ++;    if( j-1&gt;=1 &amp;&amp; a[i][j-1] == 1 &amp;&amp; blue[i][j-1] == 0 ) blue[i][j-1] = 1 , dfs(i,j-1);    else if( j-1&gt;=1 &amp;&amp; blue[i][j-1] == 0 ) blue[i][j-1] = 2 , ans_now ++;    return ;&#125;signed main()&#123;    // freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; s;        for(int j = 0;j &lt; m;j ++)&#123;            a[i][j+1] = s[j] - &#x27;0&#x27;;        &#125;    &#125;    ans = 2147483647;    int ii , jj;ii = 1;    while( 1 )&#123;        ans_now = 0;        most_low = 1;        for(;ii &lt;= n;ii ++)&#123;            for(jj = 1;jj &lt;= m;jj ++)&#123;                if( a[ii][jj] )&#123;                    blue[ii][jj] = 1;                    dfs( ii , jj );                    goto OUT;                &#125;            &#125;        &#125;        break;        OUT:;        ans = min( ans , ans_now );        for(int i = ii;i &lt;= most_low;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                if( blue[i][j] )&#123;//1和2都涂为灰色                    blue[i][j] = 0;                    a[i][j] = 0;                &#125;            &#125;        &#125;    &#125;cout &lt;&lt; ans &lt;&lt; endl;        return 0;&#125;
-H题没想到这题这么简单，答案是钝角（即答
-直接试图构造最钝角的钝角三角形即可
-#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;int a , b , c , d;signed main()&#123;    int t;cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;        if( b - a &gt; d - c )&#123;            cout &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;            cout &lt;&lt; b-1 &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; d-1 &lt;&lt; endl;                    &#125;else&#123;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; c &lt;&lt; endl;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; c+1 &lt;&lt; endl;            cout &lt;&lt; a+1 &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
-赛后补题D题大结论题，完全没想到的一款
-结论：连续子串和不连续子串，最长情况下，只有最后一个（或者第一个）字母不同
-学长给的证明，感觉很清晰易懂
-
-赛后多了新数据，特判一下1的时候输出0就可以了
-#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 2e5;int n;string s;int a[N+10] , lst[30];map &lt; int , int &gt; mp;signed main()&#123;    cin &gt;&gt; n &gt;&gt; s;    for(int i = 1;i &lt;= n;i ++)&#123;        a[i] = s[i-1] - &#x27;a&#x27; + 1;    &#125;    int maxn = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        if( mp[a[i]] ) maxn = max( maxn , lst[a[i]] );        mp[a[i]] ++ , lst[a[i]] = i;    &#125;    for(int i = 1;i &lt;= 26;i ++) mp[i] = 0;    for(int i = n;i &gt;= 1;i --)&#123;        if( mp[a[i]] ) maxn = max( maxn , n - lst[a[i]] + 1 );        mp[a[i]] ++ , lst[a[i]] = i;    &#125;    if( maxn == 1 ) maxn = 0;    cout &lt;&lt; maxn &lt;&lt; endl;    return 0;&#125;
-C题构造题，需要建立在D的结论之上
-不妨先只考虑一个方向（从前往后）
-构造一个串，答案为最后一个倒数第二个字母（最大的）
-就，前面半截是abcde...，只要末尾最后俩是对a，就是m=n-1
-例如，n=11,m=10，则构造的序列为abcdefghiaa，这时符合条件（只考虑从前往后扫）
-那，还要从后往前扫怎么办~
-对称一下不就好了，即abcdefghiaihgfedcba，这时m=10（虽然n变了）
-n=2m+1的时候可以这样子构造，，，那其他情况呢？n&gt;2*m的时候，往中间填充任意字符就可以了（需要是两侧出现过的哦）
-如果n&lt;=2*m，也就是回文区间大于前缀/后缀，可以发现我们可以从前缀结束之后直接继续数，例如
-abcde fgh edcba这样子，反正这样就可以达到延长子串的作用（不信你试试，答案刚好是前两段的内容（第一种情况下答案只包含第一段+1））
-最后别忘了特判n==m和字母不够（n-m&gt;26）的情况
-#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;const int N = 2e5;int n , m;signed main()&#123;    int t;cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m;        if( n == m || n - m &gt; 26 )&#123;            cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;            continue;        &#125;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;        if( n &gt; m * 2 )&#123;            for(int i = 1;i &lt;= m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = m+1;i &lt;= n-m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = m;i &gt;= 1;i --)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            cout &lt;&lt; endl;        &#125;else&#123;            for(int i = 1;i &lt;= n-m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = 1;i &lt;= 2*m-n;i ++)&#123;                cout &lt;&lt; (char)(1+&#x27;a&#x27;-1);            &#125;            for(int i = n-m;i &gt;= 1;i --)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            cout &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
-E题哦原来是RMQ算法哇怪不得我不会做原来是因为我不会
-先记下来，明儿个学了再补~
-第三场
-这场发挥比较好，骑马进前10%了（也有可能是题目难度梯度大，恰巧E调出来了）
-A题猜结论按奇偶性分类，随机数最优策略都只拿一个故偶数必败
-M题一个桶结束
-F题模拟一下极端情况，可以发现sum&#123;a,b,c&#125;在n和2n之间是合法的，否则不合法
-C题正解为按字典序排序然后贪心，当然trie树也可以做
-由于最后一步不需要复原，故把最后一个弄成最长的那个即可
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , m;string s[N+10];bool cmp( string x , string y )&#123;    for(int i = 0;i &lt; min(x.length(),y.length());i ++)        if( x[i] != y[i] ) return (int)(x[i]) &lt; (int)(y[i]);    return x.length() &lt; y.length();&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; s[i];    &#125;cin &gt;&gt; m &gt;&gt; m;    sort( s + 1 , s + n + 1 , cmp );    string now_str = &quot;&quot;;    int ans = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        while( now_str != s[i] )&#123;            int j = 0;            for(;j &lt; min(now_str.length(),s[i].length());j ++)                if( now_str[j] != s[i][j] ) break;            ans += ( s[i].length() + now_str.length() - j*2 );            now_str = s[i];        &#125;    &#125;    int long_max = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        long_max = max( long_max , (int)s[i].length() );    &#125;    cout &lt;&lt; ans + (int)now_str.length() - long_max &lt;&lt; endl;    return 0;&#125;
-L题算是个构造+小模拟
-我的策略如下
-初始下，不妨设酱紫
-
-构造，先把右上角这条线，从上到右下画了
-
-然后通过以下规则进行填充
-
-按照紫色的规则，填充到最左侧，然后往上两个（见红色）
-
-再按如图的规则填充到最右侧
-
-现在就回到了最右侧，之后按照之前的步骤，就可以填充所有的节点
-
-通过代码实现上述内容即可，数据范围比较小，调试通过了大概率就能过
-#include&lt;iostream&gt;#define int long longusing namespace std;int a[10][10];void out( int i , int j )&#123;    cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;    // cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;    return ;&#125;signed main()&#123;    int n;cin &gt;&gt; n;n ++;cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;    int cnt = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= n;j ++)&#123;            if( i &gt;= j )&#123;                cnt ++;a[i][j] = cnt;            &#125;        &#125;    &#125;    // for(int i = 1;i &lt;= n;i ++)&#123;    //     for(int j = 1;j &lt;= n;j ++)&#123;    //         cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;    //     &#125;cout &lt;&lt; endl;    // &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        out(i,i);    &#125;    for(int i = n;i &gt;= 1;i --)&#123;        for(int j = i-1;j &gt;= 1;j --)&#123;            // cout &lt;&lt; &quot;start: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;            if( j == 1 )&#123;                out(i,j);                i--;out(i,j);                if( i &gt; 1 ) &#123;i--;out(i,j);&#125;                while( j &lt; i )&#123;                    i++,j++;out(i,j);                    i--;out(i,j);                &#125;            &#125;else&#123;                out(i,j);                i--;out(i,j);                j--;out(i,j);                j++,i++;out(i,j);            &#125;            // cout &lt;&lt; &quot;round: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;        &#125;    &#125;cout &lt;&lt; endl;    return 0;&#125;
-E题因为是弹性碰撞，所以我们可以认为两个球碰撞等价于两个球相互穿过（后面的讨论都基于此）
-只考虑向右和向左的球，故如果知道了时间 $t$，我们只需要确定是否存在大于 $k$ 个球的间距不小于 $2t$ 且左侧的球是向右走，右侧的球向左走
-故我们将两侧的球分别记录，然后二分时间即可
-值得注意的是，向右走的球与其左侧的向左走的球永远不可能相撞，故记录一下进行减法运算即可
-从后往前扫，累计加入答案，这样可以让一次check的时间复杂度降到$O(n)$
-#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , k;struct BOLL&#123;    int p , v;&#125;b[N+10];int distl[N+10] , distr[N+10] , uselessp[N+10];int ltop , rtop;bool cmp( BOLL x , BOLL y )&#123;    return x.p &lt; y.p;&#125;int check( long double dist )&#123;    // cout &lt;&lt; &quot;dist: &quot; &lt;&lt; dist &lt;&lt; endl;    int ans = 0 , i , j;i = j = 1;    while( i &lt;= ltop &amp;&amp; j &lt;= rtop + 1 )&#123;        if( distr[j] - distl[i] &lt;= dist &amp;&amp; j != rtop+1 )&#123;            j ++;        &#125;else&#123;            ans += ( j-1 - uselessp[i] );            // cout &lt;&lt; &quot;ans: &quot; &lt;&lt; ans &lt;&lt; endl;            i ++;        &#125;    &#125;    // cout &lt;&lt; &quot;dist k: &quot; &lt;&lt; ans &lt;&lt; endl;    return ans;&#125;long double ef( long double l , long double r )&#123;    if( r - l &lt;= 1e-8 ) return l;    long double mid = (l+r)/2;    if( check( mid ) &gt;= k ) return ef(l,mid);    else return ef(mid,r);&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; k;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; b[i].p &gt;&gt; b[i].v;    &#125;sort( b + 1 , b + n + 1 , cmp );    int useless = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        if( b[i].v == 1 ) distl[++ltop] = b[i].p , uselessp[ltop] = useless;        else distr[++rtop] = b[i].p , useless ++;    &#125;    // for(int i = 1;i &lt;= ltop;i ++) cout &lt;&lt; distl[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;    // for(int i = 1;i &lt;= ltop;i ++) cout &lt;&lt; uselessp[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;    // for(int i = 1;i &lt;= rtop;i ++) cout &lt;&lt; distr[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;        int reference = 0;    for(int i = 1;i &lt;= ltop;i ++) reference += (rtop-uselessp[i]);    // cout &lt;&lt; reference &lt;&lt; endl;    if( k &gt; reference )&#123;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;    &#125;else&#123;        long double ans = ef( 0 , 1e9 );        printf(&quot;Yes\n%0.8Lf\n&quot;,ans/2);    &#125;    // cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
-赛后补题G题打个表先~
-
-从后往前看，发现是等差数列
-先是公差为1，然后公差为2，之后3…
-故可以分块，公差相同的一组分到一个块
-然后二分符合条件的数值（第前k项对应的数值）；对于每个块，知道了首项和公差，所以可以$O(1)$计算有多少个符合条件的；总共有$\sqrt{n}$个块。故此算法的时间复杂度为$O(\sqrt{n}\log n)$
-值得注意的是，二分的写法有点不太传统~
-#include&lt;iostream&gt;#define int long longusing namespace std;int n , k;int vtot , val;int cnt( int num )&#123;    int tot = 0;    for(int l = 1,r;l &lt;= n;l = r + 1)&#123;        r = n / ( n / l );        int a = n - n / l * l;        int b = n / l;        if( a &lt; num ) continue;        tot += min( (a-num)/b+1 , r - l + 1 );    &#125;return tot;&#125;void ef( int l , int r )&#123;    if( l &gt; r ) return ;    int mid = (l+r)/2;    int tot = cnt(mid);    if( tot &lt; k )&#123;        vtot = tot , val = mid;        ef( l , mid - 1 );    &#125;    else ef( mid + 1 ,  r );&#125;// void ef( int l , int r )&#123;//     if( l &lt;= r ) return ;//     int mid = (l+r)/2;//     int tot = cnt(mid);//     if( tot &lt; k )&#123;//         vtot = tot , val = mid;//         ef( l , mid );//     &#125;//     else ef( mid + 1 ,  r );// &#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; k;    ef( 1ll , n );    // cout &lt;&lt; val &lt;&lt; &quot; &quot; &lt;&lt; vtot &lt;&lt; endl;    int ans = ( k - vtot ) * ( val - 1 );    // cout &lt;&lt; ans &lt;&lt; endl;    for(int l = 1,r;l &lt;= n;l = r + 1)&#123;        r = n / ( n / l );        int a = n - n / l * l;        int b = n / l;        if( a &lt; val ) continue;        int len = min((a - val) / b + 1, r - l + 1);        ans += (a * 2 - b * (len - 1)) * len / 2;        // cout &lt;&lt; ans &lt;&lt; endl;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
-第四场
-这场代码量太大了（悲
-K题签到题，直接取最大值即可
-I题直接扫一遍即可
-B题直接枚举即可，C就不会了（悲
-E题直接开扫，我写的依托~
-D题#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;int t , n , m;string a , b;map &lt; char , int &gt; mp;signed main()&#123;    cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m;        cin &gt;&gt; a &gt;&gt; b;        mp.clear();        if( n &lt; m )&#123;            string c = a;            a = b , b = c;            swap( n , m );        &#125;        for(int i = 0;i &lt; a.length();i ++)&#123;            mp[a[i]] ++;        &#125;        for(int i = 0;i &lt; b.length();i ++)&#123;            mp[b[i]] --;        &#125;        int ans = 0;        for(int i = 0;i &lt;= 26;i ++)&#123;            if( mp[i+&#x27;a&#x27;] &lt; 0) ans -= mp[i+&#x27;a&#x27;] , mp[i+&#x27;a&#x27;] = 0;        &#125;        int temp_del = 0 , rel = 0;        for(int i = 0;i &lt;= 26;i ++)&#123;            if( mp[i+&#x27;a&#x27;] &gt;= 2 ) temp_del += mp[i+&#x27;a&#x27;] / 2;            rel += mp[i+&#x27;a&#x27;];        &#125;        ans += rel-min( temp_del * 2 , n - m );        cout &lt;&lt; ans/2 &lt;&lt; endl;    &#125;    return 0;&#125;
-赛后补题]]></content>
+    <title>海丝论坛-会议记录</title>
+    <url>/2025/11/09/%E6%B5%B7%E4%B8%9D%E8%AE%BA%E5%9D%9B-%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>算法竞赛</category>
+        <category>会议竞赛游记</category>
       </categories>
       <tags>
-        <tag>算法竞赛</tag>
+        <tag>游记</tag>
+        <tag>meeting</tag>
       </tags>
   </entry>
   <entry>
@@ -6946,6 +6813,139 @@ DSS DSA ElGamal shnorr-不考细枝末节
       </categories>
       <tags>
         <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>牛客寒假2025题解</title>
+    <url>/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[本文用于记录牛客寒假赛的六场比赛的赛时解题和赛后补题
+笔者水平：CF绿上蓝下 
+
+
+第一场
+打红温了，头一次连打五个小时~
+题本身不难，就是实现上遇到比较多的障碍
+A题签到题，如果没有1就输出1e9+7即可
+D题也是直接模拟即可
+G题排序后计算a[i]-i，就是每个点需要操作的次数了
+B题一开始以为是有向图浪费了很多时间，树存在简单路径的充要条件是它是链
+M题也属于思路很简单但是写起来比较困难的题
+就拓扑排序一下，然后逐步拓展，取最优解即可
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , a[N+10];struct NUMBER&#123;    int num;    int id;&#125;b[N+10];bool cmp( NUMBER x , NUMBER y )&#123;    return x.num &lt; y.num;&#125;signed main()&#123;    int n;cin &gt;&gt; n;    int maxn , minn;maxn = 0 , minn = 2147483647;    int minp = 0;    int ans = 2147483647;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i];        b[i].id = i , b[i].num = a[i];        if( maxn &lt; a[i] ) maxn = a[i];        if( minn &gt; a[i] ) minn = a[i] , minp = i;    &#125;    if( n == 1 )&#123;        cout &lt;&lt; &quot;0\n&quot;;        return 0;    &#125;    int l , r;l = r = minp;    sort( b + 1 , b + n + 1 , cmp );    b[n+1].id = n+1 , b[n+1].num = 2147483647;    int down_minn = minn * 2;    if( maxn &lt; b[1].num * 2 ) maxn = b[1].num * 2;    minn = b[2].num , minp = b[2].id;    if( minn &gt; down_minn ) minn = down_minn;    ans = min( maxn - minn , ans );    for(int p = 2;p &lt;= n;p ++)&#123;        if( b[p].id &gt; r )&#123;            while( b[p].id &gt; r )&#123;                r ++;                if( maxn &lt; a[r] * 2 ) maxn = a[r] * 2;            &#125;            minn = b[p+1].num , minp = b[p+1].id;            while( minp &lt;= r &amp;&amp; minp &gt;= l )&#123;                p ++;                minn = b[p+1].num , minp = b[p+1].id;            &#125;            if( minn &gt; down_minn ) minn = down_minn;            ans = min( maxn - minn , ans );        &#125;         if( b[p].id &lt; l )&#123;            while( b[p].id &lt; l )&#123;                l --;                if( maxn &lt; a[l] * 2 ) maxn = a[l] * 2;            &#125;            minn = b[p+1].num , minp = b[p+1].id;            while( minp &lt;= r &amp;&amp; minp &gt;= l )&#123;                p ++;                minn = b[p+1].num , minp = b[p+1].id;            &#125;            if( minn &gt; down_minn ) minn = down_minn;            ans = min( maxn - minn , ans );        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
+J题赛时还以为是什么糕级数论，结果降低时间复杂度$O(n^\frac32)$就能过
+通过打表可知，符合条件只有两种情况，再判一下就可以了
+要先continue掉奇数，不然亲测会T掉
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;map&gt;#include&lt;cmath&gt;#define int long longusing namespace std;const int N = 2e5;int n , ans , a[N+10];map &lt; int , int &gt; m;int gcd_( int x , int y )&#123;    if( y == 0 ) return x;    return gcd_( y , x % y );&#125;signed main()&#123;    cin &gt;&gt; n;    for(int i = 1;i &lt;= n;i ++) cin &gt;&gt; a[i];    for(int i = 1;i &lt;= n;i ++) m[a[i]] ++;    for(int i = 1;i &lt;= N;i ++)&#123;        if( i % 2 ) continue;        for(int j = 1;j &lt;= sqrt(i);j ++)&#123;            if( i + j &lt;= N )&#123;                if((i ^ (i+j)) == j)                    if( gcd_( i , i+j ) == j )                        ans += m[i]*m[i+j];                if( (i ^ (i+i/j)) == i/j &amp;&amp; j*j!=i)                    if( gcd_( i , i+i/j ) == i/j )                        ans += m[i]*m[i+i/j];            &#125;        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
+赛后补题C题看起来不难，以为半个小时就能写完
+结果调了好久···
+大致思路就是朴素开扫
+#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e2;int n , t , a[N+10][N+10];int ans_list[1000000][5];string s;signed main()&#123;int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; s;            for(int j = 0;j &lt; n;j ++)&#123;                if( s[j] == &#x27;1&#x27; ) a[i][j+1] = 1;                else a[i][j+1] = 0;            &#125;        &#125;        int cnt = 0;        for(int i = 1;i &lt;= n/2;i ++)&#123;            for(int j = 1;j &lt;= n/2;j ++)&#123;                if( a[i][j] == 0 )&#123;                    for(int ii = 1;ii &lt;= n;ii ++)&#123;                        int jj , jjl;if( ii &lt; i ) jjl = n/2+1;                        else if( ii == i ) jjl = j;                        else jjl = 1;                        for(jj = n;jj &gt;= jjl;jj --)&#123;                            if( a[ii][jj] == 1 )&#123;                                // cout &lt;&lt; &quot;SWAPP: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                while( !(i==ii&amp;&amp;j==jj) )&#123;                                    if( ii &gt; i &amp;&amp; a[ii-1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii-1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii-1;                                        ans_list[cnt][4] = jj;                                        ii --;                                    &#125;else if( ii &lt; i &amp;&amp; a[ii+1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii+1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii+1;                                        ans_list[cnt][4] = jj;                                        ii ++;                                    &#125;else if( jj &gt; j &amp;&amp; a[ii][jj-1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj-1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj-1;                                        jj --;                                    &#125;else if( jj &lt; j &amp;&amp; a[ii][jj+1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj+1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj+1;                                        jj ++;                                    &#125;else goto RECHOOSE;                                &#125;goto FIXED;                            &#125;RECHOOSE:;                        &#125;                    &#125;                &#125;FIXED:;            &#125;        &#125;        // for(int i = 1;i &lt;= n;i ++)&#123;        //     for(int j = 1;j &lt;= n;j ++)&#123;        //         cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;        //     &#125;cout &lt;&lt; endl;        // &#125;        cout &lt;&lt; cnt &lt;&lt; endl;        for(int i = 1;i &lt;= cnt;i ++)&#123;            for(int j = 1;j &lt;= 4;j ++)&#123;                cout &lt;&lt; ans_list[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
+结果WA了个测试点~
+
+看了题解，感觉思路真妙哇~
+
+按照题解敲了一下，发现实现起来的复杂程度和我的代码差不多···
+最终千辛万苦，debug一整个下午，找到问题了
+ii和jj这个两个指针复用导致的，每次用完之后复位一下就好了
+#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e2;int n , t , a[N+10][N+10];int ans_list[1000000][5];string s;signed main()&#123;int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; s;            for(int j = 0;j &lt; n;j ++)&#123;                if( s[j] == &#x27;1&#x27; ) a[i][j+1] = 1;                else a[i][j+1] = 0;            &#125;        &#125;        int cnt = 0;        for(int i = 1;i &lt;= n/2;i ++)&#123;            for(int j = 1;j &lt;= n/2;j ++)&#123;                if( a[i][j] == 0 )&#123;                    for(int ii = 1;ii &lt;= n;ii ++)&#123;                        int jj;if( ii &lt; i ) jj = n/2+1;                        else if( ii == i )&#123; jj = j+1;&#125;//cout &lt;&lt; &quot;???????????&quot; &lt;&lt; endl;&#125;                        else jj = 1;                        int oii , ojj;oii = ii;                        // cout &lt;&lt; &quot;disp?: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                        while(jj &lt;= n)&#123;                            ojj = jj;                            // cout &lt;&lt; &quot;ij: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                            if( a[ii][jj] == 1 )&#123;                                // cout &lt;&lt; &quot;SWAPP: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                while( !(i==ii&amp;&amp;j==jj) )&#123;                                    // cout &lt;&lt; &quot;PASSED: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                    if( ii &gt; i &amp;&amp; a[ii-1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii-1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii-1;                                        ans_list[cnt][4] = jj;                                        ii --;                                    &#125;else if( ii &lt; i &amp;&amp; a[ii+1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii+1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii+1;                                        ans_list[cnt][4] = jj;                                        ii ++;                                    &#125;else if( jj &gt; j &amp;&amp; a[ii][jj-1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj-1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj-1;                                        jj --;                                    &#125;else if( jj &lt; j &amp;&amp; a[ii][jj+1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj+1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj+1;                                        jj ++;                                    &#125;else goto RECHOOSE;                                &#125;goto FIXED;                            &#125;RECHOOSE:;                            ii = oii , jj = ojj;                            jj ++;                        &#125;                    &#125;                    // cout &lt;&lt; &quot;unp: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;                    // for(int i = 1;i &lt;= n;i ++)&#123;                    //     for(int j = 1;j &lt;= n;j ++)&#123;                    //         cout &lt;&lt; (a[i][j]==1?&quot;1&quot;:&quot;0&quot;) &lt;&lt; &quot; &quot;;                    //     &#125;cout &lt;&lt; endl;                    // &#125;                &#125;FIXED:;            &#125;        &#125;        // for(int i = 1;i &lt;= n;i ++)&#123;        //     for(int j = 1;j &lt;= n;j ++)&#123;        //         cout &lt;&lt; (a[i][j]==1?&quot;1&quot;:&quot;0&quot;) &lt;&lt; &quot; &quot;;        //     &#125;cout &lt;&lt; endl;        // &#125;        cout &lt;&lt; cnt &lt;&lt; endl;        for(int i = 1;i &lt;= cnt;i ++)&#123;            for(int j = 1;j &lt;= 4;j ++)&#123;                cout &lt;&lt; ans_list[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;                    &#125;    &#125;    return 0;&#125;
+E题概率论没学好（悲
+
+知道了这一点，将会是签到题的难度（悲
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , t , a[N+10];signed main()&#123;int t;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        int ans = 0;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i];        &#125;        sort( a + 1 , a + n + 1 );        int goal , goal1;        goal1 = a[(n/2+1)/2];        goal  = a[n/2+(n/2+1)/2];        for(int i = 1;i &lt;= n/2;i ++)&#123;            ans += abs( a[i] - goal1 );        &#125;        for(int i = n/2+1;i &lt;= n;i ++)&#123;            ans += abs( a[i] - goal );        &#125;        if( goal1 == goal )&#123;            int add , add_temp;add_temp = 0;            for(int i = 1;i &lt;= n/2;i ++)&#123;                if( a[i] == goal1 ) add_temp ++;                else add_temp --;            &#125;add = add_temp;            add_temp = 0;            for(int i = n/2+1;i &lt;= n;i ++)&#123;                if( a[i] == goal ) add_temp ++;                else add_temp --;            &#125;add = min(add_temp,add);            ans += add;        &#125;        cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
+H题思维题
+考虑贪心，为了最大化排的开，我们需要按左节点排序，当$i=l_i$时加入备选，备选里面按右节点排序
+如果不够了，就说明不存在
+记得判非空
+顺便学习了一下如何结构体根堆
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;queue&gt;#define int long long using namespace std;const int N = 1e5;int n;struct NODE&#123;    int l , r;    int id;&#125;a[N+10];bool cmp( NODE x , NODE y )&#123;    return x.l &lt; y.l;&#125;struct Comp&#123;    bool operator()(const NODE&amp; x , const NODE&amp; y)&#123;        // if( x.r == y.r )        return x.r &gt; y.r;    &#125;&#125;;priority_queue &lt; NODE , vector &lt; NODE &gt; , Comp &gt; pq;int ans[N+10];signed main()&#123;    cin &gt;&gt; n;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i].l &gt;&gt; a[i].r;a[i].id = i;    &#125;sort( a + 1 , a + n + 1 , cmp );    int top = 1 , topi = 1;    while( top &lt;= n )&#123;        while( a[topi].l == top ) pq.push( &#123;a[topi].l,a[topi].r,a[topi].id&#125; ) , topi ++;        if( pq.empty() )&#123;            cout &lt;&lt; -1 &lt;&lt; endl;            return 0;        &#125;        if( pq.top().r &gt;= top )&#123;            ans[pq.top().id] = top;            pq.pop();top ++;        &#125;else&#123;            cout &lt;&lt; -1 &lt;&lt; endl;            return 0;        &#125;    &#125;for(int i = 1;i &lt;= n;i ++)&#123;        cout &lt;&lt; ans[i] &lt;&lt; &quot; &quot;;    &#125;cout &lt;&lt; endl;    return 0;&#125;
+就此，100人以上的题目都补完了
+
+第二场
+这场被打爆了，D结论题没做出来（根本想不到）
+不过好在H题一个钝角三角形就秒了，没掉太大分
+A题签到
+B题直接排序然后输出a[n/2+1]-1即可
+F题打表找到规律r-l+1
+G题直接模拟
+J题也是大模拟（但是没有想象中的毒瘤）
+K题直接搜索即可，但是需要一些优化技巧不然会T掉~
+就涂色就可以了，代码还是听清楚的
+感觉难在优化（挂五发的悲哀）
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;string&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 5e2;int n , m;int a[N+10][N+10];int blue[N+10][N+10];int rem[N+10][N+10];string s;int ans , ans_now;int most_low;void dfs( int i , int j )&#123;    most_low = max( most_low , i + 1 );    if( i+1&lt;=n &amp;&amp; a[i+1][j] == 1 &amp;&amp; blue[i+1][j] == 0 ) blue[i+1][j] = 1 , dfs(i+1,j);    else if( i+1&lt;=n &amp;&amp; blue[i+1][j] == 0 ) blue[i+1][j] = 2 , ans_now ++;    if( i-1&gt;=1 &amp;&amp; a[i-1][j] == 1 &amp;&amp; blue[i-1][j] == 0 ) blue[i-1][j] = 1 , dfs(i-1,j);    else if( i-1&gt;=1 &amp;&amp; blue[i-1][j] == 0 ) blue[i-1][j] = 2 , ans_now ++;    if( j+1&lt;=m &amp;&amp; a[i][j+1] == 1 &amp;&amp; blue[i][j+1] == 0 ) blue[i][j+1] = 1 , dfs(i,j+1);    else if( j+1&lt;=m &amp;&amp; blue[i][j+1] == 0 ) blue[i][j+1] = 2 , ans_now ++;    if( j-1&gt;=1 &amp;&amp; a[i][j-1] == 1 &amp;&amp; blue[i][j-1] == 0 ) blue[i][j-1] = 1 , dfs(i,j-1);    else if( j-1&gt;=1 &amp;&amp; blue[i][j-1] == 0 ) blue[i][j-1] = 2 , ans_now ++;    return ;&#125;signed main()&#123;    // freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; s;        for(int j = 0;j &lt; m;j ++)&#123;            a[i][j+1] = s[j] - &#x27;0&#x27;;        &#125;    &#125;    ans = 2147483647;    int ii , jj;ii = 1;    while( 1 )&#123;        ans_now = 0;        most_low = 1;        for(;ii &lt;= n;ii ++)&#123;            for(jj = 1;jj &lt;= m;jj ++)&#123;                if( a[ii][jj] )&#123;                    blue[ii][jj] = 1;                    dfs( ii , jj );                    goto OUT;                &#125;            &#125;        &#125;        break;        OUT:;        ans = min( ans , ans_now );        for(int i = ii;i &lt;= most_low;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                if( blue[i][j] )&#123;//1和2都涂为灰色                    blue[i][j] = 0;                    a[i][j] = 0;                &#125;            &#125;        &#125;    &#125;cout &lt;&lt; ans &lt;&lt; endl;        return 0;&#125;
+H题没想到这题这么简单，答案是钝角（即答
+直接试图构造最钝角的钝角三角形即可
+#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;int a , b , c , d;signed main()&#123;    int t;cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;        if( b - a &gt; d - c )&#123;            cout &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;            cout &lt;&lt; b-1 &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; d-1 &lt;&lt; endl;                    &#125;else&#123;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; c &lt;&lt; endl;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; c+1 &lt;&lt; endl;            cout &lt;&lt; a+1 &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
+赛后补题D题大结论题，完全没想到的一款
+结论：连续子串和不连续子串，最长情况下，只有最后一个（或者第一个）字母不同
+学长给的证明，感觉很清晰易懂
+
+赛后多了新数据，特判一下1的时候输出0就可以了
+#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 2e5;int n;string s;int a[N+10] , lst[30];map &lt; int , int &gt; mp;signed main()&#123;    cin &gt;&gt; n &gt;&gt; s;    for(int i = 1;i &lt;= n;i ++)&#123;        a[i] = s[i-1] - &#x27;a&#x27; + 1;    &#125;    int maxn = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        if( mp[a[i]] ) maxn = max( maxn , lst[a[i]] );        mp[a[i]] ++ , lst[a[i]] = i;    &#125;    for(int i = 1;i &lt;= 26;i ++) mp[i] = 0;    for(int i = n;i &gt;= 1;i --)&#123;        if( mp[a[i]] ) maxn = max( maxn , n - lst[a[i]] + 1 );        mp[a[i]] ++ , lst[a[i]] = i;    &#125;    if( maxn == 1 ) maxn = 0;    cout &lt;&lt; maxn &lt;&lt; endl;    return 0;&#125;
+C题构造题，需要建立在D的结论之上
+不妨先只考虑一个方向（从前往后）
+构造一个串，答案为最后一个倒数第二个字母（最大的）
+就，前面半截是abcde...，只要末尾最后俩是对a，就是m=n-1
+例如，n=11,m=10，则构造的序列为abcdefghiaa，这时符合条件（只考虑从前往后扫）
+那，还要从后往前扫怎么办~
+对称一下不就好了，即abcdefghiaihgfedcba，这时m=10（虽然n变了）
+n=2m+1的时候可以这样子构造，，，那其他情况呢？n&gt;2*m的时候，往中间填充任意字符就可以了（需要是两侧出现过的哦）
+如果n&lt;=2*m，也就是回文区间大于前缀/后缀，可以发现我们可以从前缀结束之后直接继续数，例如
+abcde fgh edcba这样子，反正这样就可以达到延长子串的作用（不信你试试，答案刚好是前两段的内容（第一种情况下答案只包含第一段+1））
+最后别忘了特判n==m和字母不够（n-m&gt;26）的情况
+#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;const int N = 2e5;int n , m;signed main()&#123;    int t;cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m;        if( n == m || n - m &gt; 26 )&#123;            cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;            continue;        &#125;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;        if( n &gt; m * 2 )&#123;            for(int i = 1;i &lt;= m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = m+1;i &lt;= n-m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = m;i &gt;= 1;i --)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            cout &lt;&lt; endl;        &#125;else&#123;            for(int i = 1;i &lt;= n-m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = 1;i &lt;= 2*m-n;i ++)&#123;                cout &lt;&lt; (char)(1+&#x27;a&#x27;-1);            &#125;            for(int i = n-m;i &gt;= 1;i --)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            cout &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
+E题哦原来是RMQ算法哇怪不得我不会做原来是因为我不会
+先记下来，明儿个学了再补~
+第三场
+这场发挥比较好，骑马进前10%了（也有可能是题目难度梯度大，恰巧E调出来了）
+A题猜结论按奇偶性分类，随机数最优策略都只拿一个故偶数必败
+M题一个桶结束
+F题模拟一下极端情况，可以发现sum&#123;a,b,c&#125;在n和2n之间是合法的，否则不合法
+C题正解为按字典序排序然后贪心，当然trie树也可以做
+由于最后一步不需要复原，故把最后一个弄成最长的那个即可
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , m;string s[N+10];bool cmp( string x , string y )&#123;    for(int i = 0;i &lt; min(x.length(),y.length());i ++)        if( x[i] != y[i] ) return (int)(x[i]) &lt; (int)(y[i]);    return x.length() &lt; y.length();&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; s[i];    &#125;cin &gt;&gt; m &gt;&gt; m;    sort( s + 1 , s + n + 1 , cmp );    string now_str = &quot;&quot;;    int ans = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        while( now_str != s[i] )&#123;            int j = 0;            for(;j &lt; min(now_str.length(),s[i].length());j ++)                if( now_str[j] != s[i][j] ) break;            ans += ( s[i].length() + now_str.length() - j*2 );            now_str = s[i];        &#125;    &#125;    int long_max = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        long_max = max( long_max , (int)s[i].length() );    &#125;    cout &lt;&lt; ans + (int)now_str.length() - long_max &lt;&lt; endl;    return 0;&#125;
+L题算是个构造+小模拟
+我的策略如下
+初始下，不妨设酱紫
+
+构造，先把右上角这条线，从上到右下画了
+
+然后通过以下规则进行填充
+
+按照紫色的规则，填充到最左侧，然后往上两个（见红色）
+
+再按如图的规则填充到最右侧
+
+现在就回到了最右侧，之后按照之前的步骤，就可以填充所有的节点
+
+通过代码实现上述内容即可，数据范围比较小，调试通过了大概率就能过
+#include&lt;iostream&gt;#define int long longusing namespace std;int a[10][10];void out( int i , int j )&#123;    cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;    // cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;    return ;&#125;signed main()&#123;    int n;cin &gt;&gt; n;n ++;cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;    int cnt = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= n;j ++)&#123;            if( i &gt;= j )&#123;                cnt ++;a[i][j] = cnt;            &#125;        &#125;    &#125;    // for(int i = 1;i &lt;= n;i ++)&#123;    //     for(int j = 1;j &lt;= n;j ++)&#123;    //         cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;    //     &#125;cout &lt;&lt; endl;    // &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        out(i,i);    &#125;    for(int i = n;i &gt;= 1;i --)&#123;        for(int j = i-1;j &gt;= 1;j --)&#123;            // cout &lt;&lt; &quot;start: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;            if( j == 1 )&#123;                out(i,j);                i--;out(i,j);                if( i &gt; 1 ) &#123;i--;out(i,j);&#125;                while( j &lt; i )&#123;                    i++,j++;out(i,j);                    i--;out(i,j);                &#125;            &#125;else&#123;                out(i,j);                i--;out(i,j);                j--;out(i,j);                j++,i++;out(i,j);            &#125;            // cout &lt;&lt; &quot;round: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;        &#125;    &#125;cout &lt;&lt; endl;    return 0;&#125;
+E题因为是弹性碰撞，所以我们可以认为两个球碰撞等价于两个球相互穿过（后面的讨论都基于此）
+只考虑向右和向左的球，故如果知道了时间 $t$，我们只需要确定是否存在大于 $k$ 个球的间距不小于 $2t$ 且左侧的球是向右走，右侧的球向左走
+故我们将两侧的球分别记录，然后二分时间即可
+值得注意的是，向右走的球与其左侧的向左走的球永远不可能相撞，故记录一下进行减法运算即可
+从后往前扫，累计加入答案，这样可以让一次check的时间复杂度降到$O(n)$
+#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , k;struct BOLL&#123;    int p , v;&#125;b[N+10];int distl[N+10] , distr[N+10] , uselessp[N+10];int ltop , rtop;bool cmp( BOLL x , BOLL y )&#123;    return x.p &lt; y.p;&#125;int check( long double dist )&#123;    // cout &lt;&lt; &quot;dist: &quot; &lt;&lt; dist &lt;&lt; endl;    int ans = 0 , i , j;i = j = 1;    while( i &lt;= ltop &amp;&amp; j &lt;= rtop + 1 )&#123;        if( distr[j] - distl[i] &lt;= dist &amp;&amp; j != rtop+1 )&#123;            j ++;        &#125;else&#123;            ans += ( j-1 - uselessp[i] );            // cout &lt;&lt; &quot;ans: &quot; &lt;&lt; ans &lt;&lt; endl;            i ++;        &#125;    &#125;    // cout &lt;&lt; &quot;dist k: &quot; &lt;&lt; ans &lt;&lt; endl;    return ans;&#125;long double ef( long double l , long double r )&#123;    if( r - l &lt;= 1e-8 ) return l;    long double mid = (l+r)/2;    if( check( mid ) &gt;= k ) return ef(l,mid);    else return ef(mid,r);&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; k;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; b[i].p &gt;&gt; b[i].v;    &#125;sort( b + 1 , b + n + 1 , cmp );    int useless = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        if( b[i].v == 1 ) distl[++ltop] = b[i].p , uselessp[ltop] = useless;        else distr[++rtop] = b[i].p , useless ++;    &#125;    // for(int i = 1;i &lt;= ltop;i ++) cout &lt;&lt; distl[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;    // for(int i = 1;i &lt;= ltop;i ++) cout &lt;&lt; uselessp[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;    // for(int i = 1;i &lt;= rtop;i ++) cout &lt;&lt; distr[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;        int reference = 0;    for(int i = 1;i &lt;= ltop;i ++) reference += (rtop-uselessp[i]);    // cout &lt;&lt; reference &lt;&lt; endl;    if( k &gt; reference )&#123;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;    &#125;else&#123;        long double ans = ef( 0 , 1e9 );        printf(&quot;Yes\n%0.8Lf\n&quot;,ans/2);    &#125;    // cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
+赛后补题G题打个表先~
+
+从后往前看，发现是等差数列
+先是公差为1，然后公差为2，之后3…
+故可以分块，公差相同的一组分到一个块
+然后二分符合条件的数值（第前k项对应的数值）；对于每个块，知道了首项和公差，所以可以$O(1)$计算有多少个符合条件的；总共有$\sqrt{n}$个块。故此算法的时间复杂度为$O(\sqrt{n}\log n)$
+值得注意的是，二分的写法有点不太传统~
+#include&lt;iostream&gt;#define int long longusing namespace std;int n , k;int vtot , val;int cnt( int num )&#123;    int tot = 0;    for(int l = 1,r;l &lt;= n;l = r + 1)&#123;        r = n / ( n / l );        int a = n - n / l * l;        int b = n / l;        if( a &lt; num ) continue;        tot += min( (a-num)/b+1 , r - l + 1 );    &#125;return tot;&#125;void ef( int l , int r )&#123;    if( l &gt; r ) return ;    int mid = (l+r)/2;    int tot = cnt(mid);    if( tot &lt; k )&#123;        vtot = tot , val = mid;        ef( l , mid - 1 );    &#125;    else ef( mid + 1 ,  r );&#125;// void ef( int l , int r )&#123;//     if( l &lt;= r ) return ;//     int mid = (l+r)/2;//     int tot = cnt(mid);//     if( tot &lt; k )&#123;//         vtot = tot , val = mid;//         ef( l , mid );//     &#125;//     else ef( mid + 1 ,  r );// &#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; k;    ef( 1ll , n );    // cout &lt;&lt; val &lt;&lt; &quot; &quot; &lt;&lt; vtot &lt;&lt; endl;    int ans = ( k - vtot ) * ( val - 1 );    // cout &lt;&lt; ans &lt;&lt; endl;    for(int l = 1,r;l &lt;= n;l = r + 1)&#123;        r = n / ( n / l );        int a = n - n / l * l;        int b = n / l;        if( a &lt; val ) continue;        int len = min((a - val) / b + 1, r - l + 1);        ans += (a * 2 - b * (len - 1)) * len / 2;        // cout &lt;&lt; ans &lt;&lt; endl;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
+第四场
+这场代码量太大了（悲
+K题签到题，直接取最大值即可
+I题直接扫一遍即可
+B题直接枚举即可，C就不会了（悲
+E题直接开扫，我写的依托~
+D题#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;int t , n , m;string a , b;map &lt; char , int &gt; mp;signed main()&#123;    cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m;        cin &gt;&gt; a &gt;&gt; b;        mp.clear();        if( n &lt; m )&#123;            string c = a;            a = b , b = c;            swap( n , m );        &#125;        for(int i = 0;i &lt; a.length();i ++)&#123;            mp[a[i]] ++;        &#125;        for(int i = 0;i &lt; b.length();i ++)&#123;            mp[b[i]] --;        &#125;        int ans = 0;        for(int i = 0;i &lt;= 26;i ++)&#123;            if( mp[i+&#x27;a&#x27;] &lt; 0) ans -= mp[i+&#x27;a&#x27;] , mp[i+&#x27;a&#x27;] = 0;        &#125;        int temp_del = 0 , rel = 0;        for(int i = 0;i &lt;= 26;i ++)&#123;            if( mp[i+&#x27;a&#x27;] &gt;= 2 ) temp_del += mp[i+&#x27;a&#x27;] / 2;            rel += mp[i+&#x27;a&#x27;];        &#125;        ans += rel-min( temp_del * 2 , n - m );        cout &lt;&lt; ans/2 &lt;&lt; endl;    &#125;    return 0;&#125;
+赛后补题]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>算法竞赛</tag>
       </tags>
   </entry>
   <entry>
@@ -7675,6 +7675,19 @@ https://github.com/azl397985856/cf
       </tags>
   </entry>
   <entry>
+    <title>计算机组成原理学习笔记</title>
+    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研专业课</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>荔枝橙味拱腰觅马糕守</title>
     <url>/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</url>
     <content><![CDATA[本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获
@@ -8317,19 +8330,6 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
       </tags>
   </entry>
   <entry>
-    <title>计算机组成原理学习笔记</title>
-    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研专业课</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>计算机网络有手就行诶我手呢</title>
     <url>/2025/01/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%E8%AF%B6%E6%88%91%E6%89%8B%E5%91%A2/</url>
     <content><![CDATA[计算机网络刷题记录
@@ -8749,85 +8749,6 @@ $ npm list --depth=0hexo-site@0.0.0 C:\Users\coper\Desktop\myblog├── hexo-
       </tags>
   </entry>
   <entry>
-    <title>记录一道泰勒公式相关的考研数学题</title>
-    <url>/2024/09/15/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F%E7%9B%B8%E5%85%B3%E7%9A%84%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98/</url>
-    <content><![CDATA[今天，有个学长（烤盐糕守）发给了我一道树穴题（据说是刚出锅的热乎题）
-问题：极限 $lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-sin^2xcosx}=?$
-
-方法一：洛！
-计算量巨大，不做展开
-方法二：泰勒
-先放答案：
-
-\begin{align*}
-      &\ \ \ \ \ lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-sin^2xcosx}\enclose{circle}{1}\\
-    &= lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-(x-\frac{1}{6}x^3)^2(1-\frac{x^2}{2})}\enclose{circle}{2}\\
-    &= lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{\frac{5}{6}x^4}\enclose{circle}{3}\\
-    &= lim_{x\rightarrow 0}\dfrac{(x-(x-\frac{x^2}{2}))\frac{x^2}{2}}{\frac{5}{6}x^4}\enclose{circle}{4}\\
-    &= \frac{3}{10}\enclose{circle}{5}
-\end{align*}
-分母（式①到式②）怎么来的？
-
-因为无穷小的运算法则：$o(x^n)+o(x^m)=o(x^{min(n,m)})$，低阶（无穷小）相应的更大，而分母的泰勒展开是直接要最小项的（无穷小的运算法则让它展开为最小项），所以要用更大的那个无穷小去算
-对于分母 ${x^2-sin^2xcosx}$，cos的阶数是 平方，所以取 $x^4$ 作为实质的最小项（$x^2$ 消掉了）
-
-\begin{align*}
-      &\ \ \ \ \ lim_{x\rightarrow 0}\ {x^2-sin^2xcosx}\\
-    &= lim_{x\rightarrow 0}\ x^2-(x-\frac{1}{6}x^3)^2(1-\frac{x^2}{2})\\
-    &= lim_{x\rightarrow 0}\ x^2-(x^2-\frac{1}{3}x^4+\frac{1}{36}x^6)(1-\frac{x^2}{2})\\
-    &容易观察到，x^2项全消了，所以最小项就是x^4\\
-    &= lim_{x\rightarrow 0}\ \frac{1}{3}x^4 * 1 + x^2 * \frac{x^2}{2} \\
-    &= lim_{x\rightarrow 0} \frac{5}{6}x^4
-\end{align*} \\如果只取sin的第一项：
-
-(错误示范)\\
-\begin{align*}
-      &\ \ \ \ \ lim_{x\rightarrow 0}\ {x^2-sin^2xcosx}\\
-    &= lim_{x\rightarrow 0}\ x^2-x^2(1-\frac{x^2}{2})\\
-    &= lim_{x\rightarrow 0}\ \frac{x^4}{2}
-\end{align*} \\显然是不完整的，有一部分的 $x^4$ 未考虑
-综上所述：分母的泰勒展开是直接要最小项的，但是不是只取最终项，要完整的求出最小项（如本题中，是 $x^4$ ），根据如何得到最小项来判断泰勒展开需要多少项（其实展开多了也没事，反正不会是最小项）
-
-分子（式③到式④）怎么来的？
-
-分子泰勒展开，展开到和分母一样的阶数即可⑤
-式子 $lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{\frac{5}{6}x^4}$ 中，分母是四次方，所以分子也要展开到四次方（见后文，删除线中的内容和因果关系是错误的，但是本题中确实是展开到四次方）
-
-\begin{align*}
-      &\ \ \ \ \ lim_{x\rightarrow 0}\ (x-ln(1+x))(1-cosx) \\
-    &= lim_{x\rightarrow 0}\ (x-(x-\frac{1}{2}x^2))\frac{x^2}{2} \\
-    &= lim_{x\rightarrow 0}\ \frac{x^4}{4}
-\end{align*}相关例题：
-试计算 $lim_{x\rightarrow 0}\ \frac{x-sinx}{x^3}$
-解：
-
-\begin{align*}
-      &\ \ \ \ \ lim_{x\rightarrow 0}\ \frac{x-sinx}{x^3}\\
-      &\ \ \ \ \ 因为分母的最高项是三次方，故这里sinx也展开到三次方(这句话也是错误的，见下文 \\
-    &= lim_{x\rightarrow 0}\ \frac{x-(x-\frac{1}{6}x^3)}{x^3}\\
-    &= lim_{x\rightarrow 0}\ \frac{x-(x-\frac{1}{6}x^3)}{x^3}\\
-    &= lim_{x\rightarrow 0}\ \frac{\frac{1}{6}x^3}{x^3}\\
-    &= \frac{1}{6}
-\end{align*} \\
-为什么分子分母要等阶（⑤）？
-
-高阶无穷小+低阶无穷小=低阶无穷小
-所以无论展开几项都是一样的，都会只有最低阶（即展开后较靠前的部分）对于极限的计算有影响
-故 无论分子分母，只需要展开到最低阶（即最终式子剩下的最低阶）
-无需证明是否在极限值附近有界，只需要分子分母分别展开即可（这也是上文中删除线中句子错误的原因）
-
-总结
-
-计算此类题目（无法使用等价无穷小），只需要将分子分母中可以展开的项分别展开（目的是为了消项），展开到保留（最终结果的）最小项，再进行运算比较即可
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研数学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记录一道很有意思的简单考研数学题（奇偶性相关）</title>
     <url>/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/</url>
     <content><![CDATA[题目描述：设 $f(x)=\frac{1}{2^x+1},x\in \mathbb{R},$ 则$f^{(100)}(0)=?$（即100阶导数）
@@ -8915,6 +8836,85 @@ f^{(5)}(0)=-\tfrac{1}{2} b^5\cdot 16=-8\,b^5.
 
 f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2k-1}.
 
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录一道泰勒公式相关的考研数学题</title>
+    <url>/2024/09/15/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F%E7%9B%B8%E5%85%B3%E7%9A%84%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98/</url>
+    <content><![CDATA[今天，有个学长（烤盐糕守）发给了我一道树穴题（据说是刚出锅的热乎题）
+问题：极限 $lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-sin^2xcosx}=?$
+
+方法一：洛！
+计算量巨大，不做展开
+方法二：泰勒
+先放答案：
+
+\begin{align*}
+      &\ \ \ \ \ lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-sin^2xcosx}\enclose{circle}{1}\\
+    &= lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-(x-\frac{1}{6}x^3)^2(1-\frac{x^2}{2})}\enclose{circle}{2}\\
+    &= lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{\frac{5}{6}x^4}\enclose{circle}{3}\\
+    &= lim_{x\rightarrow 0}\dfrac{(x-(x-\frac{x^2}{2}))\frac{x^2}{2}}{\frac{5}{6}x^4}\enclose{circle}{4}\\
+    &= \frac{3}{10}\enclose{circle}{5}
+\end{align*}
+分母（式①到式②）怎么来的？
+
+因为无穷小的运算法则：$o(x^n)+o(x^m)=o(x^{min(n,m)})$，低阶（无穷小）相应的更大，而分母的泰勒展开是直接要最小项的（无穷小的运算法则让它展开为最小项），所以要用更大的那个无穷小去算
+对于分母 ${x^2-sin^2xcosx}$，cos的阶数是 平方，所以取 $x^4$ 作为实质的最小项（$x^2$ 消掉了）
+
+\begin{align*}
+      &\ \ \ \ \ lim_{x\rightarrow 0}\ {x^2-sin^2xcosx}\\
+    &= lim_{x\rightarrow 0}\ x^2-(x-\frac{1}{6}x^3)^2(1-\frac{x^2}{2})\\
+    &= lim_{x\rightarrow 0}\ x^2-(x^2-\frac{1}{3}x^4+\frac{1}{36}x^6)(1-\frac{x^2}{2})\\
+    &容易观察到，x^2项全消了，所以最小项就是x^4\\
+    &= lim_{x\rightarrow 0}\ \frac{1}{3}x^4 * 1 + x^2 * \frac{x^2}{2} \\
+    &= lim_{x\rightarrow 0} \frac{5}{6}x^4
+\end{align*} \\如果只取sin的第一项：
+
+(错误示范)\\
+\begin{align*}
+      &\ \ \ \ \ lim_{x\rightarrow 0}\ {x^2-sin^2xcosx}\\
+    &= lim_{x\rightarrow 0}\ x^2-x^2(1-\frac{x^2}{2})\\
+    &= lim_{x\rightarrow 0}\ \frac{x^4}{2}
+\end{align*} \\显然是不完整的，有一部分的 $x^4$ 未考虑
+综上所述：分母的泰勒展开是直接要最小项的，但是不是只取最终项，要完整的求出最小项（如本题中，是 $x^4$ ），根据如何得到最小项来判断泰勒展开需要多少项（其实展开多了也没事，反正不会是最小项）
+
+分子（式③到式④）怎么来的？
+
+分子泰勒展开，展开到和分母一样的阶数即可⑤
+式子 $lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{\frac{5}{6}x^4}$ 中，分母是四次方，所以分子也要展开到四次方（见后文，删除线中的内容和因果关系是错误的，但是本题中确实是展开到四次方）
+
+\begin{align*}
+      &\ \ \ \ \ lim_{x\rightarrow 0}\ (x-ln(1+x))(1-cosx) \\
+    &= lim_{x\rightarrow 0}\ (x-(x-\frac{1}{2}x^2))\frac{x^2}{2} \\
+    &= lim_{x\rightarrow 0}\ \frac{x^4}{4}
+\end{align*}相关例题：
+试计算 $lim_{x\rightarrow 0}\ \frac{x-sinx}{x^3}$
+解：
+
+\begin{align*}
+      &\ \ \ \ \ lim_{x\rightarrow 0}\ \frac{x-sinx}{x^3}\\
+      &\ \ \ \ \ 因为分母的最高项是三次方，故这里sinx也展开到三次方(这句话也是错误的，见下文 \\
+    &= lim_{x\rightarrow 0}\ \frac{x-(x-\frac{1}{6}x^3)}{x^3}\\
+    &= lim_{x\rightarrow 0}\ \frac{x-(x-\frac{1}{6}x^3)}{x^3}\\
+    &= lim_{x\rightarrow 0}\ \frac{\frac{1}{6}x^3}{x^3}\\
+    &= \frac{1}{6}
+\end{align*} \\
+为什么分子分母要等阶（⑤）？
+
+高阶无穷小+低阶无穷小=低阶无穷小
+所以无论展开几项都是一样的，都会只有最低阶（即展开后较靠前的部分）对于极限的计算有影响
+故 无论分子分母，只需要展开到最低阶（即最终式子剩下的最低阶）
+无需证明是否在极限值附近有界，只需要分子分母分别展开即可（这也是上文中删除线中句子错误的原因）
+
+总结
+
+计算此类题目（无法使用等价无穷小），只需要将分子分母中可以展开的项分别展开（目的是为了消项），展开到保留（最终结果的）最小项，再进行运算比较即可
 ]]></content>
       <categories>
         <category>考研</category>
@@ -9302,50 +9302,6 @@ $v$表示当地速度，$V_\infty$表示来流速度
       </categories>
       <tags>
         <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日记 2025-11-04</title>
-    <url>/2025/11/04/diary/2025-11-04/</url>
-    <content><![CDATA[
-  5e8fa810db47415ffe33dd15c1fd3531e254978c3b065346daebfc399218a22d539b04e8b537f75c8956938fab90248b76de7d1a7f2d85f6e8d3504c171ceccb70a7b4bcfad37d9accbf33c14c3f7edae100c5faff707ecdae0bb475d93baf6a4e078cc94c33daf606f08139e8b4cec018c41b4f51ee3e2b9f66eda778455fcf74f3267225bcee3b963caed3c7447e09c357177e57a5154b317c14b93ef2c8e0af05825f13a2f989056736fae3cf70b11e63cecba52fc134690d5a9f7d3873d6e4f09b51284016c0f1040363dd8fce5524f8d8c414ff25c601a64fc7b6c95cef3637df83c3db2288c9c776b77b5cb723806c8063ce140d4f92a957136f8f9fdaa720a346533840926b152df36ecbe1cde17bb7029da59df655bb72458fbdaa9445455e006d648fe409212477c60237b4b728092b33324570feb6bc349ddaacfbf5fb6e166acb63c08a731d95d3f82c970b0ea3ed9b8db3436746cf7363ea08388a41043392a95795d975f81a4e0e53f743f6480dfb0e2af035e8dde4381db7bdd4a0eb70a8b09a1167b8247b21b4d437f0fce247e67181e0e9ef350299bb585cd242b81ca1b81b9fd8ab121d56b437b9f76828776ff8a7f7b54455c2a221de56b75263f4e96c11e06de9293533f601179e872b43da133908bcc03ff2b9a8048761b83f39c5de46087f954c091444f32e4801095c3f96c1ebd478b466525e6ac93368e777ecd446ea784ba0a5d08dcd66c39144f719bd90802809419abdf9c8d30dbc8667203e09a13de258dec79987c9a87da222098dcde80e77048178d7dcac622d91fb4b2e3bf0c78f2d990bc196f102016330a1cb0cd91b2bf55aad80ef738d9fa544c3d2dfef578356c62c5effde17756baeea7137e6972d629015afde5b0a5016a71cbfc56ea773e277d959150ce619cd3a0805bee8ea6ac95ab9f7aaa69fdee38c34a1efc3187cb4a1d38c2413ec21bbdf58a059d3d5365f54c7ee8f05cc070a957298f9b6f08d41c9c10b8f6245c56da147b16a8e0dd22cea3651c5d26d6feea2949a43a4c4d84b7e12f2063e2298906ac96e4a9be47a2d31f7b639c7c93516e2e82d7de0dd63097304b1441cf4b44d08c818d345ade386b3e139aaebb8d5f262bfc920fbb221293e2dcfc020d9837628c5dde83a99a1dc7b885836197417f023e8aed6891c109ab92414aad832c8ddd0627b3effcf8f698d7d74d4181c9c88753ef90df8b25b4656cb97bfcc1585f68b48390205439d2675b93ea110bf70213bec3c9977b569b6bdd76bb89a0dca6204058b822047c54879a96efa56a8b652d7046c69933070893b59b6468d0ab79d21ee7e131693153d0ef12594d5c3c7ae39ceb60c3e5c7d3401bd64484b868b4a45dd1e5dcb35e9a92ca892c35d16672b233e4a9348c7cd664703adb42e8d6366e7a589846201e090b6a49a68a3eb735b6a1f17d3f1b11118ae57d6fb1c990b5a45fcdf3285b644bf4748ec5be5c3a905c97660b53ed2d8585469af42c70560c259e255b76fa39a3e4da90a5ca0bf9c8e8a4365e2b4cbc67300acb84ab94f91c6943723b6c56d9529f227f4a2a05b04e0aeba848028c784e8d3b3f272013aac6c125e678fdaf3fb49813e706ff5
-  
-    
-      
-      
-        📖 请输入日记密码
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日记 2025-11-05</title>
-    <url>/2025/11/05/diary/2025-11-05/</url>
-    <content><![CDATA[
-  5e8fa810db47415ffe33dd15c1fd3531e254978c3b065346daebfc399218a22d055e4b9374155822632e8bfb90c8b6f1086d16f92dfd0353350557782d24e3ed384725ef3a1c81bcd003e832fd6361071919bf4d8aa0f5d5b12a9785d6a3b3e0a1d02caa03bade651d9ab6a95a52c1112d799b3afbbf01dbf14fdcce0111cb37b2efcf71baac19055a73e13802193044e4e602e9ce3c2d494d709504af8f6084dd72cba8b47f11affe54fff728799ae80f9dea241f7979dafeb89d6f8753ee7a43925255949c624efc60a926df0fa129f21e0640fc18e2d5817f6a4dd71c2646386a606fe2508dbdaa3f8aa517b57a96e818b9dae9e2db8c3a9b2217cac4949a6a7166cac55f0e47ce6e6f918fd4e4acd5b708e7592659d55f29906d57d0b28efcf143ef52b34699c9202c82ffbf1148a405a3613c7da1cddc88882221aa3c30c8d144779a7d08bdfe942e020a2d931e6464af22f33e3b0e540ffbb3d52b460ebc612b4502c9bb403528ec0e75a40e9a0116cd7b7ec0bd061007535254ab6a3cfbb0d7279e17e32af1c79876e3b6338c4e2c7c91fd667661cbc274926ed35ecd0aba29de96cb18ed85b223e470e69a3c045348da6cf2abe324f836c7fb7a6f2bf241362c24ba35562bec442cdd2df4eec4a2588bc0c620bf056907db9835cb441bf2a6783fbd7cbf4ecd3e7b0053a3c60a969ac6b121bca377e4ba8c81fba23eefe46df5e43631aefb13499e6a9795855746d071ea02d66a4d92eaa78c3aec4180c266bcc726fab12c4e956382499d95b4b69489c4a90d1c5937186d1ce3fd12c704d29bc9a0108f84b5ff6771a3716f6c96816de409bd81c499c54bfe1affaeb6b9995ccd1b8698730f02dbb827d7f37390a3c52abc10e68426e1fdb154a5d815432e3e70fda11e484a8fad8879cfd727a783bf1d9900f50758cce83566d5f6eb0b60978492f5683be2d1376b0b8eefce3439a4a1e1ae4b43cf438406f3fb4e321e9bea0a08e075850a7455ac4c61a83030fe00217de2e8706baab66f98d059b235771d1c779978730915cbb2fd0732aec7540370ebbce95acb718d0d1d5f74ab9246c3bba7171774c53b1a12db87ea6b2dff4600c72020ed01e9a9a5ef33d4283a94d18f82a37cf61b5f7d1dcec37aea5b25558448713011f2f11c75a18106b779b0a068d3ac5ad9a559d83b4b40280fd8c3472f160b8cf5cc04701524a22c432f0b09df1bb0d744a4363bd3a4260d7671c4976a95b558146b658625fe5336a3712f44f174c79d919958c9160a5cd1b33d24efe248433a806baf1848fdd27a3ff2ea9b5170d70a6bb11c08eaf00e6f63e1971a20448c4347c34d8637e1fa72a3ff6164ebc286a1c5a5f2c9004dd4023f6b44c99826fc5101fc99c621471ef43d943a6d81c11fc28b718eecae2730597f3d6dbac8dcafc3f576602edab75df19f0e264a9c56e7726ef2c5d420cf9e55bccc720457a3bfc550b09286d18336c6821d5e5f995e9cff0e1d0a80e7f900431734f3f957ec0698f23957f49cfb5622660f269a74a8ba6c47c6deddb08125c3b6a5bb2cf635125a15d54c89e28e6e53184e47354e7ac0012195f8a6f49f9593
-  
-    
-      
-      
-        📖 请输入日记密码
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
       </tags>
   </entry>
 </search>
