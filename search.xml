@@ -7675,19 +7675,6 @@ https://github.com/azl397985856/cf
       </tags>
   </entry>
   <entry>
-    <title>计算机组成原理学习笔记</title>
-    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研专业课</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>荔枝橙味拱腰觅马糕守</title>
     <url>/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</url>
     <content><![CDATA[本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获
@@ -8330,6 +8317,19 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
       </tags>
   </entry>
   <entry>
+    <title>计算机组成原理学习笔记</title>
+    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研专业课</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络有手就行诶我手呢</title>
     <url>/2025/01/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%E8%AF%B6%E6%88%91%E6%89%8B%E5%91%A2/</url>
     <content><![CDATA[计算机网络刷题记录
@@ -8749,6 +8749,85 @@ $ npm list --depth=0hexo-site@0.0.0 C:\Users\coper\Desktop\myblog├── hexo-
       </tags>
   </entry>
   <entry>
+    <title>记录一道泰勒公式相关的考研数学题</title>
+    <url>/2024/09/15/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F%E7%9B%B8%E5%85%B3%E7%9A%84%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98/</url>
+    <content><![CDATA[今天，有个学长（烤盐糕守）发给了我一道树穴题（据说是刚出锅的热乎题）
+问题：极限 $lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-sin^2xcosx}=?$
+
+方法一：洛！
+计算量巨大，不做展开
+方法二：泰勒
+先放答案：
+
+\begin{align*}
+      &\ \ \ \ \ lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-sin^2xcosx}\enclose{circle}{1}\\
+    &= lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-(x-\frac{1}{6}x^3)^2(1-\frac{x^2}{2})}\enclose{circle}{2}\\
+    &= lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{\frac{5}{6}x^4}\enclose{circle}{3}\\
+    &= lim_{x\rightarrow 0}\dfrac{(x-(x-\frac{x^2}{2}))\frac{x^2}{2}}{\frac{5}{6}x^4}\enclose{circle}{4}\\
+    &= \frac{3}{10}\enclose{circle}{5}
+\end{align*}
+分母（式①到式②）怎么来的？
+
+因为无穷小的运算法则：$o(x^n)+o(x^m)=o(x^{min(n,m)})$，低阶（无穷小）相应的更大，而分母的泰勒展开是直接要最小项的（无穷小的运算法则让它展开为最小项），所以要用更大的那个无穷小去算
+对于分母 ${x^2-sin^2xcosx}$，cos的阶数是 平方，所以取 $x^4$ 作为实质的最小项（$x^2$ 消掉了）
+
+\begin{align*}
+      &\ \ \ \ \ lim_{x\rightarrow 0}\ {x^2-sin^2xcosx}\\
+    &= lim_{x\rightarrow 0}\ x^2-(x-\frac{1}{6}x^3)^2(1-\frac{x^2}{2})\\
+    &= lim_{x\rightarrow 0}\ x^2-(x^2-\frac{1}{3}x^4+\frac{1}{36}x^6)(1-\frac{x^2}{2})\\
+    &容易观察到，x^2项全消了，所以最小项就是x^4\\
+    &= lim_{x\rightarrow 0}\ \frac{1}{3}x^4 * 1 + x^2 * \frac{x^2}{2} \\
+    &= lim_{x\rightarrow 0} \frac{5}{6}x^4
+\end{align*} \\如果只取sin的第一项：
+
+(错误示范)\\
+\begin{align*}
+      &\ \ \ \ \ lim_{x\rightarrow 0}\ {x^2-sin^2xcosx}\\
+    &= lim_{x\rightarrow 0}\ x^2-x^2(1-\frac{x^2}{2})\\
+    &= lim_{x\rightarrow 0}\ \frac{x^4}{2}
+\end{align*} \\显然是不完整的，有一部分的 $x^4$ 未考虑
+综上所述：分母的泰勒展开是直接要最小项的，但是不是只取最终项，要完整的求出最小项（如本题中，是 $x^4$ ），根据如何得到最小项来判断泰勒展开需要多少项（其实展开多了也没事，反正不会是最小项）
+
+分子（式③到式④）怎么来的？
+
+分子泰勒展开，展开到和分母一样的阶数即可⑤
+式子 $lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{\frac{5}{6}x^4}$ 中，分母是四次方，所以分子也要展开到四次方（见后文，删除线中的内容和因果关系是错误的，但是本题中确实是展开到四次方）
+
+\begin{align*}
+      &\ \ \ \ \ lim_{x\rightarrow 0}\ (x-ln(1+x))(1-cosx) \\
+    &= lim_{x\rightarrow 0}\ (x-(x-\frac{1}{2}x^2))\frac{x^2}{2} \\
+    &= lim_{x\rightarrow 0}\ \frac{x^4}{4}
+\end{align*}相关例题：
+试计算 $lim_{x\rightarrow 0}\ \frac{x-sinx}{x^3}$
+解：
+
+\begin{align*}
+      &\ \ \ \ \ lim_{x\rightarrow 0}\ \frac{x-sinx}{x^3}\\
+      &\ \ \ \ \ 因为分母的最高项是三次方，故这里sinx也展开到三次方(这句话也是错误的，见下文 \\
+    &= lim_{x\rightarrow 0}\ \frac{x-(x-\frac{1}{6}x^3)}{x^3}\\
+    &= lim_{x\rightarrow 0}\ \frac{x-(x-\frac{1}{6}x^3)}{x^3}\\
+    &= lim_{x\rightarrow 0}\ \frac{\frac{1}{6}x^3}{x^3}\\
+    &= \frac{1}{6}
+\end{align*} \\
+为什么分子分母要等阶（⑤）？
+
+高阶无穷小+低阶无穷小=低阶无穷小
+所以无论展开几项都是一样的，都会只有最低阶（即展开后较靠前的部分）对于极限的计算有影响
+故 无论分子分母，只需要展开到最低阶（即最终式子剩下的最低阶）
+无需证明是否在极限值附近有界，只需要分子分母分别展开即可（这也是上文中删除线中句子错误的原因）
+
+总结
+
+计算此类题目（无法使用等价无穷小），只需要将分子分母中可以展开的项分别展开（目的是为了消项），展开到保留（最终结果的）最小项，再进行运算比较即可
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研数学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>记录一道很有意思的简单考研数学题（奇偶性相关）</title>
     <url>/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/</url>
     <content><![CDATA[题目描述：设 $f(x)=\frac{1}{2^x+1},x\in \mathbb{R},$ 则$f^{(100)}(0)=?$（即100阶导数）
@@ -8836,85 +8915,6 @@ f^{(5)}(0)=-\tfrac{1}{2} b^5\cdot 16=-8\,b^5.
 
 f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2k-1}.
 
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记录一道泰勒公式相关的考研数学题</title>
-    <url>/2024/09/15/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F%E7%9B%B8%E5%85%B3%E7%9A%84%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98/</url>
-    <content><![CDATA[今天，有个学长（烤盐糕守）发给了我一道树穴题（据说是刚出锅的热乎题）
-问题：极限 $lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-sin^2xcosx}=?$
-
-方法一：洛！
-计算量巨大，不做展开
-方法二：泰勒
-先放答案：
-
-\begin{align*}
-      &\ \ \ \ \ lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-sin^2xcosx}\enclose{circle}{1}\\
-    &= lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{x^2-(x-\frac{1}{6}x^3)^2(1-\frac{x^2}{2})}\enclose{circle}{2}\\
-    &= lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{\frac{5}{6}x^4}\enclose{circle}{3}\\
-    &= lim_{x\rightarrow 0}\dfrac{(x-(x-\frac{x^2}{2}))\frac{x^2}{2}}{\frac{5}{6}x^4}\enclose{circle}{4}\\
-    &= \frac{3}{10}\enclose{circle}{5}
-\end{align*}
-分母（式①到式②）怎么来的？
-
-因为无穷小的运算法则：$o(x^n)+o(x^m)=o(x^{min(n,m)})$，低阶（无穷小）相应的更大，而分母的泰勒展开是直接要最小项的（无穷小的运算法则让它展开为最小项），所以要用更大的那个无穷小去算
-对于分母 ${x^2-sin^2xcosx}$，cos的阶数是 平方，所以取 $x^4$ 作为实质的最小项（$x^2$ 消掉了）
-
-\begin{align*}
-      &\ \ \ \ \ lim_{x\rightarrow 0}\ {x^2-sin^2xcosx}\\
-    &= lim_{x\rightarrow 0}\ x^2-(x-\frac{1}{6}x^3)^2(1-\frac{x^2}{2})\\
-    &= lim_{x\rightarrow 0}\ x^2-(x^2-\frac{1}{3}x^4+\frac{1}{36}x^6)(1-\frac{x^2}{2})\\
-    &容易观察到，x^2项全消了，所以最小项就是x^4\\
-    &= lim_{x\rightarrow 0}\ \frac{1}{3}x^4 * 1 + x^2 * \frac{x^2}{2} \\
-    &= lim_{x\rightarrow 0} \frac{5}{6}x^4
-\end{align*} \\如果只取sin的第一项：
-
-(错误示范)\\
-\begin{align*}
-      &\ \ \ \ \ lim_{x\rightarrow 0}\ {x^2-sin^2xcosx}\\
-    &= lim_{x\rightarrow 0}\ x^2-x^2(1-\frac{x^2}{2})\\
-    &= lim_{x\rightarrow 0}\ \frac{x^4}{2}
-\end{align*} \\显然是不完整的，有一部分的 $x^4$ 未考虑
-综上所述：分母的泰勒展开是直接要最小项的，但是不是只取最终项，要完整的求出最小项（如本题中，是 $x^4$ ），根据如何得到最小项来判断泰勒展开需要多少项（其实展开多了也没事，反正不会是最小项）
-
-分子（式③到式④）怎么来的？
-
-分子泰勒展开，展开到和分母一样的阶数即可⑤
-式子 $lim_{x\rightarrow 0}\dfrac{(x-ln(1+x))(1-cosx)}{\frac{5}{6}x^4}$ 中，分母是四次方，所以分子也要展开到四次方（见后文，删除线中的内容和因果关系是错误的，但是本题中确实是展开到四次方）
-
-\begin{align*}
-      &\ \ \ \ \ lim_{x\rightarrow 0}\ (x-ln(1+x))(1-cosx) \\
-    &= lim_{x\rightarrow 0}\ (x-(x-\frac{1}{2}x^2))\frac{x^2}{2} \\
-    &= lim_{x\rightarrow 0}\ \frac{x^4}{4}
-\end{align*}相关例题：
-试计算 $lim_{x\rightarrow 0}\ \frac{x-sinx}{x^3}$
-解：
-
-\begin{align*}
-      &\ \ \ \ \ lim_{x\rightarrow 0}\ \frac{x-sinx}{x^3}\\
-      &\ \ \ \ \ 因为分母的最高项是三次方，故这里sinx也展开到三次方(这句话也是错误的，见下文 \\
-    &= lim_{x\rightarrow 0}\ \frac{x-(x-\frac{1}{6}x^3)}{x^3}\\
-    &= lim_{x\rightarrow 0}\ \frac{x-(x-\frac{1}{6}x^3)}{x^3}\\
-    &= lim_{x\rightarrow 0}\ \frac{\frac{1}{6}x^3}{x^3}\\
-    &= \frac{1}{6}
-\end{align*} \\
-为什么分子分母要等阶（⑤）？
-
-高阶无穷小+低阶无穷小=低阶无穷小
-所以无论展开几项都是一样的，都会只有最低阶（即展开后较靠前的部分）对于极限的计算有影响
-故 无论分子分母，只需要展开到最低阶（即最终式子剩下的最低阶）
-无需证明是否在极限值附近有界，只需要分子分母分别展开即可（这也是上文中删除线中句子错误的原因）
-
-总结
-
-计算此类题目（无法使用等价无穷小），只需要将分子分母中可以展开的项分别展开（目的是为了消项），展开到保留（最终结果的）最小项，再进行运算比较即可
 ]]></content>
       <categories>
         <category>考研</category>
