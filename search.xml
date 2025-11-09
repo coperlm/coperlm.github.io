@@ -899,43 +899,6 @@ D题不容易的思维题，不过只要逻辑理清楚了，都很简单
       </tags>
   </entry>
   <entry>
-    <title>CS2025摘要小结</title>
-    <url>/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/</url>
-    <content><![CDATA[本文对第九届网络空间安全国际研讨会的分享知识进行小结
-相关链接：会前准备 会后游记 拍照备份
-
-
-会议议程
-主要笔者学习内容图像篡改定位模型对抗Motivation：AI兴起，虚假图像合成的成本大幅降低。本报告旨在检测篡改部位
-Solution：使用深度网络，训练模型。有效检测篡改
-新的攻击方案：给照片加噪音，人眼看不出区别，但使用原有检测方案 难以检测篡改
-总结：安全领域，对抗是永恒的；AI的产生增加了对抗，也增加了弱点；在研究中，应当攻击方白盒，防守方黑盒
-态势感知Motivation：国内网民众多，且信息多模态难以处理。传统处理算法的时间复杂度为指数级（响应速度为分钟级）
-Solution：利用关联信息进行优化（例如分块，关注敏感话题等），时间复杂度变为多项式级别（响应速度达到秒级）
-应用：检测并控制舆情，护网等
-备注：该报告的PPT做得十分优异，有待借鉴学习
-安全云存储Motivation：云数据库存在被服务提供商或攻击者窥探的可能性，查询语句和数据关系可能泄露敏感信息
-Solution：
-
-面临挑战：数据关系隐私保护（如 JOIN 隐私）；功能性与隐私性的平衡难题；泄露抵抗机制优化（如访问模式隐藏）；差分隐私与SQL的融合应用；模糊搜索技术集成与拓展
-备注：该老师用的是纯英文演讲，所以只能录屏后在学习，故而理解可能有不准确的地方
-大语言模型越狱Motivation：攻击者如何让AI回答例如如何毁灭人类，或者制造凝固汽油弹之类的问题；开发者如何让AI避免回答这些问题
-三个发现：增加奇奇怪怪的后缀可能绕过；简单越狱方法叠加使用增加成功概率；就算没有敏感问题也有可能被拒绝回答
-一些哲学思考：威胁AI会鲨掉他，或者给AI小费，可以增大越狱可能性。AI越来越像人了
-口令认证密钥协商Motivation：传统使用PKI和证书进行认证，使用口令（便于记忆，无需存储）则不需要
-一个令我拍手叫好的构造：使用一步对称加密，有效防止中间人攻击
-
-Contribution：构造了一个高效的后量子aPAKE协议（基于KEM）；基于同源构造了Strong aPAKE且UC安全（也是抗量子）；使用串并行构造了HPAKE
-
-]]></content>
-      <categories>
-        <category>会议竞赛游记</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CRYTPO 24.8第一周刷题记录</title>
     <url>/2024/08/05/CRYTPO-24-8%E7%AC%AC%E4%B8%80%E5%91%A8%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[[SWPUCTF 2021 新生赛]crypto3
@@ -1072,6 +1035,43 @@ flag:flag&#123;DASCTF_zjut&#125;
       </categories>
       <tags>
         <tag>游记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS2025摘要小结</title>
+    <url>/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/</url>
+    <content><![CDATA[本文对第九届网络空间安全国际研讨会的分享知识进行小结
+相关链接：会前准备 会后游记 拍照备份
+
+
+会议议程
+主要笔者学习内容图像篡改定位模型对抗Motivation：AI兴起，虚假图像合成的成本大幅降低。本报告旨在检测篡改部位
+Solution：使用深度网络，训练模型。有效检测篡改
+新的攻击方案：给照片加噪音，人眼看不出区别，但使用原有检测方案 难以检测篡改
+总结：安全领域，对抗是永恒的；AI的产生增加了对抗，也增加了弱点；在研究中，应当攻击方白盒，防守方黑盒
+态势感知Motivation：国内网民众多，且信息多模态难以处理。传统处理算法的时间复杂度为指数级（响应速度为分钟级）
+Solution：利用关联信息进行优化（例如分块，关注敏感话题等），时间复杂度变为多项式级别（响应速度达到秒级）
+应用：检测并控制舆情，护网等
+备注：该报告的PPT做得十分优异，有待借鉴学习
+安全云存储Motivation：云数据库存在被服务提供商或攻击者窥探的可能性，查询语句和数据关系可能泄露敏感信息
+Solution：
+
+面临挑战：数据关系隐私保护（如 JOIN 隐私）；功能性与隐私性的平衡难题；泄露抵抗机制优化（如访问模式隐藏）；差分隐私与SQL的融合应用；模糊搜索技术集成与拓展
+备注：该老师用的是纯英文演讲，所以只能录屏后在学习，故而理解可能有不准确的地方
+大语言模型越狱Motivation：攻击者如何让AI回答例如如何毁灭人类，或者制造凝固汽油弹之类的问题；开发者如何让AI避免回答这些问题
+三个发现：增加奇奇怪怪的后缀可能绕过；简单越狱方法叠加使用增加成功概率；就算没有敏感问题也有可能被拒绝回答
+一些哲学思考：威胁AI会鲨掉他，或者给AI小费，可以增大越狱可能性。AI越来越像人了
+口令认证密钥协商Motivation：传统使用PKI和证书进行认证，使用口令（便于记忆，无需存储）则不需要
+一个令我拍手叫好的构造：使用一步对称加密，有效防止中间人攻击
+
+Contribution：构造了一个高效的后量子aPAKE协议（基于KEM）；基于同源构造了Strong aPAKE且UC安全（也是抗量子）；使用串并行构造了HPAKE
+
+]]></content>
+      <categories>
+        <category>会议竞赛游记</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -1484,31 +1484,6 @@ G.这题我也不知道怎么过的，应该是运气好凑巧了吧
       </tags>
   </entry>
   <entry>
-    <title>IND-CCA2下的CP-ABE安全</title>
-    <url>/2025/01/07/IND-CCA2%E4%B8%8B%E7%9A%84CP-ABE%E5%AE%89%E5%85%A8/</url>
-    <content><![CDATA[今天阅读前置知识，搞了半天终于明白了IND-CCA2下的CP-ABE安全，记录一下
-
-
-论文名称：Fine-Grained and Controlled Rewriting in Blockchains: Chameleon-Hashing Gone Attribute-Based
-相关内容：
-
-
-我们只看核心部分
-
-我们大致划分为三个部分
-第一部分，初始化，不再赘述
-第二部分，攻击者交互阶段，攻击者$\mathcal{A}$选择任意属性集合$\mathbb{S}$进行请求，模拟器会这些请求的属性集合加入全局集合$S$，并生成与属性集合$\mathbb{S}$相对应的私钥$ssk$，将请求编号及生成的密钥记录到$Q$中
-第三部分，挑战阶段，攻击者$\mathcal{A}$提供属性集合$A^{}$ （$A^{}\cap S=\emptyset$），模拟器随机选择$b\in{0,1}$，使用属性集合$A^*$对应的私钥加密$m_b$，将密文$c_b$提供给$\mathcal{A}$ 
-如果攻击者$\mathcal{A}$能够通过交互获得的信息区分密文中加密的是$m_0$还是$m_1$，且成功的概率显著大于$\frac12$，则认为攻击者成功，算法被攻破，否则认为该加密方案满足IND-CCA2安全性
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IELTS备考方案</title>
     <url>/2024/12/13/IELTS%E5%A4%87%E8%80%83%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[记录如何备考雅思
@@ -1534,6 +1509,31 @@ G.这题我也不知道怎么过的，应该是运气好凑巧了吧
       </categories>
       <tags>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IND-CCA2下的CP-ABE安全</title>
+    <url>/2025/01/07/IND-CCA2%E4%B8%8B%E7%9A%84CP-ABE%E5%AE%89%E5%85%A8/</url>
+    <content><![CDATA[今天阅读前置知识，搞了半天终于明白了IND-CCA2下的CP-ABE安全，记录一下
+
+
+论文名称：Fine-Grained and Controlled Rewriting in Blockchains: Chameleon-Hashing Gone Attribute-Based
+相关内容：
+
+
+我们只看核心部分
+
+我们大致划分为三个部分
+第一部分，初始化，不再赘述
+第二部分，攻击者交互阶段，攻击者$\mathcal{A}$选择任意属性集合$\mathbb{S}$进行请求，模拟器会这些请求的属性集合加入全局集合$S$，并生成与属性集合$\mathbb{S}$相对应的私钥$ssk$，将请求编号及生成的密钥记录到$Q$中
+第三部分，挑战阶段，攻击者$\mathcal{A}$提供属性集合$A^{}$ （$A^{}\cap S=\emptyset$），模拟器随机选择$b\in{0,1}$，使用属性集合$A^*$对应的私钥加密$m_b$，将密文$c_b$提供给$\mathcal{A}$ 
+如果攻击者$\mathcal{A}$能够通过交互获得的信息区分密文中加密的是$m_0$还是$m_1$，且成功的概率显著大于$\frac12$，则认为攻击者成功，算法被攻破，否则认为该加密方案满足IND-CCA2安全性
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -2508,6 +2508,48 @@ Vercel Analytics（已安装包，需在主题 head/bottom 注入脚本）
       </tags>
   </entry>
   <entry>
+    <title>hal库c6t6 Freerots</title>
+    <url>/2024/11/08/hal%E5%BA%93c6t6-Freerots/</url>
+    <content><![CDATA[写篇博客，不为别的，就怕以后忘了咋整了
+Freerots这玩意忒好用了
+
+如何开FreerotsSYS这边选个时钟
+
+然后如图一路选下来，别忘了添加任务
+
+其他的常规配置，然后生成代码就可以了
+打开freertos.c文件，正常加入点灯代码就可以了
+
+以上内容的参考：
+https://www.cnblogs.com/Meiyangyang945/p/15106513.html
+
+报错1
+买不起好芯片，内存不够
+改一下代码里的内容
+将#define configTOTAL_HEAP_SIZE                    ((size_t)10240)
+修改为#define configTOTAL_HEAP_SIZE                    ((size_t)(1024*5)即可
+参考：
+https://blog.csdn.net/king110108/article/details/110038173
+https://file.elecfans.com/web2/M00/9B/99/pYYBAGQip7KAOU2vAAfDySG_a10157.pdf
+报错2
+一大堆啥玩意哇
+贴搜索引擎一看，是cpp导致的
+
+魔术棒中把misc_controls的--cpp11去掉即可
+参考：
+https://blog.csdn.net/timberman666/article/details/132723352
+报错3数日之后，又出现了报错2的内容
+改成多少都没用了
+开O2优化即可
+]]></content>
+      <categories>
+        <category>电控</category>
+      </categories>
+      <tags>
+        <tag>RoboMaster</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>buuoj古典密码学wp</title>
     <url>/2024/09/24/buuoj%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E5%AD%A6wp/</url>
     <content><![CDATA[此博客用于整理，之前做过的古典密码学题目
@@ -3032,48 +3074,6 @@ flag:utflag&#123;d4nger0us_c1pherText_qq&#125;
       </categories>
       <tags>
         <tag>cryptoCTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hal库c6t6 Freerots</title>
-    <url>/2024/11/08/hal%E5%BA%93c6t6-Freerots/</url>
-    <content><![CDATA[写篇博客，不为别的，就怕以后忘了咋整了
-Freerots这玩意忒好用了
-
-如何开FreerotsSYS这边选个时钟
-
-然后如图一路选下来，别忘了添加任务
-
-其他的常规配置，然后生成代码就可以了
-打开freertos.c文件，正常加入点灯代码就可以了
-
-以上内容的参考：
-https://www.cnblogs.com/Meiyangyang945/p/15106513.html
-
-报错1
-买不起好芯片，内存不够
-改一下代码里的内容
-将#define configTOTAL_HEAP_SIZE                    ((size_t)10240)
-修改为#define configTOTAL_HEAP_SIZE                    ((size_t)(1024*5)即可
-参考：
-https://blog.csdn.net/king110108/article/details/110038173
-https://file.elecfans.com/web2/M00/9B/99/pYYBAGQip7KAOU2vAAfDySG_a10157.pdf
-报错2
-一大堆啥玩意哇
-贴搜索引擎一看，是cpp导致的
-
-魔术棒中把misc_controls的--cpp11去掉即可
-参考：
-https://blog.csdn.net/timberman666/article/details/132723352
-报错3数日之后，又出现了报错2的内容
-改成多少都没用了
-开O2优化即可
-]]></content>
-      <categories>
-        <category>电控</category>
-      </categories>
-      <tags>
-        <tag>RoboMaster</tag>
       </tags>
   </entry>
   <entry>
@@ -6510,6 +6510,18 @@ f(x)=\left\{\begin{align}&\frac1{b-a},a]]></content>
       </tags>
   </entry>
   <entry>
+    <title>海丝论坛-会议记录</title>
+    <url>/2025/11/09/%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>会议竞赛游记</category>
+      </categories>
+      <tags>
+        <tag>游记</tag>
+        <tag>meeting</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>浅学习一下零知识证明</title>
     <url>/2024/10/13/%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8B%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E/</url>
     <content><![CDATA[之前一直听说零知识证明，但是一直没有学习过相关内容
@@ -6632,18 +6644,6 @@ reference：Identity-based chameleon hashing and signatures without key exposure
       </categories>
       <tags>
         <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>海丝论坛-会议记录</title>
-    <url>/2025/11/09/%E6%B5%B7%E4%B8%9D%E8%AE%BA%E5%9D%9B-%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>会议竞赛游记</category>
-      </categories>
-      <tags>
-        <tag>游记</tag>
-        <tag>meeting</tag>
       </tags>
   </entry>
   <entry>
@@ -7675,6 +7675,19 @@ https://github.com/azl397985856/cf
       </tags>
   </entry>
   <entry>
+    <title>计算机组成原理学习笔记</title>
+    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研专业课</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>荔枝橙味拱腰觅马糕守</title>
     <url>/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</url>
     <content><![CDATA[本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获
@@ -8314,19 +8327,6 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
       <tags>
         <tag>常驻</tag>
         <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机组成原理学习笔记</title>
-    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研专业课</tag>
       </tags>
   </entry>
   <entry>
