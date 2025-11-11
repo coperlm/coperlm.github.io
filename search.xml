@@ -2550,6 +2550,21 @@ https://blog.csdn.net/timberman666/article/details/132723352
       </tags>
   </entry>
   <entry>
+    <title>hexo usage</title>
+    <url>/2024/05/23/hexo-usage/</url>
+    <content><![CDATA[hexo s  #启动并预览
+hexo c  #清除缓存文件 db.json 和已生成的静态文件 public 
+hexo g  #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) 
+hexo d  #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
+]]></content>
+      <categories>
+        <category>工具与技术使用</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>buuoj古典密码学wp</title>
     <url>/2024/09/24/buuoj%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E5%AD%A6wp/</url>
     <content><![CDATA[此博客用于整理，之前做过的古典密码学题目
@@ -3074,21 +3089,6 @@ flag:utflag&#123;d4nger0us_c1pherText_qq&#125;
       </categories>
       <tags>
         <tag>cryptoCTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo usage</title>
-    <url>/2024/05/23/hexo-usage/</url>
-    <content><![CDATA[hexo s  #启动并预览
-hexo c  #清除缓存文件 db.json 和已生成的静态文件 public 
-hexo g  #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) 
-hexo d  #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
-]]></content>
-      <categories>
-        <category>工具与技术使用</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -7908,19 +7908,6 @@ https://github.com/azl397985856/cf
       </tags>
   </entry>
   <entry>
-    <title>计算机组成原理学习笔记</title>
-    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研专业课</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>荔枝橙味拱腰觅马糕守</title>
     <url>/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</url>
     <content><![CDATA[本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获
@@ -8560,6 +8547,19 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
       <tags>
         <tag>常驻</tag>
         <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机组成原理学习笔记</title>
+    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研专业课</tag>
       </tags>
   </entry>
   <entry>
@@ -9253,123 +9253,6 @@ hexo是只把生成好的页面上传，这就导致了不可逆。也就是说�
       </tags>
   </entry>
   <entry>
-    <title>量子安全的概念</title>
-    <url>/2025/02/20/%E9%87%8F%E5%AD%90%E5%AE%89%E5%85%A8%E7%9A%84%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[昨天组会，导师跟我说量子安全和后量子安全不是同一个东西，我此前一直将他们混为一谈，故今日作以区分
-
-量子安全：指加密方法在量子计算机下仍保持安全。
-反量子安全：通过增强现有算法对抗量子计算机的能力，通常是过渡性措施。
-后量子安全：指完全为抵抗量子计算机的攻击而设计的新的加密算法。
-
-UPD250910
-上述内容并非完全正确，今天看了一个构造，通过量子计算机去优化一个ai算法，于是我想到
-后量子密码学是用传统计算机加密，量子计算机无法解密，但是效率低下；有没有用量子计算机加密的密码学
-后面得到答案
-首先，反量子这个词并不正式，故而很少见
-
-量子密码学 (Quantum Cryptography)
-
-
-定义：利用量子物理规律（如叠加态、测不准原理、不可克隆定理）来实现安全通信。
-代表：量子密钥分发（QKD, BB84 协议）。
-特点：
-安全性基于物理定律，而不是数学难题。
-窃听会留下“痕迹”，因此可以检测。
-需要量子信道（光纤或自由空间），成本和距离受限。
-
-
-
-
-后量子密码学 (Post-Quantum Cryptography, PQC)
-
-
-定义：运行在 传统计算机 上的加密方法，但能抵御量子计算机的攻击。
-代表：格密码、哈希签名、多变量多项式密码、基于编码的密码。
-特点：
-数学难题仍是安全性基础（例如格上最短向量问题）。
-可在现有网络和硬件上直接部署。
-已进入国际标准化（如 NIST PQC 标准）。
-
-
-
-📊 对比总结
-
-
-
-名称
-基础
-依赖设备
-代表技术
-安全性来源
-部署难度
-
-
-
-
-量子密码学
-量子物理
-量子信道、量子设备
-QKD (BB84)
-物理不可克隆/测不准原理
-高
-
-
-后量子密码学
-数学难题
-普通计算机、网络
-格密码、哈希签名
-抗量子算法
-中
-
-
-
-
-✅ 所以你可以简单理解：
-
-量子密码学：用量子去加密。
-后量子密码学：用经典计算机去防量子。
-反量子密码学：泛称，通常指“抵御量子威胁的密码”，多半就是指 后量子密码学。
-
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>零知识证明学习</title>
-    <url>/2024/12/19/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[241219阅读《Chameleon-Hashes with Ephemeral Trapdoors And Applications to Invisible Sanitizable Signatures》遇到了NIZKPoK，故学习一下
-
-
-NIZKPoKNon-Interactive Zero-Knowledge Proof 非交互零知识证明
-论文中的体现
-\begin{align}
-&Generate\ \pi\leftarrow NIZKPoK\{(x):h=g^x\}\\
-&if\ \pi\ is\ not\ valid, return\perp
-\end{align}解释证明着想要证明自己知道某个值$x$，而不透露$x$本身
-Fiat-Shamir变换（简化的非交互证明）
-初始化：$g$和$h$是公开的参数，$x$是秘密（证明者知道它）
-生成证明：随机选择一个随机值$r$，计算承诺值$t=h*g^r$
-计算挑战：生成一个挑战$c$（通常通过哈希函数生成）
-计算响应：计算 $z=r+c*x$
-发送证明：发送三元组$(t,c,z)$
-验证：验证者检查是否满足$g^z=t*h^c$
-
-实验代码#这份是手搓的，放进代码复现成功def gen_NIZK( g , x , p ):    h = pow( g , x , p )    r = random.randint( 1 , p )    t = pow( g , r , p )    c = SM3(&quot;窝丝一个挑战&quot;)    z = r+c*x    return (t,c,z),(g,p,h)def verf_NIZK( pi ):    ( t , c , z ) , ( g , p , h ) = pi    if pow( g , z , p ) == t * pow( h , c , p ) % p:        return True    return False
-完整代码
-#这份是gpto1写的，不过是基于椭圆曲线的from ecdsa import SECP256k1, SigningKey, VerifyingKeyimport hashlib# 曲线参数curve = SECP256k1G = curve.generator  # 基点 gn = curve.order      # 阶# 私钥 x（随机生成）x_sk = SigningKey.generate(curve=curve)x = x_sk.privkey.secret_multiplier  # x 的数值# 公钥 h = g^xh_vk = x_sk.verifying_keyh = h_vk.pubkey.pointdef nizkpok_prove(x):    # 证明者生成随机数 r    r_sk = SigningKey.generate(curve=curve)    r = r_sk.privkey.secret_multiplier    # 计算承诺 t = g^r    t = r * G    # 计算挑战 e = Hash(g || h || t)    e = hashlib.sha256()    e.update(int(G.x()).to_bytes(32, &#x27;big&#x27;) + int(G.y()).to_bytes(32, &#x27;big&#x27;))    e.update(int(h.x()).to_bytes(32, &#x27;big&#x27;) + int(h.y()).to_bytes(32, &#x27;big&#x27;))    e.update(int(t.x()).to_bytes(32, &#x27;big&#x27;) + int(t.y()).to_bytes(32, &#x27;big&#x27;))    e_int = int(e.hexdigest(), 16) % n    # 计算响应 s = r + e * x mod n    s = (r + e_int * x) % n    return (e_int, s)def nizkpok_verify(h, proof):    e_int, s = proof    # 计算 t&#x27; = g^s + (-h^e)    sG = s * G    eH = e_int * h    # 获取 eH 的负元    neg_eH = (n - 1) * eH    # 计算 t&#x27; = sG + (-eH)    t_prime = sG + neg_eH    # 重新计算挑战 e&#x27; = Hash(g || h || t&#x27;)    e_prime = hashlib.sha256()    e_prime.update(int(G.x()).to_bytes(32, &#x27;big&#x27;) + int(G.y()).to_bytes(32, &#x27;big&#x27;))    e_prime.update(int(h.x()).to_bytes(32, &#x27;big&#x27;) + int(h.y()).to_bytes(32, &#x27;big&#x27;))    e_prime.update(int(t_prime.x()).to_bytes(32, &#x27;big&#x27;) + int(t_prime.y()).to_bytes(32, &#x27;big&#x27;))    e_prime_int = int(e_prime.hexdigest(), 16) % n    # 验证 e 是否等于 e&#x27;    return e_int == e_prime_int# 生成证明proof = nizkpok_prove(x)# 验证证明is_valid = nizkpok_verify(h, proof)print(&quot;证明是否有效：&quot;, is_valid)
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>飞行器空气动力学学习笔记（低速翼型）</title>
     <url>/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/</url>
     <content><![CDATA[2024.11.06二次编辑
@@ -9517,6 +9400,123 @@ $v$表示当地速度，$V_\infty$表示来流速度
       </categories>
       <tags>
         <tag>考研政治</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>量子安全的概念</title>
+    <url>/2025/02/20/%E9%87%8F%E5%AD%90%E5%AE%89%E5%85%A8%E7%9A%84%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[昨天组会，导师跟我说量子安全和后量子安全不是同一个东西，我此前一直将他们混为一谈，故今日作以区分
+
+量子安全：指加密方法在量子计算机下仍保持安全。
+反量子安全：通过增强现有算法对抗量子计算机的能力，通常是过渡性措施。
+后量子安全：指完全为抵抗量子计算机的攻击而设计的新的加密算法。
+
+UPD250910
+上述内容并非完全正确，今天看了一个构造，通过量子计算机去优化一个ai算法，于是我想到
+后量子密码学是用传统计算机加密，量子计算机无法解密，但是效率低下；有没有用量子计算机加密的密码学
+后面得到答案
+首先，反量子这个词并不正式，故而很少见
+
+量子密码学 (Quantum Cryptography)
+
+
+定义：利用量子物理规律（如叠加态、测不准原理、不可克隆定理）来实现安全通信。
+代表：量子密钥分发（QKD, BB84 协议）。
+特点：
+安全性基于物理定律，而不是数学难题。
+窃听会留下“痕迹”，因此可以检测。
+需要量子信道（光纤或自由空间），成本和距离受限。
+
+
+
+
+后量子密码学 (Post-Quantum Cryptography, PQC)
+
+
+定义：运行在 传统计算机 上的加密方法，但能抵御量子计算机的攻击。
+代表：格密码、哈希签名、多变量多项式密码、基于编码的密码。
+特点：
+数学难题仍是安全性基础（例如格上最短向量问题）。
+可在现有网络和硬件上直接部署。
+已进入国际标准化（如 NIST PQC 标准）。
+
+
+
+📊 对比总结
+
+
+
+名称
+基础
+依赖设备
+代表技术
+安全性来源
+部署难度
+
+
+
+
+量子密码学
+量子物理
+量子信道、量子设备
+QKD (BB84)
+物理不可克隆/测不准原理
+高
+
+
+后量子密码学
+数学难题
+普通计算机、网络
+格密码、哈希签名
+抗量子算法
+中
+
+
+
+
+✅ 所以你可以简单理解：
+
+量子密码学：用量子去加密。
+后量子密码学：用经典计算机去防量子。
+反量子密码学：泛称，通常指“抵御量子威胁的密码”，多半就是指 后量子密码学。
+
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>零知识证明学习</title>
+    <url>/2024/12/19/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[241219阅读《Chameleon-Hashes with Ephemeral Trapdoors And Applications to Invisible Sanitizable Signatures》遇到了NIZKPoK，故学习一下
+
+
+NIZKPoKNon-Interactive Zero-Knowledge Proof 非交互零知识证明
+论文中的体现
+\begin{align}
+&Generate\ \pi\leftarrow NIZKPoK\{(x):h=g^x\}\\
+&if\ \pi\ is\ not\ valid, return\perp
+\end{align}解释证明着想要证明自己知道某个值$x$，而不透露$x$本身
+Fiat-Shamir变换（简化的非交互证明）
+初始化：$g$和$h$是公开的参数，$x$是秘密（证明者知道它）
+生成证明：随机选择一个随机值$r$，计算承诺值$t=h*g^r$
+计算挑战：生成一个挑战$c$（通常通过哈希函数生成）
+计算响应：计算 $z=r+c*x$
+发送证明：发送三元组$(t,c,z)$
+验证：验证者检查是否满足$g^z=t*h^c$
+
+实验代码#这份是手搓的，放进代码复现成功def gen_NIZK( g , x , p ):    h = pow( g , x , p )    r = random.randint( 1 , p )    t = pow( g , r , p )    c = SM3(&quot;窝丝一个挑战&quot;)    z = r+c*x    return (t,c,z),(g,p,h)def verf_NIZK( pi ):    ( t , c , z ) , ( g , p , h ) = pi    if pow( g , z , p ) == t * pow( h , c , p ) % p:        return True    return False
+完整代码
+#这份是gpto1写的，不过是基于椭圆曲线的from ecdsa import SECP256k1, SigningKey, VerifyingKeyimport hashlib# 曲线参数curve = SECP256k1G = curve.generator  # 基点 gn = curve.order      # 阶# 私钥 x（随机生成）x_sk = SigningKey.generate(curve=curve)x = x_sk.privkey.secret_multiplier  # x 的数值# 公钥 h = g^xh_vk = x_sk.verifying_keyh = h_vk.pubkey.pointdef nizkpok_prove(x):    # 证明者生成随机数 r    r_sk = SigningKey.generate(curve=curve)    r = r_sk.privkey.secret_multiplier    # 计算承诺 t = g^r    t = r * G    # 计算挑战 e = Hash(g || h || t)    e = hashlib.sha256()    e.update(int(G.x()).to_bytes(32, &#x27;big&#x27;) + int(G.y()).to_bytes(32, &#x27;big&#x27;))    e.update(int(h.x()).to_bytes(32, &#x27;big&#x27;) + int(h.y()).to_bytes(32, &#x27;big&#x27;))    e.update(int(t.x()).to_bytes(32, &#x27;big&#x27;) + int(t.y()).to_bytes(32, &#x27;big&#x27;))    e_int = int(e.hexdigest(), 16) % n    # 计算响应 s = r + e * x mod n    s = (r + e_int * x) % n    return (e_int, s)def nizkpok_verify(h, proof):    e_int, s = proof    # 计算 t&#x27; = g^s + (-h^e)    sG = s * G    eH = e_int * h    # 获取 eH 的负元    neg_eH = (n - 1) * eH    # 计算 t&#x27; = sG + (-eH)    t_prime = sG + neg_eH    # 重新计算挑战 e&#x27; = Hash(g || h || t&#x27;)    e_prime = hashlib.sha256()    e_prime.update(int(G.x()).to_bytes(32, &#x27;big&#x27;) + int(G.y()).to_bytes(32, &#x27;big&#x27;))    e_prime.update(int(h.x()).to_bytes(32, &#x27;big&#x27;) + int(h.y()).to_bytes(32, &#x27;big&#x27;))    e_prime.update(int(t_prime.x()).to_bytes(32, &#x27;big&#x27;) + int(t_prime.y()).to_bytes(32, &#x27;big&#x27;))    e_prime_int = int(e_prime.hexdigest(), 16) % n    # 验证 e 是否等于 e&#x27;    return e_int == e_prime_int# 生成证明proof = nizkpok_prove(x)# 验证证明is_valid = nizkpok_verify(h, proof)print(&quot;证明是否有效：&quot;, is_valid)
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
