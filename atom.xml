@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2025-11-29T08:24:37.560Z</updated>
+  <updated>2025-11-29T12:08:38.005Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我算是研究明白了mkdocs的部署逻辑了</title>
+    <link href="https://coperlm.github.io/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/"/>
+    <id>https://coperlm.github.io/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/</id>
+    <published>2025-11-29T11:59:13.000Z</published>
+    <updated>2025-11-29T12:08:38.005Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在搭建知识库，然后捣鼓了这个mkdocs</p><p>先从头说，首先是配置环境，直接<code>pip install</code>即可</p><p>估计是直接上传到<code>pip</code>可以直接获取的地方了，这样一<code>install</code>然后全部依赖就都有了</p><p>然后是新建一个知识库，最后部署用的是<code>mkdocs gh-deploy</code>，或者本地预览用<code>mkdocs build</code>。</p><p>这个<code>mkdocs gh-deploy</code>的逻辑是把编译成html的文件放在<code>.\site\</code>目录下，然后上传到分支</p><p><img src="branch.png" alt="branch"></p><p>但是主分支不会变</p><p>于是乎写了个批处理，直接丢环境变量里面了</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入指定的目录</span></span><br><span class="line"><span class="built_in">cd</span> /home/coper/KnowledgeBase/ || <span class="built_in">exit</span> 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行 git 操作</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Auto Commit&quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署 MkDocs</span></span><br><span class="line">mkdocs gh-deploy</span><br></pre></td></tr></table></figure><p>同时，为了避免重复上传，还需要把<code>./site/</code>加入到<code>.gitignore</code>中</p><p>这样，就完成了一键部署</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近在搭建知识库，然后捣鼓了这个mkdocs&lt;/p&gt;
+&lt;p&gt;先从头说，首先是配置环境，直接&lt;code&gt;pip</summary>
+        
+      
+    
+    
+    
+    <category term="未分类" scheme="https://coperlm.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+    
+    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
+    
+    <category term="None" scheme="https://coperlm.github.io/tags/None/"/>
+    
+  </entry>
   
   <entry>
     <title>我也是有知识库的人了</title>
@@ -558,34 +588,6 @@
     
     
     <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机组成原理学习笔记</title>
-    <link href="https://coperlm.github.io/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://coperlm.github.io/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2025-09-02T11:02:56.000Z</published>
-    <updated>2025-10-27T09:23:34.191Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="1.jpg" alt></p><p><img src="2.jpg" alt></p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;1.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;2.jpg&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="考研" scheme="https://coperlm.github.io/categories/%E8%80%83%E7%A0%94/"/>
-    
-    
-    <category term="考研专业课" scheme="https://coperlm.github.io/tags/%E8%80%83%E7%A0%94%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
     
   </entry>
   

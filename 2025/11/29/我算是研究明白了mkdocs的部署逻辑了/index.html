@@ -1,0 +1,745 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>我算是研究明白了mkdocs的部署逻辑了 | coperlm's Blog</title><meta name="author" content="coperlm"><meta name="copyright" content="coperlm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="最近在搭建知识库，然后捣鼓了这个mkdocs 先从头说，首先是配置环境，直接pip install即可 估计是直接上传到pip可以直接获取的地方了，这样一install然后全部依赖就都有了 然后是新建一个知识库，最后部署用的是mkdocs gh-deploy，或者本地预览用mkdocs build。 这个mkdocs gh-deploy的逻辑是把编译成html的文件放在.\site\目录下，然后上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我算是研究明白了mkdocs的部署逻辑了">
+<meta property="og:url" content="https://coperlm.github.io/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="最近在搭建知识库，然后捣鼓了这个mkdocs 先从头说，首先是配置环境，直接pip install即可 估计是直接上传到pip可以直接获取的地方了，这样一install然后全部依赖就都有了 然后是新建一个知识库，最后部署用的是mkdocs gh-deploy，或者本地预览用mkdocs build。 这个mkdocs gh-deploy的逻辑是把编译成html的文件放在.\site\目录下，然后上">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://coperlm.github.io/img/(5).gif">
+<meta property="article:published_time" content="2025-11-29T11:59:13.000Z">
+<meta property="article:modified_time" content="2025-11-29T12:08:38.005Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="unfixed">
+<meta property="article:tag" content="None">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/img/(5).gif"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "我算是研究明白了mkdocs的部署逻辑了",
+  "url": "https://coperlm.github.io/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/",
+  "image": "https://coperlm.github.io/img/(5).gif",
+  "datePublished": "2025-11-29T11:59:13.000Z",
+  "dateModified": "2025-11-29T12:08:38.005Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "coperlm",
+      "url": "https://coperlm.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/good.gif"><link rel="canonical" href="https://coperlm.github.io/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: coperlm","link":"链接: ","source":"来源: coperlm's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'medium_zoom',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '我算是研究明白了mkdocs的部署逻辑了',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/realtime-clock.css"><script>
+(function(){
+  var h=new Date().getHours();
+  var c={
+    4:{g:'linear-gradient(180deg,#FFF5F0 0%,#FFE4D6 30%,#FFD6BA 60%,#FFB4A2 100%)',f:'#FFB4A2'},
+    6:{g:'linear-gradient(180deg,#FFEAA7 0%,#FFD79A 25%,#FFA99F 60%,#FF719A 100%)',f:'#FF719A'},
+    8:{g:'linear-gradient(180deg,#F8FFAE 0%,#D4FC79 25%,#96E6A1 60%,#A8E6CF 85%,#C2FFD8 100%)',f:'#C2FFD8'},
+    10:{g:'linear-gradient(180deg,#E0F7FA 0%,#A1C4FD 35%,#B8D5F0 65%,#C2E9FB 100%)',f:'#C2E9FB'},
+    12:{g:'linear-gradient(180deg,#A7FFE4 0%,#84FAB0 30%,#7FE5D4 65%,#8FD3F4 100%)',f:'#8FD3F4'},
+    14:{g:'linear-gradient(180deg,#55E6C1 0%,#43E97B 30%,#3FD5BA 65%,#38F9D7 100%)',f:'#38F9D7'},
+    16:{g:'linear-gradient(180deg,#FFEAA7 0%,#FCE38A 30%,#FFBE76 65%,#F38181 100%)',f:'#F38181'},
+    18:{g:'linear-gradient(180deg,#FDD835 0%,#FBD786 25%,#FFA87D 60%,#F7797D 100%)',f:'#F7797D'},
+    19:{g:'linear-gradient(180deg,#FFB088 0%,#FF9A9E 30%,#D988B9 65%,#8E54E9 100%)',f:'#8E54E9'},
+    20:{g:'linear-gradient(180deg,#FFE5EC 0%,#FBD3E9 25%,#E5A3C7 60%,#BB377D 100%)',f:'#BB377D'},
+    22:{g:'linear-gradient(180deg,#7B68EE 0%,#667eea 30%,#6B5EA8 65%,#764ba2 100%)',f:'#764ba2'},
+    2:{g:'linear-gradient(180deg,#3B4371 0%,#4e54c8 30%,#7B7FDC 65%,#8f94fb 100%)',f:'#8f94fb'}
+  };
+  var r=h>=4&&h<6?c[4]:h>=6&&h<8?c[6]:h>=8&&h<10?c[8]:h>=10&&h<12?c[10]:h>=12&&h<14?c[12]:h>=14&&h<16?c[14]:h>=16&&h<18?c[16]:h>=18&&h<19?c[18]:h>=19&&h<20?c[19]:h>=20&&h<22?c[20]:h>=22||h<2?c[22]:c[2];
+  document.write('<style id="realtime-bg-init">body{background:'+r.g+' !important;background-attachment:fixed !important;}#footer{background:'+r.f+' !important;}</style>');
+})();
+</script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="coperlm's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">133</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a><a href="/link/"><div class="headline">友链</div><div class="length-num">19</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="https://coperlm.github.io/KnowledgeBase/"><i class="fa-fw fas fa-book"></i><span> 知识库</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw fas fa-sync-alt"></i><span> 更新</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/niu.gif" alt="Logo"><span class="site-name">coperlm's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">我算是研究明白了mkdocs的部署逻辑了</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="https://coperlm.github.io/KnowledgeBase/"><i class="fa-fw fas fa-book"></i><span> 知识库</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw fas fa-sync-alt"></i><span> 更新</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">我算是研究明白了mkdocs的部署逻辑了</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-11-29T11:59:13.000Z" title="发表于 2025-11-29 19:59:13">2025-11-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-11-29T12:08:38.005Z" title="更新于 2025-11-29 20:08:38">2025-11-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">218</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/#post-comment"><span class="waline-comment-count" data-path="/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="container post-content" id="article-container"><p>最近在搭建知识库，然后捣鼓了这个mkdocs</p>
+<p>先从头说，首先是配置环境，直接<code>pip install</code>即可</p>
+<p>估计是直接上传到<code>pip</code>可以直接获取的地方了，这样一<code>install</code>然后全部依赖就都有了</p>
+<p>然后是新建一个知识库，最后部署用的是<code>mkdocs gh-deploy</code>，或者本地预览用<code>mkdocs build</code>。</p>
+<p>这个<code>mkdocs gh-deploy</code>的逻辑是把编译成html的文件放在<code>.\site\</code>目录下，然后上传到分支</p>
+<p><img src="branch.png" alt="branch"></p>
+<p>但是主分支不会变</p>
+<p>于是乎写了个批处理，直接丢环境变量里面了</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入指定的目录</span></span><br><span class="line"><span class="built_in">cd</span> /home/coper/KnowledgeBase/ || <span class="built_in">exit</span> 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行 git 操作</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Auto Commit&quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署 MkDocs</span></span><br><span class="line">mkdocs gh-deploy</span><br></pre></td></tr></table></figure>
+<p>同时，为了避免重复上传，还需要把<code>./site/</code>加入到<code>.gitignore</code>中</p>
+<p>这样，就完成了一键部署</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://coperlm.github.io">coperlm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://coperlm.github.io/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/">https://coperlm.github.io/2025/11/29/我算是研究明白了mkdocs的部署逻辑了/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://coperlm.github.io" target="_blank">coperlm's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/unfixed/">unfixed</a><a class="post-meta__tags" href="/tags/None/">None</a></div><div class="post-share"><div class="social-share" data-image="/img/(5).gif" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/11/29/%E6%88%91%E4%B9%9F%E6%98%AF%E6%9C%89%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%E4%BA%BA%E4%BA%86/" title="我也是有知识库的人了"><img class="cover" src="/img/(94).gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">我也是有知识库的人了</div></div><div class="info-2"><div class="info-item-1">RT 前两天看别人的知识库，知识很有调理，正赶上博客比较凌乱，然后自己部署了一个 就在右上角，或者链接 https://coperlm.github.io/KnowledgeBase/ 然后规划一下未来知识库要怎么用  知识库里面的内容每篇包含三个部分  背景（为什么要学）  核心内容（我现在知道什么）  残留问题（我还不知道什么）   内容上使用短笔记；结构上避免过深的树形结构（会导致长时间落灰） 区分博客和知识库现状：博客有一百来篇，但是过于零散，还有很多半成品；急须知识库来辅助构建知识体系 方式：博客记录过程（流水账记录，想法，学习过程），知识库记录结果（整理后的我知道了什么/如何使用） 理想的运作方式：  先随便写，不要求结构化或优雅  沉淀，每周或者每月从里面挑出核心内容，放进知识库  然后知识库不断丰富，就变得嘎嘎好了   但是缺陷是博客会很多东西，又但是东西多的话，只要不乱就好 又但是我已经有知识库了，很多人博客就是当知识库使用；这样我只要求博客我自己能看懂即可（只承担时间线，不当知识库功能） </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/08/03/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E4%B9%8B%E5%90%8E%E7%9A%84%E5%B0%8Fplan/" title="记录一下之后的小plan"><img class="cover" src="/img/(75).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-03</div><div class="info-item-2">记录一下之后的小plan</div></div><div class="info-2"><div class="info-item-1">  ...</div></div></div></a><a class="pagination-related" href="/2024/09/07/Chameleon%20Hashing%20and%20Signatures%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="Chameleon Hashing and Signatures阅读笔记"><img class="cover" src="/img/(6).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-07</div><div class="info-item-2">Chameleon Hashing and Signatures阅读笔记</div></div><div class="info-2"><div class="info-item-1">文献简介标题：Chameleon Hash and Signatures 作者：Hugo Krawczyk , Tal Rabin  期刊：无 年份：1998 重要程度：4 摘要 引入变色龙签名，提供不可抵赖签名（和常规数字签名一样） 不允许接收方在未经允许的情况下向第三方披露明文（和不可抵赖签名相关，但是算法简单和高效实现） 本质上不交互，不涉及零知识证明的设计和复杂性（传统不可抵赖签名基于零知识证明）。哈希函数的产生通过标准的hash then sign 此哈希函数...</div></div></div></a><a class="pagination-related" href="/2024/09/25/SM2%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="SM2椭圆曲线加密算法学习笔记"><img class="cover" src="/img/(84).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-25</div><div class="info-item-2">SM2椭圆曲线加密算法学习笔记</div></div><div class="info-2"><div class="info-item-1">此文章用于记录笔者对于SM2椭圆曲线加密算法的学习  前置知识ElGamal离散对数密码体制 公钥密钥生成 Alice首先构造一条椭圆曲线 $E$，在曲线上选择一点 $G$ 作为生成元，$n$ 为 $G$ 的阶（且 $n$ 必须为质数)。此时构成了一个循环群 $$。  Alice选择一个私钥 $k (k &lt; n)$，生成公钥 $Q = kG$  Alice将公钥组 $(E,Q,G)$ 发送给Bob   加密过程 Bob收到信息后，将明文编码为 $M$，$M$ 为曲线上一点，并选择一个随机数 $r$（$r &lt; n$，$n$ 为 $G$ 的阶）  Bob计算点 $Cipher_1$ 与 $Cipher_2$ 即两段密文，计算方法如下 $Cipher_1 = M + rQ\ Cipher_2 = rG$  Bob把 $Cipher_1$ 和 $Cipher_2$ 发给Alice     解密过程 Alice收到密文后，为了获得 $M$，只需要 $Cipher_1 - k · Cipher_2$，因为 $Cipher1 - k*Cipher2 = M + rQ - krG...</div></div></div></a><a class="pagination-related" href="/2025/04/24/katz%E5%AF%86%E7%A0%81%E5%AD%A6%E6%95%99%E6%9D%90v3%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="katz密码学教材v3阅读笔记"><img class="cover" src="/img/(35).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-24</div><div class="info-item-2">katz密码学教材v3阅读笔记</div></div><div class="info-2"><div class="info-item-1">本篇笔记用于记录阅读 introduction to modern cryptography (3rd Edition) 一书的阅读 重点在于公钥密码部分 本文尽量通俗讲解，但是不能代替阅读原著  目录第一章介绍了一些引入，包括公钥加密，历史和现代密码学设计原则 第二章介绍了一些完美加密，也算引入部分（还有信息论的香农定理，很前段时间读论文在[OB22]遇到了） 以上是第一部分，用于引入 第三章介绍了对称加密，然后我打算跳了~ 第四章讲消息认证码MAC（等我有钱了也要买MAC（不是这个mac）） 第五章讲CCA安全，CCA也就是选择明文攻击 第六章讲哈希函数，目录看起来是区块链的基础（有默克尔树之类的） 第七章讲流密码之类的~不懂，后面再看看 第八章是...</div></div></div></a><a class="pagination-related" href="/2025/03/01/rust-study/" title="rust study"><img class="cover" src="/img/(21).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-01</div><div class="info-item-2">rust study</div></div><div class="info-2"><div class="info-item-1">本文记录了rust的学习   环境搭建vscode配置rust环境 vscode内配置快速打开Terminal，绑定openInIntegratedTerminal即可   然后下载rust依赖 因为我们都是喜家家糕守（电脑里有cpp环境），所以可以管理员运行下载这个东东即可 （没有cpp的环境我就不管了（光速逃）） 然后一路回车 安装好后，cmd里输入rustup --version &amp; rustc --version &amp; cargo --version测试安装成功  然后打开vscode，下载相关依赖 1234567RustRust-analyzerCodeLLDBcratesRust SyntaxRust Test LensEven Better TOML(Better TOML已弃用) 后面就可以正常使用了 新建项目 cargo new hellowrold 打开项目 cd .\helloworld\（TAB键补全） 运行项目 cargo run  </div></div></div></a><a class="pagination-related" href="/2025/08/13/zkSNARK%E5%9F%BA%E7%A1%80%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/" title="zkSNARK基础课程学习"><img class="cover" src="/img/(82).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-13</div><div class="info-item-2">zkSNARK基础课程学习</div></div><div class="info-2"><div class="info-item-1">课程链接：https://rdi.berkeley.edu/zk-learning/ 2.Overview of Modern SNARK Constructions简短：证明短&lt;1KB，验证快 &lt;10ms 区块链检验，一个监控很多个  C2PA：相机里有无法提取的私钥用于签名，保证照片的正确性 构建 算数电路-&gt;有向无环图 |C|门的数量，C_SHA256≈20K  NARK证明 SNARK简短 zkSNARK零知识 完备性：知道witness一定可以接受 知识可靠性：接受了，一定知道witness len(pi)=O(log|C|),time(V)=O(|x|,log|C|)（预处理阶段提取处理电路大小）  四种方案对比  健全性的定义   四种承诺  多项式承诺  一些具体算法  对多项式的承诺，一般认为是...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Waline</span><span id="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">coperlm</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">133</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/link/"><div class="headline">友链</div><div class="length-num">19</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/coperlm" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:coperlm@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="订阅-ATOM"><i class="fas fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/" title="我算是研究明白了mkdocs的部署逻辑了"><img src="/img/(5).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我算是研究明白了mkdocs的部署逻辑了"/></a><div class="content"><a class="title" href="/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/" title="我算是研究明白了mkdocs的部署逻辑了">我算是研究明白了mkdocs的部署逻辑了</a><time datetime="2025-11-29T12:08:38.005Z" title="更新于 2025-11-29 20:08:38">2025-11-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/29/%E6%88%91%E4%B9%9F%E6%98%AF%E6%9C%89%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%E4%BA%BA%E4%BA%86/" title="我也是有知识库的人了"><img src="/img/(94).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我也是有知识库的人了"/></a><div class="content"><a class="title" href="/2025/11/29/%E6%88%91%E4%B9%9F%E6%98%AF%E6%9C%89%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%E4%BA%BA%E4%BA%86/" title="我也是有知识库的人了">我也是有知识库的人了</a><time datetime="2025-11-29T08:24:37.560Z" title="更新于 2025-11-29 16:24:37">2025-11-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/06/BUUCTF-crypto-wp/" title="BUUCTF crypto wp"><img src="/img/(13).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BUUCTF crypto wp"/></a><div class="content"><a class="title" href="/2024/06/06/BUUCTF-crypto-wp/" title="BUUCTF crypto wp">BUUCTF crypto wp</a><time datetime="2025-11-27T01:09:55.086Z" title="更新于 2025-11-27 09:09:55">2025-11-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/27/%E4%BF%AE%E5%A4%8D%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/" title="修复数学公式编译错误"><img src="/img/(23).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="修复数学公式编译错误"/></a><div class="content"><a class="title" href="/2025/11/27/%E4%BF%AE%E5%A4%8D%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/" title="修复数学公式编译错误">修复数学公式编译错误</a><time datetime="2025-11-27T01:02:41.898Z" title="更新于 2025-11-27 09:02:41">2025-11-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/03/%E6%95%B0%E8%AE%BA%E5%B0%8F%E8%8A%9D%E5%A3%AB/" title="数论小芝士"><img src="/img/(73).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数论小芝士"/></a><div class="content"><a class="title" href="/2024/06/03/%E6%95%B0%E8%AE%BA%E5%B0%8F%E8%8A%9D%E5%A3%AB/" title="数论小芝士">数论小芝士</a><time datetime="2025-11-27T00:57:22.566Z" title="更新于 2025-11-27 08:57:22">2025-11-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By coperlm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="rightside-rss" href="/atom.xml" title="订阅 RSS" target="_blank" rel="noopener noreferrer"><i class="fas fa-rss"></i></a><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://walinetest-coperlms-projects.vercel.app',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'https://coperlm.github.io/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '我算是研究明白了mkdocs的部署逻辑了'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://coperlm.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=coperlm&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Waline' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script>window.newestComments = {
+  changeContent: content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<code>.*?<\/code>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g, "") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0, 150) + '...'
+    }
+    return content
+  },
+
+  generateHtml: (array, ele) => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class="aside-list-item">'
+
+        if (true && array[i].avatar) {
+          const imgAttr = 'src'
+          const lazyloadNative = ''
+          result += `<a href="${array[i].url}" class="thumbnail"><img ${imgAttr}="${array[i].avatar}" alt="${array[i].nick}" ${lazyloadNative}></a>`
+        }
+
+        result += `<div class="content">
+        <a class="comment" href="${array[i].url}" title="${array[i].content}">${array[i].content}</a>
+        <div class="name"><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '暂无评论'
+    }
+
+    ele.innerHTML = result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh(ele)
+  },
+
+  newestCommentInit: (name, getComment) => {
+    const $dom = document.querySelector('#card-newest-comments .aside-list')
+    if ($dom) {
+      const data = btf.saveToLocal.get(name)
+      if (data) {
+        newestComments.generateHtml(JSON.parse(data), $dom)
+      } else {
+        getComment($dom)
+      }
+    }
+  },
+
+  run: (name, getComment) => {
+    newestComments.newestCommentInit(name, getComment)
+    btf.addGlobalFn('pjaxComplete', () => newestComments.newestCommentInit(name, getComment), name)
+  }
+}</script><script>window.addEventListener('load', () => {
+  const keyName = 'waline-newest-comments'
+  const { changeContent, generateHtml, run } = window.newestComments
+
+  const getComment = async (ele) => {
+    try {
+      const res = await fetch('https://walinetest-coperlms-projects.vercel.app/api/comment?type=recent&count=6')
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      btf.saveToLocal.set(keyName, JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray, ele)
+    } catch (err) {
+      console.error(err)
+      ele.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  run(keyName, getComment)
+})</script><div id="aplayer-fixed" class="aplayer aplayer-fixed aplayer-narrow no-destroy" data-order="list" data-preload="auto" data-autoplay="false"></div><script src="/js/realtime-clock.js"></script><script src="/js/fix-browser-warnings.js"></script><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+  const ap = new APlayer({
+    container: document.getElementById('aplayer-fixed'),
+    order: 'random',
+    loop: 'all',
+    fixed: true,
+    autoplay: false,
+    audio: [
+      {
+        name: '冬眠2023',
+        artist: '阿YueYue 刘兆宇',
+        url: '/music/index/冬眠2023.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '老男孩',
+        artist: '王小帅',
+        url: '/music/index/老男孩.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '一期一会',
+        artist: '周深',
+        url: '/music/index/secret_base_zs.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '一路生花',
+        artist: '温奕心',
+        url: '/music/index/一路生花.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '你',
+        artist: 'GALA乐队',
+        url: '/music/index/你.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '你曾是少年',
+        artist: 'S.H.E',
+        url: '/music/index/你曾是少年.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '冬眠',
+        artist: '司南',
+        url: '/music/index/冬眠.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '圣诞快乐，劳伦斯先生',
+        artist: '坂本龙一',
+        url: '/music/index/圣诞快乐.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '如果可以',
+        artist: '（钢琴曲）',
+        url: '/music/index/如果可以.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '秋殇别恋',
+        artist: 'unknown',
+        url: '/music/index/秋殇别恋.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '紫金花盛开',
+        artist: '李荣浩 梁咏琪',
+        url: '/music/index/紫金花盛开.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '跳楼机',
+        artist: '洛天依',
+        url: '/music/index/跳楼机.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '身骑白马',
+        artist: '兰音',
+        url: '/music/index/身骑白马.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '长安姑娘',
+        artist: '兰音',
+        url: '/music/index/长安姑娘.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '壁上观',
+        artist: '泠鸢',
+        url: '/music/index/壁上观.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '春庭雪',
+        artist: '等什么君',
+        url: '/music/index/春庭雪.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '最后一页',
+        artist: '（钢琴曲）',
+        url: '/music/index/最后一页.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: 'secret_base',
+        artist: '（钢琴曲）',
+        url: '/music/index/secret_base_p.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '起风了',
+        artist: '买辣椒也用券',
+        url: '/music/index/起风了.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '卡农',
+        artist: '（钢琴曲）-b站拜年祭2022',
+        url: '/music/index/卡农.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '悬溺',
+        artist: '（钢琴曲）',
+        url: '/music/index/悬溺.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '现在是陌生人',
+        artist: '（纯音乐）',
+        url: '/music/index/现在是陌生人.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '铃芽之旅',
+        artist: '（钢琴组曲）',
+        url: '/music/index/铃芽之旅.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '诀别书',
+        artist: '邓垚',
+        url: '/music/index/诀别书.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: 'The_truth_that_you_leave',
+        artist: '高至豪',
+        url: '/music/index/The_truth_that_you_leave.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '如愿',
+        artist: '王菲',
+        url: '/music/index/如愿.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '那些年',
+        artist: '（钢琴曲）',
+        url: '/music/index/那些年.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '星光下的梦想',
+        artist: '（钢琴曲）',
+        url: '/music/index/星光下的梦想.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '呓语',
+        artist: '洛天依',
+        url: '/music/index/呓语.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '月光',
+        artist: '胡彦斌',
+        url: '/music/index/月光.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '东京不太热',
+        artist: '洛天依',
+        url: '/music/index/东京不太热.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '月光变奏曲',
+        artist: '《秦时明月》',
+        url: '/music/index/月光变奏曲.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '此去半生',
+        artist: '北部玄驹AI',
+        url: '/music/index/此去半生.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '老男孩',
+        artist: '春日野穹AI',
+        url: '/music/index/老男孩AI.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '夏天的风',
+        artist: '洛天依 乐正绫',
+        url: '/music/index/夏天的风.mp3',
+        cover: '/img/music_default.gif'
+      }
+    ]
+  });
+</script>
+<script id="canvas_nest" defer="defer" color="255,127,0" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false 
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="来搜吧来搜吧~" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
