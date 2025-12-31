@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2024.10.30组会</title>
-    <url>/2024/10/30/2024-10-30%E7%BB%84%E4%BC%9A/</url>
-    <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de9e961fa3e70fbc1ff6cba48e977e425d6990bac9e6f428a573d21a80577428175b2d7a167dd0c28ad1052dc69cff23ec7db1feec24acf3433122a642ede696fac1c18c6879961e8735a0f0eca93fa72cad4ad3e4d1929d16df31ab82d34972d0f3b44cdb30dd51d690bbdab84c1aff4dccbb6b17f5844d1306c5ae56c5cd20b5fba6d958ab415358cb377440debec707f13609b4fa0d179dc789b77dcfe509dfcc605d2cd9c59e5e36b22bcb5aadd720c6de42212d2ca5ed9f69d6c34654ffe4e835500e8becdac2933f38235fb1cfe1f200722819020076a43dfee15a140108941fe0750ac59d26f28987d416d3fac74180cb123bd84a8cfde43529efd7b641d4984f24d4d0420232023070393e1dbf782b66c51631447182d0189af789c6fa904c81a4dea27a5c9211e08130cd20e51766a1f3436d1439da814b72711ab1dcc452b83f4ffa994dbf2d72b160da2432c0ea12d44fa33a819f74be7d3747de8cf70e11da80de0a3b7e7de4a23a7758aee46514ec614102af43dff4a290b644509aa096f09bceea0879b28d02bdb117db990b64a8c399ad863585015aeb1e32aeb228663aeb827732027fb3bb46c6ee1a7aab47fdc614fe48cb2b4c53b1628f470ebc443a24d83b0be5ce73fbbe5cf15d40116bf3f72513c8e953354b92caee2e335dda837cca3c0bba06d89a6df8487b77666356d62288b49c460c475a1a053e84f997c0ba23a4149f6c0c06bac30b5f4182d47242d39a9a92b25dcb6cc1ba4d891aef34279e240181be0d16073de3f71e2aebe1b277794ff4bcdae4f0de06aaa3016fa73da7a1886955f814dd17d86504a5e2df60b9d21628742af7c66bd8a0504617c7b72b504bc9152d123f49d5e8f35a6acff0de3d688222cd81e1f69ad930531c00f762ab35bc336c31009eea86a79e0cb8ba3690f9bd1f6e79bb8bf2f8a15d9bb2e92953600b6d6731072515056a59f82c43dc2c37c02aa26533a3ac6058d0c350d910fa85ded6824de7001e96c116df99e222329408f4ce4b957e9727035f1d4e007639a9b01f7c925229785c8b1808ef3142b2ed283069e67cf83277968dc1d9faa764604e7a1825d558322addde72561f3118ad4ad252db319ddbd451b6313810ff3e3bb5b37ec1bdb29f6f
-  
-    
-      
-      
-        Hey, password is required here.
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>组会记录</category>
-      </categories>
-      <tags>
-        <tag>meetings</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2024.10.20NISA百团题目题解</title>
     <url>/2024/10/20/2024-10-20NISA%E7%99%BE%E5%9B%A2%E9%A2%98%E7%9B%AE%E9%A2%98%E8%A7%A3/</url>
     <content><![CDATA[三道挺有意思的小题目，记录一下
@@ -53,6 +31,28 @@ ai给出的贪心代码，仅供参考
       </categories>
       <tags>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024.10.30组会</title>
+    <url>/2024/10/30/2024-10-30%E7%BB%84%E4%BC%9A/</url>
+    <content><![CDATA[
+  7b22b1899bb4d215751e07a80f0d88de9e961fa3e70fbc1ff6cba48e977e425d6990bac9e6f428a573d21a80577428175b2d7a167dd0c28ad1052dc69cff23ec7db1feec24acf3433122a642ede696fac1c18c6879961e8735a0f0eca93fa72cad4ad3e4d1929d16df31ab82d34972d0f3b44cdb30dd51d690bbdab84c1aff4dccbb6b17f5844d1306c5ae56c5cd20b5fba6d958ab415358cb377440debec707f13609b4fa0d179dc789b77dcfe509dfcc605d2cd9c59e5e36b22bcb5aadd720c6de42212d2ca5ed9f69d6c34654ffe4e835500e8becdac2933f38235fb1cfe1f200722819020076a43dfee15a140108941fe0750ac59d26f28987d416d3fac74180cb123bd84a8cfde43529efd7b641d4984f24d4d0420232023070393e1dbf782b66c51631447182d0189af789c6fa904c81a4dea27a5c9211e08130cd20e51766a1f3436d1439da814b72711ab1dcc452b83f4ffa994dbf2d72b160da2432c0ea12d44fa33a819f74be7d3747de8cf70e11da80de0a3b7e7de4a23a7758aee46514ec614102af43dff4a290b644509aa096f09bceea0879b28d02bdb117db990b64a8c399ad863585015aeb1e32aeb228663aeb827732027fb3bb46c6ee1a7aab47fdc614fe48cb2b4c53b1628f470ebc443a24d83b0be5ce73fbbe5cf15d40116bf3f72513c8e953354b92caee2e335dda837cca3c0bba06d89a6df8487b77666356d62288b49c460c475a1a053e84f997c0ba23a4149f6c0c06bac30b5f4182d47242d39a9a92b25dcb6cc1ba4d891aef34279e240181be0d16073de3f71e2aebe1b277794ff4bcdae4f0de06aaa3016fa73da7a1886955f814dd17d86504a5e2df60b9d21628742af7c66bd8a0504617c7b72b504bc9152d123f49d5e8f35a6acff0de3d688222cd81e1f69ad930531c00f762ab35bc336c31009eea86a79e0cb8ba3690f9bd1f6e79bb8bf2f8a15d9bb2e92953600b6d6731072515056a59f82c43dc2c37c02aa26533a3ac6058d0c350d910fa85ded6824de7001e96c116df99e222329408f4ce4b957e9727035f1d4e007639a9b01f7c925229785c8b1808ef3142b2ed283069e67cf83277968dc1d9faa764604e7a1825d558322addde72561f3118ad4ad252db319ddbd451b6313810ff3e3bb5b37ec1bdb29f6f
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+]]></content>
+      <categories>
+        <category>组会记录</category>
+      </categories>
+      <tags>
+        <tag>meetings</tag>
       </tags>
   </entry>
   <entry>
@@ -100,10 +100,10 @@ ai给出的贪心代码，仅供参考
       </tags>
   </entry>
   <entry>
-    <title>2024.9.18组会</title>
-    <url>/2024/09/19/2024.9.18%E7%BB%84%E4%BC%9A/</url>
+    <title>2024.9.11组会</title>
+    <url>/2024/09/11/2024.9.11%E7%BB%84%E4%BC%9A/</url>
     <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88deb19e3a2bf4efd24e816d4e33bff4379def16261ea3be9e3ce1358a249e21448bf46da3c31892d87a95ecd3a4164f2273a0243be5d8677e2d4b5697275e6fab040f4b1f32b4bb94bd3156dda8d03ced86bf4b8e111dd0984937dc69790d37f27712ac32d379ed82292f523be970fd48be48a20044112e033b542dd6be34fecaf5032c699df269954f804b8a10e136350c7b6fd21dcd839c688f53f1cfe09051c5570e9fe4a27a2dbc8f97a3fb0c8b35adec2f488fbd07c4462142db2a3c6790f2941653880829f0c0bc7ae060dcb4ee51f0561b779d6b86db8247b8f6c2f76d7763dc58178a3cd7ce7215a29a27c748e270e989bc7a1ed9cf56bc677d3ecde7756434174198b4524c8c5c9d1241050aa851960614f0c8ae7ea014a2e582f7359af00ec589136f8b733e8c1cfd6a2bbccb0e8c3d32c92ac88437c8f5c9405c81ab80ece007e1c258876c3f0c8e3974910f19dce3d6e4edccc2f7b4bb2f2f1d21ee1c7dce95dbce4bb66b25b2c6e0647a8217a2d7445075a40abbf5688798b53e451fdcc6d7e034511211985c5fbe244d1b00e3c9061b9a242d9e2246e8e9881178d1423d6e2534881f5a3773d021a2ca377e63388ac31f4441d90144c1885348885cfe0912e16a612ee61aadfaa477e9b5828ea1328667b44363110fdb14d0055dc5297d50676d2798a09e199eea0902d9d68c9be17b3009999097004ad8a0d8094efd4e6c116ff0344ebd1b8fa1cde74f95e4f909aa9b05150f0758c746cb2652008043906aee8cc4b120a1af03230a4f6da8656e128e18fcd6c264fb9371eaf72ffe7e9af8b59378d370dbc30d3d0777fc3ad96a6293dc8ed8d6d53febf5688b09f8a6911022a678d627bd6f963d379a8bf10fde1580eab351c49f5ef4672946a5a21f91b1b50760a9dd79b92ea938f687141484d4685e7e2238d3990c06ab1d9e1bc75920207e9d9b7409812f1135685076be640f73814afd46c016ebf8a6fc5c8c0b9759709fd2eb589e1c93421c14fa1ce9f9a871fb4ada01e80b7e4aea17e509fe9b1243c511edc77a0589a4d16c9ea1092a2b3f0c2085ac8b4adb8c78ac35f635b70f991824ca94287e70220485fe386110f5f1d78dac48008c2f2ab7877ba538a6fa9d300f1b835286826a42c8e4c0ccdcd864825a7697f257eb1ee9428ed50367c6a9b061cfd381e3d833d8c09b4c5df67d9b56da47e7a9406d511502f67cbcc96ea100cc5f50a4fffa2764a33241440d65fe8972ec0133fea94e9e36a832a3c87477a49b78e49cf847ba7a5b0974d3d54ec0fdabd40fd149abfde4168f54416002fd8bc4951132b464737f87c5d6ccbc638eca76806b6ba5f21bed2714b4c7b6fdec890459e56393ea9f711e3bdaecc8eaaec1b3d4ab10f579d7b82cd8e7cf6502cd656484bdcc817fe2150c29d186b173d714238283b8ac6ba1a09b472e0aa885309fbe51827c72ea92ae4f3525484fcfb572cb8e1dbdc841e6f21d88a6062a7620fd50b7a53e4f595c8a8ec879587494ef46cd5a46e9b5b1e62cbe3d82d16860c18177ab2cb078242dc59654efe08db01482999ddc3c01778ae12f06ec5ca66d4d005e328209f0a3e0530155b2d758ed8f7aadec05886bdbe9764ec10498a214493bab63f624f24358e72014d7193515d0bdaab88bebcc765f10bb7a7ce3037cc4623aa5359f824236398308e66c664d0b111744b4e75228e826f990ad57362084dcbb1474953a7e1e1ec43d149991e0364f427cd76636ffa6640a34585984267c2c12702e1994cf8685fc78239cedff388eee6a352432e188c4f04cff39c999c0e0a55681fc4ac70d3518995a07228b6e95f6b23b1bd4a263b19c175753c3ef33b5c4eb7f6747f03ff38ef538e4d9d1159ca3055f21001a8e26bea62f78b4d67e80b71c4f450e13b4812b7d709244ed66a610d25f547c5711c398247c93f82c53656606365d753d9a4ab3e9fcafd9747233a9d622481e8a925130b18e0c77f79e75cf4de1a6fc6bfebf1a1555b138c456fa411ecdffd03bc9db4a4bccaad777605e07f3c9aa767103d975783f9682b60fc4448288fcc96002c19440b593f56b6dc34064c5324a57be3cca7cf362006d64a4dad8278a18b8f17a5fd162ea68d67f1517a100a42659ded39de64422e1208819a36f6cb52f423d179ed1a095f387289bf51bf1f21d6ed16049639cbcd7f0cb057c77d4eb4276478d88c13fe7a52307ee4df9f60c98724ad7ff920925d356973b1d6bf5307b734295a1d23d85d09b6fb16d52f7a24b3934be5c620108bcd947ec0c52bf22f2d63df438a7025bbb98506a923a945e11190cfe5c3f18529738c4222e0224762a06a5b3605c79d70b5f4a024bc749609297b7fc4b2b50a12937e0537691e4adb5360d34f44173d2814d847c2186dc72e498c934b589e7ad0d23c2c2f163906f011db2a5b5bab9ead6cd748c05ef4c8230ff930300289e60bcf91e89ef661f491344df1e61795d30c97629fcfaaeda5d9c4eaa47a86f2408c2a9834a7eae66cc1206401524b4a97b282fa9ca96c9857bc2c9a1aa9829000e4f7aad9a6953989b761d682f1c977d361f20aa3bfbe8e6537b6f880fe34e90bda13214e8bbf9eadaeb4ce1dc4c15f9aa8df3a45e1d0d64973db80131d6ba9988bf2036e0a64cb6fb9d0d89c4a5b30810083aeea67bfc24cecf92e7f0366eb4d3a70f07a498a592040613d719b4c240ac77e61708c66194d9a5bb75d3ddb5c52a67e8eab737d7ce656e2e18ef41f1c6c8c360a76698746b00aed00eba347bd9215939ac7162de6b7feb2947dbb31f6a3e2fb7b4a68b18b74242536313f10576f978cddb07f7e21bc96586c35a8250e33ee1a6d15eac093887127e413a7c668c5886cdfd1dbcb58fa7131245da05345417ed2319ab3f84d888406f18c09b3db6cfe966a855ab9ffc453941f96bee8a1037799888987215c772dfa42879e6a21b34771901e39f7481952d881b843f9c4a25e3627187752321d6533f13ba976438cbaf939e3795b23a75f795628684ac3274c74740cbfa01b5df4dfbf08ba62e5294a5ccdc79f4ceb03bcb6d001ce576fa8cd321468ebe9f734213d8ba419e4617d7e686ff521611a423d3f4f5d577
+  7b22b1899bb4d215751e07a80f0d88de7ac43174b2bb1ad06a11d61b739ea0073709999a7abd32e45bb6e9a37adb7657ceb36495f5c55a980bd4fb92793294a46c56fee9c2e0f25deca538e36c8e329d72963c09166eda1479d2acc20b4d7f28b0264000ba8ecf58060a5d37424302eeb71e65dc390d166624d53f53c9f29d95de84b9cf88abba066824834fd2bcee6cc77efe36bf9aa4835b6c8480b4a689d0859a5ba8b9647d58b39e618e53fe21696b730341183dee80b4600369c1546341da8a38272c47c38e8febfbc754224d3ef173e4366f687d60fb2ebd1f5ca7fbc7e907da4c78389cff266a4deaf02d0b249ee69e3a129b1d616cefb7aaee350bb3036e4aca4144d8e8444d00700ad0da9c85dfbf6ed7091d584a65f8c4ba5d6c99da0ec37221fd1b28ef51d63fd55a30a5feb4ea47cfb9e0e3c46596815fa78e2c39b4ce37e12c2424b18b0b6602bd85c2534d0073b79a4e0cfe9d555c91cc46863a08fdde2818ddc791b19ccc12cffbedcc22340af32c0a8713d9a86a5e62037133ef7d1bfa8cd323ea77e8b4fdf5a71832e078102bf481ccac5d361ed1324a86ca46bd276c208be41cd04197be4ecb48623814784202540d793081d1bd0af4459f755b571506b6f58fb716f39c9c1631182797dca2e88c1d2754e943ab57dd3f13a85d7540ad8b12719f60988116c6404f36b1729e02357721a2a522d8943cb8404419b4f9d3aeb1b3872e2675d5f06ea5bd058845b05c517f0890cddf2b23b4aff2cdfdadab8ee46c439917d0aeaf94c61a4e50454419a79c7e959133091d384a0849db745a1f27bc60b85b1cc0e105d9bc4d0588c646adc1a082513779440855d0c36d9e513d46f76b71fbc3d677706fabc7126d2a0685f28c41bd3465d2a8
   
     
       
@@ -122,10 +122,10 @@ ai给出的贪心代码，仅供参考
       </tags>
   </entry>
   <entry>
-    <title>2024.9.11组会</title>
-    <url>/2024/09/11/2024.9.11%E7%BB%84%E4%BC%9A/</url>
+    <title>2024.9.18组会</title>
+    <url>/2024/09/19/2024.9.18%E7%BB%84%E4%BC%9A/</url>
     <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de7ac43174b2bb1ad06a11d61b739ea0073709999a7abd32e45bb6e9a37adb7657ceb36495f5c55a980bd4fb92793294a46c56fee9c2e0f25deca538e36c8e329d72963c09166eda1479d2acc20b4d7f28b0264000ba8ecf58060a5d37424302eeb71e65dc390d166624d53f53c9f29d95de84b9cf88abba066824834fd2bcee6cc77efe36bf9aa4835b6c8480b4a689d0859a5ba8b9647d58b39e618e53fe21696b730341183dee80b4600369c1546341da8a38272c47c38e8febfbc754224d3ef173e4366f687d60fb2ebd1f5ca7fbc7e907da4c78389cff266a4deaf02d0b249ee69e3a129b1d616cefb7aaee350bb3036e4aca4144d8e8444d00700ad0da9c85dfbf6ed7091d584a65f8c4ba5d6c99da0ec37221fd1b28ef51d63fd55a30a5feb4ea47cfb9e0e3c46596815fa78e2c39b4ce37e12c2424b18b0b6602bd85c2534d0073b79a4e0cfe9d555c91cc46863a08fdde2818ddc791b19ccc12cffbedcc22340af32c0a8713d9a86a5e62037133ef7d1bfa8cd323ea77e8b4fdf5a71832e078102bf481ccac5d361ed1324a86ca46bd276c208be41cd04197be4ecb48623814784202540d793081d1bd0af4459f755b571506b6f58fb716f39c9c1631182797dca2e88c1d2754e943ab57dd3f13a85d7540ad8b12719f60988116c6404f36b1729e02357721a2a522d8943cb8404419b4f9d3aeb1b3872e2675d5f06ea5bd058845b05c517f0890cddf2b23b4aff2cdfdadab8ee46c439917d0aeaf94c61a4e50454419a79c7e959133091d384a0849db745a1f27bc60b85b1cc0e105d9bc4d0588c646adc1a082513779440855d0c36d9e513d46f76b71fbc3d677706fabc7126d2a0685f28c41bd3465d2a8
+  7b22b1899bb4d215751e07a80f0d88deb19e3a2bf4efd24e816d4e33bff4379def16261ea3be9e3ce1358a249e21448bf46da3c31892d87a95ecd3a4164f2273a0243be5d8677e2d4b5697275e6fab040f4b1f32b4bb94bd3156dda8d03ced86bf4b8e111dd0984937dc69790d37f27712ac32d379ed82292f523be970fd48be48a20044112e033b542dd6be34fecaf5032c699df269954f804b8a10e136350c7b6fd21dcd839c688f53f1cfe09051c5570e9fe4a27a2dbc8f97a3fb0c8b35adec2f488fbd07c4462142db2a3c6790f2941653880829f0c0bc7ae060dcb4ee51f0561b779d6b86db8247b8f6c2f76d7763dc58178a3cd7ce7215a29a27c748e270e989bc7a1ed9cf56bc677d3ecde7756434174198b4524c8c5c9d1241050aa851960614f0c8ae7ea014a2e582f7359af00ec589136f8b733e8c1cfd6a2bbccb0e8c3d32c92ac88437c8f5c9405c81ab80ece007e1c258876c3f0c8e3974910f19dce3d6e4edccc2f7b4bb2f2f1d21ee1c7dce95dbce4bb66b25b2c6e0647a8217a2d7445075a40abbf5688798b53e451fdcc6d7e034511211985c5fbe244d1b00e3c9061b9a242d9e2246e8e9881178d1423d6e2534881f5a3773d021a2ca377e63388ac31f4441d90144c1885348885cfe0912e16a612ee61aadfaa477e9b5828ea1328667b44363110fdb14d0055dc5297d50676d2798a09e199eea0902d9d68c9be17b3009999097004ad8a0d8094efd4e6c116ff0344ebd1b8fa1cde74f95e4f909aa9b05150f0758c746cb2652008043906aee8cc4b120a1af03230a4f6da8656e128e18fcd6c264fb9371eaf72ffe7e9af8b59378d370dbc30d3d0777fc3ad96a6293dc8ed8d6d53febf5688b09f8a6911022a678d627bd6f963d379a8bf10fde1580eab351c49f5ef4672946a5a21f91b1b50760a9dd79b92ea938f687141484d4685e7e2238d3990c06ab1d9e1bc75920207e9d9b7409812f1135685076be640f73814afd46c016ebf8a6fc5c8c0b9759709fd2eb589e1c93421c14fa1ce9f9a871fb4ada01e80b7e4aea17e509fe9b1243c511edc77a0589a4d16c9ea1092a2b3f0c2085ac8b4adb8c78ac35f635b70f991824ca94287e70220485fe386110f5f1d78dac48008c2f2ab7877ba538a6fa9d300f1b835286826a42c8e4c0ccdcd864825a7697f257eb1ee9428ed50367c6a9b061cfd381e3d833d8c09b4c5df67d9b56da47e7a9406d511502f67cbcc96ea100cc5f50a4fffa2764a33241440d65fe8972ec0133fea94e9e36a832a3c87477a49b78e49cf847ba7a5b0974d3d54ec0fdabd40fd149abfde4168f54416002fd8bc4951132b464737f87c5d6ccbc638eca76806b6ba5f21bed2714b4c7b6fdec890459e56393ea9f711e3bdaecc8eaaec1b3d4ab10f579d7b82cd8e7cf6502cd656484bdcc817fe2150c29d186b173d714238283b8ac6ba1a09b472e0aa885309fbe51827c72ea92ae4f3525484fcfb572cb8e1dbdc841e6f21d88a6062a7620fd50b7a53e4f595c8a8ec879587494ef46cd5a46e9b5b1e62cbe3d82d16860c18177ab2cb078242dc59654efe08db01482999ddc3c01778ae12f06ec5ca66d4d005e328209f0a3e0530155b2d758ed8f7aadec05886bdbe9764ec10498a214493bab63f624f24358e72014d7193515d0bdaab88bebcc765f10bb7a7ce3037cc4623aa5359f824236398308e66c664d0b111744b4e75228e826f990ad57362084dcbb1474953a7e1e1ec43d149991e0364f427cd76636ffa6640a34585984267c2c12702e1994cf8685fc78239cedff388eee6a352432e188c4f04cff39c999c0e0a55681fc4ac70d3518995a07228b6e95f6b23b1bd4a263b19c175753c3ef33b5c4eb7f6747f03ff38ef538e4d9d1159ca3055f21001a8e26bea62f78b4d67e80b71c4f450e13b4812b7d709244ed66a610d25f547c5711c398247c93f82c53656606365d753d9a4ab3e9fcafd9747233a9d622481e8a925130b18e0c77f79e75cf4de1a6fc6bfebf1a1555b138c456fa411ecdffd03bc9db4a4bccaad777605e07f3c9aa767103d975783f9682b60fc4448288fcc96002c19440b593f56b6dc34064c5324a57be3cca7cf362006d64a4dad8278a18b8f17a5fd162ea68d67f1517a100a42659ded39de64422e1208819a36f6cb52f423d179ed1a095f387289bf51bf1f21d6ed16049639cbcd7f0cb057c77d4eb4276478d88c13fe7a52307ee4df9f60c98724ad7ff920925d356973b1d6bf5307b734295a1d23d85d09b6fb16d52f7a24b3934be5c620108bcd947ec0c52bf22f2d63df438a7025bbb98506a923a945e11190cfe5c3f18529738c4222e0224762a06a5b3605c79d70b5f4a024bc749609297b7fc4b2b50a12937e0537691e4adb5360d34f44173d2814d847c2186dc72e498c934b589e7ad0d23c2c2f163906f011db2a5b5bab9ead6cd748c05ef4c8230ff930300289e60bcf91e89ef661f491344df1e61795d30c97629fcfaaeda5d9c4eaa47a86f2408c2a9834a7eae66cc1206401524b4a97b282fa9ca96c9857bc2c9a1aa9829000e4f7aad9a6953989b761d682f1c977d361f20aa3bfbe8e6537b6f880fe34e90bda13214e8bbf9eadaeb4ce1dc4c15f9aa8df3a45e1d0d64973db80131d6ba9988bf2036e0a64cb6fb9d0d89c4a5b30810083aeea67bfc24cecf92e7f0366eb4d3a70f07a498a592040613d719b4c240ac77e61708c66194d9a5bb75d3ddb5c52a67e8eab737d7ce656e2e18ef41f1c6c8c360a76698746b00aed00eba347bd9215939ac7162de6b7feb2947dbb31f6a3e2fb7b4a68b18b74242536313f10576f978cddb07f7e21bc96586c35a8250e33ee1a6d15eac093887127e413a7c668c5886cdfd1dbcb58fa7131245da05345417ed2319ab3f84d888406f18c09b3db6cfe966a855ab9ffc453941f96bee8a1037799888987215c772dfa42879e6a21b34771901e39f7481952d881b843f9c4a25e3627187752321d6533f13ba976438cbaf939e3795b23a75f795628684ac3274c74740cbfa01b5df4dfbf08ba62e5294a5ccdc79f4ceb03bcb6d001ce576fa8cd321468ebe9f734213d8ba419e4617d7e686ff521611a423d3f4f5d577
   
     
       
@@ -179,6 +179,62 @@ ai给出的贪心代码，仅供参考
     
   
 
+]]></content>
+      <categories>
+        <category>生活与杂谈</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024年终总结&amp;回首过去几年</title>
+    <url>/2024/12/02/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-%E5%9B%9E%E9%A6%96%E8%BF%87%E5%8E%BB%E5%87%A0%E5%B9%B4/</url>
+    <content><![CDATA[算是个年终总结，也总结了半秩
+
+总述高一大概是2020年，卡线进了沧州一中
+当时成绩平平无奇，在普通班大概是排二十多名的位置
+
+然后高一还是比较平静的吧，刚开学不久学校有信竞集训队招新，然后去考了个试，然后进了集训队，认识了很多大佬
+开学后三个月，去打了CSP-S2020，T1打了三个小时，最后一个小时都在吃东西~
+赛后测试代码，T1（儒略日，大模拟）拿了10分，原本能晋级的，结果忘记给每道题都建立一个文件夹了，然后遗憾退场（悲
+noip2021再战
+至于whk，那时候马上就要是”得E门生“了
+
+不过排名基本没变，大概班里二十多名，学校七八百名（物理组合）
+
+直到高二，一直如此
+高二CSP/NOIP2021前夕，几乎全天待在机房练题，whk基本没时间学
+那段时间的大致安排是，上午正常上课，然后下午和晚自习就在机房里备赛；然后我那段时间基本上是上午课间的时候抓紧时间写作业，有时可以把作业（已经想不到当时是怎么卷的了）；noip打完之后回归whk，基本上白天写完作业绰绰有余，晚上可以自己写练习册了
+最后结果，csp省二 noip省三，有点小遗憾，但也知足了
+没找到当时的成绩，我只记得刚打完csp回来的月考，没进前900来着
+打完比赛，就可以开始专心学whk了
+
+这次好歹是上500分了
+转眼到了高二下学期，联考成绩单没在智学网上找到，不过我印象比较深刻，班上第二名，物理组总排第299（这辈子头一次进前300）
+高三然后高三了，就都卷起来了，进步就比较困难了，常年稳定在400-500这样子，不过也是鸡汤看的不少，知道高三心态很重要，然后就埋头学习，学累了看会鸡汤，然后继续学（大雾
+讲真压力不小，集训队的其他dalao都进阶北大班了，我还在普通班
+题目难度上来了，分数基本在450左右，但是排名基本不变
+好像是高三上学期，数学一直没有什么进步，比较感动自己的是把朱昊鲲《2000题》一个月刷了一遍（还把错题总结出来了），基本上是每个晚自习都在刷，中午午休的时候也刷；正好赶上一次运动会，记得那一天正好把几何的一大章写完
+
+
+高三下学期，快高考了，但是语文基本没上过百；听了石油的说法，思考了一下，然后做了一个挺斩钉截铁的决定，拿出整整15天的时间，这段时间每科自己买的试卷都不做了，就只做语文高考真题。在这之后虽然语文依旧没有起色，但是最后高考的时候数学英语发挥的一般，而语文118。我觉得和这一抉择有很大的关联
+高考前一两个月吧，我和我同桌经常一块刷题，在限定时间内比正确率，物化生都刷，数学也刷，嘎嘎刷；讲真那段时间刷题真的刷爽了，有一次45分钟我做了两套物理试卷（好像是名校模考卷）的选择题，总共只错了三道题，总之就是挺爽的
+最终一分不浪费，录取到了FJNU
+大一感觉大一还是相对迷茫的，不过也有不少收获
+先说算法竞赛，因为高中学过，所以理所当然大学想打ACM，但是由于比较复杂的原因，最终没有选择ACM（属于是取舍的问题，不过后来想明白了）
+因为大一就下定决心不保研了，所以学业这边相对轻松；然后就可以随便打比赛，一段时间的练习逐渐成为了python中手（不是高手也不是低手），CTF被学长带飞然后拿了奖；RoboMaster这边也学到了不少嵌入式知识；而且还混了个数学建模小比赛的奖
+机器人相关，沧一有这样的社团但是不在普通班招，有点遗憾；这也是我大学来机器人社团学和本专业毫无关联的嵌入式的原因之一，耗费了不少时间和精力，但是感觉相当划算，现在想自己手搓个什么简单电路基本没有问题，即使有问题也解能决问题
+
+大二大二这一年还没过完，不过想清楚很多事情；很多东西都是要取舍，知道了自己需要什么，需要做什么，因而之后的道路也比较清晰了
+
+关于算法竞赛，太功利去看待他并不是一件好事，但是确实很锻炼思维能力；虽然没进大学的集训队，这段时间也经常打Codeforces，前两天的校赛还取得了不错的成绩
+
+关于CTF，它和以后的就业是相对绑定的；大一锻炼了一年的代码能力，现在手搓（或者熟练使用AI）完成个什么算法也相对轻松；所以基本而言是有利的，性价比较高的
+现在机器人这边也在干一个小项目，确实不大，但也学到很多东西
+后面的路，应当会越走越宽的
+
+未完待续~
 ]]></content>
       <categories>
         <category>生活与杂谈</category>
@@ -407,107 +463,41 @@ DOM 监听：MutationObserver 监听动态元素，实时更新样式
       </tags>
   </entry>
   <entry>
-    <title>2024年终总结&amp;回首过去几年</title>
-    <url>/2024/12/02/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-%E5%9B%9E%E9%A6%96%E8%BF%87%E5%8E%BB%E5%87%A0%E5%B9%B4/</url>
-    <content><![CDATA[算是个年终总结，也总结了半秩
-
-总述高一大概是2020年，卡线进了沧州一中
-当时成绩平平无奇，在普通班大概是排二十多名的位置
-
-然后高一还是比较平静的吧，刚开学不久学校有信竞集训队招新，然后去考了个试，然后进了集训队，认识了很多大佬
-开学后三个月，去打了CSP-S2020，T1打了三个小时，最后一个小时都在吃东西~
-赛后测试代码，T1（儒略日，大模拟）拿了10分，原本能晋级的，结果忘记给每道题都建立一个文件夹了，然后遗憾退场（悲
-noip2021再战
-至于whk，那时候马上就要是”得E门生“了
-
-不过排名基本没变，大概班里二十多名，学校七八百名（物理组合）
-
-直到高二，一直如此
-高二CSP/NOIP2021前夕，几乎全天待在机房练题，whk基本没时间学
-那段时间的大致安排是，上午正常上课，然后下午和晚自习就在机房里备赛；然后我那段时间基本上是上午课间的时候抓紧时间写作业，有时可以把作业（已经想不到当时是怎么卷的了）；noip打完之后回归whk，基本上白天写完作业绰绰有余，晚上可以自己写练习册了
-最后结果，csp省二 noip省三，有点小遗憾，但也知足了
-没找到当时的成绩，我只记得刚打完csp回来的月考，没进前900来着
-打完比赛，就可以开始专心学whk了
-
-这次好歹是上500分了
-转眼到了高二下学期，联考成绩单没在智学网上找到，不过我印象比较深刻，班上第二名，物理组总排第299（这辈子头一次进前300）
-高三然后高三了，就都卷起来了，进步就比较困难了，常年稳定在400-500这样子，不过也是鸡汤看的不少，知道高三心态很重要，然后就埋头学习，学累了看会鸡汤，然后继续学（大雾
-讲真压力不小，集训队的其他dalao都进阶北大班了，我还在普通班
-题目难度上来了，分数基本在450左右，但是排名基本不变
-好像是高三上学期，数学一直没有什么进步，比较感动自己的是把朱昊鲲《2000题》一个月刷了一遍（还把错题总结出来了），基本上是每个晚自习都在刷，中午午休的时候也刷；正好赶上一次运动会，记得那一天正好把几何的一大章写完
-
-
-高三下学期，快高考了，但是语文基本没上过百；听了石油的说法，思考了一下，然后做了一个挺斩钉截铁的决定，拿出整整15天的时间，这段时间每科自己买的试卷都不做了，就只做语文高考真题。在这之后虽然语文依旧没有起色，但是最后高考的时候数学英语发挥的一般，而语文118。我觉得和这一抉择有很大的关联
-高考前一两个月吧，我和我同桌经常一块刷题，在限定时间内比正确率，物化生都刷，数学也刷，嘎嘎刷；讲真那段时间刷题真的刷爽了，有一次45分钟我做了两套物理试卷（好像是名校模考卷）的选择题，总共只错了三道题，总之就是挺爽的
-最终一分不浪费，录取到了FJNU
-大一感觉大一还是相对迷茫的，不过也有不少收获
-先说算法竞赛，因为高中学过，所以理所当然大学想打ACM，但是由于比较复杂的原因，最终没有选择ACM（属于是取舍的问题，不过后来想明白了）
-因为大一就下定决心不保研了，所以学业这边相对轻松；然后就可以随便打比赛，一段时间的练习逐渐成为了python中手（不是高手也不是低手），CTF被学长带飞然后拿了奖；RoboMaster这边也学到了不少嵌入式知识；而且还混了个数学建模小比赛的奖
-机器人相关，沧一有这样的社团但是不在普通班招，有点遗憾；这也是我大学来机器人社团学和本专业毫无关联的嵌入式的原因之一，耗费了不少时间和精力，但是感觉相当划算，现在想自己手搓个什么简单电路基本没有问题，即使有问题也解能决问题
-
-大二大二这一年还没过完，不过想清楚很多事情；很多东西都是要取舍，知道了自己需要什么，需要做什么，因而之后的道路也比较清晰了
-
-关于算法竞赛，太功利去看待他并不是一件好事，但是确实很锻炼思维能力；虽然没进大学的集训队，这段时间也经常打Codeforces，前两天的校赛还取得了不错的成绩
-
-关于CTF，它和以后的就业是相对绑定的；大一锻炼了一年的代码能力，现在手搓（或者熟练使用AI）完成个什么算法也相对轻松；所以基本而言是有利的，性价比较高的
-现在机器人这边也在干一个小项目，确实不大，但也学到很多东西
-后面的路，应当会越走越宽的
-
-未完待续~
-]]></content>
-      <categories>
-        <category>生活与杂谈</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2025年终总结</title>
     <url>/2025/12/03/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[这就十二月了，马上就要过年了，也差不多了，故总结一下
-顺便练习一下新学的双拼~
+    <content><![CDATA[这就十二月了，马上就要过年了，也差不多了，故总结一下。
 今年做了什么
-养成了跑步的习惯，现在基本上两天一跑，一次3-5km，也有几个月吧，感觉能一直跑下去
+生活习惯：成功养成跑步习惯。目前保持隔日跑（3-5km），已坚持数月。是今年最大的收获。
 
-上半年打了几个小比赛，拿了几个小到了极点的将
+技术生态迁移：体验 Arch Linux 和 macOS，感觉 Windows 不香了；建立了自己的知识库与日记体系；构建了 AI 辅助开发流。
 
-12月的时候学了双拼，还在练习
+学术与竞赛：开启了零知识证明方向的科研探索，研读多篇前沿论文；上半年参与微赛并获微奖；学习双拼输入法。
 
-用了很多github，也用了很多Copilot；顺便有了知识库和日记本
-
-考研开了个头~
-
-科研方向，开了ZKP方向，读了几篇论文，感觉挺有前景
-
-感受了arch和mac系统，win瞬间不香了
+考研长征：正式开启考研复习序列。
 
 
 今年尝试了什么
-尝试早睡早起，失败之，现在是每天23点左右睡觉，早上7点多起，基本上每天睡眠7-8h
+作息博弈：尝试早睡早起未果，但目前稳定在 23 点多入睡、7 点多起床（7-8h 睡眠）。
 
-尝试写论文，难写之，还在蛄蛹
+科研磨砺：尝试论文撰写，深感笔耕之难，目前仍处于“破土而出”的艰苦阶段。
 
-密码技术竞赛，差点晋级（也就是没晋级呜呜）
+竞赛复盘：密码技术竞赛，差点晋级（也就是没晋级呜呜）
 
 
 明年需要做什么
-核心是准备考研
+核心目标：全力以赴备战考研，重中之重。
 
-荔枝橙味论文糕守
+科研进阶：荔枝橙味论文糕守。
 
-继续跑步，降心率提配速
+体能优化：继续跑步，降心率提配速。
 
-早睡早起，最好整体提前一个小时
+作息微调： 尝试将作息整体前移 1 小时。
 
-时间利用率比较低
+解决时间利用率低的问题。
 
-专攻英文口语和阅读
+专项突破英文口语与长难句阅读。
 
 
-
-很感慨哇，又过了一年；转眼就大三了，明年这个点就该做考研的最终冲刺了
-和大一大二比，今年的实质性产出少了很多，也有不同高度的视角，总之尽管有一些根本问题有待解决，但整体上我感觉是在不断变好的。希望明年能达到更高的高度
 ]]></content>
       <categories>
         <category>未分类</category>
@@ -638,6 +628,65 @@ flag:flag&#123;70066add-3cd0-49ec-84b3-8e6ee05c3dd9&#125;
       </categories>
       <tags>
         <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Beaver三元组用于乘法共享</title>
+    <url>/2025/04/10/Beaver%E4%B8%89%E5%85%83%E7%BB%84%E7%94%A8%E4%BA%8E%E4%B9%98%E6%B3%95%E5%85%B1%E4%BA%AB/</url>
+    <content><![CDATA[Beaver 三元组（Beaver triples）是安全多方计算（MPC）中一个超级聪明、实用的技巧，用来安全地做乘法
+通俗类比：就好像你和朋友要乘两个私密数字，但你们提前准备了一个万能“乘法模板”，可以安全又正确地偷偷算出结果。
+
+
+Motivation在安全多方计算里：
+
+加法很容易做：每个人把自己数据碎片加一下就行。
+但乘法就麻烦了，因为：
+两个秘密数的乘积不能直接从碎片算
+又不能暴露真实数值
+所以需要巧妙地”绕过去“
+
+
+
+Beaver 三元组应运而生
+
+DefinationBeaver 三元组表示为：
+
+(a, b, c) \quad \text{where} \quad c = a \cdot b
+所有参与方各自拿到这些数的“碎片”，但不知道完整的值。
+它跟我们真正要计算的 $x \cdot y$ 没有关系，只是一个通用的乘法工具。
+
+
+Algorithm假设两位参与方想计算：
+
+x \cdot y但每人都只知道自己的秘密（$x$ 或 $y$），又不想泄露给别人。
+
+步骤如下：
+
+每人拿到 $x$ 和 $y$ 的秘密共享，还有一个 Beaver 三元组 $(a, b, c)$，满足 $c = ab$
+
+本地计算（在共享上进行）：
+
+
+
+\begin{align}
+&d = x - a\\
+&e = y - b
+\end{align}
+公布 $d$ 和 $e$（这不会泄露 $x$ 和 $y$，因为 $a$ 和 $b$ 是随机的）
+
+使用下面的公式计算结果：
+
+
+
+xy = c + d \cdot b + e \cdot a + d \cdot e
+安全性说明：
+虽然你公开了 $d$ 和 $e$，但由于 $a$ 和 $b$ 是随机数，别人无法反推 $x$ 和 $y$，同时这个公式仍能计算出准确的乘积
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -858,65 +907,6 @@ flagflag&#123;RSA_from_ikea_is_fun_but_insecure#k20944uehdjfnjd335uro&#125;
       </tags>
   </entry>
   <entry>
-    <title>Beaver三元组用于乘法共享</title>
-    <url>/2025/04/10/Beaver%E4%B8%89%E5%85%83%E7%BB%84%E7%94%A8%E4%BA%8E%E4%B9%98%E6%B3%95%E5%85%B1%E4%BA%AB/</url>
-    <content><![CDATA[Beaver 三元组（Beaver triples）是安全多方计算（MPC）中一个超级聪明、实用的技巧，用来安全地做乘法
-通俗类比：就好像你和朋友要乘两个私密数字，但你们提前准备了一个万能“乘法模板”，可以安全又正确地偷偷算出结果。
-
-
-Motivation在安全多方计算里：
-
-加法很容易做：每个人把自己数据碎片加一下就行。
-但乘法就麻烦了，因为：
-两个秘密数的乘积不能直接从碎片算
-又不能暴露真实数值
-所以需要巧妙地”绕过去“
-
-
-
-Beaver 三元组应运而生
-
-DefinationBeaver 三元组表示为：
-
-(a, b, c) \quad \text{where} \quad c = a \cdot b
-所有参与方各自拿到这些数的“碎片”，但不知道完整的值。
-它跟我们真正要计算的 $x \cdot y$ 没有关系，只是一个通用的乘法工具。
-
-
-Algorithm假设两位参与方想计算：
-
-x \cdot y但每人都只知道自己的秘密（$x$ 或 $y$），又不想泄露给别人。
-
-步骤如下：
-
-每人拿到 $x$ 和 $y$ 的秘密共享，还有一个 Beaver 三元组 $(a, b, c)$，满足 $c = ab$
-
-本地计算（在共享上进行）：
-
-
-
-\begin{align}
-&d = x - a\\
-&e = y - b
-\end{align}
-公布 $d$ 和 $e$（这不会泄露 $x$ 和 $y$，因为 $a$ 和 $b$ 是随机的）
-
-使用下面的公式计算结果：
-
-
-
-xy = c + d \cdot b + e \cdot a + d \cdot e
-安全性说明：
-虽然你公开了 $d$ 和 $e$，但由于 $a$ 和 $b$ 是随机数，别人无法反推 $x$ 和 $y$，同时这个公式仍能计算出准确的乘积
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CF补题小合集</title>
     <url>/2025/01/19/CF%E8%A1%A5%E9%A2%98%E5%B0%8F%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[由于后续CF比赛基本只参加VP，故特此记录一下
@@ -949,6 +939,28 @@ D题不容易的思维题，不过只要逻辑理清楚了，都很简单
       </categories>
       <tags>
         <tag>算法竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS2025参会游记</title>
+    <url>/2025/05/17/CS2025%E5%8F%82%E4%BC%9A%E6%B8%B8%E8%AE%B0/</url>
+    <content><![CDATA[
+  7b22b1899bb4d215751e07a80f0d88de542d676cb326d0c5d6a10c6353002e1c857d400123ac95c955b82c9a27c938fe6272a98c0e32cec6e393fe8f9eec356e2a6c241e30fb6422803d97d1c60f1d1b4f731c0251f3851cd9bb88bf8eccbc1704b16a372922f03402096fd78f2f7acfaf8f75ea22be1ef2fc20fee85ec69f949c74f6ec5848ecbd05cf228684901fe99f5f2cdeb3b0d1f2f3de79b3977b4df94e5794f825f949e67c26f7efe1061de9434d87d0e809c706396d2f6427e599ac648e41f8491141e2ea714fc3b06783b74b2ccc11f702039aa608aa360c5899871f935c452fed0adf199978ecc6cb799f4e64d3f1aefeb7123b72b44a56f937dc58a56d298060a8921010ccc5f624877541633246f68b87181ba0e4fedf6d05dba9ed585c440968067e83d22276e4ad10bd1f34c21678edb06e758a26560f8e03f2afb3637154d75050ceb8a2c267ff0bf51249c4b22a25761b4632d7e3b0426f6c18c50e6ab843c8aad0c977e8ed28c20f0f84499db0af6f8c4f834b83ffb8bc4d521cff5668e6248a7fd2dd59723191ab07b4712e2411a2822bc53e9bfdd6a4a51f753fdf15fb053ed24f8c70c249826c94f09e1105bb81a4708d6434ae6333515f3fcdd4c32d051a928101b1af16fdd12a3ea5f6a87fc42928a6638fe752fc6afe449da331e76e0b3d82eec070f4b4ea6f015543de15ca576b127d5fbc018cc899c97fbf02e4c6cb19d56091ed11081b579c351aabd7b58975dbd9da5c7e125101c516b5cedda6abd2c40390c863a3b6943091759be92c39f8207a3115729c468b9901b0e4132ac505dba949960504abe277447088d5e3dcb02706229afc09f0c6150f34f5e9fac329d060e229eb253f65527db35d3ec962e0b72a2ca53d8d8195d8b75b0fe957a7f0cd798b7b955669f6b10bdcede0e59b1710e3f71f8771062a5ee3b1ea1267506e91e3b448397ec381c6eae0aa6c6a8a3e92a53d10797c7fd2b1ac8ebbaa917a5606dabbbb6d9f489ab029154aea84619368c6d92f308fda94eede11649a547a68b2c7812b2f0cb98a15507fae2ad0e7706c5dfeb6afb6fd7beeca71bbf1a7e6ac9db79200b5b499e574be33dba5b930ef0ba7b84a7265733f4f196de49f0196e02f17f1add4c78cfcdd5a29504c0a949607ef8d98996b1e40215639497a4103621e44227439e6b19063b827ff2cd5dea33d94eb37a9127c18b6b9afd27ccae240974419f8b7d1703009fef854721ee86f9fdf47dc6a60b0ed935d1bbde4a16d0746b8b924367fb9a125b0b691deeb84509c201716b350e8e8d78bbf85d54fc7660be412ca619e3e658c1cee499bd48046850ff90353f7ca1b3844ebc6d55bacc3c5ed78314faf652d409ab2aaf8453850111679ac879b95069a9d1c72b7d4ee9e158e78b0382b65f8a6e5ad60f12a085162f11fd54fd8190d2b3eb3b383f25ed3839d99a29ac3d824428dc6d14b1a76a22445baabdb9cda5d93f305324dc35162e0a16614a81f67f4f4f9928cf0fbada33073edde8d737e44f997f8101905bb665c7617ea4084c3a22791f076420a3d4bd2d8344c1c687cf7a0349ff0461345eff76ac61180078f28d7d5f1adeea74eaf7fc6341124461785d53f8615880b2c424e63deb72e01012ff2ef840b17579980e9d2b6a769cd0969d0bc1faaa85671d02a32edc8eede6a0ae4d572d4b418b9bc50aa1864c2196babf19fa370615f84f99cf3f643187fb6b036873df906c0c45b4fd03e04d303c2001c552e05f7704187d26f004498d3f756a435c12c87214262eddb503d49162e7f5d376f963d9e95cea8cab55f860b2f39a6b27e068eef376adb1e856b9e7d4e1493aa8670fa045536121de103c7b570ab1f0735b9c1cc6f40aace50347e3df30c3b54804f5ea40680ed082a88747f7c0aeb656dfb50e464a0f5386bec6e1e64ddb7ba9456fc738c43aa02c9d73bee6728c6e8f5dfab8828c337d8408e4d7c09294879b3243763f70c4e3cf2c509116a5186d9d9540936a0fd8e17aca5d4bca6eab2843d11d361627d78f9160a905f5ec5d8355a1c1e69cec92a7ad07207ffe7d000accba77b5d781f2c90df53a03433df9fbe237830281114beb40752245361e1c8a8b6a61ad782c1e61c1959f60df34912e43f1a84e9532bf263e846f4b9bd56be3e688dc2c2bdb98e33067f74c8266072e51f79ba40d567e896fb7ac5ed97c1c55c538dcfa7336c2df5abd117f20e256e938f766dd012866f28ed6cf26140dbde556984cf0cc89f02e67eb666ab7609f3a799ed0e51dc05f61884d8cd5f80c017e4624fa0ce778c7d13d33f36f7c0b8ed1151e21a0d3b6ae9749a686905adb14ad1d4ae30a7290abaa8a1c6c648fc9b72582821a64f38abedffddfe089095f0c9ab091c0173b4f7448cd99ae6d01f6fa58acfe9bb78d10ae5805b14118b82536b6e9bc87b08a1f7ff78ce4acd1ec5a178f590b4604929907a4acc85fd62be5ee2b27b8caf875996e1a9f18da998a2e017c7888b63a298912ac91f7ad85523f6096d61ef4430c897b2dd2e0b1fc52b19e958013c24c8f9a80ae37b849895a89151a6b78ad7242d36db0045ec213d9e0bf945d2cac37a9013561f3dda9c07b76c7486e9d19ea18e08c905941d001a81490b72ab3803f049094031ee962eeb03e32185b088951a78153fc67ff5a41defb641ba4db2e8ff1d26275cf1c9878e98b54b251cbfd2006245e4cce71e6fae08f7536a22334aff3e9431095975f55f3dc18a05e7bc75dba5d395d7b4d35b6715822492cc14ca478eed0510079c26056f5c0a3a34a7396c1bcf8fa492796fc4aae7c5444ddf0265129091cccc466501c7cb1531579ae0184273d14d6e33a16626f6f26f88cea3f347fadbbe7fcb5e33bb4de2bd10f99a991b9044f823ddc8948cbc8898af1680d03cac325afedac8a4ed61ec8c78227a8af4d565f727cc46a1d94562c162cc82b50b1057bd05f18e9e9e93aad91e93b9834c8c37f1d7b055ebcc319c7a80fac256ee3172197fc09913c1bda1c132be59676560fc7273bcc1294a12f9cb961bd70552de074c7270098d03a0ea1c002c4f62c14e9c856cfd2266f59468b8ee06092219565f493698c336d6ed25ff14785fa13be693f6fcd08977b10e7efe7605ac61e5ffdabdc7a65add8d626dc72675a6c03a673063ad4514b5240b031345b854c4c385285ceb385b67
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+]]></content>
+      <categories>
+        <category>会议竞赛游记</category>
+      </categories>
+      <tags>
+        <tag>游记</tag>
       </tags>
   </entry>
   <entry>
@@ -1066,28 +1078,6 @@ flag:flag&#123;DASCTF_zjut&#125;
       </categories>
       <tags>
         <tag>cryptoCTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CS2025参会游记</title>
-    <url>/2025/05/17/CS2025%E5%8F%82%E4%BC%9A%E6%B8%B8%E8%AE%B0/</url>
-    <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de542d676cb326d0c5d6a10c6353002e1c857d400123ac95c955b82c9a27c938fe6272a98c0e32cec6e393fe8f9eec356e2a6c241e30fb6422803d97d1c60f1d1b4f731c0251f3851cd9bb88bf8eccbc1704b16a372922f03402096fd78f2f7acfaf8f75ea22be1ef2fc20fee85ec69f949c74f6ec5848ecbd05cf228684901fe99f5f2cdeb3b0d1f2f3de79b3977b4df94e5794f825f949e67c26f7efe1061de9434d87d0e809c706396d2f6427e599ac648e41f8491141e2ea714fc3b06783b74b2ccc11f702039aa608aa360c5899871f935c452fed0adf199978ecc6cb799f4e64d3f1aefeb7123b72b44a56f937dc58a56d298060a8921010ccc5f624877541633246f68b87181ba0e4fedf6d05dba9ed585c440968067e83d22276e4ad10bd1f34c21678edb06e758a26560f8e03f2afb3637154d75050ceb8a2c267ff0bf51249c4b22a25761b4632d7e3b0426f6c18c50e6ab843c8aad0c977e8ed28c20f0f84499db0af6f8c4f834b83ffb8bc4d521cff5668e6248a7fd2dd59723191ab07b4712e2411a2822bc53e9bfdd6a4a51f753fdf15fb053ed24f8c70c249826c94f09e1105bb81a4708d6434ae6333515f3fcdd4c32d051a928101b1af16fdd12a3ea5f6a87fc42928a6638fe752fc6afe449da331e76e0b3d82eec070f4b4ea6f015543de15ca576b127d5fbc018cc899c97fbf02e4c6cb19d56091ed11081b579c351aabd7b58975dbd9da5c7e125101c516b5cedda6abd2c40390c863a3b6943091759be92c39f8207a3115729c468b9901b0e4132ac505dba949960504abe277447088d5e3dcb02706229afc09f0c6150f34f5e9fac329d060e229eb253f65527db35d3ec962e0b72a2ca53d8d8195d8b75b0fe957a7f0cd798b7b955669f6b10bdcede0e59b1710e3f71f8771062a5ee3b1ea1267506e91e3b448397ec381c6eae0aa6c6a8a3e92a53d10797c7fd2b1ac8ebbaa917a5606dabbbb6d9f489ab029154aea84619368c6d92f308fda94eede11649a547a68b2c7812b2f0cb98a15507fae2ad0e7706c5dfeb6afb6fd7beeca71bbf1a7e6ac9db79200b5b499e574be33dba5b930ef0ba7b84a7265733f4f196de49f0196e02f17f1add4c78cfcdd5a29504c0a949607ef8d98996b1e40215639497a4103621e44227439e6b19063b827ff2cd5dea33d94eb37a9127c18b6b9afd27ccae240974419f8b7d1703009fef854721ee86f9fdf47dc6a60b0ed935d1bbde4a16d0746b8b924367fb9a125b0b691deeb84509c201716b350e8e8d78bbf85d54fc7660be412ca619e3e658c1cee499bd48046850ff90353f7ca1b3844ebc6d55bacc3c5ed78314faf652d409ab2aaf8453850111679ac879b95069a9d1c72b7d4ee9e158e78b0382b65f8a6e5ad60f12a085162f11fd54fd8190d2b3eb3b383f25ed3839d99a29ac3d824428dc6d14b1a76a22445baabdb9cda5d93f305324dc35162e0a16614a81f67f4f4f9928cf0fbada33073edde8d737e44f997f8101905bb665c7617ea4084c3a22791f076420a3d4bd2d8344c1c687cf7a0349ff0461345eff76ac61180078f28d7d5f1adeea74eaf7fc6341124461785d53f8615880b2c424e63deb72e01012ff2ef840b17579980e9d2b6a769cd0969d0bc1faaa85671d02a32edc8eede6a0ae4d572d4b418b9bc50aa1864c2196babf19fa370615f84f99cf3f643187fb6b036873df906c0c45b4fd03e04d303c2001c552e05f7704187d26f004498d3f756a435c12c87214262eddb503d49162e7f5d376f963d9e95cea8cab55f860b2f39a6b27e068eef376adb1e856b9e7d4e1493aa8670fa045536121de103c7b570ab1f0735b9c1cc6f40aace50347e3df30c3b54804f5ea40680ed082a88747f7c0aeb656dfb50e464a0f5386bec6e1e64ddb7ba9456fc738c43aa02c9d73bee6728c6e8f5dfab8828c337d8408e4d7c09294879b3243763f70c4e3cf2c509116a5186d9d9540936a0fd8e17aca5d4bca6eab2843d11d361627d78f9160a905f5ec5d8355a1c1e69cec92a7ad07207ffe7d000accba77b5d781f2c90df53a03433df9fbe237830281114beb40752245361e1c8a8b6a61ad782c1e61c1959f60df34912e43f1a84e9532bf263e846f4b9bd56be3e688dc2c2bdb98e33067f74c8266072e51f79ba40d567e896fb7ac5ed97c1c55c538dcfa7336c2df5abd117f20e256e938f766dd012866f28ed6cf26140dbde556984cf0cc89f02e67eb666ab7609f3a799ed0e51dc05f61884d8cd5f80c017e4624fa0ce778c7d13d33f36f7c0b8ed1151e21a0d3b6ae9749a686905adb14ad1d4ae30a7290abaa8a1c6c648fc9b72582821a64f38abedffddfe089095f0c9ab091c0173b4f7448cd99ae6d01f6fa58acfe9bb78d10ae5805b14118b82536b6e9bc87b08a1f7ff78ce4acd1ec5a178f590b4604929907a4acc85fd62be5ee2b27b8caf875996e1a9f18da998a2e017c7888b63a298912ac91f7ad85523f6096d61ef4430c897b2dd2e0b1fc52b19e958013c24c8f9a80ae37b849895a89151a6b78ad7242d36db0045ec213d9e0bf945d2cac37a9013561f3dda9c07b76c7486e9d19ea18e08c905941d001a81490b72ab3803f049094031ee962eeb03e32185b088951a78153fc67ff5a41defb641ba4db2e8ff1d26275cf1c9878e98b54b251cbfd2006245e4cce71e6fae08f7536a22334aff3e9431095975f55f3dc18a05e7bc75dba5d395d7b4d35b6715822492cc14ca478eed0510079c26056f5c0a3a34a7396c1bcf8fa492796fc4aae7c5444ddf0265129091cccc466501c7cb1531579ae0184273d14d6e33a16626f6f26f88cea3f347fadbbe7fcb5e33bb4de2bd10f99a991b9044f823ddc8948cbc8898af1680d03cac325afedac8a4ed61ec8c78227a8af4d565f727cc46a1d94562c162cc82b50b1057bd05f18e9e9e93aad91e93b9834c8c37f1d7b055ebcc319c7a80fac256ee3172197fc09913c1bda1c132be59676560fc7273bcc1294a12f9cb961bd70552de074c7270098d03a0ea1c002c4f62c14e9c856cfd2266f59468b8ee06092219565f493698c336d6ed25ff14785fa13be693f6fcd08977b10e7efe7605ac61e5ffdabdc7a65add8d626dc72675a6c03a673063ad4514b5240b031345b854c4c385285ceb385b67
-  
-    
-      
-      
-        Hey, password is required here.
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>会议竞赛游记</category>
-      </categories>
-      <tags>
-        <tag>游记</tag>
       </tags>
   </entry>
   <entry>
@@ -2144,79 +2134,6 @@ UPD2025.02.18假期进度搁置了
       </tags>
   </entry>
   <entry>
-    <title>XFlow安装教程</title>
-    <url>/2024/08/23/XFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[XFlow是仿真流体动力学的软件
-正版软件好贵贵，然后我下载了整整一个下午的破解版
-按顺序阅读了以下三篇博客，最终成功打开XFlow
-
-https://www.xqu5.com/thread-2105-1-1.html
-https://www.ittel.cn/archives/13613.html
-https://blog.csdn.net/weixin_39461079/article/details/127909834
-我也不知道为什么能成功打开的，好奇怪
-]]></content>
-      <categories>
-        <category>工具与技术使用</category>
-      </categories>
-      <tags>
-        <tag>RoboMaster</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>XU-CMA安全是什么</title>
-    <url>/2024/10/08/XU-CMA%E5%AE%89%E5%85%A8%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-    <content><![CDATA[密码学中数字签名方案的安全模型主要包括两种：存在性不可伪造（Existential Unforgeability against chosen-message attacks, EU-CMA）和强不可伪造（Strong Unforgeability against chosen-message attacks, SU-CMA）， 本文主要对比这两种安全模型。
-
-两种安全模型都是通过敌手（Adversary）和挑战者（Challenger）之间的游戏（Game）来定义的。首先挑战者生成密钥对 $(pk,sk)$ 并发送 $pk$ 给敌手，自己保存 $sk$ 用来生成签名。敌手可以自适应地提交任意消息，挑战者根据敌手提交的消息生成对应的签名并返回给敌手。最后，敌手返回一个伪造的对未查询过的新消息的签名。
-EU-CMA在数字签名里标准的安全模型
-在该模型里，敌手可以非随机性地询问任意 message 的 signature 并对任意没有询问过消息的 message 进行 forgery 攻击（第二篇参考文档中还有很多看不懂的东西）
-存在性不可为造安全模型可以使用如下GAME描述：
-
-$Setup$：假设$SP$问哦系统参数。挑战者执行密钥生成算法，生成密钥对 $(pk,sk)$ 并发送 $pk$ 给敌手，挑战者保留 $sk$ 用来回答敌手的签名查询
-
-$Query$：敌手自适应的选取任意消息 $m_i$ 进行签名查询。对于敌手提交的消息 $m_i$ ，挑战者执行签名算法生成 $\sigma_{m_i}$ 并将其发送给敌手
-
-$Forgery$：敌手返回一个伪造的对于某个消息 $m^{}$ 签名 $\sigma_{m^{}}$，如果：
-
-$\sigma_{m^}$是一个关于 $m^$ 的合法签名
-关于所有 $m^{*}$ 的签名之前没有被查询过
-
-则敌手在游戏中获胜，敌手赢得游戏的优势 $\varepsilon$ 就是返回一个合法的伪造签名的概率
-
-
-SU-CMA强不可为造安全模型可以使用如下GAME描述：
-
-$Setup$：假设$SP$问哦系统参数。挑战者执行密钥生成算法，生成密钥对 $(pk,sk)$ 并发送 $pk$ 给敌手，挑战者保留 $sk$ 用来回答敌手的签名查询
-
-$Query$：敌手自适应的选取任意消息 $m_i$ 进行签名查询。对于敌手提交的消息 $m_i$ ，挑战者执行签名算法生成 $\sigma_{m_i}$ 并将其发送给敌手
-
-$Forgery$：敌手返回一个伪造的对于某个消息 $m^{}$ 签名 $\sigma_{m^{}}$，如果：
-
-$\sigma_{m^{}}$是一个关于 $m^{}$ 的合法签名
-$m^{}$ 的签名 $\sigma_{m^{}}$ 之前没有被查询过
-
-则敌手在游戏中获胜，敌手赢得游戏的优势 $\varepsilon$ 就是返回一个合法的伪造签名的概率
-
-
-对比EU-CMA和SU-CMA的区别仅在于敌手获胜条件的判定上 $(Forgery-2)$
-
-在EU-CMA中的要求是所有的 $m^*$ 的签名在 $Query$ 阶段都没有被查询过
-而在SU-CMA中则只要求在之前的查询操作中没有出现过 $\sigma_{m^}$，也就是说，如果之前查询过关于 $m^$ 的签名 $\sigma_{m^}^{(1)}$，如果敌手可以生成另一个关于 $m^$ 的签名 $\sigma_{m^}^{(2)}$，而且 $\sigma_{m^}^{(1)}\neq \sigma_{m^*}^{(2)}$，也判定为敌手获胜
-
-显然 SU-CMA 中的敌手拥有更强的能力, 因此可以认为 SU-CMA 相比 EU-CMA 是更强的安全模型.
-
-reference：
-https://www.cnblogs.com/zywnnblog/p/16111384.html
-https://documents.uow.edu.au/~fuchun/jow/011-QAXEDWBAMA.pdf
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SM2椭圆曲线加密算法学习笔记</title>
     <url>/2024/09/25/SM2%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[此文章用于记录笔者对于SM2椭圆曲线加密算法的学习
@@ -2293,6 +2210,79 @@ SM2官方文档标准文档链接：国家商业密码标准
       <tags>
         <tag>Crypto</tag>
         <tag>unfixed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XFlow安装教程</title>
+    <url>/2024/08/23/XFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[XFlow是仿真流体动力学的软件
+正版软件好贵贵，然后我下载了整整一个下午的破解版
+按顺序阅读了以下三篇博客，最终成功打开XFlow
+
+https://www.xqu5.com/thread-2105-1-1.html
+https://www.ittel.cn/archives/13613.html
+https://blog.csdn.net/weixin_39461079/article/details/127909834
+我也不知道为什么能成功打开的，好奇怪
+]]></content>
+      <categories>
+        <category>工具与技术使用</category>
+      </categories>
+      <tags>
+        <tag>RoboMaster</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XU-CMA安全是什么</title>
+    <url>/2024/10/08/XU-CMA%E5%AE%89%E5%85%A8%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[密码学中数字签名方案的安全模型主要包括两种：存在性不可伪造（Existential Unforgeability against chosen-message attacks, EU-CMA）和强不可伪造（Strong Unforgeability against chosen-message attacks, SU-CMA）， 本文主要对比这两种安全模型。
+
+两种安全模型都是通过敌手（Adversary）和挑战者（Challenger）之间的游戏（Game）来定义的。首先挑战者生成密钥对 $(pk,sk)$ 并发送 $pk$ 给敌手，自己保存 $sk$ 用来生成签名。敌手可以自适应地提交任意消息，挑战者根据敌手提交的消息生成对应的签名并返回给敌手。最后，敌手返回一个伪造的对未查询过的新消息的签名。
+EU-CMA在数字签名里标准的安全模型
+在该模型里，敌手可以非随机性地询问任意 message 的 signature 并对任意没有询问过消息的 message 进行 forgery 攻击（第二篇参考文档中还有很多看不懂的东西）
+存在性不可为造安全模型可以使用如下GAME描述：
+
+$Setup$：假设$SP$问哦系统参数。挑战者执行密钥生成算法，生成密钥对 $(pk,sk)$ 并发送 $pk$ 给敌手，挑战者保留 $sk$ 用来回答敌手的签名查询
+
+$Query$：敌手自适应的选取任意消息 $m_i$ 进行签名查询。对于敌手提交的消息 $m_i$ ，挑战者执行签名算法生成 $\sigma_{m_i}$ 并将其发送给敌手
+
+$Forgery$：敌手返回一个伪造的对于某个消息 $m^{}$ 签名 $\sigma_{m^{}}$，如果：
+
+$\sigma_{m^}$是一个关于 $m^$ 的合法签名
+关于所有 $m^{*}$ 的签名之前没有被查询过
+
+则敌手在游戏中获胜，敌手赢得游戏的优势 $\varepsilon$ 就是返回一个合法的伪造签名的概率
+
+
+SU-CMA强不可为造安全模型可以使用如下GAME描述：
+
+$Setup$：假设$SP$问哦系统参数。挑战者执行密钥生成算法，生成密钥对 $(pk,sk)$ 并发送 $pk$ 给敌手，挑战者保留 $sk$ 用来回答敌手的签名查询
+
+$Query$：敌手自适应的选取任意消息 $m_i$ 进行签名查询。对于敌手提交的消息 $m_i$ ，挑战者执行签名算法生成 $\sigma_{m_i}$ 并将其发送给敌手
+
+$Forgery$：敌手返回一个伪造的对于某个消息 $m^{}$ 签名 $\sigma_{m^{}}$，如果：
+
+$\sigma_{m^{}}$是一个关于 $m^{}$ 的合法签名
+$m^{}$ 的签名 $\sigma_{m^{}}$ 之前没有被查询过
+
+则敌手在游戏中获胜，敌手赢得游戏的优势 $\varepsilon$ 就是返回一个合法的伪造签名的概率
+
+
+对比EU-CMA和SU-CMA的区别仅在于敌手获胜条件的判定上 $(Forgery-2)$
+
+在EU-CMA中的要求是所有的 $m^*$ 的签名在 $Query$ 阶段都没有被查询过
+而在SU-CMA中则只要求在之前的查询操作中没有出现过 $\sigma_{m^}$，也就是说，如果之前查询过关于 $m^$ 的签名 $\sigma_{m^}^{(1)}$，如果敌手可以生成另一个关于 $m^$ 的签名 $\sigma_{m^}^{(2)}$，而且 $\sigma_{m^}^{(1)}\neq \sigma_{m^*}^{(2)}$，也判定为敌手获胜
+
+显然 SU-CMA 中的敌手拥有更强的能力, 因此可以认为 SU-CMA 相比 EU-CMA 是更强的安全模型.
+
+reference：
+https://www.cnblogs.com/zywnnblog/p/16111384.html
+https://documents.uow.edu.au/~fuchun/jow/011-QAXEDWBAMA.pdf
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -8137,6 +8127,19 @@ https://github.com/azl397985856/cf
       </tags>
   </entry>
   <entry>
+    <title>计算机组成原理学习笔记</title>
+    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研专业课</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>荔枝橙味拱腰觅马糕守</title>
     <url>/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</url>
     <content><![CDATA[本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获
@@ -8774,43 +8777,8 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
         <category>科研</category>
       </categories>
       <tags>
-        <tag>常驻</tag>
         <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机组成原理学习笔记</title>
-    <url>/2025/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研专业课</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记录_一定要打好基础</title>
-    <url>/2025/05/23/%E8%AE%B0%E5%BD%95-%E4%B8%80%E5%AE%9A%E8%A6%81%E6%89%93%E5%A5%BD%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de76ab04d32e749f01d35ab7ebdd5c2d808c2f40622a3888966f86dd811afea936dc27699529deacbe36adc04875c300c1c3f47dabdfeeaf933095654d24260b732f4cc8d32b361bcc99c18a343783f0bc8efe428615c230ccd67cd5d5b91c6813e1474a024e0375ea1af4a62bb335df23a2e661c91627266b0d02d6c21be114bdd423af57c960abfcb4057a0a02f727cca17282b3071c47a3f21684dc1252bcb2597d3ec6b836ce262dc6bec1dc81abbe6de11c9456667dd964773a941460fe7b17389f05482a2bd20d471bf58449f48d4a362651a6cd7cd2bb4d2b71d5b57f994eb284068c94b5d2b619c3b52fae3f7b257f4a2cd211dce992bf450c211c1bb0ff4ee1e2daab480cd86af265d784229ac01fac35df3348d97ec5b09db934ca795fc61a3e4f2939609dc800957724f7098e70be2425daa77b2642a9838b713d180b3b727337c3b6516d96bc65739629308e5589221b6f4fb90fb6795a1c2d5f045242f62dd8fb4ad9bfea58070ecb3a96c196aa5bbbda5d24283063f72017939dbf6046999f7045625aed9c513bdfcd3602352643507a4d78484f9b4d2d240cb91d868063e793e14f68b7847e04fdb5ddbdcfacdeddcb913a9ad1a0454b562dc4c229fc4603c36fbd325b6c6c69561aa5e681adafa97a9c025f92101b1ed09339978b6b90e004e08cd65a2203b8d1d5436060708df08cee1b88dae1ddb280aad429eb478f52116ddc3185eb94d38f7cb99cdd5e9b9087d8ca94433b6770932e0ccbfe85a126a338fb926de70dff334848ca043d2b201cfdbb9aa45c657f1822e3b160197f7136929efa0e45a1705ee6db
-  
-    
-      
-      
-        Hey, password is required here.
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>一点小思考</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
+        <tag>常驻</tag>
       </tags>
   </entry>
   <entry>
@@ -9078,6 +9046,28 @@ IP首部定长部分为20字节
       </categories>
       <tags>
         <tag>cs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录_一定要打好基础</title>
+    <url>/2025/05/23/%E8%AE%B0%E5%BD%95-%E4%B8%80%E5%AE%9A%E8%A6%81%E6%89%93%E5%A5%BD%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[
+  7b22b1899bb4d215751e07a80f0d88de76ab04d32e749f01d35ab7ebdd5c2d808c2f40622a3888966f86dd811afea936dc27699529deacbe36adc04875c300c1c3f47dabdfeeaf933095654d24260b732f4cc8d32b361bcc99c18a343783f0bc8efe428615c230ccd67cd5d5b91c6813e1474a024e0375ea1af4a62bb335df23a2e661c91627266b0d02d6c21be114bdd423af57c960abfcb4057a0a02f727cca17282b3071c47a3f21684dc1252bcb2597d3ec6b836ce262dc6bec1dc81abbe6de11c9456667dd964773a941460fe7b17389f05482a2bd20d471bf58449f48d4a362651a6cd7cd2bb4d2b71d5b57f994eb284068c94b5d2b619c3b52fae3f7b257f4a2cd211dce992bf450c211c1bb0ff4ee1e2daab480cd86af265d784229ac01fac35df3348d97ec5b09db934ca795fc61a3e4f2939609dc800957724f7098e70be2425daa77b2642a9838b713d180b3b727337c3b6516d96bc65739629308e5589221b6f4fb90fb6795a1c2d5f045242f62dd8fb4ad9bfea58070ecb3a96c196aa5bbbda5d24283063f72017939dbf6046999f7045625aed9c513bdfcd3602352643507a4d78484f9b4d2d240cb91d868063e793e14f68b7847e04fdb5ddbdcfacdeddcb913a9ad1a0454b562dc4c229fc4603c36fbd325b6c6c69561aa5e681adafa97a9c025f92101b1ed09339978b6b90e004e08cd65a2203b8d1d5436060708df08cee1b88dae1ddb280aad429eb478f52116ddc3185eb94d38f7cb99cdd5e9b9087d8ca94433b6770932e0ccbfe85a126a338fb926de70dff334848ca043d2b201cfdbb9aa45c657f1822e3b160197f7136929efa0e45a1705ee6db
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+]]></content>
+      <categories>
+        <category>一点小思考</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
