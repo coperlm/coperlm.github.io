@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2025-12-31T01:56:34.203Z</updated>
+  <updated>2026-02-02T14:27:35.909Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CachyOS下Flatpak版Obsidian输入法候选框错位问题</title>
+    <link href="https://coperlm.github.io/2026/02/02/CachyOS%E4%B8%8BFlatpak%E7%89%88Obsidian%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E9%94%99%E4%BD%8D%E9%97%AE%E9%A2%98/"/>
+    <id>https://coperlm.github.io/2026/02/02/CachyOS%E4%B8%8BFlatpak%E7%89%88Obsidian%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E9%94%99%E4%BD%8D%E9%97%AE%E9%A2%98/</id>
+    <published>2026-02-02T14:13:09.000Z</published>
+    <updated>2026-02-02T14:27:35.909Z</updated>
+    
+    <content type="html"><![CDATA[<p>(待办：工具和技术分组应当需要分隔开)</p><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 CachyOS (基于 Arch Linux) 或其他 Linux 发行版的 Wayland 环境下，使用 <strong>Flatpak</strong> 安装的 <strong>Obsidian</strong> 进行写作时，遇到了中文输入法（如 Fcitx5）<strong>候选框不跟随光标</strong>的问题。</p><p>具体表现为输入可能还没选呢，就上屏了。</p><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>这是一个经典的 <strong>Electron + Wayland + Input Method</strong> 兼容性问题。 虽然较新的 Electron 版本开始支持 Wayland，但对 IME（输入法协议）的支持依然不稳定。特别是 Flatpak 版本运行在沙箱中，如果环境变量没有正确传递，应用就无法获知系统的输入法配置，导致它退回到默认的“哑巴”模式。</p><p><strong>解决方案的核心思路：</strong> 强制 Obsidian 运行在 <strong>X11 (XWayland)</strong> 模式下，并手动通过 <code>flatpak override</code> 将输入法相关的环境变量注入到沙箱中。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="第一步：确认安装方式"><a href="#第一步：确认安装方式" class="headerlink" title="第一步：确认安装方式"></a>第一步：确认安装方式</h3><p>首先确保你安装的是 Flatpak 版本。 包名通常为：<code>md.obsidian.Obsidian</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak list</span><br></pre></td></tr></table></figure><p><img src="88c749088421fb181e9f9e92a9a0d020.png" alt="88c749088421fb181e9f9e92a9a0d020.png"></p><h3 id="第二步：执行修复命令"><a href="#第二步：执行修复命令" class="headerlink" title="第二步：执行修复命令"></a>第二步：执行修复命令</h3><p>打开终端，依次运行以下命令：</p><p><strong>1. 屏蔽 Wayland 接口，强制使用 X11 后端</strong> 这是最关键的一步，迫使 Electron 回退到兼容性更好的 X11 模式。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --nosocket=wayland md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><strong>2. 确保 X11 权限开启（通常默认开启，为了保险）</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --socket=x11 md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><strong>3. 注入输入法环境变量</strong> Flatpak 容器内默认可能没有读取到宿主机的输入法配置。我们需要手动告诉它使用 Fcitx（如果你用的是 IBus，将 <code>fcitx</code> 改为 <code>ibus</code>）。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --<span class="built_in">env</span>=GTK_IM_MODULE=fcitx md.obsidian.Obsidian</span><br><span class="line">flatpak override --user --<span class="built_in">env</span>=XMODIFIERS=@im=fcitx md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><em>注意：<code>QT_IM_MODULE</code> 对于基于 Electron（Chromium）的应用通常不是必须的，但在某些环境下也可以加上。</em></p><h3 id="第三步：重启应用"><a href="#第三步：重启应用" class="headerlink" title="第三步：重启应用"></a>第三步：重启应用</h3><p>彻底关闭 Obsidian（确保后台进程已结束），然后重新打开。 现在，输入法候选框应该完美跟随光标了。</p><h2 id="还原配置（如果需要）"><a href="#还原配置（如果需要）" class="headerlink" title="还原配置（如果需要）"></a>还原配置（如果需要）</h2><p>如果未来 Obsidian 修复了 Wayland 下的输入法问题，你可以通过以下命令重置所有修改：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --reset md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在 Linux 下使用 Electron 应用（如 VSCode, Obsidian, Discord），如果遇到输入法问题，<strong>“强制 X11 + 注入环境变量”</strong> 通常是目前最稳妥的万能解法。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;(待办：工具和技术分组应当需要分隔开)&lt;/p&gt;
+&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;在 CachyOS (基于 Arch Linux) 或其他</summary>
+        
+      
+    
+    
+    
+    <category term="技术学习笔记" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="arch_linux" scheme="https://coperlm.github.io/tags/arch-linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2025年终总结</title>
     <link href="https://coperlm.github.io/2025/12/03/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     <id>https://coperlm.github.io/2025/12/03/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</id>
     <published>2025-12-03T02:55:31.000Z</published>
-    <updated>2025-12-31T01:56:34.203Z</updated>
+    <updated>2025-12-31T02:08:00.961Z</updated>
     
     <content type="html"><![CDATA[<p>这就十二月了，马上就要过年了，也差不多了，故总结一下。</p><h2 id="今年做了什么"><a href="#今年做了什么" class="headerlink" title="今年做了什么"></a>今年做了什么</h2><ul><li><p>生活习惯：成功养成跑步习惯。目前保持隔日跑（3-5km），已坚持数月。是今年最大的收获。</p></li><li><p>技术生态迁移：体验 Arch Linux 和 macOS，感觉 Windows 不香了；建立了自己的知识库与日记体系；构建了 AI 辅助开发流。</p></li><li><p>学术与竞赛：开启了零知识证明方向的科研探索，研读多篇前沿论文；上半年参与微赛并获微奖；学习双拼输入法。</p></li><li><p>考研长征：正式开启考研复习序列。</p></li></ul><h2 id="今年尝试了什么"><a href="#今年尝试了什么" class="headerlink" title="今年尝试了什么"></a>今年尝试了什么</h2><ul><li><p>作息博弈：尝试早睡早起未果，但目前稳定在 23 点多入睡、7 点多起床（7-8h 睡眠）。</p></li><li><p>科研磨砺：尝试论文撰写，深感笔耕之难，目前仍处于“破土而出”的艰苦阶段。</p></li><li><p>竞赛复盘：密码技术竞赛，差点晋级（也就是没晋级呜呜）</p></li></ul><h2 id="明年需要做什么"><a href="#明年需要做什么" class="headerlink" title="明年需要做什么"></a>明年需要做什么</h2><ul><li><p>核心目标：全力以赴备战考研，重中之重。</p></li><li><p>科研进阶：荔枝橙味论文糕守。</p></li><li><p>体能优化：继续跑步，降心率提配速。</p></li><li><p>作息微调： 尝试将作息整体前移 1 小时。</p></li><li><p>解决时间利用率低的问题。</p></li><li><p>专项突破英文口语与长难句阅读。</p></li></ul>]]></content>
     
@@ -560,34 +588,6 @@
     
     
     <category term="BlockChain" scheme="https://coperlm.github.io/tags/BlockChain/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小感悟：真功不唐捐了</title>
-    <link href="https://coperlm.github.io/2025/09/16/%E5%B0%8F%E6%84%9F%E6%82%9F%EF%BC%9A%E7%9C%9F%E5%8A%9F%E4%B8%8D%E5%94%90%E6%8D%90%E4%BA%86/"/>
-    <id>https://coperlm.github.io/2025/09/16/%E5%B0%8F%E6%84%9F%E6%82%9F%EF%BC%9A%E7%9C%9F%E5%8A%9F%E4%B8%8D%E5%94%90%E6%8D%90%E4%BA%86/</id>
-    <published>2025-09-16T02:40:57.000Z</published>
-    <updated>2025-10-23T12:46:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近这几天在实验室干活，感觉真功不唐捐了</p><p>大一大二的时候涉猎<a href="https://coperlm.github.io/2025/09/11/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%A4%BE%E5%9B%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E8%A7%81%E8%A7%A3/">很广泛哇</a>，原本以为很多东西未来不会用到，没想到都有点关联</p><p>前两天写复现论文的代码，结果好家伙，套了五六层的调用，让我想到了之前在机协学嵌入式，看机器人五六层的指针结构体···；就很像哇</p><p>ctf就不用说了，现在研究的一直是密码学相关内容</p><p>然后昨天看IPs，动态规划还在坠鲨窝~</p><p><img src="dp.jpg" alt></p><p>感悟就是，今日所用后或弃之，今日所弃后或用之~</p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;最近这几天在实验室干活，感觉真功不唐捐了&lt;/p&gt;
-&lt;p&gt;大一大二的时候涉猎&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
-    
-    
-    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
     
   </entry>
   
