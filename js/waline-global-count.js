@@ -64,9 +64,8 @@
    */
   async function fetchGlobalPVFromAPI(retries = 0) {
     try {
-      // 获取所有文章的浏览量统计
-      // Waline API: /api/article 可以返回所有文章的统计
-      const response = await fetch(`${WALINE_SERVER_URL}/api/article`, {
+      // 获取所有文章的浏览量统计，使用分页参数获取更多数据
+      const response = await fetch(`${WALINE_SERVER_URL}/api/article?page=1&pageSize=1000`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -83,12 +82,26 @@
       // 尝试多种数据格式解析
       let totalPV = 0;
       
-      // 格式1: { data: [{url, time}, ...] } - 数组格式
+      // 格式1: { data: [{url, time}, ...] } - 数组格式，time 字段是浏览量
       if (data && Array.isArray(data.data)) {
         totalPV = data.data.reduce((sum, item) => {
           return sum + (item.time || item.pageview || item.count || 0);
         }, 0);
-        console.log('Parsed from array format:', totalPV);
+        console.log(`Parsed from array format: ${totalPV} from ${data.data.length} articles`);
+        
+        // 如果有多页，继续获取
+        if (data.totalPages && data.totalPages > 1) {
+          console.log(`Found ${data.totalPages} pages, fetching remaining...`);
+          for (let page = 2; page <= Math.min(data.totalPages, 10); page++) {
+            const pageResponse = await fetch(`${WALINE_SERVER_URL}/api/article?page=${page}&pageSize=1000`);
+            const pageData = await pageResponse.json();
+            if (pageData && Array.isArray(pageData.data)) {
+              const pagePV = pageData.data.reduce((sum, item) => sum + (item.time || item.pageview || 0), 0);
+              totalPV += pagePV;
+              console.log(`Page ${page}: added ${pagePV}, total now: ${totalPV}`);
+            }
+          }
+        }
       }
       // 格式2: { data: {url: count, ...} } - 对象格式，每个 URL 对应一个浏览量
       else if (data && typeof data.data === 'object' && data.data !== null && !Array.isArray(data.data)) {
