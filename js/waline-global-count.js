@@ -1,15 +1,15 @@
 /**
- * Waline 全局访客统计（优化版）
- * 通过 Waline API 获取全局浏览量统计
- * 包含：重试机制、缓存、错误处理
+ * Waline 全局访客统计（优化版 v2）
+ * 通过累加所有页面的 pageview 实现全局统计
+ * 包含：重试机制、缓存、错误处理、多种获取方式
  */
 (function() {
   'use strict';
 
   const WALINE_SERVER_URL = 'https://walinetest-coperlms-projects.vercel.app';
   const CACHE_KEY = 'waline_global_stats';
-  const CACHE_DURATION = 5 * 60 * 1000; // 5分钟缓存
-  const MAX_RETRIES = 3;
+  const CACHE_DURATION = 3 * 60 * 1000; // 3分钟缓存
+  const MAX_RETRIES = 2;
   const RETRY_DELAY = 1000; // 1秒
 
   /**
@@ -60,11 +60,12 @@
   }
 
   /**
-   * 获取全局 PV 统计（带重试）
+   * 方法1: 通过 API 批量获取所有页面的浏览量
    */
-  async function fetchGlobalPV(retries = 0) {
+  async function fetchGlobalPVFromAPI(retries = 0) {
     try {
-      const response = await fetch(`${WALINE_SERVER_URL}/api/article?type=count&url=/`, {
+      // 尝试获取所有页面的统计数据
+      const response = await fetch(`${WALINE_SERVER_URL}/api/article?type=count`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -76,42 +77,89 @@
       }
       
       const data = await response.json();
+      console.log('Waline API response:', data);
       
       // 尝试多种数据格式解析
       let totalPV = 0;
       
-      // 格式1: { data: [{pageview: number}, ...] }
+      // 格式1: { data: [{url, time}, ...] } - 数组格式
       if (data && Array.isArray(data.data)) {
-        totalPV = data.data.reduce((sum, item) => sum + (item.pageview || 0), 0);
+        totalPV = data.data.reduce((sum, item) => {
+          return sum + (item.time || item.pageview || item.count || 0);
+        }, 0);
       }
-      // 格式2: { data: {url: count, ...} }
+      // 格式2: { data: {url: count, ...} } - 对象格式
       else if (data && typeof data.data === 'object' && data.data !== null) {
-        totalPV = Object.values(data.data).reduce((sum, count) => {
-          const num = typeof count === 'number' ? count : parseInt(count) || 0;
+        const values = Object.values(data.data);
+        totalPV = values.reduce((sum, count) => {
+          const num = typeof count === 'object' ? (count.time || count.pageview || count.count || 0) : (parseInt(count) || 0);
           return sum + num;
         }, 0);
       }
-      // 格式3: 直接是数字
-      else if (typeof data === 'number') {
-        totalPV = data;
+      // 格式3: [count1, count2, ...] - 直接是数组
+      else if (Array.isArray(data)) {
+        totalPV = data.reduce((sum, count) => sum + (parseInt(count) || 0), 0);
       }
-      // 格式4: { count: number } 或 { pageview: number }
-      else if (data && (data.count !== undefined || data.pageview !== undefined)) {
-        totalPV = data.count || data.pageview || 0;
+      // 格式4: { count: number } 或 { time: number }
+      else if (data && (data.count !== undefined || data.time !== undefined)) {
+        totalPV = data.count || data.time || 0;
       }
       
       return totalPV;
     } catch (error) {
-      console.warn(`Waline global PV fetch error (attempt ${retries + 1}/${MAX_RETRIES}):`, error);
+      console.warn(`Waline API fetch error (attempt ${retries + 1}/${MAX_RETRIES}):`, error);
       
-      // 如果还有重试次数，则重试
       if (retries < MAX_RETRIES - 1) {
-        await delay(RETRY_DELAY * (retries + 1)); // 指数退避
-        return fetchGlobalPV(retries + 1);
+        await delay(RETRY_DELAY * (retries + 1));
+        return fetchGlobalPVFromAPI(retries + 1);
       }
       
       throw error;
     }
+  }
+  
+  /**
+   * 方法2: 从页面上已加载的 Waline 统计中累加
+   */
+  function fetchGlobalPVFromDOM() {
+    let totalPV = 0;
+    
+    // 查找所有 Waline pageview 元素
+    const pageviewElements = document.querySelectorAll('.waline-pageview-count, [data-path]');
+    
+    pageviewElements.forEach(el => {
+      const count = parseInt(el.textContent) || parseInt(el.getAttribute('data-count')) || 0;
+      if (count > 0) {
+        totalPV += count;
+      }
+    });
+    
+    console.log(`Found ${pageviewElements.length} pageview elements, total: ${totalPV}`);
+    return totalPV;
+  }
+  
+  /**
+   * 获取全局 PV 统计（组合方法）
+   */
+  async function fetchGlobalPV() {
+    // 先尝试 API 方法
+    try {
+      const apiPV = await fetchGlobalPVFromAPI();
+      if (apiPV > 0) {
+        return apiPV;
+      }
+    } catch (error) {
+      console.warn('API method failed, trying DOM method');
+    }
+    
+    // API 失败或返回0，尝试从 DOM 累加
+    const domPV = fetchGlobalPVFromDOM();
+    if (domPV > 0) {
+      return domPV;
+    }
+    
+    // 都失败了，返回 0
+    return 0;
   }
 
   /**
@@ -119,14 +167,27 @@
    */
   async function updateGlobalPV() {
     const pvElement = document.getElementById('waline-site-pv');
-    if (!pvElement) return;
+    if (!pvElement) {
+      console.log('waline-site-pv element not found');
+      return;
+    }
     
     try {
       // 先尝试从缓存获取
       const cached = getCache();
-      if (cached !== null && cached.pv !== undefined) {
+      if (cached !== null && cached.pv !== undefined && cached.pv > 0) {
         pvElement.textContent = cached.pv;
         console.log('Waline global PV loaded from cache:', cached.pv);
+        
+        // 后台更新数据
+        fetchGlobalPV().then(totalPV => {
+          if (totalPV > 0 && totalPV !== cached.pv) {
+            pvElement.textContent = totalPV;
+            setCache({ pv: totalPV });
+            console.log('Waline global PV updated:', totalPV);
+          }
+        }).catch(err => console.warn('Background update failed:', err));
+        
         return;
       }
       
@@ -137,16 +198,19 @@
       const totalPV = await fetchGlobalPV();
       
       // 更新显示
-      pvElement.textContent = totalPV;
-      
-      // 保存到缓存
-      setCache({ pv: totalPV, uv: null });
-      
-      console.log('Waline global PV loaded:', totalPV);
+      if (totalPV > 0) {
+        pvElement.textContent = totalPV;
+        setCache({ pv: totalPV });
+        console.log('Waline global PV loaded:', totalPV);
+      } else {
+        pvElement.textContent = '0';
+        pvElement.title = '暂无浏览数据或统计加载失败';
+        console.warn('Waline global PV is 0');
+      }
     } catch (error) {
       console.error('Waline global PV final error:', error);
       pvElement.textContent = '-';
-      pvElement.title = '统计加载失败，请检查网络或稍后重试';
+      pvElement.title = '统计加载失败: ' + error.message;
     }
   }
 
@@ -156,12 +220,15 @@
    */
   async function updateGlobalUV() {
     const uvElement = document.getElementById('waline-site-uv');
-    if (!uvElement) return;
+    if (!uvElement) {
+      console.log('waline-site-uv element not found');
+      return;
+    }
     
     try {
       // 先尝试从缓存获取
       const cached = getCache();
-      if (cached !== null && cached.uv !== undefined) {
+      if (cached !== null && cached.uv !== undefined && cached.uv !== '-') {
         uvElement.textContent = cached.uv || '-';
         console.log('Waline global UV loaded from cache:', cached.uv);
         return;
@@ -170,15 +237,48 @@
       // 显示加载中
       uvElement.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
       
-      // Waline 没有全局 UV API，这里使用评论总数或显示 "-"
-      // 你可以根据需要调整这个逻辑
+      // 尝试获取评论总数作为活跃度
+      try {
+        const response = await fetch(`${WALINE_SERVER_URL}/api/comment?type=count`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Waline comment count response:', data);
+          
+          // 尝试解析评论总数
+          let commentCount = 0;
+          if (typeof data === 'number') {
+            commentCount = data;
+          } else if (data && typeof data.data === 'number') {
+            commentCount = data.data;
+          } else if (data && data.count !== undefined) {
+            commentCount = data.count;
+          }
+          
+          if (commentCount > 0) {
+            uvElement.textContent = commentCount;
+            uvElement.title = '评论总数（作为活跃度参考）';
+            setCache({ uv: commentCount });
+            console.log('Waline comment count loaded:', commentCount);
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('Failed to fetch comment count:', err);
+      }
+      
+      // 如果评论数获取失败，显示 "-"
       uvElement.textContent = '-';
       uvElement.title = 'Waline 暂不支持全局独立访客统计';
-      
-      console.log('Waline global UV: not supported');
+      setCache({ uv: '-' });
+      console.log('Waline global UV: not supported, showing placeholder');
     } catch (error) {
       console.error('Waline global UV error:', error);
       uvElement.textContent = '-';
+      uvElement.title = '统计加载失败';
     }
   }
 
@@ -195,13 +295,19 @@
       return;
     }
     
-    console.log('Initializing Waline global count...');
+    console.log('Initializing Waline global count...', { hasPV: !!hasPV, hasUV: !!hasUV });
     
-    // 延迟执行，确保页面完全加载
+    // 延迟执行，确保 Waline 已初始化
     setTimeout(() => {
-      if (hasPV) updateGlobalPV();
-      if (hasUV) updateGlobalUV();
-    }, 500);
+      if (hasPV) {
+        console.log('Updating global PV...');
+        updateGlobalPV();
+      }
+      if (hasUV) {
+        console.log('Updating global UV...');
+        updateGlobalUV();
+      }
+    }, 1000); // 增加延迟到1秒，确保 Waline 完全加载
   }
 
   /**
