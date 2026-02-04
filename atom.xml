@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2026-02-04T05:27:06.332Z</updated>
+  <updated>2026-02-04T13:27:26.872Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://coperlm.github.io/2026/02/03/sub/test/"/>
+    <id>https://coperlm.github.io/2026/02/03/sub/test/</id>
+    <published>2026-02-02T16:15:34.000Z</published>
+    <updated>2026-02-04T13:27:26.872Z</updated>
+    
+    <content type="html"><![CDATA[<p>111</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;111&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
+    
+    <category term="None" scheme="https://coperlm.github.io/tags/None/"/>
+    
+  </entry>
   
   <entry>
     <title>CachyOS下Flatpak版Obsidian输入法候选框错位问题</title>
@@ -447,8 +477,8 @@
   
   <entry>
     <title>博客技术与功能概览</title>
-    <link href="https://coperlm.github.io/2025/10/22/blog-tech-overview/"/>
-    <id>https://coperlm.github.io/2025/10/22/blog-tech-overview/</id>
+    <link href="https://coperlm.github.io/2025/10/22/%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%8A%9F%E8%83%BD%E6%A6%82%E8%A7%88/"/>
+    <id>https://coperlm.github.io/2025/10/22/%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%8A%9F%E8%83%BD%E6%A6%82%E8%A7%88/</id>
     <published>2025-10-22T08:15:21.000Z</published>
     <updated>2025-10-23T12:47:26.000Z</updated>
     
@@ -504,11 +534,11 @@
   </entry>
   
   <entry>
-    <title>初来本站的使用指南（置顶）</title>
-    <link href="https://coperlm.github.io/2025/10/22/%E6%9C%AC%E7%AB%99%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/"/>
-    <id>https://coperlm.github.io/2025/10/22/%E6%9C%AC%E7%AB%99%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/</id>
+    <title>初来本站的使用指南</title>
+    <link href="https://coperlm.github.io/2025/10/22/%E5%88%9D%E6%9D%A5%E6%9C%AC%E7%AB%99%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://coperlm.github.io/2025/10/22/%E5%88%9D%E6%9D%A5%E6%9C%AC%E7%AB%99%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2025-10-22T02:00:00.000Z</published>
-    <updated>2026-02-04T05:28:16.072Z</updated>
+    <updated>2026-02-04T13:23:19.916Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>建议收藏本页，第一次来就从这里开始～</p></blockquote><p>不需要会编程，也不需要懂“Hexo”“主题”这些词。把这里当成一本会自己长内容的电子小杂志就好：我会把学到的知识、做过的题、看过的书、生活里的灵感，都写成文章放到这里，方便自己复盘，也欢迎你来逛、来交流。</p><p>网址首页： <a href="https://coperlm.github.io">https://coperlm.github.io</a></p><h2 id="一句话说明“博客”是什么"><a href="#一句话说明“博客”是什么" class="headerlink" title="一句话说明“博客”是什么"></a>一句话说明“博客”是什么</h2><ul><li>就是一个“我自己的小网站”，用来发布文章、图片和想法；</li><li>你可以像逛知乎专栏/公众号文章一样阅读，也可以在文末留言；</li><li>全站支持“搜索”“标签”“时间线”，方便查找感兴趣的内容。</li></ul><h2 id="在这里你能做什么？"><a href="#在这里你能做什么？" class="headerlink" title="在这里你能做什么？"></a>在这里你能做什么？</h2><p>1) 找文章（最常用）</p><ul><li>首页往下翻，都是最新的文章卡片；点标题就能进全文。</li><li>想按时间“翻旧账”？点导航里的“时光轴”（/archives/）。</li><li>想“按主题找”？点“标签”（/tags/）。</li><li>懒得找？右上角的“搜索”直接搜标题/内容，输入框里会写“来搜吧来搜吧~”。</li></ul><p>2) 留言互动</p><ul><li>每篇文章底下都有评论区（Waline），可以匿名留言，想说就说。</li><li>你会看到“浏览量”“访客数”等小计数，这些只是统计，不会收集你的隐私。</li></ul><p>3) 看看朋友们都在写啥</p><ul><li>“友链”（/link/）是我收藏的朋友博客。点进去就是他们的站点卡片。</li></ul><p>4) 听歌放松</p><ul><li>底部有一条小音乐条，是全站播放器（APlayer）。</li><li>如果不想听，点一下暂停；想系统听歌，去“音乐”（/music/）。</li></ul><p>5) 快速入口</p><ul><li>我做了一个“常驻更新目录”（/schedule/），把一些经典/高频文章串起来，方便新读者入坑。</li></ul><h2 id="读文章时的小提示"><a href="#读文章时的小提示" class="headerlink" title="读文章时的小提示"></a>读文章时的小提示</h2><ul><li>目录（TOC）：进入文章后，侧边会有“目录”，点条目可以直接跳到相应小节。</li><li>代码块：有“复制”按钮，点一下就把代码放进剪贴板，粘贴即可。</li><li>数学公式：看到一堆看起来很严肃的数学符号，不用怕，那是我写的数学/密码学笔记，都是可渲染的公式。</li><li>图片：点图片可放大（支持拖动/点击关闭）。</li><li>夜间模式：右下角或顶部可以一键切换“深色/浅色”。</li><li>阅读模式：想专注一点？点“阅读模式”会把页面变得更简洁。</li></ul><h2 id="常见问题（超快排雷）"><a href="#常见问题（超快排雷）" class="headerlink" title="常见问题（超快排雷）"></a>常见问题（超快排雷）</h2><p>Q1：打开有点慢？</p><ul><li>首页有不少封面图（有些是动图），第一次打开可能慢一点；多等几秒或直接点文章也可以。</li></ul><p>Q2：搜索不到？</p><ul><li>试着输“关键词的关键部分”而不是整句，比如搜“零知识”“SM2”。</li></ul><p>Q3：评论发不出去？</p><ul><li>偶尔网络抽风；刷新页面再试一次。如果还是不行，发邮件给我：coperlm@outlook.com。</li></ul><p>Q4：公式/代码看起来乱？</p><ul><li>可能是网速导致的渲染延迟，稍等几秒；或者刷新一次。</li></ul><p>Q5：文章里怎么有“需要密码”？</p><ul><li>少量文章可能会做加密，出于隐私或尚在整理中；等我公开或联系我交流即可。</li></ul><h2 id="想更深地探索？"><a href="#想更深地探索？" class="headerlink" title="想更深地探索？"></a>想更深地探索？</h2><ul><li>技术细节（给爱折腾的朋友）：本站采用 Hexo + Butterfly，支持本地搜索、评论统计、数学公式、PJAX 无刷新、图片灯箱、固定音乐播放器等。想学怎么搭？<a href="https://coperlm.github.io/2025/10/22/blog-tech-overview/">来看这里</a>。</li></ul><h2 id="欢迎你来聊聊"><a href="#欢迎你来聊聊" class="headerlink" title="欢迎你来聊聊"></a>欢迎你来聊聊</h2><ul><li>你可以：<ul><li>在任意文章底部“评论区”留言（支持匿名）。</li><li>邮件找我：coperlm@outlook.com。</li></ul></li><li>如果你也有博客，去“友链”把你的站点发我，我们互相串门～</li></ul><p>祝你逛得开心！</p><p><img src="bb12.gif" alt></p>]]></content>
     
@@ -557,33 +587,6 @@
     
     
     <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>区块链中的树</title>
-    <link href="https://coperlm.github.io/2025/10/10/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E6%A0%91/"/>
-    <id>https://coperlm.github.io/2025/10/10/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E6%A0%91/</id>
-    <published>2025-10-10T10:39:51.000Z</published>
-    <updated>2026-02-04T05:28:45.276Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Merkle-树"><a href="#Merkle-树" class="headerlink" title="Merkle 树"></a>Merkle 树</h3><p>问题：对一个数组求哈希（n个元素）</p><p>传统方案：将每个数据拼接然后哈希，时空复杂度都是$O(n)$</p><p>使用merkle树：只需计算路线上的哈希，时空复杂度都是$O(logn)$；代价是总存储空间变大（需要存哈希树），但是依旧是$O(n)$</p><p><img src="image-20251005203401710.png" alt></p><h3 id="Trie-树"><a href="#Trie-树" class="headerlink" title="Trie 树"></a>Trie 树</h3><p>根据前缀进行索引，适用于前缀相似的数据存储</p><p>深度最劣为最长字符串的长度（也就是时间复杂度），但不一定是二叉树</p><p>适用于前缀字典的查找</p><p><img src="image-20251005203731340.png" alt></p><h3 id="Merkle-Patricia-树"><a href="#Merkle-Patricia-树" class="headerlink" title="Merkle Patricia 树"></a>Merkle Patricia 树</h3><p>把Merkle树的二叉变为16叉</p><p>父节点记录16个叉的指针，再加一个value字段表示自己的数值</p><p>这里的指针，就是子节点的哈希值，存在一个<code>key-value DB</code>里协助反向查找</p><p><img src="image-20251005204621556.png" alt></p><p>同时负责哈希和索引两个功能</p><p> 16叉减少深度-&gt;减少数据库的请求次数</p><h3 id="Rollup的State-Tree"><a href="#Rollup的State-Tree" class="headerlink" title="Rollup的State Tree"></a>Rollup的State Tree</h3><p>对map和value进行分离</p><p><img src="image-20251006195437245.png" alt></p><h3 id="Verkle-Tree"><a href="#Verkle-Tree" class="headerlink" title="Verkle Tree"></a>Verkle Tree</h3><p>基于KZG</p><p><img src="image-20251006200043767.png" alt></p><p>依此构造16叉树</p><p><img src="image-20251006200227515.png" alt></p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Merkle-树&quot;&gt;&lt;a href=&quot;#Merkle-树&quot; class=&quot;headerlink&quot; title=&quot;Merkle 树&quot;&gt;&lt;/a&gt;Merkle</summary>
-        
-      
-    
-    
-    
-    <category term="技术与工具" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="BlockChain" scheme="https://coperlm.github.io/tags/BlockChain/"/>
     
   </entry>
   
