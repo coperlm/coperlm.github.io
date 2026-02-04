@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2026-02-04T13:27:26.872Z</updated>
+  <updated>2026-02-04T05:27:06.332Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,36 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://coperlm.github.io/2026/02/03/sub/test/"/>
-    <id>https://coperlm.github.io/2026/02/03/sub/test/</id>
-    <published>2026-02-02T16:15:34.000Z</published>
-    <updated>2026-02-04T13:27:26.872Z</updated>
-    
-    <content type="html"><![CDATA[<p>111</p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;111&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
-    
-    
-    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
-    
-    <category term="None" scheme="https://coperlm.github.io/tags/None/"/>
-    
-  </entry>
   
   <entry>
     <title>CachyOS下Flatpak版Obsidian输入法候选框错位问题</title>
@@ -417,38 +387,6 @@
   </entry>
   
   <entry>
-    <title>密码技术竞赛2025作品赛游记</title>
-    <link href="https://coperlm.github.io/2025/10/26/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E7%AB%9E%E8%B5%9B2025%E4%BD%9C%E5%93%81%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
-    <id>https://coperlm.github.io/2025/10/26/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E7%AB%9E%E8%B5%9B2025%E4%BD%9C%E5%93%81%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
-    <published>2025-10-26T06:30:50.000Z</published>
-    <updated>2025-10-26T06:46:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今年又报名了密码技术竞赛，不出意外应该是我本科期间的最后一场比赛了</p><p>我个人而言主要是motivation还是因为去年没晋级，今年弥补一下去年的遗憾</p><p>一开始有多个选题，感觉都不是很好做，最后选的是用师兄最近正在搞的TEE</p><p>然后商讨了一下，原班人马报名今年密码技术竞赛</p><p>然后队名直接是从XXX2队改为了XXX3队，报名的时候发现我们学校就我们一支队伍打这个比赛了</p><p>经过前段时间马老师帮我改论文学到的东东，现在开始逐渐会写文档了，然后写啊写，润色啊润色，改了好几版</p><p>最后给老师看了看，除了少量typo上的问题，老师说一些表达和材料支撑不太行，并说可以去参考一下他的面上</p><p>还好没有像之前一样狠狠批改（泪目，说明我的文档撰写能力有所提升~</p><p>然后麻烦师兄发给我了老师的面上，狠狠学习了一下</p><p>然后材料不太行，这个没办法了，于是乎就交上了；但是说实话这个比去年那个强了好几倍哇，感觉除了不太新颖，应该晋级问题不大~</p><p>先把仓库封存了，希望可以晋级~</p><hr><p>希望这一部分还可以更新；如果没有更新，说明没有晋级（哭</p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;今年又报名了密码技术竞赛，不出意外应该是我本科期间的最后一场比赛了&lt;/p&gt;
-&lt;p&gt;我个人而言主要是motivation还是因为去年没晋级，今年弥补一下去年的遗憾&lt;/p&gt;
-&lt;p&gt;一开始有多个选题，感觉都不是很好做，最后选的是用师兄最近正在搞的TEE&lt;/p&gt;
-&lt;p&gt;然后商讨了一</summary>
-        
-      
-    
-    
-    
-    <category term="会议竞赛游记" scheme="https://coperlm.github.io/categories/%E4%BC%9A%E8%AE%AE%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
-    
-    
-    <category term="游记" scheme="https://coperlm.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
-    
-    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
-    
-  </entry>
-  
-  <entry>
     <title>记录一道很有意思的简单考研数学题（奇偶性相关）</title>
     <link href="https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/"/>
     <id>https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/</id>
@@ -480,7 +418,7 @@
     <link href="https://coperlm.github.io/2025/10/22/%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%8A%9F%E8%83%BD%E6%A6%82%E8%A7%88/"/>
     <id>https://coperlm.github.io/2025/10/22/%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%8A%9F%E8%83%BD%E6%A6%82%E8%A7%88/</id>
     <published>2025-10-22T08:15:21.000Z</published>
-    <updated>2025-10-23T12:47:26.000Z</updated>
+    <updated>2026-02-04T13:30:52.844Z</updated>
     
     <content type="html"><![CDATA[<h2 id="一、总体概览"><a href="#一、总体概览" class="headerlink" title="一、总体概览"></a>一、总体概览</h2><ul><li>平台与框架：Hexo 7.3.0 + Butterfly 主题（v5.3.5）。</li><li>站点定位：技术学习/竞赛记录（密码学/CTF/算法/课程笔记等）+ 生活随笔，中文为主。</li><li>展示风格：卡片式列表、顶部大图 Banner、封面图轮换、侧栏多卡片信息（作者、公告、最新评论、归档、标签云、站点信息）。</li><li>交互增强：本地搜索、目录（TOC）、相关文章、阅读模式、深色模式切换、PJAX 页面切换、Instant.page 预获取、图片灯箱（medium-zoom）。</li><li>评论与统计：Waline（含 PV/UV）+ Disqus 双系统（Waline 为主），文章卡片显示评论数；站点 PV/UV 未启用 Busuanzi（保留为可选）。</li><li>多媒体：底部固定 APlayer 播放器（inject 注入）+ 音乐页 aplayerlist 播放清单。</li><li>数学与代码：MathJax 渲染公式，highlight.js 高亮，行号与自动换行启用。</li></ul><h2 id="二、技术栈与版本"><a href="#二、技术栈与版本" class="headerlink" title="二、技术栈与版本"></a>二、技术栈与版本</h2><ul><li>Hexo: 7.3.0（package.json hexo 字段与依赖）</li><li>主题：hexo-theme-butterfly 5.3.5（themes/butterfly/）</li><li>渲染器：<ul><li>@upupming/hexo-renderer-markdown-it-plus（当前 Markdown 渲染主力）</li><li>hexo-renderer-kramed（亦已安装，存在并行可能的冗余，见改进建议）</li><li>hexo-renderer-stylus、hexo-renderer-pug</li></ul></li><li>生成/功能插件（节选）：<ul><li>搜索：hexo-generator-search、hexo-generator-searchdb（两者同时存在，见改进建议）</li><li>站点生成：hexo-generator-index、archive、category、tag</li><li>部署：hexo-deployer-git</li><li>开发：hexo-server</li><li>统计/字数：hexo-wordcount</li><li>资源与多媒体：hexo-asset-image、hexo-tag-aplayer</li><li>加密（可选）：hexo-blog-encrypt（暂未启用）</li><li>主题内置/集成：pjax、instant.page、medium-zoom、canvas-nest、snackbar 等</li></ul></li><li>其他：@vercel/analytics 已安装但未在主题注入中显式启用。</li></ul><h2 id="三、核心目录结构（简要）"><a href="#三、核心目录结构（简要）" class="headerlink" title="三、核心目录结构（简要）"></a>三、核心目录结构（简要）</h2><ul><li>根配置<ul><li><code>_config.yml</code>：站点全局配置（URL、构建、部署、数学、搜索、高亮、文章资源等）。</li><li><code>_config.butterfly.yml</code>：主题配置（导航、封面、UI、交互、评论、统计、特效等）。</li></ul></li><li>内容与数据<ul><li><code>source/_posts/</code>：文章 Markdown（数量多，覆盖技术、竞赛、随笔等）。</li><li><code>source/_data/link.yml</code>：友链数据，按分类展示。</li><li><code>source/link/index.md</code>：友链页（type: link）。</li><li><code>source/tags/index.md</code>：标签页（type: tags）。</li><li><code>source/music/index.md</code>：音乐页（type: music，使用 aplayerlist）。</li><li><code>source/schedule/index.md</code>：常驻更新目录页（手工索引若干文章）。</li></ul></li><li>主题目录<ul><li><code>themes/butterfly/</code>：主题源码、静态资源与内置脚本（包含本地搜索脚本）。</li></ul></li></ul><h2 id="四、主题与-UI-关键设置"><a href="#四、主题与-UI-关键设置" class="headerlink" title="四、主题与 UI 关键设置"></a>四、主题与 UI 关键设置</h2><ul><li>导航与菜单<ul><li>LOGO：<code>/img/niu.gif</code></li><li>菜单项：主页、时光轴（archives）、标签、友链</li><li>顶部 Banner：<code>index_img</code> 与 <code>default_top_img</code> 均指向 <code>/img/*.jpg|gif</code>，默认封面集较大（94 张 gif）。</li></ul></li><li>列表与封面<ul><li>首页布局 index_layout: 3（封面与信息左右交错），简介展示长度 500。</li><li>封面/侧栏/归档 cover 开启；aside 启用且默认在左侧。</li></ul></li><li>代码块<ul><li>主题 code_blocks: light、Mac 风格标题、可复制、行内换行。</li><li>Hexo 使用 highlight.js（行号、wrap）。</li></ul></li><li>文章页<ul><li>TOC：开启且带序号、滚动百分比显示。</li><li>版权信息：开启，协议为 CC BY-NC-SA 4.0。</li><li>相关文章：开启，最多 6 篇。</li><li>上/下一篇分页：顺序模式 1。</li></ul></li><li>侧栏卡片（已启用）<ul><li>作者卡片（Follow Me 指向 GitHub）</li><li>公告（维护日志提示）</li><li>最近文章（按更新时间）</li><li>最新评论（Waline 聚合）</li><li>分类/标签云/归档（月度）</li><li>站点信息（文章数、最近推送时间、运行时长可配置）</li></ul></li><li>交互与视觉<ul><li>深色模式：按钮切换，手动模式。</li><li>阅读模式：支持。</li><li>PJAX：开启；Instant.page：开启；进入过渡动画：开启。</li><li>图片灯箱：medium-zoom；Lightbox 在主题中设置为 medium_zoom。</li><li>背景特效：canvas-nest（开启，移动端关闭），click_heart（开启）。</li><li>Snackbar：开启；位置左下。</li></ul></li></ul><h2 id="五、功能清单（结合插件与配置）"><a href="#五、功能清单（结合插件与配置）" class="headerlink" title="五、功能清单（结合插件与配置）"></a>五、功能清单（结合插件与配置）</h2><p>1) 搜索</p><ul><li>主题：local_search（占位文案“来搜吧来搜吧~”）。</li><li>生成器：root <code>_config.yml</code> 配置 <code>search.xml</code>；同时安装了 search 与 searchdb 两个插件（建议二选一）。</li></ul><p>2) 评论与访问统计</p><ul><li>Waline：已配置 <code>serverURL</code>（Vercel 部署后端），开启 pageview &amp; visitor 统计；首页文章卡片展示评论数与 PV。</li><li>Disqus：配置了 shortname，可作为备份/次要评论系统。</li><li>站点级 PV/UV：Busuanzi 在主题配置中注释关闭（可按需启用）。</li></ul><p>3) 数学公式</p><ul><li>MathJax：在主题与站点均开启，单美元行内启用；engine 设为 chtml；支持按页面 Front-matter 控制。</li></ul><p>4) 代码高亮</p><ul><li>highlight.js：行号、自动换行、wrap 开启；主题 code_blocks=light。</li></ul><p>5) 多媒体与音乐</p><ul><li>页面级：<code>source/music/index.md</code> 使用 <code>&#123;% aplayerlist %&#125;</code> 播放清单。</li><li>全站固定：通过主题 inject.bottom 注入 APlayer 与播放列表（随机播放、固定底部、自动播放）。</li></ul><p>6) 内容组织与导航</p><ul><li>TOC、相关文章、上一/下一篇导航、归档（月度）、标签云（随机顺序、上限 40）。</li><li>友链：<code>source/_data/link.yml</code> 维护，主题友链样式为 volantis。</li></ul><p>7) 性能与体验</p><ul><li>PJAX、Instant.page 预获取、medium-zoom、snackbar；Lazyload 暂未启用。</li></ul><p>8) SEO 与结构化数据</p><ul><li>Open Graph：开启；结构化数据：开启。</li><li>尚未安装/配置 RSS（feed）与 sitemap（站点地图）插件（见改进建议）。</li></ul><p>9) 安全与加密</p><ul><li>hexo-blog-encrypt 已安装，root <code>_config.yml</code> 示例配置注释存在；MathJax 跳过 <code>encrypted/**</code> 渲染；当前未启用文章加密。</li></ul><p>10) 部署与运维</p><ul><li>部署：<code>hexo-deployer-git</code> 推送到 <code>git@github.com:coperlm/coperlm.github.io.git</code> 的 <code>main</code> 分支。</li><li>文章资源：<code>post_asset_folder: true</code> + <code>hexo-asset-image</code>，便于相对路径插图。</li></ul><h2 id="六、构建、开发与部署"><a href="#六、构建、开发与部署" class="headerlink" title="六、构建、开发与部署"></a>六、构建、开发与部署</h2><ul><li><p>本地开发（PowerShell）</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一次性安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地预览（默认 http://localhost:4000）</span></span><br><span class="line">npm run server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清理与重新生成</span></span><br><span class="line">npm run clean; npm run build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署（需已配置 SSH Key 并具备仓库写权限）</span></span><br><span class="line">npm run deploy</span><br></pre></td></tr></table></figure></li><li><p>新文档与资源组织</p><ul><li>新文章：<code>hexo new &quot;标题&quot;</code>（或直接在 <code>source/_posts/</code> 下添加 <code>.md</code>）。</li><li>文章素材：置于与文章同名的资源目录（post_asset_folder=true），图片可用相对路径引用。</li><li>友链：编辑 <code>source/_data/link.yml</code>。</li><li>专题页：<code>tags</code>/<code>link</code>/<code>music</code>/<code>schedule</code> 等页面通过 <code>source/&lt;page&gt;/index.md</code> + Front-matter 管理。</li></ul></li></ul><h2 id="七、性能与可用性观察"><a href="#七、性能与可用性观察" class="headerlink" title="七、性能与可用性观察"></a>七、性能与可用性观察</h2><ul><li><p>优点</p><ul><li>PJAX + Instant.page 使页面切换与首次交互更敏捷。</li><li>TOC/相关文章/阅读模式/深色模式增强了长文可读性与导航性。</li><li>APlayer 固定播放器提升沉浸感（需注意流量与带宽）。</li></ul></li><li><p>关注点</p><ul><li>封面图/默认图较多（近百张 gif），首页首屏资源体量可能较大；建议按需精简或延迟加载。</li><li>Lazyload 关闭：在多图文章/长列表页会影响 FCP/LCP，可考虑开启主题 lazyload 或采用现代原生 lazy 属性。</li><li>canvas-nest、click-heart 等特效在低端设备上可能影响帧率；移动端已禁用 nest，较为稳妥。</li></ul></li></ul><h2 id="八、安全与隐私"><a href="#八、安全与隐私" class="headerlink" title="八、安全与隐私"></a>八、安全与隐私</h2><ul><li>Waline（自建/托管后端）<ul><li>已启用匿名评论与 PV/UV 统计；建议在 Waline 后端开启基础反垃圾与速率限制，关注数据合规性。</li></ul></li><li>Disqus<ul><li>作为备份评论系统；注意其隐私政策与被墙风险。</li></ul></li><li>加密文章<ul><li>已具备能力但未启用；如需发布敏感内容，可启用 <code>hexo-blog-encrypt</code> 并为分类/标签设置访问密码。</li></ul></li></ul><h2 id="九、问题与改进清单（可执行）"><a href="#九、问题与改进清单（可执行）" class="headerlink" title="九、问题与改进清单（可执行）"></a>九、问题与改进清单（可执行）</h2><p>1) Markdown 渲染器冗余</p><ul><li>同时安装了 <code>markdown-it-plus</code> 与 <code>kramed</code>；建议只保留一个（推荐 markdown-it-plus），并移除 <code>hexo-renderer-kramed</code> 与 root 中的 <code>kramed:</code> 配置，以避免行为不一致。</li></ul><p>2) 搜索插件重复</p><ul><li><code>hexo-generator-search</code> 与 <code>hexo-generator-searchdb</code> 同时存在；推荐仅保留一个：<ul><li>若主题 local_search 读取 <code>search.xml</code>，保留 <code>hexo-generator-search</code>；</li><li>或改为使用 <code>searchdb</code>（生成 <code>search.json</code>），并在主题中对应配置。</li></ul></li></ul><p>3) SEO 能力完善</p><ul><li>增加 RSS 与站点地图：<ul><li><code>hexo-generator-feed</code>（RSS/Atom）</li><li><code>hexo-generator-sitemap</code>（sitemap.xml）</li></ul></li></ul><p>4) 统计与分析</p><ul><li>如需更细化的访问分析，可启用：<ul><li>Vercel Analytics（已安装包，需在主题 head/bottom 注入脚本）</li><li>或 Umami/GA4/Clarity 等（主题已预留配置项）。</li></ul></li></ul><p>5) 性能优化</p><ul><li>开启图片 Lazyload；</li><li>精简默认封面 GIF 数量或改用静态 WebP；</li><li>评估 APlayer 自动播放策略（移动端/低速网络条件下可考虑关闭自动播放）。</li></ul><p>6) PWA 与离线</p><ul><li>如有离线访问/安装到桌面的诉求，可启用主题 <code>pwa</code> 并补齐 manifest 与图标资源。</li></ul><p>7) 代码高亮统一性</p><ul><li>当前使用 highlight.js；若希望与 Butterfly 内置 Prism 生态更一致，可切换至 Prism 并开启按需加载（权衡体积与功能）。</li></ul><h2 id="十、快速问答（FAQ）"><a href="#十、快速问答（FAQ）" class="headerlink" title="十、快速问答（FAQ）"></a>十、快速问答（FAQ）</h2><ul><li><p>本地搜索无结果？</p><ul><li>确认运行了 <code>hexo generate</code> 生成 <code>search.xml|json</code>；若装了两个搜索生成器，保留一个并与主题配置一致。</li></ul></li><li><p>文章公式不渲染？</p><ul><li>确认 Front-matter 未关闭 mathjax；加密路径（<code>encrypted/**</code>）默认跳过渲染。</li></ul></li><li><p>图片 404 或不显示？</p><ul><li>使用 <code>post_asset_folder: true</code> 时，建议将图片放在与文章同名的资源目录下并用相对路径引用；主题 <code>error_img</code> 会为断图提供默认占位图。</li></ul></li><li><p>评论数/访客数未显示？</p><ul><li>检查 Waline <code>serverURL</code> 可用性与跨域设置，确认主题 <code>comments.count/pageview</code> 已启用；首页卡片统计需等待首批上报后才会有值。</li></ul></li></ul><h2 id="十一、结论"><a href="#十一、结论" class="headerlink" title="十一、结论"></a>十一、结论</h2><p>该博客以 Butterfly 为基础，完成了从内容到交互的较完整搭建：</p><ul><li>对技术内容（数学、密码学、算法）有友好的公式/代码支持与导航增强；</li><li>评论、搜索、多媒体与视觉动效到位，使用体验较好；</li><li>在 SEO、性能与插件冗余方面仍有可量化的优化空间（RSS/Sitemap、Lazyload、渲染器与搜索插件精简）。</li></ul>]]></content>
     
@@ -496,7 +434,7 @@
     
     
     
-    <category term="技术学习笔记" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="博客构建与维护" scheme="https://coperlm.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/"/>
     
     
     <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
@@ -587,6 +525,61 @@
     
     
     <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>区块链中的树</title>
+    <link href="https://coperlm.github.io/2025/10/10/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E6%A0%91/"/>
+    <id>https://coperlm.github.io/2025/10/10/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E6%A0%91/</id>
+    <published>2025-10-10T10:39:51.000Z</published>
+    <updated>2026-02-04T05:28:45.276Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Merkle-树"><a href="#Merkle-树" class="headerlink" title="Merkle 树"></a>Merkle 树</h3><p>问题：对一个数组求哈希（n个元素）</p><p>传统方案：将每个数据拼接然后哈希，时空复杂度都是$O(n)$</p><p>使用merkle树：只需计算路线上的哈希，时空复杂度都是$O(logn)$；代价是总存储空间变大（需要存哈希树），但是依旧是$O(n)$</p><p><img src="image-20251005203401710.png" alt></p><h3 id="Trie-树"><a href="#Trie-树" class="headerlink" title="Trie 树"></a>Trie 树</h3><p>根据前缀进行索引，适用于前缀相似的数据存储</p><p>深度最劣为最长字符串的长度（也就是时间复杂度），但不一定是二叉树</p><p>适用于前缀字典的查找</p><p><img src="image-20251005203731340.png" alt></p><h3 id="Merkle-Patricia-树"><a href="#Merkle-Patricia-树" class="headerlink" title="Merkle Patricia 树"></a>Merkle Patricia 树</h3><p>把Merkle树的二叉变为16叉</p><p>父节点记录16个叉的指针，再加一个value字段表示自己的数值</p><p>这里的指针，就是子节点的哈希值，存在一个<code>key-value DB</code>里协助反向查找</p><p><img src="image-20251005204621556.png" alt></p><p>同时负责哈希和索引两个功能</p><p> 16叉减少深度-&gt;减少数据库的请求次数</p><h3 id="Rollup的State-Tree"><a href="#Rollup的State-Tree" class="headerlink" title="Rollup的State Tree"></a>Rollup的State Tree</h3><p>对map和value进行分离</p><p><img src="image-20251006195437245.png" alt></p><h3 id="Verkle-Tree"><a href="#Verkle-Tree" class="headerlink" title="Verkle Tree"></a>Verkle Tree</h3><p>基于KZG</p><p><img src="image-20251006200043767.png" alt></p><p>依此构造16叉树</p><p><img src="image-20251006200227515.png" alt></p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Merkle-树&quot;&gt;&lt;a href=&quot;#Merkle-树&quot; class=&quot;headerlink&quot; title=&quot;Merkle 树&quot;&gt;&lt;/a&gt;Merkle</summary>
+        
+      
+    
+    
+    
+    <category term="技术与工具" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="BlockChain" scheme="https://coperlm.github.io/tags/BlockChain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小感悟：真功不唐捐了</title>
+    <link href="https://coperlm.github.io/2025/09/16/%E5%B0%8F%E6%84%9F%E6%82%9F%EF%BC%9A%E7%9C%9F%E5%8A%9F%E4%B8%8D%E5%94%90%E6%8D%90%E4%BA%86/"/>
+    <id>https://coperlm.github.io/2025/09/16/%E5%B0%8F%E6%84%9F%E6%82%9F%EF%BC%9A%E7%9C%9F%E5%8A%9F%E4%B8%8D%E5%94%90%E6%8D%90%E4%BA%86/</id>
+    <published>2025-09-16T02:40:57.000Z</published>
+    <updated>2025-10-23T12:46:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近这几天在实验室干活，感觉真功不唐捐了</p><p>大一大二的时候涉猎<a href="https://coperlm.github.io/2025/09/11/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%A4%BE%E5%9B%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E8%A7%81%E8%A7%A3/">很广泛哇</a>，原本以为很多东西未来不会用到，没想到都有点关联</p><p>前两天写复现论文的代码，结果好家伙，套了五六层的调用，让我想到了之前在机协学嵌入式，看机器人五六层的指针结构体···；就很像哇</p><p>ctf就不用说了，现在研究的一直是密码学相关内容</p><p>然后昨天看IPs，动态规划还在坠鲨窝~</p><p><img src="dp.jpg" alt></p><p>感悟就是，今日所用后或弃之，今日所弃后或用之~</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近这几天在实验室干活，感觉真功不唐捐了&lt;/p&gt;
+&lt;p&gt;大一大二的时候涉猎&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
     
   </entry>
   
