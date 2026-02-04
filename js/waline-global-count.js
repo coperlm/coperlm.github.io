@@ -64,8 +64,9 @@
    */
   async function fetchGlobalPVFromAPI(retries = 0) {
     try {
-      // 尝试获取所有页面的统计数据
-      const response = await fetch(`${WALINE_SERVER_URL}/api/article?type=count`, {
+      // 获取所有文章的浏览量统计
+      // Waline API: /api/article 可以返回所有文章的统计
+      const response = await fetch(`${WALINE_SERVER_URL}/api/article`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -87,14 +88,16 @@
         totalPV = data.data.reduce((sum, item) => {
           return sum + (item.time || item.pageview || item.count || 0);
         }, 0);
+        console.log('Parsed from array format:', totalPV);
       }
-      // 格式2: { data: {url: count, ...} } - 对象格式
-      else if (data && typeof data.data === 'object' && data.data !== null) {
+      // 格式2: { data: {url: count, ...} } - 对象格式，每个 URL 对应一个浏览量
+      else if (data && typeof data.data === 'object' && data.data !== null && !Array.isArray(data.data)) {
         const values = Object.values(data.data);
         totalPV = values.reduce((sum, count) => {
           const num = typeof count === 'object' ? (count.time || count.pageview || count.count || 0) : (parseInt(count) || 0);
           return sum + num;
         }, 0);
+        console.log('Parsed from object format:', totalPV, 'from', values.length, 'articles');
       }
       // 格式3: [count1, count2, ...] - 直接是数组
       else if (Array.isArray(data)) {
@@ -119,47 +122,21 @@
   }
   
   /**
-   * 方法2: 从页面上已加载的 Waline 统计中累加
-   */
-  function fetchGlobalPVFromDOM() {
-    let totalPV = 0;
-    
-    // 查找所有 Waline pageview 元素
-    const pageviewElements = document.querySelectorAll('.waline-pageview-count, [data-path]');
-    
-    pageviewElements.forEach(el => {
-      const count = parseInt(el.textContent) || parseInt(el.getAttribute('data-count')) || 0;
-      if (count > 0) {
-        totalPV += count;
-      }
-    });
-    
-    console.log(`Found ${pageviewElements.length} pageview elements, total: ${totalPV}`);
-    return totalPV;
-  }
-  
-  /**
-   * 获取全局 PV 统计（组合方法）
+   * 获取全局 PV 统计
    */
   async function fetchGlobalPV() {
-    // 先尝试 API 方法
     try {
       const apiPV = await fetchGlobalPVFromAPI();
       if (apiPV > 0) {
         return apiPV;
       }
+      // 如果 API 返回 0，可能是真的没有数据，或者需要等待 Waline 初始化
+      console.warn('Waline API returned 0 pageviews');
+      return 0;
     } catch (error) {
-      console.warn('API method failed, trying DOM method');
+      console.error('Failed to fetch global PV:', error);
+      return 0;
     }
-    
-    // API 失败或返回0，尝试从 DOM 累加
-    const domPV = fetchGlobalPVFromDOM();
-    if (domPV > 0) {
-      return domPV;
-    }
-    
-    // 都失败了，返回 0
-    return 0;
   }
 
   /**
