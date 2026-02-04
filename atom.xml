@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2026-02-02T14:27:35.909Z</updated>
+  <updated>2026-02-04T05:27:06.332Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://coperlm.github.io/2026/02/02/CachyOS%E4%B8%8BFlatpak%E7%89%88Obsidian%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E9%94%99%E4%BD%8D%E9%97%AE%E9%A2%98/"/>
     <id>https://coperlm.github.io/2026/02/02/CachyOS%E4%B8%8BFlatpak%E7%89%88Obsidian%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E9%94%99%E4%BD%8D%E9%97%AE%E9%A2%98/</id>
     <published>2026-02-02T14:13:09.000Z</published>
-    <updated>2026-02-02T14:27:35.909Z</updated>
+    <updated>2026-02-04T05:27:06.332Z</updated>
     
     <content type="html"><![CDATA[<p>(待办：工具和技术分组应当需要分隔开)</p><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 CachyOS (基于 Arch Linux) 或其他 Linux 发行版的 Wayland 环境下，使用 <strong>Flatpak</strong> 安装的 <strong>Obsidian</strong> 进行写作时，遇到了中文输入法（如 Fcitx5）<strong>候选框不跟随光标</strong>的问题。</p><p>具体表现为输入可能还没选呢，就上屏了。</p><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>这是一个经典的 <strong>Electron + Wayland + Input Method</strong> 兼容性问题。 虽然较新的 Electron 版本开始支持 Wayland，但对 IME（输入法协议）的支持依然不稳定。特别是 Flatpak 版本运行在沙箱中，如果环境变量没有正确传递，应用就无法获知系统的输入法配置，导致它退回到默认的“哑巴”模式。</p><p><strong>解决方案的核心思路：</strong> 强制 Obsidian 运行在 <strong>X11 (XWayland)</strong> 模式下，并手动通过 <code>flatpak override</code> 将输入法相关的环境变量注入到沙箱中。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="第一步：确认安装方式"><a href="#第一步：确认安装方式" class="headerlink" title="第一步：确认安装方式"></a>第一步：确认安装方式</h3><p>首先确保你安装的是 Flatpak 版本。 包名通常为：<code>md.obsidian.Obsidian</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak list</span><br></pre></td></tr></table></figure><p><img src="88c749088421fb181e9f9e92a9a0d020.png" alt="88c749088421fb181e9f9e92a9a0d020.png"></p><h3 id="第二步：执行修复命令"><a href="#第二步：执行修复命令" class="headerlink" title="第二步：执行修复命令"></a>第二步：执行修复命令</h3><p>打开终端，依次运行以下命令：</p><p><strong>1. 屏蔽 Wayland 接口，强制使用 X11 后端</strong> 这是最关键的一步，迫使 Electron 回退到兼容性更好的 X11 模式。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --nosocket=wayland md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><strong>2. 确保 X11 权限开启（通常默认开启，为了保险）</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --socket=x11 md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><strong>3. 注入输入法环境变量</strong> Flatpak 容器内默认可能没有读取到宿主机的输入法配置。我们需要手动告诉它使用 Fcitx（如果你用的是 IBus，将 <code>fcitx</code> 改为 <code>ibus</code>）。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --<span class="built_in">env</span>=GTK_IM_MODULE=fcitx md.obsidian.Obsidian</span><br><span class="line">flatpak override --user --<span class="built_in">env</span>=XMODIFIERS=@im=fcitx md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><em>注意：<code>QT_IM_MODULE</code> 对于基于 Electron（Chromium）的应用通常不是必须的，但在某些环境下也可以加上。</em></p><h3 id="第三步：重启应用"><a href="#第三步：重启应用" class="headerlink" title="第三步：重启应用"></a>第三步：重启应用</h3><p>彻底关闭 Obsidian（确保后台进程已结束），然后重新打开。 现在，输入法候选框应该完美跟随光标了。</p><h2 id="还原配置（如果需要）"><a href="#还原配置（如果需要）" class="headerlink" title="还原配置（如果需要）"></a>还原配置（如果需要）</h2><p>如果未来 Obsidian 修复了 Wayland 下的输入法问题，你可以通过以下命令重置所有修改：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --reset md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在 Linux 下使用 Electron 应用（如 VSCode, Obsidian, Discord），如果遇到输入法问题，<strong>“强制 X11 + 注入环境变量”</strong> 通常是目前最稳妥的万能解法。</p>]]></content>
     
@@ -37,7 +37,7 @@
     
     
     
-    <category term="技术学习笔记" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="技术与工具" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/"/>
     
     
     <category term="arch_linux" scheme="https://coperlm.github.io/tags/arch-linux/"/>
@@ -49,7 +49,7 @@
     <link href="https://coperlm.github.io/2025/12/03/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     <id>https://coperlm.github.io/2025/12/03/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</id>
     <published>2025-12-03T02:55:31.000Z</published>
-    <updated>2025-12-31T02:08:00.961Z</updated>
+    <updated>2026-02-04T05:32:55.667Z</updated>
     
     <content type="html"><![CDATA[<p>这就十二月了，马上就要过年了，也差不多了，故总结一下。</p><h2 id="今年做了什么"><a href="#今年做了什么" class="headerlink" title="今年做了什么"></a>今年做了什么</h2><ul><li><p>生活习惯：成功养成跑步习惯。目前保持隔日跑（3-5km），已坚持数月。是今年最大的收获。</p></li><li><p>技术生态迁移：体验 Arch Linux 和 macOS，感觉 Windows 不香了；建立了自己的知识库与日记体系；构建了 AI 辅助开发流。</p></li><li><p>学术与竞赛：开启了零知识证明方向的科研探索，研读多篇前沿论文；上半年参与微赛并获微奖；学习双拼输入法。</p></li><li><p>考研长征：正式开启考研复习序列。</p></li></ul><h2 id="今年尝试了什么"><a href="#今年尝试了什么" class="headerlink" title="今年尝试了什么"></a>今年尝试了什么</h2><ul><li><p>作息博弈：尝试早睡早起未果，但目前稳定在 23 点多入睡、7 点多起床（7-8h 睡眠）。</p></li><li><p>科研磨砺：尝试论文撰写，深感笔耕之难，目前仍处于“破土而出”的艰苦阶段。</p></li><li><p>竞赛复盘：密码技术竞赛，差点晋级（也就是没晋级呜呜）</p></li></ul><h2 id="明年需要做什么"><a href="#明年需要做什么" class="headerlink" title="明年需要做什么"></a>明年需要做什么</h2><ul><li><p>核心目标：全力以赴备战考研，重中之重。</p></li><li><p>科研进阶：荔枝橙味论文糕守。</p></li><li><p>体能优化：继续跑步，降心率提配速。</p></li><li><p>作息微调： 尝试将作息整体前移 1 小时。</p></li><li><p>解决时间利用率低的问题。</p></li><li><p>专项突破英文口语与长难句阅读。</p></li></ul>]]></content>
     
@@ -65,7 +65,7 @@
     
     
     
-    <category term="未分类" scheme="https://coperlm.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
     
     
     <category term="随笔" scheme="https://coperlm.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
@@ -77,7 +77,7 @@
     <link href="https://coperlm.github.io/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/"/>
     <id>https://coperlm.github.io/2025/11/29/%E6%88%91%E7%AE%97%E6%98%AF%E7%A0%94%E7%A9%B6%E6%98%8E%E7%99%BD%E4%BA%86mkdocs%E7%9A%84%E9%83%A8%E7%BD%B2%E9%80%BB%E8%BE%91%E4%BA%86/</id>
     <published>2025-11-29T11:59:13.000Z</published>
-    <updated>2025-11-29T12:08:38.000Z</updated>
+    <updated>2026-02-04T05:34:14.772Z</updated>
     
     <content type="html"><![CDATA[<p>最近在搭建知识库，然后捣鼓了这个mkdocs</p><p>先从头说，首先是配置环境，直接<code>pip install</code>即可</p><p>估计是直接上传到<code>pip</code>可以直接获取的地方了，这样一<code>install</code>然后全部依赖就都有了</p><p>然后是新建一个知识库，最后部署用的是<code>mkdocs gh-deploy</code>，或者本地预览用<code>mkdocs build</code>。</p><p>这个<code>mkdocs gh-deploy</code>的逻辑是把编译成html的文件放在<code>.\site\</code>目录下，然后上传到分支</p><p><img src="branch.png" alt="branch"></p><p>但是主分支不会变</p><p>于是乎写了个批处理，直接丢环境变量里面了</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入指定的目录</span></span><br><span class="line"><span class="built_in">cd</span> /home/coper/KnowledgeBase/ || <span class="built_in">exit</span> 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行 git 操作</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Auto Commit&quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署 MkDocs</span></span><br><span class="line">mkdocs gh-deploy</span><br></pre></td></tr></table></figure><p>同时，为了避免重复上传，还需要把<code>./site/</code>加入到<code>.gitignore</code>中</p><p>这样，就完成了一键部署</p>]]></content>
     
@@ -93,12 +93,10 @@
     
     
     
-    <category term="未分类" scheme="https://coperlm.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    <category term="博客构建与维护" scheme="https://coperlm.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/"/>
     
     
-    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
-    
-    <category term="None" scheme="https://coperlm.github.io/tags/None/"/>
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
     
   </entry>
   
@@ -107,7 +105,7 @@
     <link href="https://coperlm.github.io/2025/11/29/%E6%88%91%E4%B9%9F%E6%98%AF%E6%9C%89%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%E4%BA%BA%E4%BA%86/"/>
     <id>https://coperlm.github.io/2025/11/29/%E6%88%91%E4%B9%9F%E6%98%AF%E6%9C%89%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%E4%BA%BA%E4%BA%86/</id>
     <published>2025-11-29T07:46:48.000Z</published>
-    <updated>2025-12-01T10:20:44.000Z</updated>
+    <updated>2026-02-04T05:33:47.570Z</updated>
     
     <content type="html"><![CDATA[<p><strong>自2025.12.01始，全部总结性知识都放在知识库里，博客不再更新这部分内容</strong></p><hr><p>RT</p><p>前两天看别人的知识库，知识很有调理，正赶上博客比较凌乱，然后自己部署了一个</p><p>就在右上角，或者链接 <a href="https://coperlm.github.io/KnowledgeBase/">https://coperlm.github.io/KnowledgeBase/</a></p><p>然后规划一下未来知识库要怎么用</p><hr><h3 id="知识库里面的内容"><a href="#知识库里面的内容" class="headerlink" title="知识库里面的内容"></a>知识库里面的内容</h3><p>每篇包含三个部分</p><ol><li><p>背景（为什么要学）</p></li><li><p>核心内容（我现在知道什么）</p></li><li><p>残留问题（我还不知道什么，不超过三条）</p></li></ol><p>内容上使用短笔记；结构上避免过深的树形结构（会导致长时间落灰）</p><h3 id="区分博客和知识库"><a href="#区分博客和知识库" class="headerlink" title="区分博客和知识库"></a>区分博客和知识库</h3><p>现状：博客有一百来篇，但是过于零散，还有很多半成品；急须知识库来辅助构建知识体系</p><p>方式：博客记录过程（流水账记录，想法，学习过程），知识库记录结果（整理后的我知道了什么/如何使用）</p><p>理想的运作方式：</p><ol><li><p>先随便写，不要求结构化或优雅</p></li><li><p>沉淀，每周或者每月从里面挑出核心内容，放进知识库</p></li><li><p>然后知识库不断丰富，就变得嘎嘎好了</p></li></ol><p>但是缺陷是博客会很多东西，又但是东西多的话，只要不乱就好</p><p>又但是我已经有知识库了，很多人博客就是当知识库使用；这样我只要求博客我自己能看懂即可（只承担时间线，不当知识库功能）</p><hr><p>但是我更喜欢手写笔记，如何建立合适的工作流</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我现在关注点在于，对于一个学习内容，如何做到1.尽可能全息记录，2.不会对学习本身造成负面影响。相较于打字，我更喜欢手写记录（因为这样更快，而且可以灵活画图），但是缺陷是难以转为电子版，如果拍照上传的话效果又不那么好；我曾经试图用数位板写字，但是手感一般，而且没有找到可以很好转文字的软件；我现在想学习一种能让软件去识别的字体，能实现1.写字快，2.能转文字，我现在的情况是如果写得很仔细那很耗时，如果写得快了则难以识别。</span><br></pre></td></tr></table></figure><p>现状</p><ul><li><p>不存在一种可以100%识别手写字体的方案</p></li><li><p>字写得隔开一点，可以达到90%识别率</p></li><li><p>即便全息记录，可能也不是我真正想要的</p></li></ul><p>核心解决方案：快速手写，在博客上记录心路历程，在知识库上记录学习成果</p><p><strong>永远不要把全部笔记电子化</strong></p><p>博客和知识库里需要记录的，可能也就20%的东西</p><ul><li><p>需要手写的：随手演算，记录的内容之类的</p></li><li><p>需要放进博客里的：思考过程，就像对某个东西的理解和解释，关键突破点，还有未来需要做的（可能很短，只有几行，甚至几张图）</p></li><li><p>需要放进知识库的：最终的结构化知识</p></li></ul><p>最终的workflow1.0</p><p>阶段 1：原始输入 → 手写速记（Raw Capture）</p><p>你采用手写，这是很优的选择，因为：</p><ul><li><p>速度快</p></li><li><p>可以画图、推导</p></li><li><p>符合大脑自然思考方式</p></li></ul><p>在纸质笔记本上快速写，不追求工整，只求速度和完整性，所有即时想法、推导、例子都写进去。页面右上角写一个“主题标签”用于未来归档</p><p>目的：保留大脑思维过程，不损害学习效率</p><p>阶段 2：冷却（Cooling, 1–24h 内完成）</p><p>不要立即整理。<br>第二天再回看手写内容，能自然过滤噪音，提高抽象能力。</p><p>你做的只是：</p><p>粗略浏览一下手写草稿</p><p>标记 3 种内容：</p><p>核心概念（以后一定会用）</p><p>推导/图示（需要电子化）</p><p>个人理解/观察（博客要用）</p><p>阶段 3：生成两个方向的输出（分轨制）<br>📘 （A）知识库（显示：结论 / 系统化）</p><p>输入内容包括：</p><ul><li><p>核心定义 &amp; 结构化知识</p></li><li><p>自己理解后提炼出的框架</p></li></ul><p>若需要，加入一两张手绘图（拍照 + 增强一下即可）</p><p>最终形成干净、可靠、可复用的“知识条目”</p><p>目标：知识库像你读过的最好书籍那样清晰</p><p>✏️ （B）博客（显示：过程 / 思考）</p><p>来自手写草稿中的思考过程</p><ul><li><p>“我当时卡在哪里”</p></li><li><p>“我怎么理解的”</p></li><li><p>路上的坑和反思</p></li></ul><p>不需要系统化，只需真实</p><p>目标：博客是你作为学习者的「旅程记录」</p><p>阶段 4：将手写草稿归档（Preserve the Raw）</p><p>找个固定地方保留即可（其实不保留好像也没事）</p><p>阶段 5：定期回顾（Weekly Review）</p><p>每周一次，持续 10–15 分钟：</p><p>看一眼自己的知识库目录</p><ul><li><p>哪些领域增长不平衡？</p></li><li><p>哪些草稿还没转电子？</p></li><li><p>哪些文章有必要合并？</p></li></ul><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">学习输入 →（手写速记）</span><br><span class="line">             ↓</span><br><span class="line">         冷却标记</span><br><span class="line">  ┌──────────┴─────────┐</span><br><span class="line">  ↓                      ↓</span><br><span class="line">知识库（结论）          博客（过程）</span><br><span class="line">  ↓                      ↓</span><br><span class="line">（系统化）             （随笔）</span><br><span class="line">  └──────────┬─────────┘</span><br><span class="line">             ↓</span><br><span class="line">       手写草稿归档</span><br></pre></td></tr></table></figure><p>什么记，什么不记？</p><ul><li><p>有复用价值</p></li><li><p>方便未来理解</p></li></ul><hr><h2 id="最终需要注意的几个点"><a href="#最终需要注意的几个点" class="headerlink" title="最终需要注意的几个点"></a>最终需要注意的几个点</h2><ol><li><p>博客为了“记录进步”，而非“一切发生的事”。否则博客可能再度膨胀</p></li><li><p>知识库存放过多内容，导致维护成本上升。最多三层物理结构，不然会找不到</p></li><li><p>工作流在大任务下会被打断。置顶，打个延缓的tag，不超过三天</p></li></ol><hr><h2 id="UPD251201的一些小思考"><a href="#UPD251201的一些小思考" class="headerlink" title="UPD251201的一些小思考"></a>UPD251201的一些小思考</h2><h3 id="为什么放弃笔记本，转为知识库"><a href="#为什么放弃笔记本，转为知识库" class="headerlink" title="为什么放弃笔记本，转为知识库"></a>为什么放弃笔记本，转为知识库</h3><ol><li><p>笔记本不便携（弗如A4纸）</p></li><li><p>笔记本从来不看（落灰了都）</p></li><li><p>为了二次整理，加深学习（同时还能加快一次学习时的效率）</p></li></ol><h3 id="有什么弊端？"><a href="#有什么弊端？" class="headerlink" title="有什么弊端？"></a>有什么弊端？</h3><p>手写转电子版有点费劲</p><h3 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h3><p>重绘思维导图（二次凝练），杜绝全息</p>]]></content>
     
@@ -126,7 +124,7 @@
     
     
     
-    <category term="未分类" scheme="https://coperlm.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    <category term="博客构建与维护" scheme="https://coperlm.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/"/>
     
     
     <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
@@ -138,7 +136,7 @@
     <link href="https://coperlm.github.io/2025/11/27/%E4%BF%AE%E5%A4%8D%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/"/>
     <id>https://coperlm.github.io/2025/11/27/%E4%BF%AE%E5%A4%8D%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/</id>
     <published>2025-11-27T00:54:15.000Z</published>
-    <updated>2025-11-27T01:02:40.000Z</updated>
+    <updated>2026-02-04T05:27:32.645Z</updated>
     
     <content type="html"><![CDATA[<p>因为移植了环境，故需要把远古文章整理一下</p><p>然后找到了<code>数论小知识</code>这一篇文章，发现里面的latex编译错误了</p><p>最终检测了两点结论</p><ul><li><p>typora中<script type="math/tex">$$和</script><code>都可以当作LaTeX标识符，但是marktext中不会识别</code><script type="math/tex">$，但是把</script><code>当作多行LaTeX一样使用。综上所述直接使用</code>$$即可——欸不对，那岂不是很多地方都炸了</p></li><li><p>第二点才是炸了的主要原因，上第一条只会导致本地出错而博客本身没事。就是把乘号<code>*</code>也当markdown了！解决方法就是换<code>cdot</code></p></li></ul><p>然后这一点算是修好了，这一条工作可以划掉了</p>]]></content>
     
@@ -157,7 +155,7 @@
     
     
     
-    <category term="技术学习笔记" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="博客构建与维护" scheme="https://coperlm.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/"/>
     
     
     <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
@@ -277,7 +275,7 @@
     <link href="https://coperlm.github.io/2025/11/02/PyInstaller%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
     <id>https://coperlm.github.io/2025/11/02/PyInstaller%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</id>
     <published>2025-11-02T07:06:34.000Z</published>
-    <updated>2025-11-02T07:15:24.000Z</updated>
+    <updated>2026-02-04T05:18:41.967Z</updated>
     
     <content type="html"><![CDATA[<p>很久之前就用过了，也很简单，但是经常会用到，写个博客记录一下具体指令</p><p>很常用哇，github用python写的项目如果需要release，这个嘎嘎好用</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller -w -F main.py</span><br></pre></td></tr></table></figure><p>其中，<code>-w</code>指的是隐藏控制台（你们写的代码应该都有GUI吧（确信）），<code>-F</code>指的是单文件模式（也就是打包结果有且仅有一个.exe文件</p>]]></content>
     
@@ -294,7 +292,7 @@
     
     
     
-    <category term="工具与技术使用" scheme="https://coperlm.github.io/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%BD%BF%E7%94%A8/"/>
+    <category term="技术与工具" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/"/>
     
     
     <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
@@ -368,7 +366,7 @@
     <link href="https://coperlm.github.io/2025/10/27/20251027%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E-%E6%96%B0%E9%A2%9C%E8%89%B2%E5%93%8E/"/>
     <id>https://coperlm.github.io/2025/10/27/20251027%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E-%E6%96%B0%E9%A2%9C%E8%89%B2%E5%93%8E/</id>
     <published>2025-10-27T03:02:58.000Z</published>
-    <updated>2025-10-27T05:48:42.000Z</updated>
+    <updated>2026-02-04T05:27:51.585Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-实时时钟背景色方案参考"><a href="#1-实时时钟背景色方案参考" class="headerlink" title="1. 实时时钟背景色方案参考"></a>1. 实时时钟背景色方案参考</h1><h2 id="🎨-24小时背景色时间表"><a href="#🎨-24小时背景色时间表" class="headerlink" title="🎨 24小时背景色时间表"></a>🎨 24小时背景色时间表</h2><div class="table-container"><table><thead><tr><th>时段</th><th>时间</th><th>背景渐变色</th><th>按钮色</th><th>Hover色</th><th>视觉效果</th></tr></thead><tbody><tr><td><strong>黎明</strong></td><td>04-06</td><td><code>#FFF5F0</code> → <code>#FFE4D6</code> → <code>#FFD6BA</code> → <code>#FFB4A2</code></td><td><code>#8B4513</code> 深棕橙</td><td><code>#A0522D</code></td><td>🌅 浅米到桃色到玫瑰粉的柔和黎明</td></tr><tr><td><strong>日出</strong></td><td>06-08</td><td><code>#FFEAA7</code> → <code>#FFD79A</code> → <code>#FFA99F</code> → <code>#FF719A</code></td><td><code>#C72C41</code> 深红莓</td><td><code>#D63447</code></td><td>🌄 金黄到杏色到粉红的温暖朝霞</td></tr><tr><td><strong>清晨</strong></td><td>08-10</td><td><code>#F8FFAE</code> → <code>#D4FC79</code> → <code>#96E6A1</code> → <code>#A8E6CF</code> → <code>#C2FFD8</code></td><td><code>#2D5016</code> 深森林绿</td><td><code>#3D6B1F</code></td><td>🌱 柠檬黄到薄荷绿到天蓝的清新明亮</td></tr><tr><td><strong>上午</strong></td><td>10-12</td><td><code>#E0F7FA</code> → <code>#A1C4FD</code> → <code>#B8D5F0</code> → <code>#C2E9FB</code></td><td><code>#1E3A8A</code> 深蓝色</td><td><code>#2563EB</code></td><td>☁️ 淡蓝到天蓝到云白的晴朗天空</td></tr><tr><td><strong>中午</strong></td><td>12-14</td><td><code>#A7FFE4</code> → <code>#84FAB0</code> → <code>#7FE5D4</code> → <code>#8FD3F4</code></td><td><code>#065F46</code> 深翠绿</td><td><code>#047857</code></td><td>🌊 薄荷到青绿到湖蓝的清爽正午</td></tr><tr><td><strong>下午</strong></td><td>14-16</td><td><code>#55E6C1</code> → <code>#43E97B</code> → <code>#3FD5BA</code> → <code>#38F9D7</code></td><td><code>#0E7490</code> 深青色</td><td><code>#0891B2</code></td><td>🏝️ 翠绿到青绿到碧蓝的海岛风情</td></tr><tr><td><strong>傍晚</strong></td><td>16-18</td><td><code>#FFEAA7</code> → <code>#FCE38A</code> → <code>#FFBE76</code> → <code>#F38181</code></td><td><code>#B91C1C</code> 深红色</td><td><code>#DC2626</code></td><td>🌆 金黄到琥珀到珊瑚的暖调黄昏</td></tr><tr><td><strong>黄昏</strong></td><td>18-19</td><td><code>#FDD835</code> → <code>#FBD786</code> → <code>#FFA87D</code> → <code>#F7797D</code></td><td><code>#C2410C</code> 深橙红</td><td><code>#EA580C</code></td><td>🌇 金色到橙色到粉红的黄金时刻</td></tr><tr><td><strong>日落</strong></td><td>19-20</td><td><code>#FFB088</code> → <code>#FF9A9E</code> → <code>#D988B9</code> → <code>#8E54E9</code></td><td><code>#5B21B6</code> 深紫罗兰</td><td><code>#6D28D9</code></td><td>🌉 橙粉到玫瑰到紫罗兰的梦幻日落</td></tr><tr><td><strong>晚霞</strong></td><td>20-22</td><td><code>#FFE5EC</code> → <code>#FBD3E9</code> → <code>#E5A3C7</code> → <code>#BB377D</code></td><td><code>#831843</code> 深玫瑰红</td><td><code>#9F1239</code></td><td>💗 淡粉到玫瑰到深紫的霓虹晚霞</td></tr><tr><td><strong>深夜</strong></td><td>22-02</td><td><code>#7B68EE</code> → <code>#667eea</code> → <code>#6B5EA8</code> → <code>#764ba2</code></td><td><code>#1E3A8A</code> 深蓝色</td><td><code>#1E40AF</code></td><td>🌃 蓝紫到深紫到宝石紫的星空</td></tr><tr><td><strong>凌晨</strong></td><td>02-04</td><td><code>#3B4371</code> → <code>#4e54c8</code> → <code>#7B7FDC</code> → <code>#8f94fb</code></td><td><code>#1E293B</code> 深灰蓝</td><td><code>#334155</code></td><td>🌌 深蓝到紫罗兰到淡紫的宁静凌晨</td></tr></tbody></table></div><h2 id="🎨-渐变色详细解析"><a href="#🎨-渐变色详细解析" class="headerlink" title="🎨 渐变色详细解析"></a>🎨 渐变色详细解析</h2><h3 id="🌅-早晨时段（柔和清新）"><a href="#🌅-早晨时段（柔和清新）" class="headerlink" title="🌅 早晨时段（柔和清新）"></a>🌅 早晨时段（柔和清新）</h3><ul><li><strong>黎明 04-06</strong>：浅米白 → 香槟 → 桃色 → 玫瑰粉（4色）</li><li><strong>日出 06-08</strong>：金黄 → 浅杏 → 粉橙 → 玫瑰红（4色）</li><li><strong>清晨 08-10</strong>：柠檬黄 → 薄荷黄绿 → 薄荷绿 → 天蓝 → 淡薄荷（5色）</li></ul><h3 id="☀️-白天时段（明亮活力）"><a href="#☀️-白天时段（明亮活力）" class="headerlink" title="☀️ 白天时段（明亮活力）"></a>☀️ 白天时段（明亮活力）</h3><ul><li><strong>上午 10-12</strong>：淡青 → 天蓝 → 云蓝 → 云白（4色）</li><li><strong>中午 12-14</strong>：清薄荷 → 青绿 → 湖绿 → 湖蓝（4色）</li><li><strong>下午 14-16</strong>：翠绿 → 海绿 → 青绿 → 碧蓝（4色）</li></ul><h3 id="🌆-黄昏时段（温暖浪漫）"><a href="#🌆-黄昏时段（温暖浪漫）" class="headerlink" title="🌆 黄昏时段（温暖浪漫）"></a>🌆 黄昏时段（温暖浪漫）</h3><ul><li><strong>傍晚 16-18</strong>：金黄 → 琥珀 → 杏橙 → 珊瑚粉（4色）</li><li><strong>黄昏 18-19</strong>：亮金 → 金橙 → 杏橙 → 珊瑚红（4色）</li><li><strong>日落 19-20</strong>：橙粉 → 玫瑰粉 → 紫粉 → 紫罗兰（4色）</li></ul><h3 id="🌙-夜晚时段（神秘梦幻）"><a href="#🌙-夜晚时段（神秘梦幻）" class="headerlink" title="🌙 夜晚时段（神秘梦幻）"></a>🌙 夜晚时段（神秘梦幻）</h3><ul><li><strong>晚霞 20-22</strong>：淡粉 → 樱粉 → 玫瑰 → 深紫红（4色）</li><li><strong>深夜 22-02</strong>：蓝紫 → 靛紫 → 宝石紫 → 深紫（4色）</li><li><strong>凌晨 02-04</strong>：深蓝紫 → 紫罗兰 → 淡紫 → 浅蓝紫（4色）</li></ul><hr><h2 id="✨-设计理念"><a href="#✨-设计理念" class="headerlink" title="✨ 设计理念"></a>✨ 设计理念</h2><ol><li><strong>渐变层次丰富</strong>：所有时段都使用 4-5 种颜色，过渡更平滑自然</li><li><strong>自然光线模拟</strong>：每个时段的颜色灵感来自真实的自然光线变化</li><li><strong>明亮主调</strong>：即使是夜间也保持适度亮度，避免过于沉闷</li><li><strong>平滑过渡动画</strong>：1.5秒 CSS 过渡确保换色流畅优雅</li><li><strong>对比度优化</strong>：按钮和文字颜色始终与背景形成良好对比，确保可读性</li><li><strong>情感共鸣设计</strong>：色彩搭配符合人们对不同时段的心理感受</li></ol><h2 id="🔧-技术实现"><a href="#🔧-技术实现" class="headerlink" title="🔧 技术实现"></a>🔧 技术实现</h2><ul><li><strong>时间来源</strong>：本地系统时间（已移除公网 API 避免 CORS 问题）</li><li><strong>更新频率</strong>：每秒更新时钟显示，每小时切换背景和按钮配色</li><li><strong>响应式设计</strong>：完美适配桌面端、平板和移动端</li><li><strong>PJAX 支持</strong>：单页应用无缝切换，无刷新体验</li><li><strong>智能重试</strong>：元素加载失败时自动重试，确保颜色正确应用</li><li><strong>DOM 监听</strong>：MutationObserver 监听动态元素，实时更新样式</li><li><strong>性能优化</strong>：防抖机制避免重复更新，减少 DOM 操作</li></ul><h1 id="2-新增RSS订阅功能"><a href="#2-新增RSS订阅功能" class="headerlink" title="2. 新增RSS订阅功能"></a>2. 新增RSS订阅功能</h1>]]></content>
     
@@ -383,7 +381,7 @@
     
     
     
-    <category term="未分类" scheme="https://coperlm.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    <category term="博客构建与维护" scheme="https://coperlm.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/"/>
     
     
     <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
@@ -482,7 +480,7 @@
     <link href="https://coperlm.github.io/2025/10/22/rime%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE/"/>
     <id>https://coperlm.github.io/2025/10/22/rime%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE/</id>
     <published>2025-10-22T02:44:24.000Z</published>
-    <updated>2025-10-23T12:52:14.000Z</updated>
+    <updated>2026-02-04T05:18:57.807Z</updated>
     
     <content type="html"><![CDATA[<p>感觉好像被监视了~于是乎前段时间在windows下部署了小狼毫输入法</p><p>但是遇到了问题，如果我想给别人发一个对钩，搜狗输入法直接输入<code>dui</code>就出来候选词了，但是rime不行</p><p>故而学习了一下自定义</p><p>我实用的是便携版，目录如下</p><p><img src="image-20251022104801219.png" alt></p><p>直接在主目录下新建一个文档<code>custom_phrase.txt</code></p><p>然后输入策略，用<code>Tab</code>键隔开</p><p><img src="image-20251022104916575.png" alt></p><p>然后重新部署</p><p><img src="image-20251022104946914.png" alt></p><p>输入<code>dui</code>就可以有✔的选项了</p><p><img src="image-20251022105028982.png" alt></p><p>如果想多个候选词，一并添加即可，越后出现的越先出现（大雾</p><p><img src="image-20251022105254679.png" alt></p><p>想注释掉，用#即可</p><p>个人感觉还是这个对钩好看~</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">✓dui</span><br></pre></td></tr></table></figure><p>我的最终配置：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">✓dui</span><br><span class="line">对dui</span><br><span class="line">#✔dui</span><br><span class="line">#✅dui</span><br><span class="line">#☑dui</span><br><span class="line">#✘cuo</span><br></pre></td></tr></table></figure><p>诶这不太对吧</p><p><img src="image-20251022105656290.png" alt></p><p>不管了，能跑就行~跑喽~~</p>]]></content>
     
@@ -500,7 +498,7 @@
     
     
     
-    <category term="工具与技术使用" scheme="https://coperlm.github.io/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%BD%BF%E7%94%A8/"/>
+    <category term="技术与工具" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/"/>
     
     
     <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
@@ -512,7 +510,7 @@
     <link href="https://coperlm.github.io/2025/10/22/%E6%9C%AC%E7%AB%99%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/"/>
     <id>https://coperlm.github.io/2025/10/22/%E6%9C%AC%E7%AB%99%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/</id>
     <published>2025-10-22T02:00:00.000Z</published>
-    <updated>2025-10-23T12:34:02.000Z</updated>
+    <updated>2026-02-04T05:28:16.072Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>建议收藏本页，第一次来就从这里开始～</p></blockquote><p>不需要会编程，也不需要懂“Hexo”“主题”这些词。把这里当成一本会自己长内容的电子小杂志就好：我会把学到的知识、做过的题、看过的书、生活里的灵感，都写成文章放到这里，方便自己复盘，也欢迎你来逛、来交流。</p><p>网址首页： <a href="https://coperlm.github.io">https://coperlm.github.io</a></p><h2 id="一句话说明“博客”是什么"><a href="#一句话说明“博客”是什么" class="headerlink" title="一句话说明“博客”是什么"></a>一句话说明“博客”是什么</h2><ul><li>就是一个“我自己的小网站”，用来发布文章、图片和想法；</li><li>你可以像逛知乎专栏/公众号文章一样阅读，也可以在文末留言；</li><li>全站支持“搜索”“标签”“时间线”，方便查找感兴趣的内容。</li></ul><h2 id="在这里你能做什么？"><a href="#在这里你能做什么？" class="headerlink" title="在这里你能做什么？"></a>在这里你能做什么？</h2><p>1) 找文章（最常用）</p><ul><li>首页往下翻，都是最新的文章卡片；点标题就能进全文。</li><li>想按时间“翻旧账”？点导航里的“时光轴”（/archives/）。</li><li>想“按主题找”？点“标签”（/tags/）。</li><li>懒得找？右上角的“搜索”直接搜标题/内容，输入框里会写“来搜吧来搜吧~”。</li></ul><p>2) 留言互动</p><ul><li>每篇文章底下都有评论区（Waline），可以匿名留言，想说就说。</li><li>你会看到“浏览量”“访客数”等小计数，这些只是统计，不会收集你的隐私。</li></ul><p>3) 看看朋友们都在写啥</p><ul><li>“友链”（/link/）是我收藏的朋友博客。点进去就是他们的站点卡片。</li></ul><p>4) 听歌放松</p><ul><li>底部有一条小音乐条，是全站播放器（APlayer）。</li><li>如果不想听，点一下暂停；想系统听歌，去“音乐”（/music/）。</li></ul><p>5) 快速入口</p><ul><li>我做了一个“常驻更新目录”（/schedule/），把一些经典/高频文章串起来，方便新读者入坑。</li></ul><h2 id="读文章时的小提示"><a href="#读文章时的小提示" class="headerlink" title="读文章时的小提示"></a>读文章时的小提示</h2><ul><li>目录（TOC）：进入文章后，侧边会有“目录”，点条目可以直接跳到相应小节。</li><li>代码块：有“复制”按钮，点一下就把代码放进剪贴板，粘贴即可。</li><li>数学公式：看到一堆看起来很严肃的数学符号，不用怕，那是我写的数学/密码学笔记，都是可渲染的公式。</li><li>图片：点图片可放大（支持拖动/点击关闭）。</li><li>夜间模式：右下角或顶部可以一键切换“深色/浅色”。</li><li>阅读模式：想专注一点？点“阅读模式”会把页面变得更简洁。</li></ul><h2 id="常见问题（超快排雷）"><a href="#常见问题（超快排雷）" class="headerlink" title="常见问题（超快排雷）"></a>常见问题（超快排雷）</h2><p>Q1：打开有点慢？</p><ul><li>首页有不少封面图（有些是动图），第一次打开可能慢一点；多等几秒或直接点文章也可以。</li></ul><p>Q2：搜索不到？</p><ul><li>试着输“关键词的关键部分”而不是整句，比如搜“零知识”“SM2”。</li></ul><p>Q3：评论发不出去？</p><ul><li>偶尔网络抽风；刷新页面再试一次。如果还是不行，发邮件给我：coperlm@outlook.com。</li></ul><p>Q4：公式/代码看起来乱？</p><ul><li>可能是网速导致的渲染延迟，稍等几秒；或者刷新一次。</li></ul><p>Q5：文章里怎么有“需要密码”？</p><ul><li>少量文章可能会做加密，出于隐私或尚在整理中；等我公开或联系我交流即可。</li></ul><h2 id="想更深地探索？"><a href="#想更深地探索？" class="headerlink" title="想更深地探索？"></a>想更深地探索？</h2><ul><li>技术细节（给爱折腾的朋友）：本站采用 Hexo + Butterfly，支持本地搜索、评论统计、数学公式、PJAX 无刷新、图片灯箱、固定音乐播放器等。想学怎么搭？<a href="https://coperlm.github.io/2025/10/22/blog-tech-overview/">来看这里</a>。</li></ul><h2 id="欢迎你来聊聊"><a href="#欢迎你来聊聊" class="headerlink" title="欢迎你来聊聊"></a>欢迎你来聊聊</h2><ul><li>你可以：<ul><li>在任意文章底部“评论区”留言（支持匿名）。</li><li>邮件找我：coperlm@outlook.com。</li></ul></li><li>如果你也有博客，去“友链”把你的站点发我，我们互相串门～</li></ul><p>祝你逛得开心！</p><p><img src="bb12.gif" alt></p>]]></content>
     
@@ -530,7 +528,7 @@
     
     
     
-    <category term="技术学习笔记" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="博客构建与维护" scheme="https://coperlm.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/"/>
     
     
     <category term="随笔" scheme="https://coperlm.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
@@ -569,7 +567,7 @@
     <link href="https://coperlm.github.io/2025/10/10/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E6%A0%91/"/>
     <id>https://coperlm.github.io/2025/10/10/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E6%A0%91/</id>
     <published>2025-10-10T10:39:51.000Z</published>
-    <updated>2025-10-23T12:43:44.000Z</updated>
+    <updated>2026-02-04T05:28:45.276Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Merkle-树"><a href="#Merkle-树" class="headerlink" title="Merkle 树"></a>Merkle 树</h3><p>问题：对一个数组求哈希（n个元素）</p><p>传统方案：将每个数据拼接然后哈希，时空复杂度都是$O(n)$</p><p>使用merkle树：只需计算路线上的哈希，时空复杂度都是$O(logn)$；代价是总存储空间变大（需要存哈希树），但是依旧是$O(n)$</p><p><img src="image-20251005203401710.png" alt></p><h3 id="Trie-树"><a href="#Trie-树" class="headerlink" title="Trie 树"></a>Trie 树</h3><p>根据前缀进行索引，适用于前缀相似的数据存储</p><p>深度最劣为最长字符串的长度（也就是时间复杂度），但不一定是二叉树</p><p>适用于前缀字典的查找</p><p><img src="image-20251005203731340.png" alt></p><h3 id="Merkle-Patricia-树"><a href="#Merkle-Patricia-树" class="headerlink" title="Merkle Patricia 树"></a>Merkle Patricia 树</h3><p>把Merkle树的二叉变为16叉</p><p>父节点记录16个叉的指针，再加一个value字段表示自己的数值</p><p>这里的指针，就是子节点的哈希值，存在一个<code>key-value DB</code>里协助反向查找</p><p><img src="image-20251005204621556.png" alt></p><p>同时负责哈希和索引两个功能</p><p> 16叉减少深度-&gt;减少数据库的请求次数</p><h3 id="Rollup的State-Tree"><a href="#Rollup的State-Tree" class="headerlink" title="Rollup的State Tree"></a>Rollup的State Tree</h3><p>对map和value进行分离</p><p><img src="image-20251006195437245.png" alt></p><h3 id="Verkle-Tree"><a href="#Verkle-Tree" class="headerlink" title="Verkle Tree"></a>Verkle Tree</h3><p>基于KZG</p><p><img src="image-20251006200043767.png" alt></p><p>依此构造16叉树</p><p><img src="image-20251006200227515.png" alt></p>]]></content>
     
@@ -584,7 +582,7 @@
     
     
     
-    <category term="技术学习笔记" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="技术与工具" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/"/>
     
     
     <category term="BlockChain" scheme="https://coperlm.github.io/tags/BlockChain/"/>
