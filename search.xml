@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2024.10.30组会</title>
-    <url>/2024/10/30/2024-10-30%E7%BB%84%E4%BC%9A/</url>
-    <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de9e961fa3e70fbc1ff6cba48e977e425d6990bac9e6f428a573d21a80577428175b2d7a167dd0c28ad1052dc69cff23ec7db1feec24acf3433122a642ede696fac1c18c6879961e8735a0f0eca93fa72cad4ad3e4d1929d16df31ab82d34972d0f3b44cdb30dd51d690bbdab84c1aff4dccbb6b17f5844d1306c5ae56c5cd20b5fba6d958ab415358cb377440debec707f13609b4fa0d179dc789b77dcfe509dfcc605d2cd9c59e5e36b22bcb5aadd720c6de42212d2ca5ed9f69d6c34654ffe4e835500e8becdac2933f38235fb1cfe1f200722819020076a43dfee15a140108941fe0750ac59d26f28987d416d3fac74180cb123bd84a8cfde43529efd7b641d4984f24d4d0420232023070393e1dbf782b66c51631447182d0189af789c6fa904c81a4dea27a5c9211e08130cd20e51766a1f3436d1439da814b72711ab1dcc452b83f4ffa994dbf2d72b160da2432c0ea12d44fa33a819f74be7d3747de8cf70e11da80de0a3b7e7de4a23a7758aee46514ec614102af43dff4a290b644509aa096f09bceea0879b28d02bdb117db990b64a8c399ad863585015aeb1e32aeb228663aeb827732027fb3bb46c6ee1a7aab47fdc614fe48cb2b4c53b1628f470ebc443a24d83b0be5ce73fbbe5cf15d40116bf3f72513c8e953354b92caee2e335dda837cca3c0bba06d89a6df8487b77666356d62288b49c460c475a1a053e84f997c0ba23a4149f6c0c06bac30b5f4182d47242d39a9a92b25dcb6cc1ba4d891aef34279e240181be0d16073de3f71e2aebe1b277794ff4bcdae4f0de06aaa3016fa73da7a1886955f814dd17d86504a5e2df60b9d21628742af7c66bd8a0504617c7b72b504bc9152d123f49d5e8f35a6acff0de3d688222cd81e1f69ad930531c00f762ab35bc336c31009eea86a79e0cb8ba3690f9bd1f6e79bb8bf2f8a15d9bb2e92953600b6d6731072515056a59f82c43dc2c37c02aa26533a3ac6058d0c350d910fa85ded6824de7001e96c116df99e222329408f4ce4b957e9727035f1d4e007639a9b01f7c925229785c8b1808ef3142b2ed283069e67cf83277968dc1d9faa764604e7a1825d558322addde72561f3118ad4ad252db319ddbd451b6313810ff3e3bb5b37ec1bdb29f6f
-  
-    
-      
-      
-        Hey, password is required here.
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>组会记录</category>
-      </categories>
-      <tags>
-        <tag>meetings</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2024.10.20NISA百团题目题解</title>
     <url>/2024/10/20/2024-10-20NISA%E7%99%BE%E5%9B%A2%E9%A2%98%E7%9B%AE%E9%A2%98%E8%A7%A3/</url>
     <content><![CDATA[三道挺有意思的小题目，记录一下
@@ -53,6 +31,28 @@ ai给出的贪心代码，仅供参考
       </categories>
       <tags>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024.10.30组会</title>
+    <url>/2024/10/30/2024-10-30%E7%BB%84%E4%BC%9A/</url>
+    <content><![CDATA[
+  7b22b1899bb4d215751e07a80f0d88de9e961fa3e70fbc1ff6cba48e977e425d6990bac9e6f428a573d21a80577428175b2d7a167dd0c28ad1052dc69cff23ec7db1feec24acf3433122a642ede696fac1c18c6879961e8735a0f0eca93fa72cad4ad3e4d1929d16df31ab82d34972d0f3b44cdb30dd51d690bbdab84c1aff4dccbb6b17f5844d1306c5ae56c5cd20b5fba6d958ab415358cb377440debec707f13609b4fa0d179dc789b77dcfe509dfcc605d2cd9c59e5e36b22bcb5aadd720c6de42212d2ca5ed9f69d6c34654ffe4e835500e8becdac2933f38235fb1cfe1f200722819020076a43dfee15a140108941fe0750ac59d26f28987d416d3fac74180cb123bd84a8cfde43529efd7b641d4984f24d4d0420232023070393e1dbf782b66c51631447182d0189af789c6fa904c81a4dea27a5c9211e08130cd20e51766a1f3436d1439da814b72711ab1dcc452b83f4ffa994dbf2d72b160da2432c0ea12d44fa33a819f74be7d3747de8cf70e11da80de0a3b7e7de4a23a7758aee46514ec614102af43dff4a290b644509aa096f09bceea0879b28d02bdb117db990b64a8c399ad863585015aeb1e32aeb228663aeb827732027fb3bb46c6ee1a7aab47fdc614fe48cb2b4c53b1628f470ebc443a24d83b0be5ce73fbbe5cf15d40116bf3f72513c8e953354b92caee2e335dda837cca3c0bba06d89a6df8487b77666356d62288b49c460c475a1a053e84f997c0ba23a4149f6c0c06bac30b5f4182d47242d39a9a92b25dcb6cc1ba4d891aef34279e240181be0d16073de3f71e2aebe1b277794ff4bcdae4f0de06aaa3016fa73da7a1886955f814dd17d86504a5e2df60b9d21628742af7c66bd8a0504617c7b72b504bc9152d123f49d5e8f35a6acff0de3d688222cd81e1f69ad930531c00f762ab35bc336c31009eea86a79e0cb8ba3690f9bd1f6e79bb8bf2f8a15d9bb2e92953600b6d6731072515056a59f82c43dc2c37c02aa26533a3ac6058d0c350d910fa85ded6824de7001e96c116df99e222329408f4ce4b957e9727035f1d4e007639a9b01f7c925229785c8b1808ef3142b2ed283069e67cf83277968dc1d9faa764604e7a1825d558322addde72561f3118ad4ad252db319ddbd451b6313810ff3e3bb5b37ec1bdb29f6f
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+]]></content>
+      <categories>
+        <category>组会记录</category>
+      </categories>
+      <tags>
+        <tag>meetings</tag>
       </tags>
   </entry>
   <entry>
@@ -144,28 +144,6 @@ ai给出的贪心代码，仅供参考
       </tags>
   </entry>
   <entry>
-    <title>2024年9月16日到9月22日周总结清单</title>
-    <url>/2024/09/18/2024%E5%B9%B49%E6%9C%8816%E6%97%A5%E5%88%B09%E6%9C%8822%E6%97%A5%E5%91%A8%E6%80%BB%E7%BB%93%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de16933033ae19b391949c74dcef436d0c5b80c1104e8012a505401d83bdeb9353f14c5c9d398d48d98c534cb40f724fbf917700047c1e9f103b0f5c3e8203242d525d8f52f8707c87b6be5d94eba27099d629869925e5ab80bfe51adf959a6b3f75d7fb78cfd67142af658daa9c3b9ecf7ca644bb0e1b615bf6e49d41a8244d27c2ce87335a9ef31ce6adb0d2368b3e1c61861c6db853dde06aa5d245cf222f059a9b4224445bf5ba75f52aabc7849725488ab3681c349ebc11a67edb6e65223c602e48e4f4b2f8c33756da16f075da3120139ff56695e55f12564fc22041922f6c1e2b5016a51dae2045e347bb5ea156fec7d57f7092929050743e9e1149ed33e2e2d98a390118e38a7e39640bba4b2130ede1aba12e4e5c3105fcd0eab1860d088f9dbbc0802e84248ddb5bc4c40cba38a639ddd7df9498de53a804834a3054428b904bbb6c6bfcc1bbe9a88dbbefc0e34d3cd11a9ee2e791e1a9889bc85cac54fdb7c4bbc2e0d0c72ebd101ae57fc2e3cba5b14ed1dd0b3ca7c194ddd0843b0604d0b79b2338492c5fb32d4bacde821d89cc257d81a4057f49b04ae23ba038a3d065a6934f2c9b91e10157eda470690c6820432cc1fff2a919aac865ae2151b43dcb9b19c3e065684341b630267d4d56b99f6f1009d33a14dc2091feedea35442bd0499c777a6903eb7b544fb6a79fd6f2c74086307b730f00db634f601cdc4a991850866f51a076072fa24b507e6e5ad6137341a3c84196cfe965a75dfd1fe5f70cb020cb6fbc922d321525ecc9a489429f2f782908d7a150da5b008b955ff4fc550d184965dc7b3fa0ff6ce54e0387c9f2eca967c655759a4b61312c3a70bab492eff5c3ea87246106fd0de8e0a2f1ff5558128a831acce2883ffa1dea7de903f869360a6b2046e81faf3a430902df51a9960d57f79ae55551ad06afea2ca48308fb5430334cb5002e95a2f187a126d508be10751a29e1c1ef5ae89cec4ca1e6073f82ca5ce18c99dec31478c6b88bd2f1b83a8b2a2d99920ef37d6df67b31b57ec9512e3088b67cd9e05f42c877a20bc3e6da34a21731bb3fe5b5fc0ae96980c134eb0279cee4cb63118e59045474b38c5f8f605cea2072546388edb3a771757bc96dfa73d11e96272c2d5062bd6d79d80cf6eb6f3bea69c5d6553516ab529ce710632463d89db45ed30c64a283039618a8345b3ffe5859ed74cd21e6ff669b70fb347a7e982a27c7124edf5768ed4b71833d29fabf979e538d4dbdfcb926ff1b0be9b7aae5908ccf18bf6f9fffd8cb944a967eb433ff5e84044c1608f1069d228d31bd2489d248b90eeb59e0e795065f0bd25ffa6b6e183ae04533e1b3856e07bc635efca9ccec07c49385376f51c151c319e5ee236fd5b8b77b3ce83cff4d9eb0102ce4fcf093fd1d6f9f8cdcca76448f1bd12f3ac9d85bca151aeb2772d31680dbca8a619932e2894514bf597be09cb9ebb76eb7147677d1a9e35095413cffb70a3036b01e06684767a617197e11532bc9377f93465db666f1b64ab020faeb23fc627b32a4ad1a9a97bf006cbff91b4954b7ec050524dca41e16bfbb77f9c786c36081d77f4b0b35ce024f0a97eea4ac7975aa4d40c7117bdbaa3b24dd7972d33a308a9471fcd31929bb3f9bf6a2f1d2abe62e1796af7af48a235e87ffd379d3eaefd7e4e6b93755effff45fa34403e7c0e4f91d572aff6dfbc81c4faabeb0db5fa83f0e7a9e7dbf088116a69cf2a83df6487415e1dddce38011977cefd57d90a63851cc858bd364cba2c44c816eb5565bb2585eae74989d309e91711c600330d3b3a71b2228386379259eecb139c4304e3a9a25e138f83c22cf77f36cb30b498af2f946836cc504aabb82b67d178cfeea7d1f8a036614b20b43956fcf540ce8bab31136b59817d664a2039caa761bc2c6646dd9a5d73e8543035c66914df4477373b24fba91515dbc6fd7fd25726be40d1b787b1ef28f73fcc640332c5801e855f1b6e00688264b226eb94c71fb5b67700fcec22722c30749ca35b49ed814e919a1229aed7d236274628719c6b8c9ab4e5e9ba8eecd15a024202b915f0898ddfb1d78fbb4399a2474304da71e8227f76d5a607839cd0dc2a6d0dfa8bc5ec92eb739b3917d2a0194a36409d14c9527bc119b7b8fba523d85b271ddc3f577d5a675de90f1a2a426610f92311639ff3d5047df04ffbb8293df713f216686d17f6b60aeb539e83a665d9c3c98cb7fa98c36aa060feb47fc6466ef61b26b1fb1e972b782527c17219afac45d98d60e48cd17b725ba4430403e4ff80320ff9d8bea634d12741abad550568e95a785e83e77d29b1abf422aa39583156386d4d0bbc44ea8adc842237f132b604e818d9307f682678dcfffac215ecf052deabb554a198d2d902109dee46f000169642e5d25cc7e0321d971f039a9d9b84f4348da83b93cdb7af73c94fb012c567032a560e01007994e887674ba93321c63f621c4cbc5052abfa2e584cd1c59871c647d686b1feece2b89adec1cc0ca0c983dd8d203fc1e4d9e115133245f8ceb787d6c86d4e9596d344f02395f232508eae66f454065d8b970b97c26b124aa01803ef37b08c35da1947b07336e0576aacb9fcca0ccc5fa94e8db4ad3f00559fb5cc9d8e97f61c6ae5b4476a4f7cc3dfcafd9fd97bbfa89a0fd720f74cf8aa9e7de9650f8dc4274a15fce7ce4d3a0025f58c682125ac5b07f381d7f216a1dbd79ae21f60e51a3a0690249eca7ec29700ddb159ed7f23978840a87aeb287b5e763e0aaab02facfe4fb7288c6dd3b8d4f44e3e60ab0a4b22bc2fcde4392374ec0715ffe1ba9b916282f59b5ae379cadd9576073251b45c3a192b837138314657f4b374d0d4b5b7b599ec8700f1994e4bbf921d97a7b49ce6c5b018dd1cd47aee80e80b280
-  
-    
-      
-      
-        Hey, password is required here.
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>生活与杂谈</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2024.9.4组会</title>
     <url>/2024/09/02/2024.9.4%E7%BB%84%E4%BC%9A/</url>
     <content><![CDATA[
@@ -185,6 +163,28 @@ ai给出的贪心代码，仅供参考
       </categories>
       <tags>
         <tag>meetings</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024年9月16日到9月22日周总结清单</title>
+    <url>/2024/09/18/2024%E5%B9%B49%E6%9C%8816%E6%97%A5%E5%88%B09%E6%9C%8822%E6%97%A5%E5%91%A8%E6%80%BB%E7%BB%93%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[
+  7b22b1899bb4d215751e07a80f0d88de16933033ae19b391949c74dcef436d0c5b80c1104e8012a505401d83bdeb9353f14c5c9d398d48d98c534cb40f724fbf917700047c1e9f103b0f5c3e8203242d525d8f52f8707c87b6be5d94eba27099d629869925e5ab80bfe51adf959a6b3f75d7fb78cfd67142af658daa9c3b9ecf7ca644bb0e1b615bf6e49d41a8244d27c2ce87335a9ef31ce6adb0d2368b3e1c61861c6db853dde06aa5d245cf222f059a9b4224445bf5ba75f52aabc7849725488ab3681c349ebc11a67edb6e65223c602e48e4f4b2f8c33756da16f075da3120139ff56695e55f12564fc22041922f6c1e2b5016a51dae2045e347bb5ea156fec7d57f7092929050743e9e1149ed33e2e2d98a390118e38a7e39640bba4b2130ede1aba12e4e5c3105fcd0eab1860d088f9dbbc0802e84248ddb5bc4c40cba38a639ddd7df9498de53a804834a3054428b904bbb6c6bfcc1bbe9a88dbbefc0e34d3cd11a9ee2e791e1a9889bc85cac54fdb7c4bbc2e0d0c72ebd101ae57fc2e3cba5b14ed1dd0b3ca7c194ddd0843b0604d0b79b2338492c5fb32d4bacde821d89cc257d81a4057f49b04ae23ba038a3d065a6934f2c9b91e10157eda470690c6820432cc1fff2a919aac865ae2151b43dcb9b19c3e065684341b630267d4d56b99f6f1009d33a14dc2091feedea35442bd0499c777a6903eb7b544fb6a79fd6f2c74086307b730f00db634f601cdc4a991850866f51a076072fa24b507e6e5ad6137341a3c84196cfe965a75dfd1fe5f70cb020cb6fbc922d321525ecc9a489429f2f782908d7a150da5b008b955ff4fc550d184965dc7b3fa0ff6ce54e0387c9f2eca967c655759a4b61312c3a70bab492eff5c3ea87246106fd0de8e0a2f1ff5558128a831acce2883ffa1dea7de903f869360a6b2046e81faf3a430902df51a9960d57f79ae55551ad06afea2ca48308fb5430334cb5002e95a2f187a126d508be10751a29e1c1ef5ae89cec4ca1e6073f82ca5ce18c99dec31478c6b88bd2f1b83a8b2a2d99920ef37d6df67b31b57ec9512e3088b67cd9e05f42c877a20bc3e6da34a21731bb3fe5b5fc0ae96980c134eb0279cee4cb63118e59045474b38c5f8f605cea2072546388edb3a771757bc96dfa73d11e96272c2d5062bd6d79d80cf6eb6f3bea69c5d6553516ab529ce710632463d89db45ed30c64a283039618a8345b3ffe5859ed74cd21e6ff669b70fb347a7e982a27c7124edf5768ed4b71833d29fabf979e538d4dbdfcb926ff1b0be9b7aae5908ccf18bf6f9fffd8cb944a967eb433ff5e84044c1608f1069d228d31bd2489d248b90eeb59e0e795065f0bd25ffa6b6e183ae04533e1b3856e07bc635efca9ccec07c49385376f51c151c319e5ee236fd5b8b77b3ce83cff4d9eb0102ce4fcf093fd1d6f9f8cdcca76448f1bd12f3ac9d85bca151aeb2772d31680dbca8a619932e2894514bf597be09cb9ebb76eb7147677d1a9e35095413cffb70a3036b01e06684767a617197e11532bc9377f93465db666f1b64ab020faeb23fc627b32a4ad1a9a97bf006cbff91b4954b7ec050524dca41e16bfbb77f9c786c36081d77f4b0b35ce024f0a97eea4ac7975aa4d40c7117bdbaa3b24dd7972d33a308a9471fcd31929bb3f9bf6a2f1d2abe62e1796af7af48a235e87ffd379d3eaefd7e4e6b93755effff45fa34403e7c0e4f91d572aff6dfbc81c4faabeb0db5fa83f0e7a9e7dbf088116a69cf2a83df6487415e1dddce38011977cefd57d90a63851cc858bd364cba2c44c816eb5565bb2585eae74989d309e91711c600330d3b3a71b2228386379259eecb139c4304e3a9a25e138f83c22cf77f36cb30b498af2f946836cc504aabb82b67d178cfeea7d1f8a036614b20b43956fcf540ce8bab31136b59817d664a2039caa761bc2c6646dd9a5d73e8543035c66914df4477373b24fba91515dbc6fd7fd25726be40d1b787b1ef28f73fcc640332c5801e855f1b6e00688264b226eb94c71fb5b67700fcec22722c30749ca35b49ed814e919a1229aed7d236274628719c6b8c9ab4e5e9ba8eecd15a024202b915f0898ddfb1d78fbb4399a2474304da71e8227f76d5a607839cd0dc2a6d0dfa8bc5ec92eb739b3917d2a0194a36409d14c9527bc119b7b8fba523d85b271ddc3f577d5a675de90f1a2a426610f92311639ff3d5047df04ffbb8293df713f216686d17f6b60aeb539e83a665d9c3c98cb7fa98c36aa060feb47fc6466ef61b26b1fb1e972b782527c17219afac45d98d60e48cd17b725ba4430403e4ff80320ff9d8bea634d12741abad550568e95a785e83e77d29b1abf422aa39583156386d4d0bbc44ea8adc842237f132b604e818d9307f682678dcfffac215ecf052deabb554a198d2d902109dee46f000169642e5d25cc7e0321d971f039a9d9b84f4348da83b93cdb7af73c94fb012c567032a560e01007994e887674ba93321c63f621c4cbc5052abfa2e584cd1c59871c647d686b1feece2b89adec1cc0ca0c983dd8d203fc1e4d9e115133245f8ceb787d6c86d4e9596d344f02395f232508eae66f454065d8b970b97c26b124aa01803ef37b08c35da1947b07336e0576aacb9fcca0ccc5fa94e8db4ad3f00559fb5cc9d8e97f61c6ae5b4476a4f7cc3dfcafd9fd97bbfa89a0fd720f74cf8aa9e7de9650f8dc4274a15fce7ce4d3a0025f58c682125ac5b07f381d7f216a1dbd79ae21f60e51a3a0690249eca7ec29700ddb159ed7f23978840a87aeb287b5e763e0aaab02facfe4fb7288c6dd3b8d4f44e3e60ab0a4b22bc2fcde4392374ec0715ffe1ba9b916282f59b5ae379cadd9576073251b45c3a192b837138314657f4b374d0d4b5b7b599ec8700f1994e4bbf921d97a7b49ce6c5b018dd1cd47aee80e80b280
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+]]></content>
+      <categories>
+        <category>生活与杂谈</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -631,100 +631,6 @@ flag:flag&#123;70066add-3cd0-49ec-84b3-8e6ee05c3dd9&#125;
       </tags>
   </entry>
   <entry>
-    <title>Beaver三元组用于乘法共享</title>
-    <url>/2025/04/10/Beaver%E4%B8%89%E5%85%83%E7%BB%84%E7%94%A8%E4%BA%8E%E4%B9%98%E6%B3%95%E5%85%B1%E4%BA%AB/</url>
-    <content><![CDATA[Beaver 三元组（Beaver triples）是安全多方计算（MPC）中一个超级聪明、实用的技巧，用来安全地做乘法
-通俗类比：就好像你和朋友要乘两个私密数字，但你们提前准备了一个万能“乘法模板”，可以安全又正确地偷偷算出结果。
-
-
-Motivation在安全多方计算里：
-
-加法很容易做：每个人把自己数据碎片加一下就行。
-但乘法就麻烦了，因为：
-两个秘密数的乘积不能直接从碎片算
-又不能暴露真实数值
-所以需要巧妙地”绕过去“
-
-
-
-Beaver 三元组应运而生
-
-DefinationBeaver 三元组表示为：
-
-(a, b, c) \quad \text{where} \quad c = a \cdot b
-所有参与方各自拿到这些数的“碎片”，但不知道完整的值。
-它跟我们真正要计算的 $x \cdot y$ 没有关系，只是一个通用的乘法工具。
-
-
-Algorithm假设两位参与方想计算：
-
-x \cdot y但每人都只知道自己的秘密（$x$ 或 $y$），又不想泄露给别人。
-
-步骤如下：
-
-每人拿到 $x$ 和 $y$ 的秘密共享，还有一个 Beaver 三元组 $(a, b, c)$，满足 $c = ab$
-
-本地计算（在共享上进行）：
-
-
-
-\begin{align}
-&d = x - a\\
-&e = y - b
-\end{align}
-公布 $d$ 和 $e$（这不会泄露 $x$ 和 $y$，因为 $a$ 和 $b$ 是随机的）
-
-使用下面的公式计算结果：
-
-
-
-xy = c + d \cdot b + e \cdot a + d \cdot e
-安全性说明：
-虽然你公开了 $d$ 和 $e$，但由于 $a$ 和 $b$ 是随机数，别人无法反推 $x$ 和 $y$，同时这个公式仍能计算出准确的乘积
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CF补题小合集</title>
-    <url>/2025/01/19/CF%E8%A1%A5%E9%A2%98%E5%B0%8F%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[由于后续CF比赛基本只参加VP，故特此记录一下
-
-
-2025.01.17Codeforces Round 996 (Div. 2)
-这把打爽了，表现分差点上紫，D题最后一分钟调出来过样例 结果WA2了
-
-C题构造题
-我们从(1,1)开始思考，假设场景是这样的
-
-设每行每列的和都为$S$，故(1,1)的数值和$S$的大小成线性关系
-也就是说，知道$S$就能通过这一行的数求出(1,1)的数值（如蓝色所示）
-
-同理，知道$S$就能求出第二行的数值（如紫色所示）
-
-按顺序（沿路径）向下递推，就必然可以计算出下一个方格的数据（如红色所示）
-
-故得出结论：如果该位置的下一个是R，则通过列计算；否则通过行计算
-但是$S$还不知道哇~
-梅瓜吸，$S$是多少都可以，我直接让它是0（更正式的，由$x+1$个未知数的$x$个方程构成的方程组中，存在一个自由量，这个自由量可以是S；其中$x=n+m-2$）
-#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e3;int n , m;int a[N+10][N+10];string s;signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;        for(int i = 1;i &lt;= n;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                cin &gt;&gt; a[i][j];            &#125;        &#125;        int x , y;x = y = 1;        for(int p = 0,i,j;p &lt; s.length();p ++)&#123;            if( s[p] == &#x27;D&#x27; )&#123;                for(j = 1;j &lt;= m;j ++)&#123;                    if( j == y ) continue;                    a[x][y] += a[x][j];                &#125;a[x][y] = -a[x][y];                x ++;            &#125;            if( s[p] == &#x27;R&#x27; )&#123;                for(i = 1;i &lt;= n;i ++)&#123;                    if( i == x ) continue;                    a[x][y] += a[i][y];                &#125;a[x][y] = -a[x][y];                y ++;            &#125;        &#125;        for(int j = 1;j &lt; m;j ++) a[n][m] += a[n][j];        a[n][m] = -a[n][m];        for(int i = 1;i &lt;= n;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;        &#125;    &#125;return 0;&#125;
-D题不容易的思维题，不过只要逻辑理清楚了，都很简单
-考虑以下策略仅考虑两个相邻的点如果二者的距离小于k，则可以直接越过去，a[i]的值尽可能的大如果二者的距离大于k但是小于k+已过去的时间，则右侧点有能力移动到a[i-1]+k，也不需要额外消耗时间如果二者的距离大于k+已过去的时间，则右侧点应当从一开始就开始全力左移，并二者相向而行，代价是相向而行的时间
-值得注意的是，long double最后要转成long long不然输出的可能是科学计数法（WA6）
-#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 2e5;int n , k , l;long double ans , time_now;long double a[N+10];signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;ans = 0;        cin &gt;&gt; n &gt;&gt; k &gt;&gt; l;        for(int i = 1;i &lt;= n;i ++) cin &gt;&gt; a[i];        ans += a[1]*2;        time_now = a[1];        a[1] = 0;        for(int i = 2;i &lt;= n;i ++)&#123;            if( a[i] - a[i-1] &gt; k )&#123;                if( a[i] - a[i-1] &gt; k + time_now )&#123;                    a[i] -= time_now;                    ans += (a[i] - a[i-1] - k);                    time_now += (a[i] - a[i-1] - k)/2;                    a[i] -= (a[i] - a[i-1] - k) / 2;                &#125;else&#123;                    a[i] = a[i-1] + k;                &#125;            &#125;else&#123;                a[i] = min( a[i-1] + k , a[i] + time_now );            &#125;        &#125;        ans += max( (l - a[n] - k )*2 , (long double)0 );        cout &lt;&lt; (long long)ans &lt;&lt; endl;    &#125;return 0;&#125;
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>算法竞赛</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BUUCTF crypto wp</title>
     <url>/2024/06/06/BUUCTF-crypto-wp/</url>
     <content><![CDATA[[NewStarCTF 2023 公开赛道]Rabin’s RSAfrom Crypto.Util.number import *from secret import flagp = getPrime(64)q = getPrime(64)assert p % 4 == 3assert q % 4 == 3n = p * qe = 2m = bytes_to_long(flag)c = pow(m,e,n)print(&#x27;n =&#x27;, n)print(&#x27;c =&#x27;, c)# n = 201354090531918389422241515534761536573# c = 20442989381348880630046435751193745753
@@ -942,6 +848,100 @@ flagflag&#123;RSA_from_ikea_is_fun_but_insecure#k20944uehdjfnjd335uro&#125;
       </tags>
   </entry>
   <entry>
+    <title>Beaver三元组用于乘法共享</title>
+    <url>/2025/04/10/Beaver%E4%B8%89%E5%85%83%E7%BB%84%E7%94%A8%E4%BA%8E%E4%B9%98%E6%B3%95%E5%85%B1%E4%BA%AB/</url>
+    <content><![CDATA[Beaver 三元组（Beaver triples）是安全多方计算（MPC）中一个超级聪明、实用的技巧，用来安全地做乘法
+通俗类比：就好像你和朋友要乘两个私密数字，但你们提前准备了一个万能“乘法模板”，可以安全又正确地偷偷算出结果。
+
+
+Motivation在安全多方计算里：
+
+加法很容易做：每个人把自己数据碎片加一下就行。
+但乘法就麻烦了，因为：
+两个秘密数的乘积不能直接从碎片算
+又不能暴露真实数值
+所以需要巧妙地”绕过去“
+
+
+
+Beaver 三元组应运而生
+
+DefinationBeaver 三元组表示为：
+
+(a, b, c) \quad \text{where} \quad c = a \cdot b
+所有参与方各自拿到这些数的“碎片”，但不知道完整的值。
+它跟我们真正要计算的 $x \cdot y$ 没有关系，只是一个通用的乘法工具。
+
+
+Algorithm假设两位参与方想计算：
+
+x \cdot y但每人都只知道自己的秘密（$x$ 或 $y$），又不想泄露给别人。
+
+步骤如下：
+
+每人拿到 $x$ 和 $y$ 的秘密共享，还有一个 Beaver 三元组 $(a, b, c)$，满足 $c = ab$
+
+本地计算（在共享上进行）：
+
+
+
+\begin{align}
+&d = x - a\\
+&e = y - b
+\end{align}
+公布 $d$ 和 $e$（这不会泄露 $x$ 和 $y$，因为 $a$ 和 $b$ 是随机的）
+
+使用下面的公式计算结果：
+
+
+
+xy = c + d \cdot b + e \cdot a + d \cdot e
+安全性说明：
+虽然你公开了 $d$ 和 $e$，但由于 $a$ 和 $b$ 是随机数，别人无法反推 $x$ 和 $y$，同时这个公式仍能计算出准确的乘积
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CF补题小合集</title>
+    <url>/2025/01/19/CF%E8%A1%A5%E9%A2%98%E5%B0%8F%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[由于后续CF比赛基本只参加VP，故特此记录一下
+
+
+2025.01.17Codeforces Round 996 (Div. 2)
+这把打爽了，表现分差点上紫，D题最后一分钟调出来过样例 结果WA2了
+
+C题构造题
+我们从(1,1)开始思考，假设场景是这样的
+
+设每行每列的和都为$S$，故(1,1)的数值和$S$的大小成线性关系
+也就是说，知道$S$就能通过这一行的数求出(1,1)的数值（如蓝色所示）
+
+同理，知道$S$就能求出第二行的数值（如紫色所示）
+
+按顺序（沿路径）向下递推，就必然可以计算出下一个方格的数据（如红色所示）
+
+故得出结论：如果该位置的下一个是R，则通过列计算；否则通过行计算
+但是$S$还不知道哇~
+梅瓜吸，$S$是多少都可以，我直接让它是0（更正式的，由$x+1$个未知数的$x$个方程构成的方程组中，存在一个自由量，这个自由量可以是S；其中$x=n+m-2$）
+#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e3;int n , m;int a[N+10][N+10];string s;signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;        for(int i = 1;i &lt;= n;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                cin &gt;&gt; a[i][j];            &#125;        &#125;        int x , y;x = y = 1;        for(int p = 0,i,j;p &lt; s.length();p ++)&#123;            if( s[p] == &#x27;D&#x27; )&#123;                for(j = 1;j &lt;= m;j ++)&#123;                    if( j == y ) continue;                    a[x][y] += a[x][j];                &#125;a[x][y] = -a[x][y];                x ++;            &#125;            if( s[p] == &#x27;R&#x27; )&#123;                for(i = 1;i &lt;= n;i ++)&#123;                    if( i == x ) continue;                    a[x][y] += a[i][y];                &#125;a[x][y] = -a[x][y];                y ++;            &#125;        &#125;        for(int j = 1;j &lt; m;j ++) a[n][m] += a[n][j];        a[n][m] = -a[n][m];        for(int i = 1;i &lt;= n;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;        &#125;    &#125;return 0;&#125;
+D题不容易的思维题，不过只要逻辑理清楚了，都很简单
+考虑以下策略仅考虑两个相邻的点如果二者的距离小于k，则可以直接越过去，a[i]的值尽可能的大如果二者的距离大于k但是小于k+已过去的时间，则右侧点有能力移动到a[i-1]+k，也不需要额外消耗时间如果二者的距离大于k+已过去的时间，则右侧点应当从一开始就开始全力左移，并二者相向而行，代价是相向而行的时间
+值得注意的是，long double最后要转成long long不然输出的可能是科学计数法（WA6）
+#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 2e5;int n , k , l;long double ans , time_now;long double a[N+10];signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;ans = 0;        cin &gt;&gt; n &gt;&gt; k &gt;&gt; l;        for(int i = 1;i &lt;= n;i ++) cin &gt;&gt; a[i];        ans += a[1]*2;        time_now = a[1];        a[1] = 0;        for(int i = 2;i &lt;= n;i ++)&#123;            if( a[i] - a[i-1] &gt; k )&#123;                if( a[i] - a[i-1] &gt; k + time_now )&#123;                    a[i] -= time_now;                    ans += (a[i] - a[i-1] - k);                    time_now += (a[i] - a[i-1] - k)/2;                    a[i] -= (a[i] - a[i-1] - k) / 2;                &#125;else&#123;                    a[i] = a[i-1] + k;                &#125;            &#125;else&#123;                a[i] = min( a[i-1] + k , a[i] + time_now );            &#125;        &#125;        ans += max( (l - a[n] - k )*2 , (long double)0 );        cout &lt;&lt; (long long)ans &lt;&lt; endl;    &#125;return 0;&#125;
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>算法竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CRYTPO 24.8第一周刷题记录</title>
     <url>/2024/08/05/CRYTPO-24-8%E7%AC%AC%E4%B8%80%E5%91%A8%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[[SWPUCTF 2021 新生赛]crypto3
@@ -1148,6 +1148,41 @@ flatpak override --user --reset md.obsidian.Obsidian
       </tags>
   </entry>
   <entry>
+    <title>Codeforces Round 963 (Div. 2)题解</title>
+    <url>/2024/08/05/Codeforces-Round-963-Div-2-%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[题目链接
+本场比赛应该算是今年我打的第一场算法竞赛，也是NOIP2021结束之后难得发挥出来的比赛。ABC都是比较简单的题，D是二分+dp，比较难想
+E最终还是不会，疑似是一个高级dp
+
+A.Question Marks
+观察样例就能打出来
+#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;        string s;int n;cin &gt;&gt; n;cin &gt;&gt; s;        int a , b , c , d , e;a = b = c = d = e = 0;        for(int i = 0;i &lt; s.length();i ++)&#123;            if( s[i] == &#x27;A&#x27; ) a ++;            if( s[i] == &#x27;B&#x27; ) b ++;            if( s[i] == &#x27;C&#x27; ) c ++;            if( s[i] == &#x27;D&#x27; ) d ++;            if( s[i] == &#x27;?&#x27; ) e ++;        &#125;        a = max( a-n , 0 );        b = max( b-n , 0 );        c = max( c-n , 0 );        d = max( d-n , 0 );        //cout &lt;&lt; &quot;a: &quot; &lt;&lt; a &lt;&lt; endl;        cout &lt;&lt; n*4-a-b-c-d-e &lt;&lt; endl;    &#125;    return 0;&#125;
+
+B.Parity and Sum
+策略是取出最大的奇数，和所有的偶数从小到大进行比较，如果比当前偶数大，那么将最大的奇数+=当前偶数，否则ans需要+1（仅加一次，此时表示当前最大的奇数不如这个偶数大，只需要进行一次最大奇数加上最大偶数的操作（即ans+=1）即可获得可以使任意偶数变为奇数的大数，如果最大的奇数从小到大累加偶数都能比下一个偶数更大则不需要进行这一步操作）
+全奇全偶需要特判
+#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;int t , n , a[200010];signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        int ans = 0;        int lag_d = 0;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i];            if( a[i] % 2 == 0 ) ans ++;            else lag_d = max( a[i] , lag_d );        &#125;        sort( a + 1 , a + n + 1 );        if( ans == n ) ans = 0;        if( ans )&#123;            for(int i = 1;i &lt;= n;i ++)&#123;                if( a[i] % 2 == 0 )&#123;                    if( a[i] &gt; lag_d )&#123;                        ans ++;                        //cout &lt;&lt; &quot;error: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; a[i] &lt;&lt; &quot; &quot; &lt;&lt; lag_d &lt;&lt; endl;                        break;                    &#125;                    else&#123;                        lag_d += a[i];                    &#125;                &#125;             &#125;        &#125;                cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
+
+C.Light Switches
+首先可以确定，最终答案在[最大值,最大值+k]区间，如果这个区间没有答案，那么输出-1
+k过大，直接扫肯定会超时；所以根据每个$a_i$计算它相应的区间（宽度为k，但是左右区间不同），然后将$l$取$max$，将$r$取$min$，如果$l&lt;r$那么答案就是$l$，否则没有答案
+#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;int t , n , k , a[200010];signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; k;        int maxn = 0;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i];            maxn = max( maxn , a[i] );        &#125;        int l , r;l = maxn , r = maxn + k;        for(int i = 1;i &lt;= n;i ++)&#123;            int rat = (maxn - a[i]) / k;            if( rat % 2 ) rat ++;            l = max( a[i] + rat * k , l );            r = min( a[i] + rat * k + k , r );        &#125;        //cout &lt;&lt; &quot;demo: &quot;&lt;&lt; l &lt;&lt; &quot; &quot; &lt;&lt; r &lt;&lt; endl;        if( l &gt;= r ) cout &lt;&lt; -1 &lt;&lt; endl;        else cout &lt;&lt; l &lt;&lt; endl;    &#125;    return 0;&#125;
+
+以下题目结为赛后补题：
+D.Med-imize
+利用二分中位数，我们可以用 $log(max(a_i))$ 的代价使中位数由未知变为已知
+观察得到一个结论——最终序列的 $id$ 总是在 $mod\ k$ 下能填满 $[0,n\%k]$，以此可以选择出最优化的一组解（正好填满 $[0,n\%k]$ ），即尽量多选大于中位数的选项，如果总共选到大于中位数的数字多余小于的，那么可以判断这组中位数是可以用的
+最终输出最大的中位数即可
+#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 5e5;int t , n , k , a[N+10];int dp[N+10] , b[N+10];bool checker( int mid )&#123;    for(int i = 0;i &lt; n;i ++)&#123;        if( a[i] &gt;= mid )&#123;            b[i] = 1;        &#125;        else&#123;            b[i] = -1;        &#125;    &#125;    dp[0] = b[0];    for(int i = 1;i &lt; n;i ++)&#123;        if( i % k == 0 )&#123;#这一组的开头，如果前面的或者当前位置下有1就可以是1            dp[i] = max( dp[i-k] , b[i] );        &#125;else&#123;#直接选当前的，i不是第一个循环的话，则可以继承上一个循环的（反正是选最大值）            dp[i] = dp[i-1] + b[i];            if( i &gt; k )&#123;                dp[i] = max( dp[i] , dp[i-k] );            &#125;        &#125;    &#125;    return dp[n-1] &gt; 0;&#125;signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; k;        for(int i = 0;i &lt; n;i ++)&#123;            cin &gt;&gt; a[i];        &#125;        int l = 1 , r = 1e9;        while( l &lt;= r )&#123;            int mid = (l+r)&gt;&gt;1;            if( checker(mid) )&#123;                l = mid+1;            &#125;            else&#123;                r = mid-1;            &#125;        &#125;        cout &lt;&lt; r &lt;&lt; endl;    &#125;       return 0;&#125;
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>算法竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Codeforces Round 964 (Div.4)题解</title>
     <url>/2024/08/07/Codeforces-Round-964-Div-4-%E9%A2%98%E8%A7%A3/</url>
     <content><![CDATA[题目链接
@@ -1192,41 +1227,6 @@ G1.Ruler (easy version)
 G2.Ruler (hard version)
 三分法，写法有很多，七次询问可以确定一个数即可
 #include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;const int N = 2e5 , p = 1e9+7;int T , t;int ef( int l , int r )&#123;    if( l == r ) return l;    int mid_l = l+(r-l)/3 , mid_r = l+(r-l)/3*2;    cout &lt;&lt; &quot;? &quot; &lt;&lt; mid_l &lt;&lt; &quot; &quot; &lt;&lt; mid_r &lt;&lt; endl;    cout &lt;&lt; flush;    int t;    cin &gt;&gt; t;/*    int lll = mid_l + ( mid_l&gt;=700?1:0);    int rrr = mid_r + ( mid_r&gt;=700?1:0);    t = lll*rrr;*/    if( t == (mid_l+1)*(mid_r+1) ) return ef( l , mid_l );    else if( t == (mid_l)*(mid_r+1) ) return ef( mid_l+1 , mid_r );    else return ef( mid_r+1 , r );&#125;signed main()&#123;    cin &gt;&gt; T;    while( T -- )&#123;        int ans = ef( 2 , 999 );        cout &lt;&lt; &quot;! &quot; &lt;&lt; ans &lt;&lt; endl;        cout &lt;&lt; flush;    &#125;    return 0;&#125;
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>算法竞赛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Codeforces Round 963 (Div. 2)题解</title>
-    <url>/2024/08/05/Codeforces-Round-963-Div-2-%E9%A2%98%E8%A7%A3/</url>
-    <content><![CDATA[题目链接
-本场比赛应该算是今年我打的第一场算法竞赛，也是NOIP2021结束之后难得发挥出来的比赛。ABC都是比较简单的题，D是二分+dp，比较难想
-E最终还是不会，疑似是一个高级dp
-
-A.Question Marks
-观察样例就能打出来
-#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;signed main()&#123;    int t;cin &gt;&gt; t;    while( t -- )&#123;        string s;int n;cin &gt;&gt; n;cin &gt;&gt; s;        int a , b , c , d , e;a = b = c = d = e = 0;        for(int i = 0;i &lt; s.length();i ++)&#123;            if( s[i] == &#x27;A&#x27; ) a ++;            if( s[i] == &#x27;B&#x27; ) b ++;            if( s[i] == &#x27;C&#x27; ) c ++;            if( s[i] == &#x27;D&#x27; ) d ++;            if( s[i] == &#x27;?&#x27; ) e ++;        &#125;        a = max( a-n , 0 );        b = max( b-n , 0 );        c = max( c-n , 0 );        d = max( d-n , 0 );        //cout &lt;&lt; &quot;a: &quot; &lt;&lt; a &lt;&lt; endl;        cout &lt;&lt; n*4-a-b-c-d-e &lt;&lt; endl;    &#125;    return 0;&#125;
-
-B.Parity and Sum
-策略是取出最大的奇数，和所有的偶数从小到大进行比较，如果比当前偶数大，那么将最大的奇数+=当前偶数，否则ans需要+1（仅加一次，此时表示当前最大的奇数不如这个偶数大，只需要进行一次最大奇数加上最大偶数的操作（即ans+=1）即可获得可以使任意偶数变为奇数的大数，如果最大的奇数从小到大累加偶数都能比下一个偶数更大则不需要进行这一步操作）
-全奇全偶需要特判
-#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;int t , n , a[200010];signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        int ans = 0;        int lag_d = 0;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i];            if( a[i] % 2 == 0 ) ans ++;            else lag_d = max( a[i] , lag_d );        &#125;        sort( a + 1 , a + n + 1 );        if( ans == n ) ans = 0;        if( ans )&#123;            for(int i = 1;i &lt;= n;i ++)&#123;                if( a[i] % 2 == 0 )&#123;                    if( a[i] &gt; lag_d )&#123;                        ans ++;                        //cout &lt;&lt; &quot;error: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; a[i] &lt;&lt; &quot; &quot; &lt;&lt; lag_d &lt;&lt; endl;                        break;                    &#125;                    else&#123;                        lag_d += a[i];                    &#125;                &#125;             &#125;        &#125;                cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
-
-C.Light Switches
-首先可以确定，最终答案在[最大值,最大值+k]区间，如果这个区间没有答案，那么输出-1
-k过大，直接扫肯定会超时；所以根据每个$a_i$计算它相应的区间（宽度为k，但是左右区间不同），然后将$l$取$max$，将$r$取$min$，如果$l&lt;r$那么答案就是$l$，否则没有答案
-#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;int t , n , k , a[200010];signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; k;        int maxn = 0;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i];            maxn = max( maxn , a[i] );        &#125;        int l , r;l = maxn , r = maxn + k;        for(int i = 1;i &lt;= n;i ++)&#123;            int rat = (maxn - a[i]) / k;            if( rat % 2 ) rat ++;            l = max( a[i] + rat * k , l );            r = min( a[i] + rat * k + k , r );        &#125;        //cout &lt;&lt; &quot;demo: &quot;&lt;&lt; l &lt;&lt; &quot; &quot; &lt;&lt; r &lt;&lt; endl;        if( l &gt;= r ) cout &lt;&lt; -1 &lt;&lt; endl;        else cout &lt;&lt; l &lt;&lt; endl;    &#125;    return 0;&#125;
-
-以下题目结为赛后补题：
-D.Med-imize
-利用二分中位数，我们可以用 $log(max(a_i))$ 的代价使中位数由未知变为已知
-观察得到一个结论——最终序列的 $id$ 总是在 $mod\ k$ 下能填满 $[0,n\%k]$，以此可以选择出最优化的一组解（正好填满 $[0,n\%k]$ ），即尽量多选大于中位数的选项，如果总共选到大于中位数的数字多余小于的，那么可以判断这组中位数是可以用的
-最终输出最大的中位数即可
-#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 5e5;int t , n , k , a[N+10];int dp[N+10] , b[N+10];bool checker( int mid )&#123;    for(int i = 0;i &lt; n;i ++)&#123;        if( a[i] &gt;= mid )&#123;            b[i] = 1;        &#125;        else&#123;            b[i] = -1;        &#125;    &#125;    dp[0] = b[0];    for(int i = 1;i &lt; n;i ++)&#123;        if( i % k == 0 )&#123;#这一组的开头，如果前面的或者当前位置下有1就可以是1            dp[i] = max( dp[i-k] , b[i] );        &#125;else&#123;#直接选当前的，i不是第一个循环的话，则可以继承上一个循环的（反正是选最大值）            dp[i] = dp[i-1] + b[i];            if( i &gt; k )&#123;                dp[i] = max( dp[i] , dp[i-k] );            &#125;        &#125;    &#125;    return dp[n-1] &gt; 0;&#125;signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; k;        for(int i = 0;i &lt; n;i ++)&#123;            cin &gt;&gt; a[i];        &#125;        int l = 1 , r = 1e9;        while( l &lt;= r )&#123;            int mid = (l+r)&gt;&gt;1;            if( checker(mid) )&#123;                l = mid+1;            &#125;            else&#123;                r = mid-1;            &#125;        &#125;        cout &lt;&lt; r &lt;&lt; endl;    &#125;       return 0;&#125;
 ]]></content>
       <categories>
         <category>算法竞赛</category>
@@ -3233,60 +3233,6 @@ IOP]]></content>
       </tags>
   </entry>
   <entry>
-    <title>修复数学公式编译错误</title>
-    <url>/2025/11/27/%E4%BF%AE%E5%A4%8D%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/</url>
-    <content><![CDATA[因为移植了环境，故需要把远古文章整理一下
-然后找到了数论小知识这一篇文章，发现里面的latex编译错误了
-最终检测了两点结论
-
-typora中$$和都可以当作LaTeX标识符，但是marktext中不会识别$，但是把当作多行LaTeX一样使用。综上所述直接使用$$即可——欸不对，那岂不是很多地方都炸了
-
-第二点才是炸了的主要原因，上第一条只会导致本地出错而博客本身没事。就是把乘号*也当markdown了！解决方法就是换cdot
-
-
-然后这一点算是修好了，这一条工作可以划掉了
-]]></content>
-      <categories>
-        <category>博客构建与维护</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于ctf卷王排行榜的项目说明</title>
-    <url>/2024/09/17/%E5%85%B3%E4%BA%8Ectf%E5%8D%B7%E7%8E%8B%E6%8E%92%E8%A1%8C%E6%A6%9C%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[开源网址
-
-版本1.0
-本程序的大致原理是，使用cookie进行登录并发送GET请求，获取响应文本然后提取，得到指定用户的指定方向（categories）做题数量
-程序主体分为三个部分：
-
-文件读写的函数（控制台的输出数据仅供调试使用）
-
-获取用户的做题数量，此部分需要使用者自行输入api
-
-通过已知的uid，返回对应的用户名，用于生成榜单
-
-后续需要做的事情：
-
-优化代码看起来奇奇怪怪的部分（
-cookie登录存在弊端
-优化前端设计并实现榜单生成部分
-按周或者按天计算刷题量（可能比较好做，但是这是另一项工作了，暂时束之高阁）
-实现自动化生成榜单
-下次不能把一个zip直接扔进仓库里去了
-
-后续版本的更新日志见 README.md
-]]></content>
-      <categories>
-        <category>技术与工具</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>信安数基复习笔记</title>
     <url>/2025/01/08/%E4%BF%A1%E5%AE%89%E6%95%B0%E5%9F%BA%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[
@@ -3407,46 +3353,54 @@ $det(ABA^{-1})=det(A)1\frac1{det(A)}=1$
       </tags>
   </entry>
   <entry>
-    <title>关于加入社团的一些个人见解</title>
-    <url>/2025/09/11/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%A4%BE%E5%9B%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E8%A7%81%E8%A7%A3/</url>
-    <content><![CDATA[省流：不盲从，有一条自己选择的道路，并不断探索，才是最重要的
-最近大抵是社团宣讲，关于社团选择，很多新生有很多疑惑，这里我分享一些个人观点
-先分享一些我的经历
-高中学习过一段时间信息学竞赛，但是学的东西不多，最终拿了个小比赛的省三等奖，算是把C的语法基本学会了，但是真正实力还是很弱，当时Codeforces的分数连1200都没有，这个水平是很多零基础学一段时间就能超过的刚录取的时候，打ACM（大学的ACM竞赛可以算是高中的信息学竞赛的延续），录取后很快就联系ACM实验室的学长原本报志愿，把软工填在前面，但是差一分来了网安，后面了解到了网安协会，感觉网络安全也不错~同时，也对嵌入式（也就是硬件）很感兴趣，原因很多，包括但不限于没有进入笔者所在的高中机器人社团有些遗憾，故而了解到了机器人协会于是乎，笔者大一加入机器人协会和网安协会；在高考后的暑假，笔者学习了STM32的GPIO点灯（嵌入式），并做了BUUOJ除了pwn以外的每个方向的几道题（网络安全相关）；开学后在网安协会选择了密码学的方向（因为学长说密码学是CTF五大方向中最深的一个方向）很感谢大一的时候，学长没有顾及我很菜，带我打比赛，还拿到了比较不错的奖项同时我也学到了很多嵌入式和CTF相关的知识，拓宽了知识面最终在大二找到了一个自己比较喜欢的方向但是我大一的时候没有进acm，因为当时真的事情很多大二的时候进了acm实验室，但是发现自己距离毕业不远了，该准备考研了，没有时间精力去准备区域赛了也有点感慨，没有在任何一个社团干到比较核心的位置，也有点辜负学长们的期待不过话说回来，我个人感觉现在前途还算比较光明滴——除了四级还没过，考研才刚开始学，论文还一篇都没有（哭哭
-然后简要介绍一下这三个社团（补充：acm原则上不算社团，属于实验室）
-名词解释：
+    <title>修复数学公式编译错误</title>
+    <url>/2025/11/27/%E4%BF%AE%E5%A4%8D%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[因为移植了环境，故需要把远古文章整理一下
+然后找到了数论小知识这一篇文章，发现里面的latex编译错误了
+最终检测了两点结论
 
-ACM/CCPC/ICPC：是算法竞赛，在一段时间（通常是几个小时）能更快完成几道算法题目，给定输入数据，要求编写代码得到符合题目描述的输出；属于计网学院的
-CTF/网络安全竞赛：包括五大方向（哪几个自己去群里看），比赛时长一般更长，可以简单理解为去当黑客（雾）；也算是计网学院的
-机器人协会/RM/RoboMaster：包括机械（用3d建模软件画机器人并组装）、电控（也就是嵌入式，让机器人动起来）和视觉（可以简单理解为AI图像识别，又称算法，别和acm的那个算法搞混了）三个方向，具体赛制太复杂了自己看去吧 https://space.bilibili.com/20554233/lists/5950748?type=season ；属于隔壁光电学院的
+typora中$$和都可以当作LaTeX标识符，但是marktext中不会识别$，但是把当作多行LaTeX一样使用。综上所述直接使用$$即可——欸不对，那岂不是很多地方都炸了
 
-纸上得来终觉浅，真正想了解这些方向还是要实践——直接做它个几道题，至少先把helloworld写了~
-
-上述内容都是技术类社团，关于其他类型的社团或者学生组织，我的评价是别功利的去看它，都可以加（但是别加太多给自己累着）；技术类社团是真的累，学生组织的话会相对轻松一点，缺点是学不到特别多技术，有点偏社交向
-如果想保研的，找保研高手去，我大一就想考研了，故而可以随便打比赛，不用在乎学校加分什么的，可以随便打。保研的话创赛性价比感觉更高一点？我不懂，问别人去，保研好像有另外一套打法（可以直接去群里问，每个专业保研情况有差异）
-
-有同学问可不可以大一不加社团，大一下学期或者大二再加
-我的评价是现在完全有时间，因为进入技术类社团，会更push你去学相关技术，进而更快进步；与其担心自己现在零基础进不了，不如多做几个题或者多学一些东西，这样就起码在面试的时候有点东西可以说了
-
-ACM实验室的话，是寒假的几场比赛作为校队选拔，故而不用着急（但是时间过得很快，等着急了可能就来不及了~)；即便不想打acm，也推荐刷一刷OJ（Online Judger，即在线测评，做题平台，可以使用学校的那个），无论是其他社团还是课内学习，c语言的基础必不可少。大概刷个十几题就能知道acm比的是什么了，刷个一百多题就可以总结出一套自己的路子了
-CTF也就是网安协会的话，我当时是除了pwn，每个方向都学了一点，如果想打ctf但是不知道方向选什么好，打开随便一个做题网站（我当时用的是buuoj.cn，当然用NSS也可以），每个方向不用多做 就做五道题，你就能大致知道干什么的了；更新：最近有MoeCTF新生赛，蛮可以打一下
-RM也就是机器人的话，我只学过电控（也就是嵌入式），也是建议直接上手，十多块钱买个c6t6和烧录器（具体型号或者链接可以进群问学长学姐），然后开始学点灯，串口通信，布拉布拉······；至于机械或者视觉，我也不知道学什么入门比较好，问具体学长学姐吧（补充：嵌入式确实挺好玩的哈，后面有时间确实蛮可以玩一下）
-备注：无论学什么，只要和计算机相关的技术，都建议先有C语言基础再来
+第二点才是炸了的主要原因，上第一条只会导致本地出错而博客本身没事。就是把乘号*也当markdown了！解决方法就是换cdot
 
 
-最后两点，1.别跟我一样加这么多社团，和我一样学艺不精就坏事了；2.无论选择什么方向，有一套自己的路子即可，别盲从，你做什么都会成功的~
-
-补充一点，就是说不要把手段当成目标，很多新人写算法或者做CTF，经常会问题看不懂不会做怎么办，有没有视频课之类的。视频课肯定有，但是就怕以为，以为什么呢，把看完课和自己学会画等号。这种情况经常出现啊，就像这两天有上门推销英语课的，然后有人心理就感觉，我买了这个课，我就是英语大神了，四六级就闭眼过了，实则并非，需要考虑进去自己要花费的时间成本才对，报课不如直接做一套题或者在网上找点视频课好，至少充分发挥了自己的主观能动性。竞赛也是啊，不管acm还是ctf的入门，看课只是手段，学会才是目标，千万别收藏一堆东西然后吃灰了，收藏的东西不算拥有，只有真正学进脑子里去的才算拥有。不是说“你不许看视频课”，而是需要明确目标，不过说实话现在市面上确实没看到特别特别特别好的一本通视频学习资料。毕竟每个人的已有知识和学习能力有差异，可能同一款课，有的人觉得太基础了，有的人觉得太难了。
-还有就是如果自己会的东西，如果你在过慢的学，一直在舒适区内，可能也会倦怠；人其实没有这么多时间的，选一个方向，耐心地做下去，等你做好了，时间可能就过去了，你也不需要去看其他方向了，有可能也不想看其他方向了，但是这个过程中你的学习能力会不断变强。可能大一的你学习一个难度为$x$的CTF的知识点需要5个小时的时间，等你考研或者科研又或者参加工作遇到一个难度同样为$x$的问题，只需要不到一个小时就能解决了
-
-后后记：再补充两点
-
-善用ai和搜索引擎，ai时代好比工业革命，善用ai可以带来百倍千倍的提升，询问ai（即提示词工程）的能力也会随着你的使用越来越强的，所以just do it~
-学会“提问的艺术”，具体可以看群文档，但是想一言以蔽之，做到两点就可以了：一是相互尊重，因为寻求别人的帮助，别人可以帮也可以不帮；二是让对方方便回答，例如清晰的陈述问题，并用手机拍摄电脑截图，不要过多情绪化（救命啊），解决问题才是根本目的
-
+然后这一点算是修好了，这一条工作可以划掉了
 ]]></content>
       <categories>
-        <category>一点小思考</category>
+        <category>博客构建与维护</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于ctf卷王排行榜的项目说明</title>
+    <url>/2024/09/17/%E5%85%B3%E4%BA%8Ectf%E5%8D%B7%E7%8E%8B%E6%8E%92%E8%A1%8C%E6%A6%9C%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[开源网址
+
+版本1.0
+本程序的大致原理是，使用cookie进行登录并发送GET请求，获取响应文本然后提取，得到指定用户的指定方向（categories）做题数量
+程序主体分为三个部分：
+
+文件读写的函数（控制台的输出数据仅供调试使用）
+
+获取用户的做题数量，此部分需要使用者自行输入api
+
+通过已知的uid，返回对应的用户名，用于生成榜单
+
+后续需要做的事情：
+
+优化代码看起来奇奇怪怪的部分（
+cookie登录存在弊端
+优化前端设计并实现榜单生成部分
+按周或者按天计算刷题量（可能比较好做，但是这是另一项工作了，暂时束之高阁）
+实现自动化生成榜单
+下次不能把一个zip直接扔进仓库里去了
+
+后续版本的更新日志见 README.md
+]]></content>
+      <categories>
+        <category>技术与工具</category>
       </categories>
       <tags>
         <tag>misc</tag>
@@ -3547,6 +3501,52 @@ RM也就是机器人的话，我只学过电控（也就是嵌入式），也是
 
 
 💡注意：这个是“新词”的数量，不包含复习旧词的时间。
+]]></content>
+      <categories>
+        <category>一点小思考</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于加入社团的一些个人见解</title>
+    <url>/2025/09/11/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%A4%BE%E5%9B%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E8%A7%81%E8%A7%A3/</url>
+    <content><![CDATA[省流：不盲从，有一条自己选择的道路，并不断探索，才是最重要的
+最近大抵是社团宣讲，关于社团选择，很多新生有很多疑惑，这里我分享一些个人观点
+先分享一些我的经历
+高中学习过一段时间信息学竞赛，但是学的东西不多，最终拿了个小比赛的省三等奖，算是把C的语法基本学会了，但是真正实力还是很弱，当时Codeforces的分数连1200都没有，这个水平是很多零基础学一段时间就能超过的刚录取的时候，打ACM（大学的ACM竞赛可以算是高中的信息学竞赛的延续），录取后很快就联系ACM实验室的学长原本报志愿，把软工填在前面，但是差一分来了网安，后面了解到了网安协会，感觉网络安全也不错~同时，也对嵌入式（也就是硬件）很感兴趣，原因很多，包括但不限于没有进入笔者所在的高中机器人社团有些遗憾，故而了解到了机器人协会于是乎，笔者大一加入机器人协会和网安协会；在高考后的暑假，笔者学习了STM32的GPIO点灯（嵌入式），并做了BUUOJ除了pwn以外的每个方向的几道题（网络安全相关）；开学后在网安协会选择了密码学的方向（因为学长说密码学是CTF五大方向中最深的一个方向）很感谢大一的时候，学长没有顾及我很菜，带我打比赛，还拿到了比较不错的奖项同时我也学到了很多嵌入式和CTF相关的知识，拓宽了知识面最终在大二找到了一个自己比较喜欢的方向但是我大一的时候没有进acm，因为当时真的事情很多大二的时候进了acm实验室，但是发现自己距离毕业不远了，该准备考研了，没有时间精力去准备区域赛了也有点感慨，没有在任何一个社团干到比较核心的位置，也有点辜负学长们的期待不过话说回来，我个人感觉现在前途还算比较光明滴——除了四级还没过，考研才刚开始学，论文还一篇都没有（哭哭
+然后简要介绍一下这三个社团（补充：acm原则上不算社团，属于实验室）
+名词解释：
+
+ACM/CCPC/ICPC：是算法竞赛，在一段时间（通常是几个小时）能更快完成几道算法题目，给定输入数据，要求编写代码得到符合题目描述的输出；属于计网学院的
+CTF/网络安全竞赛：包括五大方向（哪几个自己去群里看），比赛时长一般更长，可以简单理解为去当黑客（雾）；也算是计网学院的
+机器人协会/RM/RoboMaster：包括机械（用3d建模软件画机器人并组装）、电控（也就是嵌入式，让机器人动起来）和视觉（可以简单理解为AI图像识别，又称算法，别和acm的那个算法搞混了）三个方向，具体赛制太复杂了自己看去吧 https://space.bilibili.com/20554233/lists/5950748?type=season ；属于隔壁光电学院的
+
+纸上得来终觉浅，真正想了解这些方向还是要实践——直接做它个几道题，至少先把helloworld写了~
+
+上述内容都是技术类社团，关于其他类型的社团或者学生组织，我的评价是别功利的去看它，都可以加（但是别加太多给自己累着）；技术类社团是真的累，学生组织的话会相对轻松一点，缺点是学不到特别多技术，有点偏社交向
+如果想保研的，找保研高手去，我大一就想考研了，故而可以随便打比赛，不用在乎学校加分什么的，可以随便打。保研的话创赛性价比感觉更高一点？我不懂，问别人去，保研好像有另外一套打法（可以直接去群里问，每个专业保研情况有差异）
+
+有同学问可不可以大一不加社团，大一下学期或者大二再加
+我的评价是现在完全有时间，因为进入技术类社团，会更push你去学相关技术，进而更快进步；与其担心自己现在零基础进不了，不如多做几个题或者多学一些东西，这样就起码在面试的时候有点东西可以说了
+
+ACM实验室的话，是寒假的几场比赛作为校队选拔，故而不用着急（但是时间过得很快，等着急了可能就来不及了~)；即便不想打acm，也推荐刷一刷OJ（Online Judger，即在线测评，做题平台，可以使用学校的那个），无论是其他社团还是课内学习，c语言的基础必不可少。大概刷个十几题就能知道acm比的是什么了，刷个一百多题就可以总结出一套自己的路子了
+CTF也就是网安协会的话，我当时是除了pwn，每个方向都学了一点，如果想打ctf但是不知道方向选什么好，打开随便一个做题网站（我当时用的是buuoj.cn，当然用NSS也可以），每个方向不用多做 就做五道题，你就能大致知道干什么的了；更新：最近有MoeCTF新生赛，蛮可以打一下
+RM也就是机器人的话，我只学过电控（也就是嵌入式），也是建议直接上手，十多块钱买个c6t6和烧录器（具体型号或者链接可以进群问学长学姐），然后开始学点灯，串口通信，布拉布拉······；至于机械或者视觉，我也不知道学什么入门比较好，问具体学长学姐吧（补充：嵌入式确实挺好玩的哈，后面有时间确实蛮可以玩一下）
+备注：无论学什么，只要和计算机相关的技术，都建议先有C语言基础再来
+
+
+最后两点，1.别跟我一样加这么多社团，和我一样学艺不精就坏事了；2.无论选择什么方向，有一套自己的路子即可，别盲从，你做什么都会成功的~
+
+补充一点，就是说不要把手段当成目标，很多新人写算法或者做CTF，经常会问题看不懂不会做怎么办，有没有视频课之类的。视频课肯定有，但是就怕以为，以为什么呢，把看完课和自己学会画等号。这种情况经常出现啊，就像这两天有上门推销英语课的，然后有人心理就感觉，我买了这个课，我就是英语大神了，四六级就闭眼过了，实则并非，需要考虑进去自己要花费的时间成本才对，报课不如直接做一套题或者在网上找点视频课好，至少充分发挥了自己的主观能动性。竞赛也是啊，不管acm还是ctf的入门，看课只是手段，学会才是目标，千万别收藏一堆东西然后吃灰了，收藏的东西不算拥有，只有真正学进脑子里去的才算拥有。不是说“你不许看视频课”，而是需要明确目标，不过说实话现在市面上确实没看到特别特别特别好的一本通视频学习资料。毕竟每个人的已有知识和学习能力有差异，可能同一款课，有的人觉得太基础了，有的人觉得太难了。
+还有就是如果自己会的东西，如果你在过慢的学，一直在舒适区内，可能也会倦怠；人其实没有这么多时间的，选一个方向，耐心地做下去，等你做好了，时间可能就过去了，你也不需要去看其他方向了，有可能也不想看其他方向了，但是这个过程中你的学习能力会不断变强。可能大一的你学习一个难度为$x$的CTF的知识点需要5个小时的时间，等你考研或者科研又或者参加工作遇到一个难度同样为$x$的问题，只需要不到一个小时就能解决了
+
+后后记：再补充两点
+
+善用ai和搜索引擎，ai时代好比工业革命，善用ai可以带来百倍千倍的提升，询问ai（即提示词工程）的能力也会随着你的使用越来越强的，所以just do it~
+学会“提问的艺术”，具体可以看群文档，但是想一言以蔽之，做到两点就可以了：一是相互尊重，因为寻求别人的帮助，别人可以帮也可以不帮；二是让对方方便回答，例如清晰的陈述问题，并用手机拍摄电脑截图，不要过多情绪化（救命啊），解决问题才是根本目的
+
 ]]></content>
       <categories>
         <category>一点小思考</category>
@@ -5084,24 +5084,6 @@ https://www.cnblogs.com/coderzjz/p/14272460.html
       </tags>
   </entry>
   <entry>
-    <title>小感悟：真功不唐捐了</title>
-    <url>/2025/09/16/%E5%B0%8F%E6%84%9F%E6%82%9F%EF%BC%9A%E7%9C%9F%E5%8A%9F%E4%B8%8D%E5%94%90%E6%8D%90%E4%BA%86/</url>
-    <content><![CDATA[最近这几天在实验室干活，感觉真功不唐捐了
-大一大二的时候涉猎很广泛哇，原本以为很多东西未来不会用到，没想到都有点关联
-前两天写复现论文的代码，结果好家伙，套了五六层的调用，让我想到了之前在机协学嵌入式，看机器人五六层的指针结构体···；就很像哇
-ctf就不用说了，现在研究的一直是密码学相关内容
-然后昨天看IPs，动态规划还在坠鲨窝~
-
-感悟就是，今日所用后或弃之，今日所弃后或用之~
-]]></content>
-      <categories>
-        <category>生活与杂谈</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>密码学论文分类</title>
     <url>/2024/09/19/%E5%AF%86%E7%A0%81%E5%AD%A6%E8%AE%BA%E6%96%87%E5%88%86%E7%B1%BB/</url>
     <content><![CDATA[三大顶会与信息安全四大顶会
@@ -5240,6 +5222,24 @@ The Cryptographer’s Track at RSA Conference
       </categories>
       <tags>
         <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小感悟：真功不唐捐了</title>
+    <url>/2025/09/16/%E5%B0%8F%E6%84%9F%E6%82%9F%EF%BC%9A%E7%9C%9F%E5%8A%9F%E4%B8%8D%E5%94%90%E6%8D%90%E4%BA%86/</url>
+    <content><![CDATA[最近这几天在实验室干活，感觉真功不唐捐了
+大一大二的时候涉猎很广泛哇，原本以为很多东西未来不会用到，没想到都有点关联
+前两天写复现论文的代码，结果好家伙，套了五六层的调用，让我想到了之前在机协学嵌入式，看机器人五六层的指针结构体···；就很像哇
+ctf就不用说了，现在研究的一直是密码学相关内容
+然后昨天看IPs，动态规划还在坠鲨窝~
+
+感悟就是，今日所用后或弃之，今日所弃后或用之~
+]]></content>
+      <categories>
+        <category>生活与杂谈</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -5651,6 +5651,27 @@ UPD251201的一些小思考为什么放弃笔记本，转为知识库
       </categories>
       <tags>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我要用linux参加腾讯会议</title>
+    <url>/2026/02/14/%E6%88%91%E8%A6%81%E7%94%A8linux%E5%8F%82%E5%8A%A0%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE/</url>
+    <content><![CDATA[很早之前就觉得slidev做PPT很牛，搭配上cachyos系统更是好用，但是组会需要使用腾讯会议，通常需要slidev导出后转到windows上或者直接内网传统才能使用，那就很简陋了；如果直接用window做slidev的PPT，虽然没毛病但是也简陋了一些。如果直接在cachyos上安装腾讯会议，一方面在arch上的兼容性一般，投屏容易出问题，另一方面他是闭源软件，打咩。
+最开始想用OBS转发流量，但是担心清晰度和分辨率不足。后来直接Sunshine + Moonlight，用游戏级配置降维打击 PPT 演示。Sunshine 是“电视台”（服务端/发送端），而 Moonlight 是“电视机”（客户端/接收端）。
+第一步：建立稳定的链路 。为了防止 Wi-Fi 干扰导致 PPT 翻页卡顿，直接使用 USB 共享网络 建立局域网。用数据线连接安卓手机和电脑，然后手机开启 USB 网络共享，电脑会自动识别为一个有线网卡，然后二者处于一个局域网里了（手机是网关）。
+第二步：配置 Host (CachyOS)paru sunshine然后运行 sunshine，打开浏览器访问 https://localhost:47990，注册登录，其他可配可不配。
+第三步：配置 Client (Android)
+在安卓手机上安装 Moonlight Game Streaming ；确保手机连接了 USB 共享网络，打开 Moonlight，它应该能自动发现 CachyOS 主机。
+在 Moonlight 设置中，将分辨率设置为 1080p (1920x1080) 即可，腾讯会议手机版投屏上限通常就是 1080p，感觉展示PPT的话也足够了，码率建议设置在 10-20 Mbps。
+点击图标连接，输入配对码。
+最终手机端打开腾讯会议并投屏，音频直接走手机的即可，延迟低且可靠。
+看起来手机还能操控电脑，但是用不上，又但是这样和远控差不多嘛，只不过用USB分享网络，那延迟很低了，而且带宽随便设置，还能推旮旯给目。
+]]></content>
+      <categories>
+        <category>技术与工具</category>
+      </categories>
+      <tags>
+        <tag>arch_linux</tag>
       </tags>
   </entry>
   <entry>
@@ -7923,273 +7944,6 @@ https://github.com/azl397985856/cf
       </tags>
   </entry>
   <entry>
-    <title>计算机网络有手就行诶我手呢</title>
-    <url>/2025/01/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%E8%AF%B6%E6%88%91%E6%89%8B%E5%91%A2/</url>
-    <content><![CDATA[计算机网络刷题记录
-
-
-
-考虑电路交换的三个阶段
-建立连接：$s$（题干给出）
-数据传输：$\frac{x}{b}$（报文长度除以数据率就是所有报文都传输过去所需要的时间）
-连接释放：$kd$（连接释放的报文直接发送，从发送端到接收端所需要的时间为链路段数乘以每段的传播时延）
-分组交换
-报文如果直接传输，需要的代价是 $\frac{x}{b}$
-但是第一个报文未接收完成，后面的节点都是不在工作的，所以这里的代价为空闲的链路数乘以分组除以数据率 $(k-1)\frac{p}b$
-加上个倾斜，也就是加上 $kd$
-
-要使分组交换比电路交换快，则：
-
-s+\frac{x}b+kd>\frac{x}b+(k-1)\frac{p}b+kd即 $s&gt;(k-1)\frac{p}b$
-
-
-考虑原始的状态 $\frac{x}b+(k-1)\frac{p}b+kd$
-没有传播时延，再考虑分组控制信息固定长度，则 $\frac{x}p\cdot\frac{p+h}b+(k-1)\frac{p+h}b$
-整理得 $\frac{k-1}b p+\frac{xh}bp^{-1}+\frac{x+(k-1)h}b$
-函数值最大，则 $\frac{k-1}b p=\frac{xh}bp^{-1}$
-解得 $p=\sqrt{\frac{xh}{k-1}}$
-
-发送时延=数据长度/数据发送速率
-传播时延=距离/物理传播速率
-(1) 发送时延=$\frac{10^7bit}{10010^3b/s}=110^2s$ ，传播时延=$\frac{100010^3m}{210^8m/s}=5*10^{-3}s$
-(2) 发送时延=$\frac{10^3bit}{110^9b/s}=110^{-6}s$ ，传播时延=$\frac{100010^3m}{210^8m/s}=5*10^{-3}s$
-
-正在传输的比特数=传播时延*数据率
-传播时延=媒体长度/传播速度
-(1) 传输时延=$\frac{110^{-1}m}{210^8m/s}=5*10^{-10}s$
-$1Mb/s:\quad 510^{-10}s110^6b/s=510^{-4}bit$
-$1Gb/s:\quad 510^{-10}s110^9b/s=510^{-1}bit$
-(2) 传输时延=$\frac{100m}{210^8m/s}=510^{-7}s$
-$1Mb/s:\quad 510^{-7}s110^6b/s=510^{-1}bit$
-$1Gb/s:\quad 510^{-7}s110^9b/s=510^{2}bit$
-(3) 传输时延=$\frac{10010^3m}{210^8m/s}=5*10^{-4}s$
-$1Mb/s:\quad 510^{-4}s110^6b/s=510^{2}bit$
-$1Gb/s:\quad 510^{-4}s110^9b/s=510^{5}bit$
-(4) 传输时延=$\frac{500010^3m}{210^8m/s}=2.5*10^{-2}s$
-$1Mb/s:\quad 2.510^{-2}s110^6b/s=2.510^{4}bit$
-$1Gb/s:\quad 2.510^{-2}s110^9b/s=2.510^{7}bit$
-
-由题意 $2W=20000$
-码元变为16，则数据率$=2W\log_216=80000bit/s$
-+
-最长工作距离$=\frac{20dB}{0.7dB/km}=\frac{200}7km$
-衰减$=\frac{20dB}{100km}=0.2dB/km$
-
-$\frac{210^8}{120010^{-9}}=\frac53*10^{14}Hz$
-
-这种题，直接逐项相加即可
-$S\cdot A=\frac18\sum_{i=1}^8S_iA_i=\frac{1-1+3+1-1+3+1+1}8=1$
-$S\cdot B=\frac18\sum_{i=1}^8S_iB_i=\frac{1-1-3-1-1-3+1-1}8=-1$
-$S\cdot C=\frac18\sum_{i=1}^8S_iC_i=\frac{1+1+3+1-1-3-1-1}8=0$
-$S\cdot D=\frac18\sum_{i=1}^8S_iD_i=\frac{1+1+3-1+1+3+1-1}8=1$
-故AD发送了数据1，B发送了数据0，C未发送数据
-
-需要发送的数据 1101011011，补齐位数为 11010110110000
-校验多项式 10011
-做模2减法（逐位异或），得到余数 0111
-
-需要发送的数据 101110，补齐位数为 101110000
-校验多项式 1001
-做模2减法（逐位异或），得到余数 011
-
-PPP协议中 0x7D 是转义字符
-
-0x7D本身表示转义字符
-如果数据中有0x7E（帧的边界字符），则它也会被转义成0x7D 0x5E
-如果数据中有0x7D，则它会被转义成0x7D 0x5D
-
-
-
-原文：0110111111111100
-填充后：011011111011111000
-填充后：0001110111110111110110
-原文：00011101111111111110
-
-单程传播时延 $\tau=\frac{110^3m}{210^8m/s}=5*10^{-6}s$
-往返传播时延 $2\tau=10*10^{-6}s$
-$2\tau$ 即为争用期。为了能够按照CSMA/CD 工作，最小帧的发送时间即为争用期$10\mu s$发送的数据量
-$110^9b/s1010^{-6}s=110^4b=1250B$
-
-等待时间=$2\tau*r$
-10Mb/s的以太网争用期为$51.2\mu s$，则等待时间=5.12ms
-100Mb/s的以太网争用期为$5.12\mu s$，则等待时间=0.512ms
-
-第三章还剩下一些，暂时丢掉了~
-
-01000101 0000000000000000 0001110000000000 0000000100000000 0000000000000100 0001000100000000 0000000000001010 0000110000001110 0000010100001100 0000011000000111 00001001$\rightarrow$01003532 0002341401110100 01001110$\rightarrow$取反码10001011 10110001
-
-45 0000 1C00 0100 0004 1100 000A 0C0E 050C 0607 09$\rightarrow$74 4E
-十六进制太难算了
-
-第二个局域网所能传送的最长数据帧中的数据部分只有1200bit，即每个IP数据片的数据部分不超过1200-160(bit)，由于片偏移是以8字节即64bit为单位，所以IP数据片的数据部分不超过1024bit
-故3200bit的报文要分4个数据片，所以第二个局域网向上传送的比特数等于(3200+4*160)=3840bit
-
-128.96.39.10属于子网128.96.39.0~128.96.39.127，故下一跳接口为m0
-128.96.30.12属于子网128.96.39.0~128.96.39.127，故下一跳接口为R2
-128.96.40.151不在子网128.96.40.0~128.96.40.127，故使用默认路由R4
-192.4.153.17属于子网192.4.153.0~192.4.153.127，故下一跳接口为R3
-192.4.153.90不在子网192.4.153.0~192.4.153.63，故使用默认路由R4
-
-IP数据包固定首部长度即为20字节，剩下总共3980字节
-分成最大数据长度为1500字节，去掉首部长度为1480字节
-3980/1480&gt;2，故划分为三个数据报片
-第一片：数据字段长度为1480，片偏移为0，MF为1
-第二片：数据字段长度为1480，片偏移为185，MF为1
-第三片：数据字段长度为1020，片偏移为370，MF为0
-
-132:10000100133:10000101134:10000110135:10000111
-故共同前缀为 10000100(132)，总共22位
-最大可能聚合为 212.56.132.0/22
-
-后者包含于前者，因为前面的序列都相同
-
-一眼是(1)哇
-
-地址0/4与任意IPv4地址前四位为0000的地址都匹配
-
-只有前11位相同（截止到第二位的16，即第12位）
-
-2 4 11 30
-
-20=8+8+4
-84写成二进制是01010100，取前四位为0101xxxx
-最小01010000，即为80；最大01011111，即为95
-最小地址为 140.120.80.00，最大地址为 140.120.95.255
-地址掩码为 255.255.240.0
-地址块中共有地址 $2^{32-20}=2^{12}=4096$ 个
-相当于C类地址 $2^{12}/2^{8}=2^4=16$ 个
-
-第一步：下一跳全部改为C，距离+1
-第二步：和原有的进行对比，选择相对较少的那个
-
-
-29:0001110132:00100000
-地址数为 256*4=1024
-虽然这两个地址是连续的地址块，但无法写成前缀的形式。
-
-网络掩码：255.255.255.224
-网络前缀长度：27
-网络后缀长度：32-27=5
-
-地址数：$2^5=32$ 个
-首地址：167.199.170.64
-末地址：167.199.170.95
-
-子网N1：14.24.74.0/25子网N2：14.24.74.128/26子网N3：14.24.74.196/28
-
-都匹配，根据最长前缀匹配原则，选择路由3
-
-11001000 00111000 10101000 00000000/21
-$\frac{2^{32-21}}{2^8}=2^3=8$
-
-::F53:6382:AB00:67DB:BB27:7332::4D:ABCD::AF36:7328:0000:87AA:03982819:00AF::35:0CB2:B271
-
-0000:0000:0000:0000:0000:0000:0000:00000000:00AA:0000:0000:0000:0000:0000:00000000:1234 :0000:0000:0000:0000:0000:00030123:0000:0000:0000:0000:0000:0001:0002
-
-UDP的首部有8字节，故总共8200字节
-IP数据包的最大长度为1500字节，首部20字节，故应当分为六片
-前五段数据字段的长度为1480字节，第六片为800字节
-片偏移为0,185,370,555,740,925
-
-UDP首部分别是 源端口 目的端口 长度 校验和
-因此源端口是 $6256+316+2=1586$
-目的端口是 $4*16+5=69$
-用户数据总长度为 $16+12=28$
-目的端口号 69&lt;1023，是熟知端口，为服务器端使用的端口
-使用的服务程序是TFTP
-
-
-TCP报文段首部序号字段占4字节，共$2^{32}$个序号
-TCP是面向字节流的，每个序号对应一个数据字节，因此在序号不重复使用的条件下，一次性能发送$2^{32}$个字节，因此L的最大值为4GB
-10Mbit/s=1.25MB/s
-所需时间=$\frac{L+\lceil\frac{L}{1460}\rceil*66}{1.25MB/s}$
-
-(1) 第一个报文段是70-99的数据，携带总共30个字节的数据
-(2) 发回的确认号应当是100，代表100之前的序号皆被正确收到并且期待第100号
-(3) 80个字节
-(4) 70
-
-最大吞吐量=$\frac{65535B*8b/B}{20ms}=26.214Mb/s$
-
-发送65535字节所需要的时间$T=T_D+RTT=\frac{65536B8b/B}{110^9bit/s}+10ms*2=20.52428ms$
-最大吞吐量$\frac{L}T=\frac{L}{\frac{L}C+RTT}=\frac{65536B*8b/B}{20.52428ms}=25.544Mb/s$
-信道利用率=吞吐量/信道带宽=传播时延/总时延=2.5544%
-
-
-初始化参数
-
-- 初始的EstimatedRTT和DevRTT可以根据系统预设值或初始采样值来设定。
-- 常见的初始值：
-  - EstimatedRTT = 初始 RTT 样本值
-  - DevRTT = 初始 RTT 样本值 / 2（或其他合理假设值）
-
-更新 EstimatedRTT
-
-当采集到新的RTT样本值SampleRTT时，更新EstimatedRTT：
-$\text{EstimatedRTT} = (1 - \alpha) \times \text{EstimatedRTT} + \alpha \times \text{SampleRTT}$
-- 这是一个加权平均公式，用于平滑RTT的估计值。
-- 参数$\alpha$的典型值是0.125（即1/8）。
-
-更新 DevRTT
-
-基于SampleRTT与EstimatedRTT的差异，更新DevRTT（估算RTT的平均偏差）：
-$\text{DevRTT} = (1 - \beta) \times \text{DevRTT} + \beta \times |\text{SampleRTT} - \text{EstimatedRTT}|$
-- 这里使用的是绝对偏差来衡量RTT的波动程度。
-- 参数$\beta$的典型值是0.25（即1/4）。
-
-计算 RTO
-
-根据更新后的EstimatedRTT和DevRTT计算RTO：
-$\text{RTO} = \text{EstimatedRTT} + 4 \times \text{DevRTT}$
-- 加权偏差部分（$4 \times \text{DevRTT}$）用于增加容忍度，防止因RTT波动引发过早重传。
-
-动态调整
-
-- RTO的上下限限制：在实际实现中，RTO通常会被限制在一个范围内。例如：
-  - 最小值：1秒
-  - 最大值：60秒
-  这样可以避免计算结果极端化导致性能问题。
-(1) RTO=4.5s
-(2) RTTs=$\frac78$旧的RTT+$\frac18$新的RTT=1.625s
-​     RTTd=$\frac34$旧的RTTd+$\frac14$|RTTs-新的RTT样本|=0.78125s
-​     RTO= 4.75s
-
-RTT0=30ms
-RTT1=0.9RTT0+0.1RTT=29.6ms
-RTT2=0.9RTT1+0.1RTT=29.84ms
-RTT3=0.9RTT2+0.1RTT=29.256ms
-$\alpha$取值较小，RTTs受RTT样本值的影响较小
-
-ssthresh=上次拥塞值/2
-
-
-
-(2) 慢开始时间间隔：[1,6]和[23,26]
-(3) 拥塞避免时间间隔：[6,16]和[17,22]
-(4) 第16轮是收到了重复帧，第22抡是超时检测
-(5) 1-&gt;32, 18-&gt;21, 24-&gt;13
-(6) 第七轮
-(7) 4
-半期考相关考点
-
-集线器平分带宽，交换机都能使用最大带宽
-集线器不能隔离广播域和冲突域，交换机可以隔离冲突域但是不能隔离广播域
-已知网络利用率求网络延迟是最小值的多少倍，$(1-利用率)^{-1}$
-最小单位：物理层：比特/位；数据链路层：帧；网络层：分组；传输层：数据报；应用层：数据
-CSMA/CD是在介质访问控制（MAC层）实现的
-传统以太网最短有效帧长位64字节，争用期为 $51.2\mu s$
-以太网的物理地址的长度为48位，IPv4地址的长度为32位
-IP首部定长部分为20字节
-
-]]></content>
-      <categories>
-        <category>课程与考试重点</category>
-      </categories>
-      <tags>
-        <tag>cs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>荔枝橙味拱腰觅马糕守</title>
     <url>/2024/09/11/%E8%8D%94%E6%9E%9D%E6%A9%99%E5%91%B3%E6%8B%B1%E8%85%B0%E8%A7%85%E9%A9%AC%E7%B3%95%E5%AE%88/</url>
     <content><![CDATA[本篇文章旨在记录笔者阅读《公钥密码方案构造及安全证明的知识要点和方法论》的学习总结和收获
@@ -8827,8 +8581,275 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
         <category>科研</category>
       </categories>
       <tags>
-        <tag>Crypto</tag>
         <tag>常驻</tag>
+        <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络有手就行诶我手呢</title>
+    <url>/2025/01/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%E8%AF%B6%E6%88%91%E6%89%8B%E5%91%A2/</url>
+    <content><![CDATA[计算机网络刷题记录
+
+
+
+考虑电路交换的三个阶段
+建立连接：$s$（题干给出）
+数据传输：$\frac{x}{b}$（报文长度除以数据率就是所有报文都传输过去所需要的时间）
+连接释放：$kd$（连接释放的报文直接发送，从发送端到接收端所需要的时间为链路段数乘以每段的传播时延）
+分组交换
+报文如果直接传输，需要的代价是 $\frac{x}{b}$
+但是第一个报文未接收完成，后面的节点都是不在工作的，所以这里的代价为空闲的链路数乘以分组除以数据率 $(k-1)\frac{p}b$
+加上个倾斜，也就是加上 $kd$
+
+要使分组交换比电路交换快，则：
+
+s+\frac{x}b+kd>\frac{x}b+(k-1)\frac{p}b+kd即 $s&gt;(k-1)\frac{p}b$
+
+
+考虑原始的状态 $\frac{x}b+(k-1)\frac{p}b+kd$
+没有传播时延，再考虑分组控制信息固定长度，则 $\frac{x}p\cdot\frac{p+h}b+(k-1)\frac{p+h}b$
+整理得 $\frac{k-1}b p+\frac{xh}bp^{-1}+\frac{x+(k-1)h}b$
+函数值最大，则 $\frac{k-1}b p=\frac{xh}bp^{-1}$
+解得 $p=\sqrt{\frac{xh}{k-1}}$
+
+发送时延=数据长度/数据发送速率
+传播时延=距离/物理传播速率
+(1) 发送时延=$\frac{10^7bit}{10010^3b/s}=110^2s$ ，传播时延=$\frac{100010^3m}{210^8m/s}=5*10^{-3}s$
+(2) 发送时延=$\frac{10^3bit}{110^9b/s}=110^{-6}s$ ，传播时延=$\frac{100010^3m}{210^8m/s}=5*10^{-3}s$
+
+正在传输的比特数=传播时延*数据率
+传播时延=媒体长度/传播速度
+(1) 传输时延=$\frac{110^{-1}m}{210^8m/s}=5*10^{-10}s$
+$1Mb/s:\quad 510^{-10}s110^6b/s=510^{-4}bit$
+$1Gb/s:\quad 510^{-10}s110^9b/s=510^{-1}bit$
+(2) 传输时延=$\frac{100m}{210^8m/s}=510^{-7}s$
+$1Mb/s:\quad 510^{-7}s110^6b/s=510^{-1}bit$
+$1Gb/s:\quad 510^{-7}s110^9b/s=510^{2}bit$
+(3) 传输时延=$\frac{10010^3m}{210^8m/s}=5*10^{-4}s$
+$1Mb/s:\quad 510^{-4}s110^6b/s=510^{2}bit$
+$1Gb/s:\quad 510^{-4}s110^9b/s=510^{5}bit$
+(4) 传输时延=$\frac{500010^3m}{210^8m/s}=2.5*10^{-2}s$
+$1Mb/s:\quad 2.510^{-2}s110^6b/s=2.510^{4}bit$
+$1Gb/s:\quad 2.510^{-2}s110^9b/s=2.510^{7}bit$
+
+由题意 $2W=20000$
+码元变为16，则数据率$=2W\log_216=80000bit/s$
++
+最长工作距离$=\frac{20dB}{0.7dB/km}=\frac{200}7km$
+衰减$=\frac{20dB}{100km}=0.2dB/km$
+
+$\frac{210^8}{120010^{-9}}=\frac53*10^{14}Hz$
+
+这种题，直接逐项相加即可
+$S\cdot A=\frac18\sum_{i=1}^8S_iA_i=\frac{1-1+3+1-1+3+1+1}8=1$
+$S\cdot B=\frac18\sum_{i=1}^8S_iB_i=\frac{1-1-3-1-1-3+1-1}8=-1$
+$S\cdot C=\frac18\sum_{i=1}^8S_iC_i=\frac{1+1+3+1-1-3-1-1}8=0$
+$S\cdot D=\frac18\sum_{i=1}^8S_iD_i=\frac{1+1+3-1+1+3+1-1}8=1$
+故AD发送了数据1，B发送了数据0，C未发送数据
+
+需要发送的数据 1101011011，补齐位数为 11010110110000
+校验多项式 10011
+做模2减法（逐位异或），得到余数 0111
+
+需要发送的数据 101110，补齐位数为 101110000
+校验多项式 1001
+做模2减法（逐位异或），得到余数 011
+
+PPP协议中 0x7D 是转义字符
+
+0x7D本身表示转义字符
+如果数据中有0x7E（帧的边界字符），则它也会被转义成0x7D 0x5E
+如果数据中有0x7D，则它会被转义成0x7D 0x5D
+
+
+
+原文：0110111111111100
+填充后：011011111011111000
+填充后：0001110111110111110110
+原文：00011101111111111110
+
+单程传播时延 $\tau=\frac{110^3m}{210^8m/s}=5*10^{-6}s$
+往返传播时延 $2\tau=10*10^{-6}s$
+$2\tau$ 即为争用期。为了能够按照CSMA/CD 工作，最小帧的发送时间即为争用期$10\mu s$发送的数据量
+$110^9b/s1010^{-6}s=110^4b=1250B$
+
+等待时间=$2\tau*r$
+10Mb/s的以太网争用期为$51.2\mu s$，则等待时间=5.12ms
+100Mb/s的以太网争用期为$5.12\mu s$，则等待时间=0.512ms
+
+第三章还剩下一些，暂时丢掉了~
+
+01000101 0000000000000000 0001110000000000 0000000100000000 0000000000000100 0001000100000000 0000000000001010 0000110000001110 0000010100001100 0000011000000111 00001001$\rightarrow$01003532 0002341401110100 01001110$\rightarrow$取反码10001011 10110001
+
+45 0000 1C00 0100 0004 1100 000A 0C0E 050C 0607 09$\rightarrow$74 4E
+十六进制太难算了
+
+第二个局域网所能传送的最长数据帧中的数据部分只有1200bit，即每个IP数据片的数据部分不超过1200-160(bit)，由于片偏移是以8字节即64bit为单位，所以IP数据片的数据部分不超过1024bit
+故3200bit的报文要分4个数据片，所以第二个局域网向上传送的比特数等于(3200+4*160)=3840bit
+
+128.96.39.10属于子网128.96.39.0~128.96.39.127，故下一跳接口为m0
+128.96.30.12属于子网128.96.39.0~128.96.39.127，故下一跳接口为R2
+128.96.40.151不在子网128.96.40.0~128.96.40.127，故使用默认路由R4
+192.4.153.17属于子网192.4.153.0~192.4.153.127，故下一跳接口为R3
+192.4.153.90不在子网192.4.153.0~192.4.153.63，故使用默认路由R4
+
+IP数据包固定首部长度即为20字节，剩下总共3980字节
+分成最大数据长度为1500字节，去掉首部长度为1480字节
+3980/1480&gt;2，故划分为三个数据报片
+第一片：数据字段长度为1480，片偏移为0，MF为1
+第二片：数据字段长度为1480，片偏移为185，MF为1
+第三片：数据字段长度为1020，片偏移为370，MF为0
+
+132:10000100133:10000101134:10000110135:10000111
+故共同前缀为 10000100(132)，总共22位
+最大可能聚合为 212.56.132.0/22
+
+后者包含于前者，因为前面的序列都相同
+
+一眼是(1)哇
+
+地址0/4与任意IPv4地址前四位为0000的地址都匹配
+
+只有前11位相同（截止到第二位的16，即第12位）
+
+2 4 11 30
+
+20=8+8+4
+84写成二进制是01010100，取前四位为0101xxxx
+最小01010000，即为80；最大01011111，即为95
+最小地址为 140.120.80.00，最大地址为 140.120.95.255
+地址掩码为 255.255.240.0
+地址块中共有地址 $2^{32-20}=2^{12}=4096$ 个
+相当于C类地址 $2^{12}/2^{8}=2^4=16$ 个
+
+第一步：下一跳全部改为C，距离+1
+第二步：和原有的进行对比，选择相对较少的那个
+
+
+29:0001110132:00100000
+地址数为 256*4=1024
+虽然这两个地址是连续的地址块，但无法写成前缀的形式。
+
+网络掩码：255.255.255.224
+网络前缀长度：27
+网络后缀长度：32-27=5
+
+地址数：$2^5=32$ 个
+首地址：167.199.170.64
+末地址：167.199.170.95
+
+子网N1：14.24.74.0/25子网N2：14.24.74.128/26子网N3：14.24.74.196/28
+
+都匹配，根据最长前缀匹配原则，选择路由3
+
+11001000 00111000 10101000 00000000/21
+$\frac{2^{32-21}}{2^8}=2^3=8$
+
+::F53:6382:AB00:67DB:BB27:7332::4D:ABCD::AF36:7328:0000:87AA:03982819:00AF::35:0CB2:B271
+
+0000:0000:0000:0000:0000:0000:0000:00000000:00AA:0000:0000:0000:0000:0000:00000000:1234 :0000:0000:0000:0000:0000:00030123:0000:0000:0000:0000:0000:0001:0002
+
+UDP的首部有8字节，故总共8200字节
+IP数据包的最大长度为1500字节，首部20字节，故应当分为六片
+前五段数据字段的长度为1480字节，第六片为800字节
+片偏移为0,185,370,555,740,925
+
+UDP首部分别是 源端口 目的端口 长度 校验和
+因此源端口是 $6256+316+2=1586$
+目的端口是 $4*16+5=69$
+用户数据总长度为 $16+12=28$
+目的端口号 69&lt;1023，是熟知端口，为服务器端使用的端口
+使用的服务程序是TFTP
+
+
+TCP报文段首部序号字段占4字节，共$2^{32}$个序号
+TCP是面向字节流的，每个序号对应一个数据字节，因此在序号不重复使用的条件下，一次性能发送$2^{32}$个字节，因此L的最大值为4GB
+10Mbit/s=1.25MB/s
+所需时间=$\frac{L+\lceil\frac{L}{1460}\rceil*66}{1.25MB/s}$
+
+(1) 第一个报文段是70-99的数据，携带总共30个字节的数据
+(2) 发回的确认号应当是100，代表100之前的序号皆被正确收到并且期待第100号
+(3) 80个字节
+(4) 70
+
+最大吞吐量=$\frac{65535B*8b/B}{20ms}=26.214Mb/s$
+
+发送65535字节所需要的时间$T=T_D+RTT=\frac{65536B8b/B}{110^9bit/s}+10ms*2=20.52428ms$
+最大吞吐量$\frac{L}T=\frac{L}{\frac{L}C+RTT}=\frac{65536B*8b/B}{20.52428ms}=25.544Mb/s$
+信道利用率=吞吐量/信道带宽=传播时延/总时延=2.5544%
+
+
+初始化参数
+
+- 初始的EstimatedRTT和DevRTT可以根据系统预设值或初始采样值来设定。
+- 常见的初始值：
+  - EstimatedRTT = 初始 RTT 样本值
+  - DevRTT = 初始 RTT 样本值 / 2（或其他合理假设值）
+
+更新 EstimatedRTT
+
+当采集到新的RTT样本值SampleRTT时，更新EstimatedRTT：
+$\text{EstimatedRTT} = (1 - \alpha) \times \text{EstimatedRTT} + \alpha \times \text{SampleRTT}$
+- 这是一个加权平均公式，用于平滑RTT的估计值。
+- 参数$\alpha$的典型值是0.125（即1/8）。
+
+更新 DevRTT
+
+基于SampleRTT与EstimatedRTT的差异，更新DevRTT（估算RTT的平均偏差）：
+$\text{DevRTT} = (1 - \beta) \times \text{DevRTT} + \beta \times |\text{SampleRTT} - \text{EstimatedRTT}|$
+- 这里使用的是绝对偏差来衡量RTT的波动程度。
+- 参数$\beta$的典型值是0.25（即1/4）。
+
+计算 RTO
+
+根据更新后的EstimatedRTT和DevRTT计算RTO：
+$\text{RTO} = \text{EstimatedRTT} + 4 \times \text{DevRTT}$
+- 加权偏差部分（$4 \times \text{DevRTT}$）用于增加容忍度，防止因RTT波动引发过早重传。
+
+动态调整
+
+- RTO的上下限限制：在实际实现中，RTO通常会被限制在一个范围内。例如：
+  - 最小值：1秒
+  - 最大值：60秒
+  这样可以避免计算结果极端化导致性能问题。
+(1) RTO=4.5s
+(2) RTTs=$\frac78$旧的RTT+$\frac18$新的RTT=1.625s
+​     RTTd=$\frac34$旧的RTTd+$\frac14$|RTTs-新的RTT样本|=0.78125s
+​     RTO= 4.75s
+
+RTT0=30ms
+RTT1=0.9RTT0+0.1RTT=29.6ms
+RTT2=0.9RTT1+0.1RTT=29.84ms
+RTT3=0.9RTT2+0.1RTT=29.256ms
+$\alpha$取值较小，RTTs受RTT样本值的影响较小
+
+ssthresh=上次拥塞值/2
+
+
+
+(2) 慢开始时间间隔：[1,6]和[23,26]
+(3) 拥塞避免时间间隔：[6,16]和[17,22]
+(4) 第16轮是收到了重复帧，第22抡是超时检测
+(5) 1-&gt;32, 18-&gt;21, 24-&gt;13
+(6) 第七轮
+(7) 4
+半期考相关考点
+
+集线器平分带宽，交换机都能使用最大带宽
+集线器不能隔离广播域和冲突域，交换机可以隔离冲突域但是不能隔离广播域
+已知网络利用率求网络延迟是最小值的多少倍，$(1-利用率)^{-1}$
+最小单位：物理层：比特/位；数据链路层：帧；网络层：分组；传输层：数据报；应用层：数据
+CSMA/CD是在介质访问控制（MAC层）实现的
+传统以太网最短有效帧长位64字节，争用期为 $51.2\mu s$
+以太网的物理地址的长度为48位，IPv4地址的长度为32位
+IP首部定长部分为20字节
+
+]]></content>
+      <categories>
+        <category>课程与考试重点</category>
+      </categories>
+      <tags>
+        <tag>cs</tag>
       </tags>
   </entry>
   <entry>
@@ -9337,57 +9358,6 @@ Fiat-Shamir变换（简化的非交互证明）
       </tags>
   </entry>
   <entry>
-    <title>马原学习笔记</title>
-    <url>/2025/08/18/%E9%A9%AC%E5%8E%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研政治</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高数下学习笔记</title>
-    <url>/2025/06/22/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>课程与考试重点</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>飞行器空气动力学学习笔记（低速翼型）</title>
     <url>/2024/08/10/%E9%A3%9E%E8%A1%8C%E5%99%A8%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BD%8E%E9%80%9F%E7%BF%BC%E5%9E%8B%EF%BC%89/</url>
     <content><![CDATA[2024.11.06二次编辑
@@ -9502,6 +9472,57 @@ $v$表示当地速度，$V_\infty$表示来流速度
       </categories>
       <tags>
         <tag>RoboMaster</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>马原学习笔记</title>
+    <url>/2025/08/18/%E9%A9%AC%E5%8E%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研政治</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高数下学习笔记</title>
+    <url>/2025/06/22/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>课程与考试重点</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
       </tags>
   </entry>
 </search>

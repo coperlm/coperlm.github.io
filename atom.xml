@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2026-02-14T03:44:09.165Z</updated>
+  <updated>2026-02-14T10:18:16.650Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我要用linux参加腾讯会议</title>
+    <link href="https://coperlm.github.io/2026/02/14/%E6%88%91%E8%A6%81%E7%94%A8linux%E5%8F%82%E5%8A%A0%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE/"/>
+    <id>https://coperlm.github.io/2026/02/14/%E6%88%91%E8%A6%81%E7%94%A8linux%E5%8F%82%E5%8A%A0%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE/</id>
+    <published>2026-02-14T09:50:12.000Z</published>
+    <updated>2026-02-14T10:18:16.650Z</updated>
+    
+    <content type="html"><![CDATA[<p>很早之前就觉得slidev做PPT很牛，搭配上cachyos系统更是好用，但是组会需要使用腾讯会议，通常需要slidev导出后转到windows上或者直接内网传统才能使用，那就很简陋了；如果直接用window做slidev的PPT，虽然没毛病但是也简陋了一些。如果直接在cachyos上安装腾讯会议，一方面在arch上的兼容性一般，投屏容易出问题，另一方面他是闭源软件，打咩。</p><p>最开始想用OBS转发流量，但是担心清晰度和分辨率不足。后来直接Sunshine + Moonlight，用游戏级配置降维打击 PPT 演示。Sunshine 是“电视台”（服务端/发送端），而 Moonlight 是“电视机”（客户端/接收端）。</p><p>第一步：建立稳定的链路 。为了防止 Wi-Fi 干扰导致 PPT 翻页卡顿，直接使用 USB 共享网络 建立局域网。用数据线连接安卓手机和电脑，然后手机开启 <code>USB 网络共享</code>，电脑会自动识别为一个有线网卡，然后二者处于一个局域网里了（手机是网关）。</p><p>第二步：配置 Host (CachyOS)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">paru sunshine</span><br></pre></td></tr></table></figure><br>然后运行 <code>sunshine</code>，打开浏览器访问 <code>https://localhost:47990</code>，注册登录，其他可配可不配。</p><p>第三步：配置 Client (Android)</p><p>在安卓手机上安装 <strong>Moonlight Game Streaming</strong> ；确保手机连接了 USB 共享网络，打开 Moonlight，它应该能自动发现 CachyOS 主机。</p><p>在 Moonlight 设置中，将分辨率设置为 1080p (1920x1080) 即可，腾讯会议手机版投屏上限通常就是 1080p，感觉展示PPT的话也足够了，码率建议设置在 10-20 Mbps。</p><p>点击图标连接，输入配对码。</p><p>最终手机端打开腾讯会议并投屏，音频直接走手机的即可，延迟低且可靠。</p><p>看起来手机还能操控电脑，但是用不上，又但是这样和远控差不多嘛，只不过用USB分享网络，那延迟很低了，而且带宽随便设置，还能推旮旯给目。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;很早之前就觉得slidev做PPT很牛，搭配上cachyos系统更是好用，但是组会需要使用腾讯会议，通常需要slidev导出后转到windows上或者直接内网传统才能使用，那就很简陋了；如果直接用window做slidev的PPT，虽然没毛病但是也简陋了一些。如果直接在ca</summary>
+        
+      
+    
+    
+    
+    <category term="技术与工具" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="arch_linux" scheme="https://coperlm.github.io/tags/arch-linux/"/>
+    
+  </entry>
   
   <entry>
     <title>搭建linux下看论文的环境</title>
@@ -548,33 +575,6 @@
     
     
     <category term="随笔" scheme="https://coperlm.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网安前沿讲座学习笔记（密码学）</title>
-    <link href="https://coperlm.github.io/2025/10/18/%E7%BD%91%E5%AE%89%E5%89%8D%E6%B2%BF%E8%AE%B2%E5%BA%A7%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%AF%86%E7%A0%81%E5%AD%A6%EF%BC%89/"/>
-    <id>https://coperlm.github.io/2025/10/18/%E7%BD%91%E5%AE%89%E5%89%8D%E6%B2%BF%E8%AE%B2%E5%BA%A7%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%AF%86%E7%A0%81%E5%AD%A6%EF%BC%89/</id>
-    <published>2025-10-18T09:02:21.000Z</published>
-    <updated>2025-10-31T07:13:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<p> 学校开了这门课，只有0.5学分，要不是忘了选课了才不会选~</p><p>后来知道这门课是一个密码学大牛给上，这下不好好听了</p><p>总共八节课，前四节是基础，后四年是近几年的研究成果</p><p>感觉尤其是越到后面，听完之后的感受毫不亚于去参加一场学术会议</p><p>对于后几节，记了很多东东，原本写在纸上了，今同步到博客上</p><p>字有点乱，但是管你看不看得懂——爱看不看（光速逃</p><p><img src="IMG_20250919_120127.jpg" alt></p><p><img src="IMG_20251010_120031.jpg" alt></p><p><img src="IMG_20251017_110830.jpg" alt></p><p><img src="IMG_20251017_120139.jpg" alt></p><p><img src="IMG_20251024_110619.jpg" alt></p><p><img src="IMG_20251024_115738.jpg" alt></p><p><img src="IMG_20251031_110655.jpg" alt></p><p><img src="IMG_20251031_115941.jpg" alt></p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="会议竞赛游记" scheme="https://coperlm.github.io/categories/%E4%BC%9A%E8%AE%AE%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
-    
-    
-    <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
     
   </entry>
   
