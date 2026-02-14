@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2026-02-07T14:55:09.791Z</updated>
+  <updated>2026-02-14T03:44:09.165Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭建linux下看论文的环境</title>
+    <link href="https://coperlm.github.io/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/"/>
+    <id>https://coperlm.github.io/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/</id>
+    <published>2026-02-14T02:49:11.000Z</published>
+    <updated>2026-02-14T03:44:09.165Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天捣鼓了一下电脑上看论文的工作流，自从我发现多个桌面这个东西，感觉笔记本电脑用好了，不比大屏更低效，更重要的是它便携</p><p>环境：cachyos，KDE</p><p>既然都arch了，那软件肯定要通通开源~</p><h2 id="Sioyek——PDF阅读器"><a href="#Sioyek——PDF阅读器" class="headerlink" title="Sioyek——PDF阅读器"></a>Sioyek——PDF阅读器</h2><p>最一开始尝试使用浏览器直接阅读，但是效果不佳，与其加装插件，不如寻找新的软件；然后尝试了<code>Zathura</code>，但是在暗色模式下使用感觉怪怪的，并且一点点批注功能都没有。于是乎最终选择了<code>Sioyek</code>。</p><p>安装先sioyek<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">paru -S sioyek</span><br></pre></td></tr></table></figure><br>然后手动注入键位<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/.config/sioyek</span><br><span class="line">nano ~/.config/sioyek/keys_user.config</span><br></pre></td></tr></table></figure><br>粘贴进去<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"># --- 1. Vim 核心移动 (优先级最高) ---</span><br><span class="line">move_down           j</span><br><span class="line">move_up             k</span><br><span class="line">move_left           l</span><br><span class="line">move_right          h</span><br><span class="line"></span><br><span class="line"># --- 2. 翻页与跳转 ---</span><br><span class="line">next_page           &lt;space&gt;</span><br><span class="line">previous_page       &lt;S-space&gt;</span><br><span class="line"></span><br><span class="line"># &quot;返回上一处&quot; (历史记录) - 修正了命令名</span><br><span class="line">prev_state          &lt;backspace&gt;</span><br><span class="line">prev_state          &lt;C-o&gt;</span><br><span class="line"></span><br><span class="line"># --- 3. 缩放与适应 ---</span><br><span class="line">zoom_in             +</span><br><span class="line">zoom_out            -</span><br><span class="line">zoom_in             =</span><br><span class="line">fit_to_page_width   w</span><br><span class="line">fit_to_page_height  a</span><br><span class="line"></span><br><span class="line"># --- 4. 科研神器功能 ---</span><br><span class="line"># 传送门 (画中画) - 修正了命令名 (toggle_portal -&gt; portal)</span><br><span class="line">portal              p</span><br><span class="line"></span><br><span class="line"># 目录 - 修正了命令名 (toggle_toc -&gt; goto_toc)</span><br><span class="line">goto_toc            t</span><br><span class="line"></span><br><span class="line"># 搜索与命令面板</span><br><span class="line">search              /</span><br><span class="line">command             :</span><br><span class="line"></span><br><span class="line"># --- 5. 视觉 ---</span><br><span class="line">toggle_dark_mode    i</span><br><span class="line">toggle_synctex      &lt;f8&gt;</span><br><span class="line">toggle_fullscreen   &lt;f11&gt;</span><br><span class="line"></span><br><span class="line"># --- 6. 高亮/笔记 ---</span><br><span class="line"># 因为 h 给了向左移，我们将&quot;添加高亮&quot;改为 &#x27;y&#x27; (Yellow)</span><br><span class="line">add_highlight       y</span><br><span class="line"># 删除高亮改为 &#x27;d&#x27;</span><br><span class="line">delete_highlight    d</span><br><span class="line"># 跳转到下一个高亮</span><br><span class="line">goto_highlight      gh</span><br></pre></td></tr></table></figure><br>我的系统里，不知道为什么，<code>h</code>和<code>l</code>的功能反了，故上述配置给他们掉个个，如果你们用着不一样，可以自己调配一下</p><p>我觉得黑夜模式很好，想默认开启<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.config/sioyek/prefs_user.config</span><br></pre></td></tr></table></figure><br>写入以下内容<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 启动时自动执行命令：开启夜间模式</span><br><span class="line">startup_commands    toggle_dark_mode</span><br><span class="line"></span><br><span class="line"># 设置启动时的默认缩放</span><br><span class="line">fit_to_page_width_smart #意味着自动适应宽度，切掉白边</span><br><span class="line">default_zoom_level  fit_to_page_width_smart</span><br><span class="line"></span><br><span class="line"># 让背景稍微暗一点，不是纯黑，更护眼</span><br><span class="line">background_color    0.1 0.1 0.1</span><br></pre></td></tr></table></figure><br>至于这个软件的读法嘛，开发者是伊朗人，<strong>Sioyek</strong> (波斯语：سی و یک) 在波斯语中是数字 <code>31</code> 的意思。发音： /siː-oʊ-jɛk/，谐音：“西-欧-耶克”。</p><p>把 <code>Sioyek</code> 设置为系统默认PDF阅读器<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdg-mime default sioyek.desktop application/pdf</span><br></pre></td></tr></table></figure><br>至于具体使用方法，都在快捷键里了：vim同款上下左右，放大缩小，还有批注什么的</p><h2 id="Yazi——文件管理器"><a href="#Yazi——文件管理器" class="headerlink" title="Yazi——文件管理器"></a>Yazi——文件管理器</h2><p>实际上我用不惯，感觉不如<code>dolphin</code>。我配置了半天，想默认打开markdown用<code>zettlr</code>但是失败了<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S yazi</span><br></pre></td></tr></table></figure><br>支持用hjkl实现几级目录的来回切换，按<code>;</code>可以快捷调出命令行（但是我觉得不如<code>dolphin</code>和<code>kate</code>的常驻命令行，又不过<code>dolphin</code>的常驻命令行(<code>F4</code>)如果开启自动定位目录 可能会来回回弹，我的评价是不如<code>Shift+Alt+F4</code>新开一个）</p><p>最后还是回到了<code>dolphin</code>，好用捏</p><h2 id="Crow-Translate——英语翻译器"><a href="#Crow-Translate——英语翻译器" class="headerlink" title="Crow_Translate——英语翻译器"></a>Crow_Translate——英语翻译器</h2><p>之前尝试了<code>Pot_Translate</code>，但是稳定性和兼容性不太行（可能是我菜菜，不会配置），但是<code>Crow</code>的确更瓷实吧~<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S crow-translate</span><br></pre></td></tr></table></figure><br>这玩意不用配，直接 <code>Ctrl + Alt + E</code> 翻译好了，和 <code>deepl</code> 坐一桌，而且还是开源的</p><p>最开始可能有服务器连不到的情况，点一下<code>Detect fastest</code>就能自动找到可用服务了</p><p>（其实感觉并不是很用的习惯，可能也就是deepl的一个变体的亚子，读论文的核心还是自己读，偶尔几个不认识的词就翻译一下，全篇翻译不如直接丢给AI）</p><hr><p>核心还是搭配多屏、分屏和快捷键，实现一个屏幕几个大的效果，不比27寸大屏差</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天捣鼓了一下电脑上看论文的工作流，自从我发现多个桌面这个东西，感觉笔记本电脑用好了，不比大屏更低效，更重要的是它便携&lt;/p&gt;
+&lt;p&gt;环境：cachyos，KDE&lt;/p&gt;
+&lt;p&gt;既然都arch了，那软件肯定要通通开源~&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="技术与工具" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="arch_linux" scheme="https://coperlm.github.io/tags/arch-linux/"/>
+    
+  </entry>
   
   <entry>
     <title>去南京转了一圈</title>
@@ -42,17 +72,16 @@
     <link href="https://coperlm.github.io/2026/02/02/CachyOS%E4%B8%8BFlatpak%E7%89%88Obsidian%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E9%94%99%E4%BD%8D%E9%97%AE%E9%A2%98/"/>
     <id>https://coperlm.github.io/2026/02/02/CachyOS%E4%B8%8BFlatpak%E7%89%88Obsidian%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E9%94%99%E4%BD%8D%E9%97%AE%E9%A2%98/</id>
     <published>2026-02-02T14:13:09.000Z</published>
-    <updated>2026-02-04T05:27:06.332Z</updated>
+    <updated>2026-02-14T03:36:10.199Z</updated>
     
-    <content type="html"><![CDATA[<p>(待办：工具和技术分组应当需要分隔开)</p><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 CachyOS (基于 Arch Linux) 或其他 Linux 发行版的 Wayland 环境下，使用 <strong>Flatpak</strong> 安装的 <strong>Obsidian</strong> 进行写作时，遇到了中文输入法（如 Fcitx5）<strong>候选框不跟随光标</strong>的问题。</p><p>具体表现为输入可能还没选呢，就上屏了。</p><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>这是一个经典的 <strong>Electron + Wayland + Input Method</strong> 兼容性问题。 虽然较新的 Electron 版本开始支持 Wayland，但对 IME（输入法协议）的支持依然不稳定。特别是 Flatpak 版本运行在沙箱中，如果环境变量没有正确传递，应用就无法获知系统的输入法配置，导致它退回到默认的“哑巴”模式。</p><p><strong>解决方案的核心思路：</strong> 强制 Obsidian 运行在 <strong>X11 (XWayland)</strong> 模式下，并手动通过 <code>flatpak override</code> 将输入法相关的环境变量注入到沙箱中。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="第一步：确认安装方式"><a href="#第一步：确认安装方式" class="headerlink" title="第一步：确认安装方式"></a>第一步：确认安装方式</h3><p>首先确保你安装的是 Flatpak 版本。 包名通常为：<code>md.obsidian.Obsidian</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak list</span><br></pre></td></tr></table></figure><p><img src="88c749088421fb181e9f9e92a9a0d020.png" alt="88c749088421fb181e9f9e92a9a0d020.png"></p><h3 id="第二步：执行修复命令"><a href="#第二步：执行修复命令" class="headerlink" title="第二步：执行修复命令"></a>第二步：执行修复命令</h3><p>打开终端，依次运行以下命令：</p><p><strong>1. 屏蔽 Wayland 接口，强制使用 X11 后端</strong> 这是最关键的一步，迫使 Electron 回退到兼容性更好的 X11 模式。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --nosocket=wayland md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><strong>2. 确保 X11 权限开启（通常默认开启，为了保险）</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --socket=x11 md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><strong>3. 注入输入法环境变量</strong> Flatpak 容器内默认可能没有读取到宿主机的输入法配置。我们需要手动告诉它使用 Fcitx（如果你用的是 IBus，将 <code>fcitx</code> 改为 <code>ibus</code>）。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --<span class="built_in">env</span>=GTK_IM_MODULE=fcitx md.obsidian.Obsidian</span><br><span class="line">flatpak override --user --<span class="built_in">env</span>=XMODIFIERS=@im=fcitx md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><em>注意：<code>QT_IM_MODULE</code> 对于基于 Electron（Chromium）的应用通常不是必须的，但在某些环境下也可以加上。</em></p><h3 id="第三步：重启应用"><a href="#第三步：重启应用" class="headerlink" title="第三步：重启应用"></a>第三步：重启应用</h3><p>彻底关闭 Obsidian（确保后台进程已结束），然后重新打开。 现在，输入法候选框应该完美跟随光标了。</p><h2 id="还原配置（如果需要）"><a href="#还原配置（如果需要）" class="headerlink" title="还原配置（如果需要）"></a>还原配置（如果需要）</h2><p>如果未来 Obsidian 修复了 Wayland 下的输入法问题，你可以通过以下命令重置所有修改：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --reset md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在 Linux 下使用 Electron 应用（如 VSCode, Obsidian, Discord），如果遇到输入法问题，<strong>“强制 X11 + 注入环境变量”</strong> 通常是目前最稳妥的万能解法。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 CachyOS (基于 Arch Linux) 或其他 Linux 发行版的 Wayland 环境下，使用 <strong>Flatpak</strong> 安装的 <strong>Obsidian</strong> 进行写作时，遇到了中文输入法（如 Fcitx5）<strong>候选框不跟随光标</strong>的问题。</p><p>具体表现为输入可能还没选呢，就上屏了。</p><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>这是一个经典的 <strong>Electron + Wayland + Input Method</strong> 兼容性问题。 虽然较新的 Electron 版本开始支持 Wayland，但对 IME（输入法协议）的支持依然不稳定。特别是 Flatpak 版本运行在沙箱中，如果环境变量没有正确传递，应用就无法获知系统的输入法配置，导致它退回到默认的“哑巴”模式。</p><p><strong>解决方案的核心思路：</strong> 强制 Obsidian 运行在 <strong>X11 (XWayland)</strong> 模式下，并手动通过 <code>flatpak override</code> 将输入法相关的环境变量注入到沙箱中。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="第一步：确认安装方式"><a href="#第一步：确认安装方式" class="headerlink" title="第一步：确认安装方式"></a>第一步：确认安装方式</h3><p>首先确保你安装的是 Flatpak 版本。 包名通常为：<code>md.obsidian.Obsidian</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak list</span><br></pre></td></tr></table></figure><p><img src="88c749088421fb181e9f9e92a9a0d020.png" alt="88c749088421fb181e9f9e92a9a0d020.png"></p><h3 id="第二步：执行修复命令"><a href="#第二步：执行修复命令" class="headerlink" title="第二步：执行修复命令"></a>第二步：执行修复命令</h3><p>打开终端，依次运行以下命令：</p><p><strong>1. 屏蔽 Wayland 接口，强制使用 X11 后端</strong> 这是最关键的一步，迫使 Electron 回退到兼容性更好的 X11 模式。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --nosocket=wayland md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><strong>2. 确保 X11 权限开启（通常默认开启，为了保险）</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --socket=x11 md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><strong>3. 注入输入法环境变量</strong> Flatpak 容器内默认可能没有读取到宿主机的输入法配置。我们需要手动告诉它使用 Fcitx（如果你用的是 IBus，将 <code>fcitx</code> 改为 <code>ibus</code>）。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --<span class="built_in">env</span>=GTK_IM_MODULE=fcitx md.obsidian.Obsidian</span><br><span class="line">flatpak override --user --<span class="built_in">env</span>=XMODIFIERS=@im=fcitx md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><p><em>注意：<code>QT_IM_MODULE</code> 对于基于 Electron（Chromium）的应用通常不是必须的，但在某些环境下也可以加上。</em></p><h3 id="第三步：重启应用"><a href="#第三步：重启应用" class="headerlink" title="第三步：重启应用"></a>第三步：重启应用</h3><p>彻底关闭 Obsidian（确保后台进程已结束），然后重新打开。 现在，输入法候选框应该完美跟随光标了。</p><h2 id="还原配置（如果需要）"><a href="#还原配置（如果需要）" class="headerlink" title="还原配置（如果需要）"></a>还原配置（如果需要）</h2><p>如果未来 Obsidian 修复了 Wayland 下的输入法问题，你可以通过以下命令重置所有修改：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flatpak override --user --reset md.obsidian.Obsidian</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在 Linux 下使用 Electron 应用（如 VSCode, Obsidian, Discord），如果遇到输入法问题，<strong>“强制 X11 + 注入环境变量”</strong> 通常是目前最稳妥的万能解法。</p>]]></content>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;(待办：工具和技术分组应当需要分隔开)&lt;/p&gt;
-&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;在 CachyOS (基于 Arch Linux) 或其他</summary>
+    <summary type="html">&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;在 CachyOS (基于 Arch Linux) 或其他 Linux 发行版的 Wayland 环境下，使用</summary>
         
       
     
@@ -546,33 +575,6 @@
     
     
     <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>区块链中的树</title>
-    <link href="https://coperlm.github.io/2025/10/10/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E6%A0%91/"/>
-    <id>https://coperlm.github.io/2025/10/10/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E6%A0%91/</id>
-    <published>2025-10-10T10:39:51.000Z</published>
-    <updated>2026-02-04T05:28:45.276Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Merkle-树"><a href="#Merkle-树" class="headerlink" title="Merkle 树"></a>Merkle 树</h3><p>问题：对一个数组求哈希（n个元素）</p><p>传统方案：将每个数据拼接然后哈希，时空复杂度都是$O(n)$</p><p>使用merkle树：只需计算路线上的哈希，时空复杂度都是$O(logn)$；代价是总存储空间变大（需要存哈希树），但是依旧是$O(n)$</p><p><img src="image-20251005203401710.png" alt></p><h3 id="Trie-树"><a href="#Trie-树" class="headerlink" title="Trie 树"></a>Trie 树</h3><p>根据前缀进行索引，适用于前缀相似的数据存储</p><p>深度最劣为最长字符串的长度（也就是时间复杂度），但不一定是二叉树</p><p>适用于前缀字典的查找</p><p><img src="image-20251005203731340.png" alt></p><h3 id="Merkle-Patricia-树"><a href="#Merkle-Patricia-树" class="headerlink" title="Merkle Patricia 树"></a>Merkle Patricia 树</h3><p>把Merkle树的二叉变为16叉</p><p>父节点记录16个叉的指针，再加一个value字段表示自己的数值</p><p>这里的指针，就是子节点的哈希值，存在一个<code>key-value DB</code>里协助反向查找</p><p><img src="image-20251005204621556.png" alt></p><p>同时负责哈希和索引两个功能</p><p> 16叉减少深度-&gt;减少数据库的请求次数</p><h3 id="Rollup的State-Tree"><a href="#Rollup的State-Tree" class="headerlink" title="Rollup的State Tree"></a>Rollup的State Tree</h3><p>对map和value进行分离</p><p><img src="image-20251006195437245.png" alt></p><h3 id="Verkle-Tree"><a href="#Verkle-Tree" class="headerlink" title="Verkle Tree"></a>Verkle Tree</h3><p>基于KZG</p><p><img src="image-20251006200043767.png" alt></p><p>依此构造16叉树</p><p><img src="image-20251006200227515.png" alt></p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Merkle-树&quot;&gt;&lt;a href=&quot;#Merkle-树&quot; class=&quot;headerlink&quot; title=&quot;Merkle 树&quot;&gt;&lt;/a&gt;Merkle</summary>
-        
-      
-    
-    
-    
-    <category term="技术与工具" scheme="https://coperlm.github.io/categories/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="BlockChain" scheme="https://coperlm.github.io/tags/BlockChain/"/>
     
   </entry>
   

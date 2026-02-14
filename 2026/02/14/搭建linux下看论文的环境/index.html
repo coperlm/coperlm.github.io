@@ -1,0 +1,747 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>搭建linux下看论文的环境 | coperlm's Blog</title><meta name="author" content="coperlm"><meta name="copyright" content="coperlm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="今天捣鼓了一下电脑上看论文的工作流，自从我发现多个桌面这个东西，感觉笔记本电脑用好了，不比大屏更低效，更重要的是它便携 环境：cachyos，KDE 既然都arch了，那软件肯定要通通开源~ Sioyek——PDF阅读器最一开始尝试使用浏览器直接阅读，但是效果不佳，与其加装插件，不如寻找新的软件；然后尝试了Zathura，但是在暗色模式下使用感觉怪怪的，并且一点点批注功能都没有。于是乎最终选择了S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建linux下看论文的环境">
+<meta property="og:url" content="https://coperlm.github.io/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="今天捣鼓了一下电脑上看论文的工作流，自从我发现多个桌面这个东西，感觉笔记本电脑用好了，不比大屏更低效，更重要的是它便携 环境：cachyos，KDE 既然都arch了，那软件肯定要通通开源~ Sioyek——PDF阅读器最一开始尝试使用浏览器直接阅读，但是效果不佳，与其加装插件，不如寻找新的软件；然后尝试了Zathura，但是在暗色模式下使用感觉怪怪的，并且一点点批注功能都没有。于是乎最终选择了S">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://coperlm.github.io/img/(28).gif">
+<meta property="article:published_time" content="2026-02-14T02:49:11.000Z">
+<meta property="article:modified_time" content="2026-02-14T03:44:09.165Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="arch_linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/img/(28).gif"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "搭建linux下看论文的环境",
+  "url": "https://coperlm.github.io/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/",
+  "image": "https://coperlm.github.io/img/(28).gif",
+  "datePublished": "2026-02-14T02:49:11.000Z",
+  "dateModified": "2026-02-14T03:44:09.165Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "coperlm",
+      "url": "https://coperlm.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/good.gif"><link rel="canonical" href="https://coperlm.github.io/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: coperlm","link":"链接: ","source":"来源: coperlm's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'medium_zoom',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '搭建linux下看论文的环境',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/realtime-clock.css"><script>
+(function(){
+  var h=new Date().getHours();
+  var c={
+    4:{g:'linear-gradient(180deg,#FFF5F0 0%,#FFE4D6 30%,#FFD6BA 60%,#FFB4A2 100%)',f:'#FFB4A2'},
+    6:{g:'linear-gradient(180deg,#FFEAA7 0%,#FFD79A 25%,#FFA99F 60%,#FF719A 100%)',f:'#FF719A'},
+    8:{g:'linear-gradient(180deg,#F8FFAE 0%,#D4FC79 25%,#96E6A1 60%,#A8E6CF 85%,#C2FFD8 100%)',f:'#C2FFD8'},
+    10:{g:'linear-gradient(180deg,#E0F7FA 0%,#A1C4FD 35%,#B8D5F0 65%,#C2E9FB 100%)',f:'#C2E9FB'},
+    12:{g:'linear-gradient(180deg,#A7FFE4 0%,#84FAB0 30%,#7FE5D4 65%,#8FD3F4 100%)',f:'#8FD3F4'},
+    14:{g:'linear-gradient(180deg,#55E6C1 0%,#43E97B 30%,#3FD5BA 65%,#38F9D7 100%)',f:'#38F9D7'},
+    16:{g:'linear-gradient(180deg,#FFEAA7 0%,#FCE38A 30%,#FFBE76 65%,#F38181 100%)',f:'#F38181'},
+    18:{g:'linear-gradient(180deg,#FDD835 0%,#FBD786 25%,#FFA87D 60%,#F7797D 100%)',f:'#F7797D'},
+    19:{g:'linear-gradient(180deg,#FFB088 0%,#FF9A9E 30%,#D988B9 65%,#8E54E9 100%)',f:'#8E54E9'},
+    20:{g:'linear-gradient(180deg,#FFE5EC 0%,#FBD3E9 25%,#E5A3C7 60%,#BB377D 100%)',f:'#BB377D'},
+    22:{g:'linear-gradient(180deg,#7B68EE 0%,#667eea 30%,#6B5EA8 65%,#764ba2 100%)',f:'#764ba2'},
+    2:{g:'linear-gradient(180deg,#3B4371 0%,#4e54c8 30%,#7B7FDC 65%,#8f94fb 100%)',f:'#8f94fb'}
+  };
+  var r=h>=4&&h<6?c[4]:h>=6&&h<8?c[6]:h>=8&&h<10?c[8]:h>=10&&h<12?c[10]:h>=12&&h<14?c[12]:h>=14&&h<16?c[14]:h>=16&&h<18?c[16]:h>=18&&h<19?c[18]:h>=19&&h<20?c[19]:h>=20&&h<22?c[20]:h>=22||h<2?c[22]:c[2];
+  document.write('<style id="realtime-bg-init">body{background:'+r.g+' !important;background-attachment:fixed !important;}#footer{background:'+r.f+' !important;}</style>');
+})();
+</script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="coperlm's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">126</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a><a href="/link/"><div class="headline">友链</div><div class="length-num">19</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="https://coperlm.github.io/KnowledgeBase/"><i class="fa-fw fas fa-book"></i><span> 知识库</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw fas fa-sync-alt"></i><span> 更新</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/niu.gif" alt="Logo"><span class="site-name">coperlm's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">搭建linux下看论文的环境</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="https://coperlm.github.io/KnowledgeBase/"><i class="fa-fw fas fa-book"></i><span> 知识库</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw fas fa-sync-alt"></i><span> 更新</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">搭建linux下看论文的环境</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-02-14T02:49:11.000Z" title="发表于 2026-02-14 10:49:11">2026-02-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-02-14T03:44:09.165Z" title="更新于 2026-02-14 11:44:09">2026-02-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/">技术与工具</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">924</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/#post-comment"><span class="waline-comment-count" data-path="/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="container post-content" id="article-container"><p>今天捣鼓了一下电脑上看论文的工作流，自从我发现多个桌面这个东西，感觉笔记本电脑用好了，不比大屏更低效，更重要的是它便携</p>
+<p>环境：cachyos，KDE</p>
+<p>既然都arch了，那软件肯定要通通开源~</p>
+<h2 id="Sioyek——PDF阅读器"><a href="#Sioyek——PDF阅读器" class="headerlink" title="Sioyek——PDF阅读器"></a>Sioyek——PDF阅读器</h2><p>最一开始尝试使用浏览器直接阅读，但是效果不佳，与其加装插件，不如寻找新的软件；然后尝试了<code>Zathura</code>，但是在暗色模式下使用感觉怪怪的，并且一点点批注功能都没有。于是乎最终选择了<code>Sioyek</code>。</p>
+<p>安装先sioyek<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">paru -S sioyek</span><br></pre></td></tr></table></figure><br>然后手动注入键位<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/.config/sioyek</span><br><span class="line">nano ~/.config/sioyek/keys_user.config</span><br></pre></td></tr></table></figure><br>粘贴进去<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"># --- 1. Vim 核心移动 (优先级最高) ---</span><br><span class="line">move_down           j</span><br><span class="line">move_up             k</span><br><span class="line">move_left           l</span><br><span class="line">move_right          h</span><br><span class="line"></span><br><span class="line"># --- 2. 翻页与跳转 ---</span><br><span class="line">next_page           &lt;space&gt;</span><br><span class="line">previous_page       &lt;S-space&gt;</span><br><span class="line"></span><br><span class="line"># &quot;返回上一处&quot; (历史记录) - 修正了命令名</span><br><span class="line">prev_state          &lt;backspace&gt;</span><br><span class="line">prev_state          &lt;C-o&gt;</span><br><span class="line"></span><br><span class="line"># --- 3. 缩放与适应 ---</span><br><span class="line">zoom_in             +</span><br><span class="line">zoom_out            -</span><br><span class="line">zoom_in             =</span><br><span class="line">fit_to_page_width   w</span><br><span class="line">fit_to_page_height  a</span><br><span class="line"></span><br><span class="line"># --- 4. 科研神器功能 ---</span><br><span class="line"># 传送门 (画中画) - 修正了命令名 (toggle_portal -&gt; portal)</span><br><span class="line">portal              p</span><br><span class="line"></span><br><span class="line"># 目录 - 修正了命令名 (toggle_toc -&gt; goto_toc)</span><br><span class="line">goto_toc            t</span><br><span class="line"></span><br><span class="line"># 搜索与命令面板</span><br><span class="line">search              /</span><br><span class="line">command             :</span><br><span class="line"></span><br><span class="line"># --- 5. 视觉 ---</span><br><span class="line">toggle_dark_mode    i</span><br><span class="line">toggle_synctex      &lt;f8&gt;</span><br><span class="line">toggle_fullscreen   &lt;f11&gt;</span><br><span class="line"></span><br><span class="line"># --- 6. 高亮/笔记 ---</span><br><span class="line"># 因为 h 给了向左移，我们将&quot;添加高亮&quot;改为 &#x27;y&#x27; (Yellow)</span><br><span class="line">add_highlight       y</span><br><span class="line"># 删除高亮改为 &#x27;d&#x27;</span><br><span class="line">delete_highlight    d</span><br><span class="line"># 跳转到下一个高亮</span><br><span class="line">goto_highlight      gh</span><br></pre></td></tr></table></figure><br>我的系统里，不知道为什么，<code>h</code>和<code>l</code>的功能反了，故上述配置给他们掉个个，如果你们用着不一样，可以自己调配一下</p>
+<p>我觉得黑夜模式很好，想默认开启<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.config/sioyek/prefs_user.config</span><br></pre></td></tr></table></figure><br>写入以下内容<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 启动时自动执行命令：开启夜间模式</span><br><span class="line">startup_commands    toggle_dark_mode</span><br><span class="line"></span><br><span class="line"># 设置启动时的默认缩放</span><br><span class="line">fit_to_page_width_smart #意味着自动适应宽度，切掉白边</span><br><span class="line">default_zoom_level  fit_to_page_width_smart</span><br><span class="line"></span><br><span class="line"># 让背景稍微暗一点，不是纯黑，更护眼</span><br><span class="line">background_color    0.1 0.1 0.1</span><br></pre></td></tr></table></figure><br>至于这个软件的读法嘛，开发者是伊朗人，<strong>Sioyek</strong> (波斯语：سی و یک) 在波斯语中是数字 <code>31</code> 的意思。发音： /siː-oʊ-jɛk/，谐音：“西-欧-耶克”。</p>
+<p>把 <code>Sioyek</code> 设置为系统默认PDF阅读器<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdg-mime default sioyek.desktop application/pdf</span><br></pre></td></tr></table></figure><br>至于具体使用方法，都在快捷键里了：vim同款上下左右，放大缩小，还有批注什么的</p>
+<h2 id="Yazi——文件管理器"><a href="#Yazi——文件管理器" class="headerlink" title="Yazi——文件管理器"></a>Yazi——文件管理器</h2><p>实际上我用不惯，感觉不如<code>dolphin</code>。我配置了半天，想默认打开markdown用<code>zettlr</code>但是失败了<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S yazi</span><br></pre></td></tr></table></figure><br>支持用hjkl实现几级目录的来回切换，按<code>;</code>可以快捷调出命令行（但是我觉得不如<code>dolphin</code>和<code>kate</code>的常驻命令行，又不过<code>dolphin</code>的常驻命令行(<code>F4</code>)如果开启自动定位目录 可能会来回回弹，我的评价是不如<code>Shift+Alt+F4</code>新开一个）</p>
+<p>最后还是回到了<code>dolphin</code>，好用捏</p>
+<h2 id="Crow-Translate——英语翻译器"><a href="#Crow-Translate——英语翻译器" class="headerlink" title="Crow_Translate——英语翻译器"></a>Crow_Translate——英语翻译器</h2><p>之前尝试了<code>Pot_Translate</code>，但是稳定性和兼容性不太行（可能是我菜菜，不会配置），但是<code>Crow</code>的确更瓷实吧~<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S crow-translate</span><br></pre></td></tr></table></figure><br>这玩意不用配，直接 <code>Ctrl + Alt + E</code> 翻译好了，和 <code>deepl</code> 坐一桌，而且还是开源的</p>
+<p>最开始可能有服务器连不到的情况，点一下<code>Detect fastest</code>就能自动找到可用服务了</p>
+<p>（其实感觉并不是很用的习惯，可能也就是deepl的一个变体的亚子，读论文的核心还是自己读，偶尔几个不认识的词就翻译一下，全篇翻译不如直接丢给AI）</p>
+<hr>
+<p>核心还是搭配多屏、分屏和快捷键，实现一个屏幕几个大的效果，不比27寸大屏差</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://coperlm.github.io">coperlm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://coperlm.github.io/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/">https://coperlm.github.io/2026/02/14/搭建linux下看论文的环境/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://coperlm.github.io" target="_blank">coperlm's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/arch-linux/">arch_linux</a></div><div class="post-share"><div class="social-share" data-image="/img/(28).gif" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/02/06/%E5%8E%BB%E5%8D%97%E4%BA%AC%E8%BD%AC%E4%BA%86%E4%B8%80%E5%9C%88/" title="去南京转了一圈"><img class="cover" src="/img/(15).gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">去南京转了一圈</div></div><div class="info-2"><div class="info-item-1">  ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/02/02/CachyOS%E4%B8%8BFlatpak%E7%89%88Obsidian%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E9%94%99%E4%BD%8D%E9%97%AE%E9%A2%98/" title="CachyOS下Flatpak版Obsidian输入法候选框错位问题"><img class="cover" src="/img/(87).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-02</div><div class="info-item-2">CachyOS下Flatpak版Obsidian输入法候选框错位问题</div></div><div class="info-2"><div class="info-item-1">问题描述在 CachyOS (基于 Arch Linux) 或其他 Linux 发行版的 Wayland 环境下，使用 Flatpak 安装的 Obsidian 进行写作时，遇到了中文输入法（如 Fcitx5）候选框不跟随光标的问题。 具体表现为输入可能还没选呢，就上屏了。 问题分析这是一个经典的 Electron + Wayland + Input Method 兼容性问题。 虽然较新的 Electron 版本开始支持 Wayland，但对 IME（输入法协议）的支持依然不稳定。特别是 Flatpak 版本运行在沙箱中，如果环境变量没有正确传递，应用就无法获知系统的输入法配置，导致它退回到默认的“哑巴”模式。 解决方案的核心思路： 强制 Obsidian 运行在 X11 (XWayland) 模式下，并手动通过 flatpak override 将输入法相关的环境变量注入到沙箱中。 解决方案第一步：确认安装方式首先确保你安装的是 Flatpak 版本。 包名通常为：md.obsidian.Obsidian 1flatpak...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Waline</span><span id="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">coperlm</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">126</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/link/"><div class="headline">友链</div><div class="length-num">19</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/coperlm" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:coperlm@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="订阅-ATOM"><i class="fas fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Sioyek%E2%80%94%E2%80%94PDF%E9%98%85%E8%AF%BB%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">Sioyek——PDF阅读器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yazi%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">Yazi——文件管理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Crow-Translate%E2%80%94%E2%80%94%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">Crow_Translate——英语翻译器</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/" title="搭建linux下看论文的环境"><img src="/img/(28).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="搭建linux下看论文的环境"/></a><div class="content"><a class="title" href="/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/" title="搭建linux下看论文的环境">搭建linux下看论文的环境</a><time datetime="2026-02-14T03:44:09.165Z" title="更新于 2026-02-14 11:44:09">2026-02-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/02/02/CachyOS%E4%B8%8BFlatpak%E7%89%88Obsidian%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E9%94%99%E4%BD%8D%E9%97%AE%E9%A2%98/" title="CachyOS下Flatpak版Obsidian输入法候选框错位问题"><img src="/img/(87).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CachyOS下Flatpak版Obsidian输入法候选框错位问题"/></a><div class="content"><a class="title" href="/2026/02/02/CachyOS%E4%B8%8BFlatpak%E7%89%88Obsidian%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E9%94%99%E4%BD%8D%E9%97%AE%E9%A2%98/" title="CachyOS下Flatpak版Obsidian输入法候选框错位问题">CachyOS下Flatpak版Obsidian输入法候选框错位问题</a><time datetime="2026-02-14T03:36:10.199Z" title="更新于 2026-02-14 11:36:10">2026-02-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/02/06/%E5%8E%BB%E5%8D%97%E4%BA%AC%E8%BD%AC%E4%BA%86%E4%B8%80%E5%9C%88/" title="去南京转了一圈"><img src="/img/(15).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="去南京转了一圈"/></a><div class="content"><a class="title" href="/2026/02/06/%E5%8E%BB%E5%8D%97%E4%BA%AC%E8%BD%AC%E4%BA%86%E4%B8%80%E5%9C%88/" title="去南京转了一圈">去南京转了一圈</a><time datetime="2026-02-07T14:55:09.791Z" title="更新于 2026-02-07 22:55:09">2026-02-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/29/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%C2%B7%E5%85%B6%E4%BA%8C/" title="后量子学习笔记·其二"><img src="/img/(79).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="后量子学习笔记·其二"/></a><div class="content"><a class="title" href="/2024/09/29/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%C2%B7%E5%85%B6%E4%BA%8C/" title="后量子学习笔记·其二">后量子学习笔记·其二</a><time datetime="2026-02-05T05:59:20.530Z" title="更新于 2026-02-05 13:59:20">2026-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/17/%E5%85%B3%E4%BA%8Ectf%E5%8D%B7%E7%8E%8B%E6%8E%92%E8%A1%8C%E6%A6%9C%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/" title="关于ctf卷王排行榜的项目说明"><img src="/img/(60).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于ctf卷王排行榜的项目说明"/></a><div class="content"><a class="title" href="/2024/09/17/%E5%85%B3%E4%BA%8Ectf%E5%8D%B7%E7%8E%8B%E6%8E%92%E8%A1%8C%E6%A6%9C%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/" title="关于ctf卷王排行榜的项目说明">关于ctf卷王排行榜的项目说明</a><time datetime="2026-02-04T14:22:40.916Z" title="更新于 2026-02-04 22:22:40">2026-02-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By coperlm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="rightside-rss" href="/atom.xml" title="订阅 RSS" target="_blank" rel="noopener noreferrer"><i class="fas fa-rss"></i></a><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://walinetest-coperlms-projects.vercel.app',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'https://coperlm.github.io/2026/02/14/%E6%90%AD%E5%BB%BAlinux%E4%B8%8B%E7%9C%8B%E8%AE%BA%E6%96%87%E7%9A%84%E7%8E%AF%E5%A2%83/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '搭建linux下看论文的环境'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://coperlm.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=coperlm&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Waline' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script>window.newestComments = {
+  changeContent: content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<code>.*?<\/code>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g, "") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0, 150) + '...'
+    }
+    return content
+  },
+
+  generateHtml: (array, ele) => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class="aside-list-item">'
+
+        if (true && array[i].avatar) {
+          const imgAttr = 'src'
+          const lazyloadNative = ''
+          result += `<a href="${array[i].url}" class="thumbnail"><img ${imgAttr}="${array[i].avatar}" alt="${array[i].nick}" ${lazyloadNative}></a>`
+        }
+
+        result += `<div class="content">
+        <a class="comment" href="${array[i].url}" title="${array[i].content}">${array[i].content}</a>
+        <div class="name"><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '暂无评论'
+    }
+
+    ele.innerHTML = result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh(ele)
+  },
+
+  newestCommentInit: (name, getComment) => {
+    const $dom = document.querySelector('#card-newest-comments .aside-list')
+    if ($dom) {
+      const data = btf.saveToLocal.get(name)
+      if (data) {
+        newestComments.generateHtml(JSON.parse(data), $dom)
+      } else {
+        getComment($dom)
+      }
+    }
+  },
+
+  run: (name, getComment) => {
+    newestComments.newestCommentInit(name, getComment)
+    btf.addGlobalFn('pjaxComplete', () => newestComments.newestCommentInit(name, getComment), name)
+  }
+}</script><script>window.addEventListener('load', () => {
+  const keyName = 'waline-newest-comments'
+  const { changeContent, generateHtml, run } = window.newestComments
+
+  const getComment = async (ele) => {
+    try {
+      const res = await fetch('https://walinetest-coperlms-projects.vercel.app/api/comment?type=recent&count=6')
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      btf.saveToLocal.set(keyName, JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray, ele)
+    } catch (err) {
+      console.error(err)
+      ele.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  run(keyName, getComment)
+})</script><div id="aplayer-fixed" class="aplayer aplayer-fixed aplayer-narrow no-destroy" data-order="list" data-preload="auto" data-autoplay="false"></div><script src="/js/realtime-clock.js"></script><script src="/js/fix-browser-warnings.js"></script><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+  const ap = new APlayer({
+    container: document.getElementById('aplayer-fixed'),
+    order: 'random',
+    loop: 'all',
+    fixed: true,
+    autoplay: false,
+    audio: [
+      {
+        name: '冬眠2023',
+        artist: '阿YueYue 刘兆宇',
+        url: '/music/index/冬眠2023.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '老男孩',
+        artist: '王小帅',
+        url: '/music/index/老男孩.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '一期一会',
+        artist: '周深',
+        url: '/music/index/secret_base_zs.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '一路生花',
+        artist: '温奕心',
+        url: '/music/index/一路生花.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '你',
+        artist: 'GALA乐队',
+        url: '/music/index/你.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '你曾是少年',
+        artist: 'S.H.E',
+        url: '/music/index/你曾是少年.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '冬眠',
+        artist: '司南',
+        url: '/music/index/冬眠.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '圣诞快乐，劳伦斯先生',
+        artist: '坂本龙一',
+        url: '/music/index/圣诞快乐.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '如果可以',
+        artist: '（钢琴曲）',
+        url: '/music/index/如果可以.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '秋殇别恋',
+        artist: 'unknown',
+        url: '/music/index/秋殇别恋.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '紫金花盛开',
+        artist: '李荣浩 梁咏琪',
+        url: '/music/index/紫金花盛开.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '跳楼机',
+        artist: '洛天依',
+        url: '/music/index/跳楼机.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '身骑白马',
+        artist: '兰音',
+        url: '/music/index/身骑白马.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '长安姑娘',
+        artist: '兰音',
+        url: '/music/index/长安姑娘.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '壁上观',
+        artist: '泠鸢',
+        url: '/music/index/壁上观.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '春庭雪',
+        artist: '等什么君',
+        url: '/music/index/春庭雪.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '最后一页',
+        artist: '（钢琴曲）',
+        url: '/music/index/最后一页.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: 'secret_base',
+        artist: '（钢琴曲）',
+        url: '/music/index/secret_base_p.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '起风了',
+        artist: '买辣椒也用券',
+        url: '/music/index/起风了.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '卡农',
+        artist: '（钢琴曲）-b站拜年祭2022',
+        url: '/music/index/卡农.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '悬溺',
+        artist: '（钢琴曲）',
+        url: '/music/index/悬溺.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '现在是陌生人',
+        artist: '（纯音乐）',
+        url: '/music/index/现在是陌生人.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '铃芽之旅',
+        artist: '（钢琴组曲）',
+        url: '/music/index/铃芽之旅.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '诀别书',
+        artist: '邓垚',
+        url: '/music/index/诀别书.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: 'The_truth_that_you_leave',
+        artist: '高至豪',
+        url: '/music/index/The_truth_that_you_leave.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '如愿',
+        artist: '王菲',
+        url: '/music/index/如愿.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '那些年',
+        artist: '（钢琴曲）',
+        url: '/music/index/那些年.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '星光下的梦想',
+        artist: '（钢琴曲）',
+        url: '/music/index/星光下的梦想.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '呓语',
+        artist: '洛天依',
+        url: '/music/index/呓语.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '月光',
+        artist: '胡彦斌',
+        url: '/music/index/月光.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '东京不太热',
+        artist: '洛天依',
+        url: '/music/index/东京不太热.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '月光变奏曲',
+        artist: '《秦时明月》',
+        url: '/music/index/月光变奏曲.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '此去半生',
+        artist: '北部玄驹AI',
+        url: '/music/index/此去半生.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '老男孩',
+        artist: '春日野穹AI',
+        url: '/music/index/老男孩AI.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '夏天的风',
+        artist: '洛天依 乐正绫',
+        url: '/music/index/夏天的风.mp3',
+        cover: '/img/music_default.gif'
+      }
+    ]
+  });
+</script>
+<script id="canvas_nest" defer="defer" color="255,127,0" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false 
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://vercount-six.vercel.app/js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="来搜吧来搜吧~" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
