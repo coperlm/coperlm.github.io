@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2026-04-16T07:54:37.103Z</updated>
+  <updated>2026-04-28T06:43:19.147Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>收集了很多可爱小熊猫的表情包</title>
+    <link href="https://coperlm.github.io/2026/04/28/%E6%94%B6%E9%9B%86%E4%BA%86%E5%BE%88%E5%A4%9A%E5%8F%AF%E7%88%B1%E5%B0%8F%E7%86%8A%E7%8C%AB%E7%9A%84%E8%A1%A8%E6%83%85%E5%8C%85/"/>
+    <id>https://coperlm.github.io/2026/04/28/%E6%94%B6%E9%9B%86%E4%BA%86%E5%BE%88%E5%A4%9A%E5%8F%AF%E7%88%B1%E5%B0%8F%E7%86%8A%E7%8C%AB%E7%9A%84%E8%A1%A8%E6%83%85%E5%8C%85/</id>
+    <published>2026-04-28T05:47:27.000Z</published>
+    <updated>2026-04-28T06:43:19.147Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近把手机里存的一二布布表情包都整理了一下，并全部打包做成了一个网页，地址在这里： <a href="https://yierbubu-614.pages.dev/">https://yierbubu-614.pages.dev/</a></p><p>里面目前有接近一万张图片，采用滚动加载的方式，可以一直往下刷。想用哪张直接保存就行。目前还在继续收录，如果之后看到新的好图，我会再往里面加。表情包部分是完全随机，点击<code>随便看看</code>就能打乱并重新排序，这部分约七千张；小剧场部分因为有连续性，所以采用固定排序，这部分约两千张。</p><p>里面可能有少量其他照片，目前暂时还没有剔除。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近把手机里存的一二布布表情包都整理了一下，并全部打包做成了一个网页，地址在这里： &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="未分类" scheme="https://coperlm.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于如何去医院</title>
+    <link href="https://coperlm.github.io/2026/04/28/%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E5%8E%BB%E5%8C%BB%E9%99%A2/"/>
+    <id>https://coperlm.github.io/2026/04/28/%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E5%8E%BB%E5%8C%BB%E9%99%A2/</id>
+    <published>2026-04-28T05:16:23.000Z</published>
+    <updated>2026-04-28T06:43:30.906Z</updated>
+    
+    <content type="html"><![CDATA[<p>前两天受了一点小伤，遂去医院</p><p>我先去校医院问了一下，找值班大夫，交代了情况；大夫说今天是周日，拍X光的不上班，而且我这种情况校医院大概率处理不了，让我直接去就近的医院，我问大夫有没有推荐的医院，大夫说协和和省人民医院都不远。我之前在小红薯上看有人说有的省要开转诊证明，还有的说必须办医保卡不然医保无效，我问了一下医务室的大夫，她说无须转诊证明，然后我看网上说用医保码就可以，然后就放心了。</p><p>先看了最近的协和，在微信公众号上搜索相关关键词然后尝试挂号，但是相应的科室周日没有一个医生。于是我转向了相对较远的省人民医院，这个有号，于是我预约了一个小时之后的，到了之后距离预约时间大概半个小时，先是取号然后在门口等着，到了预约的时间，前面的人还没看完，又等了半个小时终于到了。</p><p>然后大夫让我去拍个片子，走到隔壁楼，先在机器上缴费，扫医保码，报销了一半，然后进去拍了个片子。大夫看了之后说，有点问题但问题不大，然后给我开了几个药，就走了</p><blockquote><p>X光和CT的区别：X光便宜而且快但是粗略，CT贵而且慢但是精细，一般是优先X光，X光不行再拍CT。我当时不知道这俩有啥区别，然后就直接和缴费处的大夫说，大夫给我开的X光。还有一个核磁共振和B超，那个是更进阶的东东了</p></blockquote><p>药是真贵哇，两盒药就一百多，最终再加上挂号还有X光，医保报销的比例在30%到40%这样子，还是不错的。</p><p>总结：流程是 网上挂号-&gt;等医生叫号-&gt;做相应检查-&gt;回来找医生-&gt;交钱拿药走人</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前两天受了一点小伤，遂去医院&lt;/p&gt;
+&lt;p&gt;我先去校医院问了一下，找值班大夫，交代了情况；大夫说今天是周日，拍X光的不上班，而且我这种情况校医院大概率处理不了，让我直接去就近的医院，我问大夫有没有推荐的医院，大夫说协和和省人民医院都不远。我之前在小红薯上看有人说有的省要开转</summary>
+        
+      
+    
+    
+    
+    <category term="未分类" scheme="https://coperlm.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+    
+    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
+    
+  </entry>
   
   <entry>
     <title>关于AI时代的看法</title>
@@ -522,60 +577,6 @@
     
     
     <category term="CTF" scheme="https://coperlm.github.io/tags/CTF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20251027博客更新说明-新颜色哎</title>
-    <link href="https://coperlm.github.io/2025/10/27/20251027%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E-%E6%96%B0%E9%A2%9C%E8%89%B2%E5%93%8E/"/>
-    <id>https://coperlm.github.io/2025/10/27/20251027%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E-%E6%96%B0%E9%A2%9C%E8%89%B2%E5%93%8E/</id>
-    <published>2025-10-27T03:02:58.000Z</published>
-    <updated>2026-02-04T05:27:51.585Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="1-实时时钟背景色方案参考"><a href="#1-实时时钟背景色方案参考" class="headerlink" title="1. 实时时钟背景色方案参考"></a>1. 实时时钟背景色方案参考</h1><h2 id="🎨-24小时背景色时间表"><a href="#🎨-24小时背景色时间表" class="headerlink" title="🎨 24小时背景色时间表"></a>🎨 24小时背景色时间表</h2><div class="table-container"><table><thead><tr><th>时段</th><th>时间</th><th>背景渐变色</th><th>按钮色</th><th>Hover色</th><th>视觉效果</th></tr></thead><tbody><tr><td><strong>黎明</strong></td><td>04-06</td><td><code>#FFF5F0</code> → <code>#FFE4D6</code> → <code>#FFD6BA</code> → <code>#FFB4A2</code></td><td><code>#8B4513</code> 深棕橙</td><td><code>#A0522D</code></td><td>🌅 浅米到桃色到玫瑰粉的柔和黎明</td></tr><tr><td><strong>日出</strong></td><td>06-08</td><td><code>#FFEAA7</code> → <code>#FFD79A</code> → <code>#FFA99F</code> → <code>#FF719A</code></td><td><code>#C72C41</code> 深红莓</td><td><code>#D63447</code></td><td>🌄 金黄到杏色到粉红的温暖朝霞</td></tr><tr><td><strong>清晨</strong></td><td>08-10</td><td><code>#F8FFAE</code> → <code>#D4FC79</code> → <code>#96E6A1</code> → <code>#A8E6CF</code> → <code>#C2FFD8</code></td><td><code>#2D5016</code> 深森林绿</td><td><code>#3D6B1F</code></td><td>🌱 柠檬黄到薄荷绿到天蓝的清新明亮</td></tr><tr><td><strong>上午</strong></td><td>10-12</td><td><code>#E0F7FA</code> → <code>#A1C4FD</code> → <code>#B8D5F0</code> → <code>#C2E9FB</code></td><td><code>#1E3A8A</code> 深蓝色</td><td><code>#2563EB</code></td><td>☁️ 淡蓝到天蓝到云白的晴朗天空</td></tr><tr><td><strong>中午</strong></td><td>12-14</td><td><code>#A7FFE4</code> → <code>#84FAB0</code> → <code>#7FE5D4</code> → <code>#8FD3F4</code></td><td><code>#065F46</code> 深翠绿</td><td><code>#047857</code></td><td>🌊 薄荷到青绿到湖蓝的清爽正午</td></tr><tr><td><strong>下午</strong></td><td>14-16</td><td><code>#55E6C1</code> → <code>#43E97B</code> → <code>#3FD5BA</code> → <code>#38F9D7</code></td><td><code>#0E7490</code> 深青色</td><td><code>#0891B2</code></td><td>🏝️ 翠绿到青绿到碧蓝的海岛风情</td></tr><tr><td><strong>傍晚</strong></td><td>16-18</td><td><code>#FFEAA7</code> → <code>#FCE38A</code> → <code>#FFBE76</code> → <code>#F38181</code></td><td><code>#B91C1C</code> 深红色</td><td><code>#DC2626</code></td><td>🌆 金黄到琥珀到珊瑚的暖调黄昏</td></tr><tr><td><strong>黄昏</strong></td><td>18-19</td><td><code>#FDD835</code> → <code>#FBD786</code> → <code>#FFA87D</code> → <code>#F7797D</code></td><td><code>#C2410C</code> 深橙红</td><td><code>#EA580C</code></td><td>🌇 金色到橙色到粉红的黄金时刻</td></tr><tr><td><strong>日落</strong></td><td>19-20</td><td><code>#FFB088</code> → <code>#FF9A9E</code> → <code>#D988B9</code> → <code>#8E54E9</code></td><td><code>#5B21B6</code> 深紫罗兰</td><td><code>#6D28D9</code></td><td>🌉 橙粉到玫瑰到紫罗兰的梦幻日落</td></tr><tr><td><strong>晚霞</strong></td><td>20-22</td><td><code>#FFE5EC</code> → <code>#FBD3E9</code> → <code>#E5A3C7</code> → <code>#BB377D</code></td><td><code>#831843</code> 深玫瑰红</td><td><code>#9F1239</code></td><td>💗 淡粉到玫瑰到深紫的霓虹晚霞</td></tr><tr><td><strong>深夜</strong></td><td>22-02</td><td><code>#7B68EE</code> → <code>#667eea</code> → <code>#6B5EA8</code> → <code>#764ba2</code></td><td><code>#1E3A8A</code> 深蓝色</td><td><code>#1E40AF</code></td><td>🌃 蓝紫到深紫到宝石紫的星空</td></tr><tr><td><strong>凌晨</strong></td><td>02-04</td><td><code>#3B4371</code> → <code>#4e54c8</code> → <code>#7B7FDC</code> → <code>#8f94fb</code></td><td><code>#1E293B</code> 深灰蓝</td><td><code>#334155</code></td><td>🌌 深蓝到紫罗兰到淡紫的宁静凌晨</td></tr></tbody></table></div><h2 id="🎨-渐变色详细解析"><a href="#🎨-渐变色详细解析" class="headerlink" title="🎨 渐变色详细解析"></a>🎨 渐变色详细解析</h2><h3 id="🌅-早晨时段（柔和清新）"><a href="#🌅-早晨时段（柔和清新）" class="headerlink" title="🌅 早晨时段（柔和清新）"></a>🌅 早晨时段（柔和清新）</h3><ul><li><strong>黎明 04-06</strong>：浅米白 → 香槟 → 桃色 → 玫瑰粉（4色）</li><li><strong>日出 06-08</strong>：金黄 → 浅杏 → 粉橙 → 玫瑰红（4色）</li><li><strong>清晨 08-10</strong>：柠檬黄 → 薄荷黄绿 → 薄荷绿 → 天蓝 → 淡薄荷（5色）</li></ul><h3 id="☀️-白天时段（明亮活力）"><a href="#☀️-白天时段（明亮活力）" class="headerlink" title="☀️ 白天时段（明亮活力）"></a>☀️ 白天时段（明亮活力）</h3><ul><li><strong>上午 10-12</strong>：淡青 → 天蓝 → 云蓝 → 云白（4色）</li><li><strong>中午 12-14</strong>：清薄荷 → 青绿 → 湖绿 → 湖蓝（4色）</li><li><strong>下午 14-16</strong>：翠绿 → 海绿 → 青绿 → 碧蓝（4色）</li></ul><h3 id="🌆-黄昏时段（温暖浪漫）"><a href="#🌆-黄昏时段（温暖浪漫）" class="headerlink" title="🌆 黄昏时段（温暖浪漫）"></a>🌆 黄昏时段（温暖浪漫）</h3><ul><li><strong>傍晚 16-18</strong>：金黄 → 琥珀 → 杏橙 → 珊瑚粉（4色）</li><li><strong>黄昏 18-19</strong>：亮金 → 金橙 → 杏橙 → 珊瑚红（4色）</li><li><strong>日落 19-20</strong>：橙粉 → 玫瑰粉 → 紫粉 → 紫罗兰（4色）</li></ul><h3 id="🌙-夜晚时段（神秘梦幻）"><a href="#🌙-夜晚时段（神秘梦幻）" class="headerlink" title="🌙 夜晚时段（神秘梦幻）"></a>🌙 夜晚时段（神秘梦幻）</h3><ul><li><strong>晚霞 20-22</strong>：淡粉 → 樱粉 → 玫瑰 → 深紫红（4色）</li><li><strong>深夜 22-02</strong>：蓝紫 → 靛紫 → 宝石紫 → 深紫（4色）</li><li><strong>凌晨 02-04</strong>：深蓝紫 → 紫罗兰 → 淡紫 → 浅蓝紫（4色）</li></ul><hr><h2 id="✨-设计理念"><a href="#✨-设计理念" class="headerlink" title="✨ 设计理念"></a>✨ 设计理念</h2><ol><li><strong>渐变层次丰富</strong>：所有时段都使用 4-5 种颜色，过渡更平滑自然</li><li><strong>自然光线模拟</strong>：每个时段的颜色灵感来自真实的自然光线变化</li><li><strong>明亮主调</strong>：即使是夜间也保持适度亮度，避免过于沉闷</li><li><strong>平滑过渡动画</strong>：1.5秒 CSS 过渡确保换色流畅优雅</li><li><strong>对比度优化</strong>：按钮和文字颜色始终与背景形成良好对比，确保可读性</li><li><strong>情感共鸣设计</strong>：色彩搭配符合人们对不同时段的心理感受</li></ol><h2 id="🔧-技术实现"><a href="#🔧-技术实现" class="headerlink" title="🔧 技术实现"></a>🔧 技术实现</h2><ul><li><strong>时间来源</strong>：本地系统时间（已移除公网 API 避免 CORS 问题）</li><li><strong>更新频率</strong>：每秒更新时钟显示，每小时切换背景和按钮配色</li><li><strong>响应式设计</strong>：完美适配桌面端、平板和移动端</li><li><strong>PJAX 支持</strong>：单页应用无缝切换，无刷新体验</li><li><strong>智能重试</strong>：元素加载失败时自动重试，确保颜色正确应用</li><li><strong>DOM 监听</strong>：MutationObserver 监听动态元素，实时更新样式</li><li><strong>性能优化</strong>：防抖机制避免重复更新，减少 DOM 操作</li></ul><h1 id="2-新增RSS订阅功能"><a href="#2-新增RSS订阅功能" class="headerlink" title="2. 新增RSS订阅功能"></a>2. 新增RSS订阅功能</h1>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-实时时钟背景色方案参考&quot;&gt;&lt;a href=&quot;#1-实时时钟背景色方案参考&quot; class=&quot;headerlink&quot; title=&quot;1. 实时时钟背景色方案参考&quot;&gt;&lt;/a&gt;1. 实时时钟背景色方案参考&lt;/h1&gt;&lt;h2 id=&quot;🎨-24小时背景色时间表&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="博客构建与维护" scheme="https://coperlm.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/"/>
-    
-    
-    <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记录一道很有意思的简单考研数学题（奇偶性相关）</title>
-    <link href="https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/"/>
-    <id>https://coperlm.github.io/2025/10/23/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E5%BE%88%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%AE%80%E5%8D%95%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98%EF%BC%88%E5%A5%87%E5%81%B6%E6%80%A7%E7%9B%B8%E5%85%B3%EF%BC%89/</id>
-    <published>2025-10-23T11:45:55.000Z</published>
-    <updated>2025-10-27T08:11:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>题目描述：设 $f(x)=\frac{1}{2^x+1},x\in \mathbb{R},$ 则$f^{(100)}(0)=?$（即100阶导数）</p><p>学长听说我学完张宇第一章了，便给了我这道题检验学习成果</p><p>第一章全是极限相关的，但对于这道题，我翻来覆去也没看出哪里和极限相关的</p><p>于是乎只能硬导，企图寻找规律；奈何本人计算能力一般，算了三遍三阶导，每一遍都不一样</p><p>于是乎我去请教学长，得知和奇偶性相关，于是记录一下做法</p><p>简单地：$f(x)=\frac{1}{a^x+1}-\frac12$ 是奇函数，故而求导后是偶函数并且 $-\frac12$ 没了，这</p><p>第一步：化简函数</p><p>写成以 $e$ 为底：$f(x) = \frac{1}{e^{x \ln 2} + 1}$</p><p>第二步：中心对称性</p><p>$f(-x) = \frac{1}{2^{-x} + 1} = \frac{1}{\frac{1}{2^x} + 1} = \frac{2^x}{1 + 2^x}$</p><p>注意到：$f(x) + f(-x) = \frac{1}{1+2^x} + \frac{2^x}{1+2^x} = 1$</p><p>因此：$f(-x) = 1 - f(x)$</p><p>第三步：推导对称性条件对导数的影响</p><p>两边对 (x) 求导：</p><ul><li>一阶导：$f’(-x) \cdot (-1) = -f’(x) \implies f’(-x) = f’(x)$<br>所以 (f’(x)) 是<strong>偶函数</strong>。</li><li>二阶导：<br>对上式再求导：$f’’(-x) \cdot (-1) = f’’(x) \implies f’’(-x) = -f’’(x)$<br>所以 (f’’(x)) 是<strong>奇函数</strong>。</li></ul><p>由此可以推得一般规律：<br>$f^{(n)}(-x) = (-1)^{n+1} f^{(n)}(x)$</p><p>第四步：代入 (x=0)</p><p>令 (x=0)，得到：$f^{(n)}(0) = (-1)^{n+1} f^{(n)}(0)$</p><p>若要使该等式成立：</p><ul><li>当 $(-1)^{n+1} = 1$，即 (n) 为<strong>奇数</strong>时，方程恒成立；</li><li>当 $(-1)^{n+1} = -1$，即 (n) 为<strong>偶数</strong>时，必须 $f^{(n)}(0)=0$。</li></ul><p>第五步：结论</p><p>因为 (100) 是偶数：</p><script type="math/tex; mode=display">\boxed{f^{(100)}(0) = 0}</script><hr><p>如果我想直接求导呢？好像确实可以，要用到双曲正切~</p><p>下面的GPT给出的解法，我还没看懂：</p><p>用一点恒等变换就能把“死算导数”变成有规律的公式，既能解释为什么偶数阶导数在 $0$ 为 $0$，也能写出任意奇阶导数的闭式表达（含伯努利数）。步骤和结论如下。</p><p>先把 $2^x$ 写成指数形式并作代换：</p><script type="math/tex; mode=display">f(x)=\frac{1}{1+2^x}=\frac{1}{1+e^{ax}},\qquad a=\ln 2.</script><p>利用双曲正切的恒等式</p><script type="math/tex; mode=display">\frac{1}{1+e^{y}}=\frac{1-\tanh\frac{y}{2}}{2},</script><p>令 $y=ax$ 得</p><script type="math/tex; mode=display">f(x)=\frac{1}{2}-\frac{1}{2}\tanh\!\left(\frac{a}{2}x\right).</script><p>记 $b=\frac{a}{2}=\frac{\ln 2}{2}$。于是</p><script type="math/tex; mode=display">f(x)=\frac{1}{2}-\frac{1}{2}\tanh(bx).</script><p><strong>由此得到两个直接结论：</strong></p><ol><li><p>$\tanh(z)$ 是奇函数，故其泰勒展开只含奇次幂，说明所有偶阶导数在 $0$ 处为 $0$。因此对原函数：</p><script type="math/tex; mode=display">f^{(2m)}(0)=0\quad(m\ge1).</script><p>这直接解释了为什么 $f^{(100)}(0)=0$。</p></li><li><p>对奇阶导数，利用链式法则</p><script type="math/tex; mode=display">\frac{d^n}{dx^n}\tanh(bx)\bigg|_{x=0}=b^n\cdot \tanh^{(n)}(0),</script><p>以及 $f^{(n)}(0)=-\frac{1}{2}$ 倍该值，可得奇阶的通项公式。</p></li></ol><hr><h3 id="奇阶导数的闭式（含伯努利数）"><a href="#奇阶导数的闭式（含伯努利数）" class="headerlink" title="奇阶导数的闭式（含伯努利数）"></a>奇阶导数的闭式（含伯努利数）</h3><p>已知泰勒展开（关于 $x$）：</p><script type="math/tex; mode=display">\tanh x=\sum_{k=1}^{\infty}\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}\,x^{2k-1},</script><p>其中 $B_{2k}$ 是伯努利数。由此得到对 $n=2k-1$（奇数）</p><script type="math/tex; mode=display">\tanh^{(2k-1)}(0)= (2k-1)!\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{(2k)!}=\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k}.</script><p>因此对 $f$：</p><script type="math/tex; mode=display">\boxed{f^{(2k-1)}(0)=-\frac{1}{2}\,b^{2k-1}\,\tanh^{(2k-1)}(0)=-\frac{1}{2}\,b^{2k-1}\cdot\frac{2^{2k}(2^{2k}-1)B_{2k}}{2k},}</script><p>稍整理可写成</p><script type="math/tex; mode=display">\boxed{f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\;b^{2k-1},}\quad\text{其中 }b=\frac{\ln2}{2}.</script><hr><h3 id="验证前几项（直观感受规律）"><a href="#验证前几项（直观感受规律）" class="headerlink" title="验证前几项（直观感受规律）"></a>验证前几项（直观感受规律）</h3><p>从已知的 $\tanh$ 展开：<br>$\tanh x= x-\frac{x^3}{3}+\frac{2x^5}{15}-\frac{17x^7}{315}+\cdots$。</p><ul><li><p>$k=1$（一阶导）：$\tanh’(0)=1$，</p><script type="math/tex; mode=display">f'(0)=-\tfrac{1}{2} b\cdot 1=-\frac{b}{2}=-\frac{\ln2}{4}.</script></li><li><p>$k=2$（三阶导）：$\tanh^{(3)}(0)=-2$（因为系数 $-1/3$ 对应 $3!(-1/3)=-2$），</p><script type="math/tex; mode=display">f^{(3)}(0)=-\tfrac{1}{2} b^{3}(-2)=b^{3}=\left(\frac{\ln 2}{2}\right)^3.</script></li><li><p>$k=3$（五阶导）：系数 $2/15$ 对应 $\tanh^{(5)}(0)=16$，</p><script type="math/tex; mode=display">f^{(5)}(0)=-\tfrac{1}{2} b^5\cdot 16=-8\,b^5.</script></li></ul><hr><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul><li><p>偶数阶导数在 $0$ 都为 $0$（所以 $f^{(100)}(0)=0$）。</p></li><li><p>奇数阶导数有明确闭式，且可用伯努利数写出通项：</p><script type="math/tex; mode=display">f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2k-1}.</script></li></ul>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;题目描述：设 $f(x)=&#92;frac{1}{2^x+1},x&#92;in &#92;mathbb{R},$</summary>
-        
-      
-    
-    
-    
-    <category term="考研" scheme="https://coperlm.github.io/categories/%E8%80%83%E7%A0%94/"/>
-    
-    
-    <category term="考研数学" scheme="https://coperlm.github.io/tags/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
