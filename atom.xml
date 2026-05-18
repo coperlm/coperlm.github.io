@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2026-04-28T06:43:19.147Z</updated>
+  <updated>2026-05-18T08:09:19.662Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无需配对的高效BBW+签名</title>
+    <link href="https://coperlm.github.io/2026/05/18/%E6%97%A0%E9%9C%80%E9%85%8D%E5%AF%B9%E7%9A%84%E9%AB%98%E6%95%88BBW-%E7%AD%BE%E5%90%8D/"/>
+    <id>https://coperlm.github.io/2026/05/18/%E6%97%A0%E9%9C%80%E9%85%8D%E5%AF%B9%E7%9A%84%E9%AB%98%E6%95%88BBW-%E7%AD%BE%E5%90%8D/</id>
+    <published>2026-05-18T07:03:21.000Z</published>
+    <updated>2026-05-18T08:09:19.662Z</updated>
+    
+    <content type="html"><![CDATA[<p>（留空：motivate背景和应用之类的）</p><p>大概流程是这样</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    %% 定义样式</span><br><span class="line">    classDef base fill:#f9f9f9,stroke:#333,stroke-width:2px;</span><br><span class="line">    classDef branch1 fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;</span><br><span class="line">    classDef branch2 fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;</span><br><span class="line"></span><br><span class="line">    subgraph Stage1 [第一阶段：基础理论期]</span><br><span class="line">        A[&quot;&lt;b&gt;BBS 签名 (2004)&lt;/b&gt;&lt;br/&gt;Boneh-Boyen-Shacham&lt;br/&gt;-------------------&lt;br/&gt;• 基于配对 (Pairing-based)&lt;br/&gt;• 奠定短签名数学基石&quot;]:::base</span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    subgraph Stage2 [第二阶段：隐私凭证期]</span><br><span class="line">        B[&quot;&lt;b&gt;BBS+ 签名&lt;/b&gt;&lt;br/&gt;(Camenisch-Lysyanskaya等)&lt;br/&gt;-------------------&lt;br/&gt;• 引入零知识证明 (ZKP)&lt;br/&gt;• 支持匿名凭证 (AC)&lt;br/&gt;• 实现属性的选择性披露&quot;]:::base</span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    subgraph Stage3 [第三阶段：现代工程落地期两大分支]</span><br><span class="line">        C[&quot;&lt;b&gt;Threshold BBS+ (门限方案)&lt;/b&gt;&lt;br/&gt;NDSS 顶会论文&lt;br/&gt;-------------------&lt;br/&gt;&lt;b&gt;解决：分布式协同签名瓶颈&lt;/b&gt;&lt;br/&gt;• 突破：2轮极速通信&lt;br/&gt;• 突破：O(1) 常数级通信开销&lt;br/&gt;• 核心：引入 TLHE 与 TVRF&quot;]:::branch1</span><br><span class="line">        </span><br><span class="line">        D[&quot;&lt;b&gt;BBS# / MAC_BBS&lt;/b&gt;&lt;br/&gt;eIDAS 2.0 兼容方案&lt;br/&gt;-------------------&lt;br/&gt;&lt;b&gt;解决：手机安全芯片无法计算配对&lt;/b&gt;&lt;br/&gt;• 突破：Pairing-free (完全无配对)&lt;br/&gt;• 核心：基于代数 MAC&lt;br/&gt;• 结合：OIP (不经意证明发行)&quot;]:::branch2</span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    %% 定义连接线</span><br><span class="line">    A --&gt; B</span><br><span class="line">    B --&gt;|需求：分布式与多方安全计算| C</span><br><span class="line">    B --&gt;|需求：个人移动设备硬件级安全| D</span><br></pre></td></tr></table></figure><p>先说 BBS 是什么，是 Boneh, D., Boyen, X., &amp; Shacham, H. 三个人于 2004 年发表的两瓶论文，欧密上的 <em>Short Signatures Without Random Oracles.</em> 和美密上的 <em>Short Group Signatures</em>。原版本 BBS 短签名针对单一消息进行签名，能够在不用 Random Oracle 的理想模型下，利用强 DH 假设（q-SDH）实现短签名（DSA签名的一半）。</p><p>关于 BBS+，是发表于 04 年美密上的 <em>Signature Schemes and Anonymous Credentials from Bilinear Maps.</em>，从这里开始就是多消息签名了，能够对多条消息输出一个固定长度的签名，有点像聚合签名，这是之后把身份证上的姓名性别年龄等信息聚合成一个签名的前置条件，并通过零知识证明向验证者证明“我拥有这组消息的有效签名”。构建了高效的匿名凭证（Anonymous Credentials）系统和群签名系统 ，目前 Web3 (DID/VC) 据说也广泛采用 BBS+。</p><blockquote><p>和聚合签名的区别：聚合签名 如 BLS，是多签名合一，解决的是多方问题，并具有一定的同态性；而 BBS+ 是 多消息签名为单个签名，并结合 ZKP。</p></blockquote><p>然后 BBS#，也就是MAC_BBC，对应 25 年的论文 <em>Making BBS Anonymous Credentials eIDAS 2.0 Compliant.</em> ，现在还是预印本。应用场景是普通手机安全芯片不支持双线性配对，而使用 MAC_BBS 无须配对，并结合 Oblivious Proof Issuance 等技术，就能 在手机上+无须配对+匿名 运行 BBS# 短签名 。</p><p>Threshold BBS+ 是对 BBS+ 签名以及 ECDSA 的门限化。发表于 24 年的 NDSS ，论文名称 <em>Secure Multiparty Computation of Threshold Signatures Made More Efficient</em>。目的是解决分布式协同签名的性能瓶颈，引入 TLHE 和 TVRF 技术，它把门限签名的通信轮数压低到了 2 轮，并将通信复杂度降到了常数级 $O(1)$，同时保持了强鲁棒性。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;（留空：motivate背景和应用之类的）&lt;/p&gt;
+&lt;p&gt;大概流程是这样&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="科研" scheme="https://coperlm.github.io/categories/%E7%A7%91%E7%A0%94/"/>
+    
+    
+    <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
+    
+    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
+    
+  </entry>
   
   <entry>
     <title>收集了很多可爱小熊猫的表情包</title>
@@ -547,36 +578,6 @@
     <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
     
     <category term="游记" scheme="https://coperlm.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>夏日口袋gal逆向</title>
-    <link href="https://coperlm.github.io/2025/10/30/%E5%A4%8F%E6%97%A5%E5%8F%A3%E8%A2%8Bgal%E9%80%86%E5%90%91/"/>
-    <id>https://coperlm.github.io/2025/10/30/%E5%A4%8F%E6%97%A5%E5%8F%A3%E8%A2%8Bgal%E9%80%86%E5%90%91/</id>
-    <published>2025-10-30T11:14:30.000Z</published>
-    <updated>2026-02-04T14:21:02.992Z</updated>
-    
-    <content type="html"><![CDATA[<p>[GalGame]summer pocket破解区域限制和光盘验证</p><p>我们如果直接打开游戏，发现打不开，显示有区域限制（必须是日本）</p><p><img src="image-20251029143315843.png" alt></p><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><ul><li>🧠</li><li>Cheat Engine</li><li>x32dbg</li><li>IDA</li></ul><h1 id="part1-区域限制"><a href="#part1-区域限制" class="headerlink" title="part1 区域限制"></a>part1 区域限制</h1><h2 id="1-CE"><a href="#1-CE" class="headerlink" title="1. CE"></a>1. CE</h2><p>用CE打开文件</p><p><img src="image-20251029144118607.png" alt></p><p>使用CE自带的搜索字符串的功能</p><p><img src="image-20251029144254323.png" alt></p><p>得到分析结果</p><p><img src="image-20251029144437055.png" alt></p><p>我们查找<code>This Game is Japan only</code></p><p><img src="image-20251029144521277.png" alt></p><p>得到对应的地址<code>0059CB69</code>，双击定位到相应的位置</p><p><img src="image-20251029144938952.png" alt></p><p>我们需要把 JNE（判断跳转）改成 JMP（无论如何全部都跳转 ）</p><p><img src="image-20251029145012851.png" alt></p><p>因为刚才查找到了三处，所以要一一更改，不再赘述</p><p><img src="image-20251029145105105.png" alt></p><p>改好之后，点击开始运行程序</p><p><img src="image-20251029145219981.png" alt></p><p>然后就可以进去了</p><p><img src="image-20251029145317501.png" alt></p><h2 id="2-x32DBG"><a href="#2-x32DBG" class="headerlink" title="2. x32DBG"></a>2. x32DBG</h2><p>但是这样的更改是一次性的，下面我们要用x32dbg来持久化更改</p><p><img src="image-20251029145528340.png" alt></p><p>开始运行，到弹出地区错误窗口的地方，搜索字符串</p><p><img src="image-20251029145801870.png" alt></p><p>搜索需要改的位置</p><p><img src="image-20251029145838045.png" alt></p><p>把对应的每个<code>jne</code>改为<code>jmp</code></p><p><img src="image-20251029145904321.png" alt></p><p><img src="image-20251029150028141.png" alt></p><p>然后导出</p><p><img src="image-20251029150558232.png" alt></p><p>可以发现地区验证被解除了</p><p><img src="image-20251029150533264.png" alt></p><h1 id="part2-光盘检测"><a href="#part2-光盘检测" class="headerlink" title="part2 光盘检测"></a>part2 光盘检测</h1><h2 id="1-x32Dbg"><a href="#1-x32Dbg" class="headerlink" title="1. x32Dbg"></a>1. x32Dbg</h2><p>再度打开已经解除了地区限制的exe</p><p><img src="image-20251029152223302.png" alt></p><p>检查光盘验证，一般是名为<code>GetLogicalDrives</code>和<code>GetDriveType</code>的API</p><p><img src="image-20251029152327648.png" alt></p><p><img src="image-20251029152415942.png" alt></p><p>找到了，双击点进去，到了这里</p><p><img src="image-20251029152503568.png" alt></p><p>是一个跳转，跳进去到了这里</p><p><img src="image-20251029152555894.png" alt></p><p>然后运行程序，这个断点被命中好多次，而且每命中一次，右边的参数就会改变，它从 A：\ 改变到 Z：\，最后游戏弹出了警告框</p><p><img src="image-20251029152946011.png" alt></p><p>因此我们可以作出合理推断，游戏对电脑上的每一个盘都进行了某种判断，如果没有发现符合要求的盘，则会报错</p><p>然后选择“执行到返回”，此时 EIP 会停在一个 return 上面，再按 F7 执行一条命令：</p><p><img src="image-20251029153024607.png" alt></p><p>这时 EIP 返回到了游戏主程序的领空，并且上面那一条 call edi 就是呼叫了 GetDriveType。</p><p>地址是<code>00583F4A</code></p><p><img src="image-20251029153249893.png" alt></p><h2 id="2-IDA"><a href="#2-IDA" class="headerlink" title="2. IDA"></a>2. IDA</h2><p>用IDA打开</p><p><img src="image-20251029153605011.png" alt></p><p>查看基地址，是<code>0x320000</code></p><p><img src="image-20251029154532560.png" alt></p><p>设置正确的基地址</p><p><img src="image-20251029153743746.png" alt></p><p>成功找到刚才说的代码</p><p><img src="image-20251029154635250.png" alt></p><p> 右键，点 Graph view，进入路线图模式。</p><p><img src="image-20251029154659740.png" alt></p><p><img src="image-20251029154717424.png" alt></p><p>可以看到，在进行 GetDriveType 之后，根据结果不同程序分为两条路，如果返回值不等于 5，则会走绿色那条路，如果等于 5，则会走红色那条路。（如果返回值是 5，那么表示这个盘是一个光盘）</p><p>在堆栈窗口右键，然后跟随 EBP（栈帧指针），可以看到目前堆栈的情况。</p><p><img src="image-20251029154902405.png" alt></p><p><img src="image-20251029155026550.png" alt></p><p>观察发现，一个叫做<code>0x540A64</code>的地方调用了这个光盘验证函数。<br> 在 IDA 打开这个地址。</p><p><img src="image-20251029155214651.png" alt></p><p>在光盘验证返回的地方下一个断点，然程序停在 dummy 判断的函数，然后观察堆栈。</p><p><img src="image-20251029155959502.png" alt></p><p>在IDA里搜索<code>0x540EFD</code>，打开</p><p><img src="image-20251029160052703.png" alt></p><p><img src="image-20251029160248534.png" alt></p><p>那我们直接给 bl 塞一个非零值就差不多完事了，<br>接下来要把 mov bl， al 改成 mov bl， 1 直接塞个 1 进去。</p><p><img src="image-20251029160627912.png" alt></p><p>然后patch保存</p><p>就可以了</p><p><img src="image-20251029173102894.png" alt></p><p><img src="image-20251029173133451.png" alt></p><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">参考：</span><br><span class="line">https://galgamer.moe/article/20004</span><br><span class="line">https://galgamer.moe/article/20013</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;[GalGame]summer pocket破解区域限制和光盘验证&lt;/p&gt;
-&lt;p&gt;我们如果直接打开游戏，发现打不开，显示有区域限制（必须是日本）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;image-20251029143315843.png&quot; alt&gt;&lt;/p&gt;
-&lt;h1</summary>
-        
-      
-    
-    
-    
-    <category term="CTF" scheme="https://coperlm.github.io/categories/CTF/"/>
-    
-    
-    <category term="CTF" scheme="https://coperlm.github.io/tags/CTF/"/>
     
   </entry>
   
