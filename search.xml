@@ -78,10 +78,10 @@ ai给出的贪心代码，仅供参考
       </tags>
   </entry>
   <entry>
-    <title>2024.9.11组会</title>
-    <url>/2024/09/11/2024.9.11%E7%BB%84%E4%BC%9A/</url>
+    <title>2024.9.20南洋理工密码学报告 观后总结</title>
+    <url>/2024/09/20/2024-9-20%E5%8D%97%E6%B4%8B%E7%90%86%E5%B7%A5%E5%AF%86%E7%A0%81%E5%AD%A6%E6%8A%A5%E5%91%8A-%E8%A7%82%E5%90%8E%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de7ac43174b2bb1ad06a11d61b739ea0073709999a7abd32e45bb6e9a37adb7657ceb36495f5c55a980bd4fb92793294a46c56fee9c2e0f25deca538e36c8e329d72963c09166eda1479d2acc20b4d7f28b0264000ba8ecf58060a5d37424302eeb71e65dc390d166624d53f53c9f29d95de84b9cf88abba066824834fd2bcee6cc77efe36bf9aa4835b6c8480b4a689d0859a5ba8b9647d58b39e618e53fe21696b730341183dee80b4600369c1546341da8a38272c47c38e8febfbc754224d3ef173e4366f687d60fb2ebd1f5ca7fbc7e907da4c78389cff266a4deaf02d0b249ee69e3a129b1d616cefb7aaee350bb3036e4aca4144d8e8444d00700ad0da9c85dfbf6ed7091d584a65f8c4ba5d6c99da0ec37221fd1b28ef51d63fd55a30a5feb4ea47cfb9e0e3c46596815fa78e2c39b4ce37e12c2424b18b0b6602bd85c2534d0073b79a4e0cfe9d555c91cc46863a08fdde2818ddc791b19ccc12cffbedcc22340af32c0a8713d9a86a5e62037133ef7d1bfa8cd323ea77e8b4fdf5a71832e078102bf481ccac5d361ed1324a86ca46bd276c208be41cd04197be4ecb48623814784202540d793081d1bd0af4459f755b571506b6f58fb716f39c9c1631182797dca2e88c1d2754e943ab57dd3f13a85d7540ad8b12719f60988116c6404f36b1729e02357721a2a522d8943cb8404419b4f9d3aeb1b3872e2675d5f06ea5bd058845b05c517f0890cddf2b23b4aff2cdfdadab8ee46c439917d0aeaf94c61a4e50454419a79c7e959133091d384a0849db745a1f27bc60b85b1cc0e105d9bc4d0588c646adc1a082513779440855d0c36d9e513d46f76b71fbc3d677706fabc7126d2a0685f28c41bd3465d2a8
+  7b22b1899bb4d215751e07a80f0d88de055a65958d0c135d9dfb3cf670e20830146cd7e756c05d5ad3c67ee1eb7e2c3e81b8182e354a5a8d8fcb20a51bb66205a40d307ce0943a4da73921a2e9a666e1804f25337b6def6e5a22369804cdd5e40503a8dca1e63c22a6a843eaa62eefa348402a7d6fe247897a502529e8619919fa448389f3a6bfc8f54441fefd6c88e4a8c1b1f73f84b8f189e7f9206a6249ca2b345289d566da5ca0626e89cf51d0b835bc2635e242ed77e37030ca4e57b869052ffe5e1deb5ee14a02ab72291faebc3061f35d5569438cc0eecdd0be7c0772ff79563875122db926928d7b583ed258a4b7a8ac28bf6694923c7c9c8ffc8210edcd6c7e101f9505591e65b73897b19a39c3514100c66e2060ef1a85ac6dd7014129b0400f88d0332a06e66c941e7fdf7651ee0573fce533207954fc9e47de7dc4befcfdff79587497c392961ed9645d735a1b2a4af4e73158b4f9e7c1d0196c5e1b31b73c4119bbdaca25effab6c31d0aa1fa8d04991ae55a33305cf98c93ca788ba2a56cce3fd64b0b1f058efbde5bc1050d3a1eaad6a61c3fa04d89092a5ecd90eeb4870620650f3d3957211714978e1f48c575c5902bade0d2673b43b68e75161c479df3947686654d7039140f183ed10518c6954b18aad7d41533bcf035d13378a8515528fb1bb0e45da004eb9699704ecdd73eccd2131d2968c1e0253e5fee99c4266a5c9a919a99710b984dda0ab4365bf4f4384c603ebf77b4d7438502be264902b4e23474aed8282e3cc780300607691f956a4ab8b607c04b455ba856c01c2cbbf06fd0f63f2f2e4d0e59d2e37bc59429f82973448d4c497101c9089704952c6971afdc650dfe0a1bcb32011d973212027c71606a666f8fcd127e6ef3b893e58bbf4a5e3c832cf8c576330a4faad195a09c871b85144f811ccf016dd3f1a71c8a922e19ccbf350092cd7d17bf4450ac321c3208427617b7466a29ed8b5e733dcd25a58c5bfaa8aac78be72d63b31649ff0fb7d851df3d8210b75d7f2671ffd4b254a494f66076cc2a689888a149cd72f2cc268190b32eb601b7f50d6c5c5071eecfc2657f1b17242dc5e969fb567bd5b42e541a3e6b6f707352e1781f993e247bc72f220093f072791b8fae3e3101f80079ff9f419da8bdc924d2b3bd451dee84f86191225f4620709241cf8d0ce9cd2c1fdb22549dc84b1c976e80693343fc473e20eae11fbd898e01fdaabb4a2a19159e6ca4303ed1cfe62f79ec8877eb26f542482f0687753989c72f666cfb5e2a216b8bcbcee278c146db647f6b9e941428b8de019efefbad2ef12df11a6bbfe9edb246a52f7d11cea6d0b98b0e61bf400c7f99788b96b147c79cccb6f14dda65666d2036fc5408ca22ae0d3fe1eb22e16944ec82b06f27b97d5ed25b7b9050004cac24c6beff0b075b50ed575f33b1faa3a19e72b1e5314cef9ebe9d0e92d0b4994310ae031ef86cec90c4b77788e9edf5b9ba55c0d494d006229379a392b221d7ecd1f99a09806b0cce8a17ff395caeba2f6cf46d62f4b73e7b8ef4f83e0fa6db8bb70bb7d06dc9b45abd76eda47f8327015ad05162d0352d928f105176900571bd07505453a92ad57ef45c5f95860ecadc1f50d5bc14af441919d9d1c36fe77c54bd2d47f6ffb81c209ca20831a561101373fbdf8cbe898b203d4daa87def53e7bf23ce1b0c927e7a9e6c56193dd14d47271b6b1fb65a1492d0cf94f7eaa86b713137f51190bae5f83b730fb682367288e870d62e57c55d98a8bcb4973bc39c4375c5854907bd361e36b11ccfac2885f2bef8b09df5b2d88e422e9b373eceb06b32df30bde61f8e4c46929096bb1b962c0f17d83e579e7df668ad62d49f3b0ed13a4053686684308e38a2c2046f4d6b72e4630d07871edb87e73164eef2e80a49bcc4152c3666f780629c4140afd715df67f17da688d6f278d95ca2657640623846aed7c7eb24117708620c0d63dd895dae9902777385d81ae7a41a7d2a80655977651ec23b5b95cac14c590299a8bc03a67a88f903668fbfb555058fe3a9ed088054d2f6291d2794cac1f22a39b69b864d564f6a1e86495d3e6bd350b9b811150e22cb47dc69ccc5e0561d8aa6cadef53722e50dd43743729ee83f5b8328b32b277b3ada26c669a511cfcf1bad8567f82bfd21a124e9b5b102768b73c646448542661953d01f1dd638e86dcd7e119d6d447358cb012534454d9e262b77b7043a58b618ea6fa2f8ab585c2cad05687ca32bf243ace756c4dc7e6a96d36c0bb649a27d46a1810d00c86e5a4a17c42e9d95f2d9702a39d44a57c35e9d5c3cc330f72d0f02247ecf9e6a093e9754e7c6d2bd19e53e31c2a98166ede6c9fba2e44374ec34ba50b481ebf6c165f66cfdf1174a062b3e091bf3e036065aaa00c495997a3883db9997f16add2a7c297e6c88e01fe48a5d2c8e845bda4f5df6614238dac9f1bff9810e0232b474024bc4a6fa186ef3c45872c273aa54d039039b70f2241d67fe88b56360b289168ed4e1c7682aa4c800492e53fa7064a291f7f1412db077b3934b7b2904dde197c2569161cc7fe33da1fba9b1831a4826451210d255346fbcce1864048c2263d31aa5ccab5177ad167b9937d2802002d03f3204bbdeeb66ec25f1ed2e073bbe3fe1970465f41e0348a4b499ab753ad664770f511d5603805c9758c9b799b14c774fee2bf4b2e5e7469ec22be2bc42278738a333a21248c81e5648c2b250cad383b3ea06609de4e426cf6c3c0a08aed01c4d22c91d98689881dcd208f5ae2722ca7c135a17a2e2c34987ce43d017ccea35beb029756fb211129bfbc46f7f1930d78e876be3491e1d80eb7d3c329d65d5a9156d15177af0e121bbaaa727a70f213ab680fa82071e9e5a857bc6b0db3c231375bd5b1a5ddb065fed739c4f610c8a6c6750d0bbdcffbc4cc29b51a29c6e27a936fd87da1a9d273e2098e50def6d588d78f9e497524520e1b460c98326b8afe64e9cbc56a5357bbc71dd775135e39cc52b659faf4a248ef8571fcd60014c4f27746e830704159ea7151dba648ea6566255132e7fb64a532b4589b8566a18ff62f162433e877aebb60c3f56d4eef7033c9ae23300a50bc3acbea87abf3cdc00e1a42338c82113831cbb1f47c67ed4e8f26388f89acbb2f597586a652b3c7c5d074572e2139a3f96a079ef42e853dc86bc9176dea40cbb2c5a9448e24d116afdc60ba96630c0372ae2f2590bc7eaa4db53a35143f1c0185860923f060a8b086596e5a1ecedf71fa12ec0247ef4bd7a11a77d01d19d06bdcc54794a594a4f1cb07f437a3a510585ef30503a379092feb3bf730428deabb607fd5a271b8a73cf53177e7c5e0c7cc30ddc3e68d9efbe3da178221079d0e6121e673f721dfb85bbf8b1e8dbd21bab97fda541352e5bb39b4cc1ca62f9d352c670c3c25e33c80bca953a497388bec6df9b021a621742c81819fd83844b84ef3976df1b2aa141a980a47c8a5e853b28c93e515d314afc2aa9af71a0972506468e7ae39cdcd92b681dab47103b62f8a4bf536c92f6fe6ca8aa23b14b6147983b682aef10ee10ff5dd0c362592c4eeb2cfe6aa8157a693f40e54e218910c6ac3b2acf365637d8125385d39c51fabe57769afae11090cf43215aa263801ec5f207b9799fe480afa66233183e6e5ca7906a8f11b312b45370e4b15299ae301e79cfb672775017dd99c44a7e39f0f5eed9723c83f78247d53ce5cd1f33faa9fb00099798bb2b2d5f2308f1421b94533750f15f34ec1ed5accbf4062e569b2b3e91a3cf512195dd13b61324503a50da6dce92f8e0f46dad5fccc578279bb80b8cfd9d80698c7a30c20090c6c92a1c2f1c817267c99aa52d6c515421653182777810f09335c111f575cd2749ea7efca7778a91b2214fefc7815c19d77fa791a973fc036e0e9c8d6aad1c5962bb1addb7bb48e70ac220b53b161713620d8be5af889ddd7f9a0cb285d756abecbd245ff623de5762822467e26d8a75b680cb820cb2cfca491f8fa4032205c471ed9d0eaa4cfd644966e9cbe312109722cdc09b35fce318f2ec5847eec43d5445ef91b1b40a4fd23d1c17bc2690ed32e9846d839c8db9805bde917d74e92c683066342f4e407dc2c51e4beb91d610066b6c6418393a177fe48f3931e91643b1f4d3b71617752da6a115d62746da7f061a110538f
   
     
       
@@ -93,7 +93,7 @@ ai给出的贪心代码，仅供参考
 
 ]]></content>
       <categories>
-        <category>组会记录</category>
+        <category>会议竞赛游记</category>
       </categories>
       <tags>
         <tag>meetings</tag>
@@ -122,10 +122,10 @@ ai给出的贪心代码，仅供参考
       </tags>
   </entry>
   <entry>
-    <title>2024.9.20南洋理工密码学报告 观后总结</title>
-    <url>/2024/09/20/2024-9-20%E5%8D%97%E6%B4%8B%E7%90%86%E5%B7%A5%E5%AF%86%E7%A0%81%E5%AD%A6%E6%8A%A5%E5%91%8A-%E8%A7%82%E5%90%8E%E6%80%BB%E7%BB%93/</url>
+    <title>2024.9.11组会</title>
+    <url>/2024/09/11/2024.9.11%E7%BB%84%E4%BC%9A/</url>
     <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de055a65958d0c135d9dfb3cf670e20830146cd7e756c05d5ad3c67ee1eb7e2c3e81b8182e354a5a8d8fcb20a51bb66205a40d307ce0943a4da73921a2e9a666e1804f25337b6def6e5a22369804cdd5e40503a8dca1e63c22a6a843eaa62eefa348402a7d6fe247897a502529e8619919fa448389f3a6bfc8f54441fefd6c88e4a8c1b1f73f84b8f189e7f9206a6249ca2b345289d566da5ca0626e89cf51d0b835bc2635e242ed77e37030ca4e57b869052ffe5e1deb5ee14a02ab72291faebc3061f35d5569438cc0eecdd0be7c0772ff79563875122db926928d7b583ed258a4b7a8ac28bf6694923c7c9c8ffc8210edcd6c7e101f9505591e65b73897b19a39c3514100c66e2060ef1a85ac6dd7014129b0400f88d0332a06e66c941e7fdf7651ee0573fce533207954fc9e47de7dc4befcfdff79587497c392961ed9645d735a1b2a4af4e73158b4f9e7c1d0196c5e1b31b73c4119bbdaca25effab6c31d0aa1fa8d04991ae55a33305cf98c93ca788ba2a56cce3fd64b0b1f058efbde5bc1050d3a1eaad6a61c3fa04d89092a5ecd90eeb4870620650f3d3957211714978e1f48c575c5902bade0d2673b43b68e75161c479df3947686654d7039140f183ed10518c6954b18aad7d41533bcf035d13378a8515528fb1bb0e45da004eb9699704ecdd73eccd2131d2968c1e0253e5fee99c4266a5c9a919a99710b984dda0ab4365bf4f4384c603ebf77b4d7438502be264902b4e23474aed8282e3cc780300607691f956a4ab8b607c04b455ba856c01c2cbbf06fd0f63f2f2e4d0e59d2e37bc59429f82973448d4c497101c9089704952c6971afdc650dfe0a1bcb32011d973212027c71606a666f8fcd127e6ef3b893e58bbf4a5e3c832cf8c576330a4faad195a09c871b85144f811ccf016dd3f1a71c8a922e19ccbf350092cd7d17bf4450ac321c3208427617b7466a29ed8b5e733dcd25a58c5bfaa8aac78be72d63b31649ff0fb7d851df3d8210b75d7f2671ffd4b254a494f66076cc2a689888a149cd72f2cc268190b32eb601b7f50d6c5c5071eecfc2657f1b17242dc5e969fb567bd5b42e541a3e6b6f707352e1781f993e247bc72f220093f072791b8fae3e3101f80079ff9f419da8bdc924d2b3bd451dee84f86191225f4620709241cf8d0ce9cd2c1fdb22549dc84b1c976e80693343fc473e20eae11fbd898e01fdaabb4a2a19159e6ca4303ed1cfe62f79ec8877eb26f542482f0687753989c72f666cfb5e2a216b8bcbcee278c146db647f6b9e941428b8de019efefbad2ef12df11a6bbfe9edb246a52f7d11cea6d0b98b0e61bf400c7f99788b96b147c79cccb6f14dda65666d2036fc5408ca22ae0d3fe1eb22e16944ec82b06f27b97d5ed25b7b9050004cac24c6beff0b075b50ed575f33b1faa3a19e72b1e5314cef9ebe9d0e92d0b4994310ae031ef86cec90c4b77788e9edf5b9ba55c0d494d006229379a392b221d7ecd1f99a09806b0cce8a17ff395caeba2f6cf46d62f4b73e7b8ef4f83e0fa6db8bb70bb7d06dc9b45abd76eda47f8327015ad05162d0352d928f105176900571bd07505453a92ad57ef45c5f95860ecadc1f50d5bc14af441919d9d1c36fe77c54bd2d47f6ffb81c209ca20831a561101373fbdf8cbe898b203d4daa87def53e7bf23ce1b0c927e7a9e6c56193dd14d47271b6b1fb65a1492d0cf94f7eaa86b713137f51190bae5f83b730fb682367288e870d62e57c55d98a8bcb4973bc39c4375c5854907bd361e36b11ccfac2885f2bef8b09df5b2d88e422e9b373eceb06b32df30bde61f8e4c46929096bb1b962c0f17d83e579e7df668ad62d49f3b0ed13a4053686684308e38a2c2046f4d6b72e4630d07871edb87e73164eef2e80a49bcc4152c3666f780629c4140afd715df67f17da688d6f278d95ca2657640623846aed7c7eb24117708620c0d63dd895dae9902777385d81ae7a41a7d2a80655977651ec23b5b95cac14c590299a8bc03a67a88f903668fbfb555058fe3a9ed088054d2f6291d2794cac1f22a39b69b864d564f6a1e86495d3e6bd350b9b811150e22cb47dc69ccc5e0561d8aa6cadef53722e50dd43743729ee83f5b8328b32b277b3ada26c669a511cfcf1bad8567f82bfd21a124e9b5b102768b73c646448542661953d01f1dd638e86dcd7e119d6d447358cb012534454d9e262b77b7043a58b618ea6fa2f8ab585c2cad05687ca32bf243ace756c4dc7e6a96d36c0bb649a27d46a1810d00c86e5a4a17c42e9d95f2d9702a39d44a57c35e9d5c3cc330f72d0f02247ecf9e6a093e9754e7c6d2bd19e53e31c2a98166ede6c9fba2e44374ec34ba50b481ebf6c165f66cfdf1174a062b3e091bf3e036065aaa00c495997a3883db9997f16add2a7c297e6c88e01fe48a5d2c8e845bda4f5df6614238dac9f1bff9810e0232b474024bc4a6fa186ef3c45872c273aa54d039039b70f2241d67fe88b56360b289168ed4e1c7682aa4c800492e53fa7064a291f7f1412db077b3934b7b2904dde197c2569161cc7fe33da1fba9b1831a4826451210d255346fbcce1864048c2263d31aa5ccab5177ad167b9937d2802002d03f3204bbdeeb66ec25f1ed2e073bbe3fe1970465f41e0348a4b499ab753ad664770f511d5603805c9758c9b799b14c774fee2bf4b2e5e7469ec22be2bc42278738a333a21248c81e5648c2b250cad383b3ea06609de4e426cf6c3c0a08aed01c4d22c91d98689881dcd208f5ae2722ca7c135a17a2e2c34987ce43d017ccea35beb029756fb211129bfbc46f7f1930d78e876be3491e1d80eb7d3c329d65d5a9156d15177af0e121bbaaa727a70f213ab680fa82071e9e5a857bc6b0db3c231375bd5b1a5ddb065fed739c4f610c8a6c6750d0bbdcffbc4cc29b51a29c6e27a936fd87da1a9d273e2098e50def6d588d78f9e497524520e1b460c98326b8afe64e9cbc56a5357bbc71dd775135e39cc52b659faf4a248ef8571fcd60014c4f27746e830704159ea7151dba648ea6566255132e7fb64a532b4589b8566a18ff62f162433e877aebb60c3f56d4eef7033c9ae23300a50bc3acbea87abf3cdc00e1a42338c82113831cbb1f47c67ed4e8f26388f89acbb2f597586a652b3c7c5d074572e2139a3f96a079ef42e853dc86bc9176dea40cbb2c5a9448e24d116afdc60ba96630c0372ae2f2590bc7eaa4db53a35143f1c0185860923f060a8b086596e5a1ecedf71fa12ec0247ef4bd7a11a77d01d19d06bdcc54794a594a4f1cb07f437a3a510585ef30503a379092feb3bf730428deabb607fd5a271b8a73cf53177e7c5e0c7cc30ddc3e68d9efbe3da178221079d0e6121e673f721dfb85bbf8b1e8dbd21bab97fda541352e5bb39b4cc1ca62f9d352c670c3c25e33c80bca953a497388bec6df9b021a621742c81819fd83844b84ef3976df1b2aa141a980a47c8a5e853b28c93e515d314afc2aa9af71a0972506468e7ae39cdcd92b681dab47103b62f8a4bf536c92f6fe6ca8aa23b14b6147983b682aef10ee10ff5dd0c362592c4eeb2cfe6aa8157a693f40e54e218910c6ac3b2acf365637d8125385d39c51fabe57769afae11090cf43215aa263801ec5f207b9799fe480afa66233183e6e5ca7906a8f11b312b45370e4b15299ae301e79cfb672775017dd99c44a7e39f0f5eed9723c83f78247d53ce5cd1f33faa9fb00099798bb2b2d5f2308f1421b94533750f15f34ec1ed5accbf4062e569b2b3e91a3cf512195dd13b61324503a50da6dce92f8e0f46dad5fccc578279bb80b8cfd9d80698c7a30c20090c6c92a1c2f1c817267c99aa52d6c515421653182777810f09335c111f575cd2749ea7efca7778a91b2214fefc7815c19d77fa791a973fc036e0e9c8d6aad1c5962bb1addb7bb48e70ac220b53b161713620d8be5af889ddd7f9a0cb285d756abecbd245ff623de5762822467e26d8a75b680cb820cb2cfca491f8fa4032205c471ed9d0eaa4cfd644966e9cbe312109722cdc09b35fce318f2ec5847eec43d5445ef91b1b40a4fd23d1c17bc2690ed32e9846d839c8db9805bde917d74e92c683066342f4e407dc2c51e4beb91d610066b6c6418393a177fe48f3931e91643b1f4d3b71617752da6a115d62746da7f061a110538f
+  7b22b1899bb4d215751e07a80f0d88de7ac43174b2bb1ad06a11d61b739ea0073709999a7abd32e45bb6e9a37adb7657ceb36495f5c55a980bd4fb92793294a46c56fee9c2e0f25deca538e36c8e329d72963c09166eda1479d2acc20b4d7f28b0264000ba8ecf58060a5d37424302eeb71e65dc390d166624d53f53c9f29d95de84b9cf88abba066824834fd2bcee6cc77efe36bf9aa4835b6c8480b4a689d0859a5ba8b9647d58b39e618e53fe21696b730341183dee80b4600369c1546341da8a38272c47c38e8febfbc754224d3ef173e4366f687d60fb2ebd1f5ca7fbc7e907da4c78389cff266a4deaf02d0b249ee69e3a129b1d616cefb7aaee350bb3036e4aca4144d8e8444d00700ad0da9c85dfbf6ed7091d584a65f8c4ba5d6c99da0ec37221fd1b28ef51d63fd55a30a5feb4ea47cfb9e0e3c46596815fa78e2c39b4ce37e12c2424b18b0b6602bd85c2534d0073b79a4e0cfe9d555c91cc46863a08fdde2818ddc791b19ccc12cffbedcc22340af32c0a8713d9a86a5e62037133ef7d1bfa8cd323ea77e8b4fdf5a71832e078102bf481ccac5d361ed1324a86ca46bd276c208be41cd04197be4ecb48623814784202540d793081d1bd0af4459f755b571506b6f58fb716f39c9c1631182797dca2e88c1d2754e943ab57dd3f13a85d7540ad8b12719f60988116c6404f36b1729e02357721a2a522d8943cb8404419b4f9d3aeb1b3872e2675d5f06ea5bd058845b05c517f0890cddf2b23b4aff2cdfdadab8ee46c439917d0aeaf94c61a4e50454419a79c7e959133091d384a0849db745a1f27bc60b85b1cc0e105d9bc4d0588c646adc1a082513779440855d0c36d9e513d46f76b71fbc3d677706fabc7126d2a0685f28c41bd3465d2a8
   
     
       
@@ -137,7 +137,7 @@ ai给出的贪心代码，仅供参考
 
 ]]></content>
       <categories>
-        <category>会议竞赛游记</category>
+        <category>组会记录</category>
       </categories>
       <tags>
         <tag>meetings</tag>
@@ -163,28 +163,6 @@ ai给出的贪心代码，仅供参考
       </categories>
       <tags>
         <tag>meetings</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2024年9月16日到9月22日周总结清单</title>
-    <url>/2024/09/18/2024%E5%B9%B49%E6%9C%8816%E6%97%A5%E5%88%B09%E6%9C%8822%E6%97%A5%E5%91%A8%E6%80%BB%E7%BB%93%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[
-  7b22b1899bb4d215751e07a80f0d88de16933033ae19b391949c74dcef436d0c5b80c1104e8012a505401d83bdeb9353f14c5c9d398d48d98c534cb40f724fbf917700047c1e9f103b0f5c3e8203242d525d8f52f8707c87b6be5d94eba27099d629869925e5ab80bfe51adf959a6b3f75d7fb78cfd67142af658daa9c3b9ecf7ca644bb0e1b615bf6e49d41a8244d27c2ce87335a9ef31ce6adb0d2368b3e1c61861c6db853dde06aa5d245cf222f059a9b4224445bf5ba75f52aabc7849725488ab3681c349ebc11a67edb6e65223c602e48e4f4b2f8c33756da16f075da3120139ff56695e55f12564fc22041922f6c1e2b5016a51dae2045e347bb5ea156fec7d57f7092929050743e9e1149ed33e2e2d98a390118e38a7e39640bba4b2130ede1aba12e4e5c3105fcd0eab1860d088f9dbbc0802e84248ddb5bc4c40cba38a639ddd7df9498de53a804834a3054428b904bbb6c6bfcc1bbe9a88dbbefc0e34d3cd11a9ee2e791e1a9889bc85cac54fdb7c4bbc2e0d0c72ebd101ae57fc2e3cba5b14ed1dd0b3ca7c194ddd0843b0604d0b79b2338492c5fb32d4bacde821d89cc257d81a4057f49b04ae23ba038a3d065a6934f2c9b91e10157eda470690c6820432cc1fff2a919aac865ae2151b43dcb9b19c3e065684341b630267d4d56b99f6f1009d33a14dc2091feedea35442bd0499c777a6903eb7b544fb6a79fd6f2c74086307b730f00db634f601cdc4a991850866f51a076072fa24b507e6e5ad6137341a3c84196cfe965a75dfd1fe5f70cb020cb6fbc922d321525ecc9a489429f2f782908d7a150da5b008b955ff4fc550d184965dc7b3fa0ff6ce54e0387c9f2eca967c655759a4b61312c3a70bab492eff5c3ea87246106fd0de8e0a2f1ff5558128a831acce2883ffa1dea7de903f869360a6b2046e81faf3a430902df51a9960d57f79ae55551ad06afea2ca48308fb5430334cb5002e95a2f187a126d508be10751a29e1c1ef5ae89cec4ca1e6073f82ca5ce18c99dec31478c6b88bd2f1b83a8b2a2d99920ef37d6df67b31b57ec9512e3088b67cd9e05f42c877a20bc3e6da34a21731bb3fe5b5fc0ae96980c134eb0279cee4cb63118e59045474b38c5f8f605cea2072546388edb3a771757bc96dfa73d11e96272c2d5062bd6d79d80cf6eb6f3bea69c5d6553516ab529ce710632463d89db45ed30c64a283039618a8345b3ffe5859ed74cd21e6ff669b70fb347a7e982a27c7124edf5768ed4b71833d29fabf979e538d4dbdfcb926ff1b0be9b7aae5908ccf18bf6f9fffd8cb944a967eb433ff5e84044c1608f1069d228d31bd2489d248b90eeb59e0e795065f0bd25ffa6b6e183ae04533e1b3856e07bc635efca9ccec07c49385376f51c151c319e5ee236fd5b8b77b3ce83cff4d9eb0102ce4fcf093fd1d6f9f8cdcca76448f1bd12f3ac9d85bca151aeb2772d31680dbca8a619932e2894514bf597be09cb9ebb76eb7147677d1a9e35095413cffb70a3036b01e06684767a617197e11532bc9377f93465db666f1b64ab020faeb23fc627b32a4ad1a9a97bf006cbff91b4954b7ec050524dca41e16bfbb77f9c786c36081d77f4b0b35ce024f0a97eea4ac7975aa4d40c7117bdbaa3b24dd7972d33a308a9471fcd31929bb3f9bf6a2f1d2abe62e1796af7af48a235e87ffd379d3eaefd7e4e6b93755effff45fa34403e7c0e4f91d572aff6dfbc81c4faabeb0db5fa83f0e7a9e7dbf088116a69cf2a83df6487415e1dddce38011977cefd57d90a63851cc858bd364cba2c44c816eb5565bb2585eae74989d309e91711c600330d3b3a71b2228386379259eecb139c4304e3a9a25e138f83c22cf77f36cb30b498af2f946836cc504aabb82b67d178cfeea7d1f8a036614b20b43956fcf540ce8bab31136b59817d664a2039caa761bc2c6646dd9a5d73e8543035c66914df4477373b24fba91515dbc6fd7fd25726be40d1b787b1ef28f73fcc640332c5801e855f1b6e00688264b226eb94c71fb5b67700fcec22722c30749ca35b49ed814e919a1229aed7d236274628719c6b8c9ab4e5e9ba8eecd15a024202b915f0898ddfb1d78fbb4399a2474304da71e8227f76d5a607839cd0dc2a6d0dfa8bc5ec92eb739b3917d2a0194a36409d14c9527bc119b7b8fba523d85b271ddc3f577d5a675de90f1a2a426610f92311639ff3d5047df04ffbb8293df713f216686d17f6b60aeb539e83a665d9c3c98cb7fa98c36aa060feb47fc6466ef61b26b1fb1e972b782527c17219afac45d98d60e48cd17b725ba4430403e4ff80320ff9d8bea634d12741abad550568e95a785e83e77d29b1abf422aa39583156386d4d0bbc44ea8adc842237f132b604e818d9307f682678dcfffac215ecf052deabb554a198d2d902109dee46f000169642e5d25cc7e0321d971f039a9d9b84f4348da83b93cdb7af73c94fb012c567032a560e01007994e887674ba93321c63f621c4cbc5052abfa2e584cd1c59871c647d686b1feece2b89adec1cc0ca0c983dd8d203fc1e4d9e115133245f8ceb787d6c86d4e9596d344f02395f232508eae66f454065d8b970b97c26b124aa01803ef37b08c35da1947b07336e0576aacb9fcca0ccc5fa94e8db4ad3f00559fb5cc9d8e97f61c6ae5b4476a4f7cc3dfcafd9fd97bbfa89a0fd720f74cf8aa9e7de9650f8dc4274a15fce7ce4d3a0025f58c682125ac5b07f381d7f216a1dbd79ae21f60e51a3a0690249eca7ec29700ddb159ed7f23978840a87aeb287b5e763e0aaab02facfe4fb7288c6dd3b8d4f44e3e60ab0a4b22bc2fcde4392374ec0715ffe1ba9b916282f59b5ae379cadd9576073251b45c3a192b837138314657f4b374d0d4b5b7b599ec8700f1994e4bbf921d97a7b49ce6c5b018dd1cd47aee80e80b280
-  
-    
-      
-      
-        Hey, password is required here.
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>生活与杂谈</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -244,105 +222,25 @@ noip2021再战
       </tags>
   </entry>
   <entry>
-    <title>2024青工会 南航飞镖内容总结</title>
-    <url>/2024/08/23/2024%E9%9D%92%E5%B7%A5%E4%BC%9A-%E5%8D%97%E8%88%AA%E9%A3%9E%E9%95%96%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[2024.11.06二次编辑
-没时间回来看了，直接着手做吧，有问题再回来找经验
-
-
-官方镖头设计的不是很好，但是阻力可以接受
-弹道解算，有控镖和无控镖都可以使用
-
-
-迫击炮/摩擦轮型，把重量拉满，可以增加抗扰性
-对碳板前缘倒圆角，升力提高阻力减小（小迎角可行，大迎角雷诺数较高进而失真）
-官方镖头对升力系数影响不大，对阻力影响较大
-
-
-
-增加边条翼，可以调节气动中心
-
-
-
-相对抽象的设计
-
-
-好处：有充足的升力
-坏处：容易坏
-
-机翼经过特殊设计，升阻比能到6以上
-很耐摔
-两个舵机用来控制
-
-飞镖的雷诺数值比昆虫大一点，比鸟小
-
-所以不针对该雷诺数进行翼型设计，或者特殊处理，将会很容易失速
-
-对称翼型容易失速，越厚越容易失速
-
-
-NACA0002这种类似平板，反而更不容易分离
-如果分离，会变得非线性
-
-增加一个后掠，在前缘拉出一个脱体涡来延缓分离
-
-
-后掠角越大，可用引脚越大
-
-S翼在0力矩（俯仰力矩为零）的时候是有升力的
-
-快速加速，陀螺仪可能会
-
-]]></content>
-      <categories>
-        <category>电控</category>
-      </categories>
-      <tags>
-        <tag>RoboMaster</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2025年终总结</title>
-    <url>/2025/12/03/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[这就十二月了，马上就要过年了，也差不多了，故总结一下。
-今年做了什么
-生活习惯：成功养成跑步习惯。目前保持隔日跑（3-5km），已坚持数月。是今年最大的收获。
-
-技术生态迁移：体验 Arch Linux 和 macOS，感觉 Windows 不香了；建立了自己的知识库与日记体系；构建了 AI 辅助开发流。
-
-学术与竞赛：开启了零知识证明方向的科研探索，研读多篇前沿论文；上半年参与微赛并获微奖；学习双拼输入法。
-
-考研长征：正式开启考研复习序列。
-
-
-今年尝试了什么
-作息博弈：尝试早睡早起未果，但目前稳定在 23 点多入睡、7 点多起床（7-8h 睡眠）。
-
-科研磨砺：尝试论文撰写，深感笔耕之难，目前仍处于“破土而出”的艰苦阶段。
-
-竞赛复盘：密码技术竞赛，差点晋级（也就是没晋级呜呜）
-
-
-明年需要做什么
-核心目标：全力以赴备战考研，重中之重。
-
-科研进阶：荔枝橙味论文糕守。
-
-体能优化：继续跑步，降心率提配速。
-
-作息微调： 尝试将作息整体前移 1 小时。
-
-解决时间利用率低的问题。
-
-专项突破英文口语与长难句阅读。
-
+    <title>2024年9月16日到9月22日周总结清单</title>
+    <url>/2024/09/18/2024%E5%B9%B49%E6%9C%8816%E6%97%A5%E5%88%B09%E6%9C%8822%E6%97%A5%E5%91%A8%E6%80%BB%E7%BB%93%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[
+  7b22b1899bb4d215751e07a80f0d88de16933033ae19b391949c74dcef436d0c5b80c1104e8012a505401d83bdeb9353f14c5c9d398d48d98c534cb40f724fbf917700047c1e9f103b0f5c3e8203242d525d8f52f8707c87b6be5d94eba27099d629869925e5ab80bfe51adf959a6b3f75d7fb78cfd67142af658daa9c3b9ecf7ca644bb0e1b615bf6e49d41a8244d27c2ce87335a9ef31ce6adb0d2368b3e1c61861c6db853dde06aa5d245cf222f059a9b4224445bf5ba75f52aabc7849725488ab3681c349ebc11a67edb6e65223c602e48e4f4b2f8c33756da16f075da3120139ff56695e55f12564fc22041922f6c1e2b5016a51dae2045e347bb5ea156fec7d57f7092929050743e9e1149ed33e2e2d98a390118e38a7e39640bba4b2130ede1aba12e4e5c3105fcd0eab1860d088f9dbbc0802e84248ddb5bc4c40cba38a639ddd7df9498de53a804834a3054428b904bbb6c6bfcc1bbe9a88dbbefc0e34d3cd11a9ee2e791e1a9889bc85cac54fdb7c4bbc2e0d0c72ebd101ae57fc2e3cba5b14ed1dd0b3ca7c194ddd0843b0604d0b79b2338492c5fb32d4bacde821d89cc257d81a4057f49b04ae23ba038a3d065a6934f2c9b91e10157eda470690c6820432cc1fff2a919aac865ae2151b43dcb9b19c3e065684341b630267d4d56b99f6f1009d33a14dc2091feedea35442bd0499c777a6903eb7b544fb6a79fd6f2c74086307b730f00db634f601cdc4a991850866f51a076072fa24b507e6e5ad6137341a3c84196cfe965a75dfd1fe5f70cb020cb6fbc922d321525ecc9a489429f2f782908d7a150da5b008b955ff4fc550d184965dc7b3fa0ff6ce54e0387c9f2eca967c655759a4b61312c3a70bab492eff5c3ea87246106fd0de8e0a2f1ff5558128a831acce2883ffa1dea7de903f869360a6b2046e81faf3a430902df51a9960d57f79ae55551ad06afea2ca48308fb5430334cb5002e95a2f187a126d508be10751a29e1c1ef5ae89cec4ca1e6073f82ca5ce18c99dec31478c6b88bd2f1b83a8b2a2d99920ef37d6df67b31b57ec9512e3088b67cd9e05f42c877a20bc3e6da34a21731bb3fe5b5fc0ae96980c134eb0279cee4cb63118e59045474b38c5f8f605cea2072546388edb3a771757bc96dfa73d11e96272c2d5062bd6d79d80cf6eb6f3bea69c5d6553516ab529ce710632463d89db45ed30c64a283039618a8345b3ffe5859ed74cd21e6ff669b70fb347a7e982a27c7124edf5768ed4b71833d29fabf979e538d4dbdfcb926ff1b0be9b7aae5908ccf18bf6f9fffd8cb944a967eb433ff5e84044c1608f1069d228d31bd2489d248b90eeb59e0e795065f0bd25ffa6b6e183ae04533e1b3856e07bc635efca9ccec07c49385376f51c151c319e5ee236fd5b8b77b3ce83cff4d9eb0102ce4fcf093fd1d6f9f8cdcca76448f1bd12f3ac9d85bca151aeb2772d31680dbca8a619932e2894514bf597be09cb9ebb76eb7147677d1a9e35095413cffb70a3036b01e06684767a617197e11532bc9377f93465db666f1b64ab020faeb23fc627b32a4ad1a9a97bf006cbff91b4954b7ec050524dca41e16bfbb77f9c786c36081d77f4b0b35ce024f0a97eea4ac7975aa4d40c7117bdbaa3b24dd7972d33a308a9471fcd31929bb3f9bf6a2f1d2abe62e1796af7af48a235e87ffd379d3eaefd7e4e6b93755effff45fa34403e7c0e4f91d572aff6dfbc81c4faabeb0db5fa83f0e7a9e7dbf088116a69cf2a83df6487415e1dddce38011977cefd57d90a63851cc858bd364cba2c44c816eb5565bb2585eae74989d309e91711c600330d3b3a71b2228386379259eecb139c4304e3a9a25e138f83c22cf77f36cb30b498af2f946836cc504aabb82b67d178cfeea7d1f8a036614b20b43956fcf540ce8bab31136b59817d664a2039caa761bc2c6646dd9a5d73e8543035c66914df4477373b24fba91515dbc6fd7fd25726be40d1b787b1ef28f73fcc640332c5801e855f1b6e00688264b226eb94c71fb5b67700fcec22722c30749ca35b49ed814e919a1229aed7d236274628719c6b8c9ab4e5e9ba8eecd15a024202b915f0898ddfb1d78fbb4399a2474304da71e8227f76d5a607839cd0dc2a6d0dfa8bc5ec92eb739b3917d2a0194a36409d14c9527bc119b7b8fba523d85b271ddc3f577d5a675de90f1a2a426610f92311639ff3d5047df04ffbb8293df713f216686d17f6b60aeb539e83a665d9c3c98cb7fa98c36aa060feb47fc6466ef61b26b1fb1e972b782527c17219afac45d98d60e48cd17b725ba4430403e4ff80320ff9d8bea634d12741abad550568e95a785e83e77d29b1abf422aa39583156386d4d0bbc44ea8adc842237f132b604e818d9307f682678dcfffac215ecf052deabb554a198d2d902109dee46f000169642e5d25cc7e0321d971f039a9d9b84f4348da83b93cdb7af73c94fb012c567032a560e01007994e887674ba93321c63f621c4cbc5052abfa2e584cd1c59871c647d686b1feece2b89adec1cc0ca0c983dd8d203fc1e4d9e115133245f8ceb787d6c86d4e9596d344f02395f232508eae66f454065d8b970b97c26b124aa01803ef37b08c35da1947b07336e0576aacb9fcca0ccc5fa94e8db4ad3f00559fb5cc9d8e97f61c6ae5b4476a4f7cc3dfcafd9fd97bbfa89a0fd720f74cf8aa9e7de9650f8dc4274a15fce7ce4d3a0025f58c682125ac5b07f381d7f216a1dbd79ae21f60e51a3a0690249eca7ec29700ddb159ed7f23978840a87aeb287b5e763e0aaab02facfe4fb7288c6dd3b8d4f44e3e60ab0a4b22bc2fcde4392374ec0715ffe1ba9b916282f59b5ae379cadd9576073251b45c3a192b837138314657f4b374d0d4b5b7b599ec8700f1994e4bbf921d97a7b49ce6c5b018dd1cd47aee80e80b280
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
 
 ]]></content>
       <categories>
         <category>生活与杂谈</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
+        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -504,6 +402,108 @@ DOM 监听：MutationObserver 监听动态元素，实时更新样式
       </categories>
       <tags>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024青工会 南航飞镖内容总结</title>
+    <url>/2024/08/23/2024%E9%9D%92%E5%B7%A5%E4%BC%9A-%E5%8D%97%E8%88%AA%E9%A3%9E%E9%95%96%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[2024.11.06二次编辑
+没时间回来看了，直接着手做吧，有问题再回来找经验
+
+
+官方镖头设计的不是很好，但是阻力可以接受
+弹道解算，有控镖和无控镖都可以使用
+
+
+迫击炮/摩擦轮型，把重量拉满，可以增加抗扰性
+对碳板前缘倒圆角，升力提高阻力减小（小迎角可行，大迎角雷诺数较高进而失真）
+官方镖头对升力系数影响不大，对阻力影响较大
+
+
+
+增加边条翼，可以调节气动中心
+
+
+
+相对抽象的设计
+
+
+好处：有充足的升力
+坏处：容易坏
+
+机翼经过特殊设计，升阻比能到6以上
+很耐摔
+两个舵机用来控制
+
+飞镖的雷诺数值比昆虫大一点，比鸟小
+
+所以不针对该雷诺数进行翼型设计，或者特殊处理，将会很容易失速
+
+对称翼型容易失速，越厚越容易失速
+
+
+NACA0002这种类似平板，反而更不容易分离
+如果分离，会变得非线性
+
+增加一个后掠，在前缘拉出一个脱体涡来延缓分离
+
+
+后掠角越大，可用引脚越大
+
+S翼在0力矩（俯仰力矩为零）的时候是有升力的
+
+快速加速，陀螺仪可能会
+
+]]></content>
+      <categories>
+        <category>电控</category>
+      </categories>
+      <tags>
+        <tag>RoboMaster</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2025年终总结</title>
+    <url>/2025/12/03/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[这就十二月了，马上就要过年了，也差不多了，故总结一下。
+今年做了什么
+生活习惯：成功养成跑步习惯。目前保持隔日跑（3-5km），已坚持数月。是今年最大的收获。
+
+技术生态迁移：体验 Arch Linux 和 macOS，感觉 Windows 不香了；建立了自己的知识库与日记体系；构建了 AI 辅助开发流。
+
+学术与竞赛：开启了零知识证明方向的科研探索，研读多篇前沿论文；上半年参与微赛并获微奖；学习双拼输入法。
+
+考研长征：正式开启考研复习序列。
+
+
+今年尝试了什么
+作息博弈：尝试早睡早起未果，但目前稳定在 23 点多入睡、7 点多起床（7-8h 睡眠）。
+
+科研磨砺：尝试论文撰写，深感笔耕之难，目前仍处于“破土而出”的艰苦阶段。
+
+竞赛复盘：密码技术竞赛，差点晋级（也就是没晋级呜呜）
+
+
+明年需要做什么
+核心目标：全力以赴备战考研，重中之重。
+
+科研进阶：荔枝橙味论文糕守。
+
+体能优化：继续跑步，降心率提配速。
+
+作息微调： 尝试将作息整体前移 1 小时。
+
+解决时间利用率低的问题。
+
+专项突破英文口语与长难句阅读。
+
+
+]]></content>
+      <categories>
+        <category>生活与杂谈</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1229,59 +1229,6 @@ D.Med-imize
       </tags>
   </entry>
   <entry>
-    <title>Codeforces Round 964 (Div.4)题解</title>
-    <url>/2024/08/07/Codeforces-Round-964-Div-4-%E9%A2%98%E8%A7%A3/</url>
-    <content><![CDATA[题目链接
-
-差一道题就ak了，打代码的速度还是慢了点
-
-F时间不够了，于是随便糊了个时间复杂度不对的算法，结果算法对了，少了个预处理然后就TLE了，赛时没有发现
-A.A+B Again?
-#include&lt;iostream&gt;using namespace std;int t , n;signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        cout &lt;&lt; (n/10)+(n%10) &lt;&lt; endl;    &#125;    return 0;&#125;
-
-B.Card Game
-直接穷举所有可能性即可
-思路不是很难，就看如何实现了
-#include&lt;iostream&gt;#define int long longusing namespace std;int t , a[5];signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        for(int i = 1;i &lt;= 4;i ++) cin &gt;&gt; a[i];        int l , r , ans = 0;        for(int i = 1;i &lt;= 2;i ++)&#123;            int ii = (i==1)?2:1;            for(int j = 3;j &lt;= 4;j ++)&#123;                int jj = (j==3)?4:3;                l = 0 , r = 0;                if( a[i] &gt; a[j] ) l ++;                if( a[i] &lt; a[j] ) r ++;                if( a[ii] &gt; a[jj] ) l ++;                if( a[ii] &lt; a[jj] ) r ++;                if( l &gt; r ) ans ++;                //cout &lt;&lt; a[i] &lt;&lt; &quot; &quot; &lt;&lt; a[ii] &lt;&lt; &quot; &quot; &lt;&lt; a[j] &lt;&lt; &quot; &quot; &lt;&lt; a[jj] &lt;&lt; endl;            &#125;        &#125;        cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
-
-C.Showering
-典型贪心（弱化版）
-数据范围可以 $O(nlogn)$，无脑sort就好了
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 2e5;int t , n , s , m;struct TIME&#123;    int l , r;&#125;a[N+10];bool cmp( TIME x , TIME y )&#123;    return x.l &lt; y.l;&#125;signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; s &gt;&gt; m;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i].l &gt;&gt; a[i].r;        &#125;        sort( a + 1 , a + n + 1 , cmp );        bool flag = 0;        a[0].r = 0 , a[n+1].l = m;        for(int i = 1;i &lt;= n+1;i ++)&#123;            if( a[i].l - a[i-1].r &gt;= s )&#123;                flag = 1;                break;            &#125;        &#125;        if( flag ) cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;        else cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;    &#125;    return 0;&#125;
-
-D.Slavic’s Exam
-这里的匹配不需要连续，所以只要有?就直接替换就可以了，多余的?需要替换成任意小写字母
-#include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;int T;string s , t;signed main()&#123;    cin &gt;&gt; T;    while( T -- )&#123;        cin &gt;&gt; s &gt;&gt; t;        int t_top = 0;        //cout &lt;&lt; s.length() &lt;&lt; &quot; &quot; &lt;&lt; t.length() &lt;&lt; endl;        for(int i = 0;i &lt; s.length();i ++)&#123;            if( t_top == t.length() )&#123;                if( s[i] == &#x27;?&#x27; ) s[i] = &#x27;a&#x27;;                continue;            &#125;            if( s[i] == &#x27;?&#x27; || s[i] == t[t_top] )&#123;                s[i] = t[t_top];                t_top ++;            &#125;        &#125;        if( t_top != t.length() ) cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;        else&#123;            cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;            cout &lt;&lt; s &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
-
-E.Triple Operations
-这道题开始上难度了
-先说结论，$ans=log_3(min(a_i))+\sum log_3(a_i)$
-容易观察到，我们只需要将其中一个数变为0，后续将数字除以3（减小）的时候不会造成其他数字乘以3（增大），我们只需要将最小的数变为0就可以，但是同时也会有另外一个数字增大，这时造成的代价即为$log_3(min(a_i))$
-现在只需要计算 $log_3(min(a_i))+\sum log_3(a_i)$ ，即$log_3l+\sum_l^r log_3(a_i)$ 
-我们观察到从 $l$ 到 $r$ 是单调的，所以利用指数即可在 $O(logn)$ 求解
-#include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;int T;int l , r;int log3( int x )&#123;    int ans = 0;    while( x )&#123;        x /= 3;        ans ++;    &#125;    return ans;&#125;int poww( int x )&#123;    int ans = 1;    while( x -- )&#123;        ans *= 3;    &#125;    return ans;&#125;signed main()&#123;/*    for(int i = 1;i &lt;= 100;i ++)&#123;        cout &lt;&lt; i &lt;&lt; &quot; | &quot; &lt;&lt; log3(i) &lt;&lt; endl;    &#125;    return 0;*/    cin &gt;&gt; T;    while( T -- )&#123;        cin &gt;&gt; l &gt;&gt; r;        /*        int ans = log3(l);        for(int i = l;i &lt;= r;i ++)&#123;            ans += log3(i);        &#125;*/        int ans = log3(l)+log3(r) , log_i , jumper;        for(int i = l;i &lt;= r;i ++)&#123;            log_i = log3(i);            jumper = poww( log_i );            //cout &lt;&lt; &quot;jumper: &quot; &lt;&lt; jumper  &lt;&lt; &quot; |ans: &quot; &lt;&lt; ans &lt;&lt; endl;            if( jumper &lt; r ) ans += (jumper-i)*log_i , i = jumper-1;            else ans += (r-i)*log_i , i = r;        &#125;        cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
-
-F.Expected Median
-假设 $1$ 有 $x$ 个，$0$ 有 $y$ 个，那么 $ans=\sum (C_x^i+C_y^{k-i}) $，即从 $x$ 中选 $i$ 个，从 $y$ 中选 $k-i$ 个的所有可能，其中 $i$ 需要满足 从 $x$ 中取出的元素多余从 $y$ 中取出（即 $1$ 比 $0$ 多，这样的中位数才能是 $1$ ）
-计算组合数需要用阶乘，记得预处理（悲
-#include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;const int N = 2e5 , p = 1e9+7;int T , n , k;int a[N+10];int num_0 , num_1;int jc[N+10];void init()&#123;    jc[0] = 1;    for(int i = 1;i &lt;= N;i ++)&#123;        jc[i] = jc[i-1]*i;        jc[i] %= p;    &#125;    return ;&#125;int qpow(long long a, int b) &#123;  int ans = 1;  a = (a % p + p) % p;  for (; b; b &gt;&gt;= 1) &#123;    if (b &amp; 1) ans = (a * ans) % p;    a = (a * a) % p;  &#125;  return ans;&#125;int inv( int x )&#123;    return qpow( x , p-2 );&#125;int C( int nn , int mm )&#123;    int ans = 1;    ans *= jc[nn];    ans %= p;    ans *= inv(jc[mm]);    ans %= p;    ans *= inv(jc[nn-mm]);    ans %= p;    return ans;&#125;signed main()&#123;    init();    cin &gt;&gt; T;    while( T -- )&#123;        cin &gt;&gt; n &gt;&gt; k;        num_0 = num_1 = 0;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i];            if( a[i] ) num_1 ++ ; else num_0 ++;        &#125;        int ans = 0;        for(int i = min(num_1,k);i&gt;k/2 and (k-i)&lt;=num_0;i --)&#123;            //cout &lt;&lt; num_0 &lt;&lt; &quot; &quot; &lt;&lt;  k-i &lt;&lt; &quot; &quot; &lt;&lt; num_1 &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;            ans += C( num_0 , k-i ) * C( num_1 , i );            ans %= p;        &#125;        cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
-
-G1.Ruler (easy version)
-简单的二分法
-#include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;const int N = 2e5 , p = 1e9+7;int T , t;int ef( int l , int r )&#123;    if( l == r ) return l;    int mid = (l+r)&gt;&gt;1;    cout &lt;&lt; &quot;? &quot; &lt;&lt; mid &lt;&lt; &quot; &quot; &lt;&lt; mid &lt;&lt; endl;    cout &lt;&lt; flush;    int t;    cin &gt;&gt; t;    //int redder = mid + ( mid&gt;=100?1:0);    //t = redder*redder;    if( t == (mid+1)*(mid+1) ) return ef( l , mid );    else return ef( mid+1 , r );&#125;signed main()&#123;    cin &gt;&gt; T;    while( T -- )&#123;        int ans = ef( 2 , 999 );        cout &lt;&lt; &quot;! &quot; &lt;&lt; ans &lt;&lt; endl;        cout &lt;&lt; flush;    &#125;    return 0;&#125;
-
-G2.Ruler (hard version)
-三分法，写法有很多，七次询问可以确定一个数即可
-#include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;const int N = 2e5 , p = 1e9+7;int T , t;int ef( int l , int r )&#123;    if( l == r ) return l;    int mid_l = l+(r-l)/3 , mid_r = l+(r-l)/3*2;    cout &lt;&lt; &quot;? &quot; &lt;&lt; mid_l &lt;&lt; &quot; &quot; &lt;&lt; mid_r &lt;&lt; endl;    cout &lt;&lt; flush;    int t;    cin &gt;&gt; t;/*    int lll = mid_l + ( mid_l&gt;=700?1:0);    int rrr = mid_r + ( mid_r&gt;=700?1:0);    t = lll*rrr;*/    if( t == (mid_l+1)*(mid_r+1) ) return ef( l , mid_l );    else if( t == (mid_l)*(mid_r+1) ) return ef( mid_l+1 , mid_r );    else return ef( mid_r+1 , r );&#125;signed main()&#123;    cin &gt;&gt; T;    while( T -- )&#123;        int ans = ef( 2 , 999 );        cout &lt;&lt; &quot;! &quot; &lt;&lt; ans &lt;&lt; endl;        cout &lt;&lt; flush;    &#125;    return 0;&#125;
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>算法竞赛</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Codeforces Round 965 (Div. 2) 题解</title>
     <url>/2024/08/11/Codeforces-Round-965-Div-2-%E9%A2%98%E8%A7%A3/</url>
     <content><![CDATA[题目链接
@@ -1341,39 +1288,50 @@ B. Minimize Equal Sum Subarrays
       </tags>
   </entry>
   <entry>
-    <title>FJNU2024低程赛题解</title>
-    <url>/2024/12/02/FJNU2024%E4%BD%8E%E7%A8%8B%E8%B5%9B%E9%A2%98%E8%A7%A3/</url>
-    <content><![CDATA[比赛链接
-题目按总过题数量降序排列
+    <title>Codeforces Round 964 (Div.4)题解</title>
+    <url>/2024/08/07/Codeforces-Round-964-Div-4-%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[题目链接
 
-A.#include&lt;iostream&gt;using namespace std;signed main()&#123;    int a , b;cin &gt;&gt; a &gt;&gt; b;    int c = a - b;if( c &lt; 0 ) c = -c;    cout &lt;&lt; c &lt;&lt; endl;    return 0;&#125;
-H.#include&lt;iostream&gt;using namespace std;signed main()&#123;    int a , b , c;cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;    if( a == b &amp;&amp; b == c ) cout &lt;&lt; 1 &lt;&lt; endl;    else if( a == b || b == c || a == c ) cout &lt;&lt; 2 &lt;&lt; endl;    else cout &lt;&lt; 3 &lt;&lt; endl;    return 0; &#125;
-G.前面填充0，剩下的位数从头开始输出字符串，直到凑齐n位，即可
-#include&lt;iostream&gt;using namespace std;signed main()&#123;    int n , k;cin &gt;&gt; n &gt;&gt; k;    string s;cin &gt;&gt; s;    for(int i = 1;i &lt;= k;i ++)&#123;        cout &lt;&lt; 0;    &#125;    for(int i = k+1;i &lt;= n;i ++)&#123;        cout &lt;&lt; s[i-k-1];    &#125;cout &lt;&lt; endl;    return 0; &#125;
-B.小模拟，过的人还是挺多的，理清思路就好
-#include&lt;iostream&gt;using namespace std;int x , k , r;int leng( int num )&#123;    int ans = 0;    while( num )&#123;        num /= 10;        ans ++;    &#125;if( ans == 0 ) ans = 1;    return ans;&#125;void space( int num )&#123;    for(int i = 1;i &lt;= num;i ++) cout &lt;&lt; &quot; &quot;;&#125;signed main()&#123;    cin &gt;&gt; x &gt;&gt; k;    int len_init = leng(k) + 1 + leng(x);    while( x )&#123;        space( len_init - leng(k) - 1 - leng(x) );        r = x % k;        cout &lt;&lt; k &lt;&lt; &quot;|&quot; &lt;&lt; x &lt;&lt; &quot; &quot;;        if( r &lt; 10 ) cout &lt;&lt; r;        else&#123;            cout &lt;&lt; char(r-10+&#x27;A&#x27;);        &#125;cout &lt;&lt; &#x27;\n&#x27;;        space( len_init - leng(x) );        for(int i = 1;i &lt;= leng(x);i ++) cout &lt;&lt; &quot;-&quot;;        cout &lt;&lt; &#x27;\n&#x27;;        x /= k;    &#125;space(len_init-1);cout &lt;&lt; 0 &lt;&lt; &#x27;\n&#x27;;    return 0;&#125;
-F.一开始想二分套二分（大雾），后来发现只需要记录最长连续L的个数即可
-#include&lt;iostream&gt;using namespace std;const int N = 2e5;int n;string s;int top_R[N];signed main()&#123;    cin &gt;&gt; n &gt;&gt; s;    int top_num = 0;    int ans = 1 , conti = 1;    for(int i = 1;i &lt;= n;i ++)&#123;        if( s[i-1] == &#x27;L&#x27; ) conti ++;        else&#123;            conti = 1;        &#125;ans = max( conti , ans );    &#125;cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
-C.暴力会TLE，时间复杂度为 $O(2^n)$，即使是夹半搜索也要 $2^{50}$ 量级，故考虑dp
-感觉和背包问题比较像，甚至要简单一点；不同点在于背包问题是求最优，而本题是求是否到达
-#include&lt;iostream&gt;#include&lt;queue&gt;using namespace std;int n , x;int a[110] , b[110];int dp[10010][110];signed main()&#123;    cin &gt;&gt; n &gt;&gt; x;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i] &gt;&gt; b[i];    &#125;    dp[0][0] = 1;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int p = min(a[i],b[i]);p &lt;= x;p ++)&#123;            if( p &gt;= a[i] ) dp[p][i] |= dp[p-a[i]][i-1];            if( p &gt;= b[i] ) dp[p][i] |= dp[p-b[i]][i-1];        &#125;    &#125;    if( dp[x][n] ) cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;    else cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;    return 0; &#125;
-E.并查集问题（当时写的时候以为是公共祖先弱化版，忘了并查集这个东西了）
-然后判断每种情况的状态，最后合并即可
-#include&lt;iostream&gt;using namespace std;const int N=1e5;int n , m;int ans , x , y , z;int bin[N+10];int fa[N+10];int get_fa( int p )&#123;    if( fa[p] == p ) return p;    return get_fa(fa[p]);&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        fa[i] = i;    &#125;    for(int i = 1;i &lt;= m;i ++)&#123;        cin &gt;&gt; x &gt;&gt; y &gt;&gt; z;        if( bin[x] == 0 &amp;&amp; bin[y] == 0 )&#123;            ans ++;        &#125;else if( bin[x] &amp;&amp; bin[y] )&#123;            if( get_fa(x) != get_fa(y) )&#123;                ans --;            &#125;        &#125;bin[x] = bin[y] = 1;        fa[get_fa( x )] = fa[get_fa( y )] = min( get_fa( x ) , get_fa( y ) );    &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        if( bin[i] == 0 ) ans ++;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
-G.这题我也不知道怎么过的，应该是运气好凑巧了吧
-结束前十分钟写完思路发现样例二过不了，以为是假了，然后写下了//做法假了，没时间了，开摆！这句；后来发现忘了翻转这一步，加上了然后样例二过了，一提交居然AC了
-首先观察样例，因为存在不同解，所以试图找到解的规律
-2 3 3 4 -4 -7 -4 -1
-对以上操作积分一次（这个比喻有点抽象），可以发现只要确定了第一项，后面的就都确定了
-不妨设第一项为 0
-原式为： 2  3  3  4  -4  -7  -4  -1积分后：0  2  1  2  2  -6  -1  -3  2
-然后改变第一项，可以发现奇数项和偶数项分别加减第一项的改变值
-原式为： 2  3  3  4  -4  -7  -4  -1积分后：0  2  1  2  2  -6  -1  -3  2改首项：1  1  0  3  1  -5  -2  -2  1
-这时，我们只需要确定第一项即可
-但是第一项的范围为 ±1e9，所以需要借助和 幸运数字 的差值
-进一步的，我们如果希望改变后的数字是幸运数字，只需要和目标的幸运数字们分别作差；差值结果即为第一项为某一数字后，这一项在变换（积分）后会变为幸运数字
-由于每个幸运数字不同，故我们对于这个二维列表，只需要统计出现相同数字的最大次数即可（使用map进行统计）
-#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 1e5;int n , m;int s[N+10] , t[15];int state[N+10][11];map &lt; int , int &gt; mp;signed main()&#123;    mp.clear();    cin &gt;&gt; n &gt;&gt; m;    for(int i = 2;i &lt;= n;i ++)&#123;        cin &gt;&gt; s[i];    &#125;    for(int i = 1;i &lt;= m;i ++)&#123;        cin &gt;&gt; t[i];    &#125;    state[1][0] = 0;    for(int i = 2;i &lt;= n;i ++)&#123;        state[i][0] = s[i] - state[i-1][0];    &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= m;j ++)&#123;            state[i][j] = t[j] - state[i][0];            if( i % 2 ) state[i][j] = -state[i][j];        &#125;    &#125;    int ans = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= m;j ++)&#123;            mp[state[i][j]] ++;            ans = max( ans , mp[state[i][j]] );        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
+差一道题就ak了，打代码的速度还是慢了点
+
+F时间不够了，于是随便糊了个时间复杂度不对的算法，结果算法对了，少了个预处理然后就TLE了，赛时没有发现
+A.A+B Again?
+#include&lt;iostream&gt;using namespace std;int t , n;signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        cout &lt;&lt; (n/10)+(n%10) &lt;&lt; endl;    &#125;    return 0;&#125;
+
+B.Card Game
+直接穷举所有可能性即可
+思路不是很难，就看如何实现了
+#include&lt;iostream&gt;#define int long longusing namespace std;int t , a[5];signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        for(int i = 1;i &lt;= 4;i ++) cin &gt;&gt; a[i];        int l , r , ans = 0;        for(int i = 1;i &lt;= 2;i ++)&#123;            int ii = (i==1)?2:1;            for(int j = 3;j &lt;= 4;j ++)&#123;                int jj = (j==3)?4:3;                l = 0 , r = 0;                if( a[i] &gt; a[j] ) l ++;                if( a[i] &lt; a[j] ) r ++;                if( a[ii] &gt; a[jj] ) l ++;                if( a[ii] &lt; a[jj] ) r ++;                if( l &gt; r ) ans ++;                //cout &lt;&lt; a[i] &lt;&lt; &quot; &quot; &lt;&lt; a[ii] &lt;&lt; &quot; &quot; &lt;&lt; a[j] &lt;&lt; &quot; &quot; &lt;&lt; a[jj] &lt;&lt; endl;            &#125;        &#125;        cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
+
+C.Showering
+典型贪心（弱化版）
+数据范围可以 $O(nlogn)$，无脑sort就好了
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 2e5;int t , n , s , m;struct TIME&#123;    int l , r;&#125;a[N+10];bool cmp( TIME x , TIME y )&#123;    return x.l &lt; y.l;&#125;signed main()&#123;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; s &gt;&gt; m;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i].l &gt;&gt; a[i].r;        &#125;        sort( a + 1 , a + n + 1 , cmp );        bool flag = 0;        a[0].r = 0 , a[n+1].l = m;        for(int i = 1;i &lt;= n+1;i ++)&#123;            if( a[i].l - a[i-1].r &gt;= s )&#123;                flag = 1;                break;            &#125;        &#125;        if( flag ) cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;        else cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;    &#125;    return 0;&#125;
+
+D.Slavic’s Exam
+这里的匹配不需要连续，所以只要有?就直接替换就可以了，多余的?需要替换成任意小写字母
+#include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;int T;string s , t;signed main()&#123;    cin &gt;&gt; T;    while( T -- )&#123;        cin &gt;&gt; s &gt;&gt; t;        int t_top = 0;        //cout &lt;&lt; s.length() &lt;&lt; &quot; &quot; &lt;&lt; t.length() &lt;&lt; endl;        for(int i = 0;i &lt; s.length();i ++)&#123;            if( t_top == t.length() )&#123;                if( s[i] == &#x27;?&#x27; ) s[i] = &#x27;a&#x27;;                continue;            &#125;            if( s[i] == &#x27;?&#x27; || s[i] == t[t_top] )&#123;                s[i] = t[t_top];                t_top ++;            &#125;        &#125;        if( t_top != t.length() ) cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;        else&#123;            cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;            cout &lt;&lt; s &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
+
+E.Triple Operations
+这道题开始上难度了
+先说结论，$ans=log_3(min(a_i))+\sum log_3(a_i)$
+容易观察到，我们只需要将其中一个数变为0，后续将数字除以3（减小）的时候不会造成其他数字乘以3（增大），我们只需要将最小的数变为0就可以，但是同时也会有另外一个数字增大，这时造成的代价即为$log_3(min(a_i))$
+现在只需要计算 $log_3(min(a_i))+\sum log_3(a_i)$ ，即$log_3l+\sum_l^r log_3(a_i)$ 
+我们观察到从 $l$ 到 $r$ 是单调的，所以利用指数即可在 $O(logn)$ 求解
+#include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;int T;int l , r;int log3( int x )&#123;    int ans = 0;    while( x )&#123;        x /= 3;        ans ++;    &#125;    return ans;&#125;int poww( int x )&#123;    int ans = 1;    while( x -- )&#123;        ans *= 3;    &#125;    return ans;&#125;signed main()&#123;/*    for(int i = 1;i &lt;= 100;i ++)&#123;        cout &lt;&lt; i &lt;&lt; &quot; | &quot; &lt;&lt; log3(i) &lt;&lt; endl;    &#125;    return 0;*/    cin &gt;&gt; T;    while( T -- )&#123;        cin &gt;&gt; l &gt;&gt; r;        /*        int ans = log3(l);        for(int i = l;i &lt;= r;i ++)&#123;            ans += log3(i);        &#125;*/        int ans = log3(l)+log3(r) , log_i , jumper;        for(int i = l;i &lt;= r;i ++)&#123;            log_i = log3(i);            jumper = poww( log_i );            //cout &lt;&lt; &quot;jumper: &quot; &lt;&lt; jumper  &lt;&lt; &quot; |ans: &quot; &lt;&lt; ans &lt;&lt; endl;            if( jumper &lt; r ) ans += (jumper-i)*log_i , i = jumper-1;            else ans += (r-i)*log_i , i = r;        &#125;        cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
+
+F.Expected Median
+假设 $1$ 有 $x$ 个，$0$ 有 $y$ 个，那么 $ans=\sum (C_x^i+C_y^{k-i}) $，即从 $x$ 中选 $i$ 个，从 $y$ 中选 $k-i$ 个的所有可能，其中 $i$ 需要满足 从 $x$ 中取出的元素多余从 $y$ 中取出（即 $1$ 比 $0$ 多，这样的中位数才能是 $1$ ）
+计算组合数需要用阶乘，记得预处理（悲
+#include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;const int N = 2e5 , p = 1e9+7;int T , n , k;int a[N+10];int num_0 , num_1;int jc[N+10];void init()&#123;    jc[0] = 1;    for(int i = 1;i &lt;= N;i ++)&#123;        jc[i] = jc[i-1]*i;        jc[i] %= p;    &#125;    return ;&#125;int qpow(long long a, int b) &#123;  int ans = 1;  a = (a % p + p) % p;  for (; b; b &gt;&gt;= 1) &#123;    if (b &amp; 1) ans = (a * ans) % p;    a = (a * a) % p;  &#125;  return ans;&#125;int inv( int x )&#123;    return qpow( x , p-2 );&#125;int C( int nn , int mm )&#123;    int ans = 1;    ans *= jc[nn];    ans %= p;    ans *= inv(jc[mm]);    ans %= p;    ans *= inv(jc[nn-mm]);    ans %= p;    return ans;&#125;signed main()&#123;    init();    cin &gt;&gt; T;    while( T -- )&#123;        cin &gt;&gt; n &gt;&gt; k;        num_0 = num_1 = 0;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i];            if( a[i] ) num_1 ++ ; else num_0 ++;        &#125;        int ans = 0;        for(int i = min(num_1,k);i&gt;k/2 and (k-i)&lt;=num_0;i --)&#123;            //cout &lt;&lt; num_0 &lt;&lt; &quot; &quot; &lt;&lt;  k-i &lt;&lt; &quot; &quot; &lt;&lt; num_1 &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;            ans += C( num_0 , k-i ) * C( num_1 , i );            ans %= p;        &#125;        cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
+
+G1.Ruler (easy version)
+简单的二分法
+#include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;const int N = 2e5 , p = 1e9+7;int T , t;int ef( int l , int r )&#123;    if( l == r ) return l;    int mid = (l+r)&gt;&gt;1;    cout &lt;&lt; &quot;? &quot; &lt;&lt; mid &lt;&lt; &quot; &quot; &lt;&lt; mid &lt;&lt; endl;    cout &lt;&lt; flush;    int t;    cin &gt;&gt; t;    //int redder = mid + ( mid&gt;=100?1:0);    //t = redder*redder;    if( t == (mid+1)*(mid+1) ) return ef( l , mid );    else return ef( mid+1 , r );&#125;signed main()&#123;    cin &gt;&gt; T;    while( T -- )&#123;        int ans = ef( 2 , 999 );        cout &lt;&lt; &quot;! &quot; &lt;&lt; ans &lt;&lt; endl;        cout &lt;&lt; flush;    &#125;    return 0;&#125;
+
+G2.Ruler (hard version)
+三分法，写法有很多，七次询问可以确定一个数即可
+#include&lt;iostream&gt;#include&lt;string&gt;#define int long longusing namespace std;const int N = 2e5 , p = 1e9+7;int T , t;int ef( int l , int r )&#123;    if( l == r ) return l;    int mid_l = l+(r-l)/3 , mid_r = l+(r-l)/3*2;    cout &lt;&lt; &quot;? &quot; &lt;&lt; mid_l &lt;&lt; &quot; &quot; &lt;&lt; mid_r &lt;&lt; endl;    cout &lt;&lt; flush;    int t;    cin &gt;&gt; t;/*    int lll = mid_l + ( mid_l&gt;=700?1:0);    int rrr = mid_r + ( mid_r&gt;=700?1:0);    t = lll*rrr;*/    if( t == (mid_l+1)*(mid_r+1) ) return ef( l , mid_l );    else if( t == (mid_l)*(mid_r+1) ) return ef( mid_l+1 , mid_r );    else return ef( mid_r+1 , r );&#125;signed main()&#123;    cin &gt;&gt; T;    while( T -- )&#123;        int ans = ef( 2 , 999 );        cout &lt;&lt; &quot;! &quot; &lt;&lt; ans &lt;&lt; endl;        cout &lt;&lt; flush;    &#125;    return 0;&#125;
 ]]></content>
       <categories>
         <category>算法竞赛</category>
@@ -1442,6 +1400,48 @@ from Crypto.Util.number import *p = None ; g = Nonepub = None#公钥也是公共
       </categories>
       <tags>
         <tag>Crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FJNU2024低程赛题解</title>
+    <url>/2024/12/02/FJNU2024%E4%BD%8E%E7%A8%8B%E8%B5%9B%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[比赛链接
+题目按总过题数量降序排列
+
+A.#include&lt;iostream&gt;using namespace std;signed main()&#123;    int a , b;cin &gt;&gt; a &gt;&gt; b;    int c = a - b;if( c &lt; 0 ) c = -c;    cout &lt;&lt; c &lt;&lt; endl;    return 0;&#125;
+H.#include&lt;iostream&gt;using namespace std;signed main()&#123;    int a , b , c;cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;    if( a == b &amp;&amp; b == c ) cout &lt;&lt; 1 &lt;&lt; endl;    else if( a == b || b == c || a == c ) cout &lt;&lt; 2 &lt;&lt; endl;    else cout &lt;&lt; 3 &lt;&lt; endl;    return 0; &#125;
+G.前面填充0，剩下的位数从头开始输出字符串，直到凑齐n位，即可
+#include&lt;iostream&gt;using namespace std;signed main()&#123;    int n , k;cin &gt;&gt; n &gt;&gt; k;    string s;cin &gt;&gt; s;    for(int i = 1;i &lt;= k;i ++)&#123;        cout &lt;&lt; 0;    &#125;    for(int i = k+1;i &lt;= n;i ++)&#123;        cout &lt;&lt; s[i-k-1];    &#125;cout &lt;&lt; endl;    return 0; &#125;
+B.小模拟，过的人还是挺多的，理清思路就好
+#include&lt;iostream&gt;using namespace std;int x , k , r;int leng( int num )&#123;    int ans = 0;    while( num )&#123;        num /= 10;        ans ++;    &#125;if( ans == 0 ) ans = 1;    return ans;&#125;void space( int num )&#123;    for(int i = 1;i &lt;= num;i ++) cout &lt;&lt; &quot; &quot;;&#125;signed main()&#123;    cin &gt;&gt; x &gt;&gt; k;    int len_init = leng(k) + 1 + leng(x);    while( x )&#123;        space( len_init - leng(k) - 1 - leng(x) );        r = x % k;        cout &lt;&lt; k &lt;&lt; &quot;|&quot; &lt;&lt; x &lt;&lt; &quot; &quot;;        if( r &lt; 10 ) cout &lt;&lt; r;        else&#123;            cout &lt;&lt; char(r-10+&#x27;A&#x27;);        &#125;cout &lt;&lt; &#x27;\n&#x27;;        space( len_init - leng(x) );        for(int i = 1;i &lt;= leng(x);i ++) cout &lt;&lt; &quot;-&quot;;        cout &lt;&lt; &#x27;\n&#x27;;        x /= k;    &#125;space(len_init-1);cout &lt;&lt; 0 &lt;&lt; &#x27;\n&#x27;;    return 0;&#125;
+F.一开始想二分套二分（大雾），后来发现只需要记录最长连续L的个数即可
+#include&lt;iostream&gt;using namespace std;const int N = 2e5;int n;string s;int top_R[N];signed main()&#123;    cin &gt;&gt; n &gt;&gt; s;    int top_num = 0;    int ans = 1 , conti = 1;    for(int i = 1;i &lt;= n;i ++)&#123;        if( s[i-1] == &#x27;L&#x27; ) conti ++;        else&#123;            conti = 1;        &#125;ans = max( conti , ans );    &#125;cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
+C.暴力会TLE，时间复杂度为 $O(2^n)$，即使是夹半搜索也要 $2^{50}$ 量级，故考虑dp
+感觉和背包问题比较像，甚至要简单一点；不同点在于背包问题是求最优，而本题是求是否到达
+#include&lt;iostream&gt;#include&lt;queue&gt;using namespace std;int n , x;int a[110] , b[110];int dp[10010][110];signed main()&#123;    cin &gt;&gt; n &gt;&gt; x;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i] &gt;&gt; b[i];    &#125;    dp[0][0] = 1;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int p = min(a[i],b[i]);p &lt;= x;p ++)&#123;            if( p &gt;= a[i] ) dp[p][i] |= dp[p-a[i]][i-1];            if( p &gt;= b[i] ) dp[p][i] |= dp[p-b[i]][i-1];        &#125;    &#125;    if( dp[x][n] ) cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;    else cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;    return 0; &#125;
+E.并查集问题（当时写的时候以为是公共祖先弱化版，忘了并查集这个东西了）
+然后判断每种情况的状态，最后合并即可
+#include&lt;iostream&gt;using namespace std;const int N=1e5;int n , m;int ans , x , y , z;int bin[N+10];int fa[N+10];int get_fa( int p )&#123;    if( fa[p] == p ) return p;    return get_fa(fa[p]);&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        fa[i] = i;    &#125;    for(int i = 1;i &lt;= m;i ++)&#123;        cin &gt;&gt; x &gt;&gt; y &gt;&gt; z;        if( bin[x] == 0 &amp;&amp; bin[y] == 0 )&#123;            ans ++;        &#125;else if( bin[x] &amp;&amp; bin[y] )&#123;            if( get_fa(x) != get_fa(y) )&#123;                ans --;            &#125;        &#125;bin[x] = bin[y] = 1;        fa[get_fa( x )] = fa[get_fa( y )] = min( get_fa( x ) , get_fa( y ) );    &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        if( bin[i] == 0 ) ans ++;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
+G.这题我也不知道怎么过的，应该是运气好凑巧了吧
+结束前十分钟写完思路发现样例二过不了，以为是假了，然后写下了//做法假了，没时间了，开摆！这句；后来发现忘了翻转这一步，加上了然后样例二过了，一提交居然AC了
+首先观察样例，因为存在不同解，所以试图找到解的规律
+2 3 3 4 -4 -7 -4 -1
+对以上操作积分一次（这个比喻有点抽象），可以发现只要确定了第一项，后面的就都确定了
+不妨设第一项为 0
+原式为： 2  3  3  4  -4  -7  -4  -1积分后：0  2  1  2  2  -6  -1  -3  2
+然后改变第一项，可以发现奇数项和偶数项分别加减第一项的改变值
+原式为： 2  3  3  4  -4  -7  -4  -1积分后：0  2  1  2  2  -6  -1  -3  2改首项：1  1  0  3  1  -5  -2  -2  1
+这时，我们只需要确定第一项即可
+但是第一项的范围为 ±1e9，所以需要借助和 幸运数字 的差值
+进一步的，我们如果希望改变后的数字是幸运数字，只需要和目标的幸运数字们分别作差；差值结果即为第一项为某一数字后，这一项在变换（积分）后会变为幸运数字
+由于每个幸运数字不同，故我们对于这个二维列表，只需要统计出现相同数字的最大次数即可（使用map进行统计）
+#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 1e5;int n , m;int s[N+10] , t[15];int state[N+10][11];map &lt; int , int &gt; mp;signed main()&#123;    mp.clear();    cin &gt;&gt; n &gt;&gt; m;    for(int i = 2;i &lt;= n;i ++)&#123;        cin &gt;&gt; s[i];    &#125;    for(int i = 1;i &lt;= m;i ++)&#123;        cin &gt;&gt; t[i];    &#125;    state[1][0] = 0;    for(int i = 2;i &lt;= n;i ++)&#123;        state[i][0] = s[i] - state[i-1][0];    &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= m;j ++)&#123;            state[i][j] = t[j] - state[i][0];            if( i % 2 ) state[i][j] = -state[i][j];        &#125;    &#125;    int ans = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= m;j ++)&#123;            mp[state[i][j]] ++;            ans = max( ans , mp[state[i][j]] );        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0; &#125;
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>算法竞赛</tag>
       </tags>
   </entry>
   <entry>
@@ -1568,6 +1568,79 @@ $f(n)$
       </categories>
       <tags>
         <tag>算法竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PCS简要介绍</title>
+    <url>/2025/03/26/PCS%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[之前听师兄讲PCS（多项式承诺方案），听不懂一点，甚至有一次差点睡着（bushi
+今天看Siniel，又遇到PCS了，故而通俗理解记录一下，也没时间看相关论文了~浅学一下，够用即可~~
+
+
+
+Motivation：证明者有一个多项式 $p()$，验证者指定一个数 $z$ 来验证，通过承诺确保原多项式不会改变
+
+这里，我们介绍 KZG。更具体的：
+KZG 方案是基于双线性对（bilinear pairing）和加法同态加密（homomorphic encryption）的密码学技术。它允许一个发送方承诺（commit）一个多项式，并稍后提供证明（proof），以便验证者确认多项式在某个点的值是否正确。
+前置知识：双线性映射
+
+设 $G_1,G_2$ 是两个循环群，阶为素数 $p$
+设 $e:G_1\times G_2\rightarrow G_T$，满足 $e(g^a,h^b)=e(g,h)^{ab}$ 对所有 $a,b\in\mathbb{Z}_p$ 成立，其中 $g,h$ 是群 $G_1$ 和 $G_2$ 的生成元
+
+KGC的四个步骤：（对应图二）
+
+Setup（设置）： 生成公钥参数。
+Commit（承诺）： 证明者使用私有多项式生成并公开该多项式的承诺。
+Open（打开）： 验证者指定在某个点，而后要求证明者公开该多项式的值并提供一个证明。
+Verify（验证）： 验证者检查提交的值和证明是否有效。
+
+
+具体流程2.1 设定（Setup）
+由可信第三方（或 MPC ）选取一个私有值 $s$，并计算：${ g, g^s, g^{s^2}, \dots, g^{s^d} }$ 作为公共参数；这些值是椭圆曲线群上的元素并公开发布。
+2.2 承诺（Commit）
+证明者需验证多项式 $p(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_d x^d$
+计算并公开承诺 $C_p = g^{p(s)} = g^{a_0 + a_1 s + a_2 s^2 + \dots + a_d s^d}$
+2.3 证明（Open）
+验证者想知道证明者的多项式在 $x = \alpha$ 处的值 $y = p(\alpha)$
+证明者计算商多项式：$q(x) = \frac{p(x) - p(\alpha)}{x - \alpha}$；因为 $p(x) - p(\alpha)$ 可被 $x - \alpha$ 整除，所以 $q(x)$ 是一个比 $p(x)$ 低 1 阶的多项式。
+计算承诺 $C_q$：$C_q = g^{q(s)}$；并将其作为证明 $\pi = C_q$ 发送给验证者。
+2.4 验证（Verify）
+验证者通过以下等式检查证明是否有效：$e(C_p / g^y, g) = e(\pi, g^{\alpha})$
+即：$e(g^{p(s) - y}, g) = e(g^{q(s)}, g^{\alpha})$
+若等式成立，则说明证明者提供的 $y = p(\alpha)$ 是正确的。
+
+示例①设公共参数为：$g, g^s, g^{s^2}, g^{s^3}, \dots$
+②证明者私有多项式：$p(x) = 3x^2 + 2x + 5$
+计算承诺并将其公开：$C_p = g^{5 + 2s + 3s^2}$
+③验证者指定一个点：$z=2$
+证明者计算:$p(2) = 3(2)^2 + 2(2) + 5 = 17$
+证明者计算商多项式:$q(x) = \frac{(3x^2 + 2x + 5) - 17}{x - 2} = 3x + 8$
+证明者计算证明：$\pi = g^{q(s)} = g^{3s + 8}$
+④验证者执行验证：$e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$
+如果等式成立，则证明 $ p(2) = 17 $ 是正确的。
+
+进一步的，关于验证阶段验证者需要验证 $e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$ 是否成立
+
+\begin{align}
+左式=&e(C_p / g^{17}, g)\\
+=&e(g^{(5 + 2s + 3s^2) - 17},g) \\
+=&e(g^{3s^2 + 2s - 12},g)\\
+=&e(g, g)^{(3s^2 + 2s - 12)}
+\end{align}
+\begin{align}
+右式=&e(g^{3s + 8}, g^2)\\
+=& e(g, g)^{6s + 16}
+\end{align}故只需 $3s^2 + 2s - 12=6s + 16$ 成立，则验证通过
+此时 $s=\frac{2 \pm \sqrt{88}}{3}$ （此过程为逆向过程）
+即最一开始的公开参数 $s=\frac{2 \pm \sqrt{88}}{3}$ 时，则 $e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$ 成立，证明通过
+后记：补充说明和上面的算法相呼应，在论文的后半部分找到的具体算法，本质相同
+
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -1723,79 +1796,6 @@ ImageCloud前置垫刀之路02: 普通的文件上传]]></content>
       </categories>
       <tags>
         <tag>cryptoCTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PCS简要介绍</title>
-    <url>/2025/03/26/PCS%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[之前听师兄讲PCS（多项式承诺方案），听不懂一点，甚至有一次差点睡着（bushi
-今天看Siniel，又遇到PCS了，故而通俗理解记录一下，也没时间看相关论文了~浅学一下，够用即可~~
-
-
-
-Motivation：证明者有一个多项式 $p()$，验证者指定一个数 $z$ 来验证，通过承诺确保原多项式不会改变
-
-这里，我们介绍 KZG。更具体的：
-KZG 方案是基于双线性对（bilinear pairing）和加法同态加密（homomorphic encryption）的密码学技术。它允许一个发送方承诺（commit）一个多项式，并稍后提供证明（proof），以便验证者确认多项式在某个点的值是否正确。
-前置知识：双线性映射
-
-设 $G_1,G_2$ 是两个循环群，阶为素数 $p$
-设 $e:G_1\times G_2\rightarrow G_T$，满足 $e(g^a,h^b)=e(g,h)^{ab}$ 对所有 $a,b\in\mathbb{Z}_p$ 成立，其中 $g,h$ 是群 $G_1$ 和 $G_2$ 的生成元
-
-KGC的四个步骤：（对应图二）
-
-Setup（设置）： 生成公钥参数。
-Commit（承诺）： 证明者使用私有多项式生成并公开该多项式的承诺。
-Open（打开）： 验证者指定在某个点，而后要求证明者公开该多项式的值并提供一个证明。
-Verify（验证）： 验证者检查提交的值和证明是否有效。
-
-
-具体流程2.1 设定（Setup）
-由可信第三方（或 MPC ）选取一个私有值 $s$，并计算：${ g, g^s, g^{s^2}, \dots, g^{s^d} }$ 作为公共参数；这些值是椭圆曲线群上的元素并公开发布。
-2.2 承诺（Commit）
-证明者需验证多项式 $p(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_d x^d$
-计算并公开承诺 $C_p = g^{p(s)} = g^{a_0 + a_1 s + a_2 s^2 + \dots + a_d s^d}$
-2.3 证明（Open）
-验证者想知道证明者的多项式在 $x = \alpha$ 处的值 $y = p(\alpha)$
-证明者计算商多项式：$q(x) = \frac{p(x) - p(\alpha)}{x - \alpha}$；因为 $p(x) - p(\alpha)$ 可被 $x - \alpha$ 整除，所以 $q(x)$ 是一个比 $p(x)$ 低 1 阶的多项式。
-计算承诺 $C_q$：$C_q = g^{q(s)}$；并将其作为证明 $\pi = C_q$ 发送给验证者。
-2.4 验证（Verify）
-验证者通过以下等式检查证明是否有效：$e(C_p / g^y, g) = e(\pi, g^{\alpha})$
-即：$e(g^{p(s) - y}, g) = e(g^{q(s)}, g^{\alpha})$
-若等式成立，则说明证明者提供的 $y = p(\alpha)$ 是正确的。
-
-示例①设公共参数为：$g, g^s, g^{s^2}, g^{s^3}, \dots$
-②证明者私有多项式：$p(x) = 3x^2 + 2x + 5$
-计算承诺并将其公开：$C_p = g^{5 + 2s + 3s^2}$
-③验证者指定一个点：$z=2$
-证明者计算:$p(2) = 3(2)^2 + 2(2) + 5 = 17$
-证明者计算商多项式:$q(x) = \frac{(3x^2 + 2x + 5) - 17}{x - 2} = 3x + 8$
-证明者计算证明：$\pi = g^{q(s)} = g^{3s + 8}$
-④验证者执行验证：$e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$
-如果等式成立，则证明 $ p(2) = 17 $ 是正确的。
-
-进一步的，关于验证阶段验证者需要验证 $e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$ 是否成立
-
-\begin{align}
-左式=&e(C_p / g^{17}, g)\\
-=&e(g^{(5 + 2s + 3s^2) - 17},g) \\
-=&e(g^{3s^2 + 2s - 12},g)\\
-=&e(g, g)^{(3s^2 + 2s - 12)}
-\end{align}
-\begin{align}
-右式=&e(g^{3s + 8}, g^2)\\
-=& e(g, g)^{6s + 16}
-\end{align}故只需 $3s^2 + 2s - 12=6s + 16$ 成立，则验证通过
-此时 $s=\frac{2 \pm \sqrt{88}}{3}$ （此过程为逆向过程）
-即最一开始的公开参数 $s=\frac{2 \pm \sqrt{88}}{3}$ 时，则 $e(C_p / g^{17}, g) = e(g^{3s + 8}, g^2)$ 成立，证明通过
-后记：补充说明和上面的算法相呼应，在论文的后半部分找到的具体算法，本质相同
-
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -2103,21 +2103,6 @@ https://documents.uow.edu.au/~fuchun/jow/011-QAXEDWBAMA.pdf
       </categories>
       <tags>
         <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo usage</title>
-    <url>/2024/05/23/hexo-usage/</url>
-    <content><![CDATA[hexo s  #启动并预览
-hexo c  #清除缓存文件 db.json 和已生成的静态文件 public 
-hexo g  #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) 
-hexo d  #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
-]]></content>
-      <categories>
-        <category>博客构建与维护</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -2690,6 +2675,21 @@ flag:utflag&#123;d4nger0us_c1pherText_qq&#125;
       </tags>
   </entry>
   <entry>
+    <title>hexo usage</title>
+    <url>/2024/05/23/hexo-usage/</url>
+    <content><![CDATA[hexo s  #启动并预览
+hexo c  #清除缓存文件 db.json 和已生成的静态文件 public 
+hexo g  #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) 
+hexo d  #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
+]]></content>
+      <categories>
+        <category>博客构建与维护</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo新建博客但是要求输入第二行</title>
     <url>/2024/09/21/hexo%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E8%BE%93%E5%85%A5%E7%AC%AC%E4%BA%8C%E8%A1%8C/</url>
     <content><![CDATA[今天遇到了以下问题
@@ -3053,26 +3053,6 @@ IOP]]></content>
       </tags>
   </entry>
   <entry>
-    <title>《安全规约导论》阅读笔记</title>
-    <url>/2024/10/09/%E3%80%8A%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B000/</url>
-    <content><![CDATA[此博客为常驻，用于汇总笔者阅读《安全规约导论》一书的学习笔记
-这本书里的好东西很多，价值很高，值得充分学习
-持续更新中
-
-
-安全规约前置知识 
-安全规约基础 
-荔枝成为BLS短签名糕守
-
-]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>常驻</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>“我们输不起”：毛泽东否定“否定之否定”的实践论重释</title>
     <url>/2025/08/25/%E2%80%9C%E6%88%91%E4%BB%AC%E8%BE%93%E4%B8%8D%E8%B5%B7%E2%80%9D%EF%BC%9A%E6%AF%9B%E6%B3%BD%E4%B8%9C%E5%90%A6%E5%AE%9A%E2%80%9C%E5%90%A6%E5%AE%9A%E4%B9%8B%E5%90%A6%E5%AE%9A%E2%80%9D%E7%9A%84%E5%AE%9E%E8%B7%B5%E8%AE%BA%E9%87%8D%E9%87%8A/</url>
     <content><![CDATA[摘要： 关于毛泽东为何在晚年明确否定“否定之否定规律”，学界的主流解释倾向于从哲学本体论的层面，将其视为对黑格尔唯心主义的彻底剥离和对马克思主义唯物论的深化。这一解释虽具理论深度，却在一定程度上忽略了毛泽东作为革命家和战略家的现实处境。本文旨在提出并论证一种补充性乃至更具根本性的解释框架：实践论重释。即，毛泽东的这一理论抉择，其最深刻的动因并非源于纯粹的哲学思辨，而是植根于中国革命“低容错率”的残酷现实，是他作为最高统帅，在无数次血与火的考验中形成的“风险规避”和“责任优先”的思维原则的哲学升华。
@@ -3104,6 +3084,26 @@ IOP]]></content>
       </categories>
       <tags>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《安全规约导论》阅读笔记</title>
+    <url>/2024/10/09/%E3%80%8A%E5%AE%89%E5%85%A8%E8%A7%84%E7%BA%A6%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B000/</url>
+    <content><![CDATA[此博客为常驻，用于汇总笔者阅读《安全规约导论》一书的学习笔记
+这本书里的好东西很多，价值很高，值得充分学习
+持续更新中
+
+
+安全规约前置知识 
+安全规约基础 
+荔枝成为BLS短签名糕守
+
+]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>常驻</tag>
       </tags>
   </entry>
   <entry>
@@ -3420,6 +3420,39 @@ typora中$$和都可以当作LaTeX标识符，但是marktext中不会识别$，�
       </tags>
   </entry>
   <entry>
+    <title>关于ctf卷王排行榜的项目说明</title>
+    <url>/2024/09/17/%E5%85%B3%E4%BA%8Ectf%E5%8D%B7%E7%8E%8B%E6%8E%92%E8%A1%8C%E6%A6%9C%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[开源网址
+
+版本1.0
+本程序的大致原理是，使用cookie进行登录并发送GET请求，获取响应文本然后提取，得到指定用户的指定方向（categories）做题数量
+程序主体分为三个部分：
+
+文件读写的函数（控制台的输出数据仅供调试使用）
+
+获取用户的做题数量，此部分需要使用者自行输入api
+
+通过已知的uid，返回对应的用户名，用于生成榜单
+
+后续需要做的事情：
+
+优化代码看起来奇奇怪怪的部分（
+cookie登录存在弊端
+优化前端设计并实现榜单生成部分
+按周或者按天计算刷题量（可能比较好做，但是这是另一项工作了，暂时束之高阁）
+实现自动化生成榜单
+下次不能把一个zip直接扔进仓库里去了
+
+后续版本的更新日志见 README.md
+]]></content>
+      <categories>
+        <category>技术与工具</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于AI时代的看法</title>
     <url>/2026/04/16/%E5%85%B3%E4%BA%8EAI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%9C%8B%E6%B3%95/</url>
     <content><![CDATA[时隔两个月没更新了，我也变成了不经常写博客的样子了。今天想来聊聊 ai，先说结论：AI 解放了劳动力，和石器时代升级为铁器时代，或者蒸汽时代没什么区别。
@@ -3482,39 +3515,6 @@ RM也就是机器人的话，我只学过电控（也就是嵌入式），也是
       </tags>
   </entry>
   <entry>
-    <title>关于ctf卷王排行榜的项目说明</title>
-    <url>/2024/09/17/%E5%85%B3%E4%BA%8Ectf%E5%8D%B7%E7%8E%8B%E6%8E%92%E8%A1%8C%E6%A6%9C%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[开源网址
-
-版本1.0
-本程序的大致原理是，使用cookie进行登录并发送GET请求，获取响应文本然后提取，得到指定用户的指定方向（categories）做题数量
-程序主体分为三个部分：
-
-文件读写的函数（控制台的输出数据仅供调试使用）
-
-获取用户的做题数量，此部分需要使用者自行输入api
-
-通过已知的uid，返回对应的用户名，用于生成榜单
-
-后续需要做的事情：
-
-优化代码看起来奇奇怪怪的部分（
-cookie登录存在弊端
-优化前端设计并实现榜单生成部分
-按周或者按天计算刷题量（可能比较好做，但是这是另一项工作了，暂时束之高阁）
-实现自动化生成榜单
-下次不能把一个zip直接扔进仓库里去了
-
-后续版本的更新日志见 README.md
-]]></content>
-      <categories>
-        <category>技术与工具</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于如何去医院</title>
     <url>/2026/04/28/%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E5%8E%BB%E5%8C%BB%E9%99%A2/</url>
     <content><![CDATA[前两天受了一点小伤，遂去医院
@@ -3536,6 +3536,93 @@ X光和CT的区别：X光便宜而且快但是粗略，CT贵而且慢但是精�
       </categories>
       <tags>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初来本站的使用指南</title>
+    <url>/2025/10/22/%E5%88%9D%E6%9D%A5%E6%9C%AC%E7%AB%99%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[
+第一次来就从这里开始～
+
+不需要会编程，也不需要懂“Hexo”“主题”这些词。把这里当成一本会自己长内容的电子小杂志就好：我会把学到的知识、做过的题、看过的书、生活里的灵感，都写成文章放到这里，方便自己复盘，也欢迎你来逛、来交流。
+网址首页： https://coperlm.github.io
+一句话说明“博客”是什么
+就是一个“我自己的小网站”，用来发布文章、图片和想法；
+你可以像逛知乎专栏/公众号文章一样阅读，也可以在文末留言；
+全站支持“搜索”“标签”“时间线”，方便查找感兴趣的内容。
+
+在这里你能做什么？1) 找文章（最常用）
+
+首页往下翻，都是最新的文章卡片；点标题就能进全文。
+想按时间“翻旧账”？点导航里的“时光轴”（/archives/）。
+想“按主题找”？点“标签”（/tags/）。
+懒得找？右上角的“搜索”直接搜标题/内容，输入框里会写“来搜吧来搜吧~”。
+
+2) 留言互动
+
+每篇文章底下都有评论区（Waline），可以匿名留言，想说就说。
+你会看到“浏览量”“访客数”等小计数，这些只是统计，不会收集你的隐私。
+
+3) 看看朋友们都在写啥
+
+“友链”（/link/）是我收藏的朋友博客。点进去就是他们的站点卡片。
+
+4) 听歌放松
+
+底部有一条小音乐条，是全站播放器（APlayer）。
+如果不想听，点一下暂停；想系统听歌，去“音乐”（/music/）。
+
+5) 快速入口
+
+我做了一个“常驻更新目录”（/schedule/），把一些经典/高频文章串起来，方便新读者入坑。
+
+读文章时的小提示
+目录（TOC）：进入文章后，侧边会有“目录”，点条目可以直接跳到相应小节。
+代码块：有“复制”按钮，点一下就把代码放进剪贴板，粘贴即可。
+数学公式：看到一堆看起来很严肃的数学符号，不用怕，那是我写的数学/密码学笔记，都是可渲染的公式。
+图片：点图片可放大（支持拖动/点击关闭）。
+夜间模式：右下角或顶部可以一键切换“深色/浅色”。
+阅读模式：想专注一点？点“阅读模式”会把页面变得更简洁。
+
+常见问题（超快排雷）Q1：打开有点慢？
+
+首页有不少封面图（有些是动图），第一次打开可能慢一点；多等几秒或直接点文章也可以。
+
+Q2：搜索不到？
+
+试着输“关键词的关键部分”而不是整句，比如搜“零知识”“SM2”。
+
+Q3：评论发不出去？
+
+偶尔网络抽风；刷新页面再试一次。如果还是不行，发邮件给我：coperlm@outlook.com。
+
+Q4：公式/代码看起来乱？
+
+可能是网速导致的渲染延迟，稍等几秒；或者刷新一次。
+
+Q5：文章里怎么有“需要密码”？
+
+少量文章可能会做加密，出于隐私或尚在整理中；等我公开或联系我交流即可。
+
+想更深地探索？
+技术细节（给爱折腾的朋友）：本站采用 Hexo + Butterfly，支持本地搜索、评论统计、数学公式、PJAX 无刷新、图片灯箱、固定音乐播放器等。想学怎么搭？来看这里。
+
+欢迎你来聊聊
+你可以：
+在任意文章底部“评论区”留言（支持匿名）。
+邮件找我：coperlm@outlook.com。
+
+
+如果你也有博客，去“友链”把你的站点发我，我们互相串门～
+
+祝你逛得开心！
+
+]]></content>
+      <categories>
+        <category>博客构建与维护</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -3639,93 +3726,6 @@ X光和CT的区别：X光便宜而且快但是粗略，CT贵而且慢但是精�
       </categories>
       <tags>
         <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初来本站的使用指南</title>
-    <url>/2025/10/22/%E5%88%9D%E6%9D%A5%E6%9C%AC%E7%AB%99%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[
-第一次来就从这里开始～
-
-不需要会编程，也不需要懂“Hexo”“主题”这些词。把这里当成一本会自己长内容的电子小杂志就好：我会把学到的知识、做过的题、看过的书、生活里的灵感，都写成文章放到这里，方便自己复盘，也欢迎你来逛、来交流。
-网址首页： https://coperlm.github.io
-一句话说明“博客”是什么
-就是一个“我自己的小网站”，用来发布文章、图片和想法；
-你可以像逛知乎专栏/公众号文章一样阅读，也可以在文末留言；
-全站支持“搜索”“标签”“时间线”，方便查找感兴趣的内容。
-
-在这里你能做什么？1) 找文章（最常用）
-
-首页往下翻，都是最新的文章卡片；点标题就能进全文。
-想按时间“翻旧账”？点导航里的“时光轴”（/archives/）。
-想“按主题找”？点“标签”（/tags/）。
-懒得找？右上角的“搜索”直接搜标题/内容，输入框里会写“来搜吧来搜吧~”。
-
-2) 留言互动
-
-每篇文章底下都有评论区（Waline），可以匿名留言，想说就说。
-你会看到“浏览量”“访客数”等小计数，这些只是统计，不会收集你的隐私。
-
-3) 看看朋友们都在写啥
-
-“友链”（/link/）是我收藏的朋友博客。点进去就是他们的站点卡片。
-
-4) 听歌放松
-
-底部有一条小音乐条，是全站播放器（APlayer）。
-如果不想听，点一下暂停；想系统听歌，去“音乐”（/music/）。
-
-5) 快速入口
-
-我做了一个“常驻更新目录”（/schedule/），把一些经典/高频文章串起来，方便新读者入坑。
-
-读文章时的小提示
-目录（TOC）：进入文章后，侧边会有“目录”，点条目可以直接跳到相应小节。
-代码块：有“复制”按钮，点一下就把代码放进剪贴板，粘贴即可。
-数学公式：看到一堆看起来很严肃的数学符号，不用怕，那是我写的数学/密码学笔记，都是可渲染的公式。
-图片：点图片可放大（支持拖动/点击关闭）。
-夜间模式：右下角或顶部可以一键切换“深色/浅色”。
-阅读模式：想专注一点？点“阅读模式”会把页面变得更简洁。
-
-常见问题（超快排雷）Q1：打开有点慢？
-
-首页有不少封面图（有些是动图），第一次打开可能慢一点；多等几秒或直接点文章也可以。
-
-Q2：搜索不到？
-
-试着输“关键词的关键部分”而不是整句，比如搜“零知识”“SM2”。
-
-Q3：评论发不出去？
-
-偶尔网络抽风；刷新页面再试一次。如果还是不行，发邮件给我：coperlm@outlook.com。
-
-Q4：公式/代码看起来乱？
-
-可能是网速导致的渲染延迟，稍等几秒；或者刷新一次。
-
-Q5：文章里怎么有“需要密码”？
-
-少量文章可能会做加密，出于隐私或尚在整理中；等我公开或联系我交流即可。
-
-想更深地探索？
-技术细节（给爱折腾的朋友）：本站采用 Hexo + Butterfly，支持本地搜索、评论统计、数学公式、PJAX 无刷新、图片灯箱、固定音乐播放器等。想学怎么搭？来看这里。
-
-欢迎你来聊聊
-你可以：
-在任意文章底部“评论区”留言（支持匿名）。
-邮件找我：coperlm@outlook.com。
-
-
-如果你也有博客，去“友链”把你的站点发我，我们互相串门～
-
-祝你逛得开心！
-
-]]></content>
-      <categories>
-        <category>博客构建与维护</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -6922,6 +6922,139 @@ reference：Identity-based chameleon hashing and signatures without key exposure
       </tags>
   </entry>
   <entry>
+    <title>牛客寒假2025题解</title>
+    <url>/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[本文用于记录牛客寒假赛的六场比赛的赛时解题和赛后补题
+笔者水平：CF绿上蓝下 
+
+
+第一场
+打红温了，头一次连打五个小时~
+题本身不难，就是实现上遇到比较多的障碍
+A题签到题，如果没有1就输出1e9+7即可
+D题也是直接模拟即可
+G题排序后计算a[i]-i，就是每个点需要操作的次数了
+B题一开始以为是有向图浪费了很多时间，树存在简单路径的充要条件是它是链
+M题也属于思路很简单但是写起来比较困难的题
+就拓扑排序一下，然后逐步拓展，取最优解即可
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , a[N+10];struct NUMBER&#123;    int num;    int id;&#125;b[N+10];bool cmp( NUMBER x , NUMBER y )&#123;    return x.num &lt; y.num;&#125;signed main()&#123;    int n;cin &gt;&gt; n;    int maxn , minn;maxn = 0 , minn = 2147483647;    int minp = 0;    int ans = 2147483647;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i];        b[i].id = i , b[i].num = a[i];        if( maxn &lt; a[i] ) maxn = a[i];        if( minn &gt; a[i] ) minn = a[i] , minp = i;    &#125;    if( n == 1 )&#123;        cout &lt;&lt; &quot;0\n&quot;;        return 0;    &#125;    int l , r;l = r = minp;    sort( b + 1 , b + n + 1 , cmp );    b[n+1].id = n+1 , b[n+1].num = 2147483647;    int down_minn = minn * 2;    if( maxn &lt; b[1].num * 2 ) maxn = b[1].num * 2;    minn = b[2].num , minp = b[2].id;    if( minn &gt; down_minn ) minn = down_minn;    ans = min( maxn - minn , ans );    for(int p = 2;p &lt;= n;p ++)&#123;        if( b[p].id &gt; r )&#123;            while( b[p].id &gt; r )&#123;                r ++;                if( maxn &lt; a[r] * 2 ) maxn = a[r] * 2;            &#125;            minn = b[p+1].num , minp = b[p+1].id;            while( minp &lt;= r &amp;&amp; minp &gt;= l )&#123;                p ++;                minn = b[p+1].num , minp = b[p+1].id;            &#125;            if( minn &gt; down_minn ) minn = down_minn;            ans = min( maxn - minn , ans );        &#125;         if( b[p].id &lt; l )&#123;            while( b[p].id &lt; l )&#123;                l --;                if( maxn &lt; a[l] * 2 ) maxn = a[l] * 2;            &#125;            minn = b[p+1].num , minp = b[p+1].id;            while( minp &lt;= r &amp;&amp; minp &gt;= l )&#123;                p ++;                minn = b[p+1].num , minp = b[p+1].id;            &#125;            if( minn &gt; down_minn ) minn = down_minn;            ans = min( maxn - minn , ans );        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
+J题赛时还以为是什么糕级数论，结果降低时间复杂度$O(n^\frac32)$就能过
+通过打表可知，符合条件只有两种情况，再判一下就可以了
+要先continue掉奇数，不然亲测会T掉
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;map&gt;#include&lt;cmath&gt;#define int long longusing namespace std;const int N = 2e5;int n , ans , a[N+10];map &lt; int , int &gt; m;int gcd_( int x , int y )&#123;    if( y == 0 ) return x;    return gcd_( y , x % y );&#125;signed main()&#123;    cin &gt;&gt; n;    for(int i = 1;i &lt;= n;i ++) cin &gt;&gt; a[i];    for(int i = 1;i &lt;= n;i ++) m[a[i]] ++;    for(int i = 1;i &lt;= N;i ++)&#123;        if( i % 2 ) continue;        for(int j = 1;j &lt;= sqrt(i);j ++)&#123;            if( i + j &lt;= N )&#123;                if((i ^ (i+j)) == j)                    if( gcd_( i , i+j ) == j )                        ans += m[i]*m[i+j];                if( (i ^ (i+i/j)) == i/j &amp;&amp; j*j!=i)                    if( gcd_( i , i+i/j ) == i/j )                        ans += m[i]*m[i+i/j];            &#125;        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
+赛后补题C题看起来不难，以为半个小时就能写完
+结果调了好久···
+大致思路就是朴素开扫
+#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e2;int n , t , a[N+10][N+10];int ans_list[1000000][5];string s;signed main()&#123;int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; s;            for(int j = 0;j &lt; n;j ++)&#123;                if( s[j] == &#x27;1&#x27; ) a[i][j+1] = 1;                else a[i][j+1] = 0;            &#125;        &#125;        int cnt = 0;        for(int i = 1;i &lt;= n/2;i ++)&#123;            for(int j = 1;j &lt;= n/2;j ++)&#123;                if( a[i][j] == 0 )&#123;                    for(int ii = 1;ii &lt;= n;ii ++)&#123;                        int jj , jjl;if( ii &lt; i ) jjl = n/2+1;                        else if( ii == i ) jjl = j;                        else jjl = 1;                        for(jj = n;jj &gt;= jjl;jj --)&#123;                            if( a[ii][jj] == 1 )&#123;                                // cout &lt;&lt; &quot;SWAPP: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                while( !(i==ii&amp;&amp;j==jj) )&#123;                                    if( ii &gt; i &amp;&amp; a[ii-1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii-1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii-1;                                        ans_list[cnt][4] = jj;                                        ii --;                                    &#125;else if( ii &lt; i &amp;&amp; a[ii+1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii+1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii+1;                                        ans_list[cnt][4] = jj;                                        ii ++;                                    &#125;else if( jj &gt; j &amp;&amp; a[ii][jj-1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj-1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj-1;                                        jj --;                                    &#125;else if( jj &lt; j &amp;&amp; a[ii][jj+1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj+1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj+1;                                        jj ++;                                    &#125;else goto RECHOOSE;                                &#125;goto FIXED;                            &#125;RECHOOSE:;                        &#125;                    &#125;                &#125;FIXED:;            &#125;        &#125;        // for(int i = 1;i &lt;= n;i ++)&#123;        //     for(int j = 1;j &lt;= n;j ++)&#123;        //         cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;        //     &#125;cout &lt;&lt; endl;        // &#125;        cout &lt;&lt; cnt &lt;&lt; endl;        for(int i = 1;i &lt;= cnt;i ++)&#123;            for(int j = 1;j &lt;= 4;j ++)&#123;                cout &lt;&lt; ans_list[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
+结果WA了个测试点~
+
+看了题解，感觉思路真妙哇~
+
+按照题解敲了一下，发现实现起来的复杂程度和我的代码差不多···
+最终千辛万苦，debug一整个下午，找到问题了
+ii和jj这个两个指针复用导致的，每次用完之后复位一下就好了
+#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e2;int n , t , a[N+10][N+10];int ans_list[1000000][5];string s;signed main()&#123;int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; s;            for(int j = 0;j &lt; n;j ++)&#123;                if( s[j] == &#x27;1&#x27; ) a[i][j+1] = 1;                else a[i][j+1] = 0;            &#125;        &#125;        int cnt = 0;        for(int i = 1;i &lt;= n/2;i ++)&#123;            for(int j = 1;j &lt;= n/2;j ++)&#123;                if( a[i][j] == 0 )&#123;                    for(int ii = 1;ii &lt;= n;ii ++)&#123;                        int jj;if( ii &lt; i ) jj = n/2+1;                        else if( ii == i )&#123; jj = j+1;&#125;//cout &lt;&lt; &quot;???????????&quot; &lt;&lt; endl;&#125;                        else jj = 1;                        int oii , ojj;oii = ii;                        // cout &lt;&lt; &quot;disp?: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                        while(jj &lt;= n)&#123;                            ojj = jj;                            // cout &lt;&lt; &quot;ij: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                            if( a[ii][jj] == 1 )&#123;                                // cout &lt;&lt; &quot;SWAPP: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                while( !(i==ii&amp;&amp;j==jj) )&#123;                                    // cout &lt;&lt; &quot;PASSED: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                    if( ii &gt; i &amp;&amp; a[ii-1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii-1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii-1;                                        ans_list[cnt][4] = jj;                                        ii --;                                    &#125;else if( ii &lt; i &amp;&amp; a[ii+1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii+1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii+1;                                        ans_list[cnt][4] = jj;                                        ii ++;                                    &#125;else if( jj &gt; j &amp;&amp; a[ii][jj-1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj-1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj-1;                                        jj --;                                    &#125;else if( jj &lt; j &amp;&amp; a[ii][jj+1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj+1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj+1;                                        jj ++;                                    &#125;else goto RECHOOSE;                                &#125;goto FIXED;                            &#125;RECHOOSE:;                            ii = oii , jj = ojj;                            jj ++;                        &#125;                    &#125;                    // cout &lt;&lt; &quot;unp: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;                    // for(int i = 1;i &lt;= n;i ++)&#123;                    //     for(int j = 1;j &lt;= n;j ++)&#123;                    //         cout &lt;&lt; (a[i][j]==1?&quot;1&quot;:&quot;0&quot;) &lt;&lt; &quot; &quot;;                    //     &#125;cout &lt;&lt; endl;                    // &#125;                &#125;FIXED:;            &#125;        &#125;        // for(int i = 1;i &lt;= n;i ++)&#123;        //     for(int j = 1;j &lt;= n;j ++)&#123;        //         cout &lt;&lt; (a[i][j]==1?&quot;1&quot;:&quot;0&quot;) &lt;&lt; &quot; &quot;;        //     &#125;cout &lt;&lt; endl;        // &#125;        cout &lt;&lt; cnt &lt;&lt; endl;        for(int i = 1;i &lt;= cnt;i ++)&#123;            for(int j = 1;j &lt;= 4;j ++)&#123;                cout &lt;&lt; ans_list[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;                    &#125;    &#125;    return 0;&#125;
+E题概率论没学好（悲
+
+知道了这一点，将会是签到题的难度（悲
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , t , a[N+10];signed main()&#123;int t;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        int ans = 0;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i];        &#125;        sort( a + 1 , a + n + 1 );        int goal , goal1;        goal1 = a[(n/2+1)/2];        goal  = a[n/2+(n/2+1)/2];        for(int i = 1;i &lt;= n/2;i ++)&#123;            ans += abs( a[i] - goal1 );        &#125;        for(int i = n/2+1;i &lt;= n;i ++)&#123;            ans += abs( a[i] - goal );        &#125;        if( goal1 == goal )&#123;            int add , add_temp;add_temp = 0;            for(int i = 1;i &lt;= n/2;i ++)&#123;                if( a[i] == goal1 ) add_temp ++;                else add_temp --;            &#125;add = add_temp;            add_temp = 0;            for(int i = n/2+1;i &lt;= n;i ++)&#123;                if( a[i] == goal ) add_temp ++;                else add_temp --;            &#125;add = min(add_temp,add);            ans += add;        &#125;        cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
+H题思维题
+考虑贪心，为了最大化排的开，我们需要按左节点排序，当$i=l_i$时加入备选，备选里面按右节点排序
+如果不够了，就说明不存在
+记得判非空
+顺便学习了一下如何结构体根堆
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;queue&gt;#define int long long using namespace std;const int N = 1e5;int n;struct NODE&#123;    int l , r;    int id;&#125;a[N+10];bool cmp( NODE x , NODE y )&#123;    return x.l &lt; y.l;&#125;struct Comp&#123;    bool operator()(const NODE&amp; x , const NODE&amp; y)&#123;        // if( x.r == y.r )        return x.r &gt; y.r;    &#125;&#125;;priority_queue &lt; NODE , vector &lt; NODE &gt; , Comp &gt; pq;int ans[N+10];signed main()&#123;    cin &gt;&gt; n;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i].l &gt;&gt; a[i].r;a[i].id = i;    &#125;sort( a + 1 , a + n + 1 , cmp );    int top = 1 , topi = 1;    while( top &lt;= n )&#123;        while( a[topi].l == top ) pq.push( &#123;a[topi].l,a[topi].r,a[topi].id&#125; ) , topi ++;        if( pq.empty() )&#123;            cout &lt;&lt; -1 &lt;&lt; endl;            return 0;        &#125;        if( pq.top().r &gt;= top )&#123;            ans[pq.top().id] = top;            pq.pop();top ++;        &#125;else&#123;            cout &lt;&lt; -1 &lt;&lt; endl;            return 0;        &#125;    &#125;for(int i = 1;i &lt;= n;i ++)&#123;        cout &lt;&lt; ans[i] &lt;&lt; &quot; &quot;;    &#125;cout &lt;&lt; endl;    return 0;&#125;
+就此，100人以上的题目都补完了
+
+第二场
+这场被打爆了，D结论题没做出来（根本想不到）
+不过好在H题一个钝角三角形就秒了，没掉太大分
+A题签到
+B题直接排序然后输出a[n/2+1]-1即可
+F题打表找到规律r-l+1
+G题直接模拟
+J题也是大模拟（但是没有想象中的毒瘤）
+K题直接搜索即可，但是需要一些优化技巧不然会T掉~
+就涂色就可以了，代码还是听清楚的
+感觉难在优化（挂五发的悲哀）
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;string&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 5e2;int n , m;int a[N+10][N+10];int blue[N+10][N+10];int rem[N+10][N+10];string s;int ans , ans_now;int most_low;void dfs( int i , int j )&#123;    most_low = max( most_low , i + 1 );    if( i+1&lt;=n &amp;&amp; a[i+1][j] == 1 &amp;&amp; blue[i+1][j] == 0 ) blue[i+1][j] = 1 , dfs(i+1,j);    else if( i+1&lt;=n &amp;&amp; blue[i+1][j] == 0 ) blue[i+1][j] = 2 , ans_now ++;    if( i-1&gt;=1 &amp;&amp; a[i-1][j] == 1 &amp;&amp; blue[i-1][j] == 0 ) blue[i-1][j] = 1 , dfs(i-1,j);    else if( i-1&gt;=1 &amp;&amp; blue[i-1][j] == 0 ) blue[i-1][j] = 2 , ans_now ++;    if( j+1&lt;=m &amp;&amp; a[i][j+1] == 1 &amp;&amp; blue[i][j+1] == 0 ) blue[i][j+1] = 1 , dfs(i,j+1);    else if( j+1&lt;=m &amp;&amp; blue[i][j+1] == 0 ) blue[i][j+1] = 2 , ans_now ++;    if( j-1&gt;=1 &amp;&amp; a[i][j-1] == 1 &amp;&amp; blue[i][j-1] == 0 ) blue[i][j-1] = 1 , dfs(i,j-1);    else if( j-1&gt;=1 &amp;&amp; blue[i][j-1] == 0 ) blue[i][j-1] = 2 , ans_now ++;    return ;&#125;signed main()&#123;    // freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; s;        for(int j = 0;j &lt; m;j ++)&#123;            a[i][j+1] = s[j] - &#x27;0&#x27;;        &#125;    &#125;    ans = 2147483647;    int ii , jj;ii = 1;    while( 1 )&#123;        ans_now = 0;        most_low = 1;        for(;ii &lt;= n;ii ++)&#123;            for(jj = 1;jj &lt;= m;jj ++)&#123;                if( a[ii][jj] )&#123;                    blue[ii][jj] = 1;                    dfs( ii , jj );                    goto OUT;                &#125;            &#125;        &#125;        break;        OUT:;        ans = min( ans , ans_now );        for(int i = ii;i &lt;= most_low;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                if( blue[i][j] )&#123;//1和2都涂为灰色                    blue[i][j] = 0;                    a[i][j] = 0;                &#125;            &#125;        &#125;    &#125;cout &lt;&lt; ans &lt;&lt; endl;        return 0;&#125;
+H题没想到这题这么简单，答案是钝角（即答
+直接试图构造最钝角的钝角三角形即可
+#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;int a , b , c , d;signed main()&#123;    int t;cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;        if( b - a &gt; d - c )&#123;            cout &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;            cout &lt;&lt; b-1 &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; d-1 &lt;&lt; endl;                    &#125;else&#123;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; c &lt;&lt; endl;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; c+1 &lt;&lt; endl;            cout &lt;&lt; a+1 &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
+赛后补题D题大结论题，完全没想到的一款
+结论：连续子串和不连续子串，最长情况下，只有最后一个（或者第一个）字母不同
+学长给的证明，感觉很清晰易懂
+
+赛后多了新数据，特判一下1的时候输出0就可以了
+#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 2e5;int n;string s;int a[N+10] , lst[30];map &lt; int , int &gt; mp;signed main()&#123;    cin &gt;&gt; n &gt;&gt; s;    for(int i = 1;i &lt;= n;i ++)&#123;        a[i] = s[i-1] - &#x27;a&#x27; + 1;    &#125;    int maxn = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        if( mp[a[i]] ) maxn = max( maxn , lst[a[i]] );        mp[a[i]] ++ , lst[a[i]] = i;    &#125;    for(int i = 1;i &lt;= 26;i ++) mp[i] = 0;    for(int i = n;i &gt;= 1;i --)&#123;        if( mp[a[i]] ) maxn = max( maxn , n - lst[a[i]] + 1 );        mp[a[i]] ++ , lst[a[i]] = i;    &#125;    if( maxn == 1 ) maxn = 0;    cout &lt;&lt; maxn &lt;&lt; endl;    return 0;&#125;
+C题构造题，需要建立在D的结论之上
+不妨先只考虑一个方向（从前往后）
+构造一个串，答案为最后一个倒数第二个字母（最大的）
+就，前面半截是abcde...，只要末尾最后俩是对a，就是m=n-1
+例如，n=11,m=10，则构造的序列为abcdefghiaa，这时符合条件（只考虑从前往后扫）
+那，还要从后往前扫怎么办~
+对称一下不就好了，即abcdefghiaihgfedcba，这时m=10（虽然n变了）
+n=2m+1的时候可以这样子构造，，，那其他情况呢？n&gt;2*m的时候，往中间填充任意字符就可以了（需要是两侧出现过的哦）
+如果n&lt;=2*m，也就是回文区间大于前缀/后缀，可以发现我们可以从前缀结束之后直接继续数，例如
+abcde fgh edcba这样子，反正这样就可以达到延长子串的作用（不信你试试，答案刚好是前两段的内容（第一种情况下答案只包含第一段+1））
+最后别忘了特判n==m和字母不够（n-m&gt;26）的情况
+#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;const int N = 2e5;int n , m;signed main()&#123;    int t;cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m;        if( n == m || n - m &gt; 26 )&#123;            cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;            continue;        &#125;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;        if( n &gt; m * 2 )&#123;            for(int i = 1;i &lt;= m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = m+1;i &lt;= n-m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = m;i &gt;= 1;i --)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            cout &lt;&lt; endl;        &#125;else&#123;            for(int i = 1;i &lt;= n-m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = 1;i &lt;= 2*m-n;i ++)&#123;                cout &lt;&lt; (char)(1+&#x27;a&#x27;-1);            &#125;            for(int i = n-m;i &gt;= 1;i --)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            cout &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
+E题哦原来是RMQ算法哇怪不得我不会做原来是因为我不会
+先记下来，明儿个学了再补~
+第三场
+这场发挥比较好，骑马进前10%了（也有可能是题目难度梯度大，恰巧E调出来了）
+A题猜结论按奇偶性分类，随机数最优策略都只拿一个故偶数必败
+M题一个桶结束
+F题模拟一下极端情况，可以发现sum&#123;a,b,c&#125;在n和2n之间是合法的，否则不合法
+C题正解为按字典序排序然后贪心，当然trie树也可以做
+由于最后一步不需要复原，故把最后一个弄成最长的那个即可
+#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , m;string s[N+10];bool cmp( string x , string y )&#123;    for(int i = 0;i &lt; min(x.length(),y.length());i ++)        if( x[i] != y[i] ) return (int)(x[i]) &lt; (int)(y[i]);    return x.length() &lt; y.length();&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; s[i];    &#125;cin &gt;&gt; m &gt;&gt; m;    sort( s + 1 , s + n + 1 , cmp );    string now_str = &quot;&quot;;    int ans = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        while( now_str != s[i] )&#123;            int j = 0;            for(;j &lt; min(now_str.length(),s[i].length());j ++)                if( now_str[j] != s[i][j] ) break;            ans += ( s[i].length() + now_str.length() - j*2 );            now_str = s[i];        &#125;    &#125;    int long_max = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        long_max = max( long_max , (int)s[i].length() );    &#125;    cout &lt;&lt; ans + (int)now_str.length() - long_max &lt;&lt; endl;    return 0;&#125;
+L题算是个构造+小模拟
+我的策略如下
+初始下，不妨设酱紫
+
+构造，先把右上角这条线，从上到右下画了
+
+然后通过以下规则进行填充
+
+按照紫色的规则，填充到最左侧，然后往上两个（见红色）
+
+再按如图的规则填充到最右侧
+
+现在就回到了最右侧，之后按照之前的步骤，就可以填充所有的节点
+
+通过代码实现上述内容即可，数据范围比较小，调试通过了大概率就能过
+#include&lt;iostream&gt;#define int long longusing namespace std;int a[10][10];void out( int i , int j )&#123;    cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;    // cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;    return ;&#125;signed main()&#123;    int n;cin &gt;&gt; n;n ++;cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;    int cnt = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= n;j ++)&#123;            if( i &gt;= j )&#123;                cnt ++;a[i][j] = cnt;            &#125;        &#125;    &#125;    // for(int i = 1;i &lt;= n;i ++)&#123;    //     for(int j = 1;j &lt;= n;j ++)&#123;    //         cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;    //     &#125;cout &lt;&lt; endl;    // &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        out(i,i);    &#125;    for(int i = n;i &gt;= 1;i --)&#123;        for(int j = i-1;j &gt;= 1;j --)&#123;            // cout &lt;&lt; &quot;start: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;            if( j == 1 )&#123;                out(i,j);                i--;out(i,j);                if( i &gt; 1 ) &#123;i--;out(i,j);&#125;                while( j &lt; i )&#123;                    i++,j++;out(i,j);                    i--;out(i,j);                &#125;            &#125;else&#123;                out(i,j);                i--;out(i,j);                j--;out(i,j);                j++,i++;out(i,j);            &#125;            // cout &lt;&lt; &quot;round: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;        &#125;    &#125;cout &lt;&lt; endl;    return 0;&#125;
+E题因为是弹性碰撞，所以我们可以认为两个球碰撞等价于两个球相互穿过（后面的讨论都基于此）
+只考虑向右和向左的球，故如果知道了时间 $t$，我们只需要确定是否存在大于 $k$ 个球的间距不小于 $2t$ 且左侧的球是向右走，右侧的球向左走
+故我们将两侧的球分别记录，然后二分时间即可
+值得注意的是，向右走的球与其左侧的向左走的球永远不可能相撞，故记录一下进行减法运算即可
+从后往前扫，累计加入答案，这样可以让一次check的时间复杂度降到$O(n)$
+#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , k;struct BOLL&#123;    int p , v;&#125;b[N+10];int distl[N+10] , distr[N+10] , uselessp[N+10];int ltop , rtop;bool cmp( BOLL x , BOLL y )&#123;    return x.p &lt; y.p;&#125;int check( long double dist )&#123;    // cout &lt;&lt; &quot;dist: &quot; &lt;&lt; dist &lt;&lt; endl;    int ans = 0 , i , j;i = j = 1;    while( i &lt;= ltop &amp;&amp; j &lt;= rtop + 1 )&#123;        if( distr[j] - distl[i] &lt;= dist &amp;&amp; j != rtop+1 )&#123;            j ++;        &#125;else&#123;            ans += ( j-1 - uselessp[i] );            // cout &lt;&lt; &quot;ans: &quot; &lt;&lt; ans &lt;&lt; endl;            i ++;        &#125;    &#125;    // cout &lt;&lt; &quot;dist k: &quot; &lt;&lt; ans &lt;&lt; endl;    return ans;&#125;long double ef( long double l , long double r )&#123;    if( r - l &lt;= 1e-8 ) return l;    long double mid = (l+r)/2;    if( check( mid ) &gt;= k ) return ef(l,mid);    else return ef(mid,r);&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; k;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; b[i].p &gt;&gt; b[i].v;    &#125;sort( b + 1 , b + n + 1 , cmp );    int useless = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        if( b[i].v == 1 ) distl[++ltop] = b[i].p , uselessp[ltop] = useless;        else distr[++rtop] = b[i].p , useless ++;    &#125;    // for(int i = 1;i &lt;= ltop;i ++) cout &lt;&lt; distl[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;    // for(int i = 1;i &lt;= ltop;i ++) cout &lt;&lt; uselessp[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;    // for(int i = 1;i &lt;= rtop;i ++) cout &lt;&lt; distr[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;        int reference = 0;    for(int i = 1;i &lt;= ltop;i ++) reference += (rtop-uselessp[i]);    // cout &lt;&lt; reference &lt;&lt; endl;    if( k &gt; reference )&#123;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;    &#125;else&#123;        long double ans = ef( 0 , 1e9 );        printf(&quot;Yes\n%0.8Lf\n&quot;,ans/2);    &#125;    // cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
+赛后补题G题打个表先~
+
+从后往前看，发现是等差数列
+先是公差为1，然后公差为2，之后3…
+故可以分块，公差相同的一组分到一个块
+然后二分符合条件的数值（第前k项对应的数值）；对于每个块，知道了首项和公差，所以可以$O(1)$计算有多少个符合条件的；总共有$\sqrt{n}$个块。故此算法的时间复杂度为$O(\sqrt{n}\log n)$
+值得注意的是，二分的写法有点不太传统~
+#include&lt;iostream&gt;#define int long longusing namespace std;int n , k;int vtot , val;int cnt( int num )&#123;    int tot = 0;    for(int l = 1,r;l &lt;= n;l = r + 1)&#123;        r = n / ( n / l );        int a = n - n / l * l;        int b = n / l;        if( a &lt; num ) continue;        tot += min( (a-num)/b+1 , r - l + 1 );    &#125;return tot;&#125;void ef( int l , int r )&#123;    if( l &gt; r ) return ;    int mid = (l+r)/2;    int tot = cnt(mid);    if( tot &lt; k )&#123;        vtot = tot , val = mid;        ef( l , mid - 1 );    &#125;    else ef( mid + 1 ,  r );&#125;// void ef( int l , int r )&#123;//     if( l &lt;= r ) return ;//     int mid = (l+r)/2;//     int tot = cnt(mid);//     if( tot &lt; k )&#123;//         vtot = tot , val = mid;//         ef( l , mid );//     &#125;//     else ef( mid + 1 ,  r );// &#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; k;    ef( 1ll , n );    // cout &lt;&lt; val &lt;&lt; &quot; &quot; &lt;&lt; vtot &lt;&lt; endl;    int ans = ( k - vtot ) * ( val - 1 );    // cout &lt;&lt; ans &lt;&lt; endl;    for(int l = 1,r;l &lt;= n;l = r + 1)&#123;        r = n / ( n / l );        int a = n - n / l * l;        int b = n / l;        if( a &lt; val ) continue;        int len = min((a - val) / b + 1, r - l + 1);        ans += (a * 2 - b * (len - 1)) * len / 2;        // cout &lt;&lt; ans &lt;&lt; endl;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
+第四场
+这场代码量太大了（悲
+K题签到题，直接取最大值即可
+I题直接扫一遍即可
+B题直接枚举即可，C就不会了（悲
+E题直接开扫，我写的依托~
+D题#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;int t , n , m;string a , b;map &lt; char , int &gt; mp;signed main()&#123;    cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m;        cin &gt;&gt; a &gt;&gt; b;        mp.clear();        if( n &lt; m )&#123;            string c = a;            a = b , b = c;            swap( n , m );        &#125;        for(int i = 0;i &lt; a.length();i ++)&#123;            mp[a[i]] ++;        &#125;        for(int i = 0;i &lt; b.length();i ++)&#123;            mp[b[i]] --;        &#125;        int ans = 0;        for(int i = 0;i &lt;= 26;i ++)&#123;            if( mp[i+&#x27;a&#x27;] &lt; 0) ans -= mp[i+&#x27;a&#x27;] , mp[i+&#x27;a&#x27;] = 0;        &#125;        int temp_del = 0 , rel = 0;        for(int i = 0;i &lt;= 26;i ++)&#123;            if( mp[i+&#x27;a&#x27;] &gt;= 2 ) temp_del += mp[i+&#x27;a&#x27;] / 2;            rel += mp[i+&#x27;a&#x27;];        &#125;        ans += rel-min( temp_del * 2 , n - m );        cout &lt;&lt; ans/2 &lt;&lt; endl;    &#125;    return 0;&#125;
+赛后补题]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>算法竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>海丝论坛-会议记录</title>
     <url>/2025/11/09/%E6%B5%B7%E4%B8%9D%E8%AE%BA%E5%9D%9B-%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[第一场属性基加密去中心化，因为如果msk生成者是恶意的，则系统不再安全；23年由用户生成（但是需要安全的Setup），不再有中心（基于注册），公私钥对和函数绑定；这一篇基于lattice，属于ZZCGQ25；做的是代数构造，最好的构造是WW25和ARM25（因为假设比较好）；对公私钥对（vector）进行承诺，可以用传统哈希构造默克尔树，RBE[DKL+23]用的是代数哈希来组成的代数结构，方便进行承诺，用带结构的矩阵进行转化，又转化成了经典PKE的结构（这里面没有策略，只是检查在不在里面）；汇报人的工作把策略嵌入进去：多加了一层哈希，把函数和input嵌入进去。现在是给每个人构造一个密文，因为绑定了index，故而使用随机的index，用GGH Encoding（混淆里面经典算法）；LWE用的是Evasive LWE，多了一项：不给A的陷门，给陷门作用下的结果，假设这样子是安全的（引发热议），而且最后还有一项aux（根据具体方案而定），这样导致规约起来很困难，并且aux可能精致构造，导致不安全（原话是不成立，我觉得意思是无法规约到安全）；不一定比现有的方案好（性能上），报告人谦称是这个方案比较过时，但是思路可以参考。许老师问了一个注册机被认为是可信还是不可信，一般是可信，但是也可能伪造大量用户；后来他们聊起来了我也没太听清……
@@ -7169,139 +7302,6 @@ DSS DSA ElGamal shnorr-不考细枝末节
       </categories>
       <tags>
         <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>牛客寒假2025题解</title>
-    <url>/2025/01/29/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%872025%E9%A2%98%E8%A7%A3/</url>
-    <content><![CDATA[本文用于记录牛客寒假赛的六场比赛的赛时解题和赛后补题
-笔者水平：CF绿上蓝下 
-
-
-第一场
-打红温了，头一次连打五个小时~
-题本身不难，就是实现上遇到比较多的障碍
-A题签到题，如果没有1就输出1e9+7即可
-D题也是直接模拟即可
-G题排序后计算a[i]-i，就是每个点需要操作的次数了
-B题一开始以为是有向图浪费了很多时间，树存在简单路径的充要条件是它是链
-M题也属于思路很简单但是写起来比较困难的题
-就拓扑排序一下，然后逐步拓展，取最优解即可
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , a[N+10];struct NUMBER&#123;    int num;    int id;&#125;b[N+10];bool cmp( NUMBER x , NUMBER y )&#123;    return x.num &lt; y.num;&#125;signed main()&#123;    int n;cin &gt;&gt; n;    int maxn , minn;maxn = 0 , minn = 2147483647;    int minp = 0;    int ans = 2147483647;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i];        b[i].id = i , b[i].num = a[i];        if( maxn &lt; a[i] ) maxn = a[i];        if( minn &gt; a[i] ) minn = a[i] , minp = i;    &#125;    if( n == 1 )&#123;        cout &lt;&lt; &quot;0\n&quot;;        return 0;    &#125;    int l , r;l = r = minp;    sort( b + 1 , b + n + 1 , cmp );    b[n+1].id = n+1 , b[n+1].num = 2147483647;    int down_minn = minn * 2;    if( maxn &lt; b[1].num * 2 ) maxn = b[1].num * 2;    minn = b[2].num , minp = b[2].id;    if( minn &gt; down_minn ) minn = down_minn;    ans = min( maxn - minn , ans );    for(int p = 2;p &lt;= n;p ++)&#123;        if( b[p].id &gt; r )&#123;            while( b[p].id &gt; r )&#123;                r ++;                if( maxn &lt; a[r] * 2 ) maxn = a[r] * 2;            &#125;            minn = b[p+1].num , minp = b[p+1].id;            while( minp &lt;= r &amp;&amp; minp &gt;= l )&#123;                p ++;                minn = b[p+1].num , minp = b[p+1].id;            &#125;            if( minn &gt; down_minn ) minn = down_minn;            ans = min( maxn - minn , ans );        &#125;         if( b[p].id &lt; l )&#123;            while( b[p].id &lt; l )&#123;                l --;                if( maxn &lt; a[l] * 2 ) maxn = a[l] * 2;            &#125;            minn = b[p+1].num , minp = b[p+1].id;            while( minp &lt;= r &amp;&amp; minp &gt;= l )&#123;                p ++;                minn = b[p+1].num , minp = b[p+1].id;            &#125;            if( minn &gt; down_minn ) minn = down_minn;            ans = min( maxn - minn , ans );        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
-J题赛时还以为是什么糕级数论，结果降低时间复杂度$O(n^\frac32)$就能过
-通过打表可知，符合条件只有两种情况，再判一下就可以了
-要先continue掉奇数，不然亲测会T掉
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;map&gt;#include&lt;cmath&gt;#define int long longusing namespace std;const int N = 2e5;int n , ans , a[N+10];map &lt; int , int &gt; m;int gcd_( int x , int y )&#123;    if( y == 0 ) return x;    return gcd_( y , x % y );&#125;signed main()&#123;    cin &gt;&gt; n;    for(int i = 1;i &lt;= n;i ++) cin &gt;&gt; a[i];    for(int i = 1;i &lt;= n;i ++) m[a[i]] ++;    for(int i = 1;i &lt;= N;i ++)&#123;        if( i % 2 ) continue;        for(int j = 1;j &lt;= sqrt(i);j ++)&#123;            if( i + j &lt;= N )&#123;                if((i ^ (i+j)) == j)                    if( gcd_( i , i+j ) == j )                        ans += m[i]*m[i+j];                if( (i ^ (i+i/j)) == i/j &amp;&amp; j*j!=i)                    if( gcd_( i , i+i/j ) == i/j )                        ans += m[i]*m[i+i/j];            &#125;        &#125;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
-赛后补题C题看起来不难，以为半个小时就能写完
-结果调了好久···
-大致思路就是朴素开扫
-#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e2;int n , t , a[N+10][N+10];int ans_list[1000000][5];string s;signed main()&#123;int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; s;            for(int j = 0;j &lt; n;j ++)&#123;                if( s[j] == &#x27;1&#x27; ) a[i][j+1] = 1;                else a[i][j+1] = 0;            &#125;        &#125;        int cnt = 0;        for(int i = 1;i &lt;= n/2;i ++)&#123;            for(int j = 1;j &lt;= n/2;j ++)&#123;                if( a[i][j] == 0 )&#123;                    for(int ii = 1;ii &lt;= n;ii ++)&#123;                        int jj , jjl;if( ii &lt; i ) jjl = n/2+1;                        else if( ii == i ) jjl = j;                        else jjl = 1;                        for(jj = n;jj &gt;= jjl;jj --)&#123;                            if( a[ii][jj] == 1 )&#123;                                // cout &lt;&lt; &quot;SWAPP: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                while( !(i==ii&amp;&amp;j==jj) )&#123;                                    if( ii &gt; i &amp;&amp; a[ii-1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii-1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii-1;                                        ans_list[cnt][4] = jj;                                        ii --;                                    &#125;else if( ii &lt; i &amp;&amp; a[ii+1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii+1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii+1;                                        ans_list[cnt][4] = jj;                                        ii ++;                                    &#125;else if( jj &gt; j &amp;&amp; a[ii][jj-1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj-1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj-1;                                        jj --;                                    &#125;else if( jj &lt; j &amp;&amp; a[ii][jj+1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj+1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj+1;                                        jj ++;                                    &#125;else goto RECHOOSE;                                &#125;goto FIXED;                            &#125;RECHOOSE:;                        &#125;                    &#125;                &#125;FIXED:;            &#125;        &#125;        // for(int i = 1;i &lt;= n;i ++)&#123;        //     for(int j = 1;j &lt;= n;j ++)&#123;        //         cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;        //     &#125;cout &lt;&lt; endl;        // &#125;        cout &lt;&lt; cnt &lt;&lt; endl;        for(int i = 1;i &lt;= cnt;i ++)&#123;            for(int j = 1;j &lt;= 4;j ++)&#123;                cout &lt;&lt; ans_list[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
-结果WA了个测试点~
-
-看了题解，感觉思路真妙哇~
-
-按照题解敲了一下，发现实现起来的复杂程度和我的代码差不多···
-最终千辛万苦，debug一整个下午，找到问题了
-ii和jj这个两个指针复用导致的，每次用完之后复位一下就好了
-#include&lt;iostream&gt;#define int long longusing namespace std;const int N = 1e2;int n , t , a[N+10][N+10];int ans_list[1000000][5];string s;signed main()&#123;int t;cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; s;            for(int j = 0;j &lt; n;j ++)&#123;                if( s[j] == &#x27;1&#x27; ) a[i][j+1] = 1;                else a[i][j+1] = 0;            &#125;        &#125;        int cnt = 0;        for(int i = 1;i &lt;= n/2;i ++)&#123;            for(int j = 1;j &lt;= n/2;j ++)&#123;                if( a[i][j] == 0 )&#123;                    for(int ii = 1;ii &lt;= n;ii ++)&#123;                        int jj;if( ii &lt; i ) jj = n/2+1;                        else if( ii == i )&#123; jj = j+1;&#125;//cout &lt;&lt; &quot;???????????&quot; &lt;&lt; endl;&#125;                        else jj = 1;                        int oii , ojj;oii = ii;                        // cout &lt;&lt; &quot;disp?: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                        while(jj &lt;= n)&#123;                            ojj = jj;                            // cout &lt;&lt; &quot;ij: &quot;&lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                            if( a[ii][jj] == 1 )&#123;                                // cout &lt;&lt; &quot;SWAPP: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                while( !(i==ii&amp;&amp;j==jj) )&#123;                                    // cout &lt;&lt; &quot;PASSED: &quot; &lt;&lt; ii &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; endl;                                    if( ii &gt; i &amp;&amp; a[ii-1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii-1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii-1;                                        ans_list[cnt][4] = jj;                                        ii --;                                    &#125;else if( ii &lt; i &amp;&amp; a[ii+1][jj] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii+1][jj] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii+1;                                        ans_list[cnt][4] = jj;                                        ii ++;                                    &#125;else if( jj &gt; j &amp;&amp; a[ii][jj-1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj-1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj-1;                                        jj --;                                    &#125;else if( jj &lt; j &amp;&amp; a[ii][jj+1] == 0 )&#123;                                        cnt ++;                                        swap( a[ii][jj] , a[ii][jj+1] );                                        ans_list[cnt][1] = ii;                                        ans_list[cnt][2] = jj;                                        ans_list[cnt][3] = ii;                                        ans_list[cnt][4] = jj+1;                                        jj ++;                                    &#125;else goto RECHOOSE;                                &#125;goto FIXED;                            &#125;RECHOOSE:;                            ii = oii , jj = ojj;                            jj ++;                        &#125;                    &#125;                    // cout &lt;&lt; &quot;unp: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;                    // for(int i = 1;i &lt;= n;i ++)&#123;                    //     for(int j = 1;j &lt;= n;j ++)&#123;                    //         cout &lt;&lt; (a[i][j]==1?&quot;1&quot;:&quot;0&quot;) &lt;&lt; &quot; &quot;;                    //     &#125;cout &lt;&lt; endl;                    // &#125;                &#125;FIXED:;            &#125;        &#125;        // for(int i = 1;i &lt;= n;i ++)&#123;        //     for(int j = 1;j &lt;= n;j ++)&#123;        //         cout &lt;&lt; (a[i][j]==1?&quot;1&quot;:&quot;0&quot;) &lt;&lt; &quot; &quot;;        //     &#125;cout &lt;&lt; endl;        // &#125;        cout &lt;&lt; cnt &lt;&lt; endl;        for(int i = 1;i &lt;= cnt;i ++)&#123;            for(int j = 1;j &lt;= 4;j ++)&#123;                cout &lt;&lt; ans_list[i][j] &lt;&lt; &quot; &quot;;            &#125;cout &lt;&lt; endl;                    &#125;    &#125;    return 0;&#125;
-E题概率论没学好（悲
-
-知道了这一点，将会是签到题的难度（悲
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , t , a[N+10];signed main()&#123;int t;    cin &gt;&gt; t;    while( t -- )&#123;        cin &gt;&gt; n;        int ans = 0;        for(int i = 1;i &lt;= n;i ++)&#123;            cin &gt;&gt; a[i];        &#125;        sort( a + 1 , a + n + 1 );        int goal , goal1;        goal1 = a[(n/2+1)/2];        goal  = a[n/2+(n/2+1)/2];        for(int i = 1;i &lt;= n/2;i ++)&#123;            ans += abs( a[i] - goal1 );        &#125;        for(int i = n/2+1;i &lt;= n;i ++)&#123;            ans += abs( a[i] - goal );        &#125;        if( goal1 == goal )&#123;            int add , add_temp;add_temp = 0;            for(int i = 1;i &lt;= n/2;i ++)&#123;                if( a[i] == goal1 ) add_temp ++;                else add_temp --;            &#125;add = add_temp;            add_temp = 0;            for(int i = n/2+1;i &lt;= n;i ++)&#123;                if( a[i] == goal ) add_temp ++;                else add_temp --;            &#125;add = min(add_temp,add);            ans += add;        &#125;        cout &lt;&lt; ans &lt;&lt; endl;    &#125;    return 0;&#125;
-H题思维题
-考虑贪心，为了最大化排的开，我们需要按左节点排序，当$i=l_i$时加入备选，备选里面按右节点排序
-如果不够了，就说明不存在
-记得判非空
-顺便学习了一下如何结构体根堆
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;queue&gt;#define int long long using namespace std;const int N = 1e5;int n;struct NODE&#123;    int l , r;    int id;&#125;a[N+10];bool cmp( NODE x , NODE y )&#123;    return x.l &lt; y.l;&#125;struct Comp&#123;    bool operator()(const NODE&amp; x , const NODE&amp; y)&#123;        // if( x.r == y.r )        return x.r &gt; y.r;    &#125;&#125;;priority_queue &lt; NODE , vector &lt; NODE &gt; , Comp &gt; pq;int ans[N+10];signed main()&#123;    cin &gt;&gt; n;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; a[i].l &gt;&gt; a[i].r;a[i].id = i;    &#125;sort( a + 1 , a + n + 1 , cmp );    int top = 1 , topi = 1;    while( top &lt;= n )&#123;        while( a[topi].l == top ) pq.push( &#123;a[topi].l,a[topi].r,a[topi].id&#125; ) , topi ++;        if( pq.empty() )&#123;            cout &lt;&lt; -1 &lt;&lt; endl;            return 0;        &#125;        if( pq.top().r &gt;= top )&#123;            ans[pq.top().id] = top;            pq.pop();top ++;        &#125;else&#123;            cout &lt;&lt; -1 &lt;&lt; endl;            return 0;        &#125;    &#125;for(int i = 1;i &lt;= n;i ++)&#123;        cout &lt;&lt; ans[i] &lt;&lt; &quot; &quot;;    &#125;cout &lt;&lt; endl;    return 0;&#125;
-就此，100人以上的题目都补完了
-
-第二场
-这场被打爆了，D结论题没做出来（根本想不到）
-不过好在H题一个钝角三角形就秒了，没掉太大分
-A题签到
-B题直接排序然后输出a[n/2+1]-1即可
-F题打表找到规律r-l+1
-G题直接模拟
-J题也是大模拟（但是没有想象中的毒瘤）
-K题直接搜索即可，但是需要一些优化技巧不然会T掉~
-就涂色就可以了，代码还是听清楚的
-感觉难在优化（挂五发的悲哀）
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;string&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 5e2;int n , m;int a[N+10][N+10];int blue[N+10][N+10];int rem[N+10][N+10];string s;int ans , ans_now;int most_low;void dfs( int i , int j )&#123;    most_low = max( most_low , i + 1 );    if( i+1&lt;=n &amp;&amp; a[i+1][j] == 1 &amp;&amp; blue[i+1][j] == 0 ) blue[i+1][j] = 1 , dfs(i+1,j);    else if( i+1&lt;=n &amp;&amp; blue[i+1][j] == 0 ) blue[i+1][j] = 2 , ans_now ++;    if( i-1&gt;=1 &amp;&amp; a[i-1][j] == 1 &amp;&amp; blue[i-1][j] == 0 ) blue[i-1][j] = 1 , dfs(i-1,j);    else if( i-1&gt;=1 &amp;&amp; blue[i-1][j] == 0 ) blue[i-1][j] = 2 , ans_now ++;    if( j+1&lt;=m &amp;&amp; a[i][j+1] == 1 &amp;&amp; blue[i][j+1] == 0 ) blue[i][j+1] = 1 , dfs(i,j+1);    else if( j+1&lt;=m &amp;&amp; blue[i][j+1] == 0 ) blue[i][j+1] = 2 , ans_now ++;    if( j-1&gt;=1 &amp;&amp; a[i][j-1] == 1 &amp;&amp; blue[i][j-1] == 0 ) blue[i][j-1] = 1 , dfs(i,j-1);    else if( j-1&gt;=1 &amp;&amp; blue[i][j-1] == 0 ) blue[i][j-1] = 2 , ans_now ++;    return ;&#125;signed main()&#123;    // freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; s;        for(int j = 0;j &lt; m;j ++)&#123;            a[i][j+1] = s[j] - &#x27;0&#x27;;        &#125;    &#125;    ans = 2147483647;    int ii , jj;ii = 1;    while( 1 )&#123;        ans_now = 0;        most_low = 1;        for(;ii &lt;= n;ii ++)&#123;            for(jj = 1;jj &lt;= m;jj ++)&#123;                if( a[ii][jj] )&#123;                    blue[ii][jj] = 1;                    dfs( ii , jj );                    goto OUT;                &#125;            &#125;        &#125;        break;        OUT:;        ans = min( ans , ans_now );        for(int i = ii;i &lt;= most_low;i ++)&#123;            for(int j = 1;j &lt;= m;j ++)&#123;                if( blue[i][j] )&#123;//1和2都涂为灰色                    blue[i][j] = 0;                    a[i][j] = 0;                &#125;            &#125;        &#125;    &#125;cout &lt;&lt; ans &lt;&lt; endl;        return 0;&#125;
-H题没想到这题这么简单，答案是钝角（即答
-直接试图构造最钝角的钝角三角形即可
-#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;int a , b , c , d;signed main()&#123;    int t;cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;        if( b - a &gt; d - c )&#123;            cout &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;            cout &lt;&lt; b-1 &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; d-1 &lt;&lt; endl;                    &#125;else&#123;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; c &lt;&lt; endl;            cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; c+1 &lt;&lt; endl;            cout &lt;&lt; a+1 &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
-赛后补题D题大结论题，完全没想到的一款
-结论：连续子串和不连续子串，最长情况下，只有最后一个（或者第一个）字母不同
-学长给的证明，感觉很清晰易懂
-
-赛后多了新数据，特判一下1的时候输出0就可以了
-#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;const int N = 2e5;int n;string s;int a[N+10] , lst[30];map &lt; int , int &gt; mp;signed main()&#123;    cin &gt;&gt; n &gt;&gt; s;    for(int i = 1;i &lt;= n;i ++)&#123;        a[i] = s[i-1] - &#x27;a&#x27; + 1;    &#125;    int maxn = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        if( mp[a[i]] ) maxn = max( maxn , lst[a[i]] );        mp[a[i]] ++ , lst[a[i]] = i;    &#125;    for(int i = 1;i &lt;= 26;i ++) mp[i] = 0;    for(int i = n;i &gt;= 1;i --)&#123;        if( mp[a[i]] ) maxn = max( maxn , n - lst[a[i]] + 1 );        mp[a[i]] ++ , lst[a[i]] = i;    &#125;    if( maxn == 1 ) maxn = 0;    cout &lt;&lt; maxn &lt;&lt; endl;    return 0;&#125;
-C题构造题，需要建立在D的结论之上
-不妨先只考虑一个方向（从前往后）
-构造一个串，答案为最后一个倒数第二个字母（最大的）
-就，前面半截是abcde...，只要末尾最后俩是对a，就是m=n-1
-例如，n=11,m=10，则构造的序列为abcdefghiaa，这时符合条件（只考虑从前往后扫）
-那，还要从后往前扫怎么办~
-对称一下不就好了，即abcdefghiaihgfedcba，这时m=10（虽然n变了）
-n=2m+1的时候可以这样子构造，，，那其他情况呢？n&gt;2*m的时候，往中间填充任意字符就可以了（需要是两侧出现过的哦）
-如果n&lt;=2*m，也就是回文区间大于前缀/后缀，可以发现我们可以从前缀结束之后直接继续数，例如
-abcde fgh edcba这样子，反正这样就可以达到延长子串的作用（不信你试试，答案刚好是前两段的内容（第一种情况下答案只包含第一段+1））
-最后别忘了特判n==m和字母不够（n-m&gt;26）的情况
-#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;const int N = 2e5;int n , m;signed main()&#123;    int t;cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m;        if( n == m || n - m &gt; 26 )&#123;            cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;            continue;        &#125;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;        if( n &gt; m * 2 )&#123;            for(int i = 1;i &lt;= m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = m+1;i &lt;= n-m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = m;i &gt;= 1;i --)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            cout &lt;&lt; endl;        &#125;else&#123;            for(int i = 1;i &lt;= n-m;i ++)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            for(int i = 1;i &lt;= 2*m-n;i ++)&#123;                cout &lt;&lt; (char)(1+&#x27;a&#x27;-1);            &#125;            for(int i = n-m;i &gt;= 1;i --)&#123;                cout &lt;&lt; (char)(i+&#x27;a&#x27;-1);            &#125;            cout &lt;&lt; endl;        &#125;    &#125;    return 0;&#125;
-E题哦原来是RMQ算法哇怪不得我不会做原来是因为我不会
-先记下来，明儿个学了再补~
-第三场
-这场发挥比较好，骑马进前10%了（也有可能是题目难度梯度大，恰巧E调出来了）
-A题猜结论按奇偶性分类，随机数最优策略都只拿一个故偶数必败
-M题一个桶结束
-F题模拟一下极端情况，可以发现sum&#123;a,b,c&#125;在n和2n之间是合法的，否则不合法
-C题正解为按字典序排序然后贪心，当然trie树也可以做
-由于最后一步不需要复原，故把最后一个弄成最长的那个即可
-#include&lt;iostream&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , m;string s[N+10];bool cmp( string x , string y )&#123;    for(int i = 0;i &lt; min(x.length(),y.length());i ++)        if( x[i] != y[i] ) return (int)(x[i]) &lt; (int)(y[i]);    return x.length() &lt; y.length();&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; m;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; s[i];    &#125;cin &gt;&gt; m &gt;&gt; m;    sort( s + 1 , s + n + 1 , cmp );    string now_str = &quot;&quot;;    int ans = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        while( now_str != s[i] )&#123;            int j = 0;            for(;j &lt; min(now_str.length(),s[i].length());j ++)                if( now_str[j] != s[i][j] ) break;            ans += ( s[i].length() + now_str.length() - j*2 );            now_str = s[i];        &#125;    &#125;    int long_max = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        long_max = max( long_max , (int)s[i].length() );    &#125;    cout &lt;&lt; ans + (int)now_str.length() - long_max &lt;&lt; endl;    return 0;&#125;
-L题算是个构造+小模拟
-我的策略如下
-初始下，不妨设酱紫
-
-构造，先把右上角这条线，从上到右下画了
-
-然后通过以下规则进行填充
-
-按照紫色的规则，填充到最左侧，然后往上两个（见红色）
-
-再按如图的规则填充到最右侧
-
-现在就回到了最右侧，之后按照之前的步骤，就可以填充所有的节点
-
-通过代码实现上述内容即可，数据范围比较小，调试通过了大概率就能过
-#include&lt;iostream&gt;#define int long longusing namespace std;int a[10][10];void out( int i , int j )&#123;    cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;    // cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;    return ;&#125;signed main()&#123;    int n;cin &gt;&gt; n;n ++;cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;    int cnt = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        for(int j = 1;j &lt;= n;j ++)&#123;            if( i &gt;= j )&#123;                cnt ++;a[i][j] = cnt;            &#125;        &#125;    &#125;    // for(int i = 1;i &lt;= n;i ++)&#123;    //     for(int j = 1;j &lt;= n;j ++)&#123;    //         cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;    //     &#125;cout &lt;&lt; endl;    // &#125;    for(int i = 1;i &lt;= n;i ++)&#123;        out(i,i);    &#125;    for(int i = n;i &gt;= 1;i --)&#123;        for(int j = i-1;j &gt;= 1;j --)&#123;            // cout &lt;&lt; &quot;start: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;            if( j == 1 )&#123;                out(i,j);                i--;out(i,j);                if( i &gt; 1 ) &#123;i--;out(i,j);&#125;                while( j &lt; i )&#123;                    i++,j++;out(i,j);                    i--;out(i,j);                &#125;            &#125;else&#123;                out(i,j);                i--;out(i,j);                j--;out(i,j);                j++,i++;out(i,j);            &#125;            // cout &lt;&lt; &quot;round: &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;        &#125;    &#125;cout &lt;&lt; endl;    return 0;&#125;
-E题因为是弹性碰撞，所以我们可以认为两个球碰撞等价于两个球相互穿过（后面的讨论都基于此）
-只考虑向右和向左的球，故如果知道了时间 $t$，我们只需要确定是否存在大于 $k$ 个球的间距不小于 $2t$ 且左侧的球是向右走，右侧的球向左走
-故我们将两侧的球分别记录，然后二分时间即可
-值得注意的是，向右走的球与其左侧的向左走的球永远不可能相撞，故记录一下进行减法运算即可
-从后往前扫，累计加入答案，这样可以让一次check的时间复杂度降到$O(n)$
-#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;algorithm&gt;#define int long longusing namespace std;const int N = 1e5;int n , k;struct BOLL&#123;    int p , v;&#125;b[N+10];int distl[N+10] , distr[N+10] , uselessp[N+10];int ltop , rtop;bool cmp( BOLL x , BOLL y )&#123;    return x.p &lt; y.p;&#125;int check( long double dist )&#123;    // cout &lt;&lt; &quot;dist: &quot; &lt;&lt; dist &lt;&lt; endl;    int ans = 0 , i , j;i = j = 1;    while( i &lt;= ltop &amp;&amp; j &lt;= rtop + 1 )&#123;        if( distr[j] - distl[i] &lt;= dist &amp;&amp; j != rtop+1 )&#123;            j ++;        &#125;else&#123;            ans += ( j-1 - uselessp[i] );            // cout &lt;&lt; &quot;ans: &quot; &lt;&lt; ans &lt;&lt; endl;            i ++;        &#125;    &#125;    // cout &lt;&lt; &quot;dist k: &quot; &lt;&lt; ans &lt;&lt; endl;    return ans;&#125;long double ef( long double l , long double r )&#123;    if( r - l &lt;= 1e-8 ) return l;    long double mid = (l+r)/2;    if( check( mid ) &gt;= k ) return ef(l,mid);    else return ef(mid,r);&#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; k;    for(int i = 1;i &lt;= n;i ++)&#123;        cin &gt;&gt; b[i].p &gt;&gt; b[i].v;    &#125;sort( b + 1 , b + n + 1 , cmp );    int useless = 0;    for(int i = 1;i &lt;= n;i ++)&#123;        if( b[i].v == 1 ) distl[++ltop] = b[i].p , uselessp[ltop] = useless;        else distr[++rtop] = b[i].p , useless ++;    &#125;    // for(int i = 1;i &lt;= ltop;i ++) cout &lt;&lt; distl[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;    // for(int i = 1;i &lt;= ltop;i ++) cout &lt;&lt; uselessp[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;    // for(int i = 1;i &lt;= rtop;i ++) cout &lt;&lt; distr[i] &lt;&lt; &quot; &quot;;cout &lt;&lt; endl;        int reference = 0;    for(int i = 1;i &lt;= ltop;i ++) reference += (rtop-uselessp[i]);    // cout &lt;&lt; reference &lt;&lt; endl;    if( k &gt; reference )&#123;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;    &#125;else&#123;        long double ans = ef( 0 , 1e9 );        printf(&quot;Yes\n%0.8Lf\n&quot;,ans/2);    &#125;    // cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
-赛后补题G题打个表先~
-
-从后往前看，发现是等差数列
-先是公差为1，然后公差为2，之后3…
-故可以分块，公差相同的一组分到一个块
-然后二分符合条件的数值（第前k项对应的数值）；对于每个块，知道了首项和公差，所以可以$O(1)$计算有多少个符合条件的；总共有$\sqrt{n}$个块。故此算法的时间复杂度为$O(\sqrt{n}\log n)$
-值得注意的是，二分的写法有点不太传统~
-#include&lt;iostream&gt;#define int long longusing namespace std;int n , k;int vtot , val;int cnt( int num )&#123;    int tot = 0;    for(int l = 1,r;l &lt;= n;l = r + 1)&#123;        r = n / ( n / l );        int a = n - n / l * l;        int b = n / l;        if( a &lt; num ) continue;        tot += min( (a-num)/b+1 , r - l + 1 );    &#125;return tot;&#125;void ef( int l , int r )&#123;    if( l &gt; r ) return ;    int mid = (l+r)/2;    int tot = cnt(mid);    if( tot &lt; k )&#123;        vtot = tot , val = mid;        ef( l , mid - 1 );    &#125;    else ef( mid + 1 ,  r );&#125;// void ef( int l , int r )&#123;//     if( l &lt;= r ) return ;//     int mid = (l+r)/2;//     int tot = cnt(mid);//     if( tot &lt; k )&#123;//         vtot = tot , val = mid;//         ef( l , mid );//     &#125;//     else ef( mid + 1 ,  r );// &#125;signed main()&#123;    cin &gt;&gt; n &gt;&gt; k;    ef( 1ll , n );    // cout &lt;&lt; val &lt;&lt; &quot; &quot; &lt;&lt; vtot &lt;&lt; endl;    int ans = ( k - vtot ) * ( val - 1 );    // cout &lt;&lt; ans &lt;&lt; endl;    for(int l = 1,r;l &lt;= n;l = r + 1)&#123;        r = n / ( n / l );        int a = n - n / l * l;        int b = n / l;        if( a &lt; val ) continue;        int len = min((a - val) / b + 1, r - l + 1);        ans += (a * 2 - b * (len - 1)) * len / 2;        // cout &lt;&lt; ans &lt;&lt; endl;    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;
-第四场
-这场代码量太大了（悲
-K题签到题，直接取最大值即可
-I题直接扫一遍即可
-B题直接枚举即可，C就不会了（悲
-E题直接开扫，我写的依托~
-D题#include&lt;iostream&gt;#include&lt;map&gt;#define int long longusing namespace std;int t , n , m;string a , b;map &lt; char , int &gt; mp;signed main()&#123;    cin &gt;&gt; t;while( t -- )&#123;        cin &gt;&gt; n &gt;&gt; m;        cin &gt;&gt; a &gt;&gt; b;        mp.clear();        if( n &lt; m )&#123;            string c = a;            a = b , b = c;            swap( n , m );        &#125;        for(int i = 0;i &lt; a.length();i ++)&#123;            mp[a[i]] ++;        &#125;        for(int i = 0;i &lt; b.length();i ++)&#123;            mp[b[i]] --;        &#125;        int ans = 0;        for(int i = 0;i &lt;= 26;i ++)&#123;            if( mp[i+&#x27;a&#x27;] &lt; 0) ans -= mp[i+&#x27;a&#x27;] , mp[i+&#x27;a&#x27;] = 0;        &#125;        int temp_del = 0 , rel = 0;        for(int i = 0;i &lt;= 26;i ++)&#123;            if( mp[i+&#x27;a&#x27;] &gt;= 2 ) temp_del += mp[i+&#x27;a&#x27;] / 2;            rel += mp[i+&#x27;a&#x27;];        &#125;        ans += rel-min( temp_del * 2 , n - m );        cout &lt;&lt; ans/2 &lt;&lt; endl;    &#125;    return 0;&#125;
-赛后补题]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>算法竞赛</tag>
       </tags>
   </entry>
   <entry>
@@ -7738,146 +7738,6 @@ References红黑树（图解+秒懂+史上最全）
       </categories>
       <tags>
         <tag>Crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网络空间安全青年科学家闽江论坛会议学习记录</title>
-    <url>/2025/11/02/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E9%9D%92%E5%B9%B4%E7%A7%91%E5%AD%A6%E5%AE%B6%E9%97%BD%E6%B1%9F%E8%AE%BA%E5%9D%9B%E4%BC%9A%E8%AE%AE%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[今儿个闽江学院有个学术会议
-虽然不是特别强的学校，但是看起来有很多大牛，再加上波波是主持人，这下不得不去了
-原本想自己坐公交车过去，反正免费，但是我导人太好了，直接开车带我们一起过来了
-8.20就到了东门，我导的车还有个挂在副驾驶可以放水和餐巾纸，好高级
-然后到了闽江学院，里面全是花香，时间很早而且是周日所以没什么人
-到达会议地点，是一个普通的会议室，人坐得很满，还好来得早；后排很多低头看手机的可能是本校学生被拉来充人头的（大雾）
-第一场是南开的，讲的查壳，口音很像天津人，有种说相声的感觉；具体内容大概是用机器学习来查壳，不断提升检测效果
-第二场是软件供应链相关的，很好的PPT（像是从创赛改过来的），讲了很长的内容~
-yt学长问了个问题，多方协作的话，能不能通过区块链之类的进行协作赋能；对方回答考虑用技术挑战赛的形式促进发展；然后学长进一步问能不能用区块链，对方回答感觉区块链用的不多，更多用于金融，而且需要多数可信，所以赋能能力不是特别强。我感觉应该可以弄，基于区块链架构去实现一个协作，但是这个层面应该是更高了，也就是说不止局限于这一个项目，可以干但是有困难。
-第三场是——好长的名字，记不住；是一个和南方电网合作的安全项目，传统保证安全是“涉密不上网，上午不涉密”。讲了很多很有意思的，包括hw翻墙，动态更新问题直接换表（不差钱）
-据说是很贵贵的项目，包含6700w做两款芯片之类的。yt师兄满脑子都是区块链了，问这个电网能不能和区块链结合，回答是这个已经做的很大了，但是有很多点，并不一定用在所以项目里
-第四场讲的是区块链，先是一些比较传统的，然后提出来了可追踪门罗币（门罗币强于比特币）可验证加密+零知识证明；原本无变化，多了个追踪功能；然后一张很好看的图，主要就是这些内容
-我导问产生和销毁问题怎么规定，回答无需关注数据什么时间产生，故定义为上链的时间。真正的区块链那就很大了（did：去中心化的身份（通证）Allen做了很多工作，——web3的身份）
-
-下面分享会议时拍摄的图片（等回学校用校园网上传，现在刚月初，流量省着点用）
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 本文所含照片均为网络空间安全青年科学家闽江论坛学术会议现场拍摄，内容仅用于学术记录与讨论。 PPT内容及版权归原作者及其机构所有，如有侵权请联系删除。 本博客无任何商业用途。
-
-]]></content>
-      <categories>
-        <category>会议竞赛游记</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
-        <tag>游记</tag>
       </tags>
   </entry>
   <entry>
@@ -8774,6 +8634,146 @@ $Decrypt:(SP,pk,M,CT)\rightarrow M/\perp$，其中，$\perp$ 代表解密失败
       </tags>
   </entry>
   <entry>
+    <title>网络空间安全青年科学家闽江论坛会议学习记录</title>
+    <url>/2025/11/02/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E9%9D%92%E5%B9%B4%E7%A7%91%E5%AD%A6%E5%AE%B6%E9%97%BD%E6%B1%9F%E8%AE%BA%E5%9D%9B%E4%BC%9A%E8%AE%AE%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[今儿个闽江学院有个学术会议
+虽然不是特别强的学校，但是看起来有很多大牛，再加上波波是主持人，这下不得不去了
+原本想自己坐公交车过去，反正免费，但是我导人太好了，直接开车带我们一起过来了
+8.20就到了东门，我导的车还有个挂在副驾驶可以放水和餐巾纸，好高级
+然后到了闽江学院，里面全是花香，时间很早而且是周日所以没什么人
+到达会议地点，是一个普通的会议室，人坐得很满，还好来得早；后排很多低头看手机的可能是本校学生被拉来充人头的（大雾）
+第一场是南开的，讲的查壳，口音很像天津人，有种说相声的感觉；具体内容大概是用机器学习来查壳，不断提升检测效果
+第二场是软件供应链相关的，很好的PPT（像是从创赛改过来的），讲了很长的内容~
+yt学长问了个问题，多方协作的话，能不能通过区块链之类的进行协作赋能；对方回答考虑用技术挑战赛的形式促进发展；然后学长进一步问能不能用区块链，对方回答感觉区块链用的不多，更多用于金融，而且需要多数可信，所以赋能能力不是特别强。我感觉应该可以弄，基于区块链架构去实现一个协作，但是这个层面应该是更高了，也就是说不止局限于这一个项目，可以干但是有困难。
+第三场是——好长的名字，记不住；是一个和南方电网合作的安全项目，传统保证安全是“涉密不上网，上午不涉密”。讲了很多很有意思的，包括hw翻墙，动态更新问题直接换表（不差钱）
+据说是很贵贵的项目，包含6700w做两款芯片之类的。yt师兄满脑子都是区块链了，问这个电网能不能和区块链结合，回答是这个已经做的很大了，但是有很多点，并不一定用在所以项目里
+第四场讲的是区块链，先是一些比较传统的，然后提出来了可追踪门罗币（门罗币强于比特币）可验证加密+零知识证明；原本无变化，多了个追踪功能；然后一张很好看的图，主要就是这些内容
+我导问产生和销毁问题怎么规定，回答无需关注数据什么时间产生，故定义为上链的时间。真正的区块链那就很大了（did：去中心化的身份（通证）Allen做了很多工作，——web3的身份）
+
+下面分享会议时拍摄的图片（等回学校用校园网上传，现在刚月初，流量省着点用）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 本文所含照片均为网络空间安全青年科学家闽江论坛学术会议现场拍摄，内容仅用于学术记录与讨论。 PPT内容及版权归原作者及其机构所有，如有侵权请联系删除。 本博客无任何商业用途。
+
+]]></content>
+      <categories>
+        <category>会议竞赛游记</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
+        <tag>游记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络有手就行诶我手呢</title>
     <url>/2025/01/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%89%E6%89%8B%E5%B0%B1%E8%A1%8C%E8%AF%B6%E6%88%91%E6%89%8B%E5%91%A2/</url>
     <content><![CDATA[计算机网络刷题记录
@@ -9267,39 +9267,6 @@ f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2
       </tags>
   </entry>
   <entry>
-    <title>记录一道考研数学-关于三角函数的极限</title>
-    <url>/2024/09/21/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6-%E5%85%B3%E4%BA%8E%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E9%99%90/</url>
-    <content><![CDATA[题目：$lim_{n\rightarrow \infty}n\pi sin(n\pi)=?$
-
-因为是填空题，所以一眼能看出来得 $0$ 
-为什么是零呢？因为感觉不是正数也不是负数（对偶性），所以只能是 $0$
-学长的讲解：
-当 $n \to \infty$ 时，可以把问题理解为一个数列的极限，也就是趋于正无穷的实数。但是，直接看 $n \pi \sin(n \pi)$ 的极限是行不通的，因为这个表达式相当于 $0 \times \infty$ 的形式。在这种情况下，你可能想把 $0$ 单独拿出来处理，但根据乘法运算的规则，只有当两个乘数都存在时，才能进行这样的操作。
-所以我们先不要直接看极限，而是先看表达式 $n \pi \sin(n \pi)$ 本身。在 $n$ 为实数的情况下，$\sin(n \pi)$ 总是 $0$，因此这个表达式无论 $n$ 是多少，都是 $0$。即使把极限带入，结果也是 $0$。尽管你可能会觉得这种形式是“无穷小乘无穷大”，不一定是 $0$，但实际上这是 $0$ 乘以任何数，结果必然是 $0$。
-无穷小和 $0$ 是不同的，$0$ 是无穷小的一种特殊情况。虽然无穷小乘无穷大的结果并不总是 $0$，但在这里，表达式的极限确实是 $0$。
-
-但是我的问题在于，随着 $n$ 的增大（只考虑趋向于正无穷大），函数值高速震荡，感觉不像是有界的
-
-之后发现它确实是有界的，因为：
-在判别函数的有界性时，我们需要先知道以下两个重要结论，即： 如果f（x）在闭区间［a，b］上连续，那么f（x）在闭区间［a，b］上有界。 如果f（x）在开区间（a，b）上连续且函数的极限存在于其端点处，则f（x）在开区间（a，b）上有界。
-这个函数包连续的，所以理所当然的有界
-既然都有界了，那么极限存在
-
-后记：
-结合网上的说法和gpt4o给出的答案，$\lim_{n \to \infty} n \pi \sin(n \pi)$ 不存在
-当且仅当 $n\in N^*$ 时，$\lim_{n \to \infty} n \pi \sin(n \pi)=0$
-如果 $n$ 是非整数实数，$\sin(n \pi)$ 会在 $[-1, 1]$ 之间振荡。而由于 $n \pi$ 趋向无穷大，乘积 $n \pi \sin(n \pi)$ 是一个无穷大乘以振荡的值，无法直接确定这个极限。
-因此，严格来说，$\lim_{n \to \infty} n \pi \sin(n \pi)$ 是发散的，并不存在一个简单的极限值。如果我们只考虑 $n$ 为整数的情况，则结果为 $0$，否则该极限无法求出。
- $\lim_{n \to \infty} n \pi \sin(n \pi)$ 存在，当且仅当 $\lim_{x \to \infty} \sin(x)$ 存在；众所周知的，$f(x)=\sin(x)$ 既不收敛也不发散（在讨论整个序列时，极限存在与收敛实际上是等价的），故极限不存在
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研数学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记录一道泰勒公式相关的考研数学题</title>
     <url>/2024/09/15/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F%E7%9B%B8%E5%85%B3%E7%9A%84%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E9%A2%98/</url>
     <content><![CDATA[今天，有个学长（烤盐糕守）发给了我一道树穴题（据说是刚出锅的热乎题）
@@ -9379,6 +9346,61 @@ f^{(2k-1)}(0)=-\frac{2^{2k-1}(2^{2k}-1)B_{2k}}{2k}\left(\frac{\ln2}{2}\right)^{2
       </tags>
   </entry>
   <entry>
+    <title>记录一道考研数学-关于三角函数的极限</title>
+    <url>/2024/09/21/%E8%AE%B0%E5%BD%95%E4%B8%80%E9%81%93%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6-%E5%85%B3%E4%BA%8E%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E9%99%90/</url>
+    <content><![CDATA[题目：$lim_{n\rightarrow \infty}n\pi sin(n\pi)=?$
+
+因为是填空题，所以一眼能看出来得 $0$ 
+为什么是零呢？因为感觉不是正数也不是负数（对偶性），所以只能是 $0$
+学长的讲解：
+当 $n \to \infty$ 时，可以把问题理解为一个数列的极限，也就是趋于正无穷的实数。但是，直接看 $n \pi \sin(n \pi)$ 的极限是行不通的，因为这个表达式相当于 $0 \times \infty$ 的形式。在这种情况下，你可能想把 $0$ 单独拿出来处理，但根据乘法运算的规则，只有当两个乘数都存在时，才能进行这样的操作。
+所以我们先不要直接看极限，而是先看表达式 $n \pi \sin(n \pi)$ 本身。在 $n$ 为实数的情况下，$\sin(n \pi)$ 总是 $0$，因此这个表达式无论 $n$ 是多少，都是 $0$。即使把极限带入，结果也是 $0$。尽管你可能会觉得这种形式是“无穷小乘无穷大”，不一定是 $0$，但实际上这是 $0$ 乘以任何数，结果必然是 $0$。
+无穷小和 $0$ 是不同的，$0$ 是无穷小的一种特殊情况。虽然无穷小乘无穷大的结果并不总是 $0$，但在这里，表达式的极限确实是 $0$。
+
+但是我的问题在于，随着 $n$ 的增大（只考虑趋向于正无穷大），函数值高速震荡，感觉不像是有界的
+
+之后发现它确实是有界的，因为：
+在判别函数的有界性时，我们需要先知道以下两个重要结论，即： 如果f（x）在闭区间［a，b］上连续，那么f（x）在闭区间［a，b］上有界。 如果f（x）在开区间（a，b）上连续且函数的极限存在于其端点处，则f（x）在开区间（a，b）上有界。
+这个函数包连续的，所以理所当然的有界
+既然都有界了，那么极限存在
+
+后记：
+结合网上的说法和gpt4o给出的答案，$\lim_{n \to \infty} n \pi \sin(n \pi)$ 不存在
+当且仅当 $n\in N^*$ 时，$\lim_{n \to \infty} n \pi \sin(n \pi)=0$
+如果 $n$ 是非整数实数，$\sin(n \pi)$ 会在 $[-1, 1]$ 之间振荡。而由于 $n \pi$ 趋向无穷大，乘积 $n \pi \sin(n \pi)$ 是一个无穷大乘以振荡的值，无法直接确定这个极限。
+因此，严格来说，$\lim_{n \to \infty} n \pi \sin(n \pi)$ 是发散的，并不存在一个简单的极限值。如果我们只考虑 $n$ 为整数的情况，则结果为 $0$，否则该极限无法求出。
+ $\lim_{n \to \infty} n \pi \sin(n \pi)$ 存在，当且仅当 $\lim_{x \to \infty} \sin(x)$ 存在；众所周知的，$f(x)=\sin(x)$ 既不收敛也不发散（在讨论整个序列时，极限存在与收敛实际上是等价的），故极限不存在
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>说点老师的好话</title>
+    <url>/2025/05/20/%E8%AF%B4%E7%82%B9%E8%80%81%E5%B8%88%E7%9A%84%E5%A5%BD%E8%AF%9D/</url>
+    <content><![CDATA[
+  bc9cf4bb14416fb993eccb16a01b0a8a43cd2aa866e7e075732d3b8c80db762a44059c05088acccd8ed6b23f035a880b61b771cc4fd876faf1524b9103bae97faac500a9e5de638dcfb38e4d0ea08859a9401b6fb6211c1c35eb48afdaff817a47c70d2829c226ec172dd8c3bdc72c081d941d5220fb14e0a10a6693fc4183731a299e87b0a13424036c155cb05f17196e424b3ce6a8eb3a444fce887215abf10e4d938455919e82ffc1199dc63476855256b6121ee44c7c003e7e5a016f8d49306ab2073e04beb3b9222284ef0b5177c47cf61cfbb109f4d02ea11372d0f32e0d6fcc8e2452b2e5f02ca401aceb3169ab169d63ee895bb2e662539ac05fc82a0a7be1bf2d0ad50b2b8fc689434c7eae5968dcf2bc7ee7528b979eac8b197c1607ef4d05ca4f363130b45c553f531f8b13e31512c358667a6cc6f40b6ac2ded0665925820fd2fd9a1b686ade65c6d25771556f3756c39d7f63e8fc6b4b3d13e11da600d58c0abe87542c0f72b10036fd27f35b3729b6fe106b323ba3e2d5858cb9f06080f693989b5ae2fb0da0717503bcb2c5b7d47bcac3c4ec8e3cc40d799177a40d52504f44d5aec339ff837e46130efb7e0c3594ed2b89c70c2628effb569103d11fea9bb2e116066f2e8fa7d594ccb332671f765fea3c8884730515004e5e189b8d3855e9b3edda63c70bfa05e0541c708538899d760149ff9d9a09ebdcd6311ea340cde511f23220ce1eb05c21fe79b48be93fe3b01eab9316c0f7f32966cbc0f530f5917233819df64f95e91dc00fa8f4789684f1b6f70331652a4a0ee195834829efbf4b504faa657f7cde790e2432edbd4e2b5eb4af68a885b4dcb439d6b2ab294018fc513767107fcfa9d721e7115e29f0864e17287656cbe814916df15b54144b080ab1ff8c9034922be3c91a7ad34a13b2fd3da1777c4e18875f7f8776130e05564fa7e3daed88c5d388533da341656551f184dda1e9af3e640c5b3eba820bf2ee66eca06bb9fb1a78b684f71260e016e4a696e75ca9df8e157fc01e8e8e6ad175974ea208dc1dd9ca4ffc9e41945035f8e1475751ed4a588f9094e03d752fe424b8b755fd855a69dd1a7d8c52aaf2eda76a1d379a94bf2dce2032a2d61e67a6bf3be1c6044e125389594667c607aa697c1090557310a12e0bfcf4322d8e7042c2bf35930ff8213337837e6029c09b6170c07246ab45ca4f972c799248136118646b4a64b13836c9817c86f1c57766c9ecdbea446cda10e650a9a774afef8ca5e042628d317db55c72ebbcf871769e5a0f014300fd996a906636e0fde0f55daa3bd0c11cc6494dd0c99ae32c0b961b54fc527bdb7fe232fc51eeb9eb2d9de4ef9724fe84569491b3fb1b4ba4f972b147b1886f941d313b3b7b11554b955709bec9856cd1b3084b65ce6d0840c6b97a5a576b00a891160f7743503ba8175216195e9c3b9c975c31ddd1435758c61c795cb2edbc0eff3765b53cdb97d3938ddc5384302fd3189a7420e8ab57de4bb861f813555cca5ee072372748f855099c2911efe3e756649c7bd1390a8ce75a6a4dd7d9b092e81515582b73af59f3ae0cdaa0a19bcef88760ab08f240071c600a128c6180ccef453ed9e7f4781ecbb640e79112f157ad3cf12d708a16e79a9ccc7934af7eb086efcb83bb0cb8afef37c140f74733c3d27bf806df2ecd4d8e9227db92918a377267882b1cb2749c5bd72e3b1562355c26e933b226c2a9ed4a6f400c7239822f4a96b9ff078c8b5776fde76405d90e090d0851fffdac4d7ed202167c67452ff9e8ba3c859691f62a42f11d6cdc9db07f6e2260b1a4c0de339fceedc0260c739ef574f347c86fdd82b35a915f9f2511f508991914fec12fe6a41ca15b0122ace082bf07ee23ccad5ce27de8b6b9d4888a63f9de33b007cc1c8f4cdae95bbaf6a8b3c84f7d94c4b86ef867e5db80e298d399c7b00c288eb2a341ca239261e18d9456c469853abcd0bec61300df7e581d60bda261998cc18d35a82862241ed2760593cbea583d0c32bf9ff7df422792248d6c120cece7dd5810b6be881d6dfae22d884c3f44600c140de3c7ae098ba7f7257c5e2f827577d3076436de2d2c2682d6ad3051e0e47f16708f4c235723813140e9ca9af18ef6c1b71ec026dc457be70757c52004bfba8be8dcf621389fa567e0409f3d9a7c4b058b9610b36adb1554502dcc132e877c0d589d0e84cc6c41a8b01ccd271d7fd98a24af391a6f5951ecc8951c466c994a5caef55522a6c82fc01bc861994f6d8119b5ac3b4324cc99c297e8856faa6d3924fceff6de9571abd5de4cf791fd149da7130d82c48a4a43ad7de48f66336200ba2f9adf109b718a5dc1f4ce90d2819bd9a5c25c5e24cd6840caad1aa65bf0f2c06418a4a5155741cc40b5f65ed4dbc90681d69725af60dfe9ab23e818e9bb71aee977f38377285ec98029671455dac948be2165e734db98d96d79ecb78b6bc8e44ebaafba82a7dd207f3b07913c5d6006033725d5cf0c78b2ee1f816267c51b035d68532ec5f99f969072ea9ae6de1cfe3ec37f6537731ea4e1de30c47976dfacf17a400839f20bddc29d499f51882da2c4d7a7473a0875cf8bc94adb1d7257141d6378f12ae2cdcd8886b71fab51f39f1985db74c3c3b207100b0dce05301f07785b0bea225b0da66a7a7d663ee08d6535239e4d50cfe1c3bf8e77b61fd0d7e468c83dc9c693cfdeacea9ee53dd7e8ca1f093f9365920d75cd97d53cbedac186e241549088e76c29eee352db3691ce4ef21065cdc55925450daf790c2f4fe39fea480e8d20e5b410ef18ac1c2f95af54ad08e4f2ba308d9672e443844a40b310d3605c90c0eea92df45b95125da3ddbb508aa528df291edceac0877a3ad2afc389cab037575af6666d6d863d4baba81e63765db5b74d7cf6bf84825c0bb7fc3674e7d5fd73c03981ac9ff1e68e23dff930dab221d444791b5654a4f66d2c755189d1f4bac39e089b3f2c5d0a59653a4ec018870fdc754b73353e902e0e3c4f1653f89d95dd51951a69dbb3df04d5ede382d35deac1c452c8d7c3a5771f202b819f7e054346e7580b5e4ea9a3a083716dce05dc77b824ba2f831cba46a783a43b48cb3f5ee9146b18cdc98b109180ffa398814dcabe3d3b319dfbdca2fecf64339f73540daf804b834229e18003d7b94936323b357e1b0bfa4807d02f8d16b6f62d5536e131e6eda751c185b2769ce0eacb3de743e3ef4799423923b9ebe2698d20840a225f94cf3223db7655fc2ab9b958ac7b3cbd1d85d7c2ab6a82847ae965441614da72e8e438704b1ca00fd0796289c06d84fb379053009be84383e15c7bff83b59e3459daffa36bce6094b9648117339fae042bdff972006ed4788be6c94090d70a2d50ab9b966b1231b944e5ae4b5010449dbbcc8a82c33fb58a343cbe1aa862b177bf1f67de1be4fe6ceca75e4c274947f8afa8049eba5c040d71003790c54de451d347522950b45ba609e0e8452923e8821abaa823dc24a7930beeddd3fb3ae9cebc3d853fbdbf70ab5d45169fef4fa3cebabfcb0517711e21fdb3aac9bb58848835b08b0c56415b6af17d6f2431fd5979650d3241cbe046884ee05551647a021b54c3aa80c98340cdd6c8e19c148ea21aa364945418b71d4ebb9fe309a5c638481edca7090512cdf648449b99e5291d6aa8f0761c3b2243b53bf2d0e0acb0e7116d3f4a21fbdcebf07ef84ca2e4e9719f77ad12bf36552cc35a84dff9c806dbfc4a05e5a979595eb571eec84c0de297460849ce7d3a58291f296ea1007852336c8a16411a2cfde164a640ca675b42c736d8e60f6c3467bd54d9c2397d31a186c4ab0aa3680a082e1245792245d6575189c94b3ff69396110e01cebf6354db0367e4740a1b9c0b7b0a33d0a11a62ea01bf4a0dc184d2c086fbe18a8690e1fa37e36517d5723639fac46cc7382e3731f7d4486d988d4757102d4b5d0663b89b975114b546ea59c97ab40c81928adc84c1d327b022bde43a85db454a52217f487391c934c67aa4c7a0c2d9ee8226f8890699f4e7b3509b3075139c1c867fc5fef0611387a1ddc5654cf4afa77a31089aebf409163f6e1b3c4117c3e0296178238168adbc18ed026bfde2596d4f62cb9a0fbfe6f4c6bcd808febfea24106a715ea4f844afcf346b7f24467cc159a03e549bd525b76b1a7446f850851a937f250ca1101ae62ee7a93a025f7623581f7574d7acca801392e36ae56773eea3bc1731a51020967747a8b76af858298a3c16d3b7621b8e342ba6743f092946b05229fe2513ef6b4b7000cc629a31143ed83d4f0f8291b41b1cb29d2e090f0a9588ea494e1fc15f078bbf8abc10dd4ae63bebbe4f55dac35f9a1e77df8d46ca42310adcf904dda55a090d8705ff2e20a04a3ff27f21d745abe80fe0563cecd257137c686b7141187ca8f06c1fcb1b90e257810ec60e2cc0afb3f91227b0cae4af1873a5abdf305e368ad31c7b528678940656d9e50571ad1635b8b6cfcd84acd84e70de153e03df1750598bb6c226e93cc9f7ecafd00e922faec9ec43c7cbfa25fc910e213be0959b6b6caed21683db06e99d2e644b5f14c04b6627a46ed5047ff323df95c01ae6b543b55e5f036a53fec212230834ec0182a010cecd3ba46fe0f663bec691065693f78ed14266193df6ab3b62eb74562187963b02c522efe105337ec04f0ac363678817558d8689f7a8a4d8dfb7218910ecceee68971b4014fb7943a3376e104e22d9fac0452004d267c4c486db0bde026070354800708973a2045a73ad1e14ab86d599b7a15a0895cf55d2ae2c4a9a75e2df7102a142c4a5f91f4fc7219f00ef6efa9c40636ef49ca143a6a9aa585690191abb4b94b1df7a45b0f82b627d689656001bedf9a4d41136640aeff3b160b7deefb62f1238756aa8625c6235340c58793fab019b7be8d2b8b05f53f4781d383d682185629b14f2e9c249a93482fd52786ede43cdda9d73d0d61aa6e85385037653494cde91fd2a97188eeb14e5f6eef7e697c6d5f07ad4c8b840790096ae7ecd74ce44356e006e14d0e25a77275838870ad236c3189175fa2a8f68575b0718f5b695a9e5a1a73bad27fd934a28fd2e77fffaffec8e7fbee8621772086c9f81e2c13d63bee1c19149aa76d4aafb531508328683ac8afb47a08bafac8d0b13a2f857db58eb2213a4ac0317080a62ee456f365ba5b68c6a7d6c4c3c57633f0d7f59817cd7caa3dff38e946aeab03594583fa1b16b96bc9eb4f1479516c5cff747a5d30f99a88319a5e284d78354240d2036c4f75cb255b25f0992f72154b8c3500e8300a9ec13040f70b5f8e2646e2073904aa0f92a56cc67a5cd48663dca7c1fd630596581edb3d8f9393188dfc992ccbef99d4edb7b7fbb47b61dfa378d0adb6d223011a4127c382fb2f583771c17aec5bb3ca8fe4ddc8aa98fd8bd1896240129fffe376603a68a465d2c16475722525abeb1d801a5325c146c6fe97a742e96a0d39d2c7296c582da663da4113f84de9099a7814d1102889c729b952d802e4ce6c9b261cc5be6b7a8f7947021b76885fca865f8084b9ec0d5b2301a91873b6eecf491a9e0750667c688c5dca0c65d28c6a0d4c9d5749edaa09f884198ab53a09bdd348a71c57fb961fbdabed476b4c0bc16f8c7018f17389242f68b3e6252f503f6fe12514d2c3668f1554f15ffa55a9ff4c3771835bf03859fd7598f447b4e4719778b7f43612b05825b850209586bcf41ff349e7ae59dd0d7ff928f26f1ee082f388afe1acd1636bda45a55bd008d5991c8ec9bdf0e9379301259ded8c5df9e6f150dfcfe60fa5597120784b9be1ef5f729979179a53689b4063317837e0f5729ad892e7c3ab281142429bbc3c0a937e1d34e36acb9a27945f222ec0c4c69ee5c904a969e67324d1183a4d1f597327d839dc8a33a1f3fe9786378c9db2d48737915036d5d123246522c2d8d9c1cea881844534b6e48e3d58aa0275203545a2a6e3bebc4e34c8434453616f2ecca15ca8571ef33bff2960e9f9e7ef45fb9954722246c8c399f35159f878d49bf5222b37cc825ebba16bf2d788abf48ae7b603374204fec74a84725120cd5caaf2a5cadc4da256403b5c92570725b7c0084be965d0f3e846522dc548e644db90e028374b92d1b8b1bf9426f9e679001d3513020ee8c02903ba64418c7a34c71d59c2604db0bc28641ec842e87d97165dbf80f80d3b4435426beaf2792f96fe9bf0b8ae18f53937d4929db04fd87ccb1aaa2b7a6aab8107e4cc77246302e367caf878f11ea2b63750e1872a4ae3f9176d1c35c28bd8e05631a9d9803864b709190f142fb275265b420b372726dca60a3217a7ae0c6df08329a6e9035a061847f5dba5baaa8b1fdf9aa5dad7526b393051cad13caa58bc21f1a81cbf4dd15b84a7d1a74ff7f6fca9bc263ea79d6ec56acd4834f627575c70dd79de329632d3306f80a762b011dedd1b83daa9d165f5f8979dd4fbf328cc4aed67cce7f7831d8ee6db706045f93ee5e7a1a1f4cdf25c2cb2d689efd8bda7e33c171a12e0f3281c1a2cc21eb78b615093bac8f6884c2317ff47d3f27cf2ff24ab6216ff2bd989f766c662509985ce7807b4586f509514f2f62697df9f5e5d4323b722e58129ec9847f00c2fd2132fef0f8885ca1fb52f5b696afc67e9f30c08df6910b50a79486f37a54531dfcc84c4f1393ce0b24675bb40974aea990a9f24811a5c8c2063541406abdc3f597f4df068a459f0663bb8798a0dde8a5ce7c0585b8f8e610903f62b2b9f330bf82d343a2ab42d502ca21690dde09c240b775d9d1b56ec12dc041c0bdd2af361be039ab799bef5be9d6ecff61277564d09dd91ff5356e874a245611f3fa0e40c4f65ebf77be08726a28efc23a64ea4f47fbc1de177f256b4a93931b2cb38e35dfc544bb976ce31290bb74e539b64bee2cc137ddaf2c32eef60cfde5a857dfb86198166e9e8755860fc913aae4fa5685b1db9ffb961abbd3c4a3f9ed9fa71756ca33aad6179fff1654ba3bd2e4a798074bc8405323e5da3dd5545d25417cd3fe2653c3c04ce586cfe41c7f278ec8c9008f1bb96a3014a2705c8206567d566029ee886276a14350886b3d785e0598b0a9c1fb00b1c836455ec1d55e54dba1f47fa1c8fb0c53d5b783af753b80aa7061f78d9a72e45d5d28bde6ce7f8bbbf04685d62730f123cc375542c00d89878d2c7e6eb81dfc1dfaf97af2120caf013b2f9b8d1f4a5a33477b4db764cb8c7d333edd08f810854407969df7a4878b84eca5d4ebc9445bd645f005ee0f3eeefb8d2466ad6a69a67ca1c45df62fce3ebb63ee803a28c0b3149717936ac84b4329e21c86c9de58291d26124a6abe5db9898f55bb7c51e3154129c6257a641a647736d1661829a6a3f58eabbb95bb09fd05968046dd9f8f6f8a14c9bdac68577aca6df3958068594608454c0664ffc98452e507f1dbee0dda36211ddf08791440c2defbed34473eaceef3cc1cbbd3da1547f757b40585e9bbb19dadbcc980f9643f106ea476062762978c395cc15019a505746d95ac4cf9aeb3a5d9a7be4d9a1498acdf05483427e125fa0455dfe7505181dec444f27d5eb3bb04d79454241568e01fec92b54071f8f1f386494a84dc17f016245563e3310c39a79104509ebd7ff317996f372092f6899d548d4cc3132988c91908fb8465b5cf8c59c48d17680a1c173bed2240600249549106c424589f5e06a1afe864115e61a64265e2f2e99e2977febb1ac62946fe826412779395a2b6e4cf657cc43c48c3cff6cd30a314471559ab9a9b2ab03355e9c1a90cd723323fddc82b2c24b211938d5c2746f41b571a3f396d6ea5cf05b51c774baa0523de5933ca4a767336eea8f92eb94b1552a4f51679ec3baee7a8f0ac23ea5f3c746abbcf4fb4cdf6438bb47459a24d21ab5c1e59cb0dd506aa812ba6dcbe0dab96b9d789c3287fd68b6a1629722d51b83399a08d325d8416f153cbd6fa0e82a46cc579267406f3dd19aafb4b9062438afc7011fed897fb86ae9c2a208d28501a98c06c41be4117fea9999e1df751e23fb5c78c52ec333413b4811f7b2b41b16de525107cf5b83d1ae00fb3de7618e73157660104677c9dd86aa8f2f6bc1534cff157534f5e3ec9d3fb14748d8cb0c1e6332576544ca7d3578e4ecd28c0bdd3993795edccc41fb5bb8332c3fd33025ca01c26a764cd22d44dd47127f3f245460a032bbcf2eeb692235b95c671f1331eed405be09ce1835a403529fc0ef4c70f60496834e2465f5cb7eda3e4621ffefedec7adbf8cedc06998ddf48dbb7b46daba818dfec342a858f4bdb61d1977096ce9b45e9fa99feac4dd5232d6d2e1a720
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+]]></content>
+      <categories>
+        <category>一点小思考</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>配置一键博客备份并上传</title>
     <url>/2025/04/26/%E9%85%8D%E7%BD%AE%E4%B8%80%E9%94%AE%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD%E5%B9%B6%E4%B8%8A%E4%BC%A0/</url>
     <content><![CDATA[本文介绍了hexo博客，如何一键备份到仓库并上传
@@ -9401,28 +9423,6 @@ hexo是只把生成好的页面上传，这就导致了不可逆。也就是说�
 ]]></content>
       <categories>
         <category>博客构建与维护</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>说点老师的好话</title>
-    <url>/2025/05/20/%E8%AF%B4%E7%82%B9%E8%80%81%E5%B8%88%E7%9A%84%E5%A5%BD%E8%AF%9D/</url>
-    <content><![CDATA[
-  bc9cf4bb14416fb993eccb16a01b0a8a43cd2aa866e7e075732d3b8c80db762a44059c05088acccd8ed6b23f035a880b61b771cc4fd876faf1524b9103bae97faac500a9e5de638dcfb38e4d0ea08859a9401b6fb6211c1c35eb48afdaff817a47c70d2829c226ec172dd8c3bdc72c081d941d5220fb14e0a10a6693fc4183731a299e87b0a13424036c155cb05f17196e424b3ce6a8eb3a444fce887215abf10e4d938455919e82ffc1199dc63476855256b6121ee44c7c003e7e5a016f8d49306ab2073e04beb3b9222284ef0b5177c47cf61cfbb109f4d02ea11372d0f32e0d6fcc8e2452b2e5f02ca401aceb3169ab169d63ee895bb2e662539ac05fc82a0a7be1bf2d0ad50b2b8fc689434c7eae5968dcf2bc7ee7528b979eac8b197c1607ef4d05ca4f363130b45c553f531f8b13e31512c358667a6cc6f40b6ac2ded0665925820fd2fd9a1b686ade65c6d25771556f3756c39d7f63e8fc6b4b3d13e11da600d58c0abe87542c0f72b10036fd27f35b3729b6fe106b323ba3e2d5858cb9f06080f693989b5ae2fb0da0717503bcb2c5b7d47bcac3c4ec8e3cc40d799177a40d52504f44d5aec339ff837e46130efb7e0c3594ed2b89c70c2628effb569103d11fea9bb2e116066f2e8fa7d594ccb332671f765fea3c8884730515004e5e189b8d3855e9b3edda63c70bfa05e0541c708538899d760149ff9d9a09ebdcd6311ea340cde511f23220ce1eb05c21fe79b48be93fe3b01eab9316c0f7f32966cbc0f530f5917233819df64f95e91dc00fa8f4789684f1b6f70331652a4a0ee195834829efbf4b504faa657f7cde790e2432edbd4e2b5eb4af68a885b4dcb439d6b2ab294018fc513767107fcfa9d721e7115e29f0864e17287656cbe814916df15b54144b080ab1ff8c9034922be3c91a7ad34a13b2fd3da1777c4e18875f7f8776130e05564fa7e3daed88c5d388533da341656551f184dda1e9af3e640c5b3eba820bf2ee66eca06bb9fb1a78b684f71260e016e4a696e75ca9df8e157fc01e8e8e6ad175974ea208dc1dd9ca4ffc9e41945035f8e1475751ed4a588f9094e03d752fe424b8b755fd855a69dd1a7d8c52aaf2eda76a1d379a94bf2dce2032a2d61e67a6bf3be1c6044e125389594667c607aa697c1090557310a12e0bfcf4322d8e7042c2bf35930ff8213337837e6029c09b6170c07246ab45ca4f972c799248136118646b4a64b13836c9817c86f1c57766c9ecdbea446cda10e650a9a774afef8ca5e042628d317db55c72ebbcf871769e5a0f014300fd996a906636e0fde0f55daa3bd0c11cc6494dd0c99ae32c0b961b54fc527bdb7fe232fc51eeb9eb2d9de4ef9724fe84569491b3fb1b4ba4f972b147b1886f941d313b3b7b11554b955709bec9856cd1b3084b65ce6d0840c6b97a5a576b00a891160f7743503ba8175216195e9c3b9c975c31ddd1435758c61c795cb2edbc0eff3765b53cdb97d3938ddc5384302fd3189a7420e8ab57de4bb861f813555cca5ee072372748f855099c2911efe3e756649c7bd1390a8ce75a6a4dd7d9b092e81515582b73af59f3ae0cdaa0a19bcef88760ab08f240071c600a128c6180ccef453ed9e7f4781ecbb640e79112f157ad3cf12d708a16e79a9ccc7934af7eb086efcb83bb0cb8afef37c140f74733c3d27bf806df2ecd4d8e9227db92918a377267882b1cb2749c5bd72e3b1562355c26e933b226c2a9ed4a6f400c7239822f4a96b9ff078c8b5776fde76405d90e090d0851fffdac4d7ed202167c67452ff9e8ba3c859691f62a42f11d6cdc9db07f6e2260b1a4c0de339fceedc0260c739ef574f347c86fdd82b35a915f9f2511f508991914fec12fe6a41ca15b0122ace082bf07ee23ccad5ce27de8b6b9d4888a63f9de33b007cc1c8f4cdae95bbaf6a8b3c84f7d94c4b86ef867e5db80e298d399c7b00c288eb2a341ca239261e18d9456c469853abcd0bec61300df7e581d60bda261998cc18d35a82862241ed2760593cbea583d0c32bf9ff7df422792248d6c120cece7dd5810b6be881d6dfae22d884c3f44600c140de3c7ae098ba7f7257c5e2f827577d3076436de2d2c2682d6ad3051e0e47f16708f4c235723813140e9ca9af18ef6c1b71ec026dc457be70757c52004bfba8be8dcf621389fa567e0409f3d9a7c4b058b9610b36adb1554502dcc132e877c0d589d0e84cc6c41a8b01ccd271d7fd98a24af391a6f5951ecc8951c466c994a5caef55522a6c82fc01bc861994f6d8119b5ac3b4324cc99c297e8856faa6d3924fceff6de9571abd5de4cf791fd149da7130d82c48a4a43ad7de48f66336200ba2f9adf109b718a5dc1f4ce90d2819bd9a5c25c5e24cd6840caad1aa65bf0f2c06418a4a5155741cc40b5f65ed4dbc90681d69725af60dfe9ab23e818e9bb71aee977f38377285ec98029671455dac948be2165e734db98d96d79ecb78b6bc8e44ebaafba82a7dd207f3b07913c5d6006033725d5cf0c78b2ee1f816267c51b035d68532ec5f99f969072ea9ae6de1cfe3ec37f6537731ea4e1de30c47976dfacf17a400839f20bddc29d499f51882da2c4d7a7473a0875cf8bc94adb1d7257141d6378f12ae2cdcd8886b71fab51f39f1985db74c3c3b207100b0dce05301f07785b0bea225b0da66a7a7d663ee08d6535239e4d50cfe1c3bf8e77b61fd0d7e468c83dc9c693cfdeacea9ee53dd7e8ca1f093f9365920d75cd97d53cbedac186e241549088e76c29eee352db3691ce4ef21065cdc55925450daf790c2f4fe39fea480e8d20e5b410ef18ac1c2f95af54ad08e4f2ba308d9672e443844a40b310d3605c90c0eea92df45b95125da3ddbb508aa528df291edceac0877a3ad2afc389cab037575af6666d6d863d4baba81e63765db5b74d7cf6bf84825c0bb7fc3674e7d5fd73c03981ac9ff1e68e23dff930dab221d444791b5654a4f66d2c755189d1f4bac39e089b3f2c5d0a59653a4ec018870fdc754b73353e902e0e3c4f1653f89d95dd51951a69dbb3df04d5ede382d35deac1c452c8d7c3a5771f202b819f7e054346e7580b5e4ea9a3a083716dce05dc77b824ba2f831cba46a783a43b48cb3f5ee9146b18cdc98b109180ffa398814dcabe3d3b319dfbdca2fecf64339f73540daf804b834229e18003d7b94936323b357e1b0bfa4807d02f8d16b6f62d5536e131e6eda751c185b2769ce0eacb3de743e3ef4799423923b9ebe2698d20840a225f94cf3223db7655fc2ab9b958ac7b3cbd1d85d7c2ab6a82847ae965441614da72e8e438704b1ca00fd0796289c06d84fb379053009be84383e15c7bff83b59e3459daffa36bce6094b9648117339fae042bdff972006ed4788be6c94090d70a2d50ab9b966b1231b944e5ae4b5010449dbbcc8a82c33fb58a343cbe1aa862b177bf1f67de1be4fe6ceca75e4c274947f8afa8049eba5c040d71003790c54de451d347522950b45ba609e0e8452923e8821abaa823dc24a7930beeddd3fb3ae9cebc3d853fbdbf70ab5d45169fef4fa3cebabfcb0517711e21fdb3aac9bb58848835b08b0c56415b6af17d6f2431fd5979650d3241cbe046884ee05551647a021b54c3aa80c98340cdd6c8e19c148ea21aa364945418b71d4ebb9fe309a5c638481edca7090512cdf648449b99e5291d6aa8f0761c3b2243b53bf2d0e0acb0e7116d3f4a21fbdcebf07ef84ca2e4e9719f77ad12bf36552cc35a84dff9c806dbfc4a05e5a979595eb571eec84c0de297460849ce7d3a58291f296ea1007852336c8a16411a2cfde164a640ca675b42c736d8e60f6c3467bd54d9c2397d31a186c4ab0aa3680a082e1245792245d6575189c94b3ff69396110e01cebf6354db0367e4740a1b9c0b7b0a33d0a11a62ea01bf4a0dc184d2c086fbe18a8690e1fa37e36517d5723639fac46cc7382e3731f7d4486d988d4757102d4b5d0663b89b975114b546ea59c97ab40c81928adc84c1d327b022bde43a85db454a52217f487391c934c67aa4c7a0c2d9ee8226f8890699f4e7b3509b3075139c1c867fc5fef0611387a1ddc5654cf4afa77a31089aebf409163f6e1b3c4117c3e0296178238168adbc18ed026bfde2596d4f62cb9a0fbfe6f4c6bcd808febfea24106a715ea4f844afcf346b7f24467cc159a03e549bd525b76b1a7446f850851a937f250ca1101ae62ee7a93a025f7623581f7574d7acca801392e36ae56773eea3bc1731a51020967747a8b76af858298a3c16d3b7621b8e342ba6743f092946b05229fe2513ef6b4b7000cc629a31143ed83d4f0f8291b41b1cb29d2e090f0a9588ea494e1fc15f078bbf8abc10dd4ae63bebbe4f55dac35f9a1e77df8d46ca42310adcf904dda55a090d8705ff2e20a04a3ff27f21d745abe80fe0563cecd257137c686b7141187ca8f06c1fcb1b90e257810ec60e2cc0afb3f91227b0cae4af1873a5abdf305e368ad31c7b528678940656d9e50571ad1635b8b6cfcd84acd84e70de153e03df1750598bb6c226e93cc9f7ecafd00e922faec9ec43c7cbfa25fc910e213be0959b6b6caed21683db06e99d2e644b5f14c04b6627a46ed5047ff323df95c01ae6b543b55e5f036a53fec212230834ec0182a010cecd3ba46fe0f663bec691065693f78ed14266193df6ab3b62eb74562187963b02c522efe105337ec04f0ac363678817558d8689f7a8a4d8dfb7218910ecceee68971b4014fb7943a3376e104e22d9fac0452004d267c4c486db0bde026070354800708973a2045a73ad1e14ab86d599b7a15a0895cf55d2ae2c4a9a75e2df7102a142c4a5f91f4fc7219f00ef6efa9c40636ef49ca143a6a9aa585690191abb4b94b1df7a45b0f82b627d689656001bedf9a4d41136640aeff3b160b7deefb62f1238756aa8625c6235340c58793fab019b7be8d2b8b05f53f4781d383d682185629b14f2e9c249a93482fd52786ede43cdda9d73d0d61aa6e85385037653494cde91fd2a97188eeb14e5f6eef7e697c6d5f07ad4c8b840790096ae7ecd74ce44356e006e14d0e25a77275838870ad236c3189175fa2a8f68575b0718f5b695a9e5a1a73bad27fd934a28fd2e77fffaffec8e7fbee8621772086c9f81e2c13d63bee1c19149aa76d4aafb531508328683ac8afb47a08bafac8d0b13a2f857db58eb2213a4ac0317080a62ee456f365ba5b68c6a7d6c4c3c57633f0d7f59817cd7caa3dff38e946aeab03594583fa1b16b96bc9eb4f1479516c5cff747a5d30f99a88319a5e284d78354240d2036c4f75cb255b25f0992f72154b8c3500e8300a9ec13040f70b5f8e2646e2073904aa0f92a56cc67a5cd48663dca7c1fd630596581edb3d8f9393188dfc992ccbef99d4edb7b7fbb47b61dfa378d0adb6d223011a4127c382fb2f583771c17aec5bb3ca8fe4ddc8aa98fd8bd1896240129fffe376603a68a465d2c16475722525abeb1d801a5325c146c6fe97a742e96a0d39d2c7296c582da663da4113f84de9099a7814d1102889c729b952d802e4ce6c9b261cc5be6b7a8f7947021b76885fca865f8084b9ec0d5b2301a91873b6eecf491a9e0750667c688c5dca0c65d28c6a0d4c9d5749edaa09f884198ab53a09bdd348a71c57fb961fbdabed476b4c0bc16f8c7018f17389242f68b3e6252f503f6fe12514d2c3668f1554f15ffa55a9ff4c3771835bf03859fd7598f447b4e4719778b7f43612b05825b850209586bcf41ff349e7ae59dd0d7ff928f26f1ee082f388afe1acd1636bda45a55bd008d5991c8ec9bdf0e9379301259ded8c5df9e6f150dfcfe60fa5597120784b9be1ef5f729979179a53689b4063317837e0f5729ad892e7c3ab281142429bbc3c0a937e1d34e36acb9a27945f222ec0c4c69ee5c904a969e67324d1183a4d1f597327d839dc8a33a1f3fe9786378c9db2d48737915036d5d123246522c2d8d9c1cea881844534b6e48e3d58aa0275203545a2a6e3bebc4e34c8434453616f2ecca15ca8571ef33bff2960e9f9e7ef45fb9954722246c8c399f35159f878d49bf5222b37cc825ebba16bf2d788abf48ae7b603374204fec74a84725120cd5caaf2a5cadc4da256403b5c92570725b7c0084be965d0f3e846522dc548e644db90e028374b92d1b8b1bf9426f9e679001d3513020ee8c02903ba64418c7a34c71d59c2604db0bc28641ec842e87d97165dbf80f80d3b4435426beaf2792f96fe9bf0b8ae18f53937d4929db04fd87ccb1aaa2b7a6aab8107e4cc77246302e367caf878f11ea2b63750e1872a4ae3f9176d1c35c28bd8e05631a9d9803864b709190f142fb275265b420b372726dca60a3217a7ae0c6df08329a6e9035a061847f5dba5baaa8b1fdf9aa5dad7526b393051cad13caa58bc21f1a81cbf4dd15b84a7d1a74ff7f6fca9bc263ea79d6ec56acd4834f627575c70dd79de329632d3306f80a762b011dedd1b83daa9d165f5f8979dd4fbf328cc4aed67cce7f7831d8ee6db706045f93ee5e7a1a1f4cdf25c2cb2d689efd8bda7e33c171a12e0f3281c1a2cc21eb78b615093bac8f6884c2317ff47d3f27cf2ff24ab6216ff2bd989f766c662509985ce7807b4586f509514f2f62697df9f5e5d4323b722e58129ec9847f00c2fd2132fef0f8885ca1fb52f5b696afc67e9f30c08df6910b50a79486f37a54531dfcc84c4f1393ce0b24675bb40974aea990a9f24811a5c8c2063541406abdc3f597f4df068a459f0663bb8798a0dde8a5ce7c0585b8f8e610903f62b2b9f330bf82d343a2ab42d502ca21690dde09c240b775d9d1b56ec12dc041c0bdd2af361be039ab799bef5be9d6ecff61277564d09dd91ff5356e874a245611f3fa0e40c4f65ebf77be08726a28efc23a64ea4f47fbc1de177f256b4a93931b2cb38e35dfc544bb976ce31290bb74e539b64bee2cc137ddaf2c32eef60cfde5a857dfb86198166e9e8755860fc913aae4fa5685b1db9ffb961abbd3c4a3f9ed9fa71756ca33aad6179fff1654ba3bd2e4a798074bc8405323e5da3dd5545d25417cd3fe2653c3c04ce586cfe41c7f278ec8c9008f1bb96a3014a2705c8206567d566029ee886276a14350886b3d785e0598b0a9c1fb00b1c836455ec1d55e54dba1f47fa1c8fb0c53d5b783af753b80aa7061f78d9a72e45d5d28bde6ce7f8bbbf04685d62730f123cc375542c00d89878d2c7e6eb81dfc1dfaf97af2120caf013b2f9b8d1f4a5a33477b4db764cb8c7d333edd08f810854407969df7a4878b84eca5d4ebc9445bd645f005ee0f3eeefb8d2466ad6a69a67ca1c45df62fce3ebb63ee803a28c0b3149717936ac84b4329e21c86c9de58291d26124a6abe5db9898f55bb7c51e3154129c6257a641a647736d1661829a6a3f58eabbb95bb09fd05968046dd9f8f6f8a14c9bdac68577aca6df3958068594608454c0664ffc98452e507f1dbee0dda36211ddf08791440c2defbed34473eaceef3cc1cbbd3da1547f757b40585e9bbb19dadbcc980f9643f106ea476062762978c395cc15019a505746d95ac4cf9aeb3a5d9a7be4d9a1498acdf05483427e125fa0455dfe7505181dec444f27d5eb3bb04d79454241568e01fec92b54071f8f1f386494a84dc17f016245563e3310c39a79104509ebd7ff317996f372092f6899d548d4cc3132988c91908fb8465b5cf8c59c48d17680a1c173bed2240600249549106c424589f5e06a1afe864115e61a64265e2f2e99e2977febb1ac62946fe826412779395a2b6e4cf657cc43c48c3cff6cd30a314471559ab9a9b2ab03355e9c1a90cd723323fddc82b2c24b211938d5c2746f41b571a3f396d6ea5cf05b51c774baa0523de5933ca4a767336eea8f92eb94b1552a4f51679ec3baee7a8f0ac23ea5f3c746abbcf4fb4cdf6438bb47459a24d21ab5c1e59cb0dd506aa812ba6dcbe0dab96b9d789c3287fd68b6a1629722d51b83399a08d325d8416f153cbd6fa0e82a46cc579267406f3dd19aafb4b9062438afc7011fed897fb86ae9c2a208d28501a98c06c41be4117fea9999e1df751e23fb5c78c52ec333413b4811f7b2b41b16de525107cf5b83d1ae00fb3de7618e73157660104677c9dd86aa8f2f6bc1534cff157534f5e3ec9d3fb14748d8cb0c1e6332576544ca7d3578e4ecd28c0bdd3993795edccc41fb5bb8332c3fd33025ca01c26a764cd22d44dd47127f3f245460a032bbcf2eeb692235b95c671f1331eed405be09ce1835a403529fc0ef4c70f60496834e2465f5cb7eda3e4621ffefedec7adbf8cedc06998ddf48dbb7b46daba818dfec342a858f4bdb61d1977096ce9b45e9fa99feac4dd5232d6d2e1a720
-  
-    
-      
-      
-        Hey, password is required here.
-      
-    
-  
-
-]]></content>
-      <categories>
-        <category>一点小思考</category>
       </categories>
       <tags>
         <tag>misc</tag>
