@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2026-05-18T16:23:57.349Z</updated>
+  <updated>2026-06-08T11:24:37.025Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计组期末预习</title>
+    <link href="https://coperlm.github.io/2026/06/08/%E8%AE%A1%E7%BB%84%E6%9C%9F%E6%9C%AB%E9%A2%84%E4%B9%A0/"/>
+    <id>https://coperlm.github.io/2026/06/08/%E8%AE%A1%E7%BB%84%E6%9C%9F%E6%9C%AB%E9%A2%84%E4%B9%A0/</id>
+    <published>2026-06-08T10:30:44.000Z</published>
+    <updated>2026-06-08T11:24:37.025Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="考试大纲"><a href="#考试大纲" class="headerlink" title="考试大纲"></a>考试大纲</h2><p><img src="考试大纲.jpg" alt="考试大纲.jpg"></p><p>剩下的 20 分是选择，10分判断题</p><p>需要写的题占 70 分，故只用预习这部分即可</p><h2 id="具体题目"><a href="#具体题目" class="headerlink" title="具体题目"></a>具体题目</h2><h3 id="第二章-运算器"><a href="#第二章-运算器" class="headerlink" title="第二章 运算器"></a>第二章 运算器</h3><h4 id="双符号位"><a href="#双符号位" class="headerlink" title="双符号位"></a>双符号位</h4><p>用来判断溢出的</p><p>前置知识：正数符号位是0，负数符号位是1</p><p><img src="双符号位.png" alt="双符号位.png"></p><p>计算过程：先转补码，负数符号位是 <code>11</code>，然后直接相加，如果 <code>10</code> 则负溢出（下溢），<code>01</code>则正溢出（上溢）</p><h4 id="浮点数运算"><a href="#浮点数运算" class="headerlink" title="浮点数运算"></a>浮点数运算</h4><p>流程：先对阶，小阶向大阶看齐，然后直接相加或者减少，最后变为 1.xxx 的形式</p><p><img src="浮点数运算.png" alt="浮点数运算.png"></p><p>给的本身就是十进制，就不用换为二进制了</p><p>乘除法能算的就直接算，不能算的分数就不要了</p><h2 id="第三章-存储器"><a href="#第三章-存储器" class="headerlink" title="第三章 存储器"></a>第三章 存储器</h2><p>笔记上记录的是 3.1 3.2，但是实际应该是对应 3.2.4，当时记录的应该是课后习题</p><h3 id="字位扩展"><a href="#字位扩展" class="headerlink" title="字位扩展"></a>字位扩展</h3><p>下面是课后习题 3.1 和 3.2</p><p><img src="字位拓展.png" alt="字位拓展.png"></p><h3 id="cache-命中率"><a href="#cache-命中率" class="headerlink" title="cache 命中率"></a>cache 命中率</h3><p><img src="命中率1.png" alt="命中率1.png"><br><img src="命中率2.png" alt="命中率2.png"></p><h3 id="cache-地址映射"><a href="#cache-地址映射" class="headerlink" title="cache 地址映射"></a>cache 地址映射</h3><p>要求会计算，知道格式</p><p><img src="地址映射1.png" alt="地址映射1.png"><br><img src="地址映射2.png" alt="地址映射2.png"></p><h2 id="第四章-指令系统"><a href="#第四章-指令系统" class="headerlink" title="第四章 指令系统"></a>第四章 指令系统</h2><h3 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h3><p><img src="寻址方式.png" alt="寻址方式.png"></p><p>还有课后题的第十二题也是，这里不再赘述</p><h2 id="第五章-CPU"><a href="#第五章-CPU" class="headerlink" title="第五章 CPU"></a>第五章 CPU</h2><p>[unfixed]</p><h2 id="第七章-外围设备"><a href="#第七章-外围设备" class="headerlink" title="第七章 外围设备"></a>第七章 外围设备</h2><h3 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h3><p><img src="磁盘.png" alt="磁盘.png"></p><h3 id="图显刷新"><a href="#图显刷新" class="headerlink" title="图显刷新"></a>图显刷新</h3><p><img src="图显刷新.png" alt="图显刷新.png"></p><h2 id="第八章-IO"><a href="#第八章-IO" class="headerlink" title="第八章 IO"></a>第八章 IO</h2><h3 id="多级中断"><a href="#多级中断" class="headerlink" title="多级中断"></a>多级中断</h3><p><img src="多级中断1.png" alt="多级中断1.png"><br><img src="多级中断2.png" alt="多级中断2.png"><br><img src="多级中断3.png" alt="多级中断3.png"></p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;考试大纲&quot;&gt;&lt;a href=&quot;#考试大纲&quot; class=&quot;headerlink&quot; title=&quot;考试大纲&quot;&gt;&lt;/a&gt;考试大纲&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;考试大纲.jpg&quot; alt=&quot;考试大纲.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;剩下的 20</summary>
+        
+      
+    
+    
+    
+    <category term="课程与考试重点" scheme="https://coperlm.github.io/categories/%E8%AF%BE%E7%A8%8B%E4%B8%8E%E8%80%83%E8%AF%95%E9%87%8D%E7%82%B9/"/>
+    
+    
+    <category term="unfixed" scheme="https://coperlm.github.io/tags/unfixed/"/>
+    
+    <category term="期末复习" scheme="https://coperlm.github.io/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>无需配对的高效BBW+签名</title>
@@ -544,38 +574,6 @@
     
     
     <category term="misc" scheme="https://coperlm.github.io/tags/misc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网络空间安全青年科学家闽江论坛会议学习记录</title>
-    <link href="https://coperlm.github.io/2025/11/02/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E9%9D%92%E5%B9%B4%E7%A7%91%E5%AD%A6%E5%AE%B6%E9%97%BD%E6%B1%9F%E8%AE%BA%E5%9D%9B%E4%BC%9A%E8%AE%AE%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <id>https://coperlm.github.io/2025/11/02/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E9%9D%92%E5%B9%B4%E7%A7%91%E5%AD%A6%E5%AE%B6%E9%97%BD%E6%B1%9F%E8%AE%BA%E5%9D%9B%E4%BC%9A%E8%AE%AE%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
-    <published>2025-11-02T02:24:02.000Z</published>
-    <updated>2025-12-04T13:35:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今儿个闽江学院有个学术会议</p><p>虽然不是特别强的学校，但是看起来有很多大牛，再加上波波是主持人，这下不得不去了</p><p>原本想自己坐公交车过去，反正免费，但是我导人太好了，直接开车带我们一起过来了</p><p>8.20就到了东门，我导的车还有个挂在副驾驶可以放水和餐巾纸，好高级</p><p>然后到了闽江学院，里面全是花香，时间很早而且是周日所以没什么人</p><p>到达会议地点，是一个普通的会议室，人坐得很满，还好来得早；后排很多低头看手机的可能是本校学生被拉来充人头的（大雾）</p><p>第一场是南开的，讲的查壳，口音很像天津人，有种说相声的感觉；具体内容大概是用机器学习来查壳，不断提升检测效果</p><p>第二场是软件供应链相关的，很好的PPT（像是从创赛改过来的），讲了很长的内容~</p><p>yt学长问了个问题，多方协作的话，能不能通过区块链之类的进行协作赋能；对方回答考虑用技术挑战赛的形式促进发展；然后学长进一步问能不能用区块链，对方回答感觉区块链用的不多，更多用于金融，而且需要多数可信，所以赋能能力不是特别强。我感觉应该可以弄，基于区块链架构去实现一个协作，但是这个层面应该是更高了，也就是说不止局限于这一个项目，可以干但是有困难。</p><p>第三场是——好长的名字，记不住；是一个和南方电网合作的安全项目，传统保证安全是“涉密不上网，上午不涉密”。讲了很多很有意思的，包括hw翻墙，动态更新问题直接换表（不差钱）</p><p>据说是很贵贵的项目，包含6700w做两款芯片之类的。yt师兄满脑子都是区块链了，问这个电网能不能和区块链结合，回答是这个已经做的很大了，但是有很多点，并不一定用在所以项目里</p><p>第四场讲的是区块链，先是一些比较传统的，然后提出来了可追踪门罗币（门罗币强于比特币）可验证加密+零知识证明；原本无变化，多了个追踪功能；然后一张很好看的图，主要就是这些内容</p><p>我导问产生和销毁问题怎么规定，回答无需关注数据什么时间产生，故定义为上链的时间。真正的区块链那就很大了（did：去中心化的身份（通证）Allen做了很多工作，——web3的身份）</p><hr><p>下面分享会议时拍摄的图片（等回学校用校园网上传，现在刚月初，流量省着点用）</p><p><img src="IMG_20251102_090108.jpg" alt></p><p><img src="IMG_20251102_090728.jpg" alt></p><p><img src="IMG_20251102_091558.jpg" alt></p><p><img src="IMG_20251102_091806.jpg" alt></p><p><img src="IMG_20251102_091921.jpg" alt></p><p><img src="IMG_20251102_091925.jpg" alt></p><p><img src="IMG_20251102_092100.jpg" alt></p><p><img src="IMG_20251102_092126.jpg" alt></p><p><img src="IMG_20251102_092241.jpg" alt></p><p><img src="IMG_20251102_092257.jpg" alt></p><p><img src="IMG_20251102_092333.jpg" alt></p><p><img src="IMG_20251102_092430.jpg" alt></p><p><img src="IMG_20251102_092612.jpg" alt></p><p><img src="IMG_20251102_092721.jpg" alt></p><p><img src="IMG_20251102_092747.jpg" alt></p><p><img src="IMG_20251102_092849.jpg" alt></p><p><img src="IMG_20251102_092858.jpg" alt></p><p><img src="IMG_20251102_093007.jpg" alt></p><p><img src="IMG_20251102_093016.jpg" alt></p><p><img src="IMG_20251102_093021.jpg" alt></p><p><img src="IMG_20251102_093121.jpg" alt></p><p><img src="IMG_20251102_093158.jpg" alt></p><p><img src="IMG_20251102_093758.jpg" alt></p><p><img src="IMG_20251102_094423.jpg" alt></p><p><img src="IMG_20251102_094441.jpg" alt></p><p><img src="IMG_20251102_095626.jpg" alt></p><p><img src="IMG_20251102_100356.jpg" alt></p><p><img src="IMG_20251102_102514.jpg" alt></p><p><img src="IMG_20251102_102953.jpg" alt></p><p><img src="IMG_20251102_103138.jpg" alt></p><p><img src="IMG_20251102_103218.jpg" alt></p><p><img src="IMG_20251102_103527.jpg" alt></p><p><img src="IMG_20251102_103837.jpg" alt></p><p><img src="IMG_20251102_104007.jpg" alt></p><p><img src="IMG_20251102_104225.jpg" alt></p><p><img src="IMG_20251102_104247.jpg" alt></p><p><img src="IMG_20251102_104304.jpg" alt></p><p><img src="IMG_20251102_104355.jpg" alt></p><p><img src="IMG_20251102_104438.jpg" alt></p><p><img src="IMG_20251102_105046.jpg" alt></p><p><img src="IMG_20251102_105407.jpg" alt></p><p><img src="IMG_20251102_105511.jpg" alt></p><p><img src="IMG_20251102_105608.jpg" alt></p><p><img src="IMG_20251102_105722.jpg" alt></p><p><img src="IMG_20251102_105755.jpg" alt></p><p><img src="IMG_20251102_105911.jpg" alt></p><p><img src="IMG_20251102_105921.jpg" alt></p><p><img src="IMG_20251102_110015.jpg" alt></p><p><img src="IMG_20251102_110233.jpg" alt></p><p><img src="IMG_20251102_110339.jpg" alt></p><p><img src="IMG_20251102_110517.jpg" alt></p><p><img src="IMG_20251102_110608.jpg" alt></p><p><img src="IMG_20251102_110626.jpg" alt></p><p><img src="IMG_20251102_110732.jpg" alt></p><p><img src="IMG_20251102_110854.jpg" alt></p><p><img src="IMG_20251102_111006.jpg" alt></p><p><img src="IMG_20251102_111057.jpg" alt></p><p><img src="IMG_20251102_111148.jpg" alt></p><p><img src="IMG_20251102_111332.jpg" alt></p><p><img src="IMG_20251102_111458.jpg" alt></p><p><img src="IMG_20251102_111513.jpg" alt></p><p><img src="IMG_20251102_111632.jpg" alt></p><p><img src="IMG_20251102_111640.jpg" alt></p><p><img src="IMG_20251102_111652.jpg" alt></p><p><img src="IMG_20251102_111700.jpg" alt></p><p><img src="IMG_20251102_111802.jpg" alt></p><p><img src="IMG_20251102_111816.jpg" alt></p><p><img src="IMG_20251102_111857.jpg" alt></p><p><img src="IMG_20251102_111909.jpg" alt></p><p><img src="IMG_20251102_112024.jpg" alt></p><p><img src="IMG_20251102_112117.jpg" alt></p><p><img src="IMG_20251102_112251.jpg" alt></p><p><img src="IMG_20251102_112305.jpg" alt></p><p><img src="IMG_20251102_112326.jpg" alt></p><p><img src="IMG_20251102_112441.jpg" alt></p><p><img src="IMG_20251102_112522.jpg" alt></p><p><img src="IMG_20251102_112536.jpg" alt></p><p><img src="IMG_20251102_112552.jpg" alt></p><p><img src="IMG_20251102_112703.jpg" alt></p><p><img src="IMG_20251102_113313.jpg" alt></p><p><img src="IMG_20251102_113359.jpg" alt></p><p><img src="IMG_20251102_113456.jpg" alt></p><p><img src="IMG_20251102_113659.jpg" alt></p><p><img src="IMG_20251102_113724.jpg" alt></p><p><img src="IMG_20251102_113753.jpg" alt></p><p><img src="IMG_20251102_113838.jpg" alt></p><p><img src="IMG_20251102_113937.jpg" alt></p><p><img src="IMG_20251102_114243.jpg" alt></p><p><img src="IMG_20251102_114500.jpg" alt></p><p><img src="IMG_20251102_114544.jpg" alt></p><p><img src="IMG_20251102_114642.jpg" alt></p><p><img src="IMG_20251102_114809.jpg" alt></p><p><img src="IMG_20251102_114842.jpg" alt></p><p><img src="IMG_20251102_114953.jpg" alt></p><p><img src="IMG_20251102_115046.jpg" alt></p><p><img src="IMG_20251102_115131.jpg" alt></p><p><img src="IMG_20251102_115325.jpg" alt></p><p><img src="IMG_20251102_115600.jpg" alt></p><p><img src="IMG_20251102_115610.jpg" alt></p><p><img src="IMG_20251102_115611.jpg" alt></p><p><img src="IMG_20251102_115626.jpg" alt></p><p><img src="IMG_20251102_115745.jpg" alt></p><p><img src="IMG_20251102_115836.jpg" alt></p><p><img src="IMG_20251102_115948.jpg" alt></p><p><img src="IMG_20251102_085221.jpg" alt></p><p><img src="IMG_20251102_085638.jpg" alt></p><p><img src="IMG_20251102_085734.jpg" alt></p><p><img src="IMG_20251102_085828.jpg" alt></p><p><img src="IMG_20251102_085834.jpg" alt></p><hr><blockquote><p> 本文所含照片均为网络空间安全青年科学家闽江论坛学术会议现场拍摄，内容仅用于学术记录与讨论。<br> PPT内容及版权归原作者及其机构所有，如有侵权请联系删除。<br> 本博客无任何商业用途。</p></blockquote>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;今儿个闽江学院有个学术会议&lt;/p&gt;
-&lt;p&gt;虽然不是特别强的学校，但是看起来有很多大牛，再加上波波是主持人，这下不得不去了&lt;/p&gt;
-&lt;p&gt;原本想自己坐公交车过去，反正免费，但是我导人太好了，直接开车带我们一起过来了&lt;/p&gt;
-&lt;p&gt;8.20就到了东门，我导的车还有个挂在副驾驶可</summary>
-        
-      
-    
-    
-    
-    <category term="会议竞赛游记" scheme="https://coperlm.github.io/categories/%E4%BC%9A%E8%AE%AE%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
-    
-    
-    <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
-    
-    <category term="游记" scheme="https://coperlm.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   
