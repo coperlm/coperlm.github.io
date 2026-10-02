@@ -1,0 +1,813 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>AI时代的程序员要被agent取代了 | coperlm's Blog</title><meta name="author" content="coperlm"><meta name="copyright" content="coperlm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="这是现在的版本：  逻辑前瞻：AI 拉低了写代码的门槛，人人都能随手搓出系统。但跑通代码不等于理解系统，AI 的天生惰性加上人类的工程信息差，正在制造无数跑得通却拉了一地的黑盒工程。算力燃烧的烟花转瞬即逝，最终的壁垒依然是留在人脑子里的工程严谨度。  AI 解放劳动力的势头，和石器升级到铁器，或是蒸汽机与珍妮纺织机别无二致。从 GPT-3.5 崭露头角，到 GPT-4 系列跃升，再到如今 Clau">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI时代的程序员要被agent取代了">
+<meta property="og:url" content="https://coperlm.github.io/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/index.html">
+<meta property="og:site_name" content="coperlm&#39;s Blog">
+<meta property="og:description" content="这是现在的版本：  逻辑前瞻：AI 拉低了写代码的门槛，人人都能随手搓出系统。但跑通代码不等于理解系统，AI 的天生惰性加上人类的工程信息差，正在制造无数跑得通却拉了一地的黑盒工程。算力燃烧的烟花转瞬即逝，最终的壁垒依然是留在人脑子里的工程严谨度。  AI 解放劳动力的势头，和石器升级到铁器，或是蒸汽机与珍妮纺织机别无二致。从 GPT-3.5 崭露头角，到 GPT-4 系列跃升，再到如今 Clau">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://coperlm.github.io/img/(10).gif">
+<meta property="article:published_time" content="2026-10-02T16:56:50.000Z">
+<meta property="article:modified_time" content="2026-10-02T18:29:01.001Z">
+<meta property="article:author" content="coperlm">
+<meta property="article:tag" content="misc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coperlm.github.io/img/(10).gif"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI时代的程序员要被agent取代了",
+  "url": "https://coperlm.github.io/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/",
+  "image": "https://coperlm.github.io/img/(10).gif",
+  "datePublished": "2026-10-02T16:56:50.000Z",
+  "dateModified": "2026-10-02T18:29:01.001Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "coperlm",
+      "url": "https://coperlm.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/good.gif"><link rel="canonical" href="https://coperlm.github.io/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: coperlm","link":"链接: ","source":"来源: coperlm's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'medium_zoom',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'AI时代的程序员要被agent取代了',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/realtime-clock.css"><script>
+(function(){
+  var h=new Date().getHours();
+  var c={
+    4:{g:'linear-gradient(180deg,#FFF5F0 0%,#FFE4D6 30%,#FFD6BA 60%,#FFB4A2 100%)',f:'#FFB4A2'},
+    6:{g:'linear-gradient(180deg,#FFEAA7 0%,#FFD79A 25%,#FFA99F 60%,#FF719A 100%)',f:'#FF719A'},
+    8:{g:'linear-gradient(180deg,#F8FFAE 0%,#D4FC79 25%,#96E6A1 60%,#A8E6CF 85%,#C2FFD8 100%)',f:'#C2FFD8'},
+    10:{g:'linear-gradient(180deg,#E0F7FA 0%,#A1C4FD 35%,#B8D5F0 65%,#C2E9FB 100%)',f:'#C2E9FB'},
+    12:{g:'linear-gradient(180deg,#A7FFE4 0%,#84FAB0 30%,#7FE5D4 65%,#8FD3F4 100%)',f:'#8FD3F4'},
+    14:{g:'linear-gradient(180deg,#55E6C1 0%,#43E97B 30%,#3FD5BA 65%,#38F9D7 100%)',f:'#38F9D7'},
+    16:{g:'linear-gradient(180deg,#FFEAA7 0%,#FCE38A 30%,#FFBE76 65%,#F38181 100%)',f:'#F38181'},
+    18:{g:'linear-gradient(180deg,#FDD835 0%,#FBD786 25%,#FFA87D 60%,#F7797D 100%)',f:'#F7797D'},
+    19:{g:'linear-gradient(180deg,#FFB088 0%,#FF9A9E 30%,#D988B9 65%,#8E54E9 100%)',f:'#8E54E9'},
+    20:{g:'linear-gradient(180deg,#FFE5EC 0%,#FBD3E9 25%,#E5A3C7 60%,#BB377D 100%)',f:'#BB377D'},
+    22:{g:'linear-gradient(180deg,#7B68EE 0%,#667eea 30%,#6B5EA8 65%,#764ba2 100%)',f:'#764ba2'},
+    2:{g:'linear-gradient(180deg,#3B4371 0%,#4e54c8 30%,#7B7FDC 65%,#8f94fb 100%)',f:'#8f94fb'}
+  };
+  var r=h>=4&&h<6?c[4]:h>=6&&h<8?c[6]:h>=8&&h<10?c[8]:h>=10&&h<12?c[10]:h>=12&&h<14?c[12]:h>=14&&h<16?c[14]:h>=16&&h<18?c[16]:h>=18&&h<19?c[18]:h>=19&&h<20?c[19]:h>=20&&h<22?c[20]:h>=22||h<2?c[22]:c[2];
+  document.write('<style id="realtime-bg-init">body{background:'+r.g+' !important;background-attachment:fixed !important;}#footer{background:'+r.f+' !important;}</style>');
+})();
+</script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="coperlm's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">140</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a><a href="/link/"><div class="headline">友链</div><div class="length-num">21</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="https://coperlm.github.io/KnowledgeBase/"><i class="fa-fw fas fa-book"></i><span> 知识库</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw fas fa-history"></i><span> 日志</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/niu.gif" alt="Logo"><span class="site-name">coperlm's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">AI时代的程序员要被agent取代了</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="https://coperlm.github.io/KnowledgeBase/"><i class="fa-fw fas fa-book"></i><span> 知识库</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw fas fa-history"></i><span> 日志</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">AI时代的程序员要被agent取代了</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-10-02T16:56:50.000Z" title="发表于 2026-10-03 00:56:50">2026-10-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-02T18:29:01.001Z" title="更新于 2026-10-03 02:29:01">2026-10-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/#post-comment"><span class="waline-comment-count" data-path="/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="container post-content" id="article-container"><p>这是现在的版本：</p>
+<blockquote>
+<p>逻辑前瞻：AI 拉低了写代码的门槛，人人都能随手搓出系统。但跑通代码不等于理解系统，AI 的天生惰性加上人类的工程信息差，正在制造无数跑得通却拉了一地的黑盒工程。算力燃烧的烟花转瞬即逝，最终的壁垒依然是留在人脑子里的工程严谨度。</p>
+</blockquote>
+<p>AI 解放劳动力的势头，和石器升级到铁器，或是蒸汽机与珍妮纺织机别无二致。从 GPT-3.5 崭露头角，到 GPT-4 系列跃升，再到如今 Claude、Gemini 以及 DeepSeek 的百花齐放；2024 年 AI Agent 已经能让人一下午搭出一个像模像样的 SaaS，今年更是能在 ACM 与 CTF 等竞赛中霸榜。这的确把技术的门槛踹塌，卷出了新高度，但也出现了新的奇观，初学者连题目背景都没看懂，代码却已经跑通了。题是做出来了😋人脑却依旧是空的</p>
+<p>技术从来都是两极分化的放大器。会深度思考的人借它一日千里，但“AI 能写”和“能交付好结果”之间，隔着一条由人把关的深沟</p>
+<p>一个毫无工程经验的小白，平时只会开关机和打字，现在要借 AI 开发一个系统。AI 随手用了 A 框架把功能跑通了，但实际上 A 框架早被社区弃用、甚至暗埋死锁隐患。更好的选型是 B 框架，可这个小白甚至连“框架”这个概念都不存在，他怎么可能知道去提防</p>
+<p>这是 Vibe Coding 的尴尬死穴：工程信息差。就像 AI 为了省事，在工作区给你堆了一大堆零散脆弱的 .sh 脚本，看似跑通了，实则拉了一地；而现代工程明明可以用一个 justfile 优雅地收敛所有流程。但小白连 Rust 生态和现代 CLI 工具的名字都没听过，甚至 AI 直接给他拿 Python 乱炖出一个摇摇欲坠的大型工程，他也只能照单全收。你不知道自己不知道，这才是最致命的</p>
+<p>AI 的本性是迎合且惰性。如果用户不设防，它大概率会挑一条阻力最小、最快把测试跑通、但在工程维护上最拉胯的路来应付。基本上解决方案是：</p>
+<ul>
+<li>使用一些厉害提示词来让 AI 找到更优的实践（Plan 模式）</li>
+<li>让多个会话的 AI 相互对抗</li>
+<li>看顶级开源项目的骨架并品味借用</li>
+</ul>
+<p>时代变了，以前学计算机，路径是 Bottom-up（自底向上），需要你必须先吃完基础知识，然后学习 C 语言甚至操作系统和编译原理这堆苦头，被毒打好几年，才慢慢熬出所谓的工程品味。而现在 AI 时代，路径被颠倒成了 Top-down（自顶向下），用户不需要知道底层怎么打字，只需要拥有批判性思维、知道自己不知道什么、以及设计审判规则的能力，就可能可以做好厉害项目</p>
+<p>相对理想的还是程序员不断去学习，并且能在 AI 的帮助下去理解 AI 真正在干什么和干了什么，并且以严谨的态度找到最佳实践，这才是厉害的新时代程序员。<br>这也从理论上打破了一个最近很有趣的假设：既然编程门槛归零，纯文科生是不是就能轻松抹平与科班生的差距：</p>
+<script type="math/tex; mode=display">\lim (\text{文科生} + \text{Codex}) = \lim (\text{科班生} + \text{Codex}) = \text{Codex 的上限}</script><p>但显然，它们并不收敛于同一个地方。</p>
+<p>归根结底，AI 就像一台高维投影仪，输入一句话，吐出一坨代码，跑通了就 merge，不管里面是 <code>.sh</code> 还是 <code>justfile</code>，全凭运气去赌里面藏着的是现代最佳实践，还是一颗未来才会引爆的雷。过去手写代码的熟练度是程序员的壁垒，但今天生成一段看起来能跑的代码成本已经趋近于零，真正稀缺且珍贵的能力，变成了去审查 AI 写的代码是否优雅、是否严谨、是否是现代最佳实践、边界条件是否经得起推敲。</p>
+<p>Token 只是算力燃烧的烟花，转瞬即逝。唯有学到的东西才是最珍贵的</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://coperlm.github.io">coperlm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://coperlm.github.io/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/">https://coperlm.github.io/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://coperlm.github.io" target="_blank">coperlm's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/misc/">misc</a></div><div class="post-share"><div class="social-share" data-image="/img/(10).gif" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/09/26/2026%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2026年终总结"><img class="cover" src="/img/(2).gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">2026年终总结</div></div><div class="info-2"><div class="info-item-1">  ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/10/20/2024-10-20NISA%E7%99%BE%E5%9B%A2%E9%A2%98%E7%9B%AE%E9%A2%98%E8%A7%A3/" title="2024.10.20NISA百团题目题解"><img class="cover" src="/img/(79).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-20</div><div class="info-item-2">2024.10.20NISA百团题目题解</div></div><div class="info-2"><div class="info-item-1">三道挺有意思的小题目，记录一下  第一题题目描述：说反话 题解： 翻转字符串即可（大雾），时间复杂度是严格线性（大大雾） 第二题题目描述：挑战者选择16/17/18张卡片和先/后手，每方每次可以掀开1/2/3张卡片；挑战者的目标是让敌手掀开最后一张卡牌 题解： 如果敌手掀开最后一张牌（即达成挑战目标），则必然最终只剩一张牌（如果剩余的牌数多于1张，则敌手可以掀开一张，这时挑战者并不会达到目标） 为了使敌手掀开最后一张牌，则只需保留一张牌，即保证挑战者掀开牌之后，剩余的牌数为4k+1即可，其中k为非负整数 在以上情况下，每一轮（指双方操作）后掀开四张卡牌即可保证挑战者一定获胜 看不懂？直接运行以下代码体验一下吧 直接使用devcpp运行以下代码即可，记得拓展名是cpp哦 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include&lt;iostream&gt;using namespace...</div></div></div></a><a class="pagination-related" href="/2024/09/18/2024%E5%B9%B49%E6%9C%8816%E6%97%A5%E5%88%B09%E6%9C%8822%E6%97%A5%E5%91%A8%E6%80%BB%E7%BB%93%E6%B8%85%E5%8D%95/" title="2024年9月16日到9月22日周总结清单"><img class="cover" src="/img/(48).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-18</div><div class="info-item-2">2024年9月16日到9月22日周总结清单</div></div><div class="info-2"><div class="info-item-1">  ...</div></div></div></a><a class="pagination-related" href="/2024/12/02/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-%E5%9B%9E%E9%A6%96%E8%BF%87%E5%8E%BB%E5%87%A0%E5%B9%B4/" title="2024年终总结&amp;回首过去几年"><img class="cover" src="/img/(93).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-02</div><div class="info-item-2">2024年终总结&amp;回首过去几年</div></div><div class="info-2"><div class="info-item-1">算是个年终总结，也总结了半秩  总述高一大概是2020年，卡线进了沧州一中 当时成绩平平无奇，在普通班大概是排二十多名的位置  然后高一还是比较平静的吧，刚开学不久学校有信竞集训队招新，然后去考了个试，然后进了集训队，认识了很多大佬 开学后三个月，去打了CSP-S2020，T1打了三个小时，最后一个小时都在吃东西~ 赛后测试代码，T1（儒略日，大模拟）拿了10分，原本能晋级的，结果忘记给每道题都建立一个文件夹了，然后遗憾退场（悲 noip2021再战 至于whk，那时候马上就要是”得E门生“了  不过排名基本没变，大概班里二十多名，学校七八百名（物理组合）  直到高二，一直如此 高二CSP/NOIP2021前夕，几乎全天待在机房练题，whk基本没时间学 那段时间的大致安排是，上午正常上课，然后下午和晚自习就在机房里备赛；然后我那段时间基本上是上午课间的时候抓紧时间写作业，有时可以把作业（已经想不到当时是怎么卷的了）；noip打完之后回归whk，基本上白天写完作业绰绰有余，晚上可以自己写练习册了 最后结果，csp省二...</div></div></div></a><a class="pagination-related" href="/2025/10/27/20251027%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E-%E6%96%B0%E9%A2%9C%E8%89%B2%E5%93%8E/" title="20251027博客更新说明-新颜色哎"><img class="cover" src="/img/(16).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-27</div><div class="info-item-2">20251027博客更新说明-新颜色哎</div></div><div class="info-2"><div class="info-item-1">1. 实时时钟背景色方案参考🎨 24小时背景色时间表    时段 时间 背景渐变色 按钮色 Hover色 视觉效果     黎明 04-06 #FFF5F0 → #FFE4D6 → #FFD6BA → #FFB4A2 #8B4513 深棕橙 #A0522D 🌅 浅米到桃色到玫瑰粉的柔和黎明   日出 06-08 #FFEAA7 → #FFD79A → #FFA99F → #FF719A #C72C41 深红莓 #D63447 🌄 金黄到杏色到粉红的温暖朝霞   清晨 08-10 #F8FFAE → #D4FC79 → #96E6A1 → #A8E6CF → #C2FFD8 #2D5016 深森林绿 #3D6B1F 🌱 柠檬黄到薄荷绿到天蓝的清新明亮   上午 10-12 #E0F7FA → #A1C4FD → #B8D5F0 → #C2E9FB #1E3A8A 深蓝色 #2563EB ☁️ 淡蓝到天蓝到云白的晴朗天空   中午 12-14 #A7FFE4 → #84FAB0 → #7FE5D4 → #8FD3F4 #065F46 深翠绿 #047857 🌊...</div></div></div></a><a class="pagination-related" href="/2024/12/13/IELTS%E5%A4%87%E8%80%83%E6%96%B9%E6%A1%88/" title="IELTS备考方案"><img class="cover" src="/img/(54).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-13</div><div class="info-item-2">IELTS备考方案</div></div><div class="info-2"><div class="info-item-1">记录如何备考雅思  笔者四级都没过就开始想IELTS了（菜菜 而且考一次2k多（穷穷 但是还是要准备一下下的  关于背单词一开始是用的百词斩来背单词 不过后面就破产了（  然后斥巨资买了这本书背（感觉背单词，用纸质书更舒服一点）  只不过进度感人（悲 单词背完之后，理论上是刷剑雅（一般是盗版或者电子版，正版买不起一点） 12345#剑雅使用教程1️⃣剑桥雅思4-6：较早版本的题目，初学者可用于前期了解题型2️⃣剑桥雅思7-9：开始全面的模拟练习，包括听、说、读、写四个部分3️⃣剑桥雅思10-12：版本难度与现在的雅思考试接近，模考冲刺反复刷，检查和修正自己的错误4️⃣剑桥雅思13-19：最新版本的题目，应该是最接近当前雅思考试的，可以用来考前练习，检验自己的备考效果    </div></div></div></a><a class="pagination-related" href="/2025/01/11/PPT%E5%88%B6%E4%BD%9C%E6%80%BB%E7%BB%93/" title="PPT制作总结"><img class="cover" src="/img/(32).gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-11</div><div class="info-item-2">PPT制作总结</div></div><div class="info-2"><div class="info-item-1">总结各种情况下的PPT如何制作   1. 组会汇报面向导师和同学，强调科研进展汇报和交流  格式要求：  中文字体：微软雅黑；英文字体：Times New...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Waline</span><span id="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/nl.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">coperlm</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">140</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/link/"><div class="headline">友链</div><div class="length-num">21</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/coperlm" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:coperlm@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="订阅-ATOM"><i class="fas fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/" title="AI时代的程序员要被agent取代了"><img src="/img/(10).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI时代的程序员要被agent取代了"/></a><div class="content"><a class="title" href="/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/" title="AI时代的程序员要被agent取代了">AI时代的程序员要被agent取代了</a><time datetime="2026-10-02T18:29:01.001Z" title="更新于 2026-10-03 02:29:01">2026-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/09/26/2026%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2026年终总结"><img src="/img/(2).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2026年终总结"/></a><div class="content"><a class="title" href="/2026/09/26/2026%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2026年终总结">2026年终总结</a><time datetime="2026-09-26T13:37:24.168Z" title="更新于 2026-09-26 21:37:24">2026-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/22/%E6%84%9F%E8%A7%89%E8%99%8E%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%80%E8%88%AC/" title="感觉虎码体验一般"><img src="/img/(35).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="感觉虎码体验一般"/></a><div class="content"><a class="title" href="/2026/08/22/%E6%84%9F%E8%A7%89%E8%99%8E%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%80%E8%88%AC/" title="感觉虎码体验一般">感觉虎码体验一般</a><time datetime="2026-08-22T07:52:17.257Z" title="更新于 2026-08-22 15:52:17">2026-08-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/20/%E8%AF%B4%E7%82%B9%E8%80%81%E5%B8%88%E7%9A%84%E5%A5%BD%E8%AF%9D/" title="说点老师的好话"><img src="/img/(14).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="说点老师的好话"/></a><div class="content"><a class="title" href="/2025/05/20/%E8%AF%B4%E7%82%B9%E8%80%81%E5%B8%88%E7%9A%84%E5%A5%BD%E8%AF%9D/" title="说点老师的好话">说点老师的好话</a><time datetime="2026-08-09T01:26:39.656Z" title="更新于 2026-08-09 09:26:39">2026-08-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/22/%E5%88%9D%E6%9D%A5%E6%9C%AC%E7%AB%99%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="本站使用指南"><img src="/img/(41).gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="本站使用指南"/></a><div class="content"><a class="title" href="/2025/10/22/%E5%88%9D%E6%9D%A5%E6%9C%AC%E7%AB%99%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="本站使用指南">本站使用指南</a><time datetime="2026-08-09T01:20:20.642Z" title="更新于 2026-08-09 09:20:20">2026-08-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By coperlm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="rightside-rss" href="/atom.xml" title="订阅 RSS" target="_blank" rel="noopener noreferrer"><i class="fas fa-rss"></i></a><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://walinetest-coperlms-projects.vercel.app',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'https://coperlm.github.io/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = 'AI时代的程序员要被agent取代了'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://coperlm.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=coperlm&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Waline' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script>window.newestComments = {
+  changeContent: content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<code>.*?<\/code>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g, "") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0, 150) + '...'
+    }
+    return content
+  },
+
+  generateHtml: (array, ele) => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class="aside-list-item">'
+
+        if (true && array[i].avatar) {
+          const imgAttr = 'src'
+          const lazyloadNative = ''
+          result += `<a href="${array[i].url}" class="thumbnail"><img ${imgAttr}="${array[i].avatar}" alt="${array[i].nick}" ${lazyloadNative}></a>`
+        }
+
+        result += `<div class="content">
+        <a class="comment" href="${array[i].url}" title="${array[i].content}">${array[i].content}</a>
+        <div class="name"><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '暂无评论'
+    }
+
+    ele.innerHTML = result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh(ele)
+  },
+
+  newestCommentInit: (name, getComment) => {
+    const $dom = document.querySelector('#card-newest-comments .aside-list')
+    if ($dom) {
+      const data = btf.saveToLocal.get(name)
+      if (data) {
+        newestComments.generateHtml(JSON.parse(data), $dom)
+      } else {
+        getComment($dom)
+      }
+    }
+  },
+
+  run: (name, getComment) => {
+    newestComments.newestCommentInit(name, getComment)
+    btf.addGlobalFn('pjaxComplete', () => newestComments.newestCommentInit(name, getComment), name)
+  }
+}</script><script>window.addEventListener('load', () => {
+  const keyName = 'waline-newest-comments'
+  const { changeContent, generateHtml, run } = window.newestComments
+
+  const getComment = async (ele) => {
+    try {
+      const res = await fetch('https://walinetest-coperlms-projects.vercel.app/api/comment?type=recent&count=6')
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      btf.saveToLocal.set(keyName, JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray, ele)
+    } catch (err) {
+      console.error(err)
+      ele.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  run(keyName, getComment)
+})</script><div id="aplayer-fixed" class="aplayer aplayer-fixed aplayer-narrow no-destroy" data-order="list" data-preload="auto" data-autoplay="false"></div><script src="/js/realtime-clock.js"></script><script src="/js/fix-browser-warnings.js"></script><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+  const ap = new APlayer({
+    container: document.getElementById('aplayer-fixed'),
+    order: 'random',
+    loop: 'all',
+    fixed: true,
+    autoplay: false,
+    audio: [
+      {
+        name: '冬眠2023',
+        artist: '阿YueYue 刘兆宇',
+        url: '/music/index/冬眠2023.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '老男孩',
+        artist: '王小帅',
+        url: '/music/index/老男孩.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '一期一会',
+        artist: '周深',
+        url: '/music/index/secret_base_zs.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '一路生花',
+        artist: '温奕心',
+        url: '/music/index/一路生花.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '你',
+        artist: 'GALA乐队',
+        url: '/music/index/你.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '你曾是少年',
+        artist: 'S.H.E',
+        url: '/music/index/你曾是少年.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '冬眠',
+        artist: '司南',
+        url: '/music/index/冬眠.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '圣诞快乐，劳伦斯先生',
+        artist: '坂本龙一',
+        url: '/music/index/圣诞快乐.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '如果可以',
+        artist: '（钢琴曲）',
+        url: '/music/index/如果可以.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '秋殇别恋',
+        artist: 'unknown',
+        url: '/music/index/秋殇别恋.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '紫金花盛开',
+        artist: '李荣浩 梁咏琪',
+        url: '/music/index/紫金花盛开.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '跳楼机',
+        artist: '洛天依',
+        url: '/music/index/跳楼机.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '身骑白马',
+        artist: '兰音',
+        url: '/music/index/身骑白马.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '长安姑娘',
+        artist: '兰音',
+        url: '/music/index/长安姑娘.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '壁上观',
+        artist: '泠鸢',
+        url: '/music/index/壁上观.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '春庭雪',
+        artist: '等什么君',
+        url: '/music/index/春庭雪.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '最后一页',
+        artist: '（钢琴曲）',
+        url: '/music/index/最后一页.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: 'secret_base',
+        artist: '（钢琴曲）',
+        url: '/music/index/secret_base_p.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '起风了',
+        artist: '买辣椒也用券',
+        url: '/music/index/起风了.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '卡农',
+        artist: '（钢琴曲）-b站拜年祭2022',
+        url: '/music/index/卡农.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '悬溺',
+        artist: '（钢琴曲）',
+        url: '/music/index/悬溺.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '现在是陌生人',
+        artist: '（纯音乐）',
+        url: '/music/index/现在是陌生人.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '铃芽之旅',
+        artist: '（钢琴组曲）',
+        url: '/music/index/铃芽之旅.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '诀别书',
+        artist: '邓垚',
+        url: '/music/index/诀别书.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: 'The_truth_that_you_leave',
+        artist: '高至豪',
+        url: '/music/index/The_truth_that_you_leave.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '如愿',
+        artist: '王菲',
+        url: '/music/index/如愿.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '那些年',
+        artist: '（钢琴曲）',
+        url: '/music/index/那些年.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '星光下的梦想',
+        artist: '（钢琴曲）',
+        url: '/music/index/星光下的梦想.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '呓语',
+        artist: '洛天依',
+        url: '/music/index/呓语.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '月光',
+        artist: '胡彦斌',
+        url: '/music/index/月光.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '东京不太热',
+        artist: '洛天依',
+        url: '/music/index/东京不太热.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '月光变奏曲',
+        artist: '《秦时明月》',
+        url: '/music/index/月光变奏曲.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '此去半生',
+        artist: '北部玄驹AI',
+        url: '/music/index/此去半生.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '老男孩',
+        artist: '春日野穹AI',
+        url: '/music/index/老男孩AI.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '夏天的风',
+        artist: '洛天依 乐正绫',
+        url: '/music/index/夏天的风.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '昨晚微雨问海棠',
+        artist: '陈亦洺 喧笑',
+        url: '/music/index/晚棠.mp3',
+        cover: '/img/music_default.gif'
+      },
+      {
+        name: '离开我的依赖',
+        artist: '王艳薇',
+        url: '/music/index/依赖.mp3',
+        cover: '/img/music_default.gif'
+      }
+    ]
+  });
+</script>
+<script id="canvas_nest" defer="defer" color="255,127,0" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false 
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://vercount-l2e8.vercel.app/js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="来搜吧来搜吧~" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
