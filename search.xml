@@ -580,8 +580,7 @@ reference: https://www.bilibili.com/video/BV1seFJeHEnm
   <entry>
     <title>AI时代的程序员要被agent取代了</title>
     <url>/2026/10/03/AI%E6%97%B6%E4%BB%A3%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A6%81%E8%A2%ABagent%E5%8F%96%E4%BB%A3%E4%BA%86/</url>
-    <content><![CDATA[这是现在的版本：
-
+    <content><![CDATA[
 逻辑前瞻：AI 拉低了写代码的门槛，人人都能随手搓出系统。但跑通代码不等于理解系统，AI 的天生惰性加上人类的工程信息差，正在制造无数跑得通却拉了一地的黑盒工程。算力燃烧的烟花转瞬即逝，最终的壁垒依然是留在人脑子里的工程严谨度。
 
 AI 解放劳动力的势头，和石器升级到铁器，或是蒸汽机与珍妮纺织机别无二致。从 GPT-3.5 崭露头角，到 GPT-4 系列跃升，再到如今 Claude、Gemini 以及 DeepSeek 的百花齐放；2024 年 AI Agent 已经能让人一下午搭出一个像模像样的 SaaS，今年更是能在 ACM 与 CTF 等竞赛中霸榜。这的确把技术的门槛踹塌，卷出了新高度，但也出现了新的奇观，初学者连题目背景都没看懂，代码却已经跑通了。题是做出来了😋人脑却依旧是空的
@@ -2159,6 +2158,48 @@ https://documents.uow.edu.au/~fuchun/jow/011-QAXEDWBAMA.pdf
       </tags>
   </entry>
   <entry>
+    <title>hal库c6t6 Freerots</title>
+    <url>/2024/11/08/hal%E5%BA%93c6t6-Freerots/</url>
+    <content><![CDATA[写篇博客，不为别的，就怕以后忘了咋整了
+Freerots这玩意忒好用了
+
+如何开FreerotsSYS这边选个时钟
+
+然后如图一路选下来，别忘了添加任务
+
+其他的常规配置，然后生成代码就可以了
+打开freertos.c文件，正常加入点灯代码就可以了
+
+以上内容的参考：
+https://www.cnblogs.com/Meiyangyang945/p/15106513.html
+
+报错1
+买不起好芯片，内存不够
+改一下代码里的内容
+将#define configTOTAL_HEAP_SIZE                    ((size_t)10240)
+修改为#define configTOTAL_HEAP_SIZE                    ((size_t)(1024*5)即可
+参考：
+https://blog.csdn.net/king110108/article/details/110038173
+https://file.elecfans.com/web2/M00/9B/99/pYYBAGQip7KAOU2vAAfDySG_a10157.pdf
+报错2
+一大堆啥玩意哇
+贴搜索引擎一看，是cpp导致的
+
+魔术棒中把misc_controls的--cpp11去掉即可
+参考：
+https://blog.csdn.net/timberman666/article/details/132723352
+报错3数日之后，又出现了报错2的内容
+改成多少都没用了
+开O2优化即可
+]]></content>
+      <categories>
+        <category>电控</category>
+      </categories>
+      <tags>
+        <tag>RoboMaster</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>buuoj古典密码学wp</title>
     <url>/2024/09/24/buuoj%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E5%AD%A6wp/</url>
     <content><![CDATA[此博客用于整理，之前做过的古典密码学题目
@@ -2683,48 +2724,6 @@ flag:utflag&#123;d4nger0us_c1pherText_qq&#125;
       </categories>
       <tags>
         <tag>cryptoCTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hal库c6t6 Freerots</title>
-    <url>/2024/11/08/hal%E5%BA%93c6t6-Freerots/</url>
-    <content><![CDATA[写篇博客，不为别的，就怕以后忘了咋整了
-Freerots这玩意忒好用了
-
-如何开FreerotsSYS这边选个时钟
-
-然后如图一路选下来，别忘了添加任务
-
-其他的常规配置，然后生成代码就可以了
-打开freertos.c文件，正常加入点灯代码就可以了
-
-以上内容的参考：
-https://www.cnblogs.com/Meiyangyang945/p/15106513.html
-
-报错1
-买不起好芯片，内存不够
-改一下代码里的内容
-将#define configTOTAL_HEAP_SIZE                    ((size_t)10240)
-修改为#define configTOTAL_HEAP_SIZE                    ((size_t)(1024*5)即可
-参考：
-https://blog.csdn.net/king110108/article/details/110038173
-https://file.elecfans.com/web2/M00/9B/99/pYYBAGQip7KAOU2vAAfDySG_a10157.pdf
-报错2
-一大堆啥玩意哇
-贴搜索引擎一看，是cpp导致的
-
-魔术棒中把misc_controls的--cpp11去掉即可
-参考：
-https://blog.csdn.net/timberman666/article/details/132723352
-报错3数日之后，又出现了报错2的内容
-改成多少都没用了
-开O2优化即可
-]]></content>
-      <categories>
-        <category>电控</category>
-      </categories>
-      <tags>
-        <tag>RoboMaster</tag>
       </tags>
   </entry>
   <entry>
