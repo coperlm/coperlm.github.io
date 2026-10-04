@@ -2094,48 +2094,6 @@ https://documents.uow.edu.au/~fuchun/jow/011-QAXEDWBAMA.pdf
       </tags>
   </entry>
   <entry>
-    <title>hal库c6t6 Freerots</title>
-    <url>/2024/11/08/hal%E5%BA%93c6t6-Freerots/</url>
-    <content><![CDATA[写篇博客，不为别的，就怕以后忘了咋整了
-Freerots这玩意忒好用了
-
-如何开FreerotsSYS这边选个时钟
-
-然后如图一路选下来，别忘了添加任务
-
-其他的常规配置，然后生成代码就可以了
-打开freertos.c文件，正常加入点灯代码就可以了
-
-以上内容的参考：
-https://www.cnblogs.com/Meiyangyang945/p/15106513.html
-
-报错1
-买不起好芯片，内存不够
-改一下代码里的内容
-将#define configTOTAL_HEAP_SIZE                    ((size_t)10240)
-修改为#define configTOTAL_HEAP_SIZE                    ((size_t)(1024*5)即可
-参考：
-https://blog.csdn.net/king110108/article/details/110038173
-https://file.elecfans.com/web2/M00/9B/99/pYYBAGQip7KAOU2vAAfDySG_a10157.pdf
-报错2
-一大堆啥玩意哇
-贴搜索引擎一看，是cpp导致的
-
-魔术棒中把misc_controls的--cpp11去掉即可
-参考：
-https://blog.csdn.net/timberman666/article/details/132723352
-报错3数日之后，又出现了报错2的内容
-改成多少都没用了
-开O2优化即可
-]]></content>
-      <categories>
-        <category>电控</category>
-      </categories>
-      <tags>
-        <tag>RoboMaster</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>buuoj古典密码学wp</title>
     <url>/2024/09/24/buuoj%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E5%AD%A6wp/</url>
     <content><![CDATA[此博客用于整理，之前做过的古典密码学题目
@@ -2663,6 +2621,48 @@ flag:utflag&#123;d4nger0us_c1pherText_qq&#125;
       </tags>
   </entry>
   <entry>
+    <title>hal库c6t6 Freerots</title>
+    <url>/2024/11/08/hal%E5%BA%93c6t6-Freerots/</url>
+    <content><![CDATA[写篇博客，不为别的，就怕以后忘了咋整了
+Freerots这玩意忒好用了
+
+如何开FreerotsSYS这边选个时钟
+
+然后如图一路选下来，别忘了添加任务
+
+其他的常规配置，然后生成代码就可以了
+打开freertos.c文件，正常加入点灯代码就可以了
+
+以上内容的参考：
+https://www.cnblogs.com/Meiyangyang945/p/15106513.html
+
+报错1
+买不起好芯片，内存不够
+改一下代码里的内容
+将#define configTOTAL_HEAP_SIZE                    ((size_t)10240)
+修改为#define configTOTAL_HEAP_SIZE                    ((size_t)(1024*5)即可
+参考：
+https://blog.csdn.net/king110108/article/details/110038173
+https://file.elecfans.com/web2/M00/9B/99/pYYBAGQip7KAOU2vAAfDySG_a10157.pdf
+报错2
+一大堆啥玩意哇
+贴搜索引擎一看，是cpp导致的
+
+魔术棒中把misc_controls的--cpp11去掉即可
+参考：
+https://blog.csdn.net/timberman666/article/details/132723352
+报错3数日之后，又出现了报错2的内容
+改成多少都没用了
+开O2优化即可
+]]></content>
+      <categories>
+        <category>电控</category>
+      </categories>
+      <tags>
+        <tag>RoboMaster</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>katz密码学教材v3阅读笔记</title>
     <url>/2025/04/24/katz%E5%AF%86%E7%A0%81%E5%AD%A6%E6%95%99%E6%9D%90v3%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[本篇笔记用于记录阅读 introduction to modern cryptography (3rd Edition) 一书的阅读
@@ -2853,37 +2853,6 @@ V 后面只能跟一个数字
 并且 时间之类的也有快捷键，给到夯
 
 
-
-]]></content>
-      <categories>
-        <category>技术与工具</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>rust study</title>
-    <url>/2025/03/01/rust-study/</url>
-    <content><![CDATA[本文记录了rust的学习
-
-
-环境搭建vscode配置rust环境
-vscode内配置快速打开Terminal，绑定openInIntegratedTerminal即可
-
-
-然后下载rust依赖
-因为我们都是喜家家糕守（电脑里有cpp环境），所以可以管理员运行下载这个东东即可
-（没有cpp的环境我就不管了（光速逃））
-然后一路回车
-安装好后，cmd里输入rustup --version &amp; rustc --version &amp; cargo --version测试安装成功
-
-然后打开vscode，下载相关依赖
-RustRust-analyzerCodeLLDBcratesRust SyntaxRust Test LensEven Better TOML(Better TOML已弃用)
-后面就可以正常使用了
-新建项目 cargo new hellowrold
-打开项目 cd .\helloworld\（TAB键补全）
-运行项目 cargo run
 
 ]]></content>
       <categories>
