@@ -6,7 +6,7 @@
   <link href="https://coperlm.github.io/atom.xml" rel="self"/>
   
   <link href="https://coperlm.github.io/"/>
-  <updated>2026-10-13T13:46:02.544Z</updated>
+  <updated>2026-11-25T14:11:55.326Z</updated>
   <id>https://coperlm.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>未来的安全是物理学的</title>
+    <link href="https://coperlm.github.io/2026/11/25/%E6%9C%AA%E6%9D%A5%E7%9A%84%E5%AE%89%E5%85%A8%E6%98%AF%E7%89%A9%E7%90%86%E5%AD%A6%E7%9A%84/"/>
+    <id>https://coperlm.github.io/2026/11/25/%E6%9C%AA%E6%9D%A5%E7%9A%84%E5%AE%89%E5%85%A8%E6%98%AF%E7%89%A9%E7%90%86%E5%AD%A6%E7%9A%84/</id>
+    <published>2026-11-25T13:54:54.000Z</published>
+    <updated>2026-11-25T14:11:55.326Z</updated>
+    
+    <content type="html"><![CDATA[<p>网络空间和信息安全的根基是密码学，过去和现在的密码学都依赖于数学，未来密码学将会依赖于物理学。</p><p>大概是上个星期的事情，Claude 和人类数学家合作放出了黎曼猜想的一个形式化证明。作者试着让 AI 转成英文稿结果超过了 25 万页，觉得人压根没法读干脆没发，只把打包好的十几万个 Lean4 代码文件放了出来，体量比整个现代数学的基础库还要大出一截。虽然代码很快过了社区的机器验证，但人类目前还没把里面的思路真正消化完，按克雷数学研究所的规矩，真要盖棺定论至少得等到 2028 年。不过话又说回来，看到这种体量的形式化代码，也不禁让人感叹，AI 的确能做很多人类想都不敢想的事情。同期，OpenAI 也利用自家的模型完成了诸多数学猜想的证明。以前觉得一辈子都看不见解决希望的硬骨头，现在突然觉得好像没那么遥不可及了。</p><p>即便黎曼猜想最后真的无误，距离知道 $P=NP$ 的真伪也还有很长的距离（哪怕 $P=NP$ 的概率只有 2% 也不小了，比抽卡出金概率高不少）。且不论 RSA 和 ECC 早在 Shor 算法出来的时候就已经开始死亡倒计时了，现在大家忙着往后量子迁，无非是赌格密码这些新家伙能顶住。可真要说起来，其实都不用等到 $P=NP$，只要 $P = NP \cap coNP$ 连同它对应的承诺问题版本被证明，别说 LWE 这些后量子格密码了，连 AES 在理论上也活不长。真要是哪天证明了 $P=NP$，经典密码学就彻底交代了，很多人看到这都会感慨“密码学不存在了”。连黎曼猜想都被证明了（如果真的无误的话），这些真的还差得远吗？</p><p>不过理论安全和实际安全是两回事，也许并不需要什么 $P=NP$ 被证明，算法就已经先扛不住了。一个数学理论的安全性本质上是建立在长期检验的基础上，说白了就是全世界的聪明人盯着看了几十年，还没找出什么好办法干掉它。像 AES 挨了二十多年打依然稳得很，大家潜意识里都会认可 AES 肯定比 LWE 更让人放心，所以虽然用 AES 做签名比用格慢了两三个数量级，签名尺寸也大得感人，但是 NIST 依旧把它放进了美国国密的候选列表里，还一路送进了后面的轮次，归根结底也是不想把鸡蛋全放在格密码这一个篮子里。</p><p>数学和密码学的证明总是令人眼花缭乱，有人激情澎湃也会有人充满遗憾（详见 <a href="https://coperlm.github.io/2026/07/05/%E5%8F%AF%E8%83%BD%E5%AF%86%E7%A0%81%E5%AD%A6%E6%80%BB%E6%98%AF%E5%85%85%E6%BB%A1%E9%81%97%E6%86%BE%E5%90%A7/">可能密码学总是充满疑惑吧</a> 一文），一个算法可能前一年还在蓬勃发展，后一年就被证明是不安全的了。这几年后量子密码征集里这种戏码见得太多了，像早些年的 Rainbow 和 SIKE，前脚还在 NIST 候选名单里一路过关斩将，眼看就要定为标准了，后脚就被人用一台普通笔记本电脑几个小时给破得干干净净。你辛辛苦苦在某个看似高深的数学难题上盖了半天楼，谁也不知道明天会不会冒出来一篇新论文，直接把底下的砖抽走一块。</p><p>反过来讲，即便 $P=NP$ 了，AES 也未必马上就不安全。就算真的找到了多项式时间复杂度的算法，如果这个多项式最高次项很高（十几次方），或者前面的常数项大得离谱，在现实算力下照样跑不动，那可能还不如老老实实进行 2 的 128 次方暴力搜索呢。但是往最坏的情况下想，未来 AGI 实现了，进而左脚踩右脚原地升天，不仅能推定理，还能一路把算法复杂度往下压，或者顺手挖出人类几百年都注意不到的结构性弱点。真到了那一步，甭管你什么 AES 还是 LWE，全都秒了，经典密码学里唯一还能站着说话、算力再大也拿它没办法的，就只剩一个信息论上安全的——一次一密。</p><p>计算安全说到底就是在和未知的算法以及敌手的算力对赌。与其一直去赌一个未被证明绝对安全的数学算法在将来一段时间内不会被一个可接受时间内的算法破解，不如干脆换个思路，直接使用信息论层面的安全，或者至少找一个不那么依赖经典数学难题的底层，而不是把身家性命全押在计算安全上。</p><p>一次一密在理论上固然完美，香农早就证死了，但工程上一直有个要命的死结：密钥得和明文一样长，而且用完就扔，那你先把这堆密钥怎么安全地送到对面手里？要是再拿公钥加密传密钥，等于兜了一圈又回到数学假设和计算安全的老路上了。这时候物理学就得下场了，最直接的路子就是量子密钥分发（QKD）。QKD 靠的是量子不可克隆、测量扰动这些物理规律，别人想在信道里偷听你传的密钥，物理定律本身就不允许他不留痕迹地复制一份，只要有人动了手脚，收发双方一比对就能察觉。把 QKD 分发出来的密钥配给一次一密，才算真正把信息论安全搬进了现实。当然，实际落地远没纸面上这么省心，光纤损耗、传输距离、身份认证，还有各种针对探测器的侧信道攻击，工程上的坑照样一大堆，但它至少把最底层的信任根基从数学猜想换成了物理规律。</p><p>不过 QKD 只能解决密钥分发的问题，现代密码学早就不是“把一段话加密发过去”这么简单了。平时用的比特承诺、零知识证明、安全多方计算这些更复杂的任务，QKD 干不了，在经典世界里光靠纯信息论安全也证明了压根做不出来。以前按照密码学圈子里常说的 Impagliazzo 的“五个世界”，大家默认没有单向函数这种经典数学假设，现代密码学基本就玩完了。但这两年量子密码学里冒出来的微密码学（Microcrypt），把这个底线又往下拉了拉。</p><p>虽然微密码学跟 QKD 不是一回事，它并不依赖 QKD，本质上也依然属于计算安全，并不是什么无条件安全，如果量子计算的复杂性类崩得更彻底，它一样会破。但它有意思的地方在于，它借着量子态本身的物理特性，把密码学赖以存在的最低假设，压得比经典单向函数还要低。通过伪随机量子态、单向态生成器这类只有量子世界里才有的东西，理论上哪怕哪天真的 $P=NP$ 了，经典单向函数死得干干净净，依然有可能把承诺、多方计算甚至一些加密和签名原语重新搭出来。当然，微密码学目前还处在很早期的理论阶段，怎么彻底甩开经典单向函数把这些东西实打实地构造出来，圈子里也还在找路子，离真正落地还早得很。但它至少给出了一种可能性：哪怕经典数学的防线真有一天全崩了，量子物理还能在底下垫一层。</p><p>不管是拿物理规律把一次一密盘活的 QKD，还是试图在经典数学假设失效后靠量子态兜底的微密码学，底层的依仗都从数学换成了物理。真等到算力和 AI 把经典计算安全逼到墙角的那天，密码学大概会经历一场类似于寒武纪一样的大洗牌，老的一批算法成片退场，基于物理的新东西冒出来接班。未来的安全，终究还是物理学的。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;网络空间和信息安全的根基是密码学，过去和现在的密码学都依赖于数学，未来密码学将会依赖于物理学。&lt;/p&gt;
+&lt;p&gt;大概是上个星期的事情，Claude 和人类数学家合作放出了黎曼猜想的一个形式化证明。作者试着让 AI 转成英文稿结果超过了 25</summary>
+        
+      
+    
+    
+    
+    <category term="生活与杂谈" scheme="https://coperlm.github.io/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="随笔" scheme="https://coperlm.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="Crypto" scheme="https://coperlm.github.io/tags/Crypto/"/>
+    
+  </entry>
   
   <entry>
     <title>自建网站集合</title>
@@ -542,35 +572,6 @@
     
     
     <category term="随笔" scheme="https://coperlm.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>海丝论坛-会议记录</title>
-    <link href="https://coperlm.github.io/2025/11/09/%E6%B5%B7%E4%B8%9D%E8%AE%BA%E5%9D%9B-%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/"/>
-    <id>https://coperlm.github.io/2025/11/09/%E6%B5%B7%E4%B8%9D%E8%AE%BA%E5%9D%9B-%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/</id>
-    <published>2025-11-09T06:14:25.000Z</published>
-    <updated>2026-10-04T11:30:00.811Z</updated>
-    
-    <content type="html"><![CDATA[<p>第一场属性基加密去中心化，因为如果msk生成者是恶意的，则系统不再安全；23年由用户生成（但是需要安全的Setup），不再有中心（基于注册），公私钥对和函数绑定；这一篇基于lattice，属于ZZCGQ25；做的是代数构造，最好的构造是WW25和ARM25（因为假设比较好）；对公私钥对（vector）进行承诺，可以用传统哈希构造默克尔树，RBE[DKL+23]用的是代数哈希来组成的代数结构，方便进行承诺，用带结构的矩阵进行转化，又转化成了经典PKE的结构（这里面没有策略，只是检查在不在里面）；汇报人的工作把策略嵌入进去：多加了一层哈希，把函数和input嵌入进去。现在是给每个人构造一个密文，因为绑定了index，故而使用随机的index，用GGH Encoding（混淆里面经典算法）；LWE用的是Evasive LWE，多了一项：不给A的陷门，给陷门作用下的结果，假设这样子是安全的（引发热议），而且最后还有一项aux（根据具体方案而定），这样导致规约起来很困难，并且aux可能精致构造，导致不安全（原话是不成立，我觉得意思是无法规约到安全）；不一定比现有的方案好（性能上），报告人谦称是这个方案比较过时，但是思路可以参考。<br>许老师问了一个注册机被认为是可信还是不可信，一般是可信，但是也可能伪造大量用户；后来他们聊起来了我也没太听清……</p><p>第二场是联邦学习<br>澳门城市大学：芯片，社会城市，中医药；申请本地基金必须能够服务本地社会<br>大概是打通数据壁垒，联邦学习的数据量如果较小，可能有不公平性：大的会选择性忽略小的；差分隐私不一定安全，仍然会被反向推演导致不安全；传统机器学习没有遗忘，必须重新训练，否则不符合GDPR的被遗忘权和实际系统中的；再加上公开可验证（完整性和一致性，可验证遗忘，鲁棒性），可以结合区块链，实践工程可以做，但是发顶会有难度，而且要考虑trade off。三个工作：1.纵向联邦可验证（非公开验证）2.数字水印的鲁棒性3.对学习和遗忘程度进行量化（结论是学习率和遗忘率无关）</p><p>第三场是数据可控共享的多用户可搜索加密<br>（对称可搜索加密）电力数据共享。难点：整理数据<br>功能性，效率，安全性<br>当计算摘要的时候，对比SHA256或者SHA1，使用AES反而是更快？（这一块我不太认可，条件太特殊了）</p><p>第四场没听明白；第五场讲大语言模型后门。</p><p>下午第一场，陈晓峰老师外包计算：信息机密性，证明高效可验证；安全模型：云计算方窃取数据，拒绝服务/发送错误数据；单个不安全，用两个或者多个服务器；最简朴的验证：两个服务器计算同一个问题（前提是不勾结），如果结果一样则都正确；更先进的是直接给出证明。可以用同态加密解决，但是效率低下爱，并且转化电路的时候可能门数过多。</p><p>第二场讲的zkSNARK，这个听一听应该是最后一场了，后面的感觉没什么特别好听的了；基于双线性对有一个很大的乘法MSM运算，导致计算速度很慢；这里主要讲的是很多优化的实现——好多东西之前看过，但是有相当一部分看不懂。</p><hr><p>下面是会议现场的拍照</p><p><img src="IMG_20251109_090025.jpg" alt></p><p><img src="IMG_20251109_104636.jpg" alt></p><p><img src="IMG_20251109_091157.jpg" alt></p><p><img src="IMG_20251109_093940.jpg" alt></p><p><img src="IMG_20251109_094226.jpg" alt></p><p><img src="IMG_20251109_094622.jpg" alt></p><p><img src="IMG_20251109_094733.jpg" alt></p><p><img src="IMG_20251109_094833.jpg" alt></p><p><img src="IMG_20251109_094902.jpg" alt></p><p><img src="IMG_20251109_095118.jpg" alt></p><p><img src="IMG_20251109_095403.jpg" alt></p><p><img src="IMG_20251109_095452.jpg" alt></p><p><img src="IMG_20251109_095610.jpg" alt></p><p><img src="IMG_20251109_095703.jpg" alt></p><p><img src="IMG_20251109_095748.jpg" alt></p><p><img src="IMG_20251109_095841.jpg" alt></p><p><img src="IMG_20251109_095917.jpg" alt></p><p><img src="IMG_20251109_095958.jpg" alt></p><p><img src="IMG_20251109_100125.jpg" alt></p><p><img src="IMG_20251109_100320.jpg" alt></p><p><img src="IMG_20251109_100351.jpg" alt></p><p><img src="IMG_20251109_100429.jpg" alt></p><p><img src="IMG_20251109_100540.jpg" alt></p><p><img src="IMG_20251109_100633.jpg" alt></p><p><img src="IMG_20251109_100814.jpg" alt></p><p><img src="IMG_20251109_101207.jpg" alt></p><p><img src="IMG_20251109_102125.jpg" alt></p><p><img src="IMG_20251109_102215.jpg" alt></p><p><img src="IMG_20251109_102725.jpg" alt></p><p><img src="IMG_20251109_102941.jpg" alt></p><p><img src="IMG_20251109_103119.jpg" alt></p><p><img src="IMG_20251109_103314.jpg" alt></p><p><img src="IMG_20251109_103353.jpg" alt></p><p><img src="IMG_20251109_103656.jpg" alt></p><p><img src="IMG_20251109_103721.jpg" alt></p><p><img src="IMG_20251109_103814.jpg" alt></p><p><img src="IMG_20251109_103919.jpg" alt></p><p><img src="IMG_20251109_104111.jpg" alt></p><p><img src="IMG_20251109_104210.jpg" alt></p><p><img src="IMG_20251109_104349.jpg" alt></p><p><img src="IMG_20251109_105656.jpg" alt></p><p><img src="IMG_20251109_105818.jpg" alt></p><p><img src="IMG_20251109_110028.jpg" alt></p><p><img src="IMG_20251109_110037.jpg" alt></p><p><img src="IMG_20251109_110054.jpg" alt></p><p><img src="IMG_20251109_110120.jpg" alt></p><p><img src="IMG_20251109_110212.jpg" alt></p><p><img src="IMG_20251109_110315.jpg" alt></p><p><img src="IMG_20251109_110437.jpg" alt></p><p><img src="IMG_20251109_110718.jpg" alt></p><p><img src="IMG_20251109_110817.jpg" alt></p><p><img src="IMG_20251109_110908.jpg" alt></p><p><img src="IMG_20251109_111150.jpg" alt></p><p><img src="IMG_20251109_111301.jpg" alt></p><p><img src="IMG_20251109_111351.jpg" alt></p><p><img src="IMG_20251109_111503.jpg" alt></p><p><img src="IMG_20251109_111517.jpg" alt></p><p><img src="IMG_20251109_111601.jpg" alt></p><p><img src="IMG_20251109_111646.jpg" alt></p><p><img src="IMG_20251109_111707.jpg" alt></p><p><img src="IMG_20251109_111756.jpg" alt></p><p><img src="IMG_20251109_111900.jpg" alt></p><p><img src="IMG_20251109_111935.jpg" alt></p><p><img src="IMG_20251109_112036.jpg" alt></p><p><img src="IMG_20251109_112128.jpg" alt></p><p><img src="IMG_20251109_112209.jpg" alt></p><p><img src="IMG_20251109_112341.jpg" alt></p><p><img src="IMG_20251109_112439.jpg" alt></p><p><img src="IMG_20251109_112526.jpg" alt></p><p><img src="IMG_20251109_112649.jpg" alt></p><p><img src="IMG_20251109_112731.jpg" alt></p><p><img src="IMG_20251109_112902.jpg" alt></p><p><img src="IMG_20251109_113056.jpg" alt></p><p><img src="IMG_20251109_113156.jpg" alt></p><p><img src="IMG_20251109_113256.jpg" alt></p><p><img src="IMG_20251109_113424.jpg" alt></p><p><img src="IMG_20251109_113456.jpg" alt></p><p><img src="IMG_20251109_114009.jpg" alt></p><p><img src="IMG_20251109_114205.jpg" alt></p><p><img src="IMG_20251109_114311.jpg" alt></p><p><img src="IMG_20251109_114540.jpg" alt></p><p><img src="IMG_20251109_114645.jpg" alt></p><p><img src="IMG_20251109_114758.jpg" alt></p><p><img src="IMG_20251109_114848.jpg" alt></p><p><img src="IMG_20251109_114912.jpg" alt></p><p><img src="IMG_20251109_115011.jpg" alt></p><p><img src="IMG_20251109_115106.jpg" alt></p><p><img src="IMG_20251109_115138.jpg" alt></p><p><img src="IMG_20251109_115206.jpg" alt></p><p><img src="IMG_20251109_115246.jpg" alt></p><p><img src="IMG_20251109_115318.jpg" alt></p><p><img src="IMG_20251109_115409.jpg" alt></p><p><img src="IMG_20251109_115427.jpg" alt></p><p><img src="IMG_20251109_115539.jpg" alt></p><p><img src="IMG_20251109_115618.jpg" alt></p><p><img src="IMG_20251109_115718.jpg" alt></p><p><img src="IMG_20251109_115834.jpg" alt></p><p><img src="IMG_20251109_115928.jpg" alt></p><p><img src="IMG_20251109_120151.jpg" alt></p><p><img src="IMG_20251109_120312.jpg" alt></p><p><img src="IMG_20251109_120412.jpg" alt></p><p><img src="IMG_20251109_120605.jpg" alt></p><p><img src="IMG_20251109_120723.jpg" alt></p><p><img src="IMG_20251109_120806.jpg" alt></p><p><img src="IMG_20251109_120939.jpg" alt></p><p><img src="IMG_20251109_121007.jpg" alt></p><p><img src="IMG_20251109_121057.jpg" alt></p><p><img src="IMG_20251109_121205.jpg" alt></p><p><img src="IMG_20251109_121308.jpg" alt></p><p><img src="IMG_20251109_121357.jpg" alt></p><p><img src="IMG_20251109_121458.jpg" alt></p><p><img src="IMG_20251109_121601.jpg" alt></p><p><img src="IMG_20251109_121642.jpg" alt></p><p><img src="IMG_20251109_121720.jpg" alt></p><p><img src="IMG_20251109_121757.jpg" alt></p><p><img src="IMG_20251109_121800.jpg" alt></p><p><img src="IMG_20251109_121843.jpg" alt></p><p><img src="IMG_20251109_121925.jpg" alt></p><p><img src="IMG_20251109_140134.jpg" alt></p><p><img src="IMG_20251109_140356.jpg" alt></p><p><img src="IMG_20251109_140532.jpg" alt></p><p><img src="IMG_20251109_140602.jpg" alt></p><p><img src="IMG_20251109_140921.jpg" alt></p><p><img src="IMG_20251109_141050.jpg" alt></p><p><img src="IMG_20251109_141146.jpg" alt></p><p><img src="IMG_20251109_141238.jpg" alt></p><p><img src="IMG_20251109_141453.jpg" alt></p><p><img src="IMG_20251109_141535.jpg" alt></p><p><img src="IMG_20251109_141655.jpg" alt></p><p><img src="IMG_20251109_141734.jpg" alt></p><p><img src="IMG_20251109_141858.jpg" alt></p><p><img src="IMG_20251109_142148.jpg" alt></p><p><img src="IMG_20251109_142406.jpg" alt></p><p><img src="IMG_20251109_142802.jpg" alt></p><p><img src="IMG_20251109_143251.jpg" alt></p><p><img src="IMG_20251109_143316.jpg" alt></p><p><img src="IMG_20251109_143537.jpg" alt></p><p><img src="IMG_20251109_143637.jpg" alt></p><p><img src="IMG_20251109_143723.jpg" alt></p><p><img src="IMG_20251109_143843.jpg" alt></p><p><img src="IMG_20251109_143955.jpg" alt></p><p><img src="IMG_20251109_144116.jpg" alt></p><p><img src="IMG_20251109_144450.jpg" alt></p><p><img src="IMG_20251109_144556.jpg" alt></p><p><img src="IMG_20251109_144719.jpg" alt></p><p><img src="IMG_20251109_144923.jpg" alt></p><p><img src="IMG_20251109_145016.jpg" alt></p><p><img src="IMG_20251109_145106.jpg" alt></p><p><img src="IMG_20251109_145257.jpg" alt></p><p><img src="IMG_20251109_145518.jpg" alt></p><p><img src="IMG_20251109_145631.jpg" alt></p><p><img src="IMG_20251109_145648.jpg" alt></p><p><img src="IMG_20251109_145800.jpg" alt></p><p><img src="IMG_20251109_145808.jpg" alt></p><p><img src="IMG_20251109_145850.jpg" alt></p><p><img src="IMG_20251109_145946.jpg" alt></p><p><img src="IMG_20251109_150045.jpg" alt></p><p><img src="IMG_20251109_150324.jpg" alt></p><hr><blockquote><p>本文所含照片均为网络空间安全青年科学家海丝论坛学术会议现场拍摄，内容仅用于学术记录与讨论。<br>PPT内容及版权归原作者及其机构所有，如有侵权请联系删除。<br>本博客无任何商业用途。</p></blockquote>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;第一场属性基加密去中心化，因为如果msk生成者是恶意的，则系统不再安全；23年由用户生成（但是需要安全的Setup），不再有中心（基于注册），公私钥对和函数绑定；这一篇基于lattice，属于ZZCGQ25；做的是代数构造，最好的构造是WW25和ARM25（因为假设比较好）</summary>
-        
-      
-    
-    
-    
-    <category term="会议竞赛游记" scheme="https://coperlm.github.io/categories/%E4%BC%9A%E8%AE%AE%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
-    
-    
-    <category term="游记" scheme="https://coperlm.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
-    
-    <category term="meeting" scheme="https://coperlm.github.io/tags/meeting/"/>
     
   </entry>
   
